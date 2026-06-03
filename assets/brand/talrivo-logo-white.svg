@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 300" role="img" aria-labelledby="title">
+  <title id="title">TALRIVO reversed white horizontal logo</title>
+  <g transform="translate(18 22) scale(.5)">
+    <path fill="#FFFFFF" d="M48 84h294c73 0 122 42 122 104 0 43-24 75-66 92l74 148h-88l-70-134h-77v134h-82V160H48V84zm189 76v62h99c29 0 44-11 44-31 0-21-15-31-44-31h-99z"/>
+    <path fill="#21B4D0" d="M48 84h108v76H48z"/>
+  </g>
+  <text x="305" y="194" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="154" font-weight="700" letter-spacing="15">TALRIVO</text>
+</svg>
