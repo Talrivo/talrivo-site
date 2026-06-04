@@ -22,10 +22,25 @@ const dialogOem = document.querySelector("#dialog-oem");
 const dialogHero = document.querySelector("#dialog-hero");
 const dialogUsecases = document.querySelector("#dialog-usecases");
 const dialogBuyer = document.querySelector("#dialog-buyer");
+const dialogPoster = document.querySelector("#dialog-poster");
+const posterEyebrow = document.querySelector("#poster-eyebrow");
+const posterTitle = document.querySelector("#poster-title");
+const posterSubtitle = document.querySelector("#poster-subtitle");
+const posterImage = document.querySelector("#poster-image");
+const posterCalloutLeft = document.querySelector("#poster-callout-left");
+const posterCalloutRight = document.querySelector("#poster-callout-right");
+const posterFooter = document.querySelector("#poster-footer");
 let selectedCatalogueProduct = null;
 
 const detailLibrary = {
   "G941-wireless": {
+    poster: {
+      eyebrow: "Tri-Mode ANC Gaming",
+      title: "G941",
+      subtitle: "Wireless freedom for PC, console and mobile gaming channels.",
+      callouts: ["ANC positioning", "Approx. 50H playback"],
+      footer: "2.4G / Bluetooth / wired direction"
+    },
     hero: "A premium tri-mode gaming headset direction for importers that need one hero model to cover PC gaming, console use, mobile play and lifestyle wireless listening.",
     highlights: ["Tri-mode positioning supports 2.4G wireless, Bluetooth and wired use cases for wider channel coverage", "ANC story helps separate the model from basic wireless gaming headsets in buyer presentations", "Long-use battery profile supports extended gaming sessions and retail comparison pages", "Detachable boom microphone gives buyers a cleaner lifestyle look when the headset is used outside gaming"],
     usecases: ["Gaming accessory distributors", "E-commerce private-label launches", "Premium retail headset series", "Console and PC gaming bundles"],
@@ -35,6 +50,13 @@ const detailLibrary = {
     oem: "Recommended for color matching, logo discussion, packaging customization, user manual localization and market-specific accessory bundle planning."
   },
   "G940-wireless": {
+    poster: {
+      eyebrow: "Low-Latency Wireless",
+      title: "G940",
+      subtitle: "Futuristic hollowed design with RGB shelf impact.",
+      callouts: ["20 ms listed latency", "Dual-driver audio story"],
+      footer: "Distinctive wireless gaming look"
+    },
     hero: "A visually distinctive low-latency wireless model for buyers who want a futuristic gaming look without moving into a heavy premium product position.",
     highlights: ["Dual-driver acoustic structure creates a stronger product story than ordinary single-driver wireless models", "Hollowed 3D exterior gives the headset a recognizable shelf and thumbnail appearance", "Detachable microphone supports gaming communication and cleaner daily-use presentation", "RGB accents help the model stand out in online stores and retail comparison visuals"],
     usecases: ["Entry-to-mid gaming headset programmes", "Online marketplace product lines", "Youth gaming and streaming bundles", "Regional distributor assortments"],
@@ -116,6 +138,13 @@ const detailLibrary = {
     oem: "Recommended for private-label lifestyle audio, color planning, and packaging customization."
   },
   "G946-new": {
+    poster: {
+      eyebrow: "RGB Hero Concept",
+      title: "G946",
+      subtitle: "High-impact gaming visual for catalogue covers and buyer sample review.",
+      callouts: ["RGB hero lighting", "Boom microphone"],
+      footer: "Specification sheet to confirm before sale"
+    },
     hero: "A high-impact RGB gaming headset concept built for visual selling: strong lighting, oversized earcup presence and a gaming-first silhouette for catalogue covers, online listings and buyer sample review.",
     highlights: ["Large RGB visual area creates an immediate gaming identity for product thumbnails and display pages", "Over-ear structure and boom microphone make the product easy to understand for PC gaming buyers", "Multiple image angles are available for catalogue, marketplace and social media product presentation", "Strong hero-model appearance supports private-label launch discussions before final specification confirmation"],
     usecases: ["Catalogue hero pages", "Gaming brand launch visuals", "Importer sample review", "Retail shelf concept presentation"],
@@ -248,6 +277,19 @@ function renderDetailBlock(block, content, renderer) {
   if (hasContent) renderer();
 }
 
+function renderPoster(product, poster) {
+  dialogPoster.classList.toggle("hidden", !poster);
+  if (!poster) return;
+  posterEyebrow.textContent = poster.eyebrow;
+  posterTitle.textContent = poster.title;
+  posterSubtitle.textContent = poster.subtitle;
+  posterImage.src = assetPath(product, product.images[0]);
+  posterImage.alt = `${product.model} ${product.name} poster preview`;
+  posterCalloutLeft.textContent = poster.callouts[0];
+  posterCalloutRight.textContent = poster.callouts[1];
+  posterFooter.textContent = poster.footer;
+}
+
 function renderCatalogue(filter = "all") {
   const displayed = catalogue.filter((product) => filter === "all" || product.category === filter);
   catalogueCount.textContent = `${displayed.length} models`;
@@ -274,6 +316,7 @@ function openProductDialog(product) {
   document.querySelector("#dialog-model").textContent = `Reference model: ${product.model}`;
   document.querySelector("#dialog-summary").textContent = product.summary;
   document.querySelector("#dialog-specs").innerHTML = product.specs.map((spec) => `<li>${spec}</li>`).join("");
+  renderPoster(product, details.poster);
   renderDetailBlock(document.querySelector("#dialog-hero-block"), details.hero, () => {
     dialogHero.textContent = details.hero;
   });
@@ -307,6 +350,9 @@ function openProductDialog(product) {
       thumbnailList.querySelectorAll("button").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       dialogMainImage.src = assetPath(product, button.dataset.image);
+      if (!dialogPoster.classList.contains("hidden")) {
+        posterImage.src = assetPath(product, button.dataset.image);
+      }
     });
   });
   if (product.video) {
