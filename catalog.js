@@ -3541,6 +3541,89 @@ window.talrivoCatalog = [
     }
   },
   {
+    "model": "TWS013",
+    "name": "ANC / Basic True Wireless Earbuds",
+    "category": "tws",
+    "label": "New TWS 2026",
+    "summary": "TWS013 new-mould true wireless earbuds for 2026, available in ANC and basic Bluetooth versions with 25-hour charging-case talk-time positioning.",
+    "specs": [
+      "ANC version: AB5726E chipset",
+      "Basic version: AB5756C chipset",
+      "Bluetooth: V6.0",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg"
+    ],
+    "folder": "tws-tws013",
+    "video": null,
+    "details": {
+      "highlights": [
+        "New moulding for 2026 TWS product selection",
+        "ANC version available with -25 ± 3dB ANC depth positioning",
+        "Basic version available for value-focused Bluetooth assortments",
+        "Charging case battery capacity listed at 380mAh",
+        "Android / iOS / PC compatibility listed"
+      ],
+      "usecases": [
+        "New TWS retail assortment",
+        "Private-label earbud projects",
+        "E-commerce audio listings",
+        "Sample comparison for ANC and basic versions"
+      ],
+      "technical": [
+        [
+          "Model",
+          "TWS013 / TWS013-ANC"
+        ],
+        [
+          "Chipset",
+          "AB5756C basic version / AB5726E ANC version"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "380mAh"
+        ],
+        [
+          "Earphone battery",
+          "30mAh"
+        ],
+        [
+          "Talk time",
+          "About 25 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "buyer": [
+        "One mould supports two market positions: ANC and basic Bluetooth",
+        "Multiple colorways suitable for retail channel selection",
+        "Good candidate for 2026 new-product sample review",
+        "Can be presented as a compact addition to TWS product ranges"
+      ],
+      "fit": "Suitable for buyers looking for a 2026 new-mould TWS option with both ANC and basic-version planning flexibility.",
+      "oem": "Recommended for logo, colorway, packaging and version-selection discussion after sample confirmation."
+    }
+  },
+  {
     "model": "TWS070",
     "name": "ANC True Wireless Earbuds",
     "category": "tws",
