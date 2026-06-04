@@ -2208,5 +2208,1572 @@ window.talrivoCatalog = [
       "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
       "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
     }
+  },
+  {
+    "model": "TWS042S",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS042S anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, sleeping earbuds / white-noise positioning.",
+    "specs": [
+      "Chipset: Blueturm 5636E",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 35 Hours",
+      "Driver: Φ6mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "tws-tws042s",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "Sleeping earbuds / white-noise positioning",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "Blueturm 5636E"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "600mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 35 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ6mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS057",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS057 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws057",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Charging case digital display",
+        "Removable battery design",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS029",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS029 true wireless earbuds for TWS retail and private-label assortments, with enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 7 Hours",
+      "Driver: Φ12mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "tws-tws029",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ENC call-noise reduction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "50mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 7 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ12mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS044F",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS044F anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103D+JL7103E",
+      "Bluetooth: 6.0",
+      "Playback / talk time: 5-6H （ ANC OFF)"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-tws044f",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "2.4G low-latency dongle option",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103D+JL7103E"
+        ],
+        [
+          "Bluetooth",
+          "6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Playback / talk time",
+          "5-6H （ ANC OFF)"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS035",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS035 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws035",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Charging case digital display",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS031",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS031 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-tws031",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS040",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS040 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-tws040",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Lanyard / portable case design",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS044",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS044 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws044",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Charging case phone-stand design",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS008",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS008 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws008",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Charging case digital display",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS052",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS052 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws052",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWSZ10",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWSZ10 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7003",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-twsz10",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7003"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS056",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS056 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, enc call-noise reduction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws056",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "ENC call-noise reduction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "250mAh"
+        ],
+        [
+          "Earbud battery",
+          "33mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS058",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS058 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction.",
+    "specs": [
+      "Chipset: AB5696",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws058",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "AB5696"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "250mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS059",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS059 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction.",
+    "specs": [
+      "Chipset: AB5726E",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 25 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws059",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "AB5726E"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "380mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 25 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS007",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS007 true wireless earbuds for TWS retail and private-label assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: Blueturm5656C",
+      "Bluetooth: V5.4",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ6mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws007",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "Blueturm5656C"
+        ],
+        [
+          "Bluetooth",
+          "V5.4"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "380mAh"
+        ],
+        [
+          "Earbud battery",
+          "40mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ6mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS019",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS019 true wireless earbuds for TWS retail and private-label assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: AB5756",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-tws019",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "AB5756"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "200mAh"
+        ],
+        [
+          "Earbud battery",
+          "28mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS005",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS005 true wireless earbuds for TWS retail and private-label assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: JL6983D2",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "tws-tws005",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL6983D2"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS002",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS002 true wireless earbuds for TWS retail and private-label assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: JL6983D2",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "tws-tws002",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL6983D2"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "250mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS016",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS016 true wireless earbuds for TWS retail and private-label assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: AB5756",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-tws016",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "AB5756"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "180mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "OWS103",
+    "name": "Open-Ear Wireless Earbuds",
+    "category": "tws",
+    "label": "Open-Ear Audio",
+    "summary": "OWS103 open-ear wireless earbuds for sports and open-ear audio assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: Blueturm5656C",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-ows-103",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "Blueturm5656C"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding sports and open-ear audio assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "Earclip09S",
+    "name": "Earclip Wireless Earbuds",
+    "category": "tws",
+    "label": "Earclip TWS",
+    "summary": "Earclip09S earclip wireless earbuds for clip-on lifestyle audio assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: Blueturm5656C",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 30 Hours",
+      "Driver: Φ11mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "tws-earclip-09s",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "Blueturm5656C"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "45mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ11mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding clip-on lifestyle audio assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS012",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS012 true wireless earbuds for TWS retail and private-label assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: Blueturm5756C",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws012",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "Blueturm5756C"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS070",
+    "name": "ANC True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS070 anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction.",
+    "specs": [
+      "Chipset: JL7103",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-tws070",
+    "video": null,
+    "details": {
+      "highlights": [
+        "ANC noise-reduction direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "230mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "TWS017",
+    "name": "True Wireless Earbuds",
+    "category": "tws",
+    "label": "TWS Earbuds",
+    "summary": "TWS017 true wireless earbuds for TWS retail and private-label assortments, with lanyard / portable case design.",
+    "specs": [
+      "Chipset: AB5756",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 20 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-tws017",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Lanyard / portable case design",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "AB5756"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "200mAh"
+        ],
+        [
+          "Earbud battery",
+          "25mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ],
+        [
+          "Impedance",
+          "32Ω"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding TWS retail and private-label assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "OWS035",
+    "name": "Open-Ear Wireless Earbuds",
+    "category": "tws",
+    "label": "Open-Ear Audio",
+    "summary": "OWS035 open-ear wireless earbuds for sports and open-ear audio assortments, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: JL6983D4",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 10 Hours",
+      "Driver: Φ13mm"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg"
+    ],
+    "folder": "tws-ows-035",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "JL6983D4"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "500mAh"
+        ],
+        [
+          "Earbud battery",
+          "40mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 10 Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ13mm"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding sports and open-ear audio assortments with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
+  },
+  {
+    "model": "BCH002",
+    "name": "Bone Conduction Headphones",
+    "category": "tws",
+    "label": "Bone Conduction",
+    "summary": "BCH002 bone conduction headphones for sports and outdoor audio channels, with bluetooth true wireless audio direction.",
+    "specs": [
+      "Chipset: AB5656D",
+      "Bluetooth: V6.0",
+      "Playback / talk time: About 5Hours",
+      "Driver: Φ16mm"
+    ],
+    "images": [
+      "image-01.jpg"
+    ],
+    "folder": "tws-bch-002",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Bluetooth true wireless audio direction",
+        "Android / iOS / PC compatibility listed",
+        "OEM / ODM discussion available after sample confirmation"
+      ],
+      "technical": [
+        [
+          "Chipset",
+          "AB5656D"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Playback / talk time",
+          "About 5Hours"
+        ],
+        [
+          "Driver diameter",
+          "Φ16mm"
+        ],
+        [
+          "Impedance",
+          "8Ω Driver sensitivity ： :100dB±3dB(at 1KHz)，1mW"
+        ]
+      ],
+      "fit": "Suitable for buyers expanding sports and outdoor audio channels with compact audio products and model-level sample comparison.",
+      "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
+    }
   }
 ];
