@@ -43,5 +43,5 @@ product record should include:
 - specifications, MOQ, sample terms and compliance attachments;
 - inquiry button linked to the RFQ form.
 
-Do not place customer lists, commercial price sheets, or supplier certificates
+Do not place customer lists, commercial quotation sheets, or supplier certificates
 in the public media library unless explicitly approved for publication.

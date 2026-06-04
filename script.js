@@ -19,20 +19,29 @@ const dialogHighlights = document.querySelector("#dialog-highlights");
 const dialogTechnical = document.querySelector("#dialog-technical");
 const dialogFit = document.querySelector("#dialog-fit");
 const dialogOem = document.querySelector("#dialog-oem");
+const dialogHero = document.querySelector("#dialog-hero");
+const dialogUsecases = document.querySelector("#dialog-usecases");
+const dialogBuyer = document.querySelector("#dialog-buyer");
 let selectedCatalogueProduct = null;
 
 const detailLibrary = {
   "G941-wireless": {
-    highlights: ["2.4G + ANC / tri-mode positioning for premium gaming lines", "Lightweight aluminum-fork structure with stainless-steel support", "Plug-in microphone and extendable arm for gaming communication", "Long playback profile for wireless retail assortments"],
-    technical: [["Driver", "40 mm / 50 mm option"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    hero: "A premium tri-mode gaming headset direction for importers that need one hero model to cover PC gaming, console use, mobile play and lifestyle wireless listening.",
+    highlights: ["Tri-mode positioning supports 2.4G wireless, Bluetooth and wired use cases for wider channel coverage", "ANC story helps separate the model from basic wireless gaming headsets in buyer presentations", "Long-use battery profile supports extended gaming sessions and retail comparison pages", "Detachable boom microphone gives buyers a cleaner lifestyle look when the headset is used outside gaming"],
+    usecases: ["Gaming accessory distributors", "E-commerce private-label launches", "Premium retail headset series", "Console and PC gaming bundles"],
+    technical: [["Connection direction", "2.4G wireless / Bluetooth / wired positioning"], ["Driver", "40 mm / 50 mm option"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    buyer: ["Strong specification story for catalogue pages", "Clear upgrade path from basic 2.4G models", "Suitable for sample comparisons across multiple markets", "Works well as a private-label hero item"],
     fit: "Suitable for buyers looking for a higher-end wireless gaming headset with ANC positioning, stronger battery story, and private-label appearance options.",
-    oem: "Recommended for color matching, logo discussion, packaging customization, and market-specific accessory bundle planning."
+    oem: "Recommended for color matching, logo discussion, packaging customization, user manual localization and market-specific accessory bundle planning."
   },
   "G940-wireless": {
-    highlights: ["Dual-driver audio structure with 35 mm woofer and 16 mm tweeter", "Hollowed-out 3D design for a futuristic gaming look", "Detachable microphone and multi-function control buttons", "RGB lighting accents for shelf visibility"],
-    technical: [["Driver", "35 mm + 16 mm dual unit"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "400 mAh"], ["Playback time", "Approx. 20 hours without lights"], ["Charging time", "1 - 2 hours"], ["Transmission distance", "10 meters"]],
+    hero: "A visually distinctive low-latency wireless model for buyers who want a futuristic gaming look without moving into a heavy premium product position.",
+    highlights: ["Dual-driver acoustic structure creates a stronger product story than ordinary single-driver wireless models", "Hollowed 3D exterior gives the headset a recognizable shelf and thumbnail appearance", "Detachable microphone supports gaming communication and cleaner daily-use presentation", "RGB accents help the model stand out in online stores and retail comparison visuals"],
+    usecases: ["Entry-to-mid gaming headset programmes", "Online marketplace product lines", "Youth gaming and streaming bundles", "Regional distributor assortments"],
+    technical: [["Connection direction", "2.4G wireless gaming positioning"], ["Driver", "35 mm + 16 mm dual unit"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "400 mAh"], ["Playback time", "Approx. 20 hours without lights"], ["Charging time", "1 - 2 hours"], ["Transmission distance", "10 meters"]],
+    buyer: ["Distinct design for product-page differentiation", "Balanced wireless specification for mainstream channels", "Good model for colorway and packaging testing", "Easy to position as a value gaming wireless option"],
     fit: "Good for gaming channels that want a distinctive low-latency wireless look with a compact battery and strong visual differentiation.",
-    oem: "Useful for channel-exclusive colorways, packaging sets, and entry-to-mid wireless gaming assortments."
+    oem: "Useful for channel-exclusive colorways, packaging sets, online listing images and entry-to-mid wireless gaming assortments."
   },
   "G942-wireless": {
     highlights: ["Abyss-light design language with clean gaming styling", "Plug-in microphone for clear team communication", "Large stainless-steel bar and anti-vibration single beam", "Single-headband structure with high-fidelity speaker positioning"],
@@ -107,10 +116,13 @@ const detailLibrary = {
     oem: "Recommended for private-label lifestyle audio, color planning, and packaging customization."
   },
   "G946-new": {
-    highlights: ["High-impact RGB gaming visual", "Boom microphone for communication", "Modern over-ear structure for immersive gameplay", "Strong hero model candidate for catalogue presentation"],
-    technical: [["Positioning", "RGB gaming concept"], ["Microphone", "Boom microphone"], ["Application", "Gaming headset selection"], ["Documentation", "Specification sheet to confirm"]],
-    fit: "Suitable as a visual hero model for buyer discussions and new product selection.",
-    oem: "Use for branding concept review, appearance discussion, and sample confirmation."
+    hero: "A high-impact RGB gaming headset concept built for visual selling: strong lighting, oversized earcup presence and a gaming-first silhouette for catalogue covers, online listings and buyer sample review.",
+    highlights: ["Large RGB visual area creates an immediate gaming identity for product thumbnails and display pages", "Over-ear structure and boom microphone make the product easy to understand for PC gaming buyers", "Multiple image angles are available for catalogue, marketplace and social media product presentation", "Strong hero-model appearance supports private-label launch discussions before final specification confirmation"],
+    usecases: ["Catalogue hero pages", "Gaming brand launch visuals", "Importer sample review", "Retail shelf concept presentation"],
+    technical: [["Positioning", "RGB gaming concept"], ["Microphone", "Boom microphone"], ["Application", "Gaming headset selection"], ["Visual assets", "Multiple product angles prepared"], ["Documentation", "Specification sheet to confirm before sale"]],
+    buyer: ["Best used as a visual lead model", "Useful for checking market reaction before bulk planning", "Supports private-label appearance discussions", "Can anchor a gaming headset range presentation"],
+    fit: "Suitable as a visual hero model for buyer discussions, new product selection and marketing concept review.",
+    oem: "Use for branding concept review, appearance discussion, color direction, packaging planning and sample confirmation."
   },
   "G947-new": {
     highlights: ["New gaming headset visual direction", "Over-ear structure for gaming channels", "Clean model candidate for upcoming assortment planning", "Suitable for buyer sample review"],
@@ -262,11 +274,20 @@ function openProductDialog(product) {
   document.querySelector("#dialog-model").textContent = `Reference model: ${product.model}`;
   document.querySelector("#dialog-summary").textContent = product.summary;
   document.querySelector("#dialog-specs").innerHTML = product.specs.map((spec) => `<li>${spec}</li>`).join("");
+  renderDetailBlock(document.querySelector("#dialog-hero-block"), details.hero, () => {
+    dialogHero.textContent = details.hero;
+  });
   renderDetailBlock(document.querySelector("#dialog-highlights-block"), details.highlights, () => {
     dialogHighlights.innerHTML = details.highlights.map((item) => `<li>${item}</li>`).join("");
   });
+  renderDetailBlock(document.querySelector("#dialog-usecases-block"), details.usecases, () => {
+    dialogUsecases.innerHTML = details.usecases.map((item) => `<li>${item}</li>`).join("");
+  });
   renderDetailBlock(document.querySelector("#dialog-technical-block"), details.technical, () => {
     dialogTechnical.innerHTML = details.technical.map(([term, value]) => `<div><dt>${term}</dt><dd>${value}</dd></div>`).join("");
+  });
+  renderDetailBlock(document.querySelector("#dialog-buyer-block"), details.buyer, () => {
+    dialogBuyer.innerHTML = details.buyer.map((item) => `<li>${item}</li>`).join("");
   });
   renderDetailBlock(document.querySelector("#dialog-fit-block"), details.fit, () => {
     dialogFit.textContent = details.fit;
