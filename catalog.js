@@ -6,7 +6,7 @@ window.talrivoCatalog = [
     label: "Wireless + ANC",
     summary: "Tri-mode wireless gaming headset direction with ANC positioning, long-use battery story and private-label hero-model potential.",
     specs: ["Tri-mode direction", "ANC positioning", "Long-use battery profile"],
-    images: ["image-01.jpg", "image-02.jpg", "image-03.jpg", "image-04.jpg", "image-05.jpg", "image-06.jpg", "image-07.jpg", "image-08.jpg"],
+    images: ["image-01.jpg", "image-02.jpg", "image-03.jpg", "image-04.jpg", "image-05.jpg", "image-06.jpg", "image-07.jpg"],
     folder: "g941-wireless",
     video: null
   },
@@ -71,7 +71,7 @@ window.talrivoCatalog = [
     category: "wireless",
     label: "Wireless",
     summary: "50 mm driver direction within the wireless gaming supply range.",
-    specs: ["2.4 GHz configuration", "50 mm driver option", "Commercial terms on request"],
+    specs: ["2.4 GHz configuration", "50 mm driver option", "Configuration details on request"],
     images: ["image-01.jpg", "image-02.jpg", "image-03.jpg", "image-04.jpg"],
     folder: "g939-wireless",
     video: null
@@ -104,7 +104,7 @@ window.talrivoCatalog = [
     category: "wireless",
     label: "Wireless",
     summary: "Wireless headset direction for buyers expanding gaming accessory assortment levels.",
-    specs: ["Wireless direction", "Retail assortment review", "Commercial terms on request"],
+    specs: ["Wireless direction", "Retail assortment review", "Configuration details on request"],
     images: ["image-01.jpg", "image-02.jpg"],
     folder: "g921-wireless",
     video: null,
@@ -128,7 +128,7 @@ window.talrivoCatalog = [
     category: "wireless",
     label: "Wireless",
     summary: "Gaming headset visual direction prepared for wireless product evaluation.",
-    specs: ["Wireless direction to confirm", "Color options shown", "Commercial terms on request"],
+    specs: ["Wireless direction to confirm", "Color options shown", "Configuration details on request"],
     images: ["image-01.png", "image-02.jpg", "image-03.png"],
     folder: "g938-wireless",
     video: null
@@ -227,7 +227,7 @@ window.talrivoCatalog = [
     category: "wired",
     label: "Wired RGB",
     summary: "Wired gaming headset design with RGB lighting direction and OEM potential.",
-    specs: ["3.5 mm + USB interface listed", "Detachable microphone listed", "Commercial terms on request"],
+    specs: ["3.5 mm + USB interface listed", "Detachable microphone listed", "Configuration details on request"],
     images: ["image-01.jpg", "image-02.jpg"],
     folder: "g936-wired",
     video: null
@@ -271,7 +271,7 @@ window.talrivoCatalog = [
     category: "wired",
     label: "Wired",
     summary: "Wired gaming headset direction for entry and promotional channel assortments.",
-    specs: ["Wired configuration", "Boom microphone", "Commercial terms on request"],
+    specs: ["Wired configuration", "Boom microphone", "Configuration details on request"],
     images: ["image-01.jpg", "image-02.jpg", "image-03.jpg", "image-04.jpg"],
     folder: "g920-wired",
     video: null,
@@ -309,17 +309,6 @@ window.talrivoCatalog = [
     specs: ["Wired configuration", "Boom microphone", "Specification on request"],
     images: ["image-01.jpg", "image-02.jpg"],
     folder: "g919-wired",
-    video: null
-  },
-  {
-    model: "G907",
-    name: "Wired Gaming Headset",
-    category: "wired",
-    label: "Wired",
-    summary: "Wired gaming design for value-focused retail and wholesale evaluation.",
-    specs: ["Wired configuration", "Color variants shown", "Commercial terms on request"],
-    images: ["image-01.jpg", "image-02.jpg", "image-03.jpg"],
-    folder: "g907-wired",
     video: null
   },
   {

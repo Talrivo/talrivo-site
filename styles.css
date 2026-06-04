@@ -358,8 +358,10 @@ h2 {
 }
 
 .product-card figure img {
+  box-sizing: border-box;
   height: 100%;
   object-fit: contain;
+  padding: 0.85rem;
   width: 100%;
 }
 
@@ -526,8 +528,10 @@ h2 {
 
 .catalogue-card-image {
   background: var(--white);
+  box-sizing: border-box;
   height: 190px;
   object-fit: contain;
+  padding: 0.85rem;
   width: 100%;
 }
 
@@ -731,9 +735,10 @@ h2 {
 }
 
 .dialog-main-image {
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--white);
   border-radius: 8px;
   box-shadow: 0 16px 40px rgba(16, 23, 25, 0.18);
+  box-sizing: border-box;
   height: 500px;
   object-fit: contain;
   padding: clamp(0.7rem, 2vw, 1.2rem);
