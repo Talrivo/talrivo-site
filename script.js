@@ -310,7 +310,7 @@ function renderCatalogue(filter = "all") {
 
 function openProductDialog(product) {
   selectedCatalogueProduct = product;
-  const details = detailLibrary[detailKey(product)] || {};
+  const details = product.details || detailLibrary[detailKey(product)] || {};
   document.querySelector("#dialog-series").textContent = product.label;
   document.querySelector("#dialog-title").textContent = product.name;
   document.querySelector("#dialog-model").textContent = `Reference model: ${product.model}`;
@@ -397,7 +397,7 @@ form.addEventListener("submit", (event) => {
   const message = [
     "Hello TALRIVO,",
     "",
-    "I would like to request product and quotation information.",
+    "I would like to request product information.",
     "",
     `Name: ${fields.get("name")}`,
     `Business email: ${fields.get("email")}`,

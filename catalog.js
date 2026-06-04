@@ -322,5 +322,1689 @@ window.talrivoCatalog = [
     folder: "g909-wired",
     video: null,
     public: false
+  },
+{
+  "model": "SY-661",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-661 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 50mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-661-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "50mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "106dB±3dB"
+      ],
+      [
+        "Impedance",
+        "20 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
   }
+},
+{
+  "model": "SY-663",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-663 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-663-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-668",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-668 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 50mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-668-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "50mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "110dB±3dB"
+      ],
+      [
+        "Impedance",
+        "20 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-610",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-610 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-610-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "110dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-508",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-508 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-508-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "110dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        "3.8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-1603",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-1603 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-1603-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        "3.8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-669",
+  "name": "Light-emitting Headphone",
+  "category": "wired",
+  "label": "Light-emitting Wired",
+  "summary": "SY-669 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+  "specs": [
+    "3.5mm Dual Plug + USB LED",
+    "Speaker: 50mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-669-light",
+  "video": null,
+  "details": {
+    "highlights": [
+      "LED wired gaming headset for value-focused wired ranges",
+      "Boom microphone for voice communication",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm Dual Plug + USB LED"
+      ],
+      [
+        "Speaker",
+        "50mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "10dB±3dB"
+      ],
+      [
+        "Impedance",
+        "20 Ω"
+      ],
+      [
+        "Cable",
+        "3.8PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for wired gaming shelves, e-commerce bundles and importer entry-level RGB-style assortment planning.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-188",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-188 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-188-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "100dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "0PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-260",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-260 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-260-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        "1938Twin-Core PVC Cable*1.8M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-270",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-270 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-270-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        "1938Twin-Core PVC Cable*1.8M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-280",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-280 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 30mm/40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-280-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "30mm/40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "103dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "0PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-380",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-380 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 30mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-380-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "30mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "103dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        "Dual-Color Flat Cable *2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-561",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-561 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-561-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "0PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-715",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-715 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-715-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-718",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-718 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.6mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-718-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.6mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-750 (Wired Mic)",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-750 (Wired Mic) non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-750-wired-mic-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-750 (Swivel Mic)",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-750 (Swivel Mic) non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-750-swivel-mic-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-760",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-760 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-760-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-770",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-770 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-770-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-780",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-780 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-780-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "SY-8009",
+  "name": "Non-light-emitting Headphone",
+  "category": "wired",
+  "label": "Non-light-emitting Wired",
+  "summary": "SY-8009 non-light-emitting wired headset for value-focused headset ranges and private-label sourcing.",
+  "specs": [
+    "3.5mm 4-Pole Single / 3-Pole Dual Plug",
+    "Speaker: 40mm",
+    "Frequency Response: 20Hz-20KHz"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "sy-8009-nonlight",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Non-light-emitting wired headset for practical daily gaming and communication",
+      "3.5 mm plug options for PC and general audio devices",
+      "OEM / ODM branding and packaging discussion"
+    ],
+    "technical": [
+      [
+        "Plug Type",
+        "3.5mm 4-Pole Single / 3-Pole Dual Plug"
+      ],
+      [
+        "Speaker",
+        "40mm"
+      ],
+      [
+        "Frequency Response",
+        "20Hz-20KHz"
+      ],
+      [
+        "Sensitivity",
+        "105dB±3dB"
+      ],
+      [
+        "Impedance",
+        "32 Ω"
+      ],
+      [
+        "Cable",
+        ""
+      ],
+      [
+        "Specification",
+        "5PVC Cable*2M ±0.1M"
+      ],
+      [
+        "Microphone",
+        "-38dB±3dB"
+      ]
+    ],
+    "fit": "Suitable for distributors looking for simple wired headset options without lighting, useful for school, office and value gaming channels.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-1",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-1 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 10mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-1-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Metal"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "10mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "Silver White / Black etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-2",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-2 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 10mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-2-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Metal"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "10mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "Silver / Black etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-3",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-3 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 14mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-3-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Plastic"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "14mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "White / Black etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-4",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-4 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 10mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-4-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Metal"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "10mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "Gunmetal / Black etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-5",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-5 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 10mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-5-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Metal"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "10mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "Silver / Black / etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-6",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-6 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 14mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-6-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Plastic"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "14mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "Black / White etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+},
+{
+  "model": "TC-7",
+  "name": "Type-C Digital Earphone",
+  "category": "typec",
+  "label": "Type-C Digital",
+  "summary": "TC-7 Type-C digital earphone with Lansun chip direction and copper-ring speaker configuration.",
+  "specs": [
+    "Interface: Type-C Digital",
+    "Chip: Lansun",
+    "Speaker Diameter: 10mm Copper Ring Speaker"
+  ],
+  "images": [
+    "image-01.jpg"
+  ],
+  "folder": "tc-7-typec",
+  "video": null,
+  "details": {
+    "highlights": [
+      "Type-C digital interface for modern mobile and laptop audio",
+      "Lansun chip option listed in current range",
+      "Copper-ring speaker options for retail accessory programmes"
+    ],
+    "technical": [
+      [
+        "Interface",
+        "Type-C Digital"
+      ],
+      [
+        "Chip",
+        "Lansun"
+      ],
+      [
+        "Housing Material",
+        "Metal"
+      ],
+      [
+        "Cable Material",
+        "TPE"
+      ],
+      [
+        "Speaker Diameter",
+        "10mm Copper Ring Speaker"
+      ],
+      [
+        "Cable Length",
+        "1.2 m"
+      ],
+      [
+        "Frequency Range",
+        "20-20000"
+      ],
+      [
+        "Sensitivity",
+        "95-115"
+      ],
+      [
+        "Color",
+        "Silver / Black\nGunmetal / etc."
+      ]
+    ],
+    "fit": "Suitable for consumer electronics accessories, mobile phone retail bundles and Type-C audio replacement assortments.",
+    "oem": "Available for logo, color, packaging and market-specific accessory-set discussion after model confirmation."
+  }
+}
 ];
