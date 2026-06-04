@@ -3775,5 +3775,97 @@ window.talrivoCatalog = [
       "fit": "Suitable for buyers expanding sports and outdoor audio channels with compact audio products and model-level sample comparison.",
       "oem": "Recommended for logo, color, retail packaging, accessory-set and market-specific specification confirmation."
     }
+  },
+  {
+    "model": "BH-101",
+    "name": "Dual-Mode Bluetooth 5.4 Speaker",
+    "category": "speaker",
+    "label": "Bluetooth Speaker",
+    "summary": "BH-101 portable Bluetooth 5.4 speaker with RGB design, 2 tweeters + 1 woofer structure, TWS pairing and USB / TF local playback support.",
+    "specs": [
+      "Bluetooth 5.4 dual-mode solution",
+      "ATS2853P2 chipset",
+      "7.4V 5000mAh battery, 21700 x 2",
+      "USB / TF playback, TWS support"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg"
+    ],
+    "folder": "bh-101-speaker",
+    "video": null,
+    "details": {
+      "poster": {
+        "eyebrow": "Portable Bluetooth Speaker",
+        "title": "BH-101",
+        "subtitle": "Dual-mode Bluetooth 5.4 speaker with RGB styling and local playback support.",
+        "callouts": [
+          "5000mAh battery",
+          "2 tweeters + 1 woofer"
+        ],
+        "footer": "Bluetooth / AUX / USB / TF / TWS direction"
+      },
+      "hero": "A portable Bluetooth speaker direction for buyers who need a higher-impact audio product with RGB styling, large battery positioning and multiple input modes for retail and outdoor-ready channels.",
+      "highlights": [
+        "Bluetooth 5.4 dual-mode solution with ATS2853P2 chipset",
+        "2 tweeters + 1 woofer acoustic structure with passive radiator bass positioning",
+        "7.4V 5000mAh battery profile using 21700 cells x 2",
+        "USB / TF local playback, AUX input and TWS pairing support",
+        "RGB visual design suitable for gaming, outdoor and lifestyle audio assortments"
+      ],
+      "usecases": [
+        "Portable speaker distributors",
+        "Outdoor and lifestyle audio channels",
+        "E-commerce audio listings",
+        "Private-label Bluetooth speaker projects"
+      ],
+      "technical": [
+        [
+          "Model",
+          "BH-101"
+        ],
+        [
+          "Bluetooth",
+          "5.4 dual mode"
+        ],
+        [
+          "Chipset",
+          "ATS2853P2"
+        ],
+        [
+          "Battery",
+          "7.4V 5000mAh, 21700 x 2"
+        ],
+        [
+          "Product size",
+          "230.03 x 124.30 x 109.74 mm"
+        ],
+        [
+          "Playback support",
+          "Bluetooth / AUX / USB / TF"
+        ],
+        [
+          "Pairing mode",
+          "TWS support"
+        ],
+        [
+          "Speaker structure",
+          "2 tweeters + 1 woofer + passive radiator bass"
+        ]
+      ],
+      "buyer": [
+        "Distinct RGB speaker appearance for retail shelf and online thumbnails",
+        "Multiple input modes support broader use scenarios",
+        "Large battery story helps channel positioning",
+        "Suitable as an audio extension beyond headset and TWS lines"
+      ],
+      "fit": "Suitable for buyers adding portable Bluetooth speakers to consumer audio assortments, especially channels that need RGB appearance and multi-mode playback.",
+      "oem": "Recommended for logo, color, packaging, manual localization and market-specific accessory-set discussion after sample confirmation."
+    }
   }
 ];
