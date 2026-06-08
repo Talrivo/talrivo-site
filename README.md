@@ -15,7 +15,13 @@ Cloud Wanwang on 2026-05-26. Open `index.html` in a browser to preview it.
 - RFQ form that prepares an inquiry email to the official inquiry mailbox
   `sales@talrivo.com`.
 
-## Before Public Launch
+## Launch Status
+
+- Public site is live at `https://talrivo.com`.
+- GitHub Pages custom domain and HTTPS are configured.
+- Search indexing is enabled, with `robots.txt` and `sitemap.xml` added.
+
+## Before Broad Promotion
 
 - Complete formal trademark checks for the `TALRIVO` name before broad public
   promotion or printed product materials.
@@ -28,7 +34,6 @@ Cloud Wanwang on 2026-05-26. Open `index.html` in a browser to preview it.
 - Confirm image and marketing authorization for each product shown.
 - Confirm product-specific MOQ, pricing, sample policy and lead time.
 - Publish only compliance claims supported for each selected product.
-- Replace the `noindex, nofollow` tag once the site is approved for search.
 
 ## Backend Recommendation
 
