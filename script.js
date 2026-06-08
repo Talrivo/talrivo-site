@@ -390,7 +390,7 @@ document.querySelector("#dialog-inquiry").addEventListener("click", () => {
   formStatus.textContent = `${selectedCatalogueProduct.model} added to your inquiry request.`;
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const fields = new FormData(form);
   const subject = `TALRIVO RFQ - ${fields.get("product")} - ${fields.get("company")}`;
@@ -409,6 +409,30 @@ form.addEventListener("submit", (event) => {
     "Requirements:",
     fields.get("message") || "Please provide available options and commercial details.",
   ].join("\n");
+  const web3formsKey = form.dataset.web3formsKey.trim();
+
+  if (web3formsKey) {
+    fields.append("access_key", web3formsKey);
+    fields.append("subject", subject);
+    fields.append("from_name", "TALRIVO Website Inquiry");
+    fields.append("message", message);
+    formStatus.textContent = "Sending your inquiry...";
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: fields
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message || "Submission failed");
+      form.reset();
+      formStatus.textContent = "Your inquiry has been sent. We will reply by email.";
+      return;
+    } catch (error) {
+      formStatus.textContent = `Online submission is unavailable. Please email ${mailbox} directly.`;
+      return;
+    }
+  }
+
   const emailLink = `mailto:${mailbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 
   formStatus.textContent = `Your email draft is ready. If no mail window opens, email ${mailbox} directly.`;

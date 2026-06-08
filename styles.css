@@ -103,6 +103,59 @@ img {
   text-transform: uppercase;
 }
 
+.language-menu {
+  position: relative;
+}
+
+.language-menu summary {
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.language-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.language-menu summary::after {
+  content: "v";
+  font-size: 0.7rem;
+  margin-left: 0.35rem;
+}
+
+.language-menu div {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 34px rgba(16, 23, 25, 0.12);
+  display: none;
+  min-width: 190px;
+  padding: 0.45rem;
+  position: absolute;
+  right: 0;
+  top: 1.8rem;
+  z-index: 30;
+}
+
+.language-menu[open] div {
+  display: grid;
+}
+
+.language-menu a {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  padding: 0.55rem 0.65rem;
+  text-transform: none;
+}
+
+.language-menu a:hover {
+  background: var(--surface);
+  color: var(--cyan-deep);
+}
+
 .navigation > a:not(.nav-action):hover,
 .footer-links a:hover {
   color: var(--cyan-deep);
@@ -1365,6 +1418,35 @@ h2 {
   text-transform: uppercase;
 }
 
+.contact-dock {
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  position: fixed;
+  right: 1rem;
+  z-index: 25;
+}
+
+.contact-dock a {
+  background: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 5px;
+  box-shadow: 0 10px 28px rgba(16, 23, 25, 0.18);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.78rem 0.9rem;
+  text-transform: uppercase;
+}
+
+.contact-dock a:first-child {
+  background: var(--coral);
+}
+
+.contact-dock a:hover {
+  background: var(--cyan-deep);
+}
+
 @media (max-width: 1020px) {
   .product-grid,
   .catalogue-grid {
@@ -1398,6 +1480,16 @@ h2 {
 
   .navigation > a:not(.nav-action) {
     padding: 0.9rem 0;
+  }
+
+  .language-menu {
+    padding: 0.9rem 0;
+  }
+
+  .language-menu div {
+    box-shadow: none;
+    margin-top: 0.75rem;
+    position: static;
   }
 
   .nav-action {
@@ -1587,6 +1679,17 @@ h2 {
 
   .submit {
     width: 100%;
+  }
+
+  .contact-dock {
+    bottom: 0.75rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .contact-dock a {
+    flex: 1;
+    text-align: center;
   }
 
   .catalogue-controls {
