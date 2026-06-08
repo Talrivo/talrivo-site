@@ -11,6 +11,9 @@ const catalogueGrid = document.querySelector("#catalogue-grid");
 const catalogueCount = document.querySelector("#catalogue-count");
 const catalogueTabs = document.querySelectorAll(".catalogue-tab");
 const productDialog = document.querySelector("#product-dialog");
+const wechatDialog = document.querySelector("#wechat-dialog");
+const wechatOpen = document.querySelector("#wechat-open");
+const wechatClose = document.querySelector("#wechat-close");
 const dialogMainImage = document.querySelector("#dialog-main-image");
 const thumbnailList = document.querySelector("#thumbnail-list");
 const dialogVideo = document.querySelector("#dialog-video");
@@ -388,6 +391,20 @@ document.querySelector("#dialog-inquiry").addEventListener("click", () => {
   productDialog.close();
   document.querySelector("#rfq").scrollIntoView({ behavior: "smooth" });
   formStatus.textContent = `${selectedCatalogueProduct.model} added to your inquiry request.`;
+});
+
+wechatOpen.addEventListener("click", () => {
+  wechatDialog.showModal();
+});
+
+wechatClose.addEventListener("click", () => {
+  wechatDialog.close();
+});
+
+wechatDialog.addEventListener("click", (event) => {
+  if (event.target === wechatDialog) {
+    wechatDialog.close();
+  }
 });
 
 form.addEventListener("submit", async (event) => {

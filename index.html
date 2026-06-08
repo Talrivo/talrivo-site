@@ -14,9 +14,9 @@
   <meta property="og:image" content="https://talrivo.com/assets/catalog/g946-rgb/image-01.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <title>TALRIVO | Gaming Headsets and Consumer Electronics Supply</title>
-  <link rel="stylesheet" href="styles.css?v=20260608c">
+  <link rel="stylesheet" href="styles.css?v=20260608d">
   <script src="catalog.js?v=20260604f" defer></script>
-  <script src="script.js?v=20260608d" defer></script>
+  <script src="script.js?v=20260608e" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -464,7 +464,19 @@
   <div class="contact-dock" aria-label="Quick contact">
     <a href="#rfq">Get Quote</a>
     <a href="mailto:sales@talrivo.com">Email</a>
+    <button id="wechat-open" type="button">WeChat</button>
   </div>
+
+  <dialog class="wechat-dialog" id="wechat-dialog" aria-labelledby="wechat-title">
+    <button class="dialog-close wechat-close" id="wechat-close" type="button" aria-label="Close WeChat QR code">&times;</button>
+    <div class="wechat-card">
+      <p class="label">Direct contact</p>
+      <h2 id="wechat-title">Contact TALRIVO on WeChat</h2>
+      <p>Scan this QR code to discuss samples, catalogue models and OEM/ODM requirements.</p>
+      <img src="assets/contact/wechat-qr.jpg" alt="TALRIVO WeChat QR code">
+      <small>Email is still recommended for formal quotations and order details: sales@talrivo.com</small>
+    </div>
+  </dialog>
 
   <dialog class="product-dialog" id="product-dialog">
     <button class="dialog-close" id="dialog-close" type="button" aria-label="Close product details">&times;</button>
