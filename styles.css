@@ -1361,7 +1361,15 @@ h2 {
   color: var(--muted);
 }
 
-.wechat-inline {
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.55rem;
+}
+
+.wechat-inline,
+.social-link {
   align-self: flex-start;
   background: var(--ink);
   border: 0;
@@ -1376,7 +1384,13 @@ h2 {
   text-transform: uppercase;
 }
 
-.wechat-inline:hover {
+.contact-actions .social-link {
+  color: var(--white);
+  font-size: 0.78rem;
+}
+
+.wechat-inline:hover,
+.social-link:hover {
   background: var(--cyan-deep);
 }
 
