@@ -1513,6 +1513,17 @@ h2 {
     min-width: 0;
   }
 
+  .site-header,
+  main,
+  .section,
+  .catalogue,
+  .catalogue-inner,
+  .product-grid,
+  .catalogue-grid {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .site-header {
     height: 64px;
     padding: 0 1rem;
@@ -1557,11 +1568,12 @@ h2 {
     gap: 0.35rem;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: calc(100% + 2rem);
+    margin-left: 0;
+    margin-right: 0;
+    overflow-x: auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 
   .tab {
@@ -1581,12 +1593,12 @@ h2 {
     align-items: start;
     flex-direction: column;
     gap: 0.55rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    overflow: hidden;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: calc(100% + 2rem);
+    margin-left: 0;
+    margin-right: 0;
+    overflow: visible;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 
   .catalogue-tabs {
@@ -1595,6 +1607,7 @@ h2 {
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     max-width: 100%;
+    overflow-x: auto;
     padding-bottom: 0.25rem;
     width: 100%;
   }
@@ -1610,6 +1623,12 @@ h2 {
 
   .catalogue-card-image {
     height: 220px;
+  }
+
+  .catalogue-card,
+  .product-card {
+    max-width: 100%;
+    width: 100%;
   }
 
   .catalogue-card h3 {
