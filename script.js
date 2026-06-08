@@ -12,7 +12,7 @@ const catalogueCount = document.querySelector("#catalogue-count");
 const catalogueTabs = document.querySelectorAll(".catalogue-tab");
 const productDialog = document.querySelector("#product-dialog");
 const wechatDialog = document.querySelector("#wechat-dialog");
-const wechatOpen = document.querySelector("#wechat-open");
+const wechatTriggers = document.querySelectorAll("[data-open-wechat]");
 const wechatClose = document.querySelector("#wechat-close");
 const dialogMainImage = document.querySelector("#dialog-main-image");
 const thumbnailList = document.querySelector("#thumbnail-list");
@@ -393,8 +393,10 @@ document.querySelector("#dialog-inquiry").addEventListener("click", () => {
   formStatus.textContent = `${selectedCatalogueProduct.model} added to your inquiry request.`;
 });
 
-wechatOpen.addEventListener("click", () => {
-  wechatDialog.showModal();
+wechatTriggers.forEach((button) => {
+  button.addEventListener("click", () => {
+    wechatDialog.showModal();
+  });
 });
 
 wechatClose.addEventListener("click", () => {
@@ -410,6 +412,7 @@ wechatDialog.addEventListener("click", (event) => {
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const fields = new FormData(form);
+  formStatus.classList.remove("success", "error");
   const subject = `TALRIVO RFQ - ${fields.get("product")} - ${fields.get("company")}`;
   const message = [
     "Hello TALRIVO,",
@@ -442,9 +445,11 @@ form.addEventListener("submit", async (event) => {
       const result = await response.json();
       if (!result.success) throw new Error(result.message || "Submission failed");
       form.reset();
-      formStatus.textContent = "Your inquiry has been sent. We will reply by email.";
+      formStatus.classList.add("success");
+      formStatus.textContent = "Your inquiry has been sent. We will reply by email within 24 hours. For urgent sample discussion, you can also scan the WeChat QR code below.";
       return;
     } catch (error) {
+      formStatus.classList.add("error");
       formStatus.textContent = `Online submission is unavailable. Please email ${mailbox} directly.`;
       return;
     }

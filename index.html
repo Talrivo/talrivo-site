@@ -14,9 +14,66 @@
   <meta property="og:image" content="https://talrivo.com/assets/catalog/g946-rgb/image-01.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <title>TALRIVO | Gaming Headsets and Consumer Electronics Supply</title>
-  <link rel="stylesheet" href="styles.css?v=20260608d">
+  <link rel="stylesheet" href="styles.css?v=20260608e">
   <script src="catalog.js?v=20260604f" defer></script>
-  <script src="script.js?v=20260608e" defer></script>
+  <script src="script.js?v=20260608f" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://talrivo.com/#organization",
+        "name": "TALRIVO",
+        "url": "https://talrivo.com/",
+        "logo": "https://talrivo.com/assets/brand/talrivo-logo-horizontal.svg",
+        "email": "sales@talrivo.com",
+        "description": "TALRIVO supplies gaming headsets, TWS earbuds, Bluetooth speakers and audio accessories for international B2B buyers, distributors and private-label brands.",
+        "areaServed": ["North America", "Europe", "Southeast Asia", "South America"],
+        "knowsAbout": ["Gaming headsets", "TWS earbuds", "Bluetooth speakers", "OEM audio accessories", "ODM consumer electronics"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://talrivo.com/#website",
+        "url": "https://talrivo.com/",
+        "name": "TALRIVO",
+        "publisher": {
+          "@id": "https://talrivo.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://talrivo.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I request samples before placing an order?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Buyers can share target models, destination market and branding plans, and TALRIVO will coordinate sample options for review."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can TALRIVO support OEM or ODM branding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Logo, color, packaging, user manual and accessory-set discussion are available depending on the selected product structure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What information should buyers send first?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Buyers should send target product type, market, quantity range, branding needs, packaging preference, interface requirements and sample timeline."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -393,9 +450,11 @@
           <span>Email inquiries</span>
           <a href="mailto:sales@talrivo.com">sales@talrivo.com</a>
           <small>Official wholesale inquiry mailbox. Business replies are normally handled within 24 hours.</small>
+          <button class="wechat-inline" type="button" data-open-wechat>Scan WeChat QR</button>
         </div>
       </div>
       <form class="rfq-form" id="inquiry-form" data-web3forms-key="312b68a1-e59c-44e5-b332-d3ab0d29e32d">
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
         <div class="two-columns">
           <label>Full name <input name="name" autocomplete="name" required></label>
           <label>Business email <input name="email" type="email" autocomplete="email" required></label>
@@ -464,7 +523,7 @@
   <div class="contact-dock" aria-label="Quick contact">
     <a href="#rfq">Get Quote</a>
     <a href="mailto:sales@talrivo.com">Email</a>
-    <button id="wechat-open" type="button">WeChat</button>
+    <button type="button" data-open-wechat>WeChat</button>
   </div>
 
   <dialog class="wechat-dialog" id="wechat-dialog" aria-labelledby="wechat-title">

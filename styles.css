@@ -1361,6 +1361,25 @@ h2 {
   color: var(--muted);
 }
 
+.wechat-inline {
+  align-self: flex-start;
+  background: var(--ink);
+  border: 0;
+  border-radius: 5px;
+  color: var(--white);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 0.55rem;
+  padding: 0.72rem 0.9rem;
+  text-transform: uppercase;
+}
+
+.wechat-inline:hover {
+  background: var(--cyan-deep);
+}
+
 .rfq-form {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1384,6 +1403,10 @@ h2 {
   font-size: 0.84rem;
   font-weight: 700;
   gap: 0.45rem;
+}
+
+.rfq-form .hidden {
+  display: none;
 }
 
 .rfq-form input,
@@ -1430,8 +1453,25 @@ h2 {
 .form-status {
   color: var(--cyan-deep);
   font-size: 0.88rem;
+  line-height: 1.6;
   margin: 0;
   min-height: 1.4em;
+}
+
+.form-status.success,
+.form-status.error {
+  border-radius: 5px;
+  padding: 0.78rem 0.9rem;
+}
+
+.form-status.success {
+  background: rgba(33, 154, 103, 0.12);
+  color: #126646;
+}
+
+.form-status.error {
+  background: rgba(219, 84, 66, 0.12);
+  color: #a33424;
 }
 
 .site-footer {
