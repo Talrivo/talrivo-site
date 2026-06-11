@@ -2017,6 +2017,11 @@ h2 {
   margin: 0 0 1.4rem;
 }
 
+.buyer-entry-links {
+  margin: 0 auto 1px;
+  max-width: calc(var(--max) - 2 * clamp(1.15rem, 4vw, 3rem));
+}
+
 .buyer-summary {
   background: var(--surface);
   border: 1px solid var(--line);
