@@ -538,16 +538,22 @@ h2 {
   border: 0;
   border-top: 1px solid var(--line);
   color: var(--ink);
+  display: block;
   font-size: 0.82rem;
   font-weight: 700;
   margin-top: auto;
   padding: 0.95rem 0 0;
   text-align: left;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .text-action:hover {
   color: var(--cyan-deep);
+}
+
+.text-action + .text-action {
+  margin-top: 0.85rem;
 }
 
 .product-card--text {
