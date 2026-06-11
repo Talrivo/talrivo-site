@@ -303,6 +303,7 @@ function renderCatalogue(filter = "all") {
         <span class="series">${product.label}</span>
         <h3>${product.model} ${product.name}</h3>
         <span class="catalogue-meta"><span>${product.images.length} images</span><span class="${product.video ? "video-ready" : ""}">${product.video ? "Video" : "Video slot"}</span></span>
+        <span class="catalogue-action">View model</span>
       </span>
     </button>
   `).join("");
