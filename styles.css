@@ -2022,6 +2022,10 @@ h2 {
   max-width: calc(var(--max) - 2 * clamp(1.15rem, 4vw, 3rem));
 }
 
+.market-entry-links {
+  margin-bottom: 1.4rem;
+}
+
 .buyer-summary {
   background: var(--surface);
   border: 1px solid var(--line);
