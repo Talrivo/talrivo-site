@@ -1354,6 +1354,37 @@ h2 {
   padding-left: 1.15rem;
 }
 
+.rfq-checklist {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 1.6rem;
+  padding: 1.1rem;
+}
+
+.rfq-checklist strong {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.rfq-checklist ul {
+  color: var(--muted);
+  display: grid;
+  gap: 0.42rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rfq-checklist li::before {
+  color: var(--cyan-deep);
+  content: "+";
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
 .direct-contact span {
   color: var(--muted);
   font-size: 0.76rem;
