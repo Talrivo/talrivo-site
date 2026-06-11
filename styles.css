@@ -2775,3 +2775,252 @@ h2 {
     background: linear-gradient(180deg, #101719 0%, #101719 30%, #f5f6f4 30%, #f5f6f4 100%);
   }
 }
+
+/* Master & Dynamic inspired refinement: quiet product-led luxury. */
+.site-header,
+.navigation > a:not(.nav-action),
+.language-menu summary,
+.nav-action,
+.label,
+.brand-hero h1,
+.hero-proof span,
+.button,
+.tab,
+.catalogue-tab,
+.series,
+.text-action,
+.catalogue-action {
+  letter-spacing: 0;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(16, 23, 25, 0.08);
+}
+
+.brand-hero {
+  background: #0b0d0e;
+}
+
+.brand-hero .hero-media {
+  border-radius: 0;
+  box-shadow: none;
+  height: min(78%, 610px);
+  right: 0;
+  width: min(54vw, 720px);
+}
+
+.brand-hero .hero-shade {
+  background: linear-gradient(90deg, rgba(11, 13, 14, 1) 0%, rgba(11, 13, 14, 0.96) 38%, rgba(11, 13, 14, 0.24) 76%, rgba(11, 13, 14, 0.04) 100%);
+}
+
+.brand-hero h1 {
+  font-weight: 700;
+  max-width: 620px;
+}
+
+.featured-showcase {
+  background: #ffffff;
+  margin: 0 auto;
+  max-width: 1480px;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.15rem, 4vw, 3rem);
+}
+
+.featured-heading {
+  align-items: end;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 0 auto clamp(1.6rem, 4vw, 2.4rem);
+  max-width: var(--max);
+}
+
+.featured-heading h2 {
+  max-width: 720px;
+}
+
+.featured-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: auto;
+  max-width: var(--max);
+}
+
+.featured-card {
+  align-items: end;
+  background: #f4f5f3;
+  border: 1px solid rgba(16, 23, 25, 0.08);
+  border-radius: 8px;
+  display: grid;
+  grid-template-rows: auto minmax(300px, 1fr);
+  min-height: 620px;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-card--dark {
+  background: #101719;
+  color: #ffffff;
+}
+
+.featured-card img {
+  align-self: end;
+  filter: drop-shadow(0 28px 34px rgba(16, 23, 25, 0.18));
+  max-height: 390px;
+  object-fit: contain;
+  padding: 0 clamp(1rem, 4vw, 2.8rem) clamp(1rem, 4vw, 2.8rem);
+  width: 100%;
+}
+
+.featured-card--dark img {
+  background: #ffffff;
+  filter: none;
+  padding-top: 1rem;
+}
+
+.featured-copy {
+  padding: clamp(1.35rem, 4vw, 2.4rem);
+}
+
+.featured-copy span {
+  color: var(--cyan-deep);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.featured-card--dark .featured-copy span {
+  color: #8ce8ee;
+}
+
+.featured-copy h3 {
+  font-size: clamp(1.9rem, 4vw, 3.3rem);
+  line-height: 1;
+  margin: 0 0 0.9rem;
+  max-width: 520px;
+}
+
+.featured-copy p {
+  color: var(--muted);
+  margin: 0 0 1.35rem;
+  max-width: 470px;
+}
+
+.featured-card--dark .featured-copy p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.products {
+  padding-top: clamp(2.8rem, 6vw, 4.6rem);
+}
+
+.product-card {
+  box-shadow: none;
+}
+
+.product-card:hover {
+  box-shadow: 0 20px 48px rgba(16, 23, 25, 0.1);
+}
+
+.catalogue-card {
+  box-shadow: none;
+}
+
+.catalogue-card:hover {
+  box-shadow: 0 18px 44px rgba(16, 23, 25, 0.1);
+}
+
+.craft-section {
+  background: #ffffff;
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+  grid-template-columns: 0.9fr 1.1fr;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.15rem, 4vw, 3rem);
+}
+
+.craft-copy h2 {
+  max-width: 600px;
+}
+
+.craft-copy p:not(.label) {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.craft-points {
+  display: grid;
+  gap: 1px;
+}
+
+.craft-points article {
+  border-top: 1px solid rgba(16, 23, 25, 0.12);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 56px minmax(160px, 0.42fr) 1fr;
+  padding: 1.25rem 0;
+}
+
+.craft-points span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.craft-points h3 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.craft-points p {
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 920px) {
+  .featured-heading,
+  .craft-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card {
+    min-height: 560px;
+  }
+
+  .craft-points article {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .craft-points p {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .brand-hero .hero-media {
+    height: 34%;
+    width: 100vw;
+  }
+
+  .featured-card {
+    min-height: 520px;
+  }
+
+  .featured-card img {
+    max-height: 300px;
+  }
+
+  .craft-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
