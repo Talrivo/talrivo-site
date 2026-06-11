@@ -3024,3 +3024,128 @@ h2 {
     padding-right: 1rem;
   }
 }
+
+/* Product detail page refinement: product-first, quieter premium layout. */
+.seo-page .product-detail {
+  background: #f7f8f6;
+  border-bottom: 1px solid rgba(16, 23, 25, 0.08);
+  max-width: none;
+  padding-left: max(clamp(1.15rem, 4vw, 3rem), calc((100vw - var(--max)) / 2 + 3rem));
+  padding-right: max(clamp(1.15rem, 4vw, 3rem), calc((100vw - var(--max)) / 2 + 3rem));
+}
+
+.seo-page .product-detail h1 {
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  letter-spacing: 0;
+  max-width: 760px;
+}
+
+.seo-page .product-detail p {
+  color: rgba(16, 23, 25, 0.7);
+  max-width: 590px;
+}
+
+.seo-page .product-detail img {
+  background:
+    radial-gradient(circle at 50% 42%, #ffffff 0%, #ffffff 52%, #e9eeee 100%);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(16, 23, 25, 0.1);
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+}
+
+.seo-page .product-detail .button,
+.seo-page .product-detail .email-link,
+.seo-cta .button,
+.seo-cta .email-link {
+  border-radius: 999px;
+}
+
+.seo-section .section-heading {
+  border-bottom: 1px solid rgba(16, 23, 25, 0.08);
+  padding-bottom: 1.4rem;
+}
+
+.seo-grid article {
+  background: #ffffff;
+  border-color: rgba(16, 23, 25, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(16, 23, 25, 0.04);
+}
+
+.seo-grid h3 {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.link-list span,
+.link-list a {
+  background: #ffffff;
+  border-color: rgba(16, 23, 25, 0.1);
+  border-radius: 999px;
+}
+
+.buyer-summary {
+  background: transparent;
+  border: 0;
+  gap: 1rem;
+}
+
+.buyer-summary div {
+  background: #ffffff;
+  border: 1px solid rgba(16, 23, 25, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(16, 23, 25, 0.04);
+}
+
+.seo-faq {
+  background: #f7f8f6;
+  max-width: none;
+  padding-left: max(clamp(1.15rem, 4vw, 3rem), calc((100vw - var(--max)) / 2 + 3rem));
+  padding-right: max(clamp(1.15rem, 4vw, 3rem), calc((100vw - var(--max)) / 2 + 3rem));
+}
+
+.seo-faq .section-heading,
+.seo-faq .seo-grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max);
+}
+
+.seo-cta {
+  background: #101719;
+}
+
+.seo-cta .button.primary {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.seo-cta .button.primary:hover {
+  background: #dff9fb;
+}
+
+.seo-cta .email-link {
+  color: #ffffff;
+}
+
+@media (max-width: 920px) {
+  .seo-page .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-page .product-detail img {
+    order: -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .seo-page .product-detail,
+  .seo-faq {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .seo-page .product-detail h1 {
+    font-size: clamp(2.3rem, 12vw, 3.4rem);
+  }
+}
