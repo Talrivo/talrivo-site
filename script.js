@@ -5,6 +5,19 @@ const cards = document.querySelectorAll(".product-card");
 const form = document.querySelector("#inquiry-form");
 const productSelect = document.querySelector("#product-interest");
 const formStatus = document.querySelector("#form-status");
+const sourceFields = {
+  pageUrl: document.querySelector("#page-url"),
+  pageTitle: document.querySelector("#page-title"),
+  referrer: document.querySelector("#page-referrer"),
+  firstLandingPage: document.querySelector("#first-landing-page"),
+  firstReferrer: document.querySelector("#first-referrer"),
+  utmSource: document.querySelector("#utm-source"),
+  utmMedium: document.querySelector("#utm-medium"),
+  utmCampaign: document.querySelector("#utm-campaign"),
+  utmTerm: document.querySelector("#utm-term"),
+  utmContent: document.querySelector("#utm-content"),
+  selectedFrom: document.querySelector("#selected-from")
+};
 const mailbox = "sales@talrivo.com";
 const catalogue = (window.talrivoCatalog || []).filter((product) => product.public !== false);
 const catalogueGrid = document.querySelector("#catalogue-grid");
@@ -34,6 +47,7 @@ const posterCalloutLeft = document.querySelector("#poster-callout-left");
 const posterCalloutRight = document.querySelector("#poster-callout-right");
 const posterFooter = document.querySelector("#poster-footer");
 let selectedCatalogueProduct = null;
+const sourceStorageKey = "talrivoInquirySource";
 
 const detailLibrary = {
   "G941-wireless": {
@@ -252,10 +266,56 @@ tabs.forEach((tab) => {
 document.querySelectorAll(".inquiry-pick").forEach((button) => {
   button.addEventListener("click", () => {
     setProductInterest(button.dataset.product);
+    setSelectedFrom(`Homepage product card: ${button.dataset.product}`);
     document.querySelector("#rfq").scrollIntoView({ behavior: "smooth" });
     formStatus.textContent = `${button.dataset.product} selected for your inquiry.`;
   });
 });
+
+function getStoredSourceContext() {
+  const current = {
+    firstLandingPage: window.location.href,
+    firstReferrer: document.referrer || "Direct / not available"
+  };
+  try {
+    const stored = window.localStorage.getItem(sourceStorageKey);
+    if (stored) return JSON.parse(stored);
+    window.localStorage.setItem(sourceStorageKey, JSON.stringify(current));
+  } catch (error) {
+    return current;
+  }
+  return current;
+}
+
+function getUtmValue(name) {
+  return new URLSearchParams(window.location.search).get(name) || "";
+}
+
+function setSelectedFrom(value) {
+  if (sourceFields.selectedFrom) {
+    sourceFields.selectedFrom.value = value;
+  }
+}
+
+function populateSourceFields() {
+  if (!form) return;
+  const storedSource = getStoredSourceContext();
+  const values = {
+    pageUrl: window.location.href,
+    pageTitle: document.title,
+    referrer: document.referrer || "Direct / not available",
+    firstLandingPage: storedSource.firstLandingPage || window.location.href,
+    firstReferrer: storedSource.firstReferrer || "Direct / not available",
+    utmSource: getUtmValue("utm_source"),
+    utmMedium: getUtmValue("utm_medium"),
+    utmCampaign: getUtmValue("utm_campaign"),
+    utmTerm: getUtmValue("utm_term"),
+    utmContent: getUtmValue("utm_content")
+  };
+  Object.entries(values).forEach(([key, value]) => {
+    if (sourceFields[key]) sourceFields[key].value = value;
+  });
+}
 
 function setProductInterest(productName) {
   const existingOption = Array.from(productSelect.options).find((option) => option.value === productName);
@@ -388,6 +448,7 @@ document.querySelector("#dialog-inquiry").addEventListener("click", () => {
   if (!selectedCatalogueProduct) return;
   const productName = `${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`;
   setProductInterest(productName);
+  setSelectedFrom(`Catalogue dialog: ${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`);
   form.querySelector("textarea").value = `Please provide specifications, MOQ and available branding options for reference model ${selectedCatalogueProduct.model} (${selectedCatalogueProduct.name}).`;
   productDialog.close();
   document.querySelector("#rfq").scrollIntoView({ behavior: "smooth" });
@@ -412,6 +473,7 @@ wechatDialog.addEventListener("click", (event) => {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  populateSourceFields();
   const fields = new FormData(form);
   formStatus.classList.remove("success", "error");
   const subject = `TALRIVO RFQ - ${fields.get("product")} - ${fields.get("company")}`;
@@ -433,6 +495,19 @@ form.addEventListener("submit", async (event) => {
     "",
     "Requirements:",
     fields.get("message") || "Please provide available options and commercial details.",
+    "",
+    "Source context:",
+    `Submitted from: ${fields.get("page_url") || "Not available"}`,
+    `Page title: ${fields.get("page_title") || "Not available"}`,
+    `Selected from: ${fields.get("selected_from") || "Manual form selection"}`,
+    `First landing page: ${fields.get("first_landing_page") || "Not available"}`,
+    `Referrer: ${fields.get("referrer") || "Direct / not available"}`,
+    `First referrer: ${fields.get("first_referrer") || "Direct / not available"}`,
+    `UTM source: ${fields.get("utm_source") || "Not set"}`,
+    `UTM medium: ${fields.get("utm_medium") || "Not set"}`,
+    `UTM campaign: ${fields.get("utm_campaign") || "Not set"}`,
+    `UTM term: ${fields.get("utm_term") || "Not set"}`,
+    `UTM content: ${fields.get("utm_content") || "Not set"}`
   ].join("\n");
   const web3formsKey = form.dataset.web3formsKey.trim();
 
@@ -467,4 +542,5 @@ form.addEventListener("submit", async (event) => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+populateSourceFields();
 renderCatalogue();
