@@ -14,6 +14,8 @@ Use this file to collect real product evidence before publishing website article
 | Date | Product | Evidence type | Source file or link | Customer question | Website page | Social reuse |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-06-17 | G941 Tri-Mode ANC Gaming Headset | Product images | G941 black-red and white product images | How do the color options and receiver details look? | `/insights/g941-color-options-wireless-gaming-headset/` | LinkedIn and Facebook product image post |
+| 2026-06-17 | G940 Low-Latency Wireless Gaming Headset | Product page image set | `assets/catalog/g940-wireless/` | Which wireless model fits a stronger RGB gaming look? | `/gaming-headsets/g940-low-latency/` | Wireless gaming model comparison post |
+| 2026-06-17 | G946 RGB Gaming Headset | Product page image set | `assets/catalog/g946-rgb/` | Which model works as a visual RGB gaming headset hero? | `/gaming-headsets/g946-rgb/` | RGB gaming headset product post |
 
 ## Evidence types
 
