@@ -2,11 +2,15 @@
 
 ## Weekly
 
+- Use `marketing/geo-growth-action-plan.md` as the top-level operating checklist.
 - Check Google Search Console coverage and indexing status.
+- Review `marketing/search-console-ga4-setup.md` when setting up Search Console, GA4 or monthly reporting.
 - Inspect the top pages: home, gaming headsets, OEM/ODM, contact and RFQ guide.
 - Search `site:talrivo.com TALRIVO` to confirm Google is showing important pages.
 - Review new inquiry emails and note which page or product attracted the lead.
+- Check the "Source context" block in inquiry emails and update `marketing/conversion-tracking-notes.md` if a useful campaign pattern appears.
 - Review `marketing/seo/keyword-intent-matrix.md` before adding new content so the topic matches a real search intent and landing page.
+- Publish or schedule at least one LinkedIn and one Facebook post from `marketing/social-publishing-calendar.md`.
 
 ## After Adding A New Product Page
 
@@ -19,6 +23,14 @@
 - Add the URL to `site-map/index.html`.
 - Add the URL to `llms.txt` if it is an important product.
 - Add related customer questions to `marketing/geo-evidence-log.md` if the page came from a real inquiry, product image or sample note.
+- Add one LinkedIn angle and one Facebook angle if the page has strong visual or buyer-question value.
+
+## Before Adding A Regional Page
+
+- Confirm the language and country priority in `marketing/multilingual-regional-plan.md`.
+- Use a real source page, not a thin duplicate.
+- Localize title, meta description and FAQ questions.
+- Add the page to `sitemap.xml` and Search Console after publishing.
 
 ## Priority Pages To Improve Over Time
 
@@ -50,3 +62,11 @@
 - Use the RFQ guide when a buyer asks for price but gives incomplete details.
 - Use product comparison when the buyer asks which model is suitable.
 - Use sample request when the buyer is ready to test products.
+
+## Monthly Review Files
+
+- `marketing/search-console-ga4-setup.md`
+- `marketing/conversion-tracking-notes.md`
+- `marketing/geo-evidence-log.md`
+- `marketing/social-publishing-calendar.md`
+- `marketing/multilingual-regional-plan.md`

@@ -6,6 +6,8 @@ The current TALRIVO website is a static GitHub Pages site. It does not have a br
 
 Content can currently be published by editing website files in the repository and pushing changes to GitHub.
 
+Use `marketing/geo-growth-action-plan.md` as the top-level growth checklist before deciding what to publish next.
+
 ## Recommended content workflow
 
 Use one topic across the website and social channels:
@@ -15,6 +17,12 @@ Use one topic across the website and social channels:
 3. Facebook post: visual product summary from the official TALRIVO Facebook profile that links to the same website URL.
 
 For the full GEO workflow and reusable post templates, use `marketing/geo-content-system.md`.
+
+For channel planning, use `marketing/social-publishing-calendar.md`.
+
+For tracking links and inquiry source review, use `marketing/conversion-tracking-notes.md`.
+
+For Search Console and GA4 setup, use `marketing/search-console-ga4-setup.md`.
 
 ## Article content package
 
@@ -52,3 +60,9 @@ Practical options:
 - Use Shopify or Webflow if product catalogue editing and visual page editing become the priority.
 
 For the current static site, the safest next step is to keep publishing through repository edits until the content structure is stable.
+
+## Regional publishing
+
+Use `marketing/multilingual-regional-plan.md` before creating translated pages.
+
+Start with buyer-intent pages such as category, sample request, RFQ guide and proven model pages. Do not publish many machine-translated pages without review.

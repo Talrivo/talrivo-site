@@ -22,6 +22,10 @@ Do not invent inquiry numbers, customer names, performance claims or test result
 
 Record every usable proof point in `marketing/geo-evidence-log.md` before turning it into an article or social post.
 
+Use `marketing/social-publishing-calendar.md` to decide which website topic should be pushed to LinkedIn and Facebook first.
+
+Use tracked URLs from `marketing/conversion-tracking-notes.md` or create new UTM links before publishing social posts.
+
 ## MiKe-style publishing standard
 
 Use this standard for each topic:
@@ -82,6 +86,17 @@ Add a clear product image or short product video when posting on Facebook.
 - One website article becomes one LinkedIn post and one Facebook post.
 - One product video becomes one short website note, one LinkedIn caption and one Facebook caption.
 - One customer question becomes one FAQ answer, one article section and one social post.
+
+## Measurement loop
+
+After publishing, review:
+
+- Search Console impressions and queries;
+- inquiry email source context;
+- LinkedIn and Facebook comments or messages;
+- questions that can become new FAQ or article sections.
+
+Keep the topic if it produces a real search query, useful social comment or buyer conversation. Otherwise, improve the page title, product evidence or internal links before publishing similar content again.
 
 ## Official profile URLs
 
