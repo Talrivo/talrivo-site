@@ -12,6 +12,7 @@ Use this map when sending emails, LinkedIn messages or WhatsApp follow-ups. Pick
 - Product comparison: https://talrivo.com/product-comparison/
 - Sample request: https://talrivo.com/sample-request/
 - OEM/ODM support: https://talrivo.com/oem-odm/
+- Gaming headset evidence checklist: https://talrivo.com/insights/gaming-headset-product-evidence-checklist/
 
 ## By Customer Type
 
@@ -37,6 +38,16 @@ Use this map when sending emails, LinkedIn messages or WhatsApp follow-ups. Pick
 | Bluetooth speakers | https://talrivo.com/bluetooth-speakers/ |
 | Type-C earphones | https://talrivo.com/type-c-earphones/ |
 
+## By Buyer Question
+
+| Buyer question | Best link |
+| --- | --- |
+| "Can I see wireless gaming headset options?" | https://talrivo.com/wireless-gaming-headsets/ |
+| "Can I request samples before order?" | https://talrivo.com/sample-request/ |
+| "Can you do my logo or package?" | https://talrivo.com/oem-odm/ |
+| "What should I check before choosing a gaming headset?" | https://talrivo.com/insights/gaming-headset-product-evidence-checklist/ |
+| "Do you have G941 color options?" | https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/ |
+
 ## Product Detail Links
 
 - G941 Tri-Mode ANC Gaming Headset: https://talrivo.com/gaming-headsets/g941-tri-mode-anc/
@@ -59,4 +70,3 @@ For cold outreach, avoid sending too many links in the first email. Recommended 
 1. One buyer-type page or one product-category page.
 2. One inquiry link: https://talrivo.com/#rfq
 3. Add a product detail link only after the customer replies or when their interest is already clear.
-
