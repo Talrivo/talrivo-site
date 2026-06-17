@@ -151,6 +151,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://talrivo.com/insights/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://talrivo.com/audio-products-for-ecommerce-sellers/</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
