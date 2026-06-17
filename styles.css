@@ -2016,6 +2016,16 @@ h2 {
   margin: 0;
 }
 
+.evidence-grid article img {
+  aspect-ratio: 1.2 / 0.86;
+  background: #f7f8f6;
+  border-radius: 8px;
+  display: block;
+  margin: 0 0 1rem;
+  object-fit: contain;
+  width: 100%;
+}
+
 .link-list {
   display: flex;
   flex-wrap: wrap;
