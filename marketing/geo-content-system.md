@@ -20,6 +20,18 @@ Prepare these items before publishing:
 
 Do not invent inquiry numbers, customer names, performance claims or test results. If a result is not verified, use neutral wording such as "product review note", "model comparison" or "sample discussion point".
 
+Record every usable proof point in `marketing/geo-evidence-log.md` before turning it into an article or social post.
+
+## MiKe-style publishing standard
+
+Use this standard for each topic:
+
+1. Pick one buyer question or search intent.
+2. Match the landing page title, opening paragraph, image evidence and internal links to that intent.
+3. Use real product evidence: product images, model details, sample notes, customer questions or comparison points.
+4. Add a practical next step: product page, sample request, product brief or contact path.
+5. Reuse the same topic on LinkedIn and Facebook with a link back to the website source.
+
 ## Website article
 
 Recommended structure:
