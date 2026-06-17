@@ -47,6 +47,8 @@ Use this map when sending emails, LinkedIn messages or WhatsApp follow-ups. Pick
 | "Can you do my logo or package?" | https://talrivo.com/oem-odm/ |
 | "What should I check before choosing a gaming headset?" | https://talrivo.com/insights/gaming-headset-product-evidence-checklist/ |
 | "Do you have G941 color options?" | https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/ |
+| "Should I choose wired or wireless gaming headsets?" | https://talrivo.com/insights/compare-wired-wireless-gaming-headsets/ |
+| "Do you have wired RGB gaming headset options?" | https://talrivo.com/wired-gaming-headsets/ |
 
 ## Product Detail Links
 
