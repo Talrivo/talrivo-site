@@ -30,6 +30,22 @@ https://talrivo.com/insights/gaming-headset-product-evidence-checklist/
 
 For sample discussion, please share target market, quantity range, preferred connection type, logo or packaging needs and sample timing.
 
+## Incomplete inquiry follow-up
+
+Hi [Name],
+
+Thanks for your message. To recommend the right TALRIVO models, could you please share a few details?
+
+1. Product category or model interest:
+2. Target market and sales channel:
+3. Estimated order quantity:
+4. Do you need samples first?
+5. Logo, color, packaging or manual language needs:
+6. Sample timing or launch timing:
+
+This guide may help:
+https://talrivo.com/rfq-guide/
+
 ## Logo and packaging question
 
 Hi [Name],
