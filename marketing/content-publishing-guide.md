@@ -12,7 +12,9 @@ Use one topic across the website and social channels:
 
 1. Website article or insight page: stable URL, full explanation, product links and structured headings.
 2. LinkedIn post: short professional summary that links to the website article or product page.
-3. Facebook post: visual product summary that links to the same website URL after the official Facebook page URL is confirmed.
+3. Facebook post: visual product summary from the official TALRIVO Facebook profile that links to the same website URL.
+
+For the full GEO workflow and reusable post templates, use `marketing/geo-content-system.md`.
 
 ## Article content package
 
