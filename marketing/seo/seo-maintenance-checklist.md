@@ -18,7 +18,7 @@
 - Add a clear title with product name and category.
 - Add a unique meta description based on buyer intent and product evidence.
 - Add canonical, Open Graph and Twitter tags.
-- Add Product structured data.
+- Use WebPage, FAQPage and BreadcrumbList structured data for B2B inquiry pages. Do not add Product offers, prices, ratings or reviews unless they are real and meant to be public.
 - Link the page from the relevant category page.
 - Add the URL to `sitemap.xml`.
 - Add the URL to `site-map/index.html`.
