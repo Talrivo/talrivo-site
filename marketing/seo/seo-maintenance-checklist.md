@@ -6,6 +6,7 @@
 - Check Google Search Console coverage and indexing status.
 - Review `marketing/search-console-ga4-setup.md` when setting up Search Console, GA4 or monthly reporting.
 - Inspect the top pages: home, gaming headsets, OEM/ODM, contact and RFQ guide.
+- Check mobile catalogue usability on the homepage after adding new products.
 - Search `site:talrivo.com TALRIVO` to confirm Google is showing important pages.
 - Review new inquiry emails and note which page or product attracted the lead.
 - Check the "Source context" block in inquiry emails and update `marketing/conversion-tracking-notes.md` if a useful campaign pattern appears.
