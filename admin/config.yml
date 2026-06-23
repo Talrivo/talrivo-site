@@ -1,0 +1,63 @@
+backend:
+  name: github
+  repo: Talrivo/talrivo-site
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+publish_mode: editorial_workflow
+site_url: "https://talrivo.com"
+display_url: "https://talrivo.com"
+logo_url: "/assets/brand/talrivo-wordmark-new-dark.png"
+
+collections:
+  - name: "insight_posts"
+    label: "Insight Articles"
+    folder: "content/insights"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Use lowercase English words, for example choose-wireless-gaming-headset." }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Status", name: "status", widget: "select", options: ["draft", "ready", "published"], default: "draft" }
+      - { label: "SEO Description", name: "description", widget: "text", hint: "Recommended length: 120-160 characters." }
+      - { label: "Primary Category", name: "category", widget: "select", options: ["Gaming Headsets", "Wireless Gaming Headsets", "Wired Gaming Headsets", "TWS Earbuds", "Bluetooth Speakers", "Bluetooth Headphones", "Type-C Earphones", "OEM/ODM", "Sample Request"] }
+      - { label: "Related Product Model", name: "related_model", widget: "string", required: false, hint: "Example: G941, G940, G946, TWS044F." }
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - { label: "Buyer Question", name: "buyer_question", widget: "string", required: false }
+      - { label: "Source Evidence", name: "source_evidence", widget: "text", required: false, hint: "Use product image, sample note, customer question or real product fact. Do not invent data." }
+      - { label: "LinkedIn Post Draft", name: "linkedin_post", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "video_posts"
+    label: "Product Videos"
+    folder: "content/videos"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Status", name: "status", widget: "select", options: ["draft", "ready", "published"], default: "draft" }
+      - { label: "Video URL", name: "video_url", widget: "string", hint: "Use YouTube, Vimeo, Cloudflare Stream or cloud storage URL. Do not upload large videos to GitHub." }
+      - { label: "Video Thumbnail", name: "thumbnail", widget: "image", required: false }
+      - { label: "Related Product Model", name: "related_model", widget: "string", required: false }
+      - { label: "Related Product URL", name: "related_product_url", widget: "string", required: false }
+      - { label: "Short Summary", name: "summary", widget: "text" }
+      - { label: "Key Points", name: "key_points", widget: "list", required: false }
+      - { label: "LinkedIn Caption", name: "linkedin_caption", widget: "text", required: false }
+      - { label: "Notes", name: "body", widget: "markdown", required: false }
+
+  - name: "content_notes"
+    label: "Content Notes"
+    files:
+      - name: "publishing_guide"
+        label: "Publishing Guide"
+        file: "marketing/content-publishing-guide.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }

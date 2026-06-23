@@ -55,7 +55,7 @@ If TALRIVO needs a real upload window, add a CMS or move to a managed platform.
 
 Practical options:
 
-- Keep GitHub Pages and add Decap CMS with GitHub login.
+- Keep GitHub Pages and add Decap CMS with GitHub login. The first admin files are now prepared in `/admin/`; see `marketing/cms-setup-notes.md`.
 - Move content publishing to WordPress and keep product pages as structured posts.
 - Use Shopify or Webflow if product catalogue editing and visual page editing become the priority.
 
