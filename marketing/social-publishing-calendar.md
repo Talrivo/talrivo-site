@@ -1,12 +1,12 @@
 # TALRIVO Social Publishing Calendar
 
-Use this calendar to publish one website topic across LinkedIn and Facebook with consistent links and UTM tracking.
+Use this calendar to publish one website topic across LinkedIn and future official social content with consistent links and UTM tracking.
 
 ## Posting Standard
 
 - Website is the source page.
 - LinkedIn is the professional explanation.
-- Facebook is the visual product post.
+- Future official social content can be the visual product post after a clean TALRIVO account is ready.
 - Every post should use a tracked URL.
 - Every post should link to one clear next step: product page, insight article, sample request or contact.
 
@@ -22,9 +22,9 @@ LinkedIn link:
 
 `https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/?utm_source=linkedin&utm_medium=social&utm_campaign=g941_color_options`
 
-Facebook link:
+Future official social link:
 
-`https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/?utm_source=facebook&utm_medium=social&utm_campaign=g941_color_options`
+`https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/?utm_source=future_social&utm_medium=social&utm_campaign=g941_color_options`
 
 Post angle:
 
@@ -41,7 +41,7 @@ Website source:
 Tracked links:
 
 - LinkedIn: `https://talrivo.com/insights/compare-wired-wireless-gaming-headsets/?utm_source=linkedin&utm_medium=social&utm_campaign=wired_wireless_comparison`
-- Facebook: `https://talrivo.com/insights/compare-wired-wireless-gaming-headsets/?utm_source=facebook&utm_medium=social&utm_campaign=wired_wireless_comparison`
+- Future social: `https://talrivo.com/insights/compare-wired-wireless-gaming-headsets/?utm_source=future_social&utm_medium=social&utm_campaign=wired_wireless_comparison`
 
 Post angle:
 
@@ -58,7 +58,7 @@ Website source:
 Tracked links:
 
 - LinkedIn: `https://talrivo.com/sample-request/?utm_source=linkedin&utm_medium=social&utm_campaign=sample_request_guide`
-- Facebook: `https://talrivo.com/sample-request/?utm_source=facebook&utm_medium=social&utm_campaign=sample_request_guide`
+- Future social: `https://talrivo.com/sample-request/?utm_source=future_social&utm_medium=social&utm_campaign=sample_request_guide`
 
 Post angle:
 
@@ -76,7 +76,7 @@ Website source:
 Tracked links:
 
 - LinkedIn: `https://talrivo.com/insights/gaming-headset-product-evidence-checklist/?utm_source=linkedin&utm_medium=social&utm_campaign=headset_evidence_checklist`
-- Facebook: `https://talrivo.com/insights/gaming-headset-product-evidence-checklist/?utm_source=facebook&utm_medium=social&utm_campaign=headset_evidence_checklist`
+- Future social: `https://talrivo.com/insights/gaming-headset-product-evidence-checklist/?utm_source=future_social&utm_medium=social&utm_campaign=headset_evidence_checklist`
 
 Post angle:
 
@@ -92,7 +92,7 @@ Website source:
 Tracked links:
 
 - LinkedIn: `https://talrivo.com/gaming-headsets/g941-tri-mode-anc/?utm_source=linkedin&utm_medium=social&utm_campaign=g941_model_page`
-- Facebook: `https://talrivo.com/gaming-headsets/g941-tri-mode-anc/?utm_source=facebook&utm_medium=social&utm_campaign=g941_model_page`
+- Future social: `https://talrivo.com/gaming-headsets/g941-tri-mode-anc/?utm_source=future_social&utm_medium=social&utm_campaign=g941_model_page`
 
 Post angle:
 
@@ -109,7 +109,7 @@ Website source:
 Tracked links:
 
 - LinkedIn: `https://talrivo.com/rfq-guide/?utm_source=linkedin&utm_medium=social&utm_campaign=rfq_guide`
-- Facebook: `https://talrivo.com/rfq-guide/?utm_source=facebook&utm_medium=social&utm_campaign=rfq_guide`
+- Future social: `https://talrivo.com/rfq-guide/?utm_source=future_social&utm_medium=social&utm_campaign=rfq_guide`
 
 Post angle:
 

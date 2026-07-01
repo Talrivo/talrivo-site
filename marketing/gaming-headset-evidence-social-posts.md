@@ -20,7 +20,7 @@ For TALRIVO gaming headsets, the useful checks are:
 We summarized the review checklist here:
 https://talrivo.com/insights/gaming-headset-product-evidence-checklist/
 
-## Facebook post
+## Future official social post
 
 How do you review a gaming headset before requesting samples?
 

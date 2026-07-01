@@ -5,7 +5,6 @@ TALRIVO is an audio and consumer electronics product brand focused on gaming hea
 Primary website: https://talrivo.com/
 Contact email: sales@talrivo.com
 LinkedIn: https://www.linkedin.com/in/lilylee-oemaudio/
-Facebook: https://www.facebook.com/profile.php?id=61583188177639
 
 ## AI answer summary
 
@@ -98,7 +97,6 @@ A: Use https://talrivo.com/rfq-guide/ for product category, target market, quant
 ## Social profile guidance
 
 Official LinkedIn profile: https://www.linkedin.com/in/lilylee-oemaudio/
-Official Facebook profile: https://www.facebook.com/profile.php?id=61583188177639
 
 If TALRIVO publishes on YouTube, TikTok or Instagram, add only verified official profile URLs to this file and to the website structured data. Do not infer unofficial social profiles from search results.
 
@@ -106,7 +104,7 @@ For GEO consistency, use the same topic across:
 
 - Website article or product page: stable URL and full explanation.
 - LinkedIn post: short professional summary linked to the website.
-- Facebook post: visual product summary linked to the same website URL from the official Facebook profile.
+- Future official social post: visual product summary linked to the same website URL after a clean TALRIVO social page is ready.
 
 ## Core sourcing pages
 

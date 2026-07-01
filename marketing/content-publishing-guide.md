@@ -14,7 +14,7 @@ Use one topic across the website and social channels:
 
 1. Website article or insight page: stable URL, full explanation, product links and structured headings.
 2. LinkedIn post: short professional summary that links to the website article or product page.
-3. Facebook post: visual product summary from the official TALRIVO Facebook profile that links to the same website URL.
+3. Future official social post: visual product summary from the future official TALRIVO social profile that links to the same website URL.
 
 For the full GEO workflow and reusable post templates, use `marketing/geo-content-system.md`.
 
@@ -35,7 +35,7 @@ For each article, prepare:
 - 1 hero image;
 - optional product video;
 - short LinkedIn version;
-- short Facebook version.
+- short future official social version.
 
 ## Video content package
 
@@ -47,7 +47,7 @@ For each video, prepare:
 - 1 paragraph summary;
 - product page link;
 - 3 key points shown in the video;
-- caption for LinkedIn and Facebook.
+- caption for LinkedIn and future official social content.
 
 ## CMS options
 

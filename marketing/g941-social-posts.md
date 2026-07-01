@@ -19,7 +19,7 @@ The product images also make several review points clear: USB-C receiver detail,
 We summarized the G941 image review notes here:
 https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/
 
-## Facebook post
+## Future official social post
 
 G941 wireless gaming headset: black-red or white?
 

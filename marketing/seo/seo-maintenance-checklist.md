@@ -11,7 +11,7 @@
 - Review new inquiry emails and note which page or product attracted the lead.
 - Check the "Source context" block in inquiry emails and update `marketing/conversion-tracking-notes.md` if a useful campaign pattern appears.
 - Review `marketing/seo/keyword-intent-matrix.md` before adding new content so the topic matches a real search intent and landing page.
-- Publish or schedule at least one LinkedIn and one Facebook post from `marketing/social-publishing-calendar.md`.
+- Publish or schedule at least one LinkedIn and one Future official social post from `marketing/social-publishing-calendar.md`.
 
 ## After Adding A New Product Page
 
@@ -24,7 +24,7 @@
 - Add the URL to `site-map/index.html`.
 - Add the URL to `llms.txt` if it is an important product.
 - Add related customer questions to `marketing/geo-evidence-log.md` if the page came from a real inquiry, product image or sample note.
-- Add one LinkedIn angle and one Facebook angle if the page has strong visual or buyer-question value.
+- Add one LinkedIn angle and one future official social angle if the page has strong visual or buyer-question value.
 
 ## Before Adding A Regional Page
 

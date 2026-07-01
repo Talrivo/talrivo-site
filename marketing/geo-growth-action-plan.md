@@ -27,10 +27,10 @@ File:
 What to check:
 
 - Inquiry emails should include source context.
-- Use tracked URLs for LinkedIn, Facebook, email and WhatsApp.
+- Use tracked URLs for LinkedIn, future official social content, email and WhatsApp.
 - Save useful buyer questions into `marketing/geo-evidence-log.md`.
 
-## 3. LinkedIn and Facebook Publishing
+## 3. LinkedIn and future official social content Publishing
 
 Status: first two-week calendar is ready.
 
@@ -41,7 +41,7 @@ File:
 Next action:
 
 - Publish Week 1 Day 1 post with the G941 image.
-- Use the tracked LinkedIn and Facebook URLs from the calendar.
+- Use the tracked LinkedIn and future official social content URLs from the calendar.
 - Record comments, messages and inquiries after posting.
 
 ## 4. Evidence-Based Articles and Videos
@@ -57,7 +57,7 @@ Files:
 Next action:
 
 - Before writing an article, add the product fact, image, sample note or customer question to the evidence log.
-- Turn each strong evidence item into one website article, one LinkedIn post and one Facebook post.
+- Turn each strong evidence item into one website article, one LinkedIn post and one sales follow-up message.
 - Use product images and short product videos as proof, not decoration.
 
 ## 5. Multilingual and Regional Pages
@@ -99,7 +99,7 @@ Thursday:
 
 Friday:
 
-- Publish the Facebook version and record reactions.
+- Publish the future official social version and record reactions.
 
 End of week:
 

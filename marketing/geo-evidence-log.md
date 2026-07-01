@@ -1,6 +1,6 @@
 # TALRIVO GEO Evidence Log
 
-Use this file to collect real product evidence before publishing website articles, LinkedIn posts or Facebook posts.
+Use this file to collect real product evidence before publishing website articles, LinkedIn posts or future official social posts.
 
 ## Rules
 
@@ -13,7 +13,7 @@ Use this file to collect real product evidence before publishing website article
 
 | Date | Product | Evidence type | Source file or link | Customer question | Website page | Social reuse |
 | --- | --- | --- | --- | --- | --- | --- |
-| 2026-06-17 | G941 Tri-Mode ANC Gaming Headset | Product images | G941 black-red and white product images | How do the color options and receiver details look? | `/insights/g941-color-options-wireless-gaming-headset/` | LinkedIn and Facebook product image post |
+| 2026-06-17 | G941 Tri-Mode ANC Gaming Headset | Product images | G941 black-red and white product images | How do the color options and receiver details look? | `/insights/g941-color-options-wireless-gaming-headset/` | LinkedIn and future official social content product image post |
 | 2026-06-17 | G940 Low-Latency Wireless Gaming Headset | Product page image set | `assets/catalog/g940-wireless/` | Which wireless model fits a stronger RGB gaming look? | `/gaming-headsets/g940-low-latency/` | Wireless gaming model comparison post |
 | 2026-06-17 | G946 RGB Gaming Headset | Product page image set | `assets/catalog/g946-rgb/` | Which model works as a visual RGB gaming headset hero? | `/gaming-headsets/g946-rgb/` | RGB gaming headset product post |
 
@@ -21,7 +21,7 @@ Use this file to collect real product evidence before publishing website article
 
 - Product image: visible design, color, receiver, cable, microphone, logo area, packaging view.
 - Product video: wearing angle, microphone movement, RGB effect, port detail, accessory view.
-- Customer question: repeated inquiry question from email, WhatsApp, LinkedIn, Facebook or trade show.
+- Customer question: repeated inquiry question from email, WhatsApp, LinkedIn, future official social content or trade show.
 - Sample note: what customers should check after receiving samples.
 - Model comparison: differences between two models or two category directions.
 
@@ -34,4 +34,4 @@ Before publishing, check:
 - The page uses real product evidence or a clear comparison.
 - The page links to related TALRIVO product pages.
 - The page has FAQ questions written in natural customer language.
-- The topic can be reused as one LinkedIn post and one Facebook post.
+- The topic can be reused as one LinkedIn post and one sales follow-up message.

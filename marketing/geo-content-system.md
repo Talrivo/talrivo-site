@@ -1,6 +1,6 @@
 # TALRIVO GEO Content System
 
-Use this workflow to turn one TALRIVO product topic into website content, LinkedIn content and Facebook content without rewriting the message from scratch.
+Use this workflow to turn one TALRIVO product topic into website content, LinkedIn content and future official social content without rewriting the message from scratch.
 
 ## Core method
 
@@ -22,7 +22,7 @@ Do not invent inquiry numbers, customer names, performance claims or test result
 
 Record every usable proof point in `marketing/geo-evidence-log.md` before turning it into an article or social post.
 
-Use `marketing/social-publishing-calendar.md` to decide which website topic should be pushed to LinkedIn and Facebook first.
+Use `marketing/social-publishing-calendar.md` to decide which website topic should be pushed to LinkedIn and future official social content after the account is ready.
 
 Use tracked URLs from `marketing/conversion-tracking-notes.md` or create new UTM links before publishing social posts.
 
@@ -34,7 +34,7 @@ Use this standard for each topic:
 2. Match the landing page title, opening paragraph, image evidence and internal links to that intent.
 3. Use real product evidence: product images, model details, sample notes, customer questions or comparison points.
 4. Add a practical next step: product page, sample request, product brief or contact path.
-5. Reuse the same topic on LinkedIn and Facebook with a link back to the website source.
+5. Reuse the same topic on LinkedIn and future official social content with a link back to the website source.
 
 ## Website article
 
@@ -66,7 +66,7 @@ We summarized the selection points here:
 https://talrivo.com/insights/compare-wired-wireless-gaming-headsets/
 ```
 
-## Facebook post
+## Future official social post
 
 Use a more visual and direct format:
 
@@ -79,12 +79,12 @@ Read the guide:
 https://talrivo.com/insights/compare-wired-wireless-gaming-headsets/
 ```
 
-Add a clear product image or short product video when posting on Facebook.
+Add a clear product image or short product video when posting on a future official social page.
 
 ## Reuse map
 
-- One website article becomes one LinkedIn post and one Facebook post.
-- One product video becomes one short website note, one LinkedIn caption and one Facebook caption.
+- One website article becomes one LinkedIn post and one sales follow-up message.
+- One product video becomes one short website note, one LinkedIn caption and one future social caption.
 - One customer question becomes one FAQ answer, one article section and one social post.
 
 ## Measurement loop
@@ -93,7 +93,7 @@ After publishing, review:
 
 - Search Console impressions and queries;
 - inquiry email source context;
-- LinkedIn and Facebook comments or messages;
+- LinkedIn and future official social content comments or messages;
 - questions that can become new FAQ or article sections.
 
 Keep the topic if it produces a real search query, useful social comment or buyer conversation. Otherwise, improve the page title, product evidence or internal links before publishing similar content again.
@@ -102,4 +102,3 @@ Keep the topic if it produces a real search query, useful social comment or buye
 
 - Website: https://talrivo.com/
 - LinkedIn: https://www.linkedin.com/in/lilylee-oemaudio/
-- Facebook: https://www.facebook.com/profile.php?id=61583188177639

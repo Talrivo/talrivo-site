@@ -1,6 +1,6 @@
 # TALRIVO Keyword Intent Matrix
 
-Use this matrix to choose the right landing page before writing new website content, LinkedIn posts, Facebook posts or customer outreach messages.
+Use this matrix to choose the right landing page before writing new website content, LinkedIn posts, future official social posts or customer outreach messages.
 
 ## Gaming headset keywords
 
@@ -35,4 +35,4 @@ For each keyword group:
 1. Match the page title and first paragraph to the search intent.
 2. Add product evidence such as images, receiver detail, microphone, logo area or sample notes.
 3. Add internal links to one category page, one model page and one contact or sample page.
-4. Reuse the topic as one LinkedIn post and one Facebook post.
+4. Reuse the topic as one LinkedIn post and one sales follow-up message.

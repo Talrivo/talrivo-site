@@ -35,7 +35,7 @@ Before choosing this model, buyers can review product images, sample availabilit
 Product page:
 https://talrivo.com/gaming-headsets/g946-rgb/
 
-## Facebook short posts
+## Future official social short posts
 
 G941:
 TALRIVO G941 wireless gaming headset: tri-mode positioning, boom microphone, black-red and white visual directions, and clear logo area for product review.
