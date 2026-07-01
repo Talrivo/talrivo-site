@@ -366,12 +366,16 @@ img {
   margin-bottom: clamp(2.2rem, 4vw, 3.2rem);
 }
 
+.section-heading h2 {
+  max-width: 780px;
+}
+
 h2 {
-  font-size: clamp(2.2rem, 4.8vw, 4.25rem);
+  font-size: clamp(2.15rem, 3.65vw, 3.65rem);
   font-weight: 700;
-  line-height: 0.98;
+  line-height: 1.04;
   margin: 0;
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .intro {
@@ -1283,10 +1287,14 @@ h2 {
   grid-template-columns: 1fr 1fr;
 }
 
+.about h2 {
+  max-width: 680px;
+}
+
 .about-content {
   color: var(--muted);
   font-size: 1.05rem;
-  margin: 2.35rem 0 0;
+  margin: 1.4rem 0 0;
 }
 
 .about-content p {
@@ -1363,9 +1371,9 @@ h2 {
 }
 
 .rfq-intro h2 {
-  font-size: clamp(2.65rem, 5.2vw, 5rem);
-  line-height: 0.98;
-  max-width: 620px;
+  font-size: clamp(2.35rem, 3.6vw, 3.45rem);
+  line-height: 1.04;
+  max-width: 720px;
 }
 
 .rfq-intro > p:not(.label) {
@@ -1721,8 +1729,8 @@ h2 {
   }
 
   .rfq-intro h2 {
-    font-size: clamp(2.35rem, 10vw, 3.4rem);
-    max-width: 12ch;
+    font-size: clamp(2.15rem, 8vw, 3rem);
+    max-width: 16ch;
   }
 
   .capability-grid,
