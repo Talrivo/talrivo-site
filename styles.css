@@ -3810,3 +3810,86 @@ h2 {
     flex-direction: column;
   }
 }
+
+
+/* Mobile usability pass: reduce bottom contact overlap and keep catalogue images readable. */
+@media (max-width: 620px) {
+  body {
+    padding-bottom: calc(5.4rem + env(safe-area-inset-bottom));
+  }
+
+  .contact-dock {
+    align-items: center;
+    bottom: calc(0.55rem + env(safe-area-inset-bottom));
+    gap: 0.4rem;
+    left: 0.7rem;
+    right: 0.7rem;
+    width: auto;
+  }
+
+  .contact-dock a,
+  .contact-dock button {
+    box-shadow: 0 8px 22px rgba(16, 23, 25, 0.16);
+    flex: 1 1 0;
+    font-size: 0.72rem;
+    min-height: 48px;
+    padding: 0.72rem 0.45rem;
+  }
+
+  .catalogue-grid {
+    gap: 0.75rem;
+  }
+
+  .catalogue-card {
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: 44% minmax(0, 1fr);
+    min-height: 190px;
+  }
+
+  .catalogue-card-image {
+    height: auto;
+    min-height: 190px;
+    object-fit: contain;
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  .catalogue-card-copy {
+    justify-content: center;
+    padding: 1rem 0.9rem;
+  }
+
+  .catalogue-card h3 {
+    font-size: clamp(1.05rem, 5vw, 1.32rem);
+    line-height: 1.12;
+  }
+
+  .catalogue-meta {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .contact-dock {
+    gap: 0.32rem;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .contact-dock a,
+  .contact-dock button {
+    font-size: 0.68rem;
+    min-height: 46px;
+  }
+
+  .catalogue-card {
+    grid-template-columns: 46% minmax(0, 1fr);
+    min-height: 178px;
+  }
+
+  .catalogue-card-image {
+    min-height: 178px;
+    padding: 0.65rem;
+  }
+}
