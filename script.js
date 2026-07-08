@@ -24,6 +24,7 @@ const catalogueGrid = document.querySelector("#catalogue-grid");
 const catalogueCount = document.querySelector("#catalogue-count");
 const catalogueTabs = document.querySelectorAll(".catalogue-tab");
 const productDialog = document.querySelector("#product-dialog");
+const contactDock = document.querySelector(".contact-dock");
 const wechatDialog = document.querySelector("#wechat-dialog");
 const wechatTriggers = document.querySelectorAll("[data-open-wechat]");
 const wechatClose = document.querySelector("#wechat-close");
@@ -540,6 +541,20 @@ form.addEventListener("submit", async (event) => {
   formStatus.textContent = `Your email draft is ready. If no mail window opens, email ${mailbox} directly.`;
   window.location.href = emailLink;
 });
+
+
+if (contactDock) {
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    if (window.matchMedia("(max-width: 620px)").matches && currentScrollY > 360 && currentScrollY > lastScrollY) {
+      contactDock.classList.add("is-hidden");
+    } else {
+      contactDock.classList.remove("is-hidden");
+    }
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+}
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 populateSourceFields();
