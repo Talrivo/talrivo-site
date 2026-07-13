@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://talrivo.com/sitemap.xml
+Sitemap: https://talrivo.com/video-sitemap.xml
