@@ -3992,3 +3992,8 @@ h2 {
     display: inline-flex;
   }
 }
+
+/* Keep catalogue filters functional at every viewport size. */
+.catalogue-card[hidden] {
+  display: none !important;
+}
