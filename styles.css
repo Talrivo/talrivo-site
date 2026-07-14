@@ -3940,3 +3940,50 @@ h2 {
     padding: 1rem 1rem 1.15rem !important;
   }
 }
+
+/* Mobile SEO-page navigation: these templates do not use the home-page menu button. */
+@media (max-width: 920px) {
+  .site-header:has(.seo-nav) {
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 66px;
+    padding: 0.65rem 1rem 0;
+  }
+
+  .site-header .seo-nav {
+    align-items: center;
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: row;
+    gap: 0.45rem;
+    margin: 0.6rem 0 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0 0 0.65rem;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .site-header .seo-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-header .seo-nav > a:not(.nav-action),
+  .site-header .seo-nav .nav-action {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    line-height: 1;
+    margin: 0;
+    min-height: 40px;
+    padding: 0.75rem 0.85rem;
+    white-space: nowrap;
+  }
+
+  .site-header .seo-nav > a:not(.nav-action) {
+    align-items: center;
+    background: rgba(12, 15, 16, 0.06);
+    border-radius: 999px;
+    display: inline-flex;
+  }
+}
