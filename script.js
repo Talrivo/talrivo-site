@@ -357,19 +357,26 @@ function renderPoster(product, poster) {
 function renderCatalogue(filter = "all") {
   const displayed = catalogue.filter((product) => filter === "all" || product.category === filter);
   catalogueCount.textContent = `${displayed.length} models`;
-  catalogueGrid.innerHTML = displayed.map((product, index) => `
-    <button class="catalogue-card" type="button" data-product-index="${catalogue.indexOf(product)}" aria-label="View ${product.model} ${product.name}">
-      <img class="catalogue-card-image" src="${assetPath(product, product.images[0])}" alt="${product.model} ${product.name}">
-      <span class="catalogue-card-copy">
-        <span class="series">${product.label}</span>
-        <h3>${product.model} ${product.name}</h3>
-        <span class="catalogue-meta"><span>${product.images.length} images</span><span class="${product.video ? "video-ready" : ""}">${product.video ? "Video" : "Video slot"}</span></span>
-        <span class="catalogue-action">View model</span>
-      </span>
-    </button>
-  `).join("");
+  if (!catalogueGrid.childElementCount) {
+    catalogueGrid.innerHTML = catalogue.map((product, index) => `
+      <button class="catalogue-card" type="button" data-product-index="${index}" data-product-category="${product.category}" aria-label="View ${product.model} ${product.name}">
+        <img class="catalogue-card-image" src="${assetPath(product, product.images[0])}" alt="${product.model} ${product.name}" loading="lazy" decoding="async" fetchpriority="low">
+        <span class="catalogue-card-copy">
+          <span class="series">${product.label}</span>
+          <h3>${product.model} ${product.name}</h3>
+          <span class="catalogue-meta"><span>${product.images.length} images</span><span class="${product.video ? "video-ready" : ""}">${product.video ? "Video" : "Video slot"}</span></span>
+          <span class="catalogue-action">View model</span>
+        </span>
+      </button>
+    `).join("");
+    catalogueGrid.addEventListener("click", (event) => {
+      const card = event.target.closest(".catalogue-card");
+      if (!card) return;
+      openProductDialog(catalogue[Number(card.dataset.productIndex)]);
+    });
+  }
   catalogueGrid.querySelectorAll(".catalogue-card").forEach((card) => {
-    card.addEventListener("click", () => openProductDialog(catalogue[Number(card.dataset.productIndex)]));
+    card.hidden = filter !== "all" && card.dataset.productCategory !== filter;
   });
 }
 
@@ -434,8 +441,12 @@ function openProductDialog(product) {
 
 catalogueTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
-    catalogueTabs.forEach((item) => item.classList.remove("active"));
+    catalogueTabs.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-selected", "false");
+    });
     tab.classList.add("active");
+    tab.setAttribute("aria-selected", "true");
     renderCatalogue(tab.dataset.catalogueFilter);
   });
 });

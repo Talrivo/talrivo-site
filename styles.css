@@ -58,6 +58,7 @@ textarea {
 }
 
 button {
+  color: inherit;
   cursor: pointer;
 }
 
@@ -1921,11 +1922,15 @@ h2 {
     height: 220px;
   }
 
-  .catalogue-card,
-  .product-card {
-    max-width: 100%;
-    width: 100%;
-  }
+.catalogue-card,
+.product-card {
+  max-width: 100%;
+  width: 100%;
+}
+
+.catalogue-card[hidden] {
+  display: none !important;
+}
 
   .catalogue-card h3 {
     font-size: 1.08rem;
