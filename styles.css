@@ -87,8 +87,10 @@ img {
 }
 
 .brand-logo {
+  aspect-ratio: 897 / 130;
   display: block;
   height: auto;
+  object-fit: contain;
   width: clamp(156px, 14vw, 190px);
 }
 
@@ -1579,6 +1581,14 @@ h2 {
 
 .footer-brand .brand-logo {
   width: 182px;
+}
+
+.footer-brand > img {
+  aspect-ratio: 897 / 130;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  width: min(182px, 100%);
 }
 
 .site-footer p,
