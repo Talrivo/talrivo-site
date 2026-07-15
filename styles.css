@@ -2093,6 +2093,25 @@ h2 {
   width: 100%;
 }
 
+.video-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.video-embed {
+  aspect-ratio: 16 / 9;
+  background: #090b0c;
+  border-radius: 8px;
+  margin: 0 0 1rem;
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .link-list {
   display: flex;
   flex-wrap: wrap;
