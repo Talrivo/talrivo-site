@@ -8,8 +8,24 @@ if (contactForm) {
   const utmSource = document.querySelector("#contact-utm-source");
   const utmMedium = document.querySelector("#contact-utm-medium");
   const utmCampaign = document.querySelector("#contact-utm-campaign");
+  const productInterest = contactForm.querySelector('select[name="product"]');
   const inquiryType = document.querySelector("#contact-inquiry-type");
   const params = new URLSearchParams(window.location.search);
+  const productSelections = {
+    "gaming-headsets": "Gaming Headset Collection",
+    "wireless-gaming-headsets": "Wireless Gaming Headset Series",
+    "wired-gaming-headsets": "Wired RGB Gaming Headset Series",
+    g941: "G941 Tri-Mode ANC Gaming Headset",
+    g940: "G940 Wireless Gaming Headset",
+    g946: "G946 RGB Wired Gaming Headset"
+  };
+  const inquirySelections = {
+    sample: "Sample request",
+    oem: "OEM / private-label project",
+    rfq: "Quotation request",
+    compare: "Model comparison",
+    documents: "Product document question"
+  };
 
   pageUrl.value = window.location.href;
   referrer.value = document.referrer || "Direct / not available";
@@ -17,8 +33,15 @@ if (contactForm) {
   utmMedium.value = params.get("utm_medium") || "";
   utmCampaign.value = params.get("utm_campaign") || "";
 
-  if (params.get("inquiry") === "sample") {
-    inquiryType.value = "Sample request";
+  const selectedProduct = productSelections[params.get("product")];
+  const selectedInquiry = inquirySelections[params.get("inquiry")];
+
+  if (selectedProduct) {
+    productInterest.value = selectedProduct;
+  }
+
+  if (selectedInquiry) {
+    inquiryType.value = selectedInquiry;
   }
 
   if (params.get("sent") === "1") {
