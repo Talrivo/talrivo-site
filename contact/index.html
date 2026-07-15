@@ -21,7 +21,8 @@
   <link rel="alternate" hreflang="x-default" href="https://talrivo.com/contact/">
   <title>Contact TALRIVO | Gaming Headset Samples &amp; OEM RFQ</title>
   <link rel="stylesheet" href="../styles.css?v=20260715b">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the official TALRIVO email for product inquiries?","acceptedAnswer":{"@type":"Answer","text":"Use sales@talrivo.com for gaming headset model details, samples, RFQs, logo and packaging discussions, and product document questions."}},{"@type":"Question","name":"What information should a buyer include in the first message?","acceptedAnswer":{"@type":"Answer","text":"Include the target market, sales channel, selected model or product category, intended use, estimated quantity range, sample timing, branding scope and documents to check."}},{"@type":"Question","name":"Where can a buyer submit the TALRIVO website RFQ form?","acceptedAnswer":{"@type":"Answer","text":"Use the Contact TALRIVO form on the home page. It collects company, market, buyer type, sales channel, product interest, quantity, timeline, branding needs and project requirements."}},{"@type":"Question","name":"Can buyers contact TALRIVO through LinkedIn or WeChat?","acceptedAnswer":{"@type":"Answer","text":"Yes. LinkedIn and WeChat can support initial communication. Model versions, samples, quotation scope, packaging and document requirements should also be recorded in the website form or email."}},{"@type":"Question","name":"Should sample, customization and quotation questions be sent together?","acceptedAnswer":{"@type":"Answer","text":"They can be included in one focused message when the model, market, quantity and buying stage are clear. Buyers can also use the sample request, customization and RFQ guide pages to prepare each step."}}]}</script>
+  <script src="../contact-form.js?v=20260715a" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the official TALRIVO email for product inquiries?","acceptedAnswer":{"@type":"Answer","text":"Use sales@talrivo.com for gaming headset model details, samples, RFQs, logo and packaging discussions, and product document questions."}},{"@type":"Question","name":"What information should a buyer include in the first message?","acceptedAnswer":{"@type":"Answer","text":"Include the target market, sales channel, selected model or product category, intended use, estimated quantity range, sample timing, branding scope and documents to check."}},{"@type":"Question","name":"Where can a buyer submit the TALRIVO website RFQ form?","acceptedAnswer":{"@type":"Answer","text":"Use the direct inquiry form on the Contact TALRIVO page or the RFQ form on the home page. Both collect the buyer, market, product, quantity, timing and project requirements needed for follow-up."}},{"@type":"Question","name":"Can buyers contact TALRIVO through LinkedIn or WeChat?","acceptedAnswer":{"@type":"Answer","text":"Yes. LinkedIn and WeChat can support initial communication. Model versions, samples, quotation scope, packaging and document requirements should also be recorded in the website form or email."}},{"@type":"Question","name":"Should sample, customization and quotation questions be sent together?","acceptedAnswer":{"@type":"Answer","text":"They can be included in one focused message when the model, market, quantity and buying stage are clear. Buyers can also use the sample request, customization and RFQ guide pages to prepare each step."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://talrivo.com/"},{"@type":"ListItem","position":2,"name":"Contact TALRIVO","item":"https://talrivo.com/contact/"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact TALRIVO for Gaming Headset Samples and OEM RFQs","url":"https://talrivo.com/contact/","description":"Contact TALRIVO for gaming headset samples, model comparison, OEM logo and packaging review, RFQ preparation and product documentation questions.","mainEntity":{"@type":"Organization","name":"TALRIVO","url":"https://talrivo.com/","email":"sales@talrivo.com","sameAs":["https://www.linkedin.com/in/lilylee-oemaudio/","https://www.youtube.com/@TALRIVO"]}}</script>
 </head>
@@ -44,12 +45,114 @@
         <h1>Contact TALRIVO for gaming headset samples and OEM RFQs</h1>
         <p>Choose the correct route for model comparison, sample requests, logo and packaging review, quotation preparation or product document questions. A focused first message helps connect the inquiry to the right model and buying stage.</p>
         <div class="hero-actions seo-cta-actions">
-          <a class="button primary" href="../#rfq">Open the RFQ Form</a>
+          <a class="button primary" href="#inquiry-form">Open the RFQ Form</a>
           <a class="email-link" href="mailto:sales@talrivo.com?subject=Gaming%20Headset%20OEM%20RFQ">sales@talrivo.com</a>
           <a class="button secondary" href="../rfq-guide/">Use the RFQ Template</a>
         </div>
       </div>
       <img src="../assets/catalog/g941-wireless/image-01.jpg" alt="Contact TALRIVO about G941 gaming headset samples and OEM RFQs" width="1400" height="953" fetchpriority="high" decoding="async">
+    </section>
+
+    <section class="seo-section rfq" id="direct-inquiry">
+      <div class="rfq-intro">
+        <p class="label">Direct website inquiry</p>
+        <h2>Send your product requirements without opening an email app</h2>
+        <p>The form sends the inquiry directly through the existing TALRIVO Web3Forms connection. Use email as a visible fallback if online submission is unavailable.</p>
+        <div class="rfq-checklist">
+          <strong>Include these details</strong>
+          <ul>
+            <li>Company, destination market and sales channel</li>
+            <li>Selected model or product category</li>
+            <li>Estimated quantity and sample timing</li>
+            <li>Logo, packaging, manual and document questions</li>
+          </ul>
+        </div>
+        <div class="direct-contact">
+          <span>Direct email fallback</span>
+          <a href="mailto:sales@talrivo.com?subject=Gaming%20Headset%20OEM%20RFQ">sales@talrivo.com</a>
+          <small>The email address remains visible for buyers who prefer to copy it into webmail.</small>
+        </div>
+      </div>
+      <form class="rfq-form" id="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="312b68a1-e59c-44e5-b332-d3ab0d29e32d">
+        <input type="hidden" name="from_name" value="TALRIVO Contact Page Inquiry">
+        <input type="hidden" name="redirect" value="https://talrivo.com/contact/?sent=1#inquiry-form">
+        <input type="hidden" name="page_url" id="contact-page-url">
+        <input type="hidden" name="referrer" id="contact-referrer">
+        <input type="hidden" name="utm_source" id="contact-utm-source">
+        <input type="hidden" name="utm_medium" id="contact-utm-medium">
+        <input type="hidden" name="utm_campaign" id="contact-utm-campaign">
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+        <div class="two-columns">
+          <label>Full name <input name="name" autocomplete="name" required></label>
+          <label>Business email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Company <input name="company" autocomplete="organization" required></label>
+          <label>Market / country <input name="market" autocomplete="country-name" required></label>
+          <label>Buyer type
+            <select name="buyer_type" required>
+              <option value="">Select buyer type</option>
+              <option>Importer or distributor</option>
+              <option>Audio brand</option>
+              <option>Retail buyer</option>
+              <option>Online store</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Sales channel <input name="channel" placeholder="Retail, online store, distribution, brand collection..."></label>
+        </div>
+        <div class="two-columns">
+          <label>Product interest
+            <select name="product" required>
+              <option value="">Select product interest</option>
+              <option>G941 Tri-Mode ANC Gaming Headset</option>
+              <option>G940 Wireless Gaming Headset</option>
+              <option>G946 RGB Wired Gaming Headset</option>
+              <option>Wireless Gaming Headset Series</option>
+              <option>Wired RGB Gaming Headset Series</option>
+              <option>TWS &amp; Open-Ear Earbuds</option>
+              <option>Bluetooth Headphones</option>
+              <option>Bluetooth Speakers</option>
+              <option>Type-C Earphones</option>
+              <option>Custom Audio Project</option>
+            </select>
+          </label>
+          <label>Inquiry type
+            <select name="inquiry_type" id="contact-inquiry-type" required>
+              <option value="">Select inquiry type</option>
+              <option>Sample request</option>
+              <option>OEM / private-label project</option>
+              <option>Quotation request</option>
+              <option>Model comparison</option>
+              <option>Product document question</option>
+            </select>
+          </label>
+          <label>Estimated order quantity
+            <select name="quantity" required>
+              <option value="">Select quantity range</option>
+              <option>Need sample evaluation first</option>
+              <option>Under 500 pcs</option>
+              <option>500 - 1,000 pcs</option>
+              <option>1,001 - 3,000 pcs</option>
+              <option>3,000+ pcs</option>
+            </select>
+          </label>
+          <label>Project timing
+            <select name="timeline">
+              <option value="">Select timing</option>
+              <option>Need samples this week</option>
+              <option>Need samples this month</option>
+              <option>Planning a new product line</option>
+              <option>Comparing products first</option>
+            </select>
+          </label>
+        </div>
+        <label>Project requirements
+          <textarea name="message" rows="5" required placeholder="Selected model, intended use, sample timing, logo or packaging needs, manual language and documents to check..."></textarea>
+        </label>
+        <label class="consent"><input name="consent" type="checkbox" required> I agree to be contacted about this product inquiry.</label>
+        <button class="button primary submit" type="submit">Send Product Inquiry</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
 
     <section class="seo-section">
@@ -74,7 +177,7 @@
     <section class="seo-section">
       <div class="section-heading"><div><p class="label">Official TALRIVO routes</p><h2>Keep product requirements connected</h2></div></div>
       <div class="link-list">
-        <a href="../#rfq">Website RFQ Form</a>
+        <a href="#inquiry-form">Website RFQ Form</a>
         <a href="mailto:sales@talrivo.com?subject=Gaming%20Headset%20OEM%20RFQ">sales@talrivo.com</a>
         <a href="../rfq-guide/">Gaming Headset RFQ Template</a>
         <a href="../sample-request/">Gaming Headset Sample Request</a>
@@ -91,7 +194,7 @@
       <div class="seo-grid">
         <article><h3>What is the official TALRIVO email for product inquiries?</h3><p>Use sales@talrivo.com for gaming headset model details, samples, RFQs, logo and packaging discussions, and product document questions.</p></article>
         <article><h3>What information should a buyer include in the first message?</h3><p>Include the target market, sales channel, selected model or product category, intended use, estimated quantity range, sample timing, branding scope and documents to check.</p></article>
-        <article><h3>Where can a buyer submit the TALRIVO website RFQ form?</h3><p>Use the Contact TALRIVO form on the home page. It collects company, market, buyer type, sales channel, product interest, quantity, timeline, branding needs and project requirements.</p></article>
+        <article><h3>Where can a buyer submit the TALRIVO website RFQ form?</h3><p>Use the direct inquiry form on the Contact TALRIVO page or the RFQ form on the home page. Both collect the buyer, market, product, quantity, timing and project requirements needed for follow-up.</p></article>
         <article><h3>Can buyers contact TALRIVO through LinkedIn or WeChat?</h3><p>Yes. LinkedIn and WeChat can support initial communication. Model versions, samples, quotation scope, packaging and document requirements should also be recorded in the website form or email.</p></article>
         <article><h3>Should sample, customization and quotation questions be sent together?</h3><p>They can be included in one focused message when the model, market, quantity and buying stage are clear. Buyers can also use the sample request, customization and RFQ guide pages to prepare each step.</p></article>
       </div>
@@ -101,7 +204,7 @@
       <h2>Send TALRIVO a focused product inquiry</h2>
       <p>Share the market, sales channel, selected model or category, intended use, quantity range, sample timing, branding scope and documents to check.</p>
       <div class="seo-cta-actions">
-        <a class="button primary" href="../#rfq">Open the RFQ Form</a>
+        <a class="button primary" href="#inquiry-form">Open the RFQ Form</a>
         <a class="email-link" href="mailto:sales@talrivo.com?subject=Gaming%20Headset%20OEM%20RFQ">sales@talrivo.com</a>
       </div>
     </section>
