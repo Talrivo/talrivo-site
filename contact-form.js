@@ -23,11 +23,14 @@ if (contactForm) {
     g940: "G940 Wireless Gaming Headset",
     g946: "G946 RGB Wired Gaming Headset",
     g935: "G935 Wireless Gaming Headset",
+    g947: "G947 Foldable Gaming Headset",
     b7: "B7 Bluetooth Over-Ear Headphone",
+    b9: "B9 Bluetooth Over-Ear Headphone",
     b10: "B10 Bluetooth Over-Ear Headphone",
     bh101: "BH-101 Portable Bluetooth Speaker",
     tws044f: "TWS044F Earbuds",
-    tc1: "TC-1 Type-C Earphone"
+    tc1: "TC-1 Type-C Earphone",
+    "custom-audio": "Custom Audio Project"
   };
   const inquirySelections = {
     sample: "Sample request",
