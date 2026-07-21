@@ -4,11 +4,11 @@ window.talrivoCatalog = [
     "name": "Tri-Mode ANC Gaming Headset",
     "category": "wireless",
     "label": "Wireless + ANC",
-    "summary": "Tri-mode wireless gaming headset direction with ANC positioning, long-use battery story and private-label hero-model potential.",
+    "summary": "Tri-mode wireless gaming headset with verified model data for importer, distributor and private-label sample comparison.",
     "specs": [
-      "Tri-mode direction",
-      "ANC positioning",
-      "Long-use battery profile"
+      "2.4G, Bluetooth and wired direction",
+      "50 mm driver; 1000 mAh battery listed",
+      "About 50 hours with lights off; selected version to confirm"
     ],
     "images": [
       "image-01.jpg",
@@ -27,11 +27,11 @@ window.talrivoCatalog = [
     "name": "Low-Latency Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Low-latency wireless gaming headset with dual-driver story, RGB visual accents and a futuristic hollowed design.",
+    "summary": "Low-latency wireless gaming headset with documented dual-driver construction, RGB accents and verified battery data.",
     "specs": [
-      "Dual-driver audio story",
-      "20 ms latency listed",
-      "RGB gaming accents"
+      "Documented dual-driver acoustic direction",
+      "400 mAh battery; about 20 hours listed",
+      "About 20 ms 2.4G latency and RGB accents"
     ],
     "images": [
       "image-01.jpg",
@@ -224,11 +224,11 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Gaming headset visual direction prepared for wireless product evaluation.",
+    "summary": "Tri-mode wireless gaming headset with a 53 mm driver and long-use battery profile for buyer sample evaluation.",
     "specs": [
-      "Wireless direction to confirm",
-      "Color options shown",
-      "Configuration details on request"
+      "2.4G, Bluetooth and wired direction",
+      "53 mm driver; 1000 mAh battery listed",
+      "About 50 hours with lights off; selected version to confirm"
     ],
     "images": [
       "image-01.png",
@@ -243,11 +243,11 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Clean wireless gaming headset direction with RGB accent styling for channel selection.",
+    "summary": "Lightweight wireless gaming headset with verified driver, battery and playtime data for channel selection.",
     "specs": [
-      "Wireless configuration to confirm",
-      "Boom microphone",
-      "OEM branding discussion"
+      "40 mm driver; 500 mAh battery listed",
+      "About 25 hours with lights off",
+      "About 20 ms 2.4G latency and detachable microphone"
     ],
     "images": [
       "image-01.jpg",
@@ -263,11 +263,11 @@ window.talrivoCatalog = [
     "name": "Bluetooth Over-Ear Headphone",
     "category": "bluetooth",
     "label": "Bluetooth Audio",
-    "summary": "Lifestyle over-ear audio direction for consumer electronics assortment enquiries.",
+    "summary": "Bluetooth 5.2 over-ear headphone with verified battery and playback data for consumer audio assortment review.",
     "specs": [
-      "Bluetooth direction",
-      "Over-ear design",
-      "Configuration to confirm"
+      "Bluetooth 5.2 and 40 mm driver",
+      "500 mAh battery; 15–20 hours listed",
+      "ANC direction listed; confirm the sample version"
     ],
     "images": [
       "image-01.jpg",
@@ -283,11 +283,11 @@ window.talrivoCatalog = [
     "name": "Bluetooth Over-Ear Headphone",
     "category": "bluetooth",
     "label": "Bluetooth Audio",
-    "summary": "Modern Bluetooth over-ear headphone direction for lifestyle audio assortments.",
+    "summary": "Bluetooth 5.3 over-ear headphone with verified battery and playback data for lifestyle audio assortments.",
     "specs": [
-      "Bluetooth audio",
-      "Foldable-style over-ear design",
-      "Color options shown"
+      "Bluetooth 5.3 + EDR and 40 mm driver",
+      "300 mAh battery; 16–22 hours listed",
+      "About 2 hours charging time"
     ],
     "images": [
       "image-01.jpg",
@@ -302,11 +302,11 @@ window.talrivoCatalog = [
     "name": "Bluetooth Over-Ear Headphone",
     "category": "bluetooth",
     "label": "Bluetooth Audio",
-    "summary": "Clean Bluetooth headphone direction for retail and private-label audio programmes.",
+    "summary": "Bluetooth 5.2 over-ear headphone with verified battery and playback data for retail and private-label programmes.",
     "specs": [
-      "Bluetooth audio",
-      "Over-ear design",
-      "OEM branding discussion"
+      "Bluetooth 5.2 and 40 mm driver",
+      "500 mAh battery; 20–30 hours listed",
+      "ANC direction listed; confirm the sample version"
     ],
     "images": [
       "image-01.jpg",
@@ -319,14 +319,14 @@ window.talrivoCatalog = [
   },
   {
     "model": "G946",
-    "name": "RGB Gaming Concept",
-    "category": "new",
-    "label": "New Design",
-    "summary": "High-impact RGB gaming headset concept for catalogue hero pages, private-label visual review and sample selection.",
+    "name": "Tri-Mode RGB Gaming Headset",
+    "category": "wireless",
+    "label": "Tri-Mode RGB",
+    "summary": "Tri-mode RGB gaming headset with documented driver, microphone and charging-dock direction for sample review.",
     "specs": [
-      "RGB hero visual",
-      "Boom microphone",
-      "Specification sheet to confirm"
+      "2.4G, Bluetooth and wired direction",
+      "50 mm driver and detachable microphone",
+      "RGB charging dock direction with USB hub"
     ],
     "images": [
       "image-01.jpg",
@@ -353,14 +353,14 @@ window.talrivoCatalog = [
   },
   {
     "model": "G947",
-    "name": "New Gaming Headset Concept",
-    "category": "new",
-    "label": "New Design",
-    "summary": "New-design headset visual candidate for upcoming product selection.",
+    "name": "Tri-Mode Gaming Headset",
+    "category": "wireless",
+    "label": "Tri-Mode",
+    "summary": "Tri-mode gaming headset with documented driver, microphone and aluminum-frame direction for sample review.",
     "specs": [
-      "New design candidate",
-      "Specifications on request",
-      "Availability to confirm"
+      "2.4G, Bluetooth and wired direction",
+      "50 mm driver and detachable microphone",
+      "Anodized aluminum frame with extendable arm"
     ],
     "images": [
       "image-01.jpg",
