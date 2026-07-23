@@ -256,7 +256,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g935-wireless",
-    "video": null
+    "video": "https://www.youtube.com/embed/XMgEENG5Uhc"
   },
   {
     "model": "B7",

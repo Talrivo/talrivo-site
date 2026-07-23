@@ -21,4 +21,16 @@
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
+  <url>
+    <loc>https://talrivo.com/gaming-headsets/g935-wireless/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/XMgEENG5Uhc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>TALRIVO G935 Wireless Gaming Headset | Factory and Product Showcase</video:title>
+      <video:description>A 37-second TALRIVO G935 factory-line and finished-product montage for importers, distributors and private-label gaming audio buyers.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/XMgEENG5Uhc</video:player_loc>
+      <video:duration>37</video:duration>
+      <video:publication_date>2026-07-22</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
 </urlset>
