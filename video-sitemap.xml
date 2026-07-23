@@ -33,4 +33,16 @@
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
+  <url>
+    <loc>https://talrivo.com/gaming-headsets/g938-wireless/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/6Kt5jRpj-uw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>TALRIVO G938 Tri-Mode Wireless Gaming Headset | Product Film</video:title>
+      <video:description>A 40-second TALRIVO G938 tri-mode wireless gaming headset product film for importers, distributors and private-label audio buyers.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/6Kt5jRpj-uw</video:player_loc>
+      <video:duration>40</video:duration>
+      <video:publication_date>2026-07-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
 </urlset>
