@@ -2097,6 +2097,42 @@ h2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.video-link-grid article img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-thumb {
+  color: var(--white);
+  display: block;
+  margin: 0 0 1rem;
+  position: relative;
+}
+
+.video-thumb span {
+  background: rgba(9, 11, 12, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  bottom: 1rem;
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  left: 1rem;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.g941-evidence-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.g941-evidence-grid article img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .video-embed {
   aspect-ratio: 16 / 9;
   background: #090b0c;
@@ -2236,6 +2272,10 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .g941-evidence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .buyer-summary {
     grid-template-columns: 1fr;
   }
@@ -2253,6 +2293,10 @@ h2 {
   }
 
   .seo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .g941-evidence-grid {
     grid-template-columns: 1fr;
   }
 
