@@ -2112,6 +2112,7 @@ h2 {
   width: 100%;
 }
 
+.g935-page .seo-hero,
 .g938-page .seo-hero,
 .g941-page .seo-hero {
   grid-template-columns: minmax(0, 0.9fr) minmax(380px, 0.82fr);
@@ -2120,6 +2121,7 @@ h2 {
   padding-top: clamp(2.2rem, 4.2vw, 3.4rem);
 }
 
+.g935-page .seo-hero h1,
 .g938-page .seo-hero h1,
 .g941-page .seo-hero h1 {
   font-size: clamp(2.2rem, 3.25vw, 3.2rem);
@@ -2127,6 +2129,7 @@ h2 {
   max-width: 560px;
 }
 
+.g935-page .seo-hero.product-detail img,
 .g938-page .seo-hero.product-detail img,
 .g941-page .seo-hero.product-detail img {
   aspect-ratio: 4 / 3;
@@ -2135,12 +2138,14 @@ h2 {
   padding: 0;
 }
 
+.g935-page .seo-section,
 .g938-page .seo-section,
 .g941-page .seo-section {
   padding-bottom: clamp(2.3rem, 4.4vw, 3.8rem);
   padding-top: clamp(2.3rem, 4.4vw, 3.8rem);
 }
 
+.g935-page .section-heading,
 .g938-page .section-heading,
 .g941-page .section-heading {
   gap: clamp(1.5rem, 4vw, 3rem);
@@ -2148,6 +2153,7 @@ h2 {
   padding-bottom: 1rem;
 }
 
+.g935-page .section-heading h2,
 .g938-page .section-heading h2,
 .g941-page .section-heading h2 {
   font-size: clamp(1.75rem, 2.7vw, 2.65rem);
@@ -2155,6 +2161,7 @@ h2 {
   max-width: 640px;
 }
 
+.g935-page .section-heading .intro,
 .g938-page .section-heading .intro,
 .g941-page .section-heading .intro {
   font-size: 0.98rem;
@@ -2201,6 +2208,7 @@ h2 {
   line-height: 1.45;
 }
 
+.g935-media-summary,
 .g938-media-summary,
 .g941-media-summary {
   align-items: start;
@@ -2209,6 +2217,7 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.g935-media-summary article,
 .g938-media-summary article,
 .g941-media-summary article {
   border: 1px solid var(--line);
@@ -2216,6 +2225,7 @@ h2 {
   padding: 1.25rem;
 }
 
+.g935-media-summary article img,
 .g938-media-summary article img,
 .g941-media-summary article img {
   aspect-ratio: auto;
@@ -2228,12 +2238,14 @@ h2 {
   width: 100%;
 }
 
+.g935-media-summary h3,
 .g938-media-summary h3,
 .g941-media-summary h3 {
   font-size: 1.02rem;
   margin: 0 0 0.65rem;
 }
 
+.g935-media-summary p,
 .g938-media-summary p,
 .g941-media-summary p {
   color: var(--muted);
@@ -2411,6 +2423,7 @@ h2 {
   }
 
   .g941-video-links,
+  .g935-media-summary,
   .g938-media-summary,
   .g941-media-summary,
   .g941-proof-list {
@@ -2443,6 +2456,7 @@ h2 {
   }
 
   .g941-video-links,
+  .g935-media-summary,
   .g938-media-summary,
   .g941-media-summary,
   .g941-proof-list {
