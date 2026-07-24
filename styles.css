@@ -2184,9 +2184,10 @@ h2 {
 }
 
 .g941-media-summary {
+  align-items: start;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .g941-media-summary article {
@@ -2196,10 +2197,11 @@ h2 {
 }
 
 .g941-media-summary article img {
-  aspect-ratio: 1 / 0.78;
+  aspect-ratio: auto;
   background: #f7f8f6;
   border-radius: 8px;
   display: block;
+  height: auto;
   margin: 0 0 1rem;
   object-fit: contain;
   width: 100%;
@@ -2243,6 +2245,22 @@ h2 {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.45;
+}
+
+.g941-color-grid {
+  align-items: start;
+}
+
+.g941-color-grid article img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.g941-color-grid .g941-compact-note {
+  align-self: start;
+  box-shadow: none;
+  min-height: 0;
 }
 
 .link-list {
