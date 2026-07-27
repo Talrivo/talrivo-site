@@ -4326,3 +4326,90 @@ h2 {
 .catalogue-card[hidden] {
   display: none !important;
 }
+
+/* Final home hero override: keep the new G938 cinematic image full-bleed. */
+.brand-hero .hero-media {
+  background: transparent !important;
+  box-shadow: none !important;
+  height: 100% !important;
+  inset: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  padding: 0 !important;
+  right: auto !important;
+  top: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+.brand-hero .hero-shade {
+  background:
+    linear-gradient(90deg, rgba(8, 10, 11, 1) 0%, rgba(8, 10, 11, 0.96) 34%, rgba(8, 10, 11, 0.42) 58%, rgba(8, 10, 11, 0.04) 100%),
+    linear-gradient(180deg, rgba(8, 10, 11, 0.04) 0%, rgba(8, 10, 11, 0.68) 100%) !important;
+}
+
+.brand-hero .hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 920px) {
+  .brand-hero .hero-media {
+    object-position: 62% center !important;
+  }
+
+  .brand-hero .hero-shade {
+    background:
+      linear-gradient(90deg, rgba(8, 10, 11, 1) 0%, rgba(8, 10, 11, 0.9) 46%, rgba(8, 10, 11, 0.28) 100%),
+      linear-gradient(180deg, rgba(8, 10, 11, 0.1) 0%, rgba(8, 10, 11, 0.82) 100%) !important;
+  }
+
+  .brand-hero .hero-copy {
+    box-sizing: border-box !important;
+    max-width: none !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    width: 100vw !important;
+  }
+
+  .brand-hero .label,
+  .brand-hero .hero-line,
+  .brand-hero .hero-detail {
+    max-width: min(calc(100vw - 2.5rem), 34rem) !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
+
+  .brand-hero h1 {
+    max-width: calc(100vw - 2.5rem) !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .brand-hero .hero-actions .button {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-hero .hero-copy {
+    width: min(100vw, 390px) !important;
+  }
+
+  .brand-hero .label,
+  .brand-hero h1,
+  .brand-hero .hero-line,
+  .brand-hero .hero-detail,
+  .brand-hero .hero-actions,
+  .brand-hero .hero-proof {
+    max-width: 350px !important;
+  }
+
+  .brand-hero .hero-line {
+    font-size: clamp(1rem, 4.2vw, 1.18rem) !important;
+  }
+
+  .brand-hero .label {
+    font-size: 0.68rem !important;
+    line-height: 1.35 !important;
+  }
+}
