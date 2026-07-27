@@ -2054,6 +2054,49 @@ h2 {
   text-underline-offset: 0.2em;
 }
 
+.table-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.sample-check-table {
+  border-collapse: collapse;
+  min-width: 760px;
+  width: 100%;
+}
+
+.sample-check-table th,
+.sample-check-table td {
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 0.95rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.sample-check-table th {
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sample-check-table td {
+  color: var(--muted);
+}
+
+.sample-check-table td:first-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.sample-check-table tr:last-child td {
+  border-bottom: 0;
+}
+
 .seo-section {
   margin: 0 auto;
   max-width: var(--max);
@@ -2208,6 +2251,7 @@ h2 {
   line-height: 1.45;
 }
 
+.sample-image-grid,
 .g935-media-summary,
 .g938-media-summary,
 .g941-media-summary {
@@ -2217,6 +2261,7 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.sample-image-grid article,
 .g935-media-summary article,
 .g938-media-summary article,
 .g941-media-summary article {
@@ -2225,6 +2270,7 @@ h2 {
   padding: 1.25rem;
 }
 
+.sample-image-grid article img,
 .g935-media-summary article img,
 .g938-media-summary article img,
 .g941-media-summary article img {
@@ -2238,6 +2284,7 @@ h2 {
   width: 100%;
 }
 
+.sample-image-grid h3,
 .g935-media-summary h3,
 .g938-media-summary h3,
 .g941-media-summary h3 {
@@ -2245,6 +2292,7 @@ h2 {
   margin: 0 0 0.65rem;
 }
 
+.sample-image-grid p,
 .g935-media-summary p,
 .g938-media-summary p,
 .g941-media-summary p {
@@ -2423,6 +2471,7 @@ h2 {
   }
 
   .g941-video-links,
+  .sample-image-grid,
   .g935-media-summary,
   .g938-media-summary,
   .g941-media-summary,
@@ -2456,6 +2505,7 @@ h2 {
   }
 
   .g941-video-links,
+  .sample-image-grid,
   .g935-media-summary,
   .g938-media-summary,
   .g941-media-summary,
