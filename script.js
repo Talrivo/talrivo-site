@@ -347,8 +347,9 @@ function renderPoster(product, poster) {
   posterEyebrow.textContent = poster.eyebrow;
   posterTitle.textContent = poster.title;
   posterSubtitle.textContent = poster.subtitle;
-  posterImage.src = assetPath(product, product.images[0]);
-  posterImage.alt = `${product.model} ${product.name} poster preview`;
+  posterImage.removeAttribute("src");
+  posterImage.alt = "";
+  posterImage.hidden = true;
   posterCalloutLeft.textContent = poster.callouts[0];
   posterCalloutRight.textContent = poster.callouts[1];
   posterFooter.textContent = poster.footer;
@@ -422,9 +423,6 @@ function openProductDialog(product) {
       thumbnailList.querySelectorAll("button").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       dialogMainImage.src = assetPath(product, button.dataset.image);
-      if (!dialogPoster.classList.contains("hidden")) {
-        posterImage.src = assetPath(product, button.dataset.image);
-      }
     });
   });
   if (product.video) {

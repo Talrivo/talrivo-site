@@ -831,9 +831,9 @@ h2 {
 .poster-panel {
   aspect-ratio: 16 / 10;
   background:
-    linear-gradient(115deg, rgba(239, 49, 79, 0.28), transparent 28%),
-    radial-gradient(circle at 72% 34%, rgba(46, 213, 221, 0.22), transparent 31%),
-    linear-gradient(135deg, #11151a 0%, #1a2028 52%, #111417 100%);
+    linear-gradient(115deg, rgba(239, 49, 79, 0.22), transparent 30%),
+    radial-gradient(circle at 78% 28%, rgba(46, 213, 221, 0.18), transparent 33%),
+    linear-gradient(135deg, #11151a 0%, #182025 56%, #101416 100%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   box-shadow: 0 18px 46px rgba(16, 23, 25, 0.3);
@@ -871,7 +871,7 @@ h2 {
 
 .poster-copy {
   left: 7%;
-  max-width: 45%;
+  max-width: 72%;
   position: absolute;
   top: 12%;
   z-index: 2;
@@ -899,6 +899,7 @@ h2 {
   font-size: clamp(0.82rem, 1.7vw, 1rem);
   line-height: 1.45;
   margin: 0;
+  max-width: 31rem;
 }
 
 .poster-product {
@@ -911,6 +912,10 @@ h2 {
   right: 3%;
   width: 58%;
   z-index: 1;
+}
+
+.poster-product[hidden] {
+  display: none;
 }
 
 .poster-callout {
@@ -927,13 +932,14 @@ h2 {
 }
 
 .poster-callout--left {
-  bottom: 28%;
+  bottom: 18%;
   left: 7%;
 }
 
 .poster-callout--right {
   right: 7%;
-  top: 14%;
+  bottom: 18%;
+  top: auto;
 }
 
 .poster-footer {
@@ -944,7 +950,7 @@ h2 {
   font-size: 0.72rem;
   font-weight: 700;
   left: 7%;
-  max-width: 48%;
+  max-width: 62%;
   padding: 0.55rem 0.7rem;
   position: absolute;
   text-transform: uppercase;
