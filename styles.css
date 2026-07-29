@@ -2161,6 +2161,7 @@ h2 {
   width: 100%;
 }
 
+.g926-page .seo-hero,
 .g935-page .seo-hero,
 .g938-page .seo-hero,
 .g941-page .seo-hero {
@@ -2170,6 +2171,7 @@ h2 {
   padding-top: clamp(2.2rem, 4.2vw, 3.4rem);
 }
 
+.g926-page .seo-hero h1,
 .g935-page .seo-hero h1,
 .g938-page .seo-hero h1,
 .g941-page .seo-hero h1 {
@@ -2178,6 +2180,7 @@ h2 {
   max-width: 560px;
 }
 
+.g926-page .seo-hero.product-detail img,
 .g935-page .seo-hero.product-detail img,
 .g938-page .seo-hero.product-detail img,
 .g941-page .seo-hero.product-detail img {
@@ -2187,6 +2190,7 @@ h2 {
   padding: 0;
 }
 
+.g926-page .seo-section,
 .g935-page .seo-section,
 .g938-page .seo-section,
 .g941-page .seo-section {
@@ -2194,6 +2198,7 @@ h2 {
   padding-top: clamp(2.3rem, 4.4vw, 3.8rem);
 }
 
+.g926-page .section-heading,
 .g935-page .section-heading,
 .g938-page .section-heading,
 .g941-page .section-heading {
@@ -2202,6 +2207,7 @@ h2 {
   padding-bottom: 1rem;
 }
 
+.g926-page .section-heading h2,
 .g935-page .section-heading h2,
 .g938-page .section-heading h2,
 .g941-page .section-heading h2 {
@@ -2210,6 +2216,7 @@ h2 {
   max-width: 640px;
 }
 
+.g926-page .section-heading .intro,
 .g935-page .section-heading .intro,
 .g938-page .section-heading .intro,
 .g941-page .section-heading .intro {
@@ -2258,6 +2265,7 @@ h2 {
 }
 
 .sample-image-grid,
+.g926-media-summary,
 .g935-media-summary,
 .g938-media-summary,
 .g941-media-summary {
@@ -2268,6 +2276,7 @@ h2 {
 }
 
 .sample-image-grid article,
+.g926-media-summary article,
 .g935-media-summary article,
 .g938-media-summary article,
 .g941-media-summary article {
@@ -2277,6 +2286,7 @@ h2 {
 }
 
 .sample-image-grid article img,
+.g926-media-summary article img,
 .g935-media-summary article img,
 .g938-media-summary article img,
 .g941-media-summary article img {
@@ -2291,6 +2301,7 @@ h2 {
 }
 
 .sample-image-grid h3,
+.g926-media-summary h3,
 .g935-media-summary h3,
 .g938-media-summary h3,
 .g941-media-summary h3 {
@@ -2299,6 +2310,7 @@ h2 {
 }
 
 .sample-image-grid p,
+.g926-media-summary p,
 .g935-media-summary p,
 .g938-media-summary p,
 .g941-media-summary p {
@@ -2478,6 +2490,7 @@ h2 {
 
   .g941-video-links,
   .sample-image-grid,
+  .g926-media-summary,
   .g935-media-summary,
   .g938-media-summary,
   .g941-media-summary,
@@ -2512,6 +2525,7 @@ h2 {
 
   .g941-video-links,
   .sample-image-grid,
+  .g926-media-summary,
   .g935-media-summary,
   .g938-media-summary,
   .g941-media-summary,

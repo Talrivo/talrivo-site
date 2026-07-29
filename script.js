@@ -115,13 +115,13 @@ const detailLibrary = {
   },
   "G927-wireless": {
     highlights: ["RGB dynamic running light", "Rotating microphone design", "Metal mesh earcup detail with large stainless-steel bar", "Single-headband structure with gaming-forward styling"],
-    technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    technical: [["Driver", "50 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
     fit: "Good for buyers looking for a strong gaming visual with rotating mic and textured earcup design.",
     oem: "Recommended for branded gaming bundles, sample review, and market-specific color direction."
   },
   "G926-wireless": {
     highlights: ["RGB dynamic running light", "Plug-in microphone and stainless-steel support bar", "Metal mesh earcups with cool string design", "Wireless gaming direction for mainstream channels"],
-    technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    technical: [["Driver", "50 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
     fit: "Suitable for mainstream wireless gaming assortments where RGB appearance and practical microphone design matter.",
     oem: "Good candidate for private-label packaging and entry-to-mid gaming channel ranges."
   },

@@ -148,11 +148,11 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Wireless gaming visual direction with product demonstration video prepared for buyer review.",
+    "summary": "Wireless gaming visual direction with 50 mm driver positioning for buyer review.",
     "specs": [
       "2.4 GHz direction",
-      "Specification sheet on request",
-      "Video candidate available"
+      "50 mm driver direction",
+      "Specification sheet on request"
     ],
     "images": [
       "image-01.jpg",
@@ -167,11 +167,11 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Wireless gaming design candidate with supporting product video for sourcing review.",
+    "summary": "Wireless gaming design candidate with 50 mm driver positioning for sourcing review.",
     "specs": [
       "Wireless direction",
-      "OEM discussion available",
-      "Video candidate available"
+      "50 mm driver direction",
+      "OEM discussion available"
     ],
     "images": [
       "image-01.jpg",
