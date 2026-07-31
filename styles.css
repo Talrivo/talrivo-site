@@ -2226,9 +2226,8 @@ h2 {
 
 .g941-video-links,
 .product-video-links {
-  border-bottom: 1px solid var(--line);
-  border-top: 1px solid var(--line);
   display: grid;
+  gap: 0.85rem;
 }
 
 .g941-video-links {
@@ -2241,15 +2240,55 @@ h2 {
 
 .g941-video-links a,
 .product-video-links a {
+  background: #ffffff;
+  border: 1px solid rgba(12, 15, 16, 0.12);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 34px rgba(16, 23, 25, 0.06);
   color: var(--ink);
   display: grid;
   gap: 0.35rem;
-  padding: 1.35rem 1.5rem;
+  min-height: 104px;
+  padding: 1.25rem 1.4rem 1.25rem 5.1rem;
+  position: relative;
   text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.g941-video-links a::before,
+.product-video-links a::before {
+  background: var(--ink);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  content: "";
+  height: 46px;
+  left: 1.45rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+}
+
+.g941-video-links a::after,
+.product-video-links a::after {
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid var(--white);
+  border-top: 8px solid transparent;
+  content: "";
+  left: 2.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.g941-video-links a:hover,
+.product-video-links a:hover {
+  border-color: var(--ink);
+  box-shadow: 0 18px 40px rgba(16, 23, 25, 0.1);
+  transform: translateY(-1px);
 }
 
 .g941-video-links a + a {
-  border-left: 1px solid var(--line);
+  border-left: 1px solid rgba(12, 15, 16, 0.12);
 }
 
 .g941-video-links strong,
