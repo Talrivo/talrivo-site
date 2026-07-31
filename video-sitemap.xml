@@ -44,5 +44,13 @@
       <video:publication_date>2026-07-23T00:00:00+08:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/gJ437FNGo9E/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>TALRIVO G938 Wireless Gaming Headset | Gaming Audio Listening Check</video:title>
+      <video:description>A TALRIVO G938 gaming audio listening check video for reviewing footsteps, direction, distance cues and voice-chat balance during sample evaluation.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/gJ437FNGo9E</video:player_loc>
+      <video:publication_date>2026-07-31T00:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 </urlset>
