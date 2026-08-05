@@ -21,14 +21,16 @@ if (contactForm) {
     "type-c-earphones": "Type-C Earphones",
     g941: "G941 Tri-Mode ANC Gaming Headset",
     g940: "G940 Wireless Gaming Headset",
-    g946: "G946 RGB Wired Gaming Headset",
+    g946: "G946 Tri-Mode RGB Gaming Headset",
     g935: "G935 Wireless Gaming Headset",
-    g947: "G947 Foldable Gaming Headset",
+    g926: "G926 Wireless Gaming Headset",
+    g947: "G947 Tri-Mode Gaming Headset",
     b7: "B7 Bluetooth Over-Ear Headphone",
     b9: "B9 Bluetooth Over-Ear Headphone",
     b10: "B10 Bluetooth Over-Ear Headphone",
     bh101: "BH-101 Portable Bluetooth Speaker",
     tws044f: "TWS044F Earbuds",
+    earclip09s: "Earclip09S Open-Ear TWS Earbuds",
     tc1: "TC-1 Type-C Earphone",
     "custom-audio": "Custom Audio Project"
   };
