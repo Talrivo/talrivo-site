@@ -4540,6 +4540,7 @@ h2 {
 
   .seo-page .seo-hero,
   .seo-page .seo-section,
+  .seo-page .content-byline,
   .seo-page .seo-cta {
     box-sizing: border-box;
     max-width: 100vw !important;
@@ -4554,6 +4555,7 @@ h2 {
 
   .seo-page .seo-hero > div,
   .seo-page .seo-section > *,
+  .seo-page .content-byline > *,
   .seo-page .seo-cta > * {
     min-width: 0;
     max-width: min(100%, 340px);
@@ -4570,6 +4572,9 @@ h2 {
   .seo-page .section-heading .intro,
   .seo-page .seo-hero h1,
   .seo-page .seo-hero p,
+  .seo-page .content-byline strong,
+  .seo-page .content-byline span,
+  .seo-page .content-byline a,
   .seo-page .seo-section p {
     max-width: min(100%, 340px) !important;
     overflow-wrap: anywhere;
