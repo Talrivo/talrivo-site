@@ -24,7 +24,7 @@ Official inquiry email: sales@talrivo.com
 
 - [Audio Products for Importers](https://talrivo.com/audio-products-for-importers/): Destination-market planning, model review, samples, packaging, documents, and importer RFQ preparation.
 - [Audio Products for Distributors](https://talrivo.com/audio-products-for-distributors/): Regional assortment planning, headset range building, samples, and distribution-channel questions.
-- [Private-Label Audio Products](https://talrivo.com/private-label-audio-products/): Custom branding, packaging, sample, and private-label project preparation.
+- [Private-Label Audio Products](https://talrivo.com/private-label-audio-products/): Private-label gaming accessories and audio product planning across gaming headsets, Type-C earphones, Bluetooth speakers, TWS earbuds, samples, branding, packaging, and RFQ preparation.
 - [Audio Products for E-commerce Sellers](https://talrivo.com/audio-products-for-ecommerce-sellers/): Product evidence, listing preparation, sample review, and marketplace assortment planning.
 - [OEM and ODM Customization](https://talrivo.com/oem-odm/): Logo placement, color direction, packaging, user-manual language, and model-dependent customization.
 - [Sample Request](https://talrivo.com/sample-request/): Information buyers should prepare before requesting gaming headset, TWS earbud, Bluetooth speaker, Type-C earphone, and other audio product samples, including model, market, channel, quantity range, timing, branding, packaging, and document questions.
@@ -38,7 +38,7 @@ Official inquiry email: sales@talrivo.com
 - [Evaluate a Gaming Headset Sample Before Bulk Order](https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/): Sound, microphone, wireless stability, comfort, structure, packaging, documents, and change control.
 - [Gaming Headsets and Accessories Packaging Checklist](https://talrivo.com/insights/gaming-headset-packaging-accessories-checklist/): Buyer checklist for gaming headset packaging, receiver sets, cables, detachable microphones, manuals, package contents, optional accessories, and sample-version control.
 - [Gaming Headset Import Documents Checklist](https://talrivo.com/insights/gaming-headset-import-documents-checklist/): Destination market, product version, wireless configuration, labels, packaging, and available documents.
-- [Gaming Headset Microphone Quality Checklist](https://talrivo.com/insights/gaming-headset-microphone-performance/): Boom placement, keyboard noise, fan noise, voice naturalness, wireless call stability, failure signals, RFQ details, and sample review.
+- [Gaming Headset Microphone Quality Checklist](https://talrivo.com/insights/gaming-headset-microphone-performance/): Gaming headset microphone quality guide covering boom placement, keyboard noise, fan noise, voice naturalness, ENC balance, wireless call stability, failure signals, RFQ details, and sample review.
 - [Gaming Headset Product Evidence Checklist](https://talrivo.com/insights/gaming-headset-product-evidence-checklist/): Images, receiver details, microphone structure, comfort design, logo area, packaging, and sample checks.
 - [2.4G vs Bluetooth Wireless Headsets](https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/): Difference between Bluetooth and 2.4G wireless headsets, receiver setup, phone pairing, tri-mode direction, sample checks, and buyer comparison points.
 - [2.4G Wireless Gaming Headset Buying Guide](https://talrivo.com/insights/choose-2-4g-wireless-gaming-headset/): Receiver, microphone, sample, logo, packaging, RFQ, and claim-verification checklist.
@@ -49,7 +49,7 @@ Official inquiry email: sales@talrivo.com
 - [G941 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g941-tri-mode-anc/): TALRIVO G941 tri-mode wireless gaming headset page with 2.4G, Bluetooth and wired direction, 50mm driver, receiver detail, detachable boom microphone, color options, official videos, customization, and sample questions.
 - [G941 vs G940 Wireless Gaming Headsets](https://talrivo.com/insights/g941-vs-g940-wireless-gaming-headset/): Comparison by positioning, visual direction, receiver story, sample review, and buyer use case.
 - [G941 Color Options and Product Notes](https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/): Black-red and white directions, USB-C receiver detail, boom microphone, logo area, and image review.
-- [G940 Low-Latency Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g940-low-latency/): Wireless RGB model direction and sample-review questions.
+- [G940 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g940-low-latency/): TALRIVO G940 low-latency 2.4G wireless gaming headset direction with dual-driver construction, detachable microphone, RGB styling, model-code confirmation, and sample-review questions.
 - [G946 RGB Gaming Headset](https://talrivo.com/gaming-headsets/g946-rgb/): Wired RGB appearance, boom microphone, over-ear form, and custom product-line review.
 - [G938 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g938-wireless/): TALRIVO G938 tri-mode model page with documented 2.4G, Bluetooth, and wired direction, 53mm driver, detachable microphone, product videos, model images, and sample questions.
 - [G935 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g935-wireless/): Documented model specifications, supplied product images, official factory and product video, and sample-review questions.
@@ -57,15 +57,15 @@ Official inquiry email: sales@talrivo.com
 
 ## Other Audio Categories
 
-- [TWS Earbuds](https://talrivo.com/tws-earbuds/): In-ear, open-ear, and earclip directions, charging cases, samples, branding, packaging, and model-specific feature questions.
+- [TWS Earbuds](https://talrivo.com/tws-earbuds/): TWS Bluetooth earbuds category page for in-ear, open-ear, and earclip directions, Latin America auricular TWS Bluetooth searches, charging cases, samples, branding, packaging, and model-specific feature questions.
 - [TWS044F In-Ear TWS Earbuds](https://talrivo.com/tws-earbuds/tws044f/): In-ear TWS earbud model page with supplied case, wearing-fit, lifestyle, packing-list, sample-review, private-label, and RFQ-preparation details.
 - [Earclip09S Open-Ear TWS Earbuds](https://talrivo.com/tws-earbuds/earclip09s/): Clip-style open-ear TWS earbud model page with listed Bluetooth 6.0, 11 mm driver, charging case, color, packing-list, sample-review details, and comparison context against TWS044F.
 - [In-Ear vs Open-Ear TWS Earbuds for Private-Label Buyers](https://talrivo.com/insights/in-ear-vs-open-ear-tws-earbuds-private-label/): Buyer guide for deciding whether to sample TWS044F in-ear earbuds or Earclip09S open-ear earbuds first by channel, fit, leakage, calls, case, packaging, and RFQ readiness.
 - [Open-Ear TWS Earbuds for Private-Label Buyers](https://talrivo.com/insights/open-ear-tws-earbuds-private-label-buyers/): Buyer checklist for reviewing Earclip09S earclip fit, leakage, call clarity, battery, charging case, colors, packing list, compatibility, RFQ details, and comparison with TWS044F in-ear TWS.
 - [Compare TWS Earbuds Before Private-Label Sampling](https://talrivo.com/insights/compare-tws-earbuds-private-label-sampling/): TWS sample comparison by wearing style, charging case, call-use expectations, branding, packaging, quantity range, RFQ readiness, and two-model comparison between TWS044F and Earclip09S.
 - [Bluetooth Headphones](https://talrivo.com/bluetooth-headphones/): Over-ear Bluetooth headphone models for lifestyle audio collections.
-- [Bluetooth Speakers](https://talrivo.com/bluetooth-speakers/): Portable Bluetooth speaker model pages and product details.
-- [Type-C Earphones](https://talrivo.com/type-c-earphones/): Digital Type-C earphones and wired mobile-audio accessories.
+- [Bluetooth Speakers](https://talrivo.com/bluetooth-speakers/): Private-label Bluetooth speaker category page for samples, packaging, logo area, buyer questions, and mixed Type-C earphone bundle planning.
+- [Type-C Earphones](https://talrivo.com/type-c-earphones/): Private-label Type-C earphone category page for mobile-audio samples, packaging, branding, and mixed Bluetooth speaker bundle planning.
 
 ## Official Media and Identity
 
@@ -81,5 +81,5 @@ Official inquiry email: sales@talrivo.com
 ## Optional
 
 - [Europe Buyer Guide](https://talrivo.com/audio-products-for-europe-buyers/): Product review and inquiry preparation for European buyers.
-- [Latin America Buyer Guide](https://talrivo.com/audio-products-for-latin-america-buyers/): Product and channel planning for Latin American buyers.
+- [Latin America Buyer Guide](https://talrivo.com/audio-products-for-latin-america-buyers/): Product and channel planning for Latin America buyers, including gaming headsets, auriculares TWS Bluetooth, Type-C earphones, Bluetooth speakers, samples, packaging, and branding.
 - [Southeast Asia Buyer Guide](https://talrivo.com/audio-products-for-southeast-asia-buyers/): Product selection and inquiry preparation for Southeast Asian buyers.
