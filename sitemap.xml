@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://talrivo.com/wired-gaming-headsets/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -63,6 +63,12 @@
   <url>
     <loc>https://talrivo.com/gaming-headsets/g935-wireless/</loc>
     <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://talrivo.com/gaming-headsets/g936-lightweight/</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -255,6 +261,12 @@
   <url>
     <loc>https://talrivo.com/insights/gaming-headset-product-evidence-checklist/</loc>
     <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://talrivo.com/insights/gaming-headset-ear-cushion-material-sample-checklist/</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
