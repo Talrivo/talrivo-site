@@ -104,6 +104,7 @@ Official inquiry email: sales@talrivo.com
 - [G941 Product Showcase](https://youtu.be/N0jk4awPsBQ): Official G941 product presentation linked to the matching model page.
 - [G941 ENC Microphone Demonstration](https://youtu.be/E3jRux4sTdo): Official G941 microphone demonstration video.
 - [G935 Factory and Product Montage](https://youtu.be/XMgEENG5Uhc): Official G935 visual evidence linked to the matching model page.
+- [G936 PU vs Fabric Ear-Cushion Comparison](https://youtu.be/PF_bgaNaToo): Official G936 32-second material comparison linked to the matching product page and sample checklist.
 - [TALRIVO LinkedIn Contact](https://www.linkedin.com/in/lilylee-oemaudio/): Official professional profile connected to TALRIVO.
 - [Video Sitemap](https://talrivo.com/video-sitemap.xml): Search-engine video discovery file.
 - [XML Sitemap](https://talrivo.com/sitemap.xml): Canonical crawlable website URLs.
