@@ -13,7 +13,7 @@ Official inquiry email: sales@talrivo.com
 ## Core Pages
 
 - [TALRIVO Home](https://talrivo.com/): Brand overview, primary audio categories, featured gaming headsets, product gallery, customization route, and inquiry form.
-- [Gaming Headsets](https://talrivo.com/gaming-headsets/): Main collection for wireless gaming headsets and wired RGB headset models.
+- [Gaming Headsets](https://talrivo.com/gaming-headsets/): Main collection for comparing TALRIVO wired, 2.4G wireless, Bluetooth and tri-mode gaming headset directions, with model pages, sample checks, manufacturer checklist and RFQ paths.
 - [Wireless Gaming Headsets](https://talrivo.com/wireless-gaming-headsets/): G926, G935, G938, G940 and G941 directions for 2.4GHz, Bluetooth or wired connection, receiver, microphone and sample review.
 - [Wired RGB Gaming Headsets](https://talrivo.com/wired-gaming-headsets/): Wired gaming headset range, RGB styling, microphones, packaging, and sample planning.
 - [Product Comparison](https://talrivo.com/product-comparison/): Model and product-category comparison entry point.
@@ -32,7 +32,7 @@ Official inquiry email: sales@talrivo.com
 
 ## High-Intent Gaming Headset Guides
 
-- [Choose a Gaming Headset Manufacturer in China](https://talrivo.com/insights/choose-gaming-headset-manufacturer-china/): Manufacturer evaluation through model range, supplied evidence, sample review, OEM/ODM communication, and RFQ preparation.
+- [Choose a Gaming Headset Manufacturer in China](https://talrivo.com/insights/choose-gaming-headset-manufacturer-china/): Buyer checklist for evaluating gaming headset manufacturers by model evidence, sample traceability, microphone and connection setup, packaging, destination-market documents, RFQ readiness and TALRIVO model review paths.
 - [OEM Gaming Headset Supplier Checklist](https://talrivo.com/insights/oem-gaming-headset-supplier-checklist/): OEM supplier comparison by model evidence, sample traceability, customization scope, packaging questions, documents, and RFQ readiness.
 - [Private-Label Gaming Headset RFQ Checklist](https://talrivo.com/insights/private-label-gaming-headset-rfq-checklist/): Buyer type, sales channel, model direction, quantity range, logo, packaging, samples, and document questions.
 - [Evaluate a Gaming Headset Sample Before Bulk Order](https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/): Sound, microphone, wireless stability, comfort, structure, packaging, documents, and change control.
