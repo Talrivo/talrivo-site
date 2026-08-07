@@ -3950,5 +3950,1074 @@ window.talrivoCatalog = [
       "fit": "Suitable for buyers adding portable Bluetooth speakers to consumer audio assortments, especially channels that need RGB appearance and multi-mode playback.",
       "oem": "Recommended for logo, color, packaging, manual localization and market-specific accessory-set discussion after sample confirmation."
     }
+  },
+  {
+    "model": "BH-702",
+    "name": "Suspended-Button Wireless Mouse",
+    "category": "accessory",
+    "label": "Wireless Mouse",
+    "summary": "BH-702 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-702-suspended-button-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-702-suspended-button-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-701",
+    "name": "Suspended-Button Wireless Mouse",
+    "category": "accessory",
+    "label": "Wireless Mouse",
+    "summary": "BH-701 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg",
+      "image-12.jpg",
+      "image-13.jpg",
+      "image-14.jpg",
+      "image-15.jpg",
+      "image-16.jpg",
+      "image-17.jpg",
+      "image-18.jpg",
+      "image-19.jpg",
+      "image-20.jpg",
+      "image-21.jpg",
+      "image-22.jpg",
+      "image-23.jpg",
+      "image-24.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-701",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-701-suspended-button-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-703",
+    "name": "Suspended-Button Wireless Mouse",
+    "category": "accessory",
+    "label": "Wireless Mouse",
+    "summary": "BH-703 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg",
+      "image-12.jpg",
+      "image-13.jpg",
+      "image-14.jpg",
+      "image-15.jpg",
+      "image-16.jpg",
+      "image-17.jpg",
+      "image-18.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-703",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-703-suspended-button-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-706",
+    "name": "Suspended-Button Wireless Mouse",
+    "category": "accessory",
+    "label": "Wireless Mouse",
+    "summary": "BH-706 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-706-suspended-button-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-706-suspended-button-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-707",
+    "name": "Suspended-Button Wireless Mouse",
+    "category": "accessory",
+    "label": "Wireless Mouse",
+    "summary": "BH-707 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-707-suspended-button-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-707-suspended-button-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-601",
+    "name": "Wireless Mouse",
+    "category": "accessory",
+    "label": "Office Mouse",
+    "summary": "BH-601 Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-601-wireless-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-601-wireless-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-602-3",
+    "name": "Wireless Mouse Options",
+    "category": "accessory",
+    "label": "Office Mouse",
+    "summary": "BH-602-3 Wireless Mouse Options reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg",
+      "image-12.jpg",
+      "image-13.jpg",
+      "image-14.jpg",
+      "image-15.jpg",
+      "image-16.jpg",
+      "image-17.jpg",
+      "image-18.jpg",
+      "image-19.jpg",
+      "image-20.jpg",
+      "image-21.jpg",
+      "image-22.jpg",
+      "image-23.jpg",
+      "image-24.jpg",
+      "image-25.jpg",
+      "image-26.jpg",
+      "image-27.jpg",
+      "image-28.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-602",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-602-3-wireless-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-603 / BH-609",
+    "name": "Wireless Mouse Options",
+    "category": "accessory",
+    "label": "Office Mouse",
+    "summary": "BH-603 / BH-609 Wireless Mouse Options reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-603",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-603-bh-609-wireless-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-607-1",
+    "name": "Wired Mouse",
+    "category": "accessory",
+    "label": "Wired Mouse",
+    "summary": "BH-607-1 Wired Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg",
+      "image-12.jpg",
+      "image-13.jpg",
+      "image-14.jpg",
+      "image-15.jpg",
+      "image-16.jpg",
+      "image-17.jpg",
+      "image-18.jpg",
+      "image-19.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-607",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-607-1-wired-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-607-3",
+    "name": "Wireless Mouse",
+    "category": "accessory",
+    "label": "Wireless Mouse",
+    "summary": "BH-607-3 Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg",
+      "image-12.jpg",
+      "image-13.jpg",
+      "image-14.jpg",
+      "image-15.jpg",
+      "image-16.jpg",
+      "image-17.jpg",
+      "image-18.jpg",
+      "image-19.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-607",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-607-3-wireless-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-901-A",
+    "name": "Vertical Wireless Mouse",
+    "category": "accessory",
+    "label": "Vertical Mouse",
+    "summary": "BH-901-A Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-901-a-vertical-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-901-a-vertical-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-901-B",
+    "name": "Vertical Wireless Mouse",
+    "category": "accessory",
+    "label": "Vertical Mouse",
+    "summary": "BH-901-B Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-901-b-vertical-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-901-b-vertical-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-902",
+    "name": "Vertical Wireless Mouse",
+    "category": "accessory",
+    "label": "Vertical Mouse",
+    "summary": "BH-902 Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-902-vertical-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-902-vertical-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-905",
+    "name": "Vertical Wireless Mouse",
+    "category": "accessory",
+    "label": "Vertical Mouse",
+    "summary": "BH-905 Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-905",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-905-vertical-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-906",
+    "name": "Vertical Wireless Mouse",
+    "category": "accessory",
+    "label": "Vertical Mouse",
+    "summary": "BH-906 Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-906",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-906-vertical-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-207",
+    "name": "Three-Mode Gaming Mouse",
+    "category": "accessory",
+    "label": "Gaming Mouse",
+    "summary": "BH-207 Three-Mode Gaming Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-207",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-207-gaming-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-208",
+    "name": "Three-Mode Gaming Mouse",
+    "category": "accessory",
+    "label": "Gaming Mouse",
+    "summary": "BH-208 Three-Mode Gaming Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-208",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-208-gaming-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-215",
+    "name": "Business Wireless Mouse",
+    "category": "accessory",
+    "label": "Business Mouse",
+    "summary": "BH-215 Business Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-215-business-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-215-business-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-217",
+    "name": "Business Wireless Mouse",
+    "category": "accessory",
+    "label": "Business Mouse",
+    "summary": "BH-217 Business Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-217-business-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-217-business-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-218",
+    "name": "Business Wireless Mouse",
+    "category": "accessory",
+    "label": "Business Mouse",
+    "summary": "BH-218 Business Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-218-business-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-218-business-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-216",
+    "name": "AI Smart Mouse Reference",
+    "category": "accessory",
+    "label": "Smart Mouse",
+    "summary": "BH-216 AI Smart Mouse Reference reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-216-ai-smart-mouse.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-216-ai-smart-mouse/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-101 / BH-102",
+    "name": "Classic Mouse Series",
+    "category": "accessory",
+    "label": "Classic Mouse",
+    "summary": "BH-101 / BH-102 Classic Mouse Series reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "bh-101-bh-102-classic-mouse-series.jpg"
+    ],
+    "folder": "gaming-accessories/mouse-slide-evidence",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-101-bh-102-classic-mouse-series/"
+        ],
+        [
+          "Image source",
+          "PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
+  },
+  {
+    "model": "BH-703 Guochao",
+    "name": "Mecha Style Mouse",
+    "category": "accessory",
+    "label": "Creative Mouse",
+    "summary": "BH-703 Guochao Mecha Style Mouse reference for private-label gaming accessory and office peripheral sample review.",
+    "specs": [
+      "Mouse model reference from supplied PPT and image folder",
+      "Connection, battery, sensor and buttons to confirm by selected version",
+      "Logo, color and packaging discussion after sample review"
+    ],
+    "images": [
+      "image-01.jpg",
+      "image-02.jpg",
+      "image-03.jpg",
+      "image-04.jpg",
+      "image-05.jpg",
+      "image-06.jpg",
+      "image-07.jpg",
+      "image-08.jpg",
+      "image-09.jpg",
+      "image-10.jpg",
+      "image-11.jpg",
+      "image-12.jpg",
+      "image-13.jpg",
+      "image-14.jpg",
+      "image-15.jpg",
+      "image-16.jpg",
+      "image-17.jpg",
+      "image-18.jpg"
+    ],
+    "folder": "gaming-accessories/model-images/bh-703",
+    "video": null,
+    "details": {
+      "highlights": [
+        "Individual product images added for visual review",
+        "PPT specification reference remains available on the model page",
+        "Useful for private-label mouse sample shortlisting"
+      ],
+      "technical": [
+        [
+          "Model page",
+          "/gaming-accessories/bh-703-guochao-mecha-mouse/"
+        ],
+        [
+          "Image source",
+          "Individual product image folder + PPT reference"
+        ],
+        [
+          "Buyer note",
+          "Confirm selected sample version before public claims"
+        ]
+      ],
+      "fit": "Suitable for buyers adding mouse references to a gaming accessory, office peripheral or mixed 3C product range.",
+      "oem": "Logo, color, packaging, manual language and accessory-set questions should be confirmed by selected sample version."
+    }
   }
 ];
