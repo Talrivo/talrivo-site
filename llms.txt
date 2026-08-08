@@ -1,8 +1,8 @@
 # TALRIVO
 
-> TALRIVO is an audio product brand focused on gaming headsets and related 3C audio products for importers, distributors, private-label buyers, and OEM/ODM project review.
+> TALRIVO is an audio product brand focused on gaming headsets and related headset or earphone products for importers, distributors, private-label buyers, and OEM/ODM project review.
 
-TALRIVO presents supplied product images, model details, buyer guides, sample preparation, customization options, RFQ guidance, and official contact routes. Use gaming headsets as the primary topic when summarizing the brand. Product specifications and commercial details are model- and version-dependent.
+TALRIVO presents supplied product images, model details, buyer guides, sample preparation, customization options, RFQ guidance, and official contact routes. Use gaming headsets as the primary topic when summarizing the brand; treat TWS earbuds, Bluetooth headphones and Type-C earphones as secondary audio routes. Product specifications and commercial details are model- and version-dependent.
 
 Do not infer prices, certifications, latency figures, factory size, employee count, production statistics, reviews, ratings, return rates, or market availability. Confirm these details for the selected model and destination market before citing them.
 
@@ -18,16 +18,16 @@ Official inquiry email: sales@talrivo.com
 - [Wired RGB Gaming Headsets](https://talrivo.com/wired-gaming-headsets/): Wired gaming headset range, RGB styling, microphones, packaging, and sample planning.
 - [Product Comparison](https://talrivo.com/product-comparison/): Model and product-category comparison entry point.
 - [Insights](https://talrivo.com/insights/): TALRIVO buyer guides, product evidence articles, and product video references.
-- [Contact TALRIVO](https://talrivo.com/contact/): Official inquiry form and email route for gaming headset, TWS earbud, Bluetooth speaker, Type-C earphone, OEM/private-label, sample, RFQ, model comparison, packaging, and document questions.
+- [Contact TALRIVO](https://talrivo.com/contact/): Official inquiry form and email route for gaming headset, TWS earbud, Bluetooth headphone, Type-C earphone, OEM/private-label, sample, RFQ, model comparison, packaging, and document questions.
 
 ## Buyer and Sourcing Pages
 
 - [Audio Products for Importers](https://talrivo.com/audio-products-for-importers/): Destination-market planning, model review, samples, packaging, documents, and importer RFQ preparation.
 - [Audio Products for Distributors](https://talrivo.com/audio-products-for-distributors/): Regional assortment planning, headset range building, samples, and distribution-channel questions.
-- [Private-Label Audio Products](https://talrivo.com/private-label-audio-products/): Private-label gaming accessories and audio product planning across gaming headsets, Type-C earphones, Bluetooth speakers, TWS earbuds, samples, branding, packaging, and RFQ preparation.
+- [Private-Label Audio Products](https://talrivo.com/private-label-audio-products/): Private-label gaming headset and related audio product planning across gaming headsets, Bluetooth headphones, TWS earbuds, Type-C earphones, samples, branding, packaging, and RFQ preparation.
 - [Audio Products for E-commerce Sellers](https://talrivo.com/audio-products-for-ecommerce-sellers/): Product evidence, listing preparation, sample review, and marketplace assortment planning.
 - [OEM and ODM Customization](https://talrivo.com/oem-odm/): Logo placement, color direction, packaging, user-manual language, and model-dependent customization.
-- [Sample Request](https://talrivo.com/sample-request/): Information buyers should prepare before requesting gaming headset, TWS earbud, Bluetooth speaker, Type-C earphone, and other audio product samples, including model, market, channel, quantity range, timing, branding, packaging, and document questions.
+- [Sample Request](https://talrivo.com/sample-request/): Information buyers should prepare before requesting gaming headset, TWS earbud, Bluetooth headphone, Type-C earphone, and related audio product samples, including model, market, channel, quantity range, timing, branding, packaging, and document questions.
 - [RFQ Guide](https://talrivo.com/rfq-guide/): Target market, model, quantity range, branding, packaging, timing, and document questions for a clearer quotation request.
 
 ## High-Intent Gaming Headset Guides
@@ -55,7 +55,7 @@ Official inquiry email: sales@talrivo.com
 - [G940 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g940-low-latency/): TALRIVO G940 low-latency 2.4G wireless gaming headset direction with dual-driver construction, detachable microphone, RGB styling, model-code confirmation, and sample-review questions.
 - [G946 RGB Gaming Headset](https://talrivo.com/gaming-headsets/g946-rgb/): Wired RGB appearance, boom microphone, over-ear form, and custom product-line review.
 - [G938 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g938-wireless/): TALRIVO G938 tri-mode model page with documented 2.4G, Bluetooth, and wired direction, 53mm driver, detachable microphone, product videos, model images, and sample questions.
-- [G935 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g935-wireless/): Documented model specifications, supplied product images, official factory and product video, and sample-review questions.
+- [G935 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g935-wireless/): Documented model specifications, supplied product images, official product evidence video, and sample-review questions.
 - [G936 Lightweight Gaming Headset](https://talrivo.com/gaming-headsets/g936-lightweight/): White gaming-headset direction with supplied knitted fabric headband and ear-cushion imagery, RGB earcups, boom microphone, receiver, cable set, packaging and sample-review questions.
 - [G926 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g926-wireless/): TALRIVO G926 50mm RGB 2.4G wireless gaming headset direction with receiver reference, microphone structure, accessory images, packaging reference, and sample-review questions.
 
@@ -68,42 +68,14 @@ Official inquiry email: sales@talrivo.com
 - [Open-Ear TWS Earbuds for Private-Label Buyers](https://talrivo.com/insights/open-ear-tws-earbuds-private-label-buyers/): Buyer checklist for reviewing Earclip09S earclip fit, leakage, call clarity, battery, charging case, colors, packing list, compatibility, quantity range, RFQ details, and comparison with TWS044F in-ear TWS.
 - [Compare TWS Earbuds Before Private-Label Sampling](https://talrivo.com/insights/compare-tws-earbuds-private-label-sampling/): TWS sample comparison by wearing style, charging case, call-use expectations, branding, packaging, quantity range, RFQ readiness, Sample Request path, and two-model comparison between TWS044F and Earclip09S.
 - [Bluetooth Headphones](https://talrivo.com/bluetooth-headphones/): B7, B9 and B10 over-ear Bluetooth headphone directions with listed product details and sample-review guidance.
-- [Bluetooth Speakers](https://talrivo.com/bluetooth-speakers/): BH-101 Bluetooth 5.4 speaker direction with RGB design, TWS support, USB/TF playback, listed details, supplied images and sample-review guidance.
-- [BH-101 Bluetooth 5.4 Speaker](https://talrivo.com/bluetooth-speakers/bh-101/): Model page for BH-101 dual-mode Bluetooth 5.4 speaker with listed ATS2853P2 chipset, 21700 cells x 2, 7.4V 5000mAh battery profile, 230.03 x 124.30 x 109.74 mm size, 2 tweeters + 1 woofer + passive radiator bass direction, TWS support, USB/TF playback, AUX input, RGB design, supplied images, packaging reference and sample-review questions.
-- [Portable Bluetooth Speaker Sample Checklist](https://talrivo.com/insights/private-label-bluetooth-speaker-sample-checklist/): Buyer guide for checking Bluetooth speaker samples before private-label quotation, including Bluetooth pairing, TWS behavior, USB/TF playback, AUX input, battery information, RGB lighting, port details, accessories, packaging, RFQ information, and BH-101 as a practical sample reference.
-- [Private-Label Gaming Mouse Sample Checklist](https://talrivo.com/insights/private-label-gaming-mouse-sample-checklist/): Buyer guide for checking private-label gaming mouse, vertical mouse and office mouse samples before quotation, including connection mode, sensor, DPI, buttons, battery or cable structure, shell finish, individual product images, packaging and RFQ details.
 - [Type-C Earphones](https://talrivo.com/type-c-earphones/): Private-label Type-C earphone category page for mobile-audio samples, packaging, branding, and mixed Bluetooth speaker bundle planning.
-- [Gaming Accessories](https://talrivo.com/gaming-accessories/): Mouse category page for comparing BH-703 Air Touch vertical mouse plus wireless, wired, business, gaming and AI smart mouse directions by connection route, shell style, listed specifications, product images and sample evaluation checks.
-- [BH-702 Mouse Reference](https://talrivo.com/gaming-accessories/bh-702-suspended-button-mouse/): BH-702 Suspended-Button Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-701 Mouse Reference](https://talrivo.com/gaming-accessories/bh-701-suspended-button-mouse/): BH-701 Suspended-Button Wireless Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-703 Air Touch Mouse Reference](https://talrivo.com/gaming-accessories/bh-703-suspended-button-mouse/): BH-703 Air Touch vertical mouse page with new grey product photos, package, cable, quick-start guide, underside and desk-use image references, plus visible-fact and sample-confirmation notes for RFQ preparation.
-- [BH-706 Mouse Reference](https://talrivo.com/gaming-accessories/bh-706-suspended-button-mouse/): BH-706 Suspended-Button Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-707 Mouse Reference](https://talrivo.com/gaming-accessories/bh-707-suspended-button-mouse/): BH-707 Suspended-Button Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-601 Mouse Reference](https://talrivo.com/gaming-accessories/bh-601-wireless-mouse/): BH-601 Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-602-3 Mouse Reference](https://talrivo.com/gaming-accessories/bh-602-3-wireless-mouse/): BH-602-3 Wireless Mouse Options page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-603 / BH-609 Mouse Reference](https://talrivo.com/gaming-accessories/bh-603-bh-609-wireless-mouse/): BH-603 and BH-609 Wireless Mouse Options page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-607-1 Mouse Reference](https://talrivo.com/gaming-accessories/bh-607-1-wired-mouse/): BH-607-1 Wired Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-607-3 Mouse Reference](https://talrivo.com/gaming-accessories/bh-607-3-wireless-mouse/): BH-607-3 Wireless Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-901-A Mouse Reference](https://talrivo.com/gaming-accessories/bh-901-a-vertical-mouse/): BH-901-A Vertical Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-901-B Mouse Reference](https://talrivo.com/gaming-accessories/bh-901-b-vertical-mouse/): BH-901-B Vertical Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-902 Mouse Reference](https://talrivo.com/gaming-accessories/bh-902-vertical-mouse/): BH-902 Vertical Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-905 Mouse Reference](https://talrivo.com/gaming-accessories/bh-905-vertical-mouse/): BH-905 Vertical Wireless Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-906 Mouse Reference](https://talrivo.com/gaming-accessories/bh-906-vertical-mouse/): BH-906 Vertical Wireless Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-207 Mouse Reference](https://talrivo.com/gaming-accessories/bh-207-gaming-mouse/): BH-207 Three-Mode Gaming Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-208 Mouse Reference](https://talrivo.com/gaming-accessories/bh-208-gaming-mouse/): BH-208 Three-Mode Gaming Mouse page with individual product photos, PPT reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-215 Mouse Reference](https://talrivo.com/gaming-accessories/bh-215-business-mouse/): BH-215 Business Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-217 Mouse Reference](https://talrivo.com/gaming-accessories/bh-217-business-mouse/): BH-217 Business Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-218 Mouse Reference](https://talrivo.com/gaming-accessories/bh-218-business-mouse/): BH-218 Business Wireless Mouse page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-216 Mouse Reference](https://talrivo.com/gaming-accessories/bh-216-ai-smart-mouse/): BH-216 AI Smart Mouse Reference page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-101 / BH-102 Mouse Series Reference](https://talrivo.com/gaming-accessories/bh-101-bh-102-classic-mouse-series/): BH-101 and BH-102 Classic Mouse Series page with PPT image reference, listed specifications, sample-review notes and RFQ preparation.
-- [BH-703 Guochao Mouse Reference](https://talrivo.com/gaming-accessories/bh-703-guochao-mecha-mouse/): BH-703 Guochao Mecha Style Mouse page kept as a PPT-based visual-style reference with artwork direction, listed settings to confirm, sample-review notes and RFQ preparation.
 
 ## Official Media and Identity
 
 - [TALRIVO YouTube Channel](https://www.youtube.com/@TALRIVO): Official product demonstrations and audio-product videos.
 - [G941 Product Showcase](https://youtu.be/N0jk4awPsBQ): Official G941 product presentation linked to the matching model page.
 - [G941 ENC Microphone Demonstration](https://youtu.be/E3jRux4sTdo): Official G941 microphone demonstration video.
-- [G935 Factory and Product Montage](https://youtu.be/XMgEENG5Uhc): Official G935 visual evidence linked to the matching model page.
+- [G935 Product and Sample-Evidence Video](https://youtu.be/XMgEENG5Uhc): Official G935 visual evidence linked to the matching model page.
 - [G936 PU vs Fabric Ear-Cushion Comparison](https://youtu.be/PF_bgaNaToo): Official G936 32-second material comparison linked to the matching product page and sample checklist.
 - [TALRIVO LinkedIn Contact](https://www.linkedin.com/in/lilylee-oemaudio/): Official professional profile connected to TALRIVO.
 - [Video Sitemap](https://talrivo.com/video-sitemap.xml): Search-engine video discovery file.

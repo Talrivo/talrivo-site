@@ -3863,6 +3863,7 @@ window.talrivoCatalog = [
     "model": "BH-101",
     "name": "Dual-Mode Bluetooth 5.4 Speaker",
     "category": "speaker",
+    "public": false,
     "label": "Bluetooth Speaker",
     "summary": "BH-101 portable Bluetooth 5.4 speaker with RGB design, 2 tweeters + 1 woofer structure, TWS pairing and USB / TF local playback support.",
     "specs": [
@@ -3955,6 +3956,7 @@ window.talrivoCatalog = [
     "model": "BH-702",
     "name": "Suspended-Button Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wireless Mouse",
     "summary": "BH-702 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -3995,6 +3997,7 @@ window.talrivoCatalog = [
     "model": "BH-701",
     "name": "Suspended-Button Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wireless Mouse",
     "summary": "BH-701 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4058,6 +4061,7 @@ window.talrivoCatalog = [
     "model": "BH-703",
     "name": "Suspended-Button Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wireless Mouse",
     "summary": "BH-703 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4115,6 +4119,7 @@ window.talrivoCatalog = [
     "model": "BH-706",
     "name": "Suspended-Button Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wireless Mouse",
     "summary": "BH-706 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4155,6 +4160,7 @@ window.talrivoCatalog = [
     "model": "BH-707",
     "name": "Suspended-Button Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wireless Mouse",
     "summary": "BH-707 Suspended-Button Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4195,6 +4201,7 @@ window.talrivoCatalog = [
     "model": "BH-601",
     "name": "Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Office Mouse",
     "summary": "BH-601 Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4235,6 +4242,7 @@ window.talrivoCatalog = [
     "model": "BH-602-3",
     "name": "Wireless Mouse Options",
     "category": "accessory",
+    "public": false,
     "label": "Office Mouse",
     "summary": "BH-602-3 Wireless Mouse Options reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4302,6 +4310,7 @@ window.talrivoCatalog = [
     "model": "BH-603 / BH-609",
     "name": "Wireless Mouse Options",
     "category": "accessory",
+    "public": false,
     "label": "Office Mouse",
     "summary": "BH-603 / BH-609 Wireless Mouse Options reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4349,6 +4358,7 @@ window.talrivoCatalog = [
     "model": "BH-607-1",
     "name": "Wired Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wired Mouse",
     "summary": "BH-607-1 Wired Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4407,6 +4417,7 @@ window.talrivoCatalog = [
     "model": "BH-607-3",
     "name": "Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Wireless Mouse",
     "summary": "BH-607-3 Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4465,6 +4476,7 @@ window.talrivoCatalog = [
     "model": "BH-901-A",
     "name": "Vertical Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Vertical Mouse",
     "summary": "BH-901-A Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4505,6 +4517,7 @@ window.talrivoCatalog = [
     "model": "BH-901-B",
     "name": "Vertical Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Vertical Mouse",
     "summary": "BH-901-B Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4545,6 +4558,7 @@ window.talrivoCatalog = [
     "model": "BH-902",
     "name": "Vertical Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Vertical Mouse",
     "summary": "BH-902 Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4585,6 +4599,7 @@ window.talrivoCatalog = [
     "model": "BH-905",
     "name": "Vertical Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Vertical Mouse",
     "summary": "BH-905 Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4635,6 +4650,7 @@ window.talrivoCatalog = [
     "model": "BH-906",
     "name": "Vertical Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Vertical Mouse",
     "summary": "BH-906 Vertical Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4685,6 +4701,7 @@ window.talrivoCatalog = [
     "model": "BH-207",
     "name": "Three-Mode Gaming Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Gaming Mouse",
     "summary": "BH-207 Three-Mode Gaming Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4726,6 +4743,7 @@ window.talrivoCatalog = [
     "model": "BH-208",
     "name": "Three-Mode Gaming Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Gaming Mouse",
     "summary": "BH-208 Three-Mode Gaming Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4767,6 +4785,7 @@ window.talrivoCatalog = [
     "model": "BH-215",
     "name": "Business Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Business Mouse",
     "summary": "BH-215 Business Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4807,6 +4826,7 @@ window.talrivoCatalog = [
     "model": "BH-217",
     "name": "Business Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Business Mouse",
     "summary": "BH-217 Business Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4847,6 +4867,7 @@ window.talrivoCatalog = [
     "model": "BH-218",
     "name": "Business Wireless Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Business Mouse",
     "summary": "BH-218 Business Wireless Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4887,6 +4908,7 @@ window.talrivoCatalog = [
     "model": "BH-216",
     "name": "AI Smart Mouse Reference",
     "category": "accessory",
+    "public": false,
     "label": "Smart Mouse",
     "summary": "BH-216 AI Smart Mouse Reference reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4927,6 +4949,7 @@ window.talrivoCatalog = [
     "model": "BH-101 / BH-102",
     "name": "Classic Mouse Series",
     "category": "accessory",
+    "public": false,
     "label": "Classic Mouse",
     "summary": "BH-101 / BH-102 Classic Mouse Series reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
@@ -4967,6 +4990,7 @@ window.talrivoCatalog = [
     "model": "BH-703 Guochao",
     "name": "Mecha Style Mouse",
     "category": "accessory",
+    "public": false,
     "label": "Creative Mouse",
     "summary": "BH-703 Guochao Mecha Style Mouse reference for private-label gaming accessory and office peripheral sample review.",
     "specs": [
