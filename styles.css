@@ -1477,6 +1477,55 @@ h2 {
   font-size: 0.78rem;
 }
 
+.whatsapp-card {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 92px minmax(0, 1fr);
+  margin-top: 1rem;
+  max-width: 520px;
+  padding: 0.85rem;
+}
+
+.whatsapp-card img {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: block;
+  height: auto;
+  width: 92px;
+}
+
+.whatsapp-card div {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.whatsapp-card strong {
+  color: var(--ink);
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.whatsapp-card span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.direct-contact .whatsapp-card a,
+.whatsapp-card a {
+  color: var(--cyan-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .wechat-inline:hover,
 .social-link:hover {
   background: var(--cyan-deep);
@@ -2421,6 +2470,11 @@ h2 {
 .link-list a:hover {
   border-color: var(--cyan-deep);
   color: var(--cyan-deep);
+}
+
+.link-list .whatsapp-link {
+  border-color: rgba(37, 211, 102, 0.48);
+  color: #128c4a;
 }
 
 .category-entry-links {

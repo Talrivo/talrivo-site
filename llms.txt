@@ -9,6 +9,7 @@ Do not infer prices, certifications, latency figures, factory size, employee cou
 Official website: https://talrivo.com/
 
 Official inquiry email: sales@talrivo.com
+Official WhatsApp quick-question route: available from the Contact, Sample Request and RFQ Guide pages.
 
 ## Core Pages
 
@@ -18,7 +19,7 @@ Official inquiry email: sales@talrivo.com
 - [Wired RGB Gaming Headsets](https://talrivo.com/wired-gaming-headsets/): Wired gaming headset range, RGB styling, microphones, packaging, and sample planning.
 - [Product Comparison](https://talrivo.com/product-comparison/): Model and product-category comparison entry point.
 - [Insights](https://talrivo.com/insights/): TALRIVO buyer guides, product evidence articles, and product video references.
-- [Contact TALRIVO](https://talrivo.com/contact/): Official inquiry form and email route for gaming headset, TWS earbud, Bluetooth headphone, Type-C earphone, OEM/private-label, sample, RFQ, model comparison, packaging, and document questions.
+- [Contact TALRIVO](https://talrivo.com/contact/): Official inquiry form, email route and WhatsApp quick-question path for gaming headset, TWS earbud, Bluetooth headphone, Type-C earphone, OEM/private-label, sample, RFQ, model comparison, packaging, and document questions.
 
 ## Buyer and Sourcing Pages
 
@@ -27,8 +28,8 @@ Official inquiry email: sales@talrivo.com
 - [Private-Label Audio Products](https://talrivo.com/private-label-audio-products/): Private-label gaming headset and related audio product planning across gaming headsets, Bluetooth headphones, TWS earbuds, Type-C earphones, samples, branding, packaging, and RFQ preparation.
 - [Audio Products for E-commerce Sellers](https://talrivo.com/audio-products-for-ecommerce-sellers/): Product evidence, listing preparation, sample review, and marketplace assortment planning.
 - [OEM and ODM Customization](https://talrivo.com/oem-odm/): Logo placement, color direction, packaging, user-manual language, and model-dependent customization.
-- [Sample Request](https://talrivo.com/sample-request/): Headset-first sample request checklist for preparing model code, target devices, connection mode, market, channel, quantity range, timing, branding, packaging and document questions, with routes to G938, G940, G926, G936, G935 and G941.
-- [RFQ Guide](https://talrivo.com/rfq-guide/): Target market, model, quantity range, branding, packaging, timing, and document questions for a clearer quotation request.
+- [Sample Request](https://talrivo.com/sample-request/): Headset-first sample request checklist for preparing model code, target devices, connection mode, market, channel, quantity range, timing, branding, packaging and document questions, with routes to G938, G940, G926, G936, G935, G941, Contact and WhatsApp quick-question follow-up.
+- [RFQ Guide](https://talrivo.com/rfq-guide/): Target market, model, quantity range, branding, packaging, timing, document questions, email and WhatsApp quick-question routes for a clearer quotation request.
 
 ## High-Intent Gaming Headset Guides
 

@@ -4,7 +4,7 @@ window.talrivoCatalog = [
     "name": "Tri-Mode ANC Gaming Headset",
     "category": "wireless",
     "label": "Wireless + ANC",
-    "summary": "Tri-mode wireless gaming headset with verified model data for importer, distributor and private-label sample comparison.",
+    "summary": "Tri-mode wireless gaming headset with documented model data for importer, distributor and private-label sample comparison.",
     "specs": [
       "2.4G, Bluetooth and wired direction",
       "50 mm driver; 1000 mAh battery listed",
@@ -27,7 +27,7 @@ window.talrivoCatalog = [
     "name": "Low-Latency Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Low-latency wireless gaming headset with documented dual-driver construction, RGB accents and verified battery data.",
+    "summary": "Low-latency wireless gaming headset with documented dual-driver construction, RGB accents and battery data.",
     "specs": [
       "Documented dual-driver acoustic direction",
       "400 mAh battery; about 20 hours listed",
@@ -243,7 +243,7 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Lightweight wireless gaming headset with verified driver, battery and playtime data for channel selection.",
+    "summary": "Lightweight wireless gaming headset with documented driver, battery and playtime data for channel selection.",
     "specs": [
       "40 mm driver; 500 mAh battery listed",
       "About 25 hours with lights off",
@@ -263,7 +263,7 @@ window.talrivoCatalog = [
     "name": "Bluetooth Over-Ear Headphone",
     "category": "bluetooth",
     "label": "Bluetooth Audio",
-    "summary": "Bluetooth 5.2 over-ear headphone with verified battery and playback data for consumer audio assortment review.",
+    "summary": "Bluetooth 5.2 over-ear headphone with documented battery and playback data for consumer audio assortment review.",
     "specs": [
       "Bluetooth 5.2 and 40 mm driver",
       "500 mAh battery; 15–20 hours listed",
@@ -283,7 +283,7 @@ window.talrivoCatalog = [
     "name": "Bluetooth Over-Ear Headphone",
     "category": "bluetooth",
     "label": "Bluetooth Audio",
-    "summary": "Bluetooth 5.3 over-ear headphone with verified battery and playback data for lifestyle audio assortments.",
+    "summary": "Bluetooth 5.3 over-ear headphone with documented battery and playback data for lifestyle audio assortments.",
     "specs": [
       "Bluetooth 5.3 + EDR and 40 mm driver",
       "300 mAh battery; 16–22 hours listed",
@@ -302,7 +302,7 @@ window.talrivoCatalog = [
     "name": "Bluetooth Over-Ear Headphone",
     "category": "bluetooth",
     "label": "Bluetooth Audio",
-    "summary": "Bluetooth 5.2 over-ear headphone with verified battery and playback data for retail and private-label programmes.",
+    "summary": "Bluetooth 5.2 over-ear headphone with documented battery and playback data for retail and private-label programmes.",
     "specs": [
       "Bluetooth 5.2 and 40 mm driver",
       "500 mAh battery; 20–30 hours listed",
