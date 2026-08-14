@@ -2636,6 +2636,29 @@ h2 {
   }
 }
 
+/* Real workshop photos need a dense, consistent gallery rather than product-image containment. */
+.quality-review-page .evidence-grid {
+  align-items: start;
+}
+
+.quality-review-page .evidence-grid article {
+  align-self: start;
+  padding: 0.85rem;
+}
+
+.quality-review-page .evidence-grid article img {
+  aspect-ratio: 4 / 3;
+  background: #eef1ef;
+  height: auto;
+  margin: 0 0 0.9rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.quality-review-page .evidence-grid article h3 {
+  margin-top: 0;
+}
+
 /* Home page visual refresh: premium audio-brand direction. */
 .site-header {
   backdrop-filter: blur(18px);
