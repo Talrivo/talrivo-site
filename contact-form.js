@@ -41,6 +41,7 @@ if (contactForm) {
     oem: "OEM / private-label project",
     rfq: "Quotation request",
     compare: "Model comparison",
+    packaging: "Packaging / artwork discussion",
     documents: "Product document question"
   };
 
