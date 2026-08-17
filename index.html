@@ -707,7 +707,28 @@
           <label>Full name <input name="name" autocomplete="name" required></label>
           <label>Business email <input name="email" type="email" autocomplete="email" required></label>
           <label>Company <input name="company" autocomplete="organization" required></label>
-          <label>Market / country <input name="market" autocomplete="country-name" required></label>
+          <label>Market / country
+            <select name="market" autocomplete="country-name" required>
+              <option value="">Select market / country</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+              <option>Germany</option>
+              <option>Poland</option>
+              <option>Spain</option>
+              <option>Russia</option>
+              <option>Brazil</option>
+              <option>Mexico</option>
+              <option>Argentina</option>
+              <option>Indonesia</option>
+              <option>Vietnam</option>
+              <option>Thailand</option>
+              <option>Japan</option>
+              <option>South Korea</option>
+              <option>United Arab Emirates</option>
+              <option>Other market - specify in requirements</option>
+            </select>
+          </label>
           <label>Customer type
             <select name="buyer_type" required>
               <option value="">Select customer type</option>
@@ -719,7 +740,18 @@
               <option>Other</option>
             </select>
           </label>
-          <label>Sales channel <input name="channel" placeholder="Retail, online store, local distributor, brand collection..."></label>
+          <label>Sales channel
+            <select name="channel">
+              <option value="">Select sales channel</option>
+              <option>Distributor network</option>
+              <option>Retail stores</option>
+              <option>E-commerce marketplace</option>
+              <option>Own online store</option>
+              <option>Gaming or electronics brand</option>
+              <option>Corporate or institutional procurement</option>
+              <option>Other sales channel - specify in requirements</option>
+            </select>
+          </label>
         </div>
         <div class="two-columns">
           <label>Product interest
