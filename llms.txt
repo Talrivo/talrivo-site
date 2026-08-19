@@ -21,7 +21,7 @@ Official WhatsApp quick-question route: available from the Contact, Sample Reque
 - [Wired RGB Gaming Headsets](https://talrivo.com/wired-gaming-headsets/): Wired gaming headset range, RGB styling, microphones, packaging, and sample planning.
 - [Product Comparison](https://talrivo.com/product-comparison/): Model and product-category comparison entry point.
 - [Insights](https://talrivo.com/insights/): TALRIVO buyer guides, product evidence articles, and product video references.
-- [Contact TALRIVO](https://talrivo.com/contact/): Official inquiry form, email route and WhatsApp quick-question path for gaming headset, TWS earbud, Bluetooth headphone, Type-C earphone, OEM/private-label, sample, RFQ, model comparison, packaging, and document questions.
+- [Contact TALRIVO](https://talrivo.com/contact/): Official lightweight inquiry form, email route and WhatsApp quick-question path for gaming headset samples, RFQs, model comparison, OEM/private-label, packaging and product document questions; optional fields can add market, buyer type, channel, quantity stage and timing context.
 
 ## Buyer and Sourcing Pages
 

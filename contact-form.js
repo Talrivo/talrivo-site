@@ -64,7 +64,7 @@ if (contactForm) {
 
   if (params.get("sent") === "1") {
     status.classList.add("success");
-    status.textContent = "Your inquiry has been sent. TALRIVO will reply by business email.";
+    status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
   }
 
   contactForm.addEventListener("submit", async (event) => {
@@ -74,21 +74,25 @@ if (contactForm) {
     submitButton.disabled = true;
 
     const fields = new FormData(contactForm);
+    const valueOrFallback = (field, fallback = "Not specified") => {
+      const value = fields.get(field);
+      return value && String(value).trim() ? value : fallback;
+    };
     const originalMessage = fields.get("message") || "Not provided";
-    const subject = `TALRIVO ${fields.get("inquiry_type")} - ${fields.get("product")} - ${fields.get("company")}`;
+    const subject = `TALRIVO ${valueOrFallback("inquiry_type")} - ${valueOrFallback("product")} - ${valueOrFallback("company", "Company not specified")}`;
     const message = [
       "New TALRIVO contact page inquiry",
       "",
-      `Name: ${fields.get("name")}`,
-      `Business email: ${fields.get("email")}`,
-      `Company: ${fields.get("company")}`,
-      `Market / country: ${fields.get("market")}`,
-      `Buyer type: ${fields.get("buyer_type")}`,
-      `Sales channel: ${fields.get("channel") || "Not specified"}`,
-      `Product interest: ${fields.get("product")}`,
-      `Inquiry type: ${fields.get("inquiry_type")}`,
-      `Estimated quantity: ${fields.get("quantity")}`,
-      `Project timing: ${fields.get("timeline") || "Not specified"}`,
+      `Name: ${valueOrFallback("name")}`,
+      `Business email: ${valueOrFallback("email")}`,
+      `Company: ${valueOrFallback("company")}`,
+      `Market / country: ${valueOrFallback("market")}`,
+      `Buyer type: ${valueOrFallback("buyer_type")}`,
+      `Sales channel: ${valueOrFallback("channel")}`,
+      `Product interest: ${valueOrFallback("product")}`,
+      `Inquiry type: ${valueOrFallback("inquiry_type")}`,
+      `Project quantity stage: ${valueOrFallback("quantity")}`,
+      `Project timing: ${valueOrFallback("timeline")}`,
       "",
       "Project requirements:",
       originalMessage,
@@ -97,7 +101,8 @@ if (contactForm) {
       `Referrer: ${document.referrer || "Direct / not available"}`,
       `UTM source: ${params.get("utm_source") || "Not set"}`,
       `UTM medium: ${params.get("utm_medium") || "Not set"}`,
-      `UTM campaign: ${params.get("utm_campaign") || "Not set"}`
+      `UTM campaign: ${params.get("utm_campaign") || "Not set"}`,
+      `Form version: ${valueOrFallback("form_version")}`
     ].join("\n");
 
     fields.set("subject", subject);
@@ -114,7 +119,7 @@ if (contactForm) {
 
       contactForm.reset();
       status.classList.add("success");
-      status.textContent = "Your inquiry has been sent. TALRIVO will reply by business email.";
+      status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
     } catch (error) {
       status.classList.add("error");
       status.textContent = "Online submission is temporarily unavailable. Please copy and email your requirements to sales@talrivo.com.";

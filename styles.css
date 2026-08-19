@@ -1539,6 +1539,18 @@ h2 {
   flex-direction: column;
   gap: 1.15rem;
   padding: clamp(1.2rem, 4vw, 2rem);
+  scroll-margin-top: 96px;
+}
+
+.form-helper {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(16, 23, 25, 0.08);
+  border-radius: 6px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.75rem 0.85rem;
 }
 
 .two-columns {
@@ -1554,6 +1566,14 @@ h2 {
   font-size: 0.84rem;
   font-weight: 700;
   gap: 0.45rem;
+}
+
+.optional-note {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .rfq-form .hidden {
@@ -1920,6 +1940,30 @@ h2 {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
+  }
+
+  .rfq-form {
+    gap: 0.95rem;
+    padding: 1rem;
+  }
+
+  .form-helper {
+    font-size: 0.84rem;
+  }
+
+  .rfq-form input,
+  .rfq-form select,
+  .rfq-form textarea {
+    font-size: 16px;
+  }
+
+  .rfq-form .submit {
+    width: 100%;
+  }
+
+  .form-status.success,
+  .form-status.error {
+    font-size: 0.84rem;
   }
 
   .tab {
