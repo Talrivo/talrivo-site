@@ -28,26 +28,27 @@ const contactDock = document.querySelector(".contact-dock");
 const wechatDialog = document.querySelector("#wechat-dialog");
 const wechatTriggers = document.querySelectorAll("[data-open-wechat]");
 const wechatClose = document.querySelector("#wechat-close");
-const dialogMainImage = document.querySelector("#dialog-main-image");
-const thumbnailList = document.querySelector("#thumbnail-list");
-const dialogVideo = document.querySelector("#dialog-video");
-const videoPending = document.querySelector("#video-pending");
-const dialogHighlights = document.querySelector("#dialog-highlights");
-const dialogTechnical = document.querySelector("#dialog-technical");
-const dialogFit = document.querySelector("#dialog-fit");
-const dialogOem = document.querySelector("#dialog-oem");
-const dialogHero = document.querySelector("#dialog-hero");
-const dialogUsecases = document.querySelector("#dialog-usecases");
-const dialogBuyer = document.querySelector("#dialog-buyer");
-const dialogPoster = document.querySelector("#dialog-poster");
-const posterEyebrow = document.querySelector("#poster-eyebrow");
-const posterTitle = document.querySelector("#poster-title");
-const posterSubtitle = document.querySelector("#poster-subtitle");
-const posterImage = document.querySelector("#poster-image");
-const posterCalloutLeft = document.querySelector("#poster-callout-left");
-const posterCalloutRight = document.querySelector("#poster-callout-right");
-const posterFooter = document.querySelector("#poster-footer");
 let selectedCatalogueProduct = null;
+let productDialogReady = false;
+let dialogMainImage = null;
+let thumbnailList = null;
+let dialogVideo = null;
+let videoPending = null;
+let dialogHighlights = null;
+let dialogTechnical = null;
+let dialogFit = null;
+let dialogOem = null;
+let dialogHero = null;
+let dialogUsecases = null;
+let dialogBuyer = null;
+let dialogPoster = null;
+let posterEyebrow = null;
+let posterTitle = null;
+let posterSubtitle = null;
+let posterImage = null;
+let posterCalloutLeft = null;
+let posterCalloutRight = null;
+let posterFooter = null;
 const sourceStorageKey = "talrivoInquirySource";
 
 const detailLibrary = {
@@ -335,6 +336,91 @@ function detailKey(product) {
   return `${product.model}-${product.category}`;
 }
 
+function ensureProductDialogContent() {
+  if (productDialogReady) return;
+  productDialog.innerHTML = `
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Close product details">&times;</button>
+    <div class="dialog-layout">
+      <div class="dialog-gallery">
+        <section class="poster-panel hidden" id="dialog-poster" aria-label="Product poster preview">
+          <div class="poster-copy">
+            <span id="poster-eyebrow"></span>
+            <h3 id="poster-title"></h3>
+            <p id="poster-subtitle"></p>
+          </div>
+          <img class="poster-product" id="poster-image" alt="" width="1254" height="1254" loading="lazy" decoding="async">
+          <div class="poster-callout poster-callout--left" id="poster-callout-left"></div>
+          <div class="poster-callout poster-callout--right" id="poster-callout-right"></div>
+          <div class="poster-footer" id="poster-footer"></div>
+        </section>
+        <img class="dialog-main-image" id="dialog-main-image" alt="" width="1400" height="953" loading="lazy" decoding="async">
+        <div class="thumbnail-list" id="thumbnail-list"></div>
+      </div>
+      <div class="dialog-information">
+        <span class="series" id="dialog-series"></span>
+        <h2 id="dialog-title"></h2>
+        <p class="model-ref" id="dialog-model"></p>
+        <p id="dialog-summary"></p>
+        <div class="detail-block detail-block--hero" id="dialog-hero-block">
+          <h3>Product role</h3>
+          <p id="dialog-hero"></p>
+        </div>
+        <div class="detail-block" id="dialog-highlights-block">
+          <h3>Key selling points</h3>
+          <ul class="detail-list" id="dialog-highlights"></ul>
+        </div>
+        <div class="detail-block" id="dialog-usecases-block">
+          <h3>Recommended channels</h3>
+          <ul class="detail-list detail-list--compact" id="dialog-usecases"></ul>
+        </div>
+        <ul id="dialog-specs"></ul>
+        <div class="detail-block" id="dialog-technical-block">
+          <h3>Technical details</h3>
+          <dl class="spec-table" id="dialog-technical"></dl>
+        </div>
+        <div class="detail-block" id="dialog-buyer-block">
+          <h3>Product value</h3>
+          <ul class="detail-list detail-list--compact" id="dialog-buyer"></ul>
+        </div>
+        <div class="detail-block" id="dialog-fit-block">
+          <h3>Best fit</h3>
+          <p id="dialog-fit"></p>
+        </div>
+        <div class="detail-block" id="dialog-oem-block">
+          <h3>Customization notes</h3>
+          <p id="dialog-oem"></p>
+        </div>
+        <section class="video-panel">
+          <h3>Product video</h3>
+          <video id="dialog-video" controls playsinline></video>
+          <p id="video-pending">Dedicated product video position. Footage is provided during evaluation or published once approved.</p>
+        </section>
+        <button class="button primary dialog-inquiry" id="dialog-inquiry" type="button">Contact About This Model</button>
+      </div>
+    </div>
+  `;
+  dialogMainImage = productDialog.querySelector("#dialog-main-image");
+  thumbnailList = productDialog.querySelector("#thumbnail-list");
+  dialogVideo = productDialog.querySelector("#dialog-video");
+  videoPending = productDialog.querySelector("#video-pending");
+  dialogHighlights = productDialog.querySelector("#dialog-highlights");
+  dialogTechnical = productDialog.querySelector("#dialog-technical");
+  dialogFit = productDialog.querySelector("#dialog-fit");
+  dialogOem = productDialog.querySelector("#dialog-oem");
+  dialogHero = productDialog.querySelector("#dialog-hero");
+  dialogUsecases = productDialog.querySelector("#dialog-usecases");
+  dialogBuyer = productDialog.querySelector("#dialog-buyer");
+  dialogPoster = productDialog.querySelector("#dialog-poster");
+  posterEyebrow = productDialog.querySelector("#poster-eyebrow");
+  posterTitle = productDialog.querySelector("#poster-title");
+  posterSubtitle = productDialog.querySelector("#poster-subtitle");
+  posterImage = productDialog.querySelector("#poster-image");
+  posterCalloutLeft = productDialog.querySelector("#poster-callout-left");
+  posterCalloutRight = productDialog.querySelector("#poster-callout-right");
+  posterFooter = productDialog.querySelector("#poster-footer");
+  productDialogReady = true;
+}
+
 function renderDetailBlock(block, content, renderer) {
   const hasContent = Array.isArray(content) ? content.length > 0 : Boolean(content);
   block.classList.toggle("hidden", !hasContent);
@@ -382,33 +468,36 @@ function renderCatalogue(filter = "all") {
 }
 
 function openProductDialog(product) {
+  ensureProductDialogContent();
   selectedCatalogueProduct = product;
+  productDialog.hidden = false;
+  productDialog.setAttribute("aria-hidden", "false");
   const details = product.details || detailLibrary[detailKey(product)] || {};
-  document.querySelector("#dialog-series").textContent = product.label;
-  document.querySelector("#dialog-title").textContent = product.name;
-  document.querySelector("#dialog-model").textContent = `Reference model: ${product.model}`;
-  document.querySelector("#dialog-summary").textContent = product.summary;
-  document.querySelector("#dialog-specs").innerHTML = product.specs.map((spec) => `<li>${spec}</li>`).join("");
+  productDialog.querySelector("#dialog-series").textContent = product.label;
+  productDialog.querySelector("#dialog-title").textContent = product.name;
+  productDialog.querySelector("#dialog-model").textContent = `Reference model: ${product.model}`;
+  productDialog.querySelector("#dialog-summary").textContent = product.summary;
+  productDialog.querySelector("#dialog-specs").innerHTML = product.specs.map((spec) => `<li>${spec}</li>`).join("");
   renderPoster(product, details.poster);
-  renderDetailBlock(document.querySelector("#dialog-hero-block"), details.hero, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-hero-block"), details.hero, () => {
     dialogHero.textContent = details.hero;
   });
-  renderDetailBlock(document.querySelector("#dialog-highlights-block"), details.highlights, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-highlights-block"), details.highlights, () => {
     dialogHighlights.innerHTML = details.highlights.map((item) => `<li>${item}</li>`).join("");
   });
-  renderDetailBlock(document.querySelector("#dialog-usecases-block"), details.usecases, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-usecases-block"), details.usecases, () => {
     dialogUsecases.innerHTML = details.usecases.map((item) => `<li>${item}</li>`).join("");
   });
-  renderDetailBlock(document.querySelector("#dialog-technical-block"), details.technical, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-technical-block"), details.technical, () => {
     dialogTechnical.innerHTML = details.technical.map(([term, value]) => `<div><dt>${term}</dt><dd>${value}</dd></div>`).join("");
   });
-  renderDetailBlock(document.querySelector("#dialog-buyer-block"), details.buyer, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-buyer-block"), details.buyer, () => {
     dialogBuyer.innerHTML = details.buyer.map((item) => `<li>${item}</li>`).join("");
   });
-  renderDetailBlock(document.querySelector("#dialog-fit-block"), details.fit, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-fit-block"), details.fit, () => {
     dialogFit.textContent = details.fit;
   });
-  renderDetailBlock(document.querySelector("#dialog-oem-block"), details.oem, () => {
+  renderDetailBlock(productDialog.querySelector("#dialog-oem-block"), details.oem, () => {
     dialogOem.textContent = details.oem;
   });
   dialogMainImage.src = assetPath(product, product.images[0]);
@@ -437,6 +526,40 @@ function openProductDialog(product) {
   productDialog.showModal();
 }
 
+function closeProductDialog() {
+  if (dialogVideo) {
+    dialogVideo.pause();
+    dialogVideo.removeAttribute("src");
+  }
+  if (productDialog.open) productDialog.close();
+  productDialog.hidden = true;
+  productDialog.setAttribute("aria-hidden", "true");
+}
+
+productDialog.addEventListener("close", () => {
+  if (dialogVideo) {
+    dialogVideo.pause();
+    dialogVideo.removeAttribute("src");
+  }
+  productDialog.hidden = true;
+  productDialog.setAttribute("aria-hidden", "true");
+});
+
+productDialog.addEventListener("click", (event) => {
+  if (event.target.closest("#dialog-close")) {
+    closeProductDialog();
+    return;
+  }
+  if (!event.target.closest("#dialog-inquiry") || !selectedCatalogueProduct) return;
+  const productName = `${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`;
+  setProductInterest(productName);
+  setSelectedFrom(`Catalogue dialog: ${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`);
+  form.querySelector("textarea").value = `Please provide specifications, quantity range and available branding options for reference model ${selectedCatalogueProduct.model} (${selectedCatalogueProduct.name}).`;
+  closeProductDialog();
+  document.querySelector("#rfq").scrollIntoView({ behavior: "smooth" });
+  formStatus.textContent = `${selectedCatalogueProduct.model} added to your inquiry request.`;
+});
+
 catalogueTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     catalogueTabs.forEach((item) => {
@@ -447,22 +570,6 @@ catalogueTabs.forEach((tab) => {
     tab.setAttribute("aria-selected", "true");
     renderCatalogue(tab.dataset.catalogueFilter);
   });
-});
-
-document.querySelector("#dialog-close").addEventListener("click", () => {
-  dialogVideo.pause();
-  productDialog.close();
-});
-
-document.querySelector("#dialog-inquiry").addEventListener("click", () => {
-  if (!selectedCatalogueProduct) return;
-  const productName = `${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`;
-  setProductInterest(productName);
-  setSelectedFrom(`Catalogue dialog: ${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`);
-  form.querySelector("textarea").value = `Please provide specifications, MOQ and available branding options for reference model ${selectedCatalogueProduct.model} (${selectedCatalogueProduct.name}).`;
-  productDialog.close();
-  document.querySelector("#rfq").scrollIntoView({ behavior: "smooth" });
-  formStatus.textContent = `${selectedCatalogueProduct.model} added to your inquiry request.`;
 });
 
 wechatTriggers.forEach((button) => {
