@@ -671,6 +671,5 @@ if (contactDock) {
   }, { passive: true });
 }
 
-document.querySelector("#year").textContent = new Date().getFullYear();
 populateSourceFields();
 renderCatalogue();
