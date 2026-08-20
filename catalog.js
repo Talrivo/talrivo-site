@@ -83,7 +83,8 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g923-wireless",
-    "video": null
+    "video": null,
+    "public": false
   },
   {
     "model": "G920",
@@ -160,7 +161,8 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "g927-wireless",
-    "video": null
+    "video": null,
+    "public": false
   },
   {
     "model": "G926",
@@ -466,7 +468,8 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g923-wired",
-    "video": null
+    "video": null,
+    "public": false
   },
   {
     "model": "G941",
