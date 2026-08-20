@@ -33,7 +33,7 @@ let productDialogReady = false;
 let dialogMainImage = null;
 let thumbnailList = null;
 let dialogVideo = null;
-let videoPending = null;
+let videoPanel = null;
 let dialogHighlights = null;
 let dialogTechnical = null;
 let dialogFit = null;
@@ -362,38 +362,37 @@ function ensureProductDialogContent() {
         <p class="model-ref" id="dialog-model"></p>
         <p id="dialog-summary"></p>
         <div class="detail-block detail-block--hero" id="dialog-hero-block">
-          <h3>Product role</h3>
+          <h3>Model overview</h3>
           <p id="dialog-hero"></p>
         </div>
         <div class="detail-block" id="dialog-highlights-block">
-          <h3>Key selling points</h3>
+          <h3>Main review points</h3>
           <ul class="detail-list" id="dialog-highlights"></ul>
         </div>
         <div class="detail-block" id="dialog-usecases-block">
-          <h3>Recommended channels</h3>
+          <h3>Channel fit</h3>
           <ul class="detail-list detail-list--compact" id="dialog-usecases"></ul>
         </div>
         <ul id="dialog-specs"></ul>
         <div class="detail-block" id="dialog-technical-block">
-          <h3>Technical details</h3>
+          <h3>Specification notes</h3>
           <dl class="spec-table" id="dialog-technical"></dl>
         </div>
         <div class="detail-block" id="dialog-buyer-block">
-          <h3>Product value</h3>
+          <h3>Buyer value</h3>
           <ul class="detail-list detail-list--compact" id="dialog-buyer"></ul>
         </div>
         <div class="detail-block" id="dialog-fit-block">
-          <h3>Best fit</h3>
+          <h3>Sample fit</h3>
           <p id="dialog-fit"></p>
         </div>
         <div class="detail-block" id="dialog-oem-block">
-          <h3>Customization notes</h3>
+          <h3>Branding notes</h3>
           <p id="dialog-oem"></p>
         </div>
-        <section class="video-panel">
-          <h3>Product video</h3>
+        <section class="video-panel hidden" id="dialog-video-block">
+          <h3>Video reference</h3>
           <video id="dialog-video" controls playsinline></video>
-          <p id="video-pending">Dedicated product video position. Footage is provided during evaluation or published once approved.</p>
         </section>
         <button class="button primary dialog-inquiry" id="dialog-inquiry" type="button">Contact About This Model</button>
       </div>
@@ -402,7 +401,7 @@ function ensureProductDialogContent() {
   dialogMainImage = productDialog.querySelector("#dialog-main-image");
   thumbnailList = productDialog.querySelector("#thumbnail-list");
   dialogVideo = productDialog.querySelector("#dialog-video");
-  videoPending = productDialog.querySelector("#video-pending");
+  videoPanel = productDialog.querySelector("#dialog-video-block");
   dialogHighlights = productDialog.querySelector("#dialog-highlights");
   dialogTechnical = productDialog.querySelector("#dialog-technical");
   dialogFit = productDialog.querySelector("#dialog-fit");
@@ -517,11 +516,11 @@ function openProductDialog(product) {
   if (product.video) {
     dialogVideo.src = product.video;
     dialogVideo.classList.add("available");
-    videoPending.classList.add("hidden");
+    videoPanel.classList.remove("hidden");
   } else {
     dialogVideo.removeAttribute("src");
     dialogVideo.classList.remove("available");
-    videoPending.classList.remove("hidden");
+    videoPanel.classList.add("hidden");
   }
   productDialog.showModal();
 }
