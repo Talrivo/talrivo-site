@@ -56,15 +56,15 @@ const detailLibrary = {
       eyebrow: "Tri-Mode ANC Gaming",
       title: "G941",
       subtitle: "Wireless freedom for PC, console and mobile gaming channels.",
-      callouts: ["ANC positioning", "Approx. 50H playback"],
+      callouts: ["ANC option", "Approx. 50H playback"],
       footer: "2.4G / Bluetooth / wired direction"
     },
-    hero: "A premium tri-mode gaming headset direction for importers that need one hero model to cover PC gaming, console use, mobile play and lifestyle wireless listening.",
-    highlights: ["Tri-mode positioning supports 2.4G wireless, Bluetooth and wired use cases for wider channel coverage", "ANC story helps separate the model from basic wireless gaming headsets in buyer presentations", "Long-use battery profile supports extended gaming sessions and retail comparison pages", "Detachable boom microphone gives buyers a cleaner lifestyle look when the headset is used outside gaming"],
+    hero: "A premium tri-mode gaming headset direction for importers that need one lead model to cover PC gaming, console use, mobile play and lifestyle wireless listening.",
+    highlights: ["Tri-mode connection supports 2.4G wireless, Bluetooth and wired use cases for wider channel coverage", "ANC option helps separate the model from basic wireless gaming headsets in buyer presentations", "Long-use battery profile supports extended gaming sessions and retail comparison pages", "Detachable boom microphone gives buyers a cleaner lifestyle look when the headset is used outside gaming"],
     usecases: ["Gaming accessory distributors", "E-commerce private-label launches", "Premium retail headset series", "Console and PC gaming bundles"],
-    technical: [["Connection direction", "2.4G wireless / Bluetooth / wired positioning"], ["Driver", "40 mm / 50 mm option"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
-    buyer: ["Strong specification story for catalogue pages", "Clear upgrade path from basic 2.4G models", "Suitable for sample comparisons across multiple markets", "Works well as a private-label hero item"],
-    fit: "Suitable for buyers looking for a higher-end wireless gaming headset with ANC positioning, stronger battery story, and private-label appearance options.",
+    technical: [["Connection direction", "2.4G wireless / Bluetooth / wired use"], ["Driver", "40 mm / 50 mm option"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    buyer: ["Strong specification set for catalogue pages", "Clear upgrade path from basic 2.4G models", "Suitable for sample comparisons across multiple markets", "Works well as a private-label lead item"],
+    fit: "Suitable for buyers looking for a higher-end wireless gaming headset with ANC option, long battery profile, and private-label appearance options.",
     oem: "Recommended for color matching, logo discussion, packaging customization, user manual localization and market-specific accessory bundle planning."
   },
   "G940-wireless": {
@@ -72,25 +72,25 @@ const detailLibrary = {
       eyebrow: "Low-Latency Wireless",
       title: "G940",
       subtitle: "Futuristic hollowed design with RGB shelf impact.",
-      callouts: ["20 ms listed latency", "Dual-driver audio story"],
+      callouts: ["20 ms listed latency", "Dual-driver audio"],
       footer: "Distinctive wireless gaming look"
     },
-    hero: "A visually distinctive low-latency wireless model for buyers who want a futuristic gaming look without moving into a heavy premium product position.",
-    highlights: ["Dual-driver acoustic structure creates a stronger product story than ordinary single-driver wireless models", "Hollowed 3D exterior gives the headset a recognizable shelf and thumbnail appearance", "Detachable microphone supports gaming communication and cleaner daily-use presentation", "RGB accents help the model stand out in online stores and retail comparison visuals"],
+    hero: "A visually distinctive low-latency wireless model for buyers who want a futuristic gaming look without moving into a heavy premium product tier.",
+    highlights: ["Dual-driver acoustic structure gives buyers a clearer upgrade point than ordinary single-driver wireless models", "Hollowed 3D exterior gives the headset a recognizable shelf and thumbnail appearance", "Detachable microphone supports gaming communication and cleaner daily-use presentation", "RGB accents help the model stand out in online stores and retail comparison visuals"],
     usecases: ["Entry-to-mid gaming headset programmes", "Online marketplace product lines", "Youth gaming and streaming bundles", "Regional distributor assortments"],
-    technical: [["Connection direction", "2.4G wireless gaming positioning"], ["Driver", "35 mm + 16 mm dual unit"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "400 mAh"], ["Playback time", "Approx. 20 hours without lights"], ["Charging time", "1 - 2 hours"], ["Transmission distance", "10 meters"]],
+    technical: [["Connection direction", "2.4G wireless gaming use"], ["Driver", "35 mm + 16 mm dual unit"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "400 mAh"], ["Playback time", "Approx. 20 hours without lights"], ["Charging time", "1 - 2 hours"], ["Transmission distance", "10 meters"]],
     buyer: ["Distinct design for product-page differentiation", "Balanced wireless specification for mainstream channels", "Good model for colorway and packaging testing", "Easy to position as a value gaming wireless option"],
     fit: "Good for gaming channels that want a distinctive low-latency wireless look with a compact battery and strong visual differentiation.",
     oem: "Useful for channel-exclusive colorways, packaging sets, online listing images and entry-to-mid wireless gaming assortments."
   },
   "G942-wireless": {
-    highlights: ["Abyss-light design language with clean gaming styling", "Plug-in microphone for clear team communication", "Large stainless-steel bar and anti-vibration single beam", "Single-headband structure with high-fidelity speaker positioning"],
+    highlights: ["Abyss-light design language with clean gaming styling", "Plug-in microphone for clear team communication", "Large stainless-steel bar and anti-vibration single beam", "Single-headband structure with high-fidelity speaker setup"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
     fit: "Suitable for buyers who need a strong 2.4G wireless gaming model with a clean appearance and long battery narrative.",
-    oem: "Can be positioned as a hero wireless item for private-label launch ranges and gaming accessory bundles."
+    oem: "Can serve as a lead wireless item for private-label launch ranges and gaming accessory bundles."
   },
   "G923-wireless": {
-    highlights: ["RGB dynamic running light for gaming shelf impact", "Aluminum fork arm with full-coverage earcups", "Plug-in microphone and single-headband structure", "High-fidelity speaker positioning for immersive gameplay"],
+    highlights: ["RGB dynamic running light for gaming shelf impact", "Aluminum fork arm with full-coverage earcups", "Plug-in microphone and single-headband structure", "High-fidelity speaker setup for immersive gameplay"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
     fit: "Good for distributors comparing wireless gaming headsets with RGB styling and strong visual appeal.",
     oem: "Recommended for private-label packaging, retail kit planning, and model comparison during sample selection."
@@ -98,11 +98,11 @@ const detailLibrary = {
   "G920-wireless": {
     highlights: ["RGB dynamic running light", "Aluminum fork arm and full-coverage earcups", "Plug-in microphone for gaming communication", "Single-headband gaming structure"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
-    fit: "Suitable for value-focused wireless gaming assortments that still need RGB styling and long-use positioning.",
+    fit: "Suitable for value-focused wireless gaming assortments that still need RGB styling and long-use battery appeal.",
     oem: "Useful for regional channel bundles and branded packaging projects."
   },
   "G936-wireless": {
-    highlights: ["RGB dynamic running light with clean wireless silhouette", "Plug-in microphone and stainless-steel support bar", "Lightweight simple design with extendable headband", "Balanced 40 mm speaker positioning"],
+    highlights: ["RGB dynamic running light with clean wireless silhouette", "Plug-in microphone and stainless-steel support bar", "Lightweight simple design with extendable headband", "Balanced 40 mm speaker setup"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "800 mAh"], ["Playback time", "Approx. 40 hours without lights"], ["Charging time", "3 hours"], ["Transmission distance", "10 meters"]],
     fit: "Good for buyers wanting a simple RGB wireless gaming option with solid battery performance.",
     oem: "Recommended for color and packaging customization after sample confirmation."
@@ -126,54 +126,54 @@ const detailLibrary = {
     oem: "Good candidate for private-label packaging and entry-to-mid gaming channel ranges."
   },
   "G938-wireless": {
-    highlights: ["RGB dynamic running light", "Aluminum fork arm and full-coverage earcups", "Plug-in microphone and single-headband layout", "Immersive gaming appearance with 2.4G positioning"],
+    highlights: ["RGB dynamic running light", "Aluminum fork arm and full-coverage earcups", "Plug-in microphone and single-headband layout", "Immersive gaming appearance with 2.4G wireless use"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
     fit: "Good for channels that want a familiar gaming headset profile with wireless convenience and RGB styling.",
     oem: "Suitable for branded retail kits and model-by-model selection."
   },
   "G935-wireless": {
-    highlights: ["Clean minimalist gaming design", "Plug-in microphone with built-in stainless-steel bar", "Lightweight structure with extendable headband", "Balanced 40 mm speaker positioning"],
+    highlights: ["Clean minimalist gaming design", "Plug-in microphone with built-in stainless-steel bar", "Lightweight structure with extendable headband", "Balanced 40 mm speaker setup"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "500 mAh"], ["Playback time", "Approx. 25 hours without lights"], ["Charging time", "2 hours"], ["Transmission distance", "10 meters"]],
     fit: "Suitable for buyers who prefer a cleaner wireless gaming style without an overly aggressive appearance.",
     oem: "Recommended for understated private-label gaming lines and channel-specific color matching."
   },
   "B7-bluetooth": {
-    highlights: ["Zinc-alloy process with 180-degree rotation", "Over-ear design with premium rounded appearance", "Ergonomic headband structure for pressure-free wear", "Bluetooth and ANC positioning available for lifestyle audio lines"],
+    highlights: ["Zinc-alloy process with 180-degree rotation", "Over-ear design with premium rounded appearance", "Ergonomic headband structure for pressure-free wear", "Bluetooth and ANC options available for lifestyle audio lines"],
     technical: [["Bluetooth", "5.3 + EDR / ANC option"], ["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Battery", "300 mAh / 500 mAh option"], ["Music time", "16 - 22 hours / 15 - 20 hours option"], ["Charging interface", "Type-C on ANC version"], ["Transmission distance", "10 meters"]],
     fit: "Good for lifestyle audio importers and retailers looking for a more premium over-ear Bluetooth option.",
     oem: "Suitable for color extension, packaging localization, and Bluetooth / ANC version selection."
   },
   "B9-bluetooth": {
-    highlights: ["Rotatable headphone arms for portable use", "Skin-friendly over-ear cushions", "Ergonomic oval ear shell design", "Lightweight lifestyle Bluetooth positioning"],
+    highlights: ["Rotatable headphone arms for portable use", "Skin-friendly over-ear cushions", "Ergonomic oval ear shell design", "Lightweight lifestyle Bluetooth use"],
     technical: [["Bluetooth", "5.3 + EDR / ANC option"], ["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Battery", "300 mAh / 500 mAh option"], ["Music time", "16 - 22 hours / 15 - 20 hours option"], ["Charging time", "2 - 3 hours"], ["Transmission distance", "10 meters"]],
     fit: "Suitable for consumer electronics channels looking for a simple, modern Bluetooth over-ear headphone.",
     oem: "Good for lifestyle colorways, packaging sets, and ANC / non-ANC product planning."
   },
   "B10-bluetooth": {
-    highlights: ["Rotatable headphone arms and over-ear comfort", "Skin-friendly cushions with ergonomic oval ear shells", "Bluetooth ANC positioning available", "Clean appearance for retail audio assortments"],
+    highlights: ["Rotatable headphone arms and over-ear comfort", "Skin-friendly cushions with ergonomic oval ear shells", "Bluetooth ANC option available", "Clean appearance for retail audio assortments"],
     technical: [["Bluetooth", "5.3 + EDR / ANC option"], ["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Battery", "301 mAh / 500 mAh option"], ["Music time", "16 - 22 hours / 20 - 30 hours option"], ["Charging interface", "Type-C on ANC version"], ["Transmission distance", "10 meters"]],
-    fit: "Good for buyers building a clean Bluetooth headphone series with optional ANC positioning.",
+    fit: "Good for buyers building a clean Bluetooth headphone series with optional ANC.",
     oem: "Recommended for private-label lifestyle audio, color planning, and packaging customization."
   },
   "G946-new": {
     poster: {
-      eyebrow: "RGB Hero Concept",
+      eyebrow: "RGB Lead Concept",
       title: "G946",
       subtitle: "High-impact gaming visual for catalogue covers and buyer sample review.",
       callouts: ["RGB hero lighting", "Boom microphone"],
       footer: "Specification sheet to confirm before sale"
     },
     hero: "A high-impact RGB gaming headset concept built for visual selling: strong lighting, oversized earcup presence and a gaming-first silhouette for catalogue covers, online listings and buyer sample review.",
-    highlights: ["Large RGB visual area creates an immediate gaming identity for product thumbnails and display pages", "Over-ear structure and boom microphone make the product easy to understand for PC gaming buyers", "Multiple image angles are available for catalogue, marketplace and social media product presentation", "Strong hero-model appearance supports private-label launch discussions before final specification confirmation"],
+    highlights: ["Large RGB visual area creates an immediate gaming identity for product thumbnails and display pages", "Over-ear structure and boom microphone make the product easy to understand for PC gaming buyers", "Multiple image angles are available for catalogue, marketplace and social media product presentation", "Strong flagship appearance supports private-label launch discussions before final specification confirmation"],
     usecases: ["Catalogue hero pages", "Gaming brand launch visuals", "Importer sample review", "Retail shelf concept presentation"],
-    technical: [["Positioning", "RGB gaming concept"], ["Microphone", "Boom microphone"], ["Application", "Gaming headset selection"], ["Visual assets", "Multiple product angles prepared"], ["Documentation", "Specification sheet to confirm before sale"]],
+    technical: [["Model role", "RGB gaming concept"], ["Microphone", "Boom microphone"], ["Application", "Gaming headset selection"], ["Visual assets", "Multiple product angles prepared"], ["Documentation", "Specification sheet to confirm before sale"]],
     buyer: ["Best used as a visual lead model", "Useful for checking market reaction before bulk planning", "Supports private-label appearance discussions", "Can anchor a gaming headset range presentation"],
-    fit: "Suitable as a visual hero model for buyer discussions, new product selection and marketing concept review.",
+    fit: "Suitable as a visual lead model for buyer discussions, new product selection and marketing concept review.",
     oem: "Use for branding concept review, appearance discussion, color direction, packaging planning and sample confirmation."
   },
   "G947-new": {
     highlights: ["New gaming headset visual direction", "Over-ear structure for gaming channels", "Clean model candidate for upcoming assortment planning", "Suitable for buyer sample review"],
-    technical: [["Positioning", "New design candidate"], ["Application", "Gaming headset selection"], ["Configuration", "To confirm by sample"], ["Documentation", "Specification sheet to confirm"]],
+    technical: [["Model role", "New design candidate"], ["Application", "Gaming headset selection"], ["Configuration", "To confirm by sample"], ["Documentation", "Specification sheet to confirm"]],
     fit: "Suitable for buyers looking for upcoming headset designs and visual alternatives.",
     oem: "Recommended for early-stage selection, color review, and branding feasibility discussion."
   },
@@ -184,7 +184,7 @@ const detailLibrary = {
     oem: "Good candidate for private-label wired gaming bundles and retail packaging customization."
   },
   "G935-wired": {
-    highlights: ["RGB dynamic running light", "Plug-in microphone and plug-in main cable", "Built-in stainless-steel strip", "Lightweight minimalist design with 40 mm speaker positioning"],
+    highlights: ["RGB dynamic running light", "Plug-in microphone and plug-in main cable", "Built-in stainless-steel strip", "Lightweight minimalist design with 40 mm speaker setup"],
     technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Weight", "Approx. 190 g"]],
     fit: "Suitable for buyers seeking a light, clean wired RGB gaming headset.",
     oem: "Recommended for branded wired gaming lines and channel-exclusive packaging."
@@ -197,37 +197,37 @@ const detailLibrary = {
   },
   "G939-wired": {
     highlights: ["RGB dynamic LED lighting", "Plug-in microphone", "Steel-wire support arm and cool string design", "Adjustable intelligent control"],
-    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker positioning", "50 mm high-fidelity speaker"]],
+    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker setup", "50 mm high-fidelity speaker"]],
     fit: "Suitable for wired gaming channels seeking RGB styling with strong visual identity.",
     oem: "Good for private-label wired headset programmes and regional gaming accessory lines."
   },
   "G923-wired": {
     highlights: ["RGB dynamic running light", "Plug-in microphone", "Metal mesh earcup styling", "Single-headband structure with adjustable control"],
-    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.4 KΩ"], ["Speaker positioning", "52 mm high-fidelity speaker"]],
+    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.4 KΩ"], ["Speaker setup", "52 mm high-fidelity speaker"]],
     fit: "Good for value gaming programmes needing RGB appearance and durable wired communication.",
     oem: "Recommended for retail bundles, packaging customization, and market-specific color planning."
   },
   "G941-wired": {
-    highlights: ["Wired gaming visual candidate", "Over-ear gaming structure", "Boom microphone positioning", "Product image set available for buyer review"],
+    highlights: ["Wired gaming visual candidate", "Over-ear gaming structure", "Boom microphone layout", "Product image set available for buyer review"],
     technical: [["Configuration", "To confirm"], ["Application", "Wired gaming headset selection"], ["Documentation", "Specification sheet to confirm"]],
     fit: "Suitable for buyers comparing wired gaming visual directions before final specification confirmation.",
     oem: "Use for early-stage model selection and branding feasibility discussion."
   },
   "G921-wired": {
     highlights: ["RGB dynamic running light", "Plug-in microphone", "Metal mesh earcups", "Single-headband design with adjustable control"],
-    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker positioning", "52 mm high-fidelity speaker"]],
+    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker setup", "52 mm high-fidelity speaker"]],
     fit: "Suitable for wired gaming assortment expansion with RGB and metal-mesh visual cues.",
     oem: "Good for branded entry wired gaming selections and packaging projects."
   },
   "G919-wired": {
     highlights: ["RGB dynamic running light", "Plug-in microphone", "Stainless-steel support bar", "Single-headband design with adjustable control"],
-    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker positioning", "50 mm high-fidelity speaker"]],
+    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker setup", "50 mm high-fidelity speaker"]],
     fit: "Good for wired gaming headset programmes that need RGB lighting and a direct communication setup.",
     oem: "Recommended for private-label wired gaming bundles and channel-specific packaging."
   },
   "G907-wired": {
     highlights: ["Cool gaming appearance", "Single-headband structure", "LED backlight", "Long-handle folding microphone"],
-    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker positioning", "50 mm high-fidelity speaker"]],
+    technical: [["Interface", "3.5 mm + USB"], ["Microphone response", "50 - 16000 Hz"], ["Microphone sensitivity", "-45 dB ± 3 dB"], ["Microphone impedance", "≤2.3 KΩ"], ["Speaker setup", "50 mm high-fidelity speaker"]],
     fit: "Suitable for entry wired gaming ranges that need LED styling and simple communication features.",
     oem: "Good for promotional wired gaming assortments and private-label packaging."
   }

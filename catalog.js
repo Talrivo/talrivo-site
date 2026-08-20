@@ -148,7 +148,7 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Wireless gaming visual direction with 50 mm driver positioning for buyer review.",
+    "summary": "Wireless gaming visual direction with a 50 mm driver for buyer review.",
     "specs": [
       "2.4 GHz direction",
       "50 mm driver direction",
@@ -167,7 +167,7 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Wireless gaming design candidate with 50 mm driver positioning for sourcing review.",
+    "summary": "Wireless gaming design candidate with a 50 mm driver for sourcing review.",
     "specs": [
       "Wireless direction",
       "50 mm driver direction",
@@ -587,7 +587,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-661 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-661 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 50mm",
@@ -643,7 +643,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-663 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-663 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 40mm",
@@ -699,7 +699,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-668 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-668 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 50mm",
@@ -755,7 +755,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-610 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-610 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 40mm",
@@ -811,7 +811,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-508 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-508 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 40mm",
@@ -867,7 +867,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-1603 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-1603 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 40mm",
@@ -923,7 +923,7 @@ window.talrivoCatalog = [
     "name": "Light-emitting Headphone",
     "category": "wired",
     "label": "Light-emitting Wired",
-    "summary": "SY-669 light-emitting wired headset with LED USB lighting and gaming communication positioning.",
+    "summary": "SY-669 light-emitting wired headset with LED USB lighting and gaming communication use.",
     "specs": [
       "3.5mm Dual Plug + USB LED",
       "Speaker: 50mm",
@@ -2214,7 +2214,7 @@ window.talrivoCatalog = [
     "name": "ANC True Wireless Earbuds",
     "category": "tws",
     "label": "TWS Earbuds",
-    "summary": "TWS042S anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction, sleeping earbuds / white-noise positioning.",
+    "summary": "TWS042S anc true wireless earbuds for TWS retail and private-label assortments, with anc noise-reduction direction and sleeping earbuds / white-noise use.",
     "specs": [
       "Chipset: Blueturm 5636E",
       "Bluetooth: V6.0",
@@ -2230,7 +2230,7 @@ window.talrivoCatalog = [
     "details": {
       "highlights": [
         "ANC noise-reduction direction",
-        "Sleeping earbuds / white-noise positioning",
+        "Sleeping earbuds / white-noise use",
         "Android / iOS / PC compatibility listed",
         "OEM / ODM discussion available after sample confirmation"
       ],
@@ -3545,7 +3545,7 @@ window.talrivoCatalog = [
     "name": "ANC / Basic True Wireless Earbuds",
     "category": "tws",
     "label": "New TWS 2026",
-    "summary": "TWS013 new-mould true wireless earbuds for 2026, available in ANC and basic Bluetooth versions with 25-hour charging-case talk-time positioning.",
+    "summary": "TWS013 new-mould true wireless earbuds for 2026, available in ANC and basic Bluetooth versions with 25-hour charging-case talk-time direction.",
     "specs": [
       "ANC version: AB5726E chipset",
       "Basic version: AB5756C chipset",
@@ -3564,7 +3564,7 @@ window.talrivoCatalog = [
     "details": {
       "highlights": [
         "New moulding for 2026 TWS product selection",
-        "ANC version available with -25 ± 3dB ANC depth positioning",
+        "ANC version available with -25 ± 3dB listed ANC depth",
         "Basic version available for value-focused Bluetooth assortments",
         "Charging case battery capacity listed at 380mAh",
         "Android / iOS / PC compatibility listed"
@@ -3894,10 +3894,10 @@ window.talrivoCatalog = [
         ],
         "footer": "Bluetooth / AUX / USB / TF / TWS direction"
       },
-      "hero": "A portable Bluetooth speaker direction for buyers who need a higher-impact audio product with RGB styling, large battery positioning and multiple input modes for retail and outdoor-ready channels.",
+      "hero": "A portable Bluetooth speaker direction for buyers who need a higher-impact audio product with RGB styling, a large battery profile and multiple input modes for retail and outdoor-ready channels.",
       "highlights": [
         "Bluetooth 5.4 dual-mode solution with ATS2853P2 chipset",
-        "2 tweeters + 1 woofer acoustic structure with passive radiator bass positioning",
+        "2 tweeters + 1 woofer acoustic structure with passive radiator bass support",
         "7.4V 5000mAh battery profile using 21700 cells x 2",
         "USB / TF local playback, AUX input and TWS pairing support",
         "RGB visual design suitable for gaming, outdoor and lifestyle audio assortments"
@@ -3945,7 +3945,7 @@ window.talrivoCatalog = [
       "buyer": [
         "Distinct RGB speaker appearance for retail shelf and online thumbnails",
         "Multiple input modes support broader use scenarios",
-        "Large battery story helps channel positioning",
+        "Large battery profile helps channel selection",
         "Suitable as an audio extension beyond headset and TWS lines"
       ],
       "fit": "Suitable for buyers adding portable Bluetooth speakers to consumer audio assortments, especially channels that need RGB appearance and multi-mode playback.",
