@@ -1551,6 +1551,7 @@ h2 {
   border: 1px solid rgba(16, 23, 25, 0.08);
   border-radius: 6px;
   color: var(--ink-soft);
+  display: block;
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
