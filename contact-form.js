@@ -4,13 +4,20 @@ if (contactForm) {
   const status = document.querySelector("#form-status");
   const submitButton = contactForm.querySelector('button[type="submit"]');
   const pageUrl = document.querySelector("#contact-page-url");
+  const pageTitle = document.querySelector("#contact-page-title");
   const referrer = document.querySelector("#contact-referrer");
+  const firstLandingPage = document.querySelector("#contact-first-landing-page");
+  const firstReferrer = document.querySelector("#contact-first-referrer");
   const utmSource = document.querySelector("#contact-utm-source");
   const utmMedium = document.querySelector("#contact-utm-medium");
   const utmCampaign = document.querySelector("#contact-utm-campaign");
+  const utmTerm = document.querySelector("#contact-utm-term");
+  const utmContent = document.querySelector("#contact-utm-content");
+  const selectedFrom = document.querySelector("#contact-selected-from");
   const productInterest = contactForm.querySelector('select[name="product"]');
   const inquiryType = document.querySelector("#contact-inquiry-type");
   const params = new URLSearchParams(window.location.search);
+  const sourceStorageKey = "talrivoInquirySource";
   const productSelections = {
     "gaming-headsets": "Gaming Headset Collection",
     "wireless-gaming-headsets": "Wireless Gaming Headset Series",
@@ -45,14 +52,45 @@ if (contactForm) {
     documents: "Product document question"
   };
 
-  pageUrl.value = window.location.href;
-  referrer.value = document.referrer || "Direct / not available";
-  utmSource.value = params.get("utm_source") || "";
-  utmMedium.value = params.get("utm_medium") || "";
-  utmCampaign.value = params.get("utm_campaign") || "";
-
   const selectedProduct = productSelections[params.get("product")];
   const selectedInquiry = inquirySelections[params.get("inquiry")];
+  const firstVisit = {
+    firstLandingPage: window.location.href,
+    firstReferrer: document.referrer || "Direct / not available"
+  };
+  let storedSource = firstVisit;
+
+  try {
+    const savedSource = JSON.parse(window.localStorage.getItem(sourceStorageKey));
+    if (savedSource?.firstLandingPage) {
+      storedSource = savedSource;
+    } else {
+      window.localStorage.setItem(sourceStorageKey, JSON.stringify(firstVisit));
+    }
+  } catch (error) {
+    storedSource = firstVisit;
+  }
+
+  const contactLinkDetails = [
+    selectedProduct ? `Product: ${selectedProduct}` : "",
+    selectedInquiry ? `Inquiry: ${selectedInquiry}` : ""
+  ].filter(Boolean).join(" | ") || "Direct contact page";
+
+  const populateAttribution = () => {
+    pageUrl.value = window.location.href;
+    pageTitle.value = document.title;
+    referrer.value = document.referrer || "Direct / not available";
+    firstLandingPage.value = storedSource.firstLandingPage || window.location.href;
+    firstReferrer.value = storedSource.firstReferrer || "Direct / not available";
+    utmSource.value = params.get("utm_source") || "";
+    utmMedium.value = params.get("utm_medium") || "";
+    utmCampaign.value = params.get("utm_campaign") || "";
+    utmTerm.value = params.get("utm_term") || "";
+    utmContent.value = params.get("utm_content") || "";
+    selectedFrom.value = contactLinkDetails;
+  };
+
+  populateAttribution();
 
   if (selectedProduct) {
     productInterest.value = selectedProduct;
@@ -69,6 +107,7 @@ if (contactForm) {
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    populateAttribution();
     status.classList.remove("success", "error");
     status.textContent = "Sending your inquiry...";
     submitButton.disabled = true;
@@ -97,11 +136,17 @@ if (contactForm) {
       "Project requirements:",
       originalMessage,
       "",
-      `Submitted from: ${window.location.href}`,
-      `Referrer: ${document.referrer || "Direct / not available"}`,
-      `UTM source: ${params.get("utm_source") || "Not set"}`,
-      `UTM medium: ${params.get("utm_medium") || "Not set"}`,
-      `UTM campaign: ${params.get("utm_campaign") || "Not set"}`,
+      `Submitted from: ${valueOrFallback("page_url")}`,
+      `Page title: ${valueOrFallback("page_title")}`,
+      `Selected from: ${valueOrFallback("selected_from")}`,
+      `Referrer: ${valueOrFallback("referrer")}`,
+      `Initial landing page: ${valueOrFallback("first_landing_page")}`,
+      `Initial referrer: ${valueOrFallback("first_referrer")}`,
+      `UTM source: ${valueOrFallback("utm_source", "Not set")}`,
+      `UTM medium: ${valueOrFallback("utm_medium", "Not set")}`,
+      `UTM campaign: ${valueOrFallback("utm_campaign", "Not set")}`,
+      `UTM term: ${valueOrFallback("utm_term", "Not set")}`,
+      `UTM content: ${valueOrFallback("utm_content", "Not set")}`,
       `Form version: ${valueOrFallback("form_version")}`
     ].join("\n");
 
