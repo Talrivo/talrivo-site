@@ -2728,6 +2728,37 @@ h2 {
   margin-top: 0;
 }
 
+/* Keep the G936 supplied-image gallery compact without cropping the sample references. */
+.g936-page .evidence-grid {
+  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.g936-page .evidence-grid article {
+  align-self: start;
+  display: block;
+  padding: 0.85rem;
+}
+
+.g936-page .evidence-grid article img {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  margin: 0 0 0.9rem;
+  object-fit: contain;
+}
+
+@media (max-width: 920px) {
+  .g936-page .evidence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .g936-page .evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Home page visual refresh: premium audio-brand direction. */
 .site-header {
   backdrop-filter: blur(18px);
