@@ -121,7 +121,7 @@
     "name": "Contact TALRIVO for Gaming Headset Samples, RFQs and Model Support",
     "url": "https://talrivo.com/contact/",
     "description": "Contact TALRIVO to send a gaming headset sample request, RFQ, model comparison question, OEM/private-label brief, packaging brief or product document question.",
-    "dateModified": "2026-08-20",
+    "dateModified": "2026-08-25",
     "mainEntity": {
       "@type": "Organization",
       "name": "TALRIVO",
@@ -207,59 +207,12 @@
         <input type="hidden" name="utm_term" id="contact-utm-term">
         <input type="hidden" name="utm_content" id="contact-utm-content">
         <input type="hidden" name="selected_from" id="contact-selected-from">
-        <input type="hidden" name="form_version" value="contact-attribution-20260824">
+        <input type="hidden" name="form_version" value="contact-rfq-flow-20260825">
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
-        <p class="form-helper">Required fields: name, business email, product interest, inquiry type and project requirements.</p>
+        <p class="form-helper">Required fields: name, business email, product interest, inquiry type, project requirements and consent.</p>
         <div class="two-columns">
           <label>Full name <input name="name" autocomplete="name" required></label>
           <label>Business email <input name="email" type="email" autocomplete="email" required></label>
-          <label>Company <span class="optional-note">Optional</span><input name="company" autocomplete="organization"></label>
-          <label>Market / country <span class="optional-note">Optional</span>
-            <select name="market" autocomplete="country-name">
-              <option value="">Select market / country</option>
-              <option>United States</option>
-              <option>Canada</option>
-              <option>United Kingdom</option>
-              <option>Germany</option>
-              <option>Poland</option>
-              <option>Spain</option>
-              <option>Russia</option>
-              <option>Brazil</option>
-              <option>Mexico</option>
-              <option>Argentina</option>
-              <option>Indonesia</option>
-              <option>Vietnam</option>
-              <option>Thailand</option>
-              <option>Japan</option>
-              <option>South Korea</option>
-              <option>United Arab Emirates</option>
-              <option>Other market - specify in requirements</option>
-            </select>
-          </label>
-          <label>Buyer type <span class="optional-note">Optional</span>
-            <select name="buyer_type">
-              <option value="">Select buyer type</option>
-              <option>Importer or distributor</option>
-              <option>Audio brand</option>
-              <option>Retail buyer</option>
-              <option>Online store</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label>Sales channel
-            <select name="channel">
-              <option value="">Select sales channel</option>
-              <option>Distributor network</option>
-              <option>Retail stores</option>
-              <option>E-commerce marketplace</option>
-              <option>Own online store</option>
-              <option>Gaming or electronics brand</option>
-              <option>Corporate or institutional procurement</option>
-              <option>Other sales channel - specify in requirements</option>
-            </select>
-          </label>
-        </div>
-        <div class="two-columns">
           <label>Product interest
             <select name="product" required>
               <option value="">Select product interest</option>
@@ -303,7 +256,59 @@
               <option>Product document question</option>
             </select>
           </label>
-          <label>Project quantity stage <span class="optional-note">Optional</span>
+        </div>
+        <label>Project requirements
+          <textarea name="message" rows="5" required placeholder="Selected model, intended use, sample timing, logo or packaging needs, manual language and documents to check..."></textarea>
+        </label>
+        <details class="rfq-optional-details">
+          <summary>Add optional buyer and project details</summary>
+          <div class="two-columns">
+            <label>Company <span class="optional-note">Optional</span><input name="company" autocomplete="organization"></label>
+            <label>Market / country <span class="optional-note">Optional</span>
+              <select name="market" autocomplete="country-name">
+                <option value="">Select market / country</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Germany</option>
+                <option>Poland</option>
+                <option>Spain</option>
+                <option>Russia</option>
+                <option>Brazil</option>
+                <option>Mexico</option>
+                <option>Argentina</option>
+                <option>Indonesia</option>
+                <option>Vietnam</option>
+                <option>Thailand</option>
+                <option>Japan</option>
+                <option>South Korea</option>
+                <option>United Arab Emirates</option>
+                <option>Other market - specify in requirements</option>
+              </select>
+            </label>
+            <label>Buyer type <span class="optional-note">Optional</span>
+              <select name="buyer_type">
+                <option value="">Select buyer type</option>
+                <option>Importer or distributor</option>
+                <option>Audio brand</option>
+                <option>Retail buyer</option>
+                <option>Online store</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Sales channel <span class="optional-note">Optional</span>
+              <select name="channel">
+                <option value="">Select sales channel</option>
+                <option>Distributor network</option>
+                <option>Retail stores</option>
+                <option>E-commerce marketplace</option>
+                <option>Own online store</option>
+                <option>Gaming or electronics brand</option>
+                <option>Corporate or institutional procurement</option>
+                <option>Other sales channel - specify in requirements</option>
+              </select>
+            </label>
+            <label>Project quantity stage <span class="optional-note">Optional</span>
             <select name="quantity">
               <option value="">Select project stage</option>
               <option>Need sample evaluation first</option>
@@ -312,8 +317,8 @@
               <option>Regular distributor order planning</option>
               <option>Private-label program discussion</option>
             </select>
-          </label>
-          <label>Project timing
+            </label>
+            <label>Project timing <span class="optional-note">Optional</span>
             <select name="timeline">
               <option value="">Select timing</option>
               <option>Need samples this week</option>
@@ -321,11 +326,9 @@
               <option>Planning a new product line</option>
               <option>Comparing products first</option>
             </select>
-          </label>
-        </div>
-        <label>Project requirements
-          <textarea name="message" rows="5" required placeholder="Selected model, intended use, sample timing, logo or packaging needs, manual language and documents to check..."></textarea>
-        </label>
+            </label>
+          </div>
+        </details>
         <label class="consent"><input name="consent" type="checkbox" required> I agree to be contacted about this product inquiry.</label>
         <button class="button primary submit" type="submit">Send Product Inquiry</button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>

@@ -89,7 +89,7 @@
         "url": "https://talrivo.com/",
         "name": "Gaming Headsets for Importers and Private-Label Buyers | TALRIVO",
         "description": "Explore TALRIVO gaming headsets for importers and private-label buyers, with wireless and wired model pages, product evidence, sample checklists and RFQ paths.",
-        "dateModified": "2026-08-20",
+        "dateModified": "2026-08-25",
         "isPartOf": {
           "@id": "https://talrivo.com/#website"
         },
@@ -690,57 +690,11 @@
         <input type="hidden" name="utm_term" id="utm-term">
         <input type="hidden" name="utm_content" id="utm-content">
         <input type="hidden" name="selected_from" id="selected-from">
+        <input type="hidden" name="form_version" value="home-rfq-flow-20260825">
+        <p class="form-helper">Required fields: name, business email, product interest, project requirements and consent.</p>
         <div class="two-columns">
           <label>Full name <input name="name" autocomplete="name" required></label>
           <label>Business email <input name="email" type="email" autocomplete="email" required></label>
-          <label>Company <input name="company" autocomplete="organization" required></label>
-          <label>Market / country
-            <select name="market" autocomplete="country-name" required>
-              <option value="">Select market / country</option>
-              <option>United States</option>
-              <option>Canada</option>
-              <option>United Kingdom</option>
-              <option>Germany</option>
-              <option>Poland</option>
-              <option>Spain</option>
-              <option>Russia</option>
-              <option>Brazil</option>
-              <option>Mexico</option>
-              <option>Argentina</option>
-              <option>Indonesia</option>
-              <option>Vietnam</option>
-              <option>Thailand</option>
-              <option>Japan</option>
-              <option>South Korea</option>
-              <option>United Arab Emirates</option>
-              <option>Other market - specify in requirements</option>
-            </select>
-          </label>
-          <label>Customer type
-            <select name="buyer_type" required>
-              <option value="">Select customer type</option>
-              <option>Audio brand</option>
-              <option>Retail buyer</option>
-              <option>Online store</option>
-              <option>Product collection</option>
-              <option>Custom-branded product line</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label>Sales channel
-            <select name="channel">
-              <option value="">Select sales channel</option>
-              <option>Distributor network</option>
-              <option>Retail stores</option>
-              <option>E-commerce marketplace</option>
-              <option>Own online store</option>
-              <option>Gaming or electronics brand</option>
-              <option>Corporate or institutional procurement</option>
-              <option>Other sales channel - specify in requirements</option>
-            </select>
-          </label>
-        </div>
-        <div class="two-columns">
           <label>Product interest
             <select name="product" id="product-interest" required>
               <option value="">Select a product range</option>
@@ -766,24 +720,79 @@
               <option>Type-C Digital Earphones</option>
               <option>Custom Audio Project</option>
             </select>
-            <span class="form-helper">Review model pages first:
+            <span class="form-helper">Review gaming headset model pages first:
               <a href="gaming-headset-models/">Gaming headset model codes</a>,
-              <a href="bluetooth-headphones/b7-bluetooth/">B7</a> / <a href="bluetooth-headphones/b9-bluetooth/">B9</a> / <a href="bluetooth-headphones/b10-bluetooth/">B10</a> Bluetooth headphones,
-              <a href="tws-earbuds/tws044f/">TWS044F</a> / <a href="tws-earbuds/earclip09s/">Earclip09S</a> earbuds,
-              <a href="type-c-earphones/tc-1/">TC-1 Type-C earphone</a>.
+              <a href="gaming-headsets/g938-wireless/">G938</a>,
+              <a href="gaming-headsets/g941-tri-mode-anc/">G941</a>,
+              <a href="gaming-headsets/g936-lightweight/">G936</a>,
+              <a href="gaming-headsets/g926-wireless/">G926</a>,
+              <a href="gaming-headsets/g935-wireless/">G935</a> or
+              <a href="gaming-headsets/g940-low-latency/">G940</a>.
             </span>
           </label>
-          <label>Estimated order quantity
-            <select name="quantity" required>
-              <option value="">Select quantity</option>
-              <option>Under 500 pcs</option>
-              <option>500 - 1,000 pcs</option>
-              <option>1,001 - 3,000 pcs</option>
-              <option>3,000+ pcs</option>
-              <option>Need sample evaluation first</option>
-            </select>
-          </label>
-          <label>Project timeline
+        </div>
+        <label>Project requirements
+          <textarea name="message" rows="5" required placeholder="Selected model, intended use, sample timing, logo or packaging needs, manual language and documents to check..."></textarea>
+        </label>
+        <details class="rfq-optional-details">
+          <summary>Add optional buyer and project details</summary>
+          <div class="two-columns">
+            <label>Company <span class="optional-note">Optional</span><input name="company" autocomplete="organization"></label>
+            <label>Market / country <span class="optional-note">Optional</span>
+              <select name="market" autocomplete="country-name">
+                <option value="">Select market / country</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Germany</option>
+                <option>Poland</option>
+                <option>Spain</option>
+                <option>Russia</option>
+                <option>Brazil</option>
+                <option>Mexico</option>
+                <option>Argentina</option>
+                <option>Indonesia</option>
+                <option>Vietnam</option>
+                <option>Thailand</option>
+                <option>Japan</option>
+                <option>South Korea</option>
+                <option>United Arab Emirates</option>
+                <option>Other market - specify in requirements</option>
+              </select>
+            </label>
+            <label>Buyer type <span class="optional-note">Optional</span>
+              <select name="buyer_type">
+                <option value="">Select buyer type</option>
+                <option>Importer or distributor</option>
+                <option>Audio brand</option>
+                <option>Retail buyer</option>
+                <option>Online store</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Sales channel <span class="optional-note">Optional</span>
+              <select name="channel">
+                <option value="">Select sales channel</option>
+                <option>Distributor network</option>
+                <option>Retail stores</option>
+                <option>E-commerce marketplace</option>
+                <option>Own online store</option>
+                <option>Gaming or electronics brand</option>
+                <option>Corporate or institutional procurement</option>
+                <option>Other sales channel - specify in requirements</option>
+              </select>
+            </label>
+            <label>Project quantity stage <span class="optional-note">Optional</span>
+              <select name="quantity">
+                <option value="">Select project stage</option>
+                <option>Need sample evaluation first</option>
+                <option>Quantity to discuss after model review</option>
+                <option>First order planning</option>
+                <option>Regular distributor order planning</option>
+                <option>Private-label program discussion</option>
+              </select>
+            </label>
+            <label>Project timeline <span class="optional-note">Optional</span>
             <select name="timeline">
               <option value="">Select timeline</option>
               <option>Need samples this week</option>
@@ -793,7 +802,7 @@
               <option>Repeat order / stable collection project</option>
             </select>
           </label>
-          <label>Branding needs
+            <label>Branding needs <span class="optional-note">Optional</span>
             <select name="branding">
               <option value="">Select branding needs</option>
               <option>No logo needed first</option>
@@ -802,11 +811,9 @@
               <option>Logo + packaging + manual</option>
               <option>Need customization discussion</option>
             </select>
-          </label>
-        </div>
-        <label>Requirements
-          <textarea name="message" rows="5" placeholder="Example: interested in G941/G940 wireless gaming headsets, target market, intended use, quantity range, sample timing, logo or packaging needs, and documents to check..."></textarea>
-        </label>
+            </label>
+          </div>
+        </details>
         <label class="consent"><input name="consent" type="checkbox" required> I agree to be contacted about this product message.</label>
         <button class="button primary submit" type="submit">Send Product Inquiry</button>
         <p class="form-status" id="form-status" role="status"></p>

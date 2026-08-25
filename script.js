@@ -591,8 +591,9 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   populateSourceFields();
   const fields = new FormData(form);
+  const valueOrFallback = (field, fallback = "Not specified") => fields.get(field) || fallback;
   formStatus.classList.remove("success", "error");
-  const subject = `TALRIVO RFQ - ${fields.get("product")} - ${fields.get("company")}`;
+  const subject = `TALRIVO RFQ - ${valueOrFallback("product")} - ${valueOrFallback("company", "Company not specified")}`;
   const message = [
     "Hello TALRIVO,",
     "",
@@ -600,17 +601,17 @@ form.addEventListener("submit", async (event) => {
     "",
     `Name: ${fields.get("name")}`,
     `Business email: ${fields.get("email")}`,
-    `Company: ${fields.get("company")}`,
-    `Market / country: ${fields.get("market")}`,
-    `Buyer type: ${fields.get("buyer_type") || "Not specified"}`,
-    `Sales channel: ${fields.get("channel") || "Not specified"}`,
-    `Product interest: ${fields.get("product")}`,
-    `Estimated order quantity: ${fields.get("quantity")}`,
+    `Company: ${valueOrFallback("company")}`,
+    `Market / country: ${valueOrFallback("market")}`,
+    `Buyer type: ${valueOrFallback("buyer_type")}`,
+    `Sales channel: ${valueOrFallback("channel")}`,
+    `Product interest: ${valueOrFallback("product")}`,
+    `Project quantity stage: ${valueOrFallback("quantity")}`,
     `Project timeline: ${fields.get("timeline") || "Not specified"}`,
     `Branding needs: ${fields.get("branding") || "Not specified"}`,
     "",
     "Requirements:",
-    fields.get("message") || "Please provide available options and commercial details.",
+    valueOrFallback("message"),
     "",
     "Source context:",
     `Submitted from: ${fields.get("page_url") || "Not available"}`,
@@ -623,7 +624,8 @@ form.addEventListener("submit", async (event) => {
     `UTM medium: ${fields.get("utm_medium") || "Not set"}`,
     `UTM campaign: ${fields.get("utm_campaign") || "Not set"}`,
     `UTM term: ${fields.get("utm_term") || "Not set"}`,
-    `UTM content: ${fields.get("utm_content") || "Not set"}`
+    `UTM content: ${fields.get("utm_content") || "Not set"}`,
+    `Form version: ${valueOrFallback("form_version")}`
   ].join("\n");
   const web3formsKey = form.dataset.web3formsKey.trim();
 
