@@ -52,7 +52,7 @@ Official WhatsApp quick-question route: available from the Contact, Sample Reque
 
 ## Gaming Headset Model Evidence
 
-- [G941 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g941-tri-mode-anc/): TALRIVO G941 tri-mode wireless gaming headset page with 2.4G, Bluetooth and wired direction, 50mm driver, receiver detail, detachable boom microphone, color options, official videos, sample evaluation path, customization, and RFQ questions.
+- [G941 Wireless Gaming Headset](https://talrivo.com/gaming-headsets/g941-tri-mode-anc/): TALRIVO G941 tri-mode wireless gaming headset page with 2.4G, Bluetooth and wired direction, JL 2.4G chipset, 50mm driver, 1000mAh battery, listed 20ms 2.4G latency, detachable boom microphone, color options, official videos, sample evaluation path, customization, and RFQ questions. Confirm the selected receiver and firmware on the approved sample.
 - [G941 vs G940 Wireless Gaming Headsets](https://talrivo.com/insights/g941-vs-g940-wireless-gaming-headset/): Comparison by product role, visual direction, receiver details, sample review, and buyer use case.
 - [G938 vs G941 Wireless Gaming Headsets](https://talrivo.com/insights/g938-vs-g941-wireless-gaming-headset/): Sample-selection guide for importers comparing G938 and G941 by tri-mode connection, receiver and accessory evidence, microphone structure, listed driver and weight data, visual direction, official videos, sample review and RFQ path.
 - [G941 Color Options and Product Notes](https://talrivo.com/insights/g941-color-options-wireless-gaming-headset/): Black-red and white directions, USB-C receiver detail, boom microphone, logo area, and image review.
