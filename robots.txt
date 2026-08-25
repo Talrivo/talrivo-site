@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /README.md
 
 Sitemap: https://talrivo.com/sitemap.xml
 Sitemap: https://talrivo.com/video-sitemap.xml
