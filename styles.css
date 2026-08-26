@@ -2148,6 +2148,26 @@ h2 {
   padding: 1.2rem;
 }
 
+/* Keep the gaming-headset collection concise and show its supplied hero image whole. */
+.gaming-headsets-page .seo-hero {
+  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1.04fr) minmax(380px, 0.76fr);
+  min-height: 500px;
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+}
+
+.gaming-headsets-page .seo-hero h1 {
+  font-size: clamp(2.45rem, 3.7vw, 4rem);
+  line-height: 1.04;
+  max-width: 700px;
+}
+
+.gaming-headsets-page .seo-hero > img {
+  aspect-ratio: 1160 / 1250;
+  object-fit: contain;
+}
+
 .content-byline {
   align-items: center;
   border-bottom: 1px solid var(--line);
@@ -2635,6 +2655,10 @@ h2 {
 @media (max-width: 920px) {
   .seo-nav {
     display: none;
+  }
+
+  .gaming-headsets-page .seo-hero {
+    grid-template-columns: 1fr;
   }
 
   .seo-hero {
