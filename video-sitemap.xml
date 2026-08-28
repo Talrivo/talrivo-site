@@ -65,4 +65,16 @@
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
+  <url>
+    <loc>https://talrivo.com/bluetooth-headphones/b9-bluetooth/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PjWnIJUTSAA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>TALRIVO B9 Bluetooth Headphone Product Film</video:title>
+      <video:description>A short TALRIVO B9 Bluetooth headphone product film for importers, distributors and private-label audio buyers.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/PjWnIJUTSAA</video:player_loc>
+      <video:duration>26</video:duration>
+      <video:publication_date>2026-08-28T00:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
 </urlset>
