@@ -1,0 +1,35 @@
+{
+  "model": "B9",
+  "status": "confirmed-public",
+  "page": "/bluetooth-headphones/b9-bluetooth/",
+  "title": "B9 Bluetooth 5.3 Over-Ear Headphones",
+  "summary": "Bluetooth 5.3 + EDR over-ear headphones with a 40 mm driver and 300 mAh battery.",
+  "specifications": [
+    { "name": "Bluetooth version", "value": "Bluetooth 5.3 + EDR" },
+    { "name": "Bluetooth chipset", "value": "JL" },
+    { "name": "Charging voltage", "value": "DC 5 V" },
+    { "name": "Working voltage", "value": "3.7 V" },
+    { "name": "Driver diameter", "value": "40 mm" },
+    { "name": "Impedance", "value": "32 ohm" },
+    { "name": "Frequency response", "value": "20 Hz-20 kHz" },
+    { "name": "Sensitivity", "value": "110 dB" },
+    { "name": "Output power", "value": "120 mW" },
+    { "name": "Transmission distance", "value": "10 m" },
+    { "name": "Signal-to-noise ratio", "value": "<=85 dB" },
+    { "name": "Distortion", "value": "1%" },
+    { "name": "Call time", "value": "Approximately 16-22 hours" },
+    { "name": "Music time", "value": "Approximately 16-22 hours" },
+    { "name": "Standby time", "value": "Approximately 300 hours" },
+    { "name": "Charging time", "value": "Approximately 2 hours" },
+    { "name": "Battery capacity", "value": "300 mAh" }
+  ],
+  "assets": [
+    "assets/catalog/b9-bluetooth/reference/b9-white-front-over-ear.jpg",
+    "assets/catalog/b9-bluetooth/reference/b9-black-controls-closeup.jpg",
+    "assets/catalog/b9-bluetooth/reference/b9-black-accessory-layout-reference.jpg",
+    "assets/catalog/b9-bluetooth/reference/b9-white-angled-over-ear.jpg",
+    "assets/catalog/b9-bluetooth/reference/b9-black-lifestyle-desk.jpg",
+    "assets/catalog/b9-bluetooth/reference/b9-black-wearing-lifestyle.jpg",
+    "assets/catalog/b9-bluetooth/reference/b9-white-wearing-office.jpg"
+  ]
+}
