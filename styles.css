@@ -2133,6 +2133,12 @@ h2 {
   max-width: 720px;
 }
 
+.manufacturer-guide-page .seo-hero h1 {
+  font-size: clamp(2.15rem, 3.55vw, 3.7rem);
+  line-height: 1.05;
+  max-width: 760px;
+}
+
 .seo-hero p {
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.6vw, 1.18rem);
