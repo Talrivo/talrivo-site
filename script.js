@@ -587,6 +587,43 @@ wechatDialog.addEventListener("click", (event) => {
   }
 });
 
+const trackInquirySuccess = (fields, location) => {
+  const payload = {
+    event: "rfq_form_submit_success",
+    form_location: location,
+    form_version: fields.get("form_version") || "",
+    product_interest: fields.get("product") || "",
+    buyer_type: fields.get("buyer_type") || "",
+    sales_channel: fields.get("channel") || "",
+    market: fields.get("market") || "",
+    quantity_stage: fields.get("quantity") || "",
+    project_timing: fields.get("timeline") || "",
+    branding_needs: fields.get("branding") || "",
+    selected_from: fields.get("selected_from") || "",
+    utm_source: fields.get("utm_source") || "",
+    utm_medium: fields.get("utm_medium") || "",
+    utm_campaign: fields.get("utm_campaign") || ""
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
+  if (typeof window.gtag === "function") {
+    window.gtag("event", payload.event, {
+      form_location: payload.form_location,
+      form_version: payload.form_version,
+      product_interest: payload.product_interest,
+      buyer_type: payload.buyer_type,
+      sales_channel: payload.sales_channel,
+      market: payload.market,
+      quantity_stage: payload.quantity_stage,
+      project_timing: payload.project_timing,
+      branding_needs: payload.branding_needs,
+      selected_from: payload.selected_from
+    });
+  }
+  window.dispatchEvent(new CustomEvent("talrivo:rfq-submit-success", { detail: payload }));
+};
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   populateSourceFields();
@@ -645,6 +682,7 @@ form.addEventListener("submit", async (event) => {
       form.reset();
       formStatus.classList.add("success");
       formStatus.textContent = "Your inquiry has been sent. We will reply by email within 24 hours. For urgent sample discussion, you can also scan the WeChat QR code below.";
+      trackInquirySuccess(fields, "home_rfq");
       return;
     } catch (error) {
       formStatus.classList.add("error");

@@ -51,6 +51,42 @@ if (contactForm) {
     packaging: "Packaging / artwork discussion",
     documents: "Product document question"
   };
+  const trackInquirySuccess = (fields, location) => {
+    const payload = {
+      event: "rfq_form_submit_success",
+      form_location: location,
+      form_version: fields.get("form_version") || "",
+      product_interest: fields.get("product") || "",
+      inquiry_type: fields.get("inquiry_type") || "",
+      buyer_type: fields.get("buyer_type") || "",
+      sales_channel: fields.get("channel") || "",
+      market: fields.get("market") || "",
+      quantity_stage: fields.get("quantity") || "",
+      project_timing: fields.get("timeline") || "",
+      selected_from: fields.get("selected_from") || "",
+      utm_source: fields.get("utm_source") || "",
+      utm_medium: fields.get("utm_medium") || "",
+      utm_campaign: fields.get("utm_campaign") || ""
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+    if (typeof window.gtag === "function") {
+      window.gtag("event", payload.event, {
+        form_location: payload.form_location,
+        form_version: payload.form_version,
+        product_interest: payload.product_interest,
+        inquiry_type: payload.inquiry_type,
+        buyer_type: payload.buyer_type,
+        sales_channel: payload.sales_channel,
+        market: payload.market,
+        quantity_stage: payload.quantity_stage,
+        project_timing: payload.project_timing,
+        selected_from: payload.selected_from
+      });
+    }
+    window.dispatchEvent(new CustomEvent("talrivo:rfq-submit-success", { detail: payload }));
+  };
 
   const selectedProduct = productSelections[params.get("product")];
   const selectedInquiry = inquirySelections[params.get("inquiry")];
@@ -103,6 +139,7 @@ if (contactForm) {
   if (params.get("sent") === "1") {
     status.classList.add("success");
     status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
+    trackInquirySuccess(new FormData(contactForm), "contact_page_redirect");
   }
 
   contactForm.addEventListener("submit", async (event) => {
@@ -165,6 +202,7 @@ if (contactForm) {
       contactForm.reset();
       status.classList.add("success");
       status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
+      trackInquirySuccess(fields, "contact_page");
     } catch (error) {
       status.classList.add("error");
       status.textContent = "Online submission is temporarily unavailable. Please copy and email your requirements to sales@talrivo.com.";
