@@ -1558,6 +1558,14 @@ h2 {
   padding: 0.75rem 0.85rem;
 }
 
+.form-reassurance {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: -0.15rem 0 0;
+}
+
 .rfq-optional-details {
   border: 1px solid rgba(16, 23, 25, 0.12);
   padding: 0.9rem;
@@ -1577,7 +1585,7 @@ h2 {
 .two-columns {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .rfq-form label {
@@ -1610,6 +1618,7 @@ h2 {
   color: var(--ink);
   min-height: 48px;
   padding: 0.72rem 0.8rem;
+  width: 100%;
 }
 
 .rfq-form textarea {
@@ -2648,6 +2657,42 @@ h2 {
   font-size: 0.92rem;
 }
 
+.inline-conversion-panel {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(16, 23, 25, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(16, 23, 25, 0.04);
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-top: 1.2rem;
+  padding: clamp(1.1rem, 3vw, 1.45rem);
+}
+
+.inline-conversion-panel h3,
+.inline-conversion-panel p {
+  margin: 0;
+}
+
+.inline-conversion-panel h3 {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.18;
+}
+
+.inline-conversion-panel p:not(.label) {
+  color: var(--muted);
+  margin-top: 0.45rem;
+  max-width: 680px;
+}
+
+.inline-conversion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: flex-end;
+}
+
 .seo-faq {
   background: var(--surface);
 }
@@ -2733,6 +2778,19 @@ h2 {
 
   .buyer-summary {
     grid-template-columns: 1fr;
+  }
+
+  .inline-conversion-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .inline-conversion-actions {
+    justify-content: stretch;
+  }
+
+  .inline-conversion-actions .button {
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -4871,5 +4929,33 @@ h2 {
     max-width: 100%;
     text-align: center;
     width: min(calc(100vw - 2rem), 340px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .rfq,
+  .rfq-form,
+  .rfq-form label,
+  .rfq-form .form-helper,
+  .rfq-form .form-reassurance,
+  .rfq-form .rfq-optional-details {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .rfq-form input:not([type="checkbox"]),
+  .rfq-form select,
+  .rfq-form textarea {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .rfq-form input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: auto !important;
   }
 }
