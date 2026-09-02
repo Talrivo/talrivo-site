@@ -13,7 +13,7 @@ Official WhatsApp quick-question route: available from the Contact, Sample Reque
 
 ## Core Pages
 
-- [TALRIVO Home](https://talrivo.com/): Gaming headset OEM/ODM sourcing entry for tri-mode wireless and wired RGB gaming headset models, private-label sourcing, sample review, custom branding and packaging inquiries for importers and distributors.
+- [TALRIVO Home](https://talrivo.com/): Gaming headset OEM/ODM sourcing entry for tri-mode wireless and wired RGB gaming headset models, private-label sourcing, sample review, custom branding, packaging inquiries and a direct link to the 2.4G vs Bluetooth importer comparison guide.
 - [Gaming Headsets](https://talrivo.com/gaming-headsets/): Main collection for importers comparing TALRIVO G938, G941, G936, G935, G926 and G940 by driver, battery, 2.4G/Bluetooth or wired direction, microphone setup, sample evidence, OEM/ODM sourcing questions and a lightweight sample-route contact path.
 - [Gaming Headset Model Code Index](https://talrivo.com/gaming-headset-models/): White-hat model-code directory for G926, G935, G936, G938, G940, G941, G946 and G947, linking buyers from a model-code search to real TALRIVO product pages, sample review checks and RFQ preparation without claiming third-party brand replacement or original-manufacturer identity.
 - [Gaming Headset Sample & Quality Review](https://talrivo.com/gaming-headset-quality-review/): Visual buyer resource using real workshop process reference photos to prepare model-specific questions about assembly, functional checks, charging, cable or receiver details, accessories and packaging. The photos do not establish capacity, certification, inspection scope or individual test results.

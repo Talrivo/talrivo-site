@@ -3991,6 +3991,20 @@ h2 {
   max-width: 520px;
 }
 
+.hero-guide-link {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  margin: 1rem 0 1.15rem;
+  max-width: 520px;
+}
+
+.hero-guide-link a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
 .brand-hero .button.primary {
   background: #ffffff;
   color: #0c0f10;
@@ -4755,7 +4769,8 @@ h2 {
 
   .brand-hero .label,
   .brand-hero .hero-line,
-  .brand-hero .hero-detail {
+  .brand-hero .hero-detail,
+  .brand-hero .hero-guide-link {
     max-width: min(calc(100vw - 2.5rem), 34rem) !important;
     overflow-wrap: anywhere !important;
     white-space: normal !important;
@@ -4780,6 +4795,7 @@ h2 {
   .brand-hero h1,
   .brand-hero .hero-line,
   .brand-hero .hero-detail,
+  .brand-hero .hero-guide-link,
   .brand-hero .hero-actions,
   .brand-hero .hero-proof {
     max-width: 350px !important;
@@ -4957,5 +4973,73 @@ h2 {
   .rfq-form input[type="checkbox"] {
     flex: 0 0 auto;
     width: auto !important;
+  }
+}
+
+/* Home mobile containment: prevent product sections from clipping headlines or card copy. */
+@media (max-width: 620px) {
+  .featured-showcase,
+  .products,
+  .capability,
+  .applications {
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .featured-heading,
+  .featured-grid,
+  .product-grid,
+  .capability-grid,
+  .application-grid {
+    box-sizing: border-box;
+    max-width: calc(100vw - 2.5rem);
+    width: 100%;
+  }
+
+  .featured-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .featured-heading h2,
+  .featured-copy h3,
+  .featured-copy p,
+  .product-copy h3,
+  .product-copy li,
+  .capability .section-heading h2,
+  .capability .section-heading .intro {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .featured-card {
+    box-sizing: border-box;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .featured-copy {
+    box-sizing: border-box;
+    padding: 1.35rem;
+  }
+
+  .featured-copy h3 {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+    line-height: 1.06;
+  }
+
+  .featured-copy p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .featured-card img {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
