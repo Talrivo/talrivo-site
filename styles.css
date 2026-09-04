@@ -3796,6 +3796,13 @@ h2 {
   max-width: 760px;
 }
 
+/* Product pages use a quieter heading scale than the home-page hero. */
+.seo-page.g938-page .product-detail h1 {
+  font-size: clamp(2.4rem, 3.4vw, 3.6rem);
+  line-height: 1.04;
+  max-width: 620px;
+}
+
 .seo-page .product-detail p {
   color: rgba(16, 23, 25, 0.7);
   max-width: 590px;
