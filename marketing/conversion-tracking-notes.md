@@ -51,6 +51,12 @@ Sample request guide:
 
 `https://talrivo.com/sample-request/?utm_source=email&utm_medium=outreach&utm_campaign=sample_request_followup`
 
-## Google Analytics note
+## Google Analytics
 
-The website should only add GA4 after the real Measurement ID is available. See `marketing/search-console-ga4-setup.md`.
+- GA4 Measurement ID: `G-ZLN0CNB9PZ`.
+- Public pages load `/analytics.js`.
+- Analytics storage is denied by default until the visitor accepts it.
+- A successful homepage or contact RFQ submission sends the recommended GA4 event `generate_lead`.
+- Failed or incomplete form submissions do not send `generate_lead`.
+
+After deployment, verify page views and `generate_lead` in GA4 Realtime and DebugView. Mark `generate_lead` as a key event if it is not already enabled in the property.

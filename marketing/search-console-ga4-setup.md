@@ -50,21 +50,22 @@ Useful checks:
 
 Create one GA4 property for TALRIVO.
 
-Required items from GA4:
+Configured GA4 data stream:
 
-- Measurement ID, formatted like `G-XXXXXXXXXX`.
+- Measurement ID: `G-ZLN0CNB9PZ`.
 - Data stream URL: `https://talrivo.com`.
 
-Website-side next step:
+Website implementation:
 
-- Add the GA4 tag to the `<head>` after the real Measurement ID is available.
-- Do not add a fake Measurement ID to the website.
+- `/analytics.js` loads GA4 on public pages with analytics storage denied by default.
+- Visitors can accept or reject analytics storage and reopen their analytics settings.
+- The homepage and contact RFQ forms send `generate_lead` only after Web3Forms confirms a successful submission.
 
 ## Recommended GA4 Events
 
 Track these events first:
 
-- `generate_lead`: inquiry form submitted.
+- `generate_lead`: inquiry form successfully submitted.
 - `select_product`: homepage product card or catalogue product selected.
 - `click_contact`: contact button clicked.
 - `view_item`: product page viewed.

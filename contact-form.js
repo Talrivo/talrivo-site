@@ -69,10 +69,9 @@ if (contactForm) {
       utm_campaign: fields.get("utm_campaign") || ""
     };
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(payload);
     if (typeof window.gtag === "function") {
-      window.gtag("event", payload.event, {
+      window.gtag("event", "generate_lead", {
+        method: "contact_rfq_form",
         form_location: payload.form_location,
         form_version: payload.form_version,
         product_interest: payload.product_interest,
