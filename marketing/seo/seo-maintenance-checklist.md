@@ -1,5 +1,10 @@
 # TALRIVO SEO Maintenance Checklist
 
+## Current Weekly Plan
+
+- Follow `marketing/seo/weekly-sop-2026-09-07.md` for 2026-09-07 through 2026-09-13 before using the generic weekly checklist below.
+- The dated plan freezes recently edited pages and takes priority over older instructions to publish or edit a website page every week.
+
 ## Weekly
 
 - Use `marketing/geo-growth-action-plan.md` as the top-level operating checklist.
