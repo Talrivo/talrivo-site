@@ -64,6 +64,7 @@ button {
 
 img {
   display: block;
+  height: auto;
   max-width: 100%;
 }
 
@@ -2326,6 +2327,7 @@ h2 {
   background: #f7f8f6;
   border-radius: 8px;
   display: block;
+  height: auto;
   margin: 0 0 1rem;
   object-fit: contain;
   width: 100%;
