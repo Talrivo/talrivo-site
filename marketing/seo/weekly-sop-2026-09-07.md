@@ -39,11 +39,13 @@ Do not create new product categories, promote G946, publish prices or add unsupp
 
 ## Monday: Deployment and Indexing Check (10 minutes)
 
-- [ ] Open `https://talrivo.com/gaming-headsets/g936-lightweight/` in a private browser window.
-- [ ] Confirm the title starts with `G936 2.4G Gaming Headset` and the first section contains the documented 40mm driver, listed 20ms latency and 800mAh battery.
-- [ ] In Google Search Console URL Inspection, test the live URL and request indexing once.
-- [ ] In Bing Webmaster Tools URL Submission, submit the same G936 URL once.
-- [ ] Do not resubmit the sitemap if its existing status is successful.
+- [x] Open `https://talrivo.com/gaming-headsets/g936-lightweight/` in a private browser window.
+- [x] Confirm the title starts with `G936 2.4G Gaming Headset` and the first section contains the documented 40mm driver, listed 20ms latency and 800mAh battery.
+- [x] In Google Search Console URL Inspection, test the live URL and request indexing once.
+- [x] In Bing Webmaster Tools URL Submission, submit the same G936 URL once.
+- [x] Do not resubmit the sitemap if its existing status is successful.
+
+Completed on 2026-09-07: Google shows `已请求编入索引`; Bing lists the G936 URL as submitted at 22:23 with 99 submissions remaining for the day.
 
 If Google shows a temporary request error, stop retrying. The live page, internal links and sitemap remain the primary discovery paths.
 
