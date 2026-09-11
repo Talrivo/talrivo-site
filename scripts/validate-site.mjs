@@ -107,8 +107,18 @@ function validateConfirmedProductFacts() {
   for (const [label, pattern] of expected) {
     if (!pattern.test(script)) errors.push(`script.js is missing confirmed ${label}`);
   }
-  if (!script.includes('new Set(["wireless", "wired", "bluetooth"])')) {
-    errors.push('script.js homepage catalogue is not limited to headset categories');
+  if (!script.includes('new Set(["wireless", "wired", "bluetooth", "tws"])')) {
+    errors.push('script.js homepage catalogue does not include all three primary product lines');
+  }
+  if (!script.includes('product.category !== "wired" || /^G\\d+/i.test(product.model)')) {
+    errors.push('script.js homepage catalogue does not exclude secondary SY wired models');
+  }
+
+  const homepage = readFileSync(join(root, 'index.html'), 'utf8');
+  for (const categoryPath of ['gaming-headsets/', 'bluetooth-headphones/', 'tws-earbuds/']) {
+    if (!homepage.includes(`<a href="${categoryPath}">`)) {
+      errors.push(`index.html is missing a primary product route for ${categoryPath}`);
+    }
   }
 }
 

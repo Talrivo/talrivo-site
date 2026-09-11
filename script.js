@@ -1,7 +1,5 @@
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
-const tabs = document.querySelectorAll(".tab");
-const cards = document.querySelectorAll(".product-card");
 const form = document.querySelector("#inquiry-form");
 const productSelect = document.querySelector("#product-interest");
 const formStatus = document.querySelector("#form-status");
@@ -19,9 +17,11 @@ const sourceFields = {
   selectedFrom: document.querySelector("#selected-from")
 };
 const mailbox = "sales@talrivo.com";
-const headsetCatalogueCategories = new Set(["wireless", "wired", "bluetooth"]);
+const homepageCatalogueCategories = new Set(["wireless", "wired", "bluetooth", "tws"]);
 const catalogue = (window.talrivoCatalog || []).filter(
-  (product) => product.public !== false && headsetCatalogueCategories.has(product.category)
+  (product) => product.public !== false
+    && homepageCatalogueCategories.has(product.category)
+    && (product.category !== "wired" || /^G\d+/i.test(product.model))
 );
 const catalogueGrid = document.querySelector("#catalogue-grid");
 const catalogueCount = document.querySelector("#catalogue-count");
@@ -253,21 +253,6 @@ navigation.querySelectorAll("a").forEach((link) => {
   });
 });
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    tabs.forEach((item) => {
-      item.classList.remove("active");
-      item.setAttribute("aria-selected", "false");
-    });
-    tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
-    const filter = tab.dataset.filter;
-    cards.forEach((card) => {
-      card.classList.toggle("hidden", filter !== "all" && card.dataset.category !== filter);
-    });
-  });
-});
-
 document.querySelectorAll(".inquiry-pick").forEach((button) => {
   button.addEventListener("click", () => {
     setProductInterest(button.dataset.product);
@@ -443,8 +428,13 @@ function renderPoster(product, poster) {
   posterFooter.textContent = poster.footer;
 }
 
-function renderCatalogue(filter = "all") {
-  const displayed = catalogue.filter((product) => filter === "all" || product.category === filter);
+function matchesCatalogueFilter(product, filter) {
+  if (filter === "gaming") return product.category === "wireless" || product.category === "wired";
+  return filter === "all" || product.category === filter;
+}
+
+function renderCatalogue(filter = "gaming") {
+  const displayed = catalogue.filter((product) => matchesCatalogueFilter(product, filter));
   catalogueCount.textContent = `${displayed.length} models`;
   if (!catalogueGrid.childElementCount) {
     catalogueGrid.innerHTML = catalogue.map((product, index) => `
@@ -465,7 +455,8 @@ function renderCatalogue(filter = "all") {
     });
   }
   catalogueGrid.querySelectorAll(".catalogue-card").forEach((card) => {
-    card.hidden = filter !== "all" && card.dataset.productCategory !== filter;
+    const product = catalogue[Number(card.dataset.productIndex)];
+    card.hidden = !matchesCatalogueFilter(product, filter);
   });
 }
 
@@ -714,4 +705,4 @@ if (contactDock) {
 }
 
 populateSourceFields();
-renderCatalogue();
+renderCatalogue("gaming");

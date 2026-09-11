@@ -5132,6 +5132,110 @@ h2 {
   z-index: 9999;
 }
 
+/* Primary product routes stay visible before visitors enter the long homepage. */
+.product-route-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0 clamp(1.15rem, 4vw, 3rem);
+}
+
+.product-route-bar a {
+  align-items: center;
+  border-left: 1px solid var(--line);
+  color: var(--ink);
+  display: flex;
+  font-size: 0.76rem;
+  font-weight: 750;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.product-route-bar a:last-child {
+  border-right: 1px solid var(--line);
+}
+
+.product-route-bar a:hover,
+.product-route-bar a:focus-visible {
+  background: #eefafa;
+  color: var(--cyan-deep);
+}
+
+.hero-proof a {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+}
+
+.hero-proof a:hover,
+.hero-proof a:focus-visible {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.primary-product-lines {
+  max-width: 1380px;
+}
+
+.primary-product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.primary-product-card {
+  background: #f7f8f6;
+  border: 1px solid rgba(16, 23, 25, 0.1);
+  border-radius: 6px;
+  color: var(--ink);
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.primary-product-card:hover,
+.primary-product-card:focus-visible {
+  border-color: rgba(0, 170, 183, 0.52);
+}
+
+.primary-product-card img {
+  aspect-ratio: 4 / 3;
+  background: #eef0ed;
+  display: block;
+  object-fit: contain;
+  width: 100%;
+}
+
+.primary-product-copy {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.1rem;
+}
+
+.primary-product-copy .label {
+  margin: 0;
+}
+
+.primary-product-copy strong {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.primary-product-copy > span:last-child {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 @media (max-width: 620px) {
   .analytics-consent {
     align-items: stretch;
@@ -5163,5 +5267,21 @@ h2 {
     margin: 0.75rem auto;
     position: static;
     width: max-content;
+  }
+
+  .product-route-bar {
+    padding: 0;
+  }
+
+  .product-route-bar a {
+    font-size: 0.66rem;
+    line-height: 1.2;
+    min-height: 50px;
+    overflow-wrap: anywhere;
+    padding: 0.45rem 0.35rem;
+  }
+
+  .primary-product-grid {
+    grid-template-columns: 1fr;
   }
 }
