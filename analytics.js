@@ -1,6 +1,8 @@
 (() => {
   const measurementId = "G-ZLN0CNB9PZ";
   const consentStorageKey = "talrivoAnalyticsConsent";
+  const inquirySourceStorageKey = "talrivoInquirySource";
+  const sourceParameterNames = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() {
@@ -22,8 +24,51 @@
     savedConsent = null;
   }
 
+  const captureInquirySource = () => {
+    const params = new URLSearchParams(window.location.search);
+    let storedSource = {};
+
+    try {
+      storedSource = JSON.parse(window.localStorage.getItem(inquirySourceStorageKey)) || {};
+    } catch (error) {
+      storedSource = {};
+    }
+
+    const source = {
+      ...storedSource,
+      firstLandingPage: storedSource.firstLandingPage || window.location.href,
+      firstReferrer: storedSource.firstReferrer || document.referrer || "Direct / not available",
+      latestLandingPage: window.location.href,
+      latestReferrer: document.referrer || "Direct / not available"
+    };
+
+    if (sourceParameterNames.some((name) => params.has(name))) {
+      for (const name of sourceParameterNames) {
+        const key = name.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+        source[key] = params.get(name) || "";
+      }
+    }
+
+    try {
+      window.localStorage.setItem(inquirySourceStorageKey, JSON.stringify(source));
+    } catch (error) {
+      // Attribution remains unavailable when storage cannot be used.
+    }
+  };
+
+  const clearInquirySource = () => {
+    try {
+      window.localStorage.removeItem(inquirySourceStorageKey);
+    } catch (error) {
+      // No stored attribution needs clearing when storage is unavailable.
+    }
+  };
+
   if (savedConsent === "granted") {
     window.gtag("consent", "update", { analytics_storage: "granted" });
+    captureInquirySource();
+  } else if (savedConsent === "denied") {
+    clearInquirySource();
   }
 
   window.gtag("js", new Date());
@@ -47,6 +92,11 @@
       analytics_storage: value === "granted" ? "granted" : "denied"
     });
     saveConsent(value);
+    if (value === "granted") {
+      captureInquirySource();
+    } else {
+      clearInquirySource();
+    }
   };
 
   const buildConsentPanel = () => {

@@ -49,7 +49,8 @@ if (contactForm) {
     rfq: "Quotation request",
     compare: "Model comparison",
     packaging: "Packaging / artwork discussion",
-    documents: "Product document question"
+    documents: "Product document question",
+    "quick-question": "Quick product question"
   };
   const trackInquirySuccess = (fields, location) => {
     const payload = {
@@ -117,11 +118,11 @@ if (contactForm) {
     referrer.value = document.referrer || "Direct / not available";
     firstLandingPage.value = storedSource.firstLandingPage || window.location.href;
     firstReferrer.value = storedSource.firstReferrer || "Direct / not available";
-    utmSource.value = params.get("utm_source") || "";
-    utmMedium.value = params.get("utm_medium") || "";
-    utmCampaign.value = params.get("utm_campaign") || "";
-    utmTerm.value = params.get("utm_term") || "";
-    utmContent.value = params.get("utm_content") || "";
+    utmSource.value = params.get("utm_source") || storedSource.utmSource || "";
+    utmMedium.value = params.get("utm_medium") || storedSource.utmMedium || "";
+    utmCampaign.value = params.get("utm_campaign") || storedSource.utmCampaign || "";
+    utmTerm.value = params.get("utm_term") || storedSource.utmTerm || "";
+    utmContent.value = params.get("utm_content") || storedSource.utmContent || "";
     selectedFrom.value = contactLinkDetails;
   };
 
@@ -138,7 +139,6 @@ if (contactForm) {
   if (params.get("sent") === "1") {
     status.classList.add("success");
     status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
-    trackInquirySuccess(new FormData(contactForm), "contact_page_redirect");
   }
 
   contactForm.addEventListener("submit", async (event) => {

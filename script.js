@@ -63,7 +63,7 @@ const detailLibrary = {
     hero: "A premium tri-mode gaming headset direction for importers that need one lead model to cover PC gaming, console use, mobile play and lifestyle wireless listening.",
     highlights: ["Tri-mode connection supports 2.4G wireless, Bluetooth and wired use cases for wider channel coverage", "ANC option helps separate the model from basic wireless gaming headsets in buyer presentations", "Long-use battery profile supports extended gaming sessions and retail comparison pages", "Detachable boom microphone gives buyers a cleaner lifestyle look when the headset is used outside gaming"],
     usecases: ["Gaming accessory distributors", "E-commerce private-label launches", "Premium retail headset series", "Console and PC gaming bundles"],
-    technical: [["Connection direction", "2.4G wireless / Bluetooth / wired use"], ["Driver", "40 mm / 50 mm option"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    technical: [["Connection direction", "2.4G wireless / Bluetooth / wired use"], ["Chipset", "JL"], ["Driver", "50 mm"], ["Impedance", "32 ohms"], ["Frequency response", "20 Hz - 20 kHz"], ["Sensitivity", "110 dB"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Standby time", "600 hours listed"], ["Charging time", "3 - 4 hours"], ["Microphone", "Detachable boom microphone"]],
     buyer: ["Strong specification set for catalogue pages", "Clear upgrade path from basic 2.4G models", "Suitable for sample comparisons across multiple markets", "Works well as a private-label lead item"],
     fit: "Suitable for buyers looking for a higher-end wireless gaming headset with ANC option, long battery profile, and private-label appearance options.",
     oem: "Recommended for color matching, logo discussion, packaging customization, user manual localization and market-specific accessory bundle planning."
@@ -127,8 +127,8 @@ const detailLibrary = {
     oem: "Good candidate for private-label packaging and entry-to-mid gaming channel ranges."
   },
   "G938-wireless": {
-    highlights: ["RGB dynamic running light", "Aluminum fork arm and full-coverage earcups", "Plug-in microphone and single-headband layout", "Immersive gaming appearance with 2.4G wireless use"],
-    technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    highlights: ["RGB dynamic running light", "Aluminum fork arm and full-coverage earcups", "Detachable boom microphone and single-headband layout", "Tri-mode direction for 2.4G wireless, Bluetooth and wired use"],
+    technical: [["Connection direction", "2.4G wireless / Bluetooth / wired use"], ["Chipset", "JL7018M"], ["Driver", "53 mm"], ["Impedance", "32 ohms"], ["Frequency response", "20 Hz - 20 kHz"], ["Sensitivity", "110 dB"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Standby time", "600 hours listed"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"], ["Microphone", "Detachable boom microphone"]],
     fit: "Good for channels that want a familiar gaming headset profile with wireless convenience and RGB styling.",
     oem: "Suitable for branded retail kits and model-by-model selection."
   },
@@ -146,9 +146,9 @@ const detailLibrary = {
   },
   "B9-bluetooth": {
     highlights: ["Rotatable headphone arms for portable use", "Skin-friendly over-ear cushions", "Ergonomic oval ear shell design", "Lightweight lifestyle Bluetooth use"],
-    technical: [["Bluetooth", "5.3 + EDR / ANC option"], ["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Battery", "300 mAh / 500 mAh option"], ["Music time", "16 - 22 hours / 15 - 20 hours option"], ["Charging time", "2 - 3 hours"], ["Transmission distance", "10 meters"]],
+    technical: [["Bluetooth", "5.3 + EDR"], ["Chipset", "JL"], ["Driver", "40 mm"], ["Impedance", "32 ohms"], ["Frequency response", "20 Hz - 20 kHz"], ["Sensitivity", "110 dB"], ["Rated power", "120 mW"], ["Battery", "300 mAh"], ["Music / call time", "16 - 22 hours"], ["Standby time", "300 hours"], ["Charging time", "2 hours"], ["Transmission distance", "10 meters"], ["SNR", "85 dB or lower"], ["Distortion", "1% listed"]],
     fit: "Suitable for consumer electronics channels looking for a simple, modern Bluetooth over-ear headphone.",
-    oem: "Good for lifestyle colorways, packaging sets, and ANC / non-ANC product planning."
+    oem: "Good for lifestyle colorways, packaging sets, and private-label product planning."
   },
   "B10-bluetooth": {
     highlights: ["Rotatable headphone arms and over-ear comfort", "Skin-friendly cushions with ergonomic oval ear shells", "Bluetooth ANC option available", "Clean appearance for retail audio assortments"],
@@ -282,15 +282,15 @@ function getStoredSourceContext() {
   try {
     const stored = window.localStorage.getItem(sourceStorageKey);
     if (stored) return JSON.parse(stored);
-    window.localStorage.setItem(sourceStorageKey, JSON.stringify(current));
   } catch (error) {
     return current;
   }
   return current;
 }
 
-function getUtmValue(name) {
-  return new URLSearchParams(window.location.search).get(name) || "";
+function getUtmValue(name, storedSource) {
+  const storedKey = name.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+  return new URLSearchParams(window.location.search).get(name) || storedSource[storedKey] || "";
 }
 
 function setSelectedFrom(value) {
@@ -308,11 +308,11 @@ function populateSourceFields() {
     referrer: document.referrer || "Direct / not available",
     firstLandingPage: storedSource.firstLandingPage || window.location.href,
     firstReferrer: storedSource.firstReferrer || "Direct / not available",
-    utmSource: getUtmValue("utm_source"),
-    utmMedium: getUtmValue("utm_medium"),
-    utmCampaign: getUtmValue("utm_campaign"),
-    utmTerm: getUtmValue("utm_term"),
-    utmContent: getUtmValue("utm_content")
+    utmSource: getUtmValue("utm_source", storedSource),
+    utmMedium: getUtmValue("utm_medium", storedSource),
+    utmCampaign: getUtmValue("utm_campaign", storedSource),
+    utmTerm: getUtmValue("utm_term", storedSource),
+    utmContent: getUtmValue("utm_content", storedSource)
   };
   Object.entries(values).forEach(([key, value]) => {
     if (sourceFields[key]) sourceFields[key].value = value;
@@ -450,7 +450,7 @@ function renderCatalogue(filter = "all") {
         <span class="catalogue-card-copy">
           <span class="series">${product.label}</span>
           <h3>${product.model} ${product.name}</h3>
-          <span class="catalogue-meta"><span>${product.images.length} images</span><span class="${product.video ? "video-ready" : ""}">${product.video ? "Video" : "Video slot"}</span></span>
+          <span class="catalogue-meta"><span>${product.images.length} images</span>${product.video ? '<span class="video-ready">Video</span>' : ""}</span>
           <span class="catalogue-action">View model</span>
         </span>
       </button>
