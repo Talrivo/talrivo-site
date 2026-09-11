@@ -19,7 +19,10 @@ const sourceFields = {
   selectedFrom: document.querySelector("#selected-from")
 };
 const mailbox = "sales@talrivo.com";
-const catalogue = (window.talrivoCatalog || []).filter((product) => product.public !== false);
+const headsetCatalogueCategories = new Set(["wireless", "wired", "bluetooth"]);
+const catalogue = (window.talrivoCatalog || []).filter(
+  (product) => product.public !== false && headsetCatalogueCategories.has(product.category)
+);
 const catalogueGrid = document.querySelector("#catalogue-grid");
 const catalogueCount = document.querySelector("#catalogue-count");
 const catalogueTabs = document.querySelectorAll(".catalogue-tab");

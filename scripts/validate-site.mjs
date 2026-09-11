@@ -107,6 +107,9 @@ function validateConfirmedProductFacts() {
   for (const [label, pattern] of expected) {
     if (!pattern.test(script)) errors.push(`script.js is missing confirmed ${label}`);
   }
+  if (!script.includes('new Set(["wireless", "wired", "bluetooth"])')) {
+    errors.push('script.js homepage catalogue is not limited to headset categories');
+  }
 }
 
 function validateContactTracking() {
@@ -143,6 +146,10 @@ function validateSharedHeadAssets() {
     }
     if (html.includes('styles.css?v=20260906b')) {
       errors.push(`${relative(root, file)} still references the previous stylesheet cache version`);
+    }
+    const footer = html.split('<footer class="site-footer">')[1] || '';
+    if (footer.includes('talrivo-wordmark-new-dark.png')) {
+      errors.push(`${relative(root, file)} uses the dark TALRIVO wordmark in the dark footer`);
     }
   }
 }
