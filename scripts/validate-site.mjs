@@ -135,6 +135,18 @@ function validateContactTracking() {
   }
 }
 
+function validateSharedHeadAssets() {
+  for (const file of walk(root, (path) => path.endsWith('.html') && !path.includes('/public/') && !path.includes('/admin/'))) {
+    const html = readFileSync(file, 'utf8');
+    if (!/<link\s+rel="icon"[^>]+talrivo-mark\.svg/i.test(html)) {
+      errors.push(`${relative(root, file)} is missing the TALRIVO favicon declaration`);
+    }
+    if (html.includes('styles.css?v=20260906b')) {
+      errors.push(`${relative(root, file)} still references the previous stylesheet cache version`);
+    }
+  }
+}
+
 function validateDiff() {
   try {
     execFileSync('git', ['diff', '--check'], { cwd: root, stdio: 'pipe' });
@@ -148,6 +160,7 @@ validateRegistry();
 validateSitemap();
 validateConfirmedProductFacts();
 validateContactTracking();
+validateSharedHeadAssets();
 validateDiff();
 
 for (const warning of warnings) console.warn(`WARN  ${warning}`);

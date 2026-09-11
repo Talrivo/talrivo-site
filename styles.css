@@ -5156,4 +5156,12 @@ h2 {
     padding-right: 0.4rem;
     width: 100%;
   }
+
+  .analytics-preferences-button {
+    box-shadow: none;
+    display: block;
+    margin: 0.75rem auto;
+    position: static;
+    width: max-content;
+  }
 }
