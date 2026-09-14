@@ -5,6 +5,10 @@ import vm from 'node:vm';
 const root = process.cwd();
 const analyticsCode = readFileSync(`${root}/analytics.js`, 'utf8');
 const contactCode = readFileSync(`${root}/contact-form.js`, 'utf8');
+const contactHtml = readFileSync(`${root}/contact/index.html`, 'utf8');
+const productSelect = contactHtml.match(/<select name="product"[^>]*>([\s\S]*?)<\/select>/)[1];
+const productOptions = [...productSelect.matchAll(/<option(?: value="([^"]*)")?>([^<]*)<\/option>/g)]
+  .map((match) => (match[1] ?? match[2]).replaceAll('&amp;', '&'));
 
 function storageWith(initial = {}) {
   const values = new Map(Object.entries(initial));
@@ -44,13 +48,20 @@ function runContact(url, storedSource = null) {
     disabled: false,
     classList: { add() {}, remove() {} },
     addEventListener() {},
-    querySelector: () => makeNode(),
+    querySelector: (selector) => querySelector(selector),
     reset() {}
   });
   const querySelector = (selector) => {
     if (!nodes.has(selector)) nodes.set(selector, makeNode());
     return nodes.get(selector);
   };
+  const productNode = querySelector('select[name="product"]');
+  let selectedProduct = '';
+  // A real select clears its selection when assigned a value absent from its options.
+  Object.defineProperty(productNode, 'value', {
+    get: () => selectedProduct,
+    set: (value) => { selectedProduct = productOptions.includes(value) ? value : ''; }
+  });
   const document = { querySelector, title: 'Contact TALRIVO', referrer: '' };
   const window = {
     location: new URL(url),
@@ -87,4 +98,36 @@ assert.equal(contact.nodes.get('#contact-inquiry-type').value, 'Quick product qu
 const successDisplay = runContact('https://talrivo.com/contact/?sent=1');
 assert.equal(successDisplay.events.filter((event) => event[1] === 'generate_lead').length, 0);
 
-console.log('Contact flow checks passed: consented source retention, quick-question mapping, and no sent=1 lead event.');
+const productRoutes = {
+  'gaming-headsets': 'Gaming Headset Collection',
+  'wireless-gaming-headsets': 'Wireless Gaming Headset Series',
+  'wired-gaming-headsets': 'Wired RGB Gaming Headset Series',
+  'bluetooth-headphones': 'Bluetooth Headphones',
+  'tws-earbuds': 'TWS & Open-Ear Earbuds',
+  g926: 'G926 Wireless Gaming Headset',
+  g935: 'G935 Wireless Gaming Headset',
+  g936: 'G936 Lightweight Gaming Headset',
+  g938: 'G938 Wireless Gaming Headset',
+  g940: 'G940 Low-Latency Wireless Gaming Headset',
+  g941: 'G941 Tri-Mode ANC Gaming Headset',
+  g946: 'G946 Tri-Mode RGB Gaming Headset',
+  g947: 'G947 Tri-Mode Gaming Headset',
+  b7: 'B7 Bluetooth Over-Ear Headphone',
+  b9: 'B9 Bluetooth Over-Ear Headphone',
+  b10: 'B10 Bluetooth Over-Ear Headphone',
+  tws044f: 'TWS044F Earbuds',
+  earclip09s: 'Earclip09S Open-Ear TWS Earbuds',
+  'g938-g941': 'G938 / G941 Gaming Headset Comparison',
+  'audio-products': 'Custom Audio Project'
+};
+for (const [route, expected] of Object.entries(productRoutes)) {
+  const inquiry = route === 'g938-g941' ? 'compare' : 'sample';
+  const result = runContact(`https://talrivo.com/contact/?product=${route}&inquiry=${inquiry}`);
+  assert.equal(result.nodes.get('select[name="product"]').value, expected, `${route} must select an existing product option`);
+  assert.equal(result.nodes.get('#contact-inquiry-type').value, inquiry === 'compare' ? 'Model comparison' : 'Sample request');
+  assert.ok(result.nodes.get('#contact-selected-from').value.includes(`Product: ${expected}`));
+}
+const unknownProduct = runContact('https://talrivo.com/contact/?product=unknown-model');
+assert.equal(unknownProduct.nodes.get('select[name="product"]').value, '');
+
+console.log(`Contact flow checks passed: ${Object.keys(productRoutes).length} product routes, consented source retention, quick-question mapping, and no sent=1 lead event.`);
