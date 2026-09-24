@@ -46,6 +46,18 @@
     </video:video>
   </url>
   <url>
+    <loc>https://talrivo.com/videos/g936-target-device-connection/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/_YjS5updpi8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>TALRIVO G936 Target-Device Connection Reference</video:title>
+      <video:description>A 30-second TALRIVO G936 reference showing console, PC and smartphone use scenes, a 2.4G USB receiver reference, RGB earcups and a detachable boom microphone for buyer sample-review preparation.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/_YjS5updpi8</video:player_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2026-09-22T00:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
     <loc>https://talrivo.com/gaming-headsets/g938-wireless/</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/6Kt5jRpj-uw/hqdefault.jpg</video:thumbnail_loc>
