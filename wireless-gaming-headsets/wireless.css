@@ -1,0 +1,54 @@
+.wireless-page { letter-spacing: 0; }
+.wireless-page .wireless-intro { max-width: var(--max); margin: 0 auto; padding: 2.5rem 3rem 1.5rem; }
+.wireless-page .wireless-intro h1 { font-size: 2.5rem; line-height: 1.12; letter-spacing: 0; max-width: 850px; margin: .5rem 0 1rem; }
+.wireless-page .wireless-intro > p:not(.label) { max-width: 850px; font-size: 1.05rem; color: var(--ink-soft); }
+.wireless-page .seo-section { padding: 2rem 3rem; }
+.wireless-page #models { padding-top: .5rem; }
+.wireless-page .section-heading { gap: 1.5rem; margin-bottom: 1.5rem; }
+.wireless-page .section-heading h2, .wireless-page .seo-cta h2 { font-size: 1.75rem; line-height: 1.2; letter-spacing: 0; }
+.wireless-page .section-heading .intro { font-size: 1rem; }
+.wireless-page .wireless-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.25rem; }
+.wireless-page .wireless-actions .button { font-size: .85rem; padding: .85rem 1.15rem; }
+.wireless-page .wireless-actions > .text-action { display: inline-block; width: auto; border: 0; padding: 0; margin: 0; }
+.wireless-page .wireless-products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.wireless-page .wireless-products article { min-width: 0; border: 1px solid var(--line); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; }
+.wireless-page .wireless-product-image { display: block; aspect-ratio: 4 / 3; flex: none; background: #f7f8f6; margin-bottom: 1rem; border-radius: 4px; overflow: hidden; }
+.wireless-page .wireless-product-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.wireless-page h3 { font-size: 1.1rem; line-height: 1.4; letter-spacing: 0; margin: 0 0 .65rem; }
+.wireless-page .wireless-products p { font-size: .95rem; color: var(--ink-soft); margin: 0 0 1rem; }
+.wireless-page .wireless-products article > .text-action { margin-top: auto; font-size: .9rem; }
+.wireless-page .table-wrap { max-width: 100%; border-radius: 4px; }
+.wireless-page caption { text-align: left; padding: .8rem 1rem; font-weight: 700; }
+.wireless-page .sample-check-table th { letter-spacing: 0; }
+.wireless-page .sample-check-table tbody th { font-size: .95rem; }
+.wireless-page .sample-check-table tbody a { text-decoration: underline; text-underline-offset: .2em; }
+.wireless-page .wireless-contact { padding: 1.5rem 0; margin-top: 1rem; border-bottom: 1px solid var(--line); }
+.wireless-page .wireless-contact p { max-width: 760px; }
+.wireless-page .wireless-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.wireless-page .wireless-columns > * { min-width: 0; }
+.wireless-page .wireless-columns p, .wireless-page .wireless-contact p { font-size: 1rem; color: var(--ink-soft); margin: 0; }
+.wireless-page .wireless-faq .wireless-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.wireless-page .wireless-faq article { border-bottom: 1px solid var(--line); padding-bottom: 1.25rem; }
+.wireless-page .wireless-resources { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; }
+.wireless-page .wireless-resources a { text-decoration: underline; text-underline-offset: .2em; }
+.wireless-page .wireless-resources span { display: block; color: var(--ink-soft); font-size: .95rem; margin-top: .4rem; }
+.wireless-page [id] { scroll-margin-top: 7rem; }
+.wireless-page :focus-visible { outline: 2px solid #0077a6; outline-offset: 4px; }
+@media (max-width: 1000px) {
+  .wireless-page .wireless-intro, .wireless-page .seo-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .wireless-page .wireless-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wireless-page .wireless-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 920px) {
+  .wireless-catalogue .site-header .seo-nav { position: static; }
+}
+@media (max-width: 620px) {
+  .wireless-page .wireless-intro { padding: 1.5rem 1rem 1rem; }
+  .wireless-page .wireless-intro h1 { font-size: 1.85rem; }
+  .wireless-page .section-heading h2, .wireless-page .seo-cta h2 { font-size: 1.45rem !important; line-height: 1.2 !important; }
+  .wireless-page .seo-section > *, .wireless-page .section-heading h2, .wireless-page .section-heading .intro, .wireless-page .seo-section p { max-width: 100% !important; }
+  .wireless-page .wireless-products, .wireless-page .wireless-columns, .wireless-page .wireless-faq .wireless-columns, .wireless-page .wireless-resources { grid-template-columns: minmax(0, 1fr); }
+  .wireless-page .wireless-actions { gap: .75rem; }
+  .wireless-page .wireless-actions .button { max-width: 100%; white-space: normal; text-align: center; }
+  .wireless-page .seo-section { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+}
