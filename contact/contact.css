@@ -1,0 +1,38 @@
+.contact-page .seo-hero {
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
+  gap: 2rem;
+  min-height: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.contact-page .seo-hero h1 {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+  max-width: 700px;
+}
+.contact-page .seo-hero p { font-size: 1rem; }
+.contact-page .seo-hero .label { font-size: .8rem; }
+.contact-page .seo-hero > img {
+  aspect-ratio: auto;
+  object-fit: contain;
+  height: auto;
+  max-height: 360px;
+  width: 100%;
+  background: #fff;
+  border: 0;
+  border-radius: 0;
+}
+.contact-page .seo-hero .hero-actions { justify-content: flex-start; }
+.contact-page .seo-hero .button { font-size: .8rem; padding: .8rem 1.1rem; }
+.contact-page #inquiry-form { scroll-margin-top: 8rem; }
+@media (max-width: 920px) {
+  .contact-page .site-header .seo-nav { position: static; }
+  .contact-page .seo-hero { grid-template-columns: minmax(0, 1fr); }
+  .contact-page .seo-hero > img { order: initial; max-width: 300px; max-height: 300px; justify-self: center; }
+}
+@media (max-width: 620px) {
+  .contact-page .seo-hero { padding-top: 1.5rem; padding-bottom: 1.5rem; gap: 1.5rem; }
+  .contact-page .seo-hero h1 { font-size: 1.75rem !important; line-height: 1.18 !important; }
+  .contact-page .seo-hero .hero-actions { margin-top: 1rem; }
+}
