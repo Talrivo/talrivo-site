@@ -1,0 +1,22 @@
+.tws-catalogue-layout {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+}
+.tws-catalogue-preview { display: block; }
+.tws-catalogue-preview img {
+  aspect-ratio: 1600 / 1301;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+.tws-catalogue-copy { min-width: 0; }
+.tws-catalogue-copy h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem; }
+.tws-catalogue-downloads { display: grid; gap: 0.75rem; margin: 1.25rem 0; }
+.tws-catalogue-downloads .button { gap: 0.5rem; min-width: 0; white-space: normal; }
+.tws-catalogue-note { color: var(--muted); font-size: 0.875rem; }
+@media (max-width: 820px) {
+  .tws-catalogue-layout { grid-template-columns: minmax(0, 1fr); }
+}

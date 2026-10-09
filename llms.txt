@@ -66,7 +66,7 @@ Official WhatsApp quick-question route: available from the Contact, Sample Reque
 
 ## Bluetooth and TWS Product Lines
 
-- [TWS Earbuds](https://talrivo.com/tws-earbuds/): TWS earbuds category page for comparing TWS044F in-ear and Earclip09S open-ear or earclip directions, with model images, charging-case details, wearing-style notes, sample evaluation paths and Sample Request guidance. Includes an explanation for Latin America auricular TWS Bluetooth searches.
+- [TWS Earbuds](https://talrivo.com/tws-earbuds/): TWS earbuds category page for comparing TWS044F in-ear and Earclip09S open-ear or earclip directions, with model images, charging-case details, wearing-style notes, sample evaluation paths and Sample Request guidance. Includes an explanation for Latin America auricular TWS Bluetooth searches. Includes the 2026 TWS catalogue preview and PDF/image download links; catalogue specifications and availability require exact-model confirmation.
 - [TWS044F In-Ear TWS Earbuds](https://talrivo.com/tws-earbuds/tws044f/): In-ear TWS earbud model page with supplied case, wearing-fit, lifestyle, packing-list, charging-case, sample-check, private-label, and RFQ-preparation details.
 - [Earclip09S Open-Ear TWS Earbuds](https://talrivo.com/tws-earbuds/earclip09s/): Clip-style open-ear TWS earbud model page with listed Bluetooth 6.0, 11 mm driver, charging case, color, packing-list, fit and leakage sample-review details, and comparison context against TWS044F. Built-in MP3, internal storage and preloaded audio are unconfirmed; custom playback and destination-market documents require separate review.
 - [In-Ear vs Open-Ear TWS Earbuds for Private-Label Buyers](https://talrivo.com/insights/in-ear-vs-open-ear-tws-earbuds-private-label/): Buyer guide for deciding whether to sample TWS044F in-ear earbuds or Earclip09S open-ear earbuds first by channel, fit, leakage, calls, case, packaging, and RFQ readiness. Distinguishes wearing style and branding from unconfirmed standalone playback development, with an open-ear technical-brief inquiry route.
@@ -81,6 +81,12 @@ Official WhatsApp quick-question route: available from the Contact, Sample Reque
 
 - [Type-C Earphones](https://talrivo.com/type-c-earphones/): Private-label Type-C earphone category page for mobile-audio samples, packaging, branding, and buyer inquiry preparation.
 - [TC-1 Type-C Earphone](https://talrivo.com/type-c-earphones/tc-1/): Type-C digital earphone model page for mobile accessory and 3C retail projects, with sample review, packaging, logo and document questions.
+
+## Downloadable Catalogue
+
+- [2026 TWS Catalogue Downloads](https://talrivo.com/tws-earbuds/#catalogue): Public preview with PDF and PNG formats of the same supplied catalogue. Confirm model version, specifications, availability and destination-market documents before ordering.
+- [2026 TWS Catalogue PDF](https://talrivo.com/assets/downloads/TALRIVO-TWS-Catalogue-2026.pdf): Detail-preserving web PDF; not evidence of model certification or unlisted custom functionality.
+- [2026 TWS Catalogue Image](https://talrivo.com/assets/downloads/TALRIVO-TWS-Catalogue-2026.png): Lightweight image overview of the same catalogue.
 
 ## Official Media and Identity
 
