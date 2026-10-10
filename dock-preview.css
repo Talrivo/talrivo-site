@@ -1,0 +1,8 @@
+.dock-preview{max-width:1200px;margin:32px auto;padding:24px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;border-top:1px solid #ddd;letter-spacing:0}
+.dock-preview img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain}
+.dock-preview h2{font-family:system-ui,sans-serif;font-size:28px;line-height:1.25;font-weight:600;letter-spacing:0;margin:12px 0}
+.dock-preview p{font-size:16px;line-height:1.6;margin:12px 0}
+.dock-preview .dock-show{border-left:3px solid #16818b;padding-left:16px;margin-top:20px}
+.dock-preview [hidden]{display:none!important}
+.dock-preview .button{white-space:normal;text-align:center;max-width:100%}
+@media(max-width:700px){.dock-preview{grid-template-columns:minmax(0,1fr);gap:16px;margin:20px auto;padding:20px}.dock-preview h2{font-size:24px}}
