@@ -99,6 +99,8 @@ const successDisplay = runContact('https://talrivo.com/contact/?sent=1');
 assert.equal(successDisplay.events.filter((event) => event[1] === 'generate_lead').length, 0);
 
 const productRoutes = {
+  'dock-headset': 'Magnetic Charging Dock Headset Preview',
+  'identify-headset': 'Gaming Headset - Model Not Yet Identified',
   'gaming-headsets': 'Gaming Headset Collection',
   'wireless-gaming-headsets': 'Wireless Gaming Headset Series',
   'wired-gaming-headsets': 'Wired RGB Gaming Headset Series',
@@ -129,5 +131,16 @@ for (const [route, expected] of Object.entries(productRoutes)) {
 }
 const unknownProduct = runContact('https://talrivo.com/contact/?product=unknown-model');
 assert.equal(unknownProduct.nodes.get('select[name="product"]').value, '');
+
+for (const route of ['dock-headset', 'identify-headset']) {
+  const result = runContact(`https://talrivo.com/contact/?product=${route}&inquiry=quick-question`);
+  assert.equal(result.nodes.get('select[name="product"]').value, productRoutes[route]);
+  assert.equal(result.nodes.get('#contact-inquiry-type').value, 'Quick product question');
+}
+for (const page of ['index.html', 'gaming-headsets/index.html']) {
+  const html = readFileSync(`${root}/${page}`, 'utf8');
+  assert.ok(html.includes('/contact/?product=dock-headset&amp;inquiry=quick-question#inquiry-form'));
+}
+assert.ok(contactHtml.includes('id="model-reference-help"'));
 
 console.log(`Contact flow checks passed: ${Object.keys(productRoutes).length} product routes, consented source retention, quick-question mapping, and no sent=1 lead event.`);

@@ -617,8 +617,10 @@ const trackInquirySuccess = (fields, location) => {
   window.dispatchEvent(new CustomEvent("talrivo:rfq-submit-success", { detail: payload }));
 };
 
+let inquirySubmitting = false;
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (inquirySubmitting) return;
   populateSourceFields();
   const fields = new FormData(form);
   const valueOrFallback = (field, fallback = "Not specified") => fields.get(field) || fallback;
@@ -660,27 +662,39 @@ form.addEventListener("submit", async (event) => {
   const web3formsKey = form.dataset.web3formsKey.trim();
 
   if (web3formsKey) {
-    fields.append("access_key", web3formsKey);
-    fields.append("subject", subject);
-    fields.append("from_name", "TALRIVO Website Inquiry");
-    fields.append("message", message);
+    fields.set("access_key", web3formsKey);
+    fields.set("subject", subject);
+    fields.set("from_name", "TALRIVO Website Inquiry");
+    fields.set("message", message);
+    inquirySubmitting = true;
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 30000);
     formStatus.textContent = "Sending your inquiry...";
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: fields
+        body: fields,
+        signal: controller.signal
       });
       const result = await response.json();
-      if (!result.success) throw new Error(result.message || "Submission failed");
+      if (!response.ok || result.success !== true) throw new Error("Submission not confirmed");
       form.reset();
       formStatus.classList.add("success");
-      formStatus.textContent = "Your inquiry has been sent. We will reply by email within 24 hours. For urgent sample discussion, you can also scan the WeChat QR code below.";
-      trackInquirySuccess(fields, "home_rfq");
+      formStatus.textContent = "Your inquiry has been accepted for delivery. TALRIVO will reply by business email. For urgent sample discussion, you can also scan the WeChat QR code below.";
+      try { trackInquirySuccess(fields, "home_rfq"); } catch (trackingError) {
+        // Analytics errors must not turn an accepted inquiry into a failed submission.
+      }
       return;
     } catch (error) {
       formStatus.classList.add("error");
-      formStatus.textContent = `Online submission is unavailable. Please email ${mailbox} directly.`;
+      formStatus.textContent = `We could not confirm submission. Your details are still here. The message may have reached us; please check your email before retrying, or contact ${mailbox}.`;
       return;
+    } finally {
+      window.clearTimeout(timeout);
+      inquirySubmitting = false;
+      submitButton.disabled = false;
     }
   }
 

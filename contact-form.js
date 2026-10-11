@@ -19,6 +19,8 @@ if (contactForm) {
   const params = new URLSearchParams(window.location.search);
   const sourceStorageKey = "talrivoInquirySource";
   const productSelections = {
+    "dock-headset": "Magnetic Charging Dock Headset Preview",
+    "identify-headset": "Gaming Headset - Model Not Yet Identified",
     "gaming-headsets": "Gaming Headset Collection",
     "wireless-gaming-headsets": "Wireless Gaming Headset Series",
     "wired-gaming-headsets": "Wired RGB Gaming Headset Series",
@@ -139,12 +141,13 @@ if (contactForm) {
   }
 
   if (params.get("sent") === "1") {
-    status.classList.add("success");
-    status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
+    status.textContent = "If you just submitted an inquiry, please check your email for confirmation. This page cannot verify delivery from the URL alone.";
   }
 
+  let submitting = false;
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (submitting) return;
     populateAttribution();
     status.classList.remove("success", "error");
     status.textContent = "Sending your inquiry...";
@@ -192,22 +195,30 @@ if (contactForm) {
     fields.set("from_name", "TALRIVO Contact Page Inquiry");
     fields.set("message", message);
 
+    submitting = true;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 30000);
     try {
       const response = await fetch(contactForm.action, {
         method: "POST",
-        body: fields
+        body: fields,
+        signal: controller.signal
       });
       const result = await response.json();
-      if (!result.success) throw new Error(result.message || "Submission failed");
+      if (!response.ok || result.success !== true) throw new Error("Submission not confirmed");
 
       contactForm.reset();
       status.classList.add("success");
-      status.textContent = "Thank you. Your inquiry has been sent. TALRIVO will reply by business email.";
-      trackInquirySuccess(fields, "contact_page");
+      status.textContent = "Thank you. Your inquiry has been accepted for delivery. TALRIVO will reply by business email.";
+      try { trackInquirySuccess(fields, "contact_page"); } catch (trackingError) {
+        // Analytics errors must not turn an accepted inquiry into a failed submission.
+      }
     } catch (error) {
       status.classList.add("error");
-      status.textContent = "Online submission is temporarily unavailable. Please copy and email your requirements to sales@talrivo.com.";
+      status.textContent = "We could not confirm submission. Your details are still here. The message may have reached us; please check your email before retrying, or contact sales@talrivo.com.";
     } finally {
+      window.clearTimeout(timeout);
+      submitting = false;
       submitButton.disabled = false;
     }
   });

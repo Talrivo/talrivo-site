@@ -24,7 +24,7 @@
   <title>Contact TALRIVO | Audio Samples &amp; Private-Label RFQs</title>
   <link rel="stylesheet" href="../styles.css?v=20261009type">
   <link rel="stylesheet" href="./contact.css?v=20260928a">
-  <script src="../contact-form.js?v=20260914a" defer></script>
+  <script src="../contact-form.js?v=20261011b" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -124,7 +124,7 @@
     "name": "Contact TALRIVO | Audio Samples & Private-Label RFQs",
     "url": "https://talrivo.com/contact/",
     "description": "Request gaming headset, Bluetooth headphone or TWS earbud samples. Discuss private-label branding, packaging and model-specific documents with TALRIVO.",
-    "dateModified": "2026-10-10",
+    "dateModified": "2026-10-11",
     "mainEntity": {
       "@type": "Organization",
       "name": "TALRIVO",
@@ -217,6 +217,8 @@
           <label>Product interest
             <select name="product" required>
               <option value="">Select product interest</option>
+              <option value="Gaming Headset - Model Not Yet Identified">Headset - model unknown</option>
+              <option value="Magnetic Charging Dock Headset Preview">Charging dock headset</option>
               <option>G938 Wireless Gaming Headset</option>
               <option>G941 Tri-Mode ANC Gaming Headset</option>
               <option>G938 / G941 Gaming Headset Comparison</option>
@@ -261,7 +263,8 @@
           </label>
         </div>
         <label>Project requirements
-          <textarea name="message" rows="5" required placeholder="Selected model, intended use, sample timing, logo or packaging needs, manual language and documents to check..."></textarea>
+          <textarea name="message" rows="5" required aria-describedby="model-reference-help" placeholder="Model or video link and timestamp, target market, intended use and your question..."></textarea>
+          <span class="form-helper" id="model-reference-help">Not sure of the model? Include the video link and timestamp, or describe the color and shape. To share a screenshot, use the email or WhatsApp contact above. Model features and availability will be confirmed before sample selection.</span>
         </label>
         <details class="rfq-optional-details">
           <summary>Add optional buyer and project details</summary>
