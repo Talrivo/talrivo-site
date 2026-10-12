@@ -112,18 +112,18 @@ if (contactForm) {
     firstLandingPage: window.location.href,
     firstReferrer: document.referrer || "Direct / not available"
   };
-  let storedSource = firstVisit;
-
-  try {
-    const savedSource = JSON.parse(window.localStorage.getItem(sourceStorageKey));
-    if (savedSource?.firstLandingPage) {
-      storedSource = savedSource;
-    } else {
-      window.localStorage.setItem(sourceStorageKey, JSON.stringify(firstVisit));
+  const getStoredSource = () => {
+    try {
+      if (window.localStorage.getItem("talrivoAnalyticsConsent") !== "granted") return firstVisit;
+      const savedSource = JSON.parse(window.localStorage.getItem(sourceStorageKey));
+      if (savedSource && typeof savedSource === "object" && !Array.isArray(savedSource)) return savedSource;
+    } catch (error) {
+      // Blocked or invalid storage must not prevent an inquiry.
     }
-  } catch (error) {
-    storedSource = firstVisit;
-  }
+    return firstVisit;
+  };
+  const hasCurrentCampaign = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].some(name => params.has(name));
+  const getUtmValue = (name, key, storedSource) => hasCurrentCampaign ? params.get(name) || "" : storedSource[key] || "";
 
   const contactLinkDetails = [
     selectedProduct ? `Product: ${selectedProduct}` : "",
@@ -131,16 +131,17 @@ if (contactForm) {
   ].filter(Boolean).join(" | ") || "Direct contact page";
 
   const populateAttribution = () => {
+    const storedSource = getStoredSource();
     pageUrl.value = window.location.href;
     pageTitle.value = document.title;
     referrer.value = document.referrer || "Direct / not available";
     firstLandingPage.value = storedSource.firstLandingPage || window.location.href;
     firstReferrer.value = storedSource.firstReferrer || "Direct / not available";
-    utmSource.value = params.get("utm_source") || storedSource.utmSource || "";
-    utmMedium.value = params.get("utm_medium") || storedSource.utmMedium || "";
-    utmCampaign.value = params.get("utm_campaign") || storedSource.utmCampaign || "";
-    utmTerm.value = params.get("utm_term") || storedSource.utmTerm || "";
-    utmContent.value = params.get("utm_content") || storedSource.utmContent || "";
+    utmSource.value = getUtmValue("utm_source", "utmSource", storedSource);
+    utmMedium.value = getUtmValue("utm_medium", "utmMedium", storedSource);
+    utmCampaign.value = getUtmValue("utm_campaign", "utmCampaign", storedSource);
+    utmTerm.value = getUtmValue("utm_term", "utmTerm", storedSource);
+    utmContent.value = getUtmValue("utm_content", "utmContent", storedSource);
     selectedFrom.value = contactLinkDetails;
     productReference.value = selectedReference ? `${selectedReference.title}: ${selectedReference.url}` : "";
   };

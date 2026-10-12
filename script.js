@@ -268,8 +268,10 @@ function getStoredSourceContext() {
     firstReferrer: document.referrer || "Direct / not available"
   };
   try {
+    if (window.localStorage.getItem("talrivoAnalyticsConsent") !== "granted") return current;
     const stored = window.localStorage.getItem(sourceStorageKey);
-    if (stored) return JSON.parse(stored);
+    const parsed = stored ? JSON.parse(stored) : null;
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed;
   } catch (error) {
     return current;
   }
@@ -278,7 +280,9 @@ function getStoredSourceContext() {
 
 function getUtmValue(name, storedSource) {
   const storedKey = name.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
-  return new URLSearchParams(window.location.search).get(name) || storedSource[storedKey] || "";
+  const params = new URLSearchParams(window.location.search);
+  const hasCurrentCampaign = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].some(key => params.has(key));
+  return hasCurrentCampaign ? params.get(name) || "" : storedSource[storedKey] || "";
 }
 
 function setSelectedFrom(value) {

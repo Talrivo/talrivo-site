@@ -39,10 +39,11 @@ function runAnalytics(url, consent = 'granted', existingSource = null) {
   return source ? JSON.parse(source) : null;
 }
 
-function runContact(url, storedSource = null) {
+function runContact(url, storedSource = null, consent = 'granted') {
   const nodes = new Map();
   const events = [];
   const storage = storageWith(storedSource ? { talrivoInquirySource: JSON.stringify(storedSource) } : {});
+  if (consent) storage.setItem('talrivoAnalyticsConsent', consent);
   const makeNode = () => ({
     value: '',
     disabled: false,
@@ -78,7 +79,7 @@ function runContact(url, storedSource = null) {
     CustomEvent: class {},
     fetch() { throw new Error('Network access is not allowed in this test'); }
   });
-  return { nodes, events };
+  return { nodes, events, storage };
 }
 
 const captured = runAnalytics('https://talrivo.com/gaming-headsets/g938-wireless/?utm_source=linkedin&utm_medium=social&utm_campaign=g938_device_video');
@@ -89,6 +90,21 @@ assert.match(captured.firstLandingPage, /g938-wireless/);
 
 const rejected = runAnalytics('https://talrivo.com/', 'denied', captured);
 assert.equal(rejected, null);
+
+for (const consent of [null, 'denied']) {
+  const fresh = runContact('https://talrivo.com/contact/', null, consent);
+  assert.equal(fresh.storage.value('talrivoInquirySource'), undefined, 'form must not create attribution storage');
+  const stale = runContact('https://talrivo.com/contact/', captured, consent);
+  assert.equal(stale.nodes.get('#contact-utm-source').value, '', 'form must ignore unconsented stored attribution');
+}
+const partialCampaign = runContact('https://talrivo.com/contact/?utm_source=facebook', captured);
+assert.equal(partialCampaign.nodes.get('#contact-utm-source').value, 'facebook');
+assert.equal(partialCampaign.nodes.get('#contact-utm-medium').value, '');
+assert.equal(partialCampaign.nodes.get('#contact-utm-campaign').value, '');
+for (const source of [[], 'invalid', 42]) {
+  const malformed = runContact('https://talrivo.com/contact/', source);
+  assert.equal(malformed.nodes.get('#contact-utm-source').value, '');
+}
 
 const contact = runContact('https://talrivo.com/contact/?product=g938&inquiry=quick-question', captured);
 assert.equal(contact.nodes.get('#contact-utm-source').value, 'linkedin');

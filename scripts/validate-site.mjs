@@ -133,8 +133,16 @@ function validateContactTracking() {
   if (!contact.includes('"quick-question": "Quick product question"')) {
     errors.push('contact-form.js does not map the quick-question inquiry type');
   }
-  if (!contact.includes('storedSource.utmSource')) {
+  if (!contact.includes('getUtmValue("utm_source", "utmSource", storedSource)') || !contact.includes('storedSource[key]')) {
     errors.push('contact-form.js does not restore stored UTM attribution');
+  }
+  if (contact.includes('window.localStorage.setItem(sourceStorageKey')) {
+    errors.push('contact-form.js writes inquiry attribution outside the consent-controlled analytics flow');
+  }
+  for (const file of ['contact-form.js', 'script.js']) {
+    if (!readFileSync(join(root, file), 'utf8').includes('getItem("talrivoAnalyticsConsent") !== "granted"')) {
+      errors.push(`${file} does not check consent before reading stored attribution`);
+    }
   }
   if (!analytics.includes('captureInquirySource')) {
     errors.push('analytics.js does not capture consented inquiry attribution');
