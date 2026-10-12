@@ -17,6 +17,20 @@ if (contactForm) {
   const productInterest = contactForm.querySelector('select[name="product"]');
   const inquiryType = document.querySelector("#contact-inquiry-type");
   const params = new URLSearchParams(window.location.search);
+  const productReference = document.querySelector("#contact-product-reference");
+  const referenceNote = document.querySelector("#contact-reference-note");
+  const videoReferences = {
+    "hk-headsets-2026": {
+      title: "Hong Kong 2026 gaming headset display",
+      url: "https://youtu.be/SLcAr-jqdUs"
+    }
+  };
+  const referenceKey = params.get("reference");
+  const selectedReference = Object.hasOwn(videoReferences, referenceKey) ? videoReferences[referenceKey] : null;
+  if (selectedReference) {
+    referenceNote.hidden = false;
+    referenceNote.textContent = `Video reference: ${selectedReference.title}. Please include the timestamp of the headset you are interested in.`;
+  }
   const sourceStorageKey = "talrivoInquirySource";
   const productSelections = {
     "dock-headset": "Magnetic Charging Dock Headset Preview",
@@ -128,6 +142,7 @@ if (contactForm) {
     utmTerm.value = params.get("utm_term") || storedSource.utmTerm || "";
     utmContent.value = params.get("utm_content") || storedSource.utmContent || "";
     selectedFrom.value = contactLinkDetails;
+    productReference.value = selectedReference ? `${selectedReference.title}: ${selectedReference.url}` : "";
   };
 
   populateAttribution();
@@ -171,6 +186,7 @@ if (contactForm) {
       `Sales channel: ${valueOrFallback("channel")}`,
       `Product interest: ${valueOrFallback("product")}`,
       `Inquiry type: ${valueOrFallback("inquiry_type")}`,
+      `Product / video reference: ${valueOrFallback("product_reference")}`,
       `Project quantity stage: ${valueOrFallback("quantity")}`,
       `Project timing: ${valueOrFallback("timeline")}`,
       "",

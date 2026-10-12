@@ -130,6 +130,13 @@ for (const [route, expected] of Object.entries(productRoutes)) {
   assert.ok(result.nodes.get('#contact-selected-from').value.includes(`Product: ${expected}`));
 }
 const unknownProduct = runContact('https://talrivo.com/contact/?product=unknown-model');
+const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
+assert.ok(videoContact.nodes.get('#contact-product-reference').value.includes('https://youtu.be/SLcAr-jqdUs'));
+assert.equal(videoContact.nodes.get('#contact-reference-note').hidden, false);
+for (const reference of ['unknown', '__proto__', 'constructor', 'https://example.com/']) {
+  const result = runContact(`https://talrivo.com/contact/?reference=${encodeURIComponent(reference)}`);
+  assert.equal(result.nodes.get('#contact-product-reference').value, '');
+}
 assert.equal(unknownProduct.nodes.get('select[name="product"]').value, '');
 
 for (const route of ['dock-headset', 'identify-headset']) {
