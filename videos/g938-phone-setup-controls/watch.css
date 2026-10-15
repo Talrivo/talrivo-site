@@ -1,0 +1,86 @@
+.g938-watch {
+  background: #fff;
+}
+.g938-watch .seo-page {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+.g938-watch-intro {
+  padding: 2rem 1.5rem;
+}
+.g938-watch .seo-section {
+  padding: 2rem 1.5rem;
+}
+.g938-watch .section-heading {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+.g938-watch .text-action {
+  display: inline;
+  border: 0;
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: auto;
+}
+.g938-watch .hero-actions {
+  justify-content: flex-start;
+}
+.g938-watch-intro h1 {
+  max-width: 900px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+.g938-watch-intro > p {
+  max-width: 900px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.g938-watch .video-embed {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.g938-watch-meta {
+  color: #526165;
+}
+.g938-watch-chapters {
+  padding-left: 1.5rem;
+}
+.g938-watch-chapters li + li {
+  margin-top: 1.25rem;
+}
+.g938-watch-chapters p {
+  margin-block: 0.4rem 0;
+}
+.g938-watch .seo-section h2,
+.g938-watch .seo-cta h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+.g938-watch .seo-section li {
+  line-height: 1.65;
+}
+@media (max-width: 760px) {
+  .g938-watch-intro {
+    padding: 1.5rem 1rem;
+  }
+  .g938-watch-intro h1 {
+    font-size: 1.875rem;
+  }
+  .g938-watch .seo-section h2,
+  .g938-watch .seo-cta h2 {
+    font-size: 1.5rem;
+  }
+  .g938-watch .hero-actions {
+    justify-content: flex-start;
+  }
+}

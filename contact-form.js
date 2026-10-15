@@ -20,6 +20,10 @@ if (contactForm) {
   const productReference = document.querySelector("#contact-product-reference");
   const referenceNote = document.querySelector("#contact-reference-note");
   const videoReferences = {
+    "g938-phone-setup": {
+      title: "G938 phone setup and controls",
+      url: "https://youtu.be/AKqT0fzuqW8"
+    },
     "hk-headsets-2026": {
       title: "Hong Kong 2026 gaming headset display",
       url: "https://youtu.be/SLcAr-jqdUs"

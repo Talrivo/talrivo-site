@@ -33,6 +33,7 @@ jobs:
         run: |
           node scripts/validate-site.mjs
           node scripts/test-contact-flow.mjs
+          node scripts/test-contact-submission.mjs
 
       - name: Build public bundle
         run: node scripts/build-pages.mjs

@@ -145,6 +145,13 @@ for (const [route, expected] of Object.entries(productRoutes)) {
   assert.equal(result.nodes.get('#contact-inquiry-type').value, inquiry === 'compare' ? 'Model comparison' : 'Sample request');
   assert.ok(result.nodes.get('#contact-selected-from').value.includes(`Product: ${expected}`));
 }
+const g938VideoContact = runContact('https://talrivo.com/contact/?product=g938&inquiry=quick-question&reference=g938-phone-setup', captured);
+assert.equal(g938VideoContact.nodes.get('select[name="product"]').value, 'G938 Wireless Gaming Headset');
+assert.equal(g938VideoContact.nodes.get('#contact-inquiry-type').value, 'Quick product question');
+assert.match(g938VideoContact.nodes.get('#contact-product-reference').value, /G938 phone setup and controls.*AKqT0fzuqW8/);
+assert.equal(g938VideoContact.nodes.get('#contact-reference-note').hidden, false);
+assert.equal(g938VideoContact.nodes.get('#contact-utm-source').value, 'linkedin');
+assert.equal(g938VideoContact.events.length, 0, 'opening a video inquiry must not generate a lead');
 const unknownProduct = runContact('https://talrivo.com/contact/?product=unknown-model');
 const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
 assert.ok(videoContact.nodes.get('#contact-product-reference').value.includes('https://youtu.be/SLcAr-jqdUs'));

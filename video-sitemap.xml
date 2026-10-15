@@ -78,6 +78,18 @@
     </video:video>
   </url>
   <url>
+    <loc>https://talrivo.com/videos/g938-phone-setup-controls/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/AKqT0fzuqW8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Wireless Gaming Headset Demo | USB-C Connection &amp; Controls | TALRIVO G938</video:title>
+      <video:description>Hands-on G938 sample demonstration showing USB-C receiver setup, Bluetooth settings, side controls, cushions and detachable microphone. Completed Bluetooth pairing is not clearly visible; confirm the selected sample procedure and target-device compatibility.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube-nocookie.com/embed/AKqT0fzuqW8</video:player_loc>
+      <video:duration>86</video:duration>
+      <video:publication_date>2026-10-13T00:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
     <loc>https://talrivo.com/bluetooth-headphones/b9-bluetooth/</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/PjWnIJUTSAA/hqdefault.jpg</video:thumbnail_loc>
