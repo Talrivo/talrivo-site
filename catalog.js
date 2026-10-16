@@ -20,6 +20,7 @@ window.talrivoCatalog = [
       "image-07.jpg"
     ],
     "folder": "g941-wireless",
+    "page": "gaming-headsets/g941-tri-mode-anc/",
     "video": null
   },
   {
@@ -43,6 +44,7 @@ window.talrivoCatalog = [
       "image-07.jpg"
     ],
     "folder": "g940-wireless",
+    "page": "gaming-headsets/g940-low-latency/",
     "video": null
   },
   {
@@ -122,6 +124,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "g936-wireless",
+    "page": "gaming-headsets/g936-lightweight/",
     "video": null
   },
   {
@@ -181,6 +184,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "g926-wireless",
+    "page": "gaming-headsets/g926-wireless/",
     "video": null
   },
   {
@@ -238,6 +242,7 @@ window.talrivoCatalog = [
       "image-03.png"
     ],
     "folder": "g938-wireless",
+    "page": "gaming-headsets/g938-wireless/",
     "video": null
   },
   {
@@ -258,6 +263,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g935-wireless",
+    "page": "gaming-headsets/g935-wireless/",
     "video": "https://www.youtube.com/embed/XMgEENG5Uhc"
   },
   {
@@ -278,6 +284,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "b7-bluetooth",
+    "page": "bluetooth-headphones/b7-bluetooth/",
     "video": null
   },
   {
@@ -297,6 +304,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "b9-bluetooth",
+    "page": "bluetooth-headphones/b9-bluetooth/",
     "video": null
   },
   {
@@ -317,6 +325,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "b10-bluetooth",
+    "page": "bluetooth-headphones/b10-bluetooth/",
     "video": null
   },
   {
@@ -351,6 +360,7 @@ window.talrivoCatalog = [
       "image-18.jpg"
     ],
     "folder": "g946-rgb",
+    "page": "gaming-headsets/g946-rgb/",
     "video": null
   },
   {
@@ -370,6 +380,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "g947-new",
+    "page": "gaming-headsets/g947-foldable/",
     "video": null
   },
   {
@@ -2414,6 +2425,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-tws044f",
+    "page": "tws-earbuds/tws044f/",
     "video": null,
     "details": {
       "highlights": [
@@ -3443,6 +3455,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "tws-earclip-09s",
+    "page": "tws-earbuds/earclip09s/",
     "video": null,
     "details": {
       "highlights": [

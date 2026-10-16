@@ -29,6 +29,7 @@ function runAnalytics(url, consent = 'granted', existingSource = null) {
     readyState: 'complete',
     head: { appendChild() {} },
     body: { appendChild() {} },
+    addEventListener() {},
     querySelector: () => null,
     createElement: () => ({ addEventListener() {}, remove() {}, setAttribute() {} })
   };

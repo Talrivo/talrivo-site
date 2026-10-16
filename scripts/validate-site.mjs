@@ -1,6 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { runInNewContext } from 'node:vm';
 
 const root = process.cwd();
 const errors = [];
@@ -156,6 +157,26 @@ function validateContactTracking() {
   }
 }
 
+function validateCatalogueRoutes() {
+  const context = { window: {} };
+  runInNewContext(readFileSync(join(root, 'catalog.js'), 'utf8'), context);
+  for (const product of context.window.talrivoCatalog || []) {
+    if (!product.page) continue;
+    const page = join(root, product.page, 'index.html');
+    if (!existsSync(page)) {
+      errors.push(`catalog.js ${product.folder} points to missing page: ${product.page}`);
+      continue;
+    }
+    const html = readFileSync(page, 'utf8');
+    if (!html.includes(`href="https://talrivo.com/${product.page}"`)) {
+      errors.push(`catalog.js ${product.folder} does not point to its canonical page`);
+    }
+    if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) {
+      errors.push(`catalog.js ${product.folder} points to a noindex page`);
+    }
+  }
+}
+
 function validateSharedHeadAssets() {
   for (const file of walk(root, (path) => path.endsWith('.html') && !path.includes('/public/') && !path.includes('/admin/'))) {
     const html = readFileSync(file, 'utf8');
@@ -184,6 +205,7 @@ validateJsonLd();
 validateRegistry();
 validateSitemap();
 validateConfirmedProductFacts();
+validateCatalogueRoutes();
 validateContactTracking();
 validateSharedHeadAssets();
 validateDiff();

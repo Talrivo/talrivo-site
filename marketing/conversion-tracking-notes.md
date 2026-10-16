@@ -58,5 +58,7 @@ Sample request guide:
 - Analytics storage is denied by default until the visitor accepts it.
 - A successful homepage or contact RFQ submission sends the recommended GA4 event `generate_lead`.
 - Failed or incomplete form submissions do not send `generate_lead`.
+- Consented email, WhatsApp and WeChat controls send `contact_click`, with `contact_method`, `contact_location` and `page_path`. No email address, message text or query parameters are included in this event.
+- `contact_click` measures an attempt to start contact, not a successful inquiry. Keep it separate from `generate_lead` and from any automatically collected outbound `click` events. Backend delivery and GA4 ingestion still need live verification.
 
 After deployment, verify page views and `generate_lead` in GA4 Realtime and DebugView. Mark `generate_lead` as a key event if it is not already enabled in the property.

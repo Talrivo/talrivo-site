@@ -384,7 +384,7 @@ function ensureProductDialogContent() {
         </div>
         <section class="video-panel hidden" id="dialog-video-block">
           <h3>Video reference</h3>
-          <video id="dialog-video" controls playsinline></video>
+          <iframe id="dialog-video" title="Product video reference" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen style="display:block;width:100%;aspect-ratio:16/9;border:0"></iframe>
         </section>
         <button class="button primary dialog-inquiry" id="dialog-inquiry" type="button">Contact About This Model</button>
       </div>
@@ -442,7 +442,7 @@ function renderCatalogue(filter = "gaming") {
   catalogueCount.textContent = `${displayed.length} models`;
   if (!catalogueGrid.childElementCount) {
     catalogueGrid.innerHTML = catalogue.map((product, index) => `
-      <button class="catalogue-card" type="button" data-product-index="${index}" data-product-category="${product.category}" aria-label="View ${product.model} ${product.name}">
+      <${product.page ? 'a' : 'button'} class="catalogue-card" ${product.page ? `href="${product.page}"` : 'type="button"'} data-product-index="${index}" data-product-category="${product.category}" aria-label="View ${product.model} ${product.name}">
         <img class="catalogue-card-image" src="${assetPath(product, product.images[0])}" alt="${product.model} ${product.name}" loading="lazy" decoding="async" fetchpriority="low">
         <span class="catalogue-card-copy">
           <span class="series">${product.label}</span>
@@ -450,11 +450,11 @@ function renderCatalogue(filter = "gaming") {
           <span class="catalogue-meta"><span>${product.images.length} images</span>${product.video ? '<span class="video-ready">Video</span>' : ""}</span>
           <span class="catalogue-action">View model</span>
         </span>
-      </button>
+      </${product.page ? 'a' : 'button'}>
     `).join("");
     catalogueGrid.addEventListener("click", (event) => {
       const card = event.target.closest(".catalogue-card");
-      if (!card) return;
+      if (!card || card.tagName === "A") return;
       openProductDialog(catalogue[Number(card.dataset.productIndex)]);
     });
   }
@@ -525,7 +525,6 @@ function openProductDialog(product) {
 
 function closeProductDialog() {
   if (dialogVideo) {
-    dialogVideo.pause();
     dialogVideo.removeAttribute("src");
   }
   if (productDialog.open) productDialog.close();
@@ -534,8 +533,8 @@ function closeProductDialog() {
 }
 
 productDialog.addEventListener("close", () => {
+  if (productDialog.open) return;
   if (dialogVideo) {
-    dialogVideo.pause();
     dialogVideo.removeAttribute("src");
   }
   productDialog.hidden = true;

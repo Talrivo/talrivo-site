@@ -151,6 +151,32 @@
     }
   };
 
+  document.addEventListener("click", (event) => {
+    let consent = null;
+    try {
+      consent = window.localStorage.getItem(consentStorageKey);
+    } catch {
+      return;
+    }
+    if (consent !== "granted") return;
+    const target = event.target?.closest?.("a[href], [data-open-wechat]");
+    if (!target) return;
+    const href = target.getAttribute("href") || "";
+    let method = null;
+    if (target.hasAttribute("data-open-wechat")) method = "wechat";
+    else if (/^mailto:/i.test(href)) method = "email";
+    else if (/^https:\/\/(?:wa\.me|api\.whatsapp\.com)(?:\/|$)/i.test(href)) method = "whatsapp";
+    if (!method) return;
+    const location = target.closest(".contact-dock") ? "contact_dock"
+      : target.closest(".site-header") ? "header"
+      : target.closest(".site-footer") ? "footer" : "content";
+    window.gtag("event", "contact_click", {
+      contact_method: method,
+      contact_location: location,
+      page_path: window.location.pathname
+    });
+  });
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initializeConsentControls, { once: true });
   } else {
