@@ -1,0 +1,84 @@
+WIRED GAMING HEADSET SAMPLE CHECKLIST
+TALRIVO | Version: October 18, 2026
+
+Blank buyer worksheet, not a test report or compatibility declaration.
+Record actual results for the exact sample. Mark untested items NOT TESTED.
+
+1. IDENTIFY THE SAMPLE
+Model and wired / wireless version:
+Sample ID or batch:
+Test date and tester:
+Device model and operating system:
+Cable / receiver / adapter used:
+Selected connection mode:
+
+2. CONFIRM THE CONNECTION CONFIGURATION
+[ ] 3.5mm audio and microphone + USB lighting power only
+[ ] USB digital audio and microphone
+[ ] Other (describe):
+USB function confirmed by:
+3.5mm plug standard (if present):
+Microphone signal path:
+Software and operating-system requirements:
+
+3. TEST PLAYBACK AND MICROPHONE SEPARATELY
+For a 3.5mm + USB-lighting configuration, record each state:
+
+State A: 3.5mm connected; USB disconnected
+Playback result:
+Microphone result:
+Lighting result:
+
+State B: USB connected; 3.5mm disconnected
+Playback result:
+Microphone result:
+Lighting result:
+
+State C: Both connected
+Playback result:
+Microphone result:
+Lighting result:
+
+For USB-audio versions, test USB playback and microphone input separately.
+Do not apply USB-lighting-only expectations to a USB-audio version.
+Selected playback device:
+Selected microphone input:
+Volume / mute controls:
+Software-dependent features tested:
+Issues or retest needed:
+
+4. CHECK THE ACCESSORY LIST
+Combined headset jack or separate PC audio / microphone sockets:
+CTIA microphone-supporting Y-splitter required (yes / no / not confirmed):
+Adapter model and test result:
+Included cables and accessories:
+Separately purchased accessories and agreed costs:
+For the 3.5mm + USB-lighting configuration described in our guide, the
+splitter is not included in the headset unit price. Confirm the selected
+order's accessory list rather than relying on a product illustration.
+
+5. REVIEW THE PHYSICAL SAMPLE
+Comfort and fit during a recorded wear period:
+Headband and cushion observations:
+Microphone fit / position:
+Cable and connector condition:
+Controls and lighting behavior:
+Logo, color, manual and packaging requirements:
+Photos / video filenames documenting the results:
+
+6. FOLLOW UP WITH THE SUPPLIER
+Destination market and sales channel:
+Quantity range and sample timing:
+Open questions and requested corrections:
+Buyer / supplier agreed configuration:
+Approval status and date (if approved):
+
+Test each intended device and connection mode separately. A connector
+that fits, an illuminated headset or a similar model name is not proof
+of playback, microphone or software compatibility.
+
+Connection guide:
+https://talrivo.com/insights/gaming-headset-usb-audio-or-lighting/
+Wired headset collection:
+https://talrivo.com/wired-gaming-headsets/
+Questions about a selected configuration: sales@talrivo.com
