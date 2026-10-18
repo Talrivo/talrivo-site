@@ -125,6 +125,8 @@ const productRoutes = {
   'tws-earbuds': 'TWS & Open-Ear Earbuds',
   g926: 'G926 Wireless Gaming Headset',
   g935: 'G935 Wireless Gaming Headset',
+  'G942-wired': 'G942 RGB Wired Gaming Headset',
+  'G935-wired': 'G935 RGB Wired Gaming Headset',
   g936: 'G936 Lightweight Gaming Headset',
   g938: 'G938 Wireless Gaming Headset',
   g940: 'G940 Low-Latency Wireless Gaming Headset',

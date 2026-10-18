@@ -42,6 +42,8 @@ if (contactForm) {
     "gaming-headsets": "Gaming Headset Collection",
     "wireless-gaming-headsets": "Wireless Gaming Headset Series",
     "wired-gaming-headsets": "Wired RGB Gaming Headset Series",
+    "G942-wired": "G942 RGB Wired Gaming Headset",
+    "G935-wired": "G935 RGB Wired Gaming Headset",
     "bluetooth-headphones": "Bluetooth Headphones",
     "bluetooth-speakers": "Bluetooth Speakers",
     "tws-earbuds": "TWS & Open-Ear Earbuds",
