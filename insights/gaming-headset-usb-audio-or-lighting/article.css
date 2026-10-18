@@ -1,0 +1,20 @@
+.seo-page.usb-guide { padding: 0 20px; }
+.usb-guide > * { max-width: 900px; margin-inline: auto; }
+.usb-intro { padding-block: 3rem 1.5rem; }
+.usb-guide h1 { font-size: 40px; line-height: 1.2; font-weight: 600; letter-spacing: 0; }
+.usb-guide p, .usb-guide li { font-size: 17px; line-height: 1.75; }
+.usb-guide .label, .usb-guide .usb-byline { font-size: 14px; }
+.usb-figure { margin-block: 1rem 2rem; }
+.usb-figure img { width: 100%; height: auto; max-height: 440px; object-fit: contain; background: #f7f8f6; display: block; }
+.usb-figure figcaption { color: var(--muted); font-size: 14px; line-height: 1.6; padding-top: .75rem; }
+.usb-contents { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; padding-block: 1.25rem; border-block: 1px solid var(--line); }
+.usb-guide > section { padding-block: 2rem; scroll-margin-top: 130px; }
+.usb-guide h2 { font-size: 28px; line-height: 1.3; font-weight: 600; letter-spacing: 0; }
+.usb-guide h3 { font-size: 21px; line-height: 1.4; letter-spacing: 0; }
+.usb-guide blockquote { border-left: 3px solid #087c91; padding: 1rem 1.25rem; margin: 1rem 0; background: #f2f7f8; }
+.usb-table { overflow-x: auto; max-width: 100%; }
+.usb-table table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 16px; line-height: 1.6; }
+.usb-table th, .usb-table td { border: 1px solid var(--line); padding: .85rem; text-align: left; vertical-align: top; }
+.usb-table thead { background: #f2f7f8; }
+.usb-table caption { text-align: left; padding-block: .75rem; color: var(--muted); font-size: 14px; }
+@media (max-width: 700px) { .usb-guide h1 { font-size: 30px; } .usb-guide h2 { font-size: 24px; } .usb-intro { padding-top: 2rem; } }

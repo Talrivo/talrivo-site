@@ -1,5 +1,7 @@
 # TALRIVO
 
+- [Gaming Headset USB: Audio or Lighting Only?](https://talrivo.com/insights/gaming-headset-usb-audio-or-lighting/): Configuration guide covering USB audio, 3.5mm audio with USB lighting power, CTIA headset plugs, separately priced splitters and sample test plans. No device-specific test or universal compatibility claims.
+
 > TALRIVO represents our own audio manufacturing business in China. Primary product lines are gaming headsets, Bluetooth headphones and TWS earbuds for importers, distributors and private-label brands, with sample preparation, OEM/ODM requirements and production follow-up handled by the TALRIVO team.
 
 TALRIVO presents supplied product images, model details, buyer guides, sample preparation, customization options, RFQ guidance, and official contact routes. Treat gaming headsets, Bluetooth over-ear headphones and TWS earbuds as the three primary product lines. Type-C earphones are a secondary reference category. Product specifications and commercial details are model- and version-dependent.
