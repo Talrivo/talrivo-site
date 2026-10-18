@@ -177,6 +177,38 @@ function validateCatalogueRoutes() {
   }
 }
 
+function validatePublicInquiryRoutes() {
+  const code = readFileSync(join(root, 'contact-form.js'), 'utf8');
+  const maps = [
+    ['product', 'productSelections'],
+    ['inquiry', 'inquirySelections'],
+    ['reference', 'inquiryReferences']
+  ].map(([parameter, name]) => {
+    const source = code.match(new RegExp(`const ${name} = (\\{[\\s\\S]*?\\n  \\});`))?.[1];
+    if (!source) {
+      errors.push(`contact-form.js is missing ${name} for public route validation`);
+      return [parameter, {}];
+    }
+    return [parameter, runInNewContext(`(${source})`)];
+  });
+  for (const file of walk(root, (path) => path.endsWith('.html') && !path.includes('/public/') && !path.includes('/admin/'))) {
+    const html = readFileSync(file, 'utf8');
+    if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) continue;
+    const pageUrl = `https://talrivo.com/${relative(root, file)}`;
+    for (const match of html.matchAll(/href="([^"]+)"/g)) {
+      let url;
+      try { url = new URL(match[1].replaceAll('&amp;', '&'), pageUrl); } catch { continue; }
+      if (url.origin !== 'https://talrivo.com' || url.pathname !== '/contact/') continue;
+      for (const [parameter, values] of maps) {
+        const value = url.searchParams.get(parameter);
+        if (value !== null && !Object.hasOwn(values, value)) {
+          errors.push(`${relative(root, file)} contact link has unsupported ${parameter}: ${value}`);
+        }
+      }
+    }
+  }
+}
+
 function validateSharedHeadAssets() {
   for (const file of walk(root, (path) => path.endsWith('.html') && !path.includes('/public/') && !path.includes('/admin/'))) {
     const html = readFileSync(file, 'utf8');
@@ -207,6 +239,7 @@ validateSitemap();
 validateConfirmedProductFacts();
 validateCatalogueRoutes();
 validateContactTracking();
+validatePublicInquiryRoutes();
 validateSharedHeadAssets();
 validateDiff();
 

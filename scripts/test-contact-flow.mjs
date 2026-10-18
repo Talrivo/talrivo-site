@@ -156,6 +156,23 @@ assert.equal(g938VideoContact.nodes.get('#contact-reference-note').hidden, false
 assert.equal(g938VideoContact.nodes.get('#contact-utm-source').value, 'linkedin');
 assert.equal(g938VideoContact.events.length, 0, 'opening a video inquiry must not generate a lead');
 const unknownProduct = runContact('https://talrivo.com/contact/?product=unknown-model');
+for (const [route, expected] of [['model-code', 'Model comparison'], ['oem-odm', 'OEM / private-label project']]) {
+  const legacy = runContact(`https://talrivo.com/contact/?product=gaming-headsets&inquiry=${route}`);
+  assert.equal(legacy.nodes.get('#contact-inquiry-type').value, expected);
+  assert.ok(legacy.nodes.get('#contact-selected-from').value.includes(`Inquiry: ${expected}`));
+  assert.equal(legacy.events.length, 0, 'opening a legacy inquiry route must not generate a lead');
+}
+for (const inquiry of ['quick-question', 'sample']) {
+  const guide = runContact(`https://talrivo.com/contact/?product=wired-gaming-headsets&inquiry=${inquiry}&reference=usb-connection-guide`, captured);
+  assert.equal(guide.nodes.get('select[name="product"]').value, 'Wired RGB Gaming Headset Series');
+  assert.equal(guide.nodes.get('#contact-inquiry-type').value, inquiry === 'sample' ? 'Sample request' : 'Quick product question');
+  assert.match(guide.nodes.get('#contact-product-reference').value, /Gaming headset USB audio or lighting guide: https:\/\/talrivo.com\/insights\/gaming-headset-usb-audio-or-lighting\//);
+  assert.equal(guide.nodes.get('#contact-reference-note').hidden, false);
+  assert.match(guide.nodes.get('#contact-reference-note').textContent, /Guide reference:.*target device/);
+  assert.doesNotMatch(guide.nodes.get('#contact-reference-note').textContent, /timestamp/);
+  assert.equal(guide.nodes.get('#contact-utm-source').value, 'linkedin');
+  assert.equal(guide.events.length, 0, 'opening a guide inquiry must not generate a lead');
+}
 const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
 assert.ok(videoContact.nodes.get('#contact-product-reference').value.includes('https://youtu.be/SLcAr-jqdUs'));
 assert.equal(videoContact.nodes.get('#contact-reference-note').hidden, false);

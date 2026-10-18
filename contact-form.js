@@ -19,7 +19,12 @@ if (contactForm) {
   const params = new URLSearchParams(window.location.search);
   const productReference = document.querySelector("#contact-product-reference");
   const referenceNote = document.querySelector("#contact-reference-note");
-  const videoReferences = {
+  const inquiryReferences = {
+    "usb-connection-guide": {
+      title: "Gaming headset USB audio or lighting guide",
+      url: "https://talrivo.com/insights/gaming-headset-usb-audio-or-lighting/",
+      type: "guide"
+    },
     "g938-phone-setup": {
       title: "G938 phone setup and controls",
       url: "https://youtu.be/AKqT0fzuqW8"
@@ -30,10 +35,12 @@ if (contactForm) {
     }
   };
   const referenceKey = params.get("reference");
-  const selectedReference = Object.hasOwn(videoReferences, referenceKey) ? videoReferences[referenceKey] : null;
+  const selectedReference = Object.hasOwn(inquiryReferences, referenceKey) ? inquiryReferences[referenceKey] : null;
   if (selectedReference) {
     referenceNote.hidden = false;
-    referenceNote.textContent = `Video reference: ${selectedReference.title}. Please include the timestamp of the headset you are interested in.`;
+    referenceNote.textContent = selectedReference.type === "guide"
+      ? `Guide reference: ${selectedReference.title}. Please include your headset version, target device and USB or 3.5mm connection question.`
+      : `Video reference: ${selectedReference.title}. Please include the timestamp of the headset you are interested in.`;
   }
   const sourceStorageKey = "talrivoInquirySource";
   const productSelections = {
@@ -68,6 +75,8 @@ if (contactForm) {
     "custom-audio": "Custom Audio Project"
   };
   const inquirySelections = {
+    "model-code": "Model comparison",
+    "oem-odm": "OEM / private-label project",
     sample: "Sample request",
     oem: "OEM / private-label project",
     rfq: "Quotation request",
