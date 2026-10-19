@@ -32,6 +32,7 @@ jobs:
       - name: Validate site content
         run: |
           node scripts/validate-site.mjs
+          node scripts/test-entry-images.mjs
           node scripts/test-contact-flow.mjs
           node scripts/test-contact-actions.mjs
           node scripts/test-contact-submission.mjs

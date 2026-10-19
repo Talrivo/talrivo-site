@@ -4753,6 +4753,7 @@ h2 {
   .site-header .seo-nav {
     align-items: center;
     display: flex;
+    position: static;
     flex: 1 0 100%;
     flex-direction: row;
     gap: 0.45rem;
