@@ -1,0 +1,18 @@
+.buyer-product-page .seo-hero.product-detail > img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f7f8f6;
+  padding: 1rem;
+  box-shadow: none;
+}
+
+.buyer-product-page .product-detail nav a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.buyer-product-page #receiver-accessories,
+.buyer-product-page #documented-specifications {
+  scroll-margin-top: 8rem;
+}
