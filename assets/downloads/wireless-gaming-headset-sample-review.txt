@@ -1,0 +1,115 @@
+TALRIVO | WIRELESS GAMING HEADSET SAMPLE REVIEW
+Version: 2026-10-19
+Source: https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/
+
+Blank buyer worksheet, not a completed test report or certification.
+Agree acceptance criteria before testing. Mark unsupported modes "Not applicable".
+Keep "Not tested" where evidence is missing. Do not infer universal compatibility.
+
+SAMPLE RECORD
+Model / sample ID:
+Sample version / firmware, if known:
+Receiver model / connector / adapter:
+Sample received / tested on:
+Reviewer:
+Destination market / sales channel:
+Target device model / OS / application:
+Connection modes required:
+Approved packing list / artwork version:
+
+Repeat the connection and microphone checks for EACH device and mode required.
+Status choices: Not tested | Meets agreed criteria | Issue to resolve | Not applicable
+
+01 | DEVICE DETECTION AND PLAYBACK
+Record: Receiver or cable, selected audio output, playback content and settings.
+Agreed criteria:
+Observed result:
+Status / photo or recording reference:
+
+02 | PLAYBACK AND MICROPHONE TOGETHER
+Record: Game or audio application, voice-chat application, input/output devices,
+connection mode and whether playback or microphone behavior changes during calls.
+Agreed criteria:
+Observed result:
+Status / recording reference:
+
+03 | PAIRING, RECONNECTION AND MODE SWITCHING
+Record: Steps, indicators, device name, reconnection behavior and controls per mode.
+Mode switching is not evidence of simultaneous audio mixing.
+Agreed criteria:
+Observed result:
+Status / video reference:
+
+04 | MUTE, VOLUME AND OTHER CONTROLS
+Record: Button or wheel action, mute indication and any mode-specific differences.
+Agreed criteria:
+Observed result:
+Status / evidence reference:
+
+05 | WIRED FALLBACK AND USB PURPOSE
+Record: The exact cable and port; whether each carries audio or charging power.
+Do not assume a charging port supports USB audio. Record microphone behavior too.
+Agreed criteria:
+Observed result:
+Status / cable photo reference:
+
+06 | MICROPHONE IN THE INTENDED ENVIRONMENT
+Record: Boom position, distance, background sound and unchanged recording settings.
+Compare quiet-room and intended-use recordings. Do not infer a noise-reduction rating.
+Agreed criteria:
+Observed result:
+Status / audio references:
+
+07 | WEARING FIT AND MATERIALS
+Record: Wear-session duration, fit, pressure, cushion material and reviewer comments.
+Agreed criteria:
+Observed result:
+Status / photo reference:
+
+08 | BATTERY AND CHARGING
+Record: Connection mode, volume, lighting, content, charge state, elapsed playback,
+charger and cable used. Catalogue figures are not measured results for this sample.
+Agreed criteria:
+Observed result:
+Status / log reference:
+
+09 | CONNECTION STABILITY
+Record: Device and receiver placement, distance, obstacles, other wireless devices
+and any dropout or reconnection. These observations do not measure exact latency.
+Agreed criteria:
+Observed result:
+Status / setup reference:
+
+10 | ACCESSORIES AND PACKAGING
+Record: Receiver, adapters, microphone, cables, manual, labels and box contents.
+Match items to the agreed packing list; do not assume optional adapters are included.
+Agreed criteria:
+Observed result:
+Status / unpacked-set photo and artwork reference:
+
+11 | MODEL-SPECIFIC DOCUMENT REVIEW
+Record: Required destination-market documents, product version, named parties,
+document scope, dates, referenced reports and unresolved verification questions.
+This worksheet and workshop photos are not compliance evidence.
+Agreed criteria:
+Documents received / outstanding:
+Status / original-document references:
+
+12 | CHANGES AND APPROVAL
+Requested change / affected model version:
+Responsible contact / follow-up date:
+Retest required / evidence reference:
+Outstanding issues:
+Approval status / reviewer / date:
+Approved sample ID / packing list / artwork version:
+
+NEXT STEP
+Send the sample ID, target devices, connection mode, observed issue and evidence
+references through the product inquiry form. Use email or WhatsApp for attachments.
+Do not include unrelated personal information in recordings or screenshots.
+No sample is approved automatically by completing this worksheet.
+
+Product inquiry: https://talrivo.com/contact/?product=wireless-gaming-headsets&inquiry=quick-question#inquiry-form
+Email: sales@talrivo.com
+Connection demo: https://talrivo.com/videos/g938-phone-setup-controls/
+Model comparison: https://talrivo.com/wireless-gaming-headsets/#specifications
