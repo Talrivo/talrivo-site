@@ -174,6 +174,12 @@ for (const inquiry of ['quick-question', 'sample']) {
   assert.equal(guide.events.length, 0, 'opening a guide inquiry must not generate a lead');
 }
 const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
+const assemblyContact = runContact('https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=g935-assembly');
+assert.equal(assemblyContact.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
+assert.equal(assemblyContact.nodes.get('#contact-inquiry-type').value, 'Quick product question');
+assert.match(assemblyContact.nodes.get('#contact-product-reference').value, /G935 assembly and packing process.*1KQfLCmMhE4/);
+assert.equal(assemblyContact.nodes.get('#contact-reference-note').hidden, false);
+assert.equal(assemblyContact.events.length, 0, 'opening the assembly-video inquiry must not generate a lead');
 assert.ok(videoContact.nodes.get('#contact-product-reference').value.includes('https://youtu.be/SLcAr-jqdUs'));
 assert.equal(videoContact.nodes.get('#contact-reference-note').hidden, false);
 for (const reference of ['unknown', '__proto__', 'constructor', 'https://example.com/']) {
