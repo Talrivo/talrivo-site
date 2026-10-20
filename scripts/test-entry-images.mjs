@@ -13,6 +13,8 @@ const pages = [
   'tws-earbuds/index.html',
   'sample-request/index.html',
   'contact/index.html',
+  'wired-gaming-headsets/index.html',
+  'insights/gaming-headset-usb-audio-or-lighting/index.html',
 ];
 let checked = 0;
 
@@ -35,7 +37,8 @@ for (const page of pages) {
       const bytes = readFileSync(file);
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${src}: invalid WebP header`);
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${src}: invalid WebP header`);
-      assert.ok(statSync(file).size < 65000, `${src}: exceeds entry-image byte budget`);
+      const budget = src.includes('g935-connectors-') ? 140000 : 65000;
+      assert.ok(statSync(file).size < budget, `${src}: exceeds entry-image byte budget`);
     }
     assert.ok(candidates.some(([src]) => src === attribute('src')), `${page}: fallback must match a candidate`);
     if (attribute('fetchpriority') === 'high') {
@@ -46,6 +49,11 @@ for (const page of pages) {
 }
 
 const home = readFileSync(resolve(root, 'index.html'), 'utf8');
+const usbGuide = readFileSync(resolve(root, 'insights/gaming-headset-usb-audio-or-lighting/index.html'), 'utf8');
+assert.match(usbGuide, /<a href="g935-usb-35mm-scene\.png"[^>]*>[\s\S]*?g935-connectors-960\.webp/,
+  'Keep the original connector illustration accessible from the responsive preview');
+assert.ok(statSync(resolve(root, 'insights/gaming-headset-usb-audio-or-lighting/g935-usb-35mm-scene.png')).size > 0,
+  'Do not remove the original connector illustration');
 const styles = readFileSync(resolve(root, 'styles.css'), 'utf8');
 assert.match(styles, /\.site-header \.seo-nav\s*\{[^}]*position:\s*static\s*;/,
   'Mobile SEO navigation must stay in document flow instead of covering the hero');

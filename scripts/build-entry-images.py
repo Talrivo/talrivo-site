@@ -14,6 +14,9 @@ SOURCES = {
     "b9-desk": "assets/catalog/b9-bluetooth/reference/b9-black-lifestyle-desk.jpg",
     "b7-overview": "assets/catalog/b7-bluetooth/image-01.jpg",
     "tws044f-overview": "assets/catalog/tws-tws044f/evidence/display/tws044f-case-earbuds-overview.jpg",
+    "g942-wired": "assets/catalog/g942-wired/image-01.png",
+    "g935-wired": "assets/catalog/g935-wired/image-01.jpg",
+    "g935-connectors": "insights/gaming-headset-usb-audio-or-lighting/g935-usb-35mm-scene.png",
 }
 
 
