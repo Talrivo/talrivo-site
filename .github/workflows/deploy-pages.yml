@@ -39,9 +39,13 @@ jobs:
           node scripts/test-contact-flow.mjs
           node scripts/test-contact-actions.mjs
           node scripts/test-contact-submission.mjs
+          python3 scripts/test-public-links.py
+          python3 scripts/audit-public-links.py
 
       - name: Build public bundle
-        run: node scripts/build-pages.mjs
+        run: |
+          node scripts/build-pages.mjs
+          python3 scripts/audit-public-links.py --root public
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

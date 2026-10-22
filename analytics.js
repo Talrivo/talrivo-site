@@ -102,6 +102,7 @@
   const buildConsentPanel = () => {
     const panel = document.createElement("section");
     panel.className = "analytics-consent";
+    panel.setAttribute("data-nosnippet", "");
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-modal", "false");
     panel.setAttribute("aria-labelledby", "analytics-consent-title");

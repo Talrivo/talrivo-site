@@ -6,10 +6,14 @@ const code = readFileSync('analytics.js', 'utf8');
 function scenario(consent, blocked = false) {
   const values = new Map(consent ? [['talrivoAnalyticsConsent', consent]] : []);
   const handlers = new Map();
-  const node = () => ({ addEventListener() {}, remove() {}, setAttribute() {} });
+  const rendered = [];
+  const node = () => ({
+    attributes: new Map(), addEventListener() {}, remove() {},
+    setAttribute(name, value) { this.attributes.set(name, value); }
+  });
   const document = {
     readyState: 'complete', referrer: '',
-    head: { appendChild() {} }, body: { appendChild() {} },
+    head: { appendChild() {} }, body: { appendChild(element) { rendered.push(element); } },
     querySelector: () => null, createElement: node,
     addEventListener: (event, callback) => handlers.set(event, callback)
   };
@@ -30,8 +34,14 @@ function scenario(consent, blocked = false) {
     handlers.get('click')({ target });
   };
   const events = () => window.dataLayer.filter(args => args[0] === 'event');
-  return { values, click, events };
+  return { values, click, events, rendered };
 }
+const firstVisit = scenario(null);
+const consentPanel = firstVisit.rendered.find(element => element.className === 'analytics-consent');
+assert.equal(consentPanel.attributes.get('data-nosnippet'), '', 'Keep consent boilerplate out of search snippets');
+assert.equal(consentPanel.attributes.get('role'), 'dialog');
+assert.match(consentPanel.innerHTML, /data-analytics-consent="denied"/);
+assert.match(consentPanel.innerHTML, /data-analytics-consent="granted"/);
 for (const consent of [null, 'denied']) {
   const run = scenario(consent);
   run.click('mailto:sales@talrivo.com');
