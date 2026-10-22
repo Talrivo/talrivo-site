@@ -175,6 +175,10 @@ for (const inquiry of ['quick-question', 'sample']) {
 }
 const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
 const assemblyContact = runContact('https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=g935-assembly');
+const g946StyleContact = runContact('https://talrivo.com/contact/?product=g946&inquiry=quick-question&reference=g946-style');
+assert.equal(g946StyleContact.nodes.get('select[name="product"]').value, 'G946 Tri-Mode RGB Gaming Headset');
+assert.match(g946StyleContact.nodes.get('#contact-product-reference').value, /G946 fashion-to-gaming style concept.*PGj_ESVdFgA/);
+assert.equal(g946StyleContact.nodes.get('#contact-reference-note').hidden, false);
 assert.equal(assemblyContact.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
 assert.equal(assemblyContact.nodes.get('#contact-inquiry-type').value, 'Quick product question');
 assert.match(assemblyContact.nodes.get('#contact-product-reference').value, /G935 assembly and packing process.*1KQfLCmMhE4/);

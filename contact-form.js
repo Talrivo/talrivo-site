@@ -20,6 +20,10 @@ if (contactForm) {
   const productReference = document.querySelector("#contact-product-reference");
   const referenceNote = document.querySelector("#contact-reference-note");
   const inquiryReferences = {
+    "g946-style": {
+      title: "G946 fashion-to-gaming style concept",
+      url: "https://www.youtube.com/shorts/PGj_ESVdFgA"
+    },
     "g935-assembly": {
       title: "G935 assembly and packing process",
       url: "https://youtu.be/1KQfLCmMhE4"
