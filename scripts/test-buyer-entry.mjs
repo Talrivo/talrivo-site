@@ -2,6 +2,19 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const category = readFileSync('gaming-headsets/index.html', 'utf8');
+const g938 = readFileSync('gaming-headsets/g938-wireless/index.html', 'utf8');
+assert.ok(g938.includes('<title>G938 Tri-Mode Gaming Headset | 2.4G/Bluetooth/Wired Sourcing</title>'),
+  'Keep the G938 title stable during the description observation period');
+const g938Description = 'G938 tri-mode wireless gaming headset: 2.4GHz, Bluetooth and wired. Review 53mm drivers, receiver photos and hands-on setup before private-label sampling.';
+for (const attribute of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
+  assert.ok(g938.includes(`<meta ${attribute} content="${g938Description}">`));
+}
+const g938Page = [...g938.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'WebPage');
+assert.equal(g938Page.description, g938Description);
+for (const evidence of ['53mm drivers', 'id="receiver-accessories"', 'id="hands-on-demo"']) {
+  assert.ok(g938.includes(evidence), `G938 snippet must have visible support: ${evidence}`);
+}
 for (const [file, title] of [
   ['gaming-headsets/index.html', 'Gaming Headset Manufacturer | OEM &amp; Private Label | TALRIVO'],
   ['wireless-gaming-headsets/index.html', 'Private Label Wireless Gaming Headsets | TALRIVO'],
