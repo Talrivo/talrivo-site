@@ -2,8 +2,9 @@
 
 ## Current Weekly Plan
 
-- Follow `marketing/seo/weekly-sop-2026-09-07.md` for 2026-09-07 through 2026-09-13 before using the generic weekly checklist below.
-- The dated plan freezes recently edited pages and takes priority over older instructions to publish or edit a website page every week.
+- Use the October 22 acquisition check in `marketing/seo/keyword-intent-matrix.md` for the current procurement-query groups and post-deployment measurement plan.
+- The September 7-13 plan is historical, not the current week's instruction. Do not edit a page merely to meet a weekly publication quota.
+- Use `marketing/seo/procurement-evidence-shoot-list-20261022.md` for the next original photos and demonstrations; missing evidence must not be filled with invented results.
 
 ## Weekly
 
@@ -12,7 +13,7 @@
 - Review `marketing/search-console-ga4-setup.md` when setting up Search Console, GA4 or monthly reporting.
 - Inspect the top pages: home, gaming headsets, OEM/ODM, contact and RFQ guide.
 - Check mobile catalogue usability on the homepage after adding new products.
-- Search `site:talrivo.com TALRIVO` to confirm Google is showing important pages.
+- Use URL Inspection for the selected important URLs. A `site:` search can help discover visible results, but an absent result is not proof that a page is not indexed.
 - Review new inquiry emails and note which page or product attracted the lead.
 - Check the "Source context" block in inquiry emails and update `marketing/conversion-tracking-notes.md` if a useful campaign pattern appears.
 - Review `marketing/seo/keyword-intent-matrix.md` before adding new content so the topic matches a real search intent and landing page.

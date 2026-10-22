@@ -2,6 +2,24 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const category = readFileSync('gaming-headsets/index.html', 'utf8');
+for (const [file, title] of [
+  ['gaming-headsets/index.html', 'Gaming Headset Manufacturer | OEM &amp; Private Label | TALRIVO'],
+  ['wireless-gaming-headsets/index.html', 'Private Label Wireless Gaming Headsets | TALRIVO'],
+]) {
+  const html = readFileSync(file, 'utf8');
+  assert.ok(html.includes(`<title>${title}</title>`), `${file}: preserve the procurement title`);
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, description]) => description);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1, `${file}: synchronize search and social descriptions`);
+  const collection = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'CollectionPage');
+  assert.equal(collection.description, descriptions[0]);
+  assert.match(descriptions[0], /our own manufacturing business in China/);
+  assert.match(html, /TALRIVO represents our own audio manufacturing business in China/);
+  assert.ok(html.includes('href="../oem-odm/#customization-scope"'));
+  assert.ok(html.includes('href="../gaming-headset-quality-review/#production-video"'));
+}
 assert.ok(category.indexOf('id="headset-models"') < category.indexOf('aria-labelledby="dock-title"'),
   'Show model choices before the dock preview');
 assert.ok(category.indexOf('id="headset-models"') < category.indexOf('Worked selection example'),
