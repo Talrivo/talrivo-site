@@ -109,6 +109,13 @@
   line-height: 1.65;
 }
 
+.quality-review-page .certificate-previews img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 620px) {
   .quality-review-page .review-jump-links {
     padding-inline: 1.15rem;

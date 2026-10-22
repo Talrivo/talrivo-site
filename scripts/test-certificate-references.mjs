@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+const originals = [
+  ['sit240719190301-red', 'd96ffdab06a344991d38618ba00ddeb70545ead85589ba12a79bc3c4923d8d99'],
+  ['sit240719190302r-rohs', '410aacddfe4650e7c9981326f023cc794974910e4bdb39956f609fa3e26a69b4'],
+];
+const html = readFileSync('gaming-headset-quality-review/index.html', 'utf8');
+const section = html.match(/<section[^>]*id="published-certificates"[\s\S]*?<\/section>/)?.[0];
+assert.ok(section, 'Original documents require a visible scope and named holder');
+assert.match(section, /Nanrui Electronic Technology Co\., Ltd\./);
+assert.match(section, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
+assert.match(section, /July 31, 2024/);
+assert.match(section, /do not name TALRIVO as the certificate holder/);
+assert.match(section, /G936 and other unlisted models are not covered/);
+assert.match(section, /not a new issuer verification/);
+for (const [name, expected] of originals) {
+  const pdf = readFileSync(`assets/certificates/${name}.pdf`);
+  assert.equal(pdf.toString('ascii', 0, 5), '%PDF-');
+  assert.equal(createHash('sha256').update(pdf).digest('hex'), expected,
+    `${name}: keep the supplied original PDF unchanged`);
+  const preview = readFileSync(`assets/certificates/${name}-preview.webp`);
+  assert.equal(preview.toString('ascii', 0, 4), 'RIFF');
+  assert.equal(preview.toString('ascii', 8, 12), 'WEBP');
+  assert.ok(section.includes(`href="../assets/certificates/${name}.pdf"`));
+  assert.ok(section.includes(`src="../assets/certificates/${name}-preview.webp"`));
+}
+const model = readFileSync('gaming-headsets/g938-wireless/index.html', 'utf8');
+assert.match(model, /gaming-headset-quality-review\/#published-certificates/);
+assert.match(model, /not a claim that every G938 variant is covered/);
+console.log('Certificate reference checks passed: unchanged source PDFs, previews, explicit holder, model/date scope and project-version boundaries.');

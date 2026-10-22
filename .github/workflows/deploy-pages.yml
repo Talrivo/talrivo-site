@@ -36,6 +36,7 @@ jobs:
           node scripts/test-buyer-entry.mjs
           node scripts/test-wired-selection.mjs
           node scripts/test-model-faq.mjs
+          node scripts/test-certificate-references.mjs
           node scripts/test-contact-flow.mjs
           node scripts/test-contact-actions.mjs
           node scripts/test-contact-submission.mjs
