@@ -1,0 +1,50 @@
+TALRIVO - Gaming Headset Microphone Recording Sheet
+
+Blank buyer worksheet. Not a completed test report, certification or performance
+claim. This listening comparison is not a laboratory measurement. Agree your
+acceptance criteria before comparing samples. Mark untested items "Not tested".
+
+SAMPLE AND RECORDING SETUP
+Date / reviewer:
+Sample ID / headset version / firmware if known:
+Microphone / boom position:
+Connection mode / receiver or cable:
+Device / OS / recording or chat app:
+Selected microphone input / input level:
+App and OS processing settings, including noise suppression:
+Room / keyboard / fan position:
+Acceptance criteria agreed with supplier:
+
+READ THIS SAME PASSAGE FOR EACH TAKE
+"Can you hear me clearly while I play? I am checking this headset at my desk.
+Please listen for the beginning and end of each word. Now I am speaking a little
+more softly, then returning to my normal voice."
+
+Use your normal pace; about 20 seconds is a guide, not a pass/fail limit. Keep the
+speaker, boom position, device, app, input level and processing settings the same
+when comparing samples. If something changes, record it and make a separate take.
+
+TAKES TO RECORD
+1. Quiet room: read the passage at normal volume.
+2. Keyboard and mouse: repeat the passage while typing and clicking as usual.
+3. Steady fan: repeat the passage; note fan position and setting.
+4. Intended voice-chat setup: repeat with game audio playing and microphone active,
+   where supported. Record the selected playback and microphone devices.
+5. Mute: confirm whether your voice stops and resumes as expected.
+
+Keep original recordings. Do not add music or edit out a dropout or clipped word.
+Review recordings at the same listening volume. Note app processing rather than
+presenting an app-processed recording as the raw headset signal.
+
+RESULTS - COMPLETE ONE COPY PER SAMPLE AND MODE
+Take 1 filename / voice clarity / clipped words / notes:
+Take 2 filename / speech clarity / keyboard noise / notes:
+Take 3 filename / speech clarity / fan noise / notes:
+Take 4 filename / simultaneous game and voice behavior / notes:
+Take 5 result / mute feedback / notes:
+Not tested / reason:
+Changes requested / owner / next review date:
+
+Do not infer another model's performance or device compatibility from this sheet.
+Share only recordings you have permission to share; avoid unrelated conversations
+or personal information in the background.

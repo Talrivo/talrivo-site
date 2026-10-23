@@ -24,13 +24,23 @@
 - Add a clear title with product name and category.
 - Add a unique meta description based on buyer intent and product evidence.
 - Add canonical, Open Graph and Twitter tags.
-- Use WebPage, FAQPage and BreadcrumbList structured data for B2B inquiry pages. Do not add Product offers, prices, ratings or reviews unless they are real and meant to be public.
+- Use appropriate WebPage/Article and BreadcrumbList structured data. Existing FAQPage markup must match visible questions and answers, but adding it is not a Google FAQ rich-result or CTR strategy: Google stopped showing that feature on May 7, 2026. Do not add Product offers, prices, ratings or reviews unless they are real and meant to be public.
 - Link the page from the relevant category page.
 - Add the URL to `sitemap.xml`.
 - Add the URL to `site-map/index.html`.
 - Add the URL to `llms.txt` if it is an important product.
 - Add related customer questions to `marketing/geo-evidence-log.md` if the page came from a real inquiry, product image or sample note.
 - Add one LinkedIn angle and one future official social angle if the page has strong visual or buyer-question value.
+
+## October 23 Search Appearance Check
+
+- Google generates query-specific snippets mainly from visible page content. Keep a concise answer and real supporting material available in the page; do not assume Google will display the meta description verbatim.
+- Support normal section links: keep the answer visible without opening tabs, preserve URL fragments, and do not force scroll position on page load. These practices can help eligibility for Google "Read more" deep links; they do not guarantee display or more clicks.
+- Do not count FAQ markup edits or llms.txt updates as measured traffic gains. Google states that special AI text files or special schema are not required for AI Overviews or AI Mode.
+- Official sources checked October 23, 2026:
+  - https://developers.google.com/search/updates (May 8 and June 15, 2026 FAQ entries)
+  - https://developers.google.com/search/docs/appearance/snippet
+  - https://developers.google.com/search/docs/appearance/ai-features
 
 ## Before Adding A Regional Page
 
