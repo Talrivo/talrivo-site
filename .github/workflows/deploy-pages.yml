@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -36,6 +38,7 @@ jobs:
           node scripts/test-buyer-entry.mjs
           node scripts/test-buyer-guide-copy.mjs
           node scripts/test-mic-review.mjs
+          node scripts/test-indexnow.mjs
           node scripts/test-wired-selection.mjs
           node scripts/test-model-faq.mjs
           node scripts/test-certificate-references.mjs
@@ -61,3 +64,17 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Notify IndexNow after deployment
+        id: indexnow
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        continue-on-error: true
+        timeout-minutes: 2
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: node scripts/notify-indexnow.mjs --before "$BEFORE_SHA" --after "$AFTER_SHA" --submit
+
+      - name: Report notification failure
+        if: steps.indexnow.outcome == 'failure'
+        run: echo "::warning::Website deployed, but IndexNow notification failed. Review the notification log; no indexing or citation result is confirmed."
