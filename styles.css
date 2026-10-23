@@ -5433,3 +5433,9 @@ h2 {
     max-height: 300px;
   }
 }
+
+.seo-page a.buyer-resource-link {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
