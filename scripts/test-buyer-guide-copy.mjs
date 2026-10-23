@@ -6,6 +6,7 @@ const pages = [
   ['gaming-headset-usb-audio-or-lighting', 'Gaming Headset USB: Audio or Lighting Only? | TALRIVO'],
   ['2-4g-vs-bluetooth-gaming-headsets-importers', '2.4G vs Bluetooth Gaming Headsets for Importers'],
   ['evaluate-gaming-headset-sample-before-bulk-order', 'Gaming Headset Sample Checklist Before Bulk Order | TALRIVO'],
+  ['choose-gaming-headset-manufacturer-china', 'How to Choose a Gaming Headset Manufacturer in China | TALRIVO'],
 ];
 const html = pages.map(([slug, title]) => {
   const content = readFileSync(`${base}${slug}/index.html`, 'utf8');
@@ -19,6 +20,24 @@ const html = pages.map(([slug, title]) => {
   return content;
 });
 const [usb, connection, sample] = html;
+const manufacturer = html[3];
+assert.match(manufacturer, /TALRIVO represents our own audio manufacturing business in China/);
+assert.match(manufacturer, /id="supplier-questions" aria-labelledby="supplier-questions-title"/);
+assert.match(manufacturer, /href="#supplier-questions">Start with Four Questions/);
+const questions = manufacturer.match(/<section[^>]*id="supplier-questions"[\s\S]*?<\/section>/)?.[0];
+assert.ok(questions);
+assert.equal((questions.match(/<strong>[1-4]\./g) || []).length, 4);
+for (const target of [
+  '../../gaming-headset-quality-review/#production-video',
+  '../evaluate-gaming-headset-sample-before-bulk-order/#review-worksheet',
+  '../../oem-odm/#customization-scope',
+  '../../gaming-headset-quality-review/#published-certificates',
+]) {
+  assert.ok(questions.includes(`href="${target}"`), `Manufacturer question needs a reviewable source: ${target}`);
+}
+assert.match(questions, /G936 is not listed in those two documents/);
+assert.match(questions, /not a G935 performance test/);
+assert.match(questions, /inquiry=quick-question/);
 assert.ok(usb.indexOf('href="#no-sound"') < usb.indexOf('<figure'), 'Offer troubleshooting before the large product image');
 assert.match(usb, /<section id="no-sound">/);
 assert.match(usb, /not a connection test/);
