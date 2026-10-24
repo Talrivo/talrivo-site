@@ -61,3 +61,52 @@ assert.match(product, /reference=g946-style/);
 assert.doesNotMatch(product, /<iframe/, 'The style link must not load third-party video before a user action');
 assert.doesNotMatch(product, /"@type":"VideoObject"/, 'Do not invent video upload metadata');
 console.log('Buyer entry checks passed: model prominence, eight matching structured choices, G946 anchors and style-video boundaries.');
+
+const comparisonFiles = [
+  ['product-comparison/index.html', [
+    ['g938-wireless', ['2.4GHz / Bluetooth / wired', '53mm', '1000mAh', 'Approximately 50 hours', 'Detachable microphone, aluminum fork arm and each connection mode.']],
+    ['g941-tri-mode-anc', ['2.4GHz / Bluetooth / wired', '50mm', '1000mAh', 'Approximately 50 hours', 'Receiver, detachable microphone and selected-version features in each mode.']],
+    ['g936-lightweight', ['2.4GHz wireless; confirm supplied cable and receiver functions', '40mm', '800mAh', 'Approximately 40 hours', 'Fabric cushions, detachable microphone and target-device connection.']],
+    ['g935-wireless', ['2.4GHz wireless', '40mm', '500mAh', 'Approximately 25 hours', 'Detachable microphone and supplied accessories. Distinguish from the wired G935 version.']],
+  ]],
+  ['wireless-gaming-headsets/index.html', [
+    ['g936-lightweight', ['2.4GHz receiver', '40mm', '800mAh', 'About 40h', '3h', 'Detachable']],
+    ['g938-wireless', ['2.4GHz / Bluetooth / wired', '53mm', '1000mAh', 'About 50h', '3-4h', 'Detachable']],
+    ['g941-tri-mode-anc', ['2.4GHz / Bluetooth / wired', '50mm', '1000mAh', 'About 50h', '3-4h', 'Detachable']],
+    ['g935-wireless', ['2.4GHz receiver', '40mm', '500mAh', 'About 25h', '2h', 'Detachable']],
+  ]],
+];
+for (const [file, expectedRows] of comparisonFiles) {
+  const html = readFileSync(file, 'utf8');
+  assert.ok(html.includes('href="../comparison.css?v=20261024"'));
+  const tables = [...html.matchAll(/<table class="sample-check-table buyer-comparison-table" role="table"[\s\S]*?<\/table>/g)];
+  assert.equal(tables.length, 1, `${file}: use one static source of comparison facts`);
+  const table = tables[0][0];
+  const headers = [...table.matchAll(/<th scope="col" role="columnheader">([^<]+)<\/th>/g)].map(([, name]) => name);
+  const body = table.match(/<tbody role="rowgroup">([\s\S]*?)<\/tbody>/)[1];
+  const rows = [...body.matchAll(/<tr role="row">([\s\S]*?)<\/tr>/g)];
+  assert.equal(rows.length, expectedRows.length);
+  rows.forEach(([, row], index) => {
+    assert.match(row, /<th scope="row" role="rowheader">/);
+    assert.ok(row.includes(`href="../gaming-headsets/${expectedRows[index][0]}/"`));
+    const cells = [...row.matchAll(/<td role="cell"><span class="comparison-label" aria-hidden="true">([^<]+)<\/span>([^<]+)<\/td>/g)];
+    assert.deepEqual(cells.map(([, label]) => label), headers.slice(1), `${file}: mobile labels must match the column headers`);
+    assert.deepEqual(cells.map(([, , value]) => value), expectedRows[index][1], `${file}: preserve listed product facts`);
+  });
+}
+const comparison = readFileSync('product-comparison/index.html', 'utf8');
+assert.ok(comparison.includes('<title>Wireless Gaming Headset Comparison for OEM Buyers | TALRIVO</title>'));
+assert.doesNotMatch(comparison, /Best first (?:review|stop)/);
+assert.match(comparison, /Fabric ear cushions \/ G936/);
+const comparisonFaq = [...comparison.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'FAQPage');
+const faqContent = comparison.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const visibleFaq = [...faqContent.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({question, answer}));
+assert.deepEqual(comparisonFaq.mainEntity.map(q => ({question: q.name, answer: q.acceptedAnswer.text})), visibleFaq);
+const comparisonCss = readFileSync('comparison.css', 'utf8');
+assert.match(comparisonCss, /@media \(max-width: 820px\)/);
+assert.match(comparisonCss, /\.buyer-comparison-table\s*\{[^}]*min-width: 0;/);
+assert.match(comparisonCss, /\.buyer-comparison-table thead\s*\{[^}]*clip-path: inset\(50%\);/);
+assert.match(comparisonCss, /min-height: 48px;/);
+console.log('Comparison checks passed: identical listed facts, matching mobile labels, table semantics, larger model links, stable title and synchronized FAQ.');

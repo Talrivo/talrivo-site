@@ -1,0 +1,88 @@
+.buyer-comparison-table .comparison-label {
+  display: none;
+}
+
+.buyer-comparison-table tbody th {
+  padding: 0;
+}
+
+.buyer-comparison-table tbody th a {
+  display: block;
+  min-height: 48px;
+  padding: 0.9rem 1rem;
+}
+
+@media (max-width: 820px) {
+  .table-wrap.buyer-comparison-wrap {
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .buyer-comparison-table {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .buyer-comparison-table caption {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  /* Retain column headers in the accessibility tree when rows reflow. */
+  .buyer-comparison-table thead {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+
+  .buyer-comparison-table tbody {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .buyer-comparison-table tbody tr {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .buyer-comparison-table tbody th {
+    background: #f5f7f6;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .buyer-comparison-table td {
+    border: 0;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: 0.75rem 1rem;
+  }
+
+  .buyer-comparison-table td + td {
+    border-top: 1px solid var(--line);
+  }
+
+  .buyer-comparison-table td .comparison-label {
+    color: var(--ink);
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
