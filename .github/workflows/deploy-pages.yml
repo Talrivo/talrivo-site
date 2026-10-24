@@ -39,6 +39,7 @@ jobs:
           node scripts/test-buyer-guide-copy.mjs
           node scripts/test-mic-review.mjs
           node scripts/test-indexnow.mjs
+          node scripts/test-live-site.mjs
           node scripts/test-wired-selection.mjs
           node scripts/test-model-faq.mjs
           node scripts/test-certificate-references.mjs
@@ -78,3 +79,13 @@ jobs:
       - name: Report notification failure
         if: steps.indexnow.outcome == 'failure'
         run: echo "::warning::Website deployed, but IndexNow notification failed. Review the notification log; no indexing or citation result is confirmed."
+
+      - name: Check public HTTPS and canonical redirects
+        id: live_site
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node scripts/check-live-site.mjs
+
+      - name: Report live connection check failure
+        if: steps.live_site.outcome == 'failure'
+        run: echo "::warning::Website deployed, but a public HTTPS or redirect check failed or could not be verified. Review the live-site log; do not disable TLS validation or assume every hostname is working."
