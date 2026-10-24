@@ -73,9 +73,14 @@ assert.equal(blocked.events().length, 0);
 
 const micPage = '/insights/gaming-headset-microphone-performance/';
 const packingPage = '/insights/gaming-headset-packaging-accessories-checklist/';
+const documentsPage = '/insights/gaming-headset-import-documents-checklist/';
 const resourceCases = [
   [micPage, '#quick-mic-test', 'mic_script'],
   [packingPage, '#packing-checklist', 'packing_checklist'],
+  [documentsPage, '#certificate-match', 'certificate_match'],
+  [documentsPage, '../../assets/certificates/sit240719190301-red.pdf', 'red_document'],
+  [documentsPage, '../../assets/certificates/sit240719190302r-rohs.pdf', 'rohs_document'],
+  [documentsPage, '/contact/?product=gaming-headsets&inquiry=documents&reference=import-documents-guide', 'inquiry_form'],
   [micPage, '../../assets/downloads/gaming-headset-mic-recording-sheet.txt', 'mic_recording_sheet'],
   [packingPage, '../../assets/downloads/gaming-headset-packing-review-sheet.txt', 'packing_review_sheet'],
   ['/sample-request/', '../assets/downloads/gaming-headset-mic-recording-sheet.txt', 'mic_recording_sheet'],
@@ -114,7 +119,7 @@ exclusions.click('/sample-request/', '.site-header');
 assert.equal(exclusions.events().length, 0, 'ignore unrelated, external, invalid and navigation links');
 const otherPage = scenario('granted', false, 'https://talrivo.com/');
 otherPage.click('/sample-request/', '', false, true);
-assert.equal(otherPage.events().length, 0, 'resource tracking stays scoped to the three buyer pages');
+assert.equal(otherPage.events().length, 0, 'resource tracking stays scoped to the four buyer pages');
 const blockedResource = scenario(null, true, `https://talrivo.com${micPage}`);
 blockedResource.click('#quick-mic-test', '', false, true);
 assert.equal(blockedResource.events().length, 0);

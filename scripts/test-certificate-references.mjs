@@ -29,4 +29,40 @@ for (const [name, expected] of originals) {
 const model = readFileSync('gaming-headsets/g938-wireless/index.html', 'utf8');
 assert.match(model, /gaming-headset-quality-review\/#published-certificates/);
 assert.match(model, /not a claim that every G938 variant is covered/);
-console.log('Certificate reference checks passed: unchanged source PDFs, previews, explicit holder, model/date scope and project-version boundaries.');
+
+const guide = readFileSync('insights/gaming-headset-import-documents-checklist/index.html', 'utf8');
+assert.ok(guide.includes('<title>Gaming Headset Import Documents Checklist | TALRIVO</title>'));
+assert.ok(guide.includes('<link rel="canonical" href="https://talrivo.com/insights/gaming-headset-import-documents-checklist/">'));
+assert.match(guide, /id="certificate-match" aria-labelledby="certificate-match-title"/);
+assert.match(guide, /href="#certificate-match">Check the Certificate Model List/);
+const matchSection = guide.match(/<section[^>]*id="certificate-match"[\s\S]*?<\/section>/)?.[0];
+assert.match(matchSection, /Nanrui Electronic Technology Co\., Ltd\./);
+assert.match(matchSection, /July 31, 2024/);
+assert.match(matchSection, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
+assert.match(matchSection, /G936 is not listed in these two PDFs/);
+assert.match(matchSection, /do not name TALRIVO as the certificate holder/);
+assert.match(matchSection, /not a new issuer verification or a complete set/);
+assert.match(matchSection, /class="seo-grid video-grid"/);
+assert.doesNotMatch(matchSection, /class="table-wrap"/, 'Keep the two original PDF links directly visible on narrow screens');
+for (const [name] of originals) {
+  assert.ok(matchSection.includes(`href="../../assets/certificates/${name}.pdf"`));
+}
+assert.equal((guide.match(/reference=import-documents-guide#inquiry-form/g) || []).length, 3);
+const schemas = [...guide.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const article = schemas.find(schema => schema['@type'] === 'Article');
+const description = guide.match(/<meta name="description" content="([^"]+)"/)[1];
+assert.equal(article.description, description);
+for (const attribute of ['property="og:description"', 'name="twitter:description"']) {
+  assert.ok(guide.includes(`<meta ${attribute} content="${description}">`));
+}
+assert.equal(article.dateModified, '2026-10-24');
+assert.match(guide, /Updated October 24, 2026/);
+const visibleFaq = guide.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const answers = [...visibleFaq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({question, answer}));
+assert.equal(answers.length, 4, 'Retain every structured question in visible content');
+assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(q => ({question: q.name, answer: q.acceptedAnswer.text})), answers);
+assert.ok(readFileSync('insights/index.html', 'utf8').includes('href="gaming-headset-import-documents-checklist/#certificate-match"'));
+console.log('Certificate checks passed: unchanged originals, explicit holder/model/date scope, direct guide links, synchronized description and visible FAQ, stable title/canonical.');

@@ -174,17 +174,19 @@ for (const inquiry of ['quick-question', 'sample']) {
   assert.equal(guide.events.length, 0, 'opening a guide inquiry must not generate a lead');
 }
 const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
-for (const [reference, title, prompt] of [
+for (const [reference, title, prompt, inquiry = 'quick-question'] of [
   ['mic-comparison-guide', 'Gaming headset microphone sample comparison', /connection mode/],
-  ['packing-checklist', 'Gaming headset packaging and accessories checklist', /which receiver/]
+  ['packing-checklist', 'Gaming headset packaging and accessories checklist', /which receiver/],
+  ['import-documents-guide', 'Gaming headset import documents checklist', /destination market and document number/, 'documents']
 ]) {
   for (const consent of [null, 'denied', 'granted']) {
-    const guide = runContact(`https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=${reference}`, null, consent);
+    const guide = runContact(`https://talrivo.com/contact/?product=gaming-headsets&inquiry=${inquiry}&reference=${reference}`, null, consent);
     assert.match(guide.nodes.get('#contact-product-reference').value, new RegExp(title));
     assert.equal(guide.nodes.get('#contact-reference-note').hidden, false);
     assert.match(guide.nodes.get('#contact-reference-note').textContent, prompt);
     assert.doesNotMatch(guide.nodes.get('#contact-reference-note').textContent, /timestamp|USB or 3.5mm/);
     assert.equal(guide.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
+    assert.equal(guide.nodes.get('#contact-inquiry-type').value, inquiry === 'documents' ? 'Product document question' : 'Quick product question');
     assert.equal(guide.events.length, 0, 'opening an article question is not a lead');
     assert.equal(guide.storage.value('talrivoInquirySource'), undefined, 'explicit guide context needs no tracking storage');
   }

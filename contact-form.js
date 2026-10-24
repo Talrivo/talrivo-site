@@ -45,6 +45,12 @@ if (contactForm) {
       type: "guide",
       prompt: "Tell us the model or photo and which receiver, cable, microphone or other item you want to confirm. An approved packing list is not needed to ask a question."
     },
+    "import-documents-guide": {
+      title: "Gaming headset import documents checklist",
+      url: "https://talrivo.com/insights/gaming-headset-import-documents-checklist/",
+      type: "guide",
+      prompt: "Tell us the model or photo, connection mode, destination market and document number you want to check. A finished RFQ is not needed to ask."
+    },
     "g938-phone-setup": {
       title: "G938 phone setup and controls",
       url: "https://youtu.be/AKqT0fzuqW8"

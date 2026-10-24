@@ -76,7 +76,8 @@ assert.equal(redirected.node('#form-status').classList.contains('success'), fals
 assert.equal(redirected.events.length, 0);
 for (const [reference, expectedPath] of [
   ['mic-comparison-guide', '/insights/gaming-headset-microphone-performance/'],
-  ['packing-checklist', '/insights/gaming-headset-packaging-accessories-checklist/']
+  ['packing-checklist', '/insights/gaming-headset-packaging-accessories-checklist/'],
+  ['import-documents-guide', '/insights/gaming-headset-import-documents-checklist/']
 ]) {
   const guide = create('success', `?product=gaming-headsets&inquiry=quick-question&reference=${reference}`);
   assert.equal(guide.calls.length, 0, 'opening a guide reference never submits a form');

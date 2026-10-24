@@ -182,6 +182,7 @@
     const guidePages = [
       "/insights/gaming-headset-microphone-performance/",
       "/insights/gaming-headset-packaging-accessories-checklist/",
+      "/insights/gaming-headset-import-documents-checklist/",
       "/sample-request/"
     ];
     if (!guidePages.includes(window.location.pathname) || !target.closest("main")) return;
@@ -195,13 +196,16 @@
     const resources = {
       "/assets/downloads/gaming-headset-mic-recording-sheet.txt": "mic_recording_sheet",
       "/assets/downloads/gaming-headset-packing-review-sheet.txt": "packing_review_sheet",
+      "/assets/certificates/sit240719190301-red.pdf": "red_document",
+      "/assets/certificates/sit240719190302r-rohs.pdf": "rohs_document",
       "/sample-request/": "sample_guide",
       "/contact/": "inquiry_form"
     };
     let resource = Object.hasOwn(resources, destination.pathname) ? resources[destination.pathname] : null;
     if (destination.pathname === window.location.pathname) {
       resource = destination.hash === "#quick-mic-test" ? "mic_script"
-        : destination.hash === "#packing-checklist" ? "packing_checklist" : null;
+        : destination.hash === "#packing-checklist" ? "packing_checklist"
+        : destination.hash === "#certificate-match" ? "certificate_match" : null;
     } else if (/^\/gaming-headsets\/[^/]+\/$/.test(destination.pathname)) {
       resource = "model_details";
     }
