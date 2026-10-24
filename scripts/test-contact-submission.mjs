@@ -24,7 +24,10 @@ const create = (mode, search = '') => {
     return nodes.get(selector);
   };
   class Fields extends Map {
-    constructor() { super([['message', 'Video 00:25 - sample question'], ['product', 'Gaming Headset Collection']]); }
+    constructor() { super([
+      ['message', 'Video 00:25 - sample question'], ['product', 'Gaming Headset Collection'],
+      ['product_reference', node('#contact-product-reference').value]
+    ]); }
   }
   const window = {
     location: { search, href: 'https://example.invalid/contact/' + search },
@@ -71,5 +74,16 @@ for (const mode of ['success', 'http', 'rejected', 'string', 'json', 'network', 
 const redirected = create('success', '?sent=1');
 assert.equal(redirected.node('#form-status').classList.contains('success'), false);
 assert.equal(redirected.events.length, 0);
+for (const [reference, expectedPath] of [
+  ['mic-comparison-guide', '/insights/gaming-headset-microphone-performance/'],
+  ['packing-checklist', '/insights/gaming-headset-packaging-accessories-checklist/']
+]) {
+  const guide = create('success', `?product=gaming-headsets&inquiry=quick-question&reference=${reference}`);
+  assert.equal(guide.calls.length, 0, 'opening a guide reference never submits a form');
+  await guide.submit();
+  assert.ok(guide.calls[0].get('product_reference').includes(expectedPath));
+  assert.ok(guide.calls[0].get('message').includes(`https://talrivo.com${expectedPath}`), 'retain article context in the submitted message');
+  assert.ok(guide.calls[0].get('message').includes('Video 00:25 - sample question'), 'never overwrite the buyer message');
+}
 console.log('Submission regression checks passed: success, HTTP failure, rejection, invalid success value, JSON failure, offline, timeout, tracking failure, duplicate prevention, retry, and unverified redirect.');
 

@@ -28,6 +28,14 @@ for (const file of [
     assert.match(html, /No pouch is shown in this photo/);
     assert.match(html, /not the agreed packing list for every G926 version/);
     assert.doesNotMatch(html, /no-pouch version clarifies standard contents/);
+    const packingSheet = '../../assets/downloads/gaming-headset-packing-review-sheet.txt';
+    assert.ok(html.includes(`href="${packingSheet}" download`));
+    const sheet = readFileSync(resolve(dirname(file), packingSheet), 'utf8');
+    assert.match(sheet, /Blank buyer worksheet\. Not an approved packing list or a quotation/);
+    assert.match(sheet, /Included \/ Optional \/ Not included \/ Not confirmed/);
+    assert.match(sheet, /No accessory is confirmed as included/);
+    assert.match(sheet, /CTIA Y-splitter \| Not confirmed/);
+    assert.match(html, /inquiry=packaging&amp;reference=packing-checklist#inquiry-form/);
   }
 }
 console.log('FAQ checks passed: G936, G938 and packaging visible/structured answers match; model worksheets and packaging boundaries retained.');

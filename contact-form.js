@@ -33,6 +33,18 @@ if (contactForm) {
       url: "https://talrivo.com/insights/gaming-headset-usb-audio-or-lighting/",
       type: "guide"
     },
+    "mic-comparison-guide": {
+      title: "Gaming headset microphone sample comparison",
+      url: "https://talrivo.com/insights/gaming-headset-microphone-performance/",
+      type: "guide",
+      prompt: "Tell us the headset model, device, connection mode and what you hear in the recording. If you have not tested it yet, just describe your question."
+    },
+    "packing-checklist": {
+      title: "Gaming headset packaging and accessories checklist",
+      url: "https://talrivo.com/insights/gaming-headset-packaging-accessories-checklist/",
+      type: "guide",
+      prompt: "Tell us the model or photo and which receiver, cable, microphone or other item you want to confirm. An approved packing list is not needed to ask a question."
+    },
     "g938-phone-setup": {
       title: "G938 phone setup and controls",
       url: "https://youtu.be/AKqT0fzuqW8"
@@ -47,7 +59,7 @@ if (contactForm) {
   if (selectedReference) {
     referenceNote.hidden = false;
     referenceNote.textContent = selectedReference.type === "guide"
-      ? `Guide reference: ${selectedReference.title}. Please include your headset version, target device and USB or 3.5mm connection question.`
+      ? `Guide reference: ${selectedReference.title}. ${selectedReference.prompt || "Please include your headset version, target device and USB or 3.5mm connection question."}`
       : `Video reference: ${selectedReference.title}. Please include the timestamp of the headset you are interested in.`;
   }
   const sourceStorageKey = "talrivoInquirySource";

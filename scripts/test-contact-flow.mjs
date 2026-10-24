@@ -174,6 +174,21 @@ for (const inquiry of ['quick-question', 'sample']) {
   assert.equal(guide.events.length, 0, 'opening a guide inquiry must not generate a lead');
 }
 const videoContact = runContact('https://talrivo.com/contact/?product=identify-headset&inquiry=quick-question&reference=hk-headsets-2026');
+for (const [reference, title, prompt] of [
+  ['mic-comparison-guide', 'Gaming headset microphone sample comparison', /connection mode/],
+  ['packing-checklist', 'Gaming headset packaging and accessories checklist', /which receiver/]
+]) {
+  for (const consent of [null, 'denied', 'granted']) {
+    const guide = runContact(`https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=${reference}`, null, consent);
+    assert.match(guide.nodes.get('#contact-product-reference').value, new RegExp(title));
+    assert.equal(guide.nodes.get('#contact-reference-note').hidden, false);
+    assert.match(guide.nodes.get('#contact-reference-note').textContent, prompt);
+    assert.doesNotMatch(guide.nodes.get('#contact-reference-note').textContent, /timestamp|USB or 3.5mm/);
+    assert.equal(guide.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
+    assert.equal(guide.events.length, 0, 'opening an article question is not a lead');
+    assert.equal(guide.storage.value('talrivoInquirySource'), undefined, 'explicit guide context needs no tracking storage');
+  }
+}
 const assemblyContact = runContact('https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=g935-assembly');
 const g946StyleContact = runContact('https://talrivo.com/contact/?product=g946&inquiry=quick-question&reference=g946-style');
 assert.equal(g946StyleContact.nodes.get('select[name="product"]').value, 'G946 Tri-Mode RGB Gaming Headset');

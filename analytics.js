@@ -167,13 +167,49 @@
     if (target.hasAttribute("data-open-wechat")) method = "wechat";
     else if (/^mailto:/i.test(href)) method = "email";
     else if (/^https:\/\/(?:wa\.me|api\.whatsapp\.com)(?:\/|$)/i.test(href)) method = "whatsapp";
-    if (!method) return;
     const location = target.closest(".contact-dock") ? "contact_dock"
       : target.closest(".site-header") ? "header"
       : target.closest(".site-footer") ? "footer" : "content";
-    window.gtag("event", "contact_click", {
-      contact_method: method,
-      contact_location: location,
+    if (method) {
+      window.gtag("event", "contact_click", {
+        contact_method: method,
+        contact_location: location,
+        page_path: window.location.pathname
+      });
+      return;
+    }
+
+    const guidePages = [
+      "/insights/gaming-headset-microphone-performance/",
+      "/insights/gaming-headset-packaging-accessories-checklist/",
+      "/sample-request/"
+    ];
+    if (!guidePages.includes(window.location.pathname) || !target.closest("main")) return;
+    let destination;
+    try {
+      destination = new URL(href, window.location.href);
+    } catch {
+      return;
+    }
+    if (destination.origin !== window.location.origin) return;
+    const resources = {
+      "/assets/downloads/gaming-headset-mic-recording-sheet.txt": "mic_recording_sheet",
+      "/assets/downloads/gaming-headset-packing-review-sheet.txt": "packing_review_sheet",
+      "/sample-request/": "sample_guide",
+      "/contact/": "inquiry_form"
+    };
+    let resource = Object.hasOwn(resources, destination.pathname) ? resources[destination.pathname] : null;
+    if (destination.pathname === window.location.pathname) {
+      resource = destination.hash === "#quick-mic-test" ? "mic_script"
+        : destination.hash === "#packing-checklist" ? "packing_checklist" : null;
+    } else if (/^\/gaming-headsets\/[^/]+\/$/.test(destination.pathname)) {
+      resource = "model_details";
+    }
+    if (!resource) return;
+    // Record fixed resource names and paths, never link text, queries or buyer messages.
+    window.gtag("event", "buyer_resource_click", {
+      resource_type: resource,
+      destination_path: destination.pathname,
       page_path: window.location.pathname
     });
   });

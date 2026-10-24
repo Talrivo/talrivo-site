@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
 const code = readFileSync('analytics.js', 'utf8');
-function scenario(consent, blocked = false) {
+function scenario(consent, blocked = false, url = 'https://talrivo.com/contact/?utm_content=private-text') {
   const values = new Map(consent ? [['talrivoAnalyticsConsent', consent]] : []);
   const handlers = new Map();
   const rendered = [];
@@ -18,18 +18,19 @@ function scenario(consent, blocked = false) {
     addEventListener: (event, callback) => handlers.set(event, callback)
   };
   const window = {
-    location: new URL('https://talrivo.com/contact/?utm_content=private-text'),
+    location: new URL(url),
     localStorage: {
       getItem: key => { if (blocked) throw Error('blocked'); return values.get(key) ?? null; },
       setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key)
     }
   };
-  vm.runInNewContext(code, { window, document, URLSearchParams, Date });
-  const click = (href, region = '', wechat = false) => {
+  vm.runInNewContext(code, { window, document, URL, URLSearchParams, Date });
+  const click = (href, region = '', wechat = false, inMain = false) => {
     const target = {
       getAttribute: key => key === 'href' ? href : null,
       hasAttribute: key => key === 'data-open-wechat' && wechat,
-      closest: selector => selector === 'a[href], [data-open-wechat]' ? target : selector === region ? {} : null
+      closest: selector => selector === 'a[href], [data-open-wechat]' ? target
+        : selector === region || (selector === 'main' && inMain) ? {} : null
     };
     handlers.get('click')({ target });
   };
@@ -69,4 +70,52 @@ assert.equal(allowed.events().length, 3);
 const blocked = scenario(null, true);
 blocked.click('mailto:sales@talrivo.com');
 assert.equal(blocked.events().length, 0);
-console.log('Contact action checks passed: consent, withdrawal, three channels, no private payloads, no lead event and blocked storage.');
+
+const micPage = '/insights/gaming-headset-microphone-performance/';
+const packingPage = '/insights/gaming-headset-packaging-accessories-checklist/';
+const resourceCases = [
+  [micPage, '#quick-mic-test', 'mic_script'],
+  [packingPage, '#packing-checklist', 'packing_checklist'],
+  [micPage, '../../assets/downloads/gaming-headset-mic-recording-sheet.txt', 'mic_recording_sheet'],
+  [packingPage, '../../assets/downloads/gaming-headset-packing-review-sheet.txt', 'packing_review_sheet'],
+  ['/sample-request/', '../assets/downloads/gaming-headset-mic-recording-sheet.txt', 'mic_recording_sheet'],
+  [micPage, '/gaming-headsets/g938-wireless/', 'model_details'],
+  [packingPage, '/sample-request/', 'sample_guide'],
+  [micPage, '/contact/?product=gaming-headsets&reference=mic-comparison-guide&message=private-text#inquiry-form', 'inquiry_form']
+];
+for (const [path, href, type] of resourceCases) {
+  const run = scenario('granted', false, `https://talrivo.com${path}?utm_content=private-text`);
+  run.click(href, '', false, true);
+  assert.equal(run.events().length, 1, `${path}: ${href}`);
+  const event = run.events()[0];
+  assert.equal(event[1], 'buyer_resource_click');
+  assert.equal(event[2].resource_type, type);
+  assert.equal(event[2].page_path, path);
+  assert.equal(event[2].destination_path, new URL(href, `https://talrivo.com${path}`).pathname);
+  assert.deepEqual(Object.keys(event[2]).sort(), ['destination_path', 'page_path', 'resource_type']);
+  assert.doesNotMatch(JSON.stringify(event), /private-|message=|utm_|generate_lead/);
+  run.values.set('talrivoAnalyticsConsent', 'denied');
+  run.click(href, '', false, true);
+  assert.equal(run.events().length, 1, 'withdrawal stops resource events');
+  for (const consent of [null, 'denied']) {
+    const denied = scenario(consent, false, `https://talrivo.com${path}`);
+    denied.click(href, '', false, true);
+    assert.equal(denied.events().length, 0);
+  }
+}
+const exclusions = scenario('granted', false, `https://talrivo.com${micPage}`);
+for (const href of [
+  'https://example.com/contact/', 'https://talrivo.com.example.org/contact/',
+  'https://[', 'javascript:void(0)', 'data:text/plain,test', '#unrelated',
+  '/insights/gaming-headset-microphone-performance/#packing-checklist-other',
+  '/assets/downloads/unrelated.txt'
+]) exclusions.click(href, '', false, true);
+exclusions.click('/sample-request/', '.site-header');
+assert.equal(exclusions.events().length, 0, 'ignore unrelated, external, invalid and navigation links');
+const otherPage = scenario('granted', false, 'https://talrivo.com/');
+otherPage.click('/sample-request/', '', false, true);
+assert.equal(otherPage.events().length, 0, 'resource tracking stays scoped to the three buyer pages');
+const blockedResource = scenario(null, true, `https://talrivo.com${micPage}`);
+blockedResource.click('#quick-mic-test', '', false, true);
+assert.equal(blockedResource.events().length, 0);
+console.log('Contact and buyer-resource action checks passed: consent, withdrawal, scoped paths, downloads, contact channels, no private payloads and no lead event.');

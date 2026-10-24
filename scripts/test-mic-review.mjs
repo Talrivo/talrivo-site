@@ -10,6 +10,7 @@ assert.ok(normalize(sheet).includes(`"${normalize(passage)}"`), 'Download must c
 assert.match(html, /href="#quick-mic-test">Get the Recording Script/);
 assert.match(html, /href="\.\.\/\.\.\/assets\/downloads\/gaming-headset-mic-recording-sheet.txt" download/);
 assert.match(html, /not a laboratory measurement or a completed test report/);
+assert.equal((html.match(/reference=mic-comparison-guide#inquiry-form/g) || []).length, 3);
 assert.match(sheet, /Blank buyer worksheet\. Not a completed test report/);
 assert.match(sheet, /Do not add music or edit out a dropout or clipped word/);
 assert.match(sheet, /processing settings, including noise suppression/);
