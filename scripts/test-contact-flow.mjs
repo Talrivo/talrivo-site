@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, relative } from 'node:path';
 import vm from 'node:vm';
 
 const root = process.cwd();
@@ -122,6 +123,11 @@ const productRoutes = {
   'wireless-gaming-headsets': 'Wireless Gaming Headset Series',
   'wired-gaming-headsets': 'Wired RGB Gaming Headset Series',
   'bluetooth-headphones': 'Bluetooth Headphones',
+  'bluetooth-speakers': 'Bluetooth Speakers',
+  bh101: 'BH-101 Portable Bluetooth Speaker',
+  'type-c-earphones': 'Type-C Earphones',
+  tc1: 'TC-1 Type-C Earphone',
+  'custom-audio': 'Custom Audio Project',
   'tws-earbuds': 'TWS & Open-Ear Earbuds',
   g926: 'G926 Wireless Gaming Headset',
   g935: 'G935 Wireless Gaming Headset',
@@ -141,6 +147,8 @@ const productRoutes = {
   'g938-g941': 'G938 / G941 Gaming Headset Comparison',
   'audio-products': 'Custom Audio Project'
 };
+const sourceRoutes = vm.runInNewContext(`(${contactCode.match(/const productSelections = (\{[\s\S]*?\n  \});/)[1]})`);
+assert.deepEqual(Object.keys(productRoutes).sort(), Object.keys(sourceRoutes).sort(), 'Test every supported product key, including legacy pages');
 for (const [route, expected] of Object.entries(productRoutes)) {
   const inquiry = route === 'g938-g941' ? 'compare' : 'sample';
   const result = runContact(`https://talrivo.com/contact/?product=${route}&inquiry=${inquiry}`);
@@ -207,7 +215,58 @@ for (const reference of ['unknown', '__proto__', 'constructor', 'https://example
   const result = runContact(`https://talrivo.com/contact/?reference=${encodeURIComponent(reference)}`);
   assert.equal(result.nodes.get('#contact-product-reference').value, '');
 }
-assert.equal(unknownProduct.nodes.get('select[name="product"]').value, '');
+assert.equal(unknownProduct.nodes.get('select[name="product"]').value, 'Custom Audio Project');
+assert.match(unknownProduct.nodes.get('#contact-product-reference').value, /Unconfirmed product reference from link: unknown-model/);
+assert.match(unknownProduct.nodes.get('#contact-reference-note').textContent, /model and availability have not been confirmed/);
+for (const key of ['__proto__', 'constructor', 'toString']) {
+  const invalid = runContact(`https://talrivo.com/contact/?product=${key}&inquiry=${key}`);
+  assert.equal(invalid.nodes.get('select[name="product"]').value, '');
+  assert.equal(invalid.nodes.get('#contact-inquiry-type').value, '');
+  assert.equal(invalid.nodes.get('#contact-selected-from').value, 'Direct contact page');
+}
+for (const product of ['<img src=x onerror=alert(1)>', 'https://example.com/', 'G'.repeat(121), 'G935\nUnrelated note']) {
+  const invalid = runContact(`https://talrivo.com/contact/?product=${encodeURIComponent(product)}`);
+  assert.equal(invalid.nodes.get('select[name="product"]').value, '');
+  assert.equal(invalid.nodes.get('#contact-product-reference').value, '');
+}
+const legacyWithGuide = runContact('https://talrivo.com/contact/?product=BH-207&reference=packing-checklist');
+assert.match(legacyWithGuide.nodes.get('#contact-product-reference').value, /gaming-headset-packaging-accessories-checklist/);
+assert.match(legacyWithGuide.nodes.get('#contact-product-reference').value, /Unconfirmed product reference from link: BH-207/);
+assert.match(legacyWithGuide.nodes.get('#contact-reference-note').textContent, /Guide reference:.*Product reference from your link: BH-207/);
+assert.equal(legacyWithGuide.events.length, 0, 'Retaining an unconfirmed reference must not generate a lead');
+
+const excluded = new Set(['.git', '.github', 'admin', 'assets', 'content', 'marketing', 'node_modules', 'public', 'scripts']);
+function* publicHtml(directory) {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    if (entry.name.startsWith('.') || excluded.has(entry.name)) continue;
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) yield* publicHtml(path);
+    else if (entry.name.endsWith('.html')) yield path;
+  }
+}
+let contactLinksChecked = 0;
+for (const file of publicHtml(root)) {
+  const pageUrl = new URL(relative(root, file), 'https://talrivo.com/');
+  for (const [, rawHref] of readFileSync(file, 'utf8').matchAll(/\bhref="([^"]+)"/g)) {
+    const url = new URL(rawHref.replaceAll('&amp;', '&'), pageUrl);
+    if (url.origin !== 'https://talrivo.com' || url.pathname !== '/contact/') continue;
+    const product = url.searchParams.get('product');
+    const inquiry = url.searchParams.get('inquiry');
+    if (product) {
+      const result = runContact(url.href);
+      assert.ok(result.nodes.get('select[name="product"]').value, `${file}: product route must not clear the select`);
+      if (!Object.hasOwn(productRoutes, product)) {
+        assert.equal(result.nodes.get('select[name="product"]').value, 'Custom Audio Project');
+        assert.ok(result.nodes.get('#contact-product-reference').value.includes(product), `${file}: retain the unconfirmed legacy reference`);
+      }
+    }
+    if (inquiry) {
+      const result = runContact(url.href);
+      assert.ok(result.nodes.get('#contact-inquiry-type').value, `${file}: unknown inquiry route ${inquiry}`);
+    }
+    contactLinksChecked++;
+  }
+}
 
 for (const route of ['dock-headset', 'identify-headset']) {
   const result = runContact(`https://talrivo.com/contact/?product=${route}&inquiry=quick-question`);
@@ -220,4 +279,4 @@ for (const page of ['index.html', 'gaming-headsets/index.html']) {
 }
 assert.ok(contactHtml.includes('id="model-reference-help"'));
 
-console.log(`Contact flow checks passed: ${Object.keys(productRoutes).length} product routes, consented source retention, quick-question mapping, and no sent=1 lead event.`);
+console.log(`Contact flow checks passed: ${Object.keys(productRoutes).length} product routes, ${contactLinksChecked} published contact links, consented source retention and no sent=1 lead event.`);

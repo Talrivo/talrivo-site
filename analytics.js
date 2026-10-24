@@ -180,6 +180,7 @@
     }
 
     const guidePages = [
+      "/insights/",
       "/insights/gaming-headset-microphone-performance/",
       "/insights/gaming-headset-packaging-accessories-checklist/",
       "/insights/gaming-headset-import-documents-checklist/",
@@ -196,6 +197,7 @@
     const resources = {
       "/assets/downloads/gaming-headset-mic-recording-sheet.txt": "mic_recording_sheet",
       "/assets/downloads/gaming-headset-packing-review-sheet.txt": "packing_review_sheet",
+      "/assets/downloads/wireless-gaming-headset-sample-review.txt": "sample_review_sheet",
       "/assets/certificates/sit240719190301-red.pdf": "red_document",
       "/assets/certificates/sit240719190302r-rohs.pdf": "rohs_document",
       "/sample-request/": "sample_guide",

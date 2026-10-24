@@ -147,8 +147,18 @@ if (contactForm) {
     window.dispatchEvent(new CustomEvent("talrivo:rfq-submit-success", { detail: payload }));
   };
 
-  const selectedProduct = productSelections[params.get("product")];
-  const selectedInquiry = inquirySelections[params.get("inquiry")];
+  const productKey = params.get("product");
+  const inquiryKey = params.get("inquiry");
+  const knownProduct = Object.hasOwn(productSelections, productKey) ? productSelections[productKey] : null;
+  // Older links may use display names instead of current product keys.
+  const unconfirmedProduct = !knownProduct && productKey && /^[A-Za-z0-9][A-Za-z0-9 _()./-]{0,119}$/.test(productKey)
+    && !Object.hasOwn(Object.prototype, productKey) ? productKey : null;
+  const selectedProduct = knownProduct || (unconfirmedProduct ? productSelections["custom-audio"] : null);
+  const selectedInquiry = Object.hasOwn(inquirySelections, inquiryKey) ? inquirySelections[inquiryKey] : null;
+  if (unconfirmedProduct) {
+    referenceNote.hidden = false;
+    referenceNote.textContent = [referenceNote.textContent, `Product reference from your link: ${unconfirmedProduct}. The model and availability have not been confirmed; please describe what you need below.`].filter(Boolean).join(" ");
+  }
   const firstVisit = {
     firstLandingPage: window.location.href,
     firstReferrer: document.referrer || "Direct / not available"
@@ -168,6 +178,7 @@ if (contactForm) {
 
   const contactLinkDetails = [
     selectedProduct ? `Product: ${selectedProduct}` : "",
+    unconfirmedProduct ? `Unconfirmed product reference: ${unconfirmedProduct}` : "",
     selectedInquiry ? `Inquiry: ${selectedInquiry}` : ""
   ].filter(Boolean).join(" | ") || "Direct contact page";
 
@@ -184,7 +195,10 @@ if (contactForm) {
     utmTerm.value = getUtmValue("utm_term", "utmTerm", storedSource);
     utmContent.value = getUtmValue("utm_content", "utmContent", storedSource);
     selectedFrom.value = contactLinkDetails;
-    productReference.value = selectedReference ? `${selectedReference.title}: ${selectedReference.url}` : "";
+    productReference.value = [
+      selectedReference ? `${selectedReference.title}: ${selectedReference.url}` : "",
+      unconfirmedProduct ? `Unconfirmed product reference from link: ${unconfirmedProduct}` : ""
+    ].filter(Boolean).join(" | ");
   };
 
   populateAttribution();

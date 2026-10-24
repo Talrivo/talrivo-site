@@ -32,6 +32,7 @@ const wechatDialog = document.querySelector("#wechat-dialog");
 const wechatTriggers = document.querySelectorAll("[data-open-wechat]");
 const wechatClose = document.querySelector("#wechat-close");
 let selectedCatalogueProduct = null;
+let catalogueInquiryMessage = "";
 let productDialogReady = false;
 let dialogMainImage = null;
 let thumbnailList = null;
@@ -550,7 +551,11 @@ productDialog.addEventListener("click", (event) => {
   const productName = `${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`;
   setProductInterest(productName);
   setSelectedFrom(`Catalogue dialog: ${selectedCatalogueProduct.model} ${selectedCatalogueProduct.name}`);
-  form.querySelector("textarea").value = `Please provide specifications, quantity range and available branding options for reference model ${selectedCatalogueProduct.model} (${selectedCatalogueProduct.name}).`;
+  const message = form.querySelector('textarea[name="message"]');
+  if (!message.value.trim() || message.value === catalogueInquiryMessage) {
+    catalogueInquiryMessage = `Please provide specifications, quantity range and available branding options for reference model ${selectedCatalogueProduct.model} (${selectedCatalogueProduct.name}).`;
+    message.value = catalogueInquiryMessage;
+  }
   closeProductDialog();
   document.querySelector("#rfq").scrollIntoView({ behavior: "smooth" });
   formStatus.textContent = `${selectedCatalogueProduct.model} added to your inquiry request.`;

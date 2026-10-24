@@ -1,4 +1,8 @@
 TALRIVO - Gaming Headset Microphone Recording Sheet
+Version: 2026-10-24
+Prepared by: TALRIVO product team
+Source and instructions:
+https://talrivo.com/insights/gaming-headset-microphone-performance/#quick-mic-test
 
 Blank buyer worksheet. Not a completed test report, certification or performance
 claim. This listening comparison is not a laboratory measurement. Agree your
@@ -48,3 +52,8 @@ Changes requested / owner / next review date:
 Do not infer another model's performance or device compatibility from this sheet.
 Share only recordings you have permission to share; avoid unrelated conversations
 or personal information in the background.
+
+SHARING THE BLANK WORKSHEET
+You can share this blank sheet with your buying team. When referring to the
+method in an article, link to the source guide above so readers can see the
+instructions and limits. Your recordings and findings are not TALRIVO test results.

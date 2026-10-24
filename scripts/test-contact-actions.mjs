@@ -75,6 +75,9 @@ const micPage = '/insights/gaming-headset-microphone-performance/';
 const packingPage = '/insights/gaming-headset-packaging-accessories-checklist/';
 const documentsPage = '/insights/gaming-headset-import-documents-checklist/';
 const resourceCases = [
+  ['/insights/', '../assets/downloads/gaming-headset-mic-recording-sheet.txt', 'mic_recording_sheet'],
+  ['/insights/', '../assets/downloads/gaming-headset-packing-review-sheet.txt', 'packing_review_sheet'],
+  ['/insights/', '../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
   [micPage, '#quick-mic-test', 'mic_script'],
   [packingPage, '#packing-checklist', 'packing_checklist'],
   [documentsPage, '#certificate-match', 'certificate_match'],
@@ -119,7 +122,7 @@ exclusions.click('/sample-request/', '.site-header');
 assert.equal(exclusions.events().length, 0, 'ignore unrelated, external, invalid and navigation links');
 const otherPage = scenario('granted', false, 'https://talrivo.com/');
 otherPage.click('/sample-request/', '', false, true);
-assert.equal(otherPage.events().length, 0, 'resource tracking stays scoped to the four buyer pages');
+assert.equal(otherPage.events().length, 0, 'resource tracking stays scoped to the buyer pages');
 const blockedResource = scenario(null, true, `https://talrivo.com${micPage}`);
 blockedResource.click('#quick-mic-test', '', false, true);
 assert.equal(blockedResource.events().length, 0);

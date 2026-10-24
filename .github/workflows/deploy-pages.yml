@@ -38,6 +38,8 @@ jobs:
           node scripts/test-buyer-entry.mjs
           node scripts/test-buyer-guide-copy.mjs
           node scripts/test-mic-review.mjs
+          node scripts/test-buyer-worksheets.mjs
+          node scripts/test-inquiry-draft.mjs
           node scripts/test-indexnow.mjs
           node scripts/test-live-site.mjs
           node scripts/test-wired-selection.mjs
