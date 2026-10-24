@@ -37,6 +37,46 @@ assert.ok(category.indexOf('id="headset-models"') < category.indexOf('aria-label
   'Show model choices before the dock preview');
 assert.ok(category.indexOf('id="headset-models"') < category.indexOf('Worked selection example'),
   'Show model choices before the illustrative selection process');
+const g926 = readFileSync('gaming-headsets/g926-wireless/index.html', 'utf8');
+const g926Title = 'RGB Wireless Gaming Headset for Your Brand | G926';
+const g926Description = 'Source the G926 RGB wireless gaming headset for your brand. See 50mm drivers, a detachable mic, receiver photos and logo or packaging options.';
+for (const markup of [
+  `<title>${g926Title}</title>`,
+  `<meta property="og:title" content="${g926Title}">`,
+  `<meta name="twitter:title" content="${g926Title}">`,
+  '<h1>G926 RGB wireless gaming headset for your brand</h1>',
+  'class="seo-page g926-page buyer-product-page"',
+  'href="../buyer-product.css?v=20261019a"',
+]) assert.ok(g926.includes(markup), `G926 buyer entry is missing ${markup}`);
+for (const attribute of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
+  assert.ok(g926.includes(`<meta ${attribute} content="${g926Description}">`));
+}
+const g926Page = [...g926.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'WebPage');
+assert.equal(g926Page.name, g926Title);
+assert.equal(g926Page.description, g926Description);
+const g926Overview = 'https://talrivo.com/assets/catalog/g926-wireless/evidence/display/g926-product-overview-receiver.jpg';
+assert.equal(g926Page.image[0], g926Overview);
+for (const attribute of ['property="og:image"', 'name="twitter:image"']) {
+  assert.ok(g926.includes(`<meta ${attribute} content="${g926Overview}">`));
+}
+for (const id of ['receiver-accessories', 'documented-specifications']) {
+  assert.equal([...g926.matchAll(new RegExp(`id="${id}"`, 'g'))].length, 1);
+  assert.ok(g926.includes(`href="#${id}"`));
+}
+const g926Hero = g926.match(/<section class="seo-hero product-detail">([\s\S]*?)<\/section>/)[1];
+assert.match(g926Hero, /g926-product-overview-receiver\.jpg/);
+assert.doesNotMatch(g926Hero, /g926-use-scenes\.jpg/);
+assert.match(g926Hero, /width="1254" height="850" fetchpriority="high"/);
+for (const fact of ['JL7018M', '1000mAh', '50mm', '20ms', 'approximately 50 hours with lighting off']) {
+  assert.ok(g926.includes(fact), `Keep the G926 listed specification: ${fact}`);
+}
+assert.match(g926Hero, /Confirm runtime, receiver setup and both audio and microphone operation on your target devices/);
+assert.ok(g926.includes('href="../../contact/?product=g926&amp;inquiry=sample#inquiry-form"'));
+const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
+assert.ok(wireless.includes('<h3><a href="../gaming-headsets/g926-wireless/">RGB wireless headset with 50mm drivers</a></h3>'));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g926-wireless/</loc>\n    <lastmod>2026-10-24</lastmod>'));
+assert.ok(readFileSync('llms.txt', 'utf8').includes('[RGB Wireless Gaming Headset / G926]'));
 const modelSection = category.match(/<section[^>]*id="headset-models"[\s\S]*?<\/section>/)[0];
 const cards = [...modelSection.matchAll(/<article>[\s\S]*?<\/article>/g)].map(([card]) => card);
 assert.equal(cards.length, 8, 'Retain the original seven choices and add G946');
