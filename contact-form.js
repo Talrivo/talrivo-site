@@ -25,7 +25,7 @@ if (contactForm) {
       url: "https://www.youtube.com/shorts/PGj_ESVdFgA"
     },
     "g935-assembly": {
-      title: "G935 assembly and packing process",
+      title: "G935 assembly and finishing process",
       url: "https://youtu.be/1KQfLCmMhE4"
     },
     "usb-connection-guide": {

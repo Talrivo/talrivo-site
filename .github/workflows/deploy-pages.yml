@@ -37,6 +37,7 @@ jobs:
           node scripts/test-entry-images.mjs
           node scripts/test-buyer-entry.mjs
           node scripts/test-buyer-guide-copy.mjs
+          node scripts/test-assembly-watch.mjs
           node scripts/test-mic-review.mjs
           node scripts/test-buyer-worksheets.mjs
           node scripts/test-inquiry-draft.mjs

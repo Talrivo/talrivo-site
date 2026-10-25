@@ -31,7 +31,7 @@ for (const [file, title] of [
   assert.match(descriptions[0], /our own manufacturing business in China/);
   assert.match(html, /TALRIVO represents our own audio manufacturing business in China/);
   assert.ok(html.includes('href="../oem-odm/#customization-scope"'));
-  assert.ok(html.includes('href="../gaming-headset-quality-review/#production-video"'));
+  assert.ok(html.includes('href="../videos/gaming-headset-assembly/"'));
 }
 assert.ok(category.indexOf('id="headset-models"') < category.indexOf('aria-labelledby="dock-title"'),
   'Show model choices before the dock preview');

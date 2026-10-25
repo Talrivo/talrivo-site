@@ -1,0 +1,87 @@
+.assembly-watch {
+  background: #fff;
+}
+.assembly-watch .seo-page {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+.assembly-watch-intro,
+.assembly-watch .seo-section {
+  padding: 2rem 1.5rem;
+}
+.assembly-watch-intro h1 {
+  max-width: 900px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+.assembly-watch-intro > p {
+  max-width: 900px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.assembly-watch .video-embed {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.assembly-watch .video-embed video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.assembly-watch .hero-actions,
+.assembly-watch .seo-cta-actions {
+  justify-content: flex-start;
+}
+.assembly-watch .text-action {
+  display: inline;
+  border: 0;
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: auto;
+}
+.assembly-watch .section-heading {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+.assembly-watch .seo-section h2,
+.assembly-watch .seo-cta h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+.assembly-watch .seo-section h3 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.assembly-stages {
+  padding-left: 1.5rem;
+}
+.assembly-stages li + li {
+  margin-top: 1.25rem;
+}
+.assembly-watch-meta {
+  color: #526165;
+}
+@media (max-width: 760px) {
+  .assembly-watch-intro,
+  .assembly-watch .seo-section {
+    padding: 1.5rem 1rem;
+  }
+  .assembly-watch-intro h1 {
+    font-size: 1.875rem;
+  }
+  .assembly-watch .seo-section h2,
+  .assembly-watch .seo-cta h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,27 +1,34 @@
 # TALRIVO Brand Mention and Resource Link Workflow
 
 Prepared: 2026-10-24. Internal working note; excluded from the public build.
+Updated: 2026-10-25, 00:00 Asia/Shanghai.
 
 ## Current Status
 
-- Google Alerts creation has NOT been verified. Browser navigation timed out;
-  no alert, receiving address or notification frequency was saved or confirmed.
+- Both brand alerts were created and verified in the Google Alerts list under
+  exporting61@gmail.com. The list increased from one to three alerts; the
+  pre-existing industry-keyword alert was retained unchanged.
+- Each new alert uses at most once a day, automatic sources, any language, any
+  region and all results. The receiving address was visible before saving.
+- Confirmation screenshot:
+  `/Users/lily/Documents/New project 3/output/google-alerts-confirmed-20261025.png`.
+- Future matches and inbox delivery have not yet been observed. Creation is not
+  proof of a backlink, referral visit, ranking improvement or inquiry.
 - Limited public search found the existing Lily LinkedIn profile. This is an
   owned social profile, not a verified independent editorial backlink prospect.
 - No outreach email has been sent. No acquired backlink or traffic increase is
   claimed from this work.
 
-## Two Alerts to Configure Once Signed In
+## Configured Alerts
 
 - `"TALRIVO" -site:talrivo.com`
 - `"talrivo.com" -site:talrivo.com`
 
-Use https://www.google.com/alerts with the intended business Google account.
-Inspect existing alerts first to avoid duplicates. Suggested settings: at most
-once a day, automatic sources, any language and region, all results. Verify the
-receiving address on screen before saving. Do not monitor common model numbers
-or the name Lily Li alone. Alerts discover matching new Search results, not all
-web mentions, and do not create backlinks by themselves.
+Manage these at https://www.google.com/alerts using the same Google account.
+Do not create duplicate alerts. The settings above apply to each new alert,
+not a single combined daily digest. Do not monitor common model numbers or the
+name Lily Li alone. Alerts discover matching new Search results, not all web
+mentions, and do not create backlinks by themselves.
 
 ## Qualify Before Contacting
 

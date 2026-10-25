@@ -206,7 +206,7 @@ assert.match(g946StyleContact.nodes.get('#contact-product-reference').value, /G9
 assert.equal(g946StyleContact.nodes.get('#contact-reference-note').hidden, false);
 assert.equal(assemblyContact.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
 assert.equal(assemblyContact.nodes.get('#contact-inquiry-type').value, 'Quick product question');
-assert.match(assemblyContact.nodes.get('#contact-product-reference').value, /G935 assembly and packing process.*1KQfLCmMhE4/);
+assert.match(assemblyContact.nodes.get('#contact-product-reference').value, /G935 assembly and finishing process.*1KQfLCmMhE4/);
 assert.equal(assemblyContact.nodes.get('#contact-reference-note').hidden, false);
 assert.equal(assemblyContact.events.length, 0, 'opening the assembly-video inquiry must not generate a lead');
 assert.ok(videoContact.nodes.get('#contact-product-reference').value.includes('https://youtu.be/SLcAr-jqdUs'));

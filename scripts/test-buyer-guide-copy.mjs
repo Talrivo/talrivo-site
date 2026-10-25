@@ -14,7 +14,8 @@ const html = pages.map(([slug, title]) => {
   assert.ok(content.includes(`<link rel="canonical" href="https://talrivo.com/insights/${slug}/">`));
   const schemas = [...content.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
-  assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified, '2026-10-22');
+  assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
+    slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
   assert.doesNotMatch(claims, /guaranteed compatibility|guaranteed to increase clicks|zero latency/i);
   return content;
@@ -28,7 +29,7 @@ const questions = manufacturer.match(/<section[^>]*id="supplier-questions"[\s\S]
 assert.ok(questions);
 assert.equal((questions.match(/<strong>[1-4]\./g) || []).length, 4);
 for (const target of [
-  '../../gaming-headset-quality-review/#production-video',
+  '../../videos/gaming-headset-assembly/',
   '../evaluate-gaming-headset-sample-before-bulk-order/#review-worksheet',
   '../../oem-odm/#customization-scope',
   '../../gaming-headset-quality-review/#published-certificates',

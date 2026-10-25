@@ -6,7 +6,7 @@ if (productionPlayButton) {
   productionPlayButton.addEventListener('click', () => {
     const frame = document.createElement('iframe');
     frame.src = 'https://www.youtube-nocookie.com/embed/1KQfLCmMhE4?autoplay=1';
-    frame.title = 'G935 gaming headset assembly and packing video';
+    frame.title = 'G935 gaming headset assembly and finishing video';
     frame.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
     frame.referrerPolicy = 'strict-origin-when-cross-origin';
     frame.allowFullscreen = true;

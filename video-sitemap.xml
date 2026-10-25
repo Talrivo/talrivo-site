@@ -101,4 +101,15 @@
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
+  <url>
+    <loc>https://talrivo.com/videos/gaming-headset-assembly/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://talrivo.com/assets/quality-review/g935-assembly-video-poster.webp</video:thumbnail_loc>
+      <video:title>Gaming Headset Assembly Video | Workshop Footage | TALRIVO</video:title>
+      <video:description>Supplied G935 workshop footage showing headband preparation, bracket fitting, earcup assembly and hand finishing. Selected stages are not a complete manufacturing, packing or inspection record; confirm the connection version separately.</video:description>
+      <video:content_loc>https://talrivo.com/assets/quality-review/g935-assembly-workshop.mp4</video:content_loc>
+      <video:duration>71</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
 </urlset>
