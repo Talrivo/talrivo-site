@@ -1,0 +1,63 @@
+.g947-page .g947-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.g947-image-grid article {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.g947-image-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1586 / 992;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.g947-image-grid h3 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin: 1rem 0 0.5rem;
+}
+
+.g947-image-grid p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.g947-page #product-images,
+.g947-page #device-connections,
+.g947-page #sample-configuration {
+  scroll-margin-top: 8rem;
+}
+
+.g947-connection-figure {
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+}
+
+.g947-connection-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+}
+
+.g947-connection-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .g947-page .g947-image-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

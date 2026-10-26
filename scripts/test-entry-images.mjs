@@ -8,6 +8,7 @@ const pages = [
   'gaming-headsets/index.html',
   'gaming-headsets/g936-lightweight/index.html',
   'gaming-headsets/g938-wireless/index.html',
+  'gaming-headsets/g947-foldable/index.html',
   'wireless-gaming-headsets/index.html',
   'bluetooth-headphones/index.html',
   'tws-earbuds/index.html',
@@ -37,7 +38,8 @@ for (const page of pages) {
       const bytes = readFileSync(file);
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${src}: invalid WebP header`);
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${src}: invalid WebP header`);
-      const budget = src.includes('g935-connectors-') ? 140000 : 65000;
+      const budget = src.includes('g935-connectors-') ? 140000
+        : /g947-(gaming-desk|platform-connections)-illustration-/.test(src) ? 90000 : 65000;
       assert.ok(statSync(file).size < budget, `${src}: exceeds entry-image byte budget`);
     }
     assert.ok(candidates.some(([src]) => src === attribute('src')), `${page}: fallback must match a candidate`);

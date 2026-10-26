@@ -1,6 +1,7 @@
 """Create responsive WebP copies without cropping or replacing source images."""
 
 from pathlib import Path
+import sys
 
 from PIL import Image, ImageOps
 
@@ -17,12 +18,23 @@ SOURCES = {
     "g942-wired": "assets/catalog/g942-wired/image-01.png",
     "g935-wired": "assets/catalog/g935-wired/image-01.jpg",
     "g935-connectors": "insights/gaming-headset-usb-audio-or-lighting/g935-usb-35mm-scene.png",
+    "g947-overview": "assets/catalog/g947-new/image-01.jpg",
+    "g947-product-presentation": "assets/catalog/g947-new/creative/g947-product-presentation.png",
+    "g947-gaming-desk-illustration": "assets/catalog/g947-new/creative/g947-gaming-desk-illustration.png",
+    "g947-wearing-fit-illustration": "assets/catalog/g947-new/creative/g947-wearing-fit-illustration.png",
+    "g947-packaging-concept": "assets/catalog/g947-new/creative/g947-packaging-concept.png",
+    "g947-platform-connections-illustration": "assets/catalog/g947-new/creative/g947-platform-connections-illustration.png",
 }
 
 
 def main():
+    requested = sys.argv[1:] or list(SOURCES)
+    unknown = set(requested) - SOURCES.keys()
+    if unknown:
+        raise ValueError(f"Unknown image names: {sorted(unknown)}")
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    for name, source in SOURCES.items():
+    for name in requested:
+        source = SOURCES[name]
         original = ROOT / source
         with Image.open(original) as opened:
             image = ImageOps.exif_transpose(opened).convert("RGB")
