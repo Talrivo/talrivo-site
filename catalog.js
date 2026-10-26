@@ -31,7 +31,7 @@ window.talrivoCatalog = [
     "summary": "Low-latency wireless gaming headset with documented dual-driver construction, RGB accents and battery data.",
     "specs": [
       "Documented dual-driver acoustic direction",
-      "400 mAh battery; about 20 hours listed",
+      "500 mAh battery; about 20 hours listed with lights off",
       "About 20 ms 2.4G latency and RGB accents"
     ],
     "images": [

@@ -24,6 +24,13 @@ SOURCES = {
     "g947-wearing-fit-illustration": "assets/catalog/g947-new/creative/g947-wearing-fit-illustration.png",
     "g947-packaging-concept": "assets/catalog/g947-new/creative/g947-packaging-concept.png",
     "g947-platform-connections-illustration": "assets/catalog/g947-new/creative/g947-platform-connections-illustration.png",
+    "g940-overview": "assets/catalog/g940-wireless/image-01.jpg",
+    "g940-product-presentation": "assets/catalog/g940-wireless/creative/g940-product-presentation.png",
+    "g940-gaming-desk-illustration": "assets/catalog/g940-wireless/creative/g940-gaming-desk-illustration.png",
+    "g940-wearing-fit-illustration": "assets/catalog/g940-wireless/creative/g940-wearing-fit-illustration.png",
+    "g940-packaging-concept": "assets/catalog/g940-wireless/creative/g940-packaging-concept.png",
+    "g940-feature-board": "assets/catalog/g940-wireless/creative/g940-feature-board.png",
+    "g940-device-connections-illustration": "assets/catalog/g940-wireless/creative/g940-device-connections-illustration.png",
 }
 
 

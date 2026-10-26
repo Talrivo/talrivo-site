@@ -1,0 +1,57 @@
+.g940-page .g940-image-grid,
+.g940-page .g940-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.g940-image-grid article {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.g940-detail-grid figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.g940-image-grid img,
+.g940-detail-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.g940-image-grid h3 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin: 1rem 0 0.5rem;
+}
+
+.g940-image-grid p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.g940-detail-grid figcaption {
+  margin: 0.75rem 0 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.g940-page #product-images,
+.g940-page #device-connections {
+  scroll-margin-top: 8rem;
+}
+
+@media (max-width: 760px) {
+  .g940-page .g940-image-grid,
+  .g940-page .g940-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
