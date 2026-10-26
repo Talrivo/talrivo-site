@@ -2,6 +2,46 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const category = readFileSync('gaming-headsets/index.html', 'utf8');
+const privateLabel = readFileSync('private-label-audio-products/index.html', 'utf8');
+assert.ok(privateLabel.includes('<title>Private Label Gaming Headsets &amp; Audio Products | TALRIVO</title>'),
+  'Keep the existing private-label search title and canonical stable');
+assert.ok(privateLabel.includes('<link rel="canonical" href="https://talrivo.com/private-label-audio-products/">'));
+assert.match(privateLabel, /href="#headset-start">Compare Headset Options/);
+assert.match(privateLabel, /id="headset-start" aria-labelledby="headset-start-title"/);
+assert.match(privateLabel, /class="seo-page private-label-page"/);
+assert.match(privateLabel, /href="entry.css\?v=20261026a"/);
+assert.match(privateLabel, /TALRIVO represents our own audio manufacturing business in China/);
+assert.match(privateLabel, /Changes to audio behavior, firmware, structure or electronics need a separate feasibility review/);
+assert.match(privateLabel, /There is no single MOQ or lead time for every project/);
+assert.doesNotMatch(privateLabel, /guaranteed to increase clicks|guaranteed compatibility|MOQ[: ]+\d|lead time[: ]+\d/i);
+const privateDescriptions = [...privateLabel.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(privateDescriptions.length, 3);
+assert.equal(new Set(privateDescriptions).size, 1, 'Private-label descriptions must agree across search and social');
+const privateSchemas = [...privateLabel.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+assert.equal(privateSchemas.find(schema => schema['@type'] === 'CollectionPage').description, privateDescriptions[0]);
+const privateFaqSection = privateLabel.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const privateVisibleFaq = [...privateFaqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({question, answer}));
+assert.equal(privateVisibleFaq.length, 6);
+assert.deepEqual(privateSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(question => ({question: question.name, answer: question.acceptedAnswer.text})), privateVisibleFaq,
+  'Private-label structured FAQ must match every visible question and answer');
+for (const [file, product, inquiry, reference] of [
+  ['private-label-audio-products/index.html', 'audio-products', 'oem-odm', 'private-label-range'],
+  ['rfq-guide/index.html', 'gaming-headsets', 'rfq', 'rfq-template'],
+  ['insights/compare-wired-wireless-gaming-headsets/index.html', 'gaming-headsets', 'compare'],
+  ['insights/g941-color-options-wireless-gaming-headset/index.html', 'g941', 'oem-odm'],
+  ['gaming-headsets/g938-wireless/index.html', 'g938', 'quick-question'],
+]) {
+  const content = readFileSync(file, 'utf8');
+  const routes = [...content.matchAll(/href="([^"]*contact\/\?[^\"]+)"/g)]
+    .map(([, href]) => new URL(href.replaceAll('&amp;', '&'), `https://talrivo.com/${file}`));
+  assert.ok(routes.some(url => url.searchParams.get('product') === product
+    && url.searchParams.get('inquiry') === inquiry && url.hash === '#inquiry-form'
+    && (!reference || url.searchParams.get('reference') === reference)), `${file}: preserve buyer intent in the contact route`);
+}
 const g938 = readFileSync('gaming-headsets/g938-wireless/index.html', 'utf8');
 assert.ok(g938.includes('<title>G938 Tri-Mode Gaming Headset | 2.4G/Bluetooth/Wired Sourcing</title>'),
   'Keep the G938 title stable during the description observation period');

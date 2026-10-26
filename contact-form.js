@@ -51,6 +51,18 @@ if (contactForm) {
       type: "guide",
       prompt: "Tell us the model or photo, connection mode, destination market and document number you want to check. A finished RFQ is not needed to ask."
     },
+    "private-label-range": {
+      title: "Private-label gaming headsets and audio range",
+      url: "https://talrivo.com/private-label-audio-products/",
+      type: "guide",
+      prompt: "Tell us your target devices, market and what you want to change: logo, colors, packaging, accessories or functions. Finished artwork is not needed to ask."
+    },
+    "rfq-template": {
+      title: "Gaming headset RFQ template",
+      url: "https://talrivo.com/rfq-guide/",
+      type: "guide",
+      prompt: "Add the model or headset type, target devices, market, quantity range and sample timing you already know. Leave anything undecided as a question."
+    },
     "g938-phone-setup": {
       title: "G938 phone setup and controls",
       url: "https://youtu.be/AKqT0fzuqW8"

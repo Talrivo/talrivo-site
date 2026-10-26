@@ -4,7 +4,7 @@ Prepared October 22, 2026. Drafts only: no social post, message, directory submi
 
 ## Entry 1: manufacturer selection / LinkedIn native video post
 
-Asset: the supplied G935 selected assembly and packing video. Do not claim it shows the complete manufacturing process, every test, or a confirmed wired/wireless variant. Check music rights and customer branding in packaging before public reuse.
+Asset: the supplied G935 selected assembly and finishing video. Source review on October 25 confirmed visible headband, bracket and earcup assembly, hand finishing and production handoff, not a complete packing procedure. Do not claim it shows the complete manufacturing process, every test, or a confirmed wired/wireless variant. Check music rights and any customer branding before public reuse.
 
 Copy:
 
@@ -14,7 +14,7 @@ Not just "Can you print our logo?"
 
 Ask which headset version you are reviewing, how its audio and microphone connect, what is included in the box, and what must be approved before production.
 
-TALRIVO represents our own audio manufacturing business in China. This supplied clip shows selected headset assembly and packing stages, not a complete production or test record.
+TALRIVO represents our own audio manufacturing business in China. This supplied clip shows selected headset assembly and finishing stages, not a complete production or test record.
 
 Compare wired, 2.4GHz wireless and tri-mode headset directions for your brand:
 https://talrivo.com/gaming-headsets/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=headset_procurement_202610&utm_content=assembly_questions

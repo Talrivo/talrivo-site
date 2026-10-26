@@ -200,6 +200,21 @@ for (const [reference, title, prompt, inquiry = 'quick-question'] of [
   }
 }
 const assemblyContact = runContact('https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=g935-assembly');
+for (const [reference, product, inquiry, expectedProduct, expectedInquiry, prompt] of [
+  ['private-label-range', 'audio-products', 'oem-odm', 'Custom Audio Project', 'OEM / private-label project', /Finished artwork is not needed/],
+  ['rfq-template', 'gaming-headsets', 'rfq', 'Gaming Headset Collection', 'Quotation request', /Leave anything undecided as a question/],
+]) {
+  for (const consent of [null, 'denied', 'granted']) {
+    const contact = runContact(`https://talrivo.com/contact/?product=${product}&inquiry=${inquiry}&reference=${reference}`, null, consent);
+    assert.equal(contact.nodes.get('select[name="product"]').value, expectedProduct);
+    assert.equal(contact.nodes.get('#contact-inquiry-type').value, expectedInquiry);
+    assert.ok(contact.nodes.get('#contact-product-reference').value.includes('https://talrivo.com/'));
+    assert.match(contact.nodes.get('#contact-reference-note').textContent, prompt);
+    assert.doesNotMatch(contact.nodes.get('#contact-reference-note').textContent, /timestamp/);
+    assert.equal(contact.storage.value('talrivoInquirySource'), undefined, 'Functional page context must not require tracking storage');
+    assert.equal(contact.events.length, 0, 'Opening a buying-stage inquiry is not a lead');
+  }
+}
 const g946StyleContact = runContact('https://talrivo.com/contact/?product=g946&inquiry=quick-question&reference=g946-style');
 assert.equal(g946StyleContact.nodes.get('select[name="product"]').value, 'G946 Tri-Mode RGB Gaming Headset');
 assert.match(g946StyleContact.nodes.get('#contact-product-reference').value, /G946 fashion-to-gaming style concept.*PGj_ESVdFgA/);
@@ -249,6 +264,10 @@ for (const file of publicHtml(root)) {
   const pageUrl = new URL(relative(root, file), 'https://talrivo.com/');
   for (const [, rawHref] of readFileSync(file, 'utf8').matchAll(/\bhref="([^"]+)"/g)) {
     const url = new URL(rawHref.replaceAll('&amp;', '&'), pageUrl);
+    if (relative(root, file) !== 'index.html') {
+      assert.ok(!(url.origin === 'https://talrivo.com' && url.pathname === '/' && url.hash === '#rfq'),
+        `${file}: use a context-preserving contact route instead of the generic homepage form`);
+    }
     if (url.origin !== 'https://talrivo.com' || url.pathname !== '/contact/') continue;
     const product = url.searchParams.get('product');
     const inquiry = url.searchParams.get('inquiry');
@@ -263,6 +282,12 @@ for (const file of publicHtml(root)) {
     if (inquiry) {
       const result = runContact(url.href);
       assert.ok(result.nodes.get('#contact-inquiry-type').value, `${file}: unknown inquiry route ${inquiry}`);
+    }
+    const reference = url.searchParams.get('reference');
+    if (reference) {
+      const result = runContact(`https://talrivo.com/contact/?reference=${encodeURIComponent(reference)}`);
+      assert.ok(result.nodes.get('#contact-product-reference').value,
+        `${file}: the published reference ${reference} must be recognized`);
     }
     contactLinksChecked++;
   }
