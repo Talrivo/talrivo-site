@@ -40,6 +40,7 @@ jobs:
           node scripts/test-assembly-watch.mjs
           node scripts/test-g947-media.mjs
           node scripts/test-g940-media.mjs
+          node scripts/test-g926-media.mjs
           node scripts/test-mic-review.mjs
           node scripts/test-buyer-worksheets.mjs
           node scripts/test-inquiry-draft.mjs

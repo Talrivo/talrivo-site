@@ -115,7 +115,7 @@ assert.match(g926Hero, /Confirm runtime, receiver setup and both audio and micro
 assert.ok(g926.includes('href="../../contact/?product=g926&amp;inquiry=sample#inquiry-form"'));
 const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
 assert.ok(wireless.includes('<h3><a href="../gaming-headsets/g926-wireless/">RGB wireless headset with 50mm drivers</a></h3>'));
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g926-wireless/</loc>\n    <lastmod>2026-10-24</lastmod>'));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g926-wireless/</loc>\n    <lastmod>2026-10-27</lastmod>'));
 assert.ok(readFileSync('llms.txt', 'utf8').includes('[RGB Wireless Gaming Headset / G926]'));
 const modelSection = category.match(/<section[^>]*id="headset-models"[\s\S]*?<\/section>/)[0];
 const cards = [...modelSection.matchAll(/<article>[\s\S]*?<\/article>/g)].map(([card]) => card);

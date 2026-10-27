@@ -10,6 +10,7 @@ const pages = [
   'gaming-headsets/g938-wireless/index.html',
   'gaming-headsets/g947-foldable/index.html',
   'gaming-headsets/g940-low-latency/index.html',
+  'gaming-headsets/g926-wireless/index.html',
   'wireless-gaming-headsets/index.html',
   'bluetooth-headphones/index.html',
   'tws-earbuds/index.html',
@@ -42,6 +43,7 @@ for (const page of pages) {
       const budget = src.includes('g935-connectors-') ? 140000
         : /g947-(gaming-desk|platform-connections)-illustration-/.test(src) ? 90000
           : /g940-feature-board-/.test(src) ? 125000
+            : /g926-(feature-overview|controls-material-illustration|gaming-scene-illustration|wearing-fit-illustration|device-connections-illustration)-/.test(src) ? 140000
             : /g940-(gaming-desk|wearing-fit|device-connections)-illustration-/.test(src) ? 90000 : 65000;
       assert.ok(statSync(file).size < budget, `${src}: exceeds entry-image byte budget`);
     }

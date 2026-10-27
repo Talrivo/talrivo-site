@@ -31,6 +31,12 @@ SOURCES = {
     "g940-packaging-concept": "assets/catalog/g940-wireless/creative/g940-packaging-concept.png",
     "g940-feature-board": "assets/catalog/g940-wireless/creative/g940-feature-board.png",
     "g940-device-connections-illustration": "assets/catalog/g940-wireless/creative/g940-device-connections-illustration.png",
+    "g926-feature-overview": "assets/catalog/g926-wireless/creative/g926-feature-overview.png",
+    "g926-product-presentation": "assets/catalog/g926-wireless/creative/g926-product-presentation.png",
+    "g926-gaming-scene-illustration": "assets/catalog/g926-wireless/creative/g926-gaming-scene-illustration.png",
+    "g926-wearing-fit-illustration": "assets/catalog/g926-wireless/creative/g926-wearing-fit-illustration.png",
+    "g926-controls-material-illustration": "assets/catalog/g926-wireless/creative/g926-controls-material-illustration.png",
+    "g926-device-connections-illustration": "assets/catalog/g926-wireless/creative/g926-device-connections-illustration.png",
 }
 
 
