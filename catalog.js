@@ -65,6 +65,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g942-wireless",
+    "page": "gaming-headsets/g942-wireless/",
     "video": null
   },
   {
@@ -85,6 +86,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g923-wireless",
+    "page": "gaming-headsets/g923-wireless/",
     "video": null,
     "public": false
   },
@@ -105,6 +107,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "g920-wireless",
+    "page": "gaming-headsets/g920-wireless/",
     "video": null
   },
   {
@@ -132,19 +135,22 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "50 mm driver direction within the wireless gaming supply range.",
+    "summary": "White 2.4GHz wireless gaming headset with 50mm drivers and up to 50 hours listed with lights off.",
     "specs": [
-      "2.4 GHz configuration",
-      "50 mm driver option",
-      "Configuration details on request"
+      "2.4GHz USB receiver",
+      "50 mm driver",
+      "1000 mAh; up to 50 hours with lights off"
     ],
     "images": [
-      "image-01.jpg",
-      "image-02.jpg",
-      "image-03.jpg",
-      "image-04.jpg"
+      "creative/g939-1.webp",
+      "creative/g939-2.webp",
+      "creative/g939-3.webp",
+      "creative/g939-4.webp",
+      "creative/g939-5.webp",
+      "creative/g939-6.webp"
     ],
     "folder": "g939-wireless",
+    "page": "gaming-headsets/g939-wireless/",
     "video": null
   },
   {
@@ -164,6 +170,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "g927-wireless",
+    "page": "gaming-headsets/g927-wireless/",
     "video": null,
     "public": false
   },
@@ -203,6 +210,8 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g921-wireless",
+    "page": "gaming-headsets/g921-wireless/",
+    "pageStatus": "specification-pending",
     "video": null,
     "public": false
   },
@@ -222,6 +231,8 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g919-wireless",
+    "page": "gaming-headsets/g919-wireless/",
+    "pageStatus": "specification-pending",
     "video": null,
     "public": false
   },
@@ -401,6 +412,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g942-wired",
+    "page": "gaming-headsets/g942-wired/",
     "video": null
   },
   {
@@ -419,6 +431,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g935-wired",
+    "page": "gaming-headsets/g935-wired/",
     "video": null
   },
   {
@@ -437,6 +450,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g936-wired",
+    "page": "gaming-headsets/g936-wired/",
     "video": null
   },
   {
@@ -459,6 +473,7 @@ window.talrivoCatalog = [
       "image-06.jpg"
     ],
     "folder": "g939-wired",
+    "page": "gaming-headsets/g939-wired/",
     "video": null
   },
   {
@@ -479,6 +494,7 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g923-wired",
+    "page": "gaming-headsets/g923-wired/",
     "video": null,
     "public": false
   },
@@ -498,6 +514,8 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g941-wired",
+    "page": "gaming-headsets/g941-wired/",
+    "pageStatus": "specification-pending",
     "video": null
   },
   {
@@ -518,6 +536,8 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g920-wired",
+    "page": "gaming-headsets/g920-wired/",
+    "pageStatus": "specification-pending",
     "video": null,
     "public": false
   },
@@ -539,6 +559,8 @@ window.talrivoCatalog = [
       "image-04.jpg"
     ],
     "folder": "g926-wired",
+    "page": "gaming-headsets/g926-wired/",
+    "pageStatus": "specification-pending",
     "video": null,
     "public": false
   },
@@ -558,6 +580,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g921-wired",
+    "page": "gaming-headsets/g921-wired/",
     "video": null
   },
   {
@@ -576,6 +599,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "g919-wired",
+    "page": "gaming-headsets/g919-wired/",
     "video": null
   },
   {
@@ -593,6 +617,8 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "g909-wired",
+    "page": "gaming-headsets/g909-wired/",
+    "pageStatus": "specification-pending",
     "video": null,
     "public": false
   },
@@ -2240,6 +2266,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "tws-tws042s",
+    "page": "tws-earbuds/tws042s/",
     "video": null,
     "details": {
       "highlights": [
@@ -2304,6 +2331,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws057",
+    "page": "tws-earbuds/tws057/",
     "video": null,
     "details": {
       "highlights": [
@@ -2369,6 +2397,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "tws-tws029",
+    "page": "tws-earbuds/tws029/",
     "video": null,
     "details": {
       "highlights": [
@@ -2475,6 +2504,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws035",
+    "page": "tws-earbuds/tws035/",
     "video": null,
     "details": {
       "highlights": [
@@ -2538,6 +2568,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-tws031",
+    "page": "tws-earbuds/tws031/",
     "video": null,
     "details": {
       "highlights": [
@@ -2600,6 +2631,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-tws040",
+    "page": "tws-earbuds/tws040/",
     "video": null,
     "details": {
       "highlights": [
@@ -2665,6 +2697,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws044",
+    "page": "tws-earbuds/tws044/",
     "video": null,
     "details": {
       "highlights": [
@@ -2730,6 +2763,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws008",
+    "page": "tws-earbuds/tws008/",
     "video": null,
     "details": {
       "highlights": [
@@ -2795,6 +2829,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws052",
+    "page": "tws-earbuds/tws052/",
     "video": null,
     "details": {
       "highlights": [
@@ -2856,6 +2891,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-twsz10",
+    "page": "tws-earbuds/twsz10/",
     "video": null,
     "details": {
       "highlights": [
@@ -2920,6 +2956,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws056",
+    "page": "tws-earbuds/tws056/",
     "video": null,
     "details": {
       "highlights": [
@@ -2984,6 +3021,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws058",
+    "page": "tws-earbuds/tws058/",
     "video": null,
     "details": {
       "highlights": [
@@ -3047,6 +3085,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws059",
+    "page": "tws-earbuds/tws059/",
     "video": null,
     "details": {
       "highlights": [
@@ -3110,6 +3149,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws007",
+    "page": "tws-earbuds/tws007/",
     "video": null,
     "details": {
       "highlights": [
@@ -3167,6 +3207,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-tws019",
+    "page": "tws-earbuds/tws019/",
     "video": null,
     "details": {
       "highlights": [
@@ -3225,6 +3266,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "tws-tws005",
+    "page": "tws-earbuds/tws005/",
     "video": null,
     "details": {
       "highlights": [
@@ -3283,6 +3325,7 @@ window.talrivoCatalog = [
       "image-02.jpg"
     ],
     "folder": "tws-tws002",
+    "page": "tws-earbuds/tws002/",
     "video": null,
     "details": {
       "highlights": [
@@ -3340,6 +3383,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-tws016",
+    "page": "tws-earbuds/tws016/",
     "video": null,
     "details": {
       "highlights": [
@@ -3397,6 +3441,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-ows-103",
+    "page": "tws-earbuds/ows-103/",
     "video": null,
     "details": {
       "highlights": [
@@ -3515,6 +3560,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws012",
+    "page": "tws-earbuds/tws012/",
     "video": null,
     "details": {
       "highlights": [
@@ -3576,6 +3622,7 @@ window.talrivoCatalog = [
       "image-05.jpg"
     ],
     "folder": "tws-tws013",
+    "page": "tws-earbuds/tws013/",
     "video": null,
     "details": {
       "highlights": [
@@ -3657,6 +3704,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-tws070",
+    "page": "tws-earbuds/tws070/",
     "video": null,
     "details": {
       "highlights": [
@@ -3718,6 +3766,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-tws017",
+    "page": "tws-earbuds/tws017/",
     "video": null,
     "details": {
       "highlights": [
@@ -3781,6 +3830,7 @@ window.talrivoCatalog = [
       "image-03.jpg"
     ],
     "folder": "tws-ows-035",
+    "page": "tws-earbuds/ows-035/",
     "video": null,
     "details": {
       "highlights": [
@@ -3838,6 +3888,7 @@ window.talrivoCatalog = [
       "image-01.jpg"
     ],
     "folder": "tws-bch-002",
+    "page": "tws-earbuds/bch-002/",
     "video": null,
     "details": {
       "highlights": [

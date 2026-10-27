@@ -41,6 +41,8 @@ jobs:
           node scripts/test-g947-media.mjs
           node scripts/test-g940-media.mjs
           node scripts/test-g926-media.mjs
+          node scripts/test-g939-media.mjs
+          node scripts/test-model-pages.mjs
           node scripts/test-mic-review.mjs
           node scripts/test-buyer-worksheets.mjs
           node scripts/test-inquiry-draft.mjs

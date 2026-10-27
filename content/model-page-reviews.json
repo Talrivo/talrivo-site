@@ -1,0 +1,1991 @@
+{
+  "date": "2026-10-27",
+  "source": "Existing catalog.js records and script.js detailLibrary; no new engineering confirmation",
+  "models": [
+    {
+      "model": "G942",
+      "folder": "g942-wireless",
+      "category": "wireless",
+      "name": "2.4G Wireless Gaming Headset",
+      "page": "gaming-headsets/g942-wireless/",
+      "inquiryKey": "g942-wireless",
+      "inquiryLabel": "G942 2.4G Wireless Gaming Headset",
+      "indexable": true,
+      "overview": "Compare the G942 wireless version with its wired counterpart before choosing a sample. Review the receiver, microphone and headset views together rather than relying on the model number alone.",
+      "specifications": [
+        [
+          "Frequency response",
+          "20 Hz - 20 kHz"
+        ],
+        [
+          "Latency",
+          "20 ms listed"
+        ],
+        [
+          "Battery",
+          "1000 mAh"
+        ],
+        [
+          "Playback time",
+          "Approx. 50 hours without lights"
+        ],
+        [
+          "Charging time",
+          "3 - 4 hours"
+        ],
+        [
+          "Transmission distance",
+          "10 meters"
+        ]
+      ],
+      "conflicts": [
+        "Driver: catalogue 50mm versus modal 40mm; hold until confirmed."
+      ],
+      "notes": [
+        "Confirm the driver configuration on the selected sample."
+      ],
+      "assets": [
+        "assets/catalog/g942-wireless/image-01.png",
+        "assets/catalog/g942-wireless/image-02.png",
+        "assets/catalog/g942-wireless/image-03.png",
+        "assets/catalog/g942-wireless/image-04.jpg"
+      ]
+    },
+    {
+      "model": "G923",
+      "folder": "g923-wireless",
+      "category": "wireless",
+      "name": "Wireless Gaming Headset",
+      "page": "gaming-headsets/g923-wireless/",
+      "inquiryKey": "g923-wireless",
+      "inquiryLabel": "G923 Wireless Gaming Headset",
+      "indexable": true,
+      "overview": "Looking at G923 for a wireless gaming range? Start with the product views and listed battery data, then check the receiver and microphone on the devices your customers actually use.",
+      "specifications": [
+        [
+          "Driver",
+          "40 mm"
+        ],
+        [
+          "Frequency response",
+          "20 Hz - 20 kHz"
+        ],
+        [
+          "Latency",
+          "20 ms listed"
+        ],
+        [
+          "Battery",
+          "1000 mAh"
+        ],
+        [
+          "Playback time",
+          "Approx. 50 hours without lights"
+        ],
+        [
+          "Charging time",
+          "3 - 4 hours"
+        ],
+        [
+          "Transmission distance",
+          "10 meters"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g923-wireless/image-01.jpg",
+        "assets/catalog/g923-wireless/image-02.jpg",
+        "assets/catalog/g923-wireless/image-03.jpg",
+        "assets/catalog/g923-wireless/image-04.jpg"
+      ]
+    },
+    {
+      "model": "G920",
+      "folder": "g920-wireless",
+      "category": "wireless",
+      "name": "Wireless Gaming Headset",
+      "page": "gaming-headsets/g920-wireless/",
+      "inquiryKey": "g920-wireless",
+      "inquiryLabel": "G920 Wireless Gaming Headset",
+      "indexable": true,
+      "overview": "G920 gives buyers another receiver-based gaming headset to compare. Use this page to review its supplied images and listed sample data without mixing it with the wired G920 version.",
+      "specifications": [
+        [
+          "Driver",
+          "40 mm"
+        ],
+        [
+          "Frequency response",
+          "20 Hz - 20 kHz"
+        ],
+        [
+          "Latency",
+          "20 ms listed"
+        ],
+        [
+          "Battery",
+          "1000 mAh"
+        ],
+        [
+          "Playback time",
+          "Approx. 50 hours without lights"
+        ],
+        [
+          "Charging time",
+          "3 - 4 hours"
+        ],
+        [
+          "Transmission distance",
+          "10 meters"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g920-wireless/image-01.jpg",
+        "assets/catalog/g920-wireless/image-02.jpg",
+        "assets/catalog/g920-wireless/image-03.jpg"
+      ]
+    },
+    {
+      "model": "G939",
+      "folder": "g939-wireless",
+      "category": "wireless",
+      "name": "Wireless Gaming Headset",
+      "page": "gaming-headsets/g939-wireless/",
+      "inquiryKey": "g939-wireless",
+      "inquiryLabel": "G939 Wireless Gaming Headset",
+      "indexable": true,
+      "source": "Six G939 product graphics supplied by the user on 2026-10-27; the new 50mm specification supersedes the older 40mm modal entry.",
+      "title": "White Wireless Gaming Headset, 50mm | G939 | TALRIVO",
+      "heading": "White 2.4GHz Wireless Gaming Headset",
+      "eyebrow": "G939 / 50mm drivers / OEM samples",
+      "description": "Looking for a white wireless gaming headset? See G939 with 50mm drivers, a 2.4GHz USB receiver and up to 50 hours with lights off. Ask about OEM samples.",
+      "overview": "Building a gaming range that needs a white option? G939 pairs a white finish and silver mesh earcups with 50mm drivers and a 2.4GHz USB receiver. The supplied specification lists up to 50 hours of playback with lights off. Take a look at the fit, receiver and accessory views, then tell us which devices your customers use.",
+      "responsiveGallery": true,
+      "cataloguePreviews": true,
+      "galleryIntro": "Six supplied graphics show the white finish, gaming setup, fit, controls, connection options and pictured accessory set. Lifestyle scenes and internal-driver artwork are illustrations, not customer photos or test reports.",
+      "specificationIntro": "The latest supplied G939 graphics list a 50mm driver, replacing the older 40mm entry. Performance figures below are supplied specifications, not new test results.",
+      "specificationHeading": "50mm drivers, 1000mAh battery and receiver-based wireless",
+      "specifications": [
+        [
+          "Driver",
+          "50 mm"
+        ],
+        [
+          "Frequency response",
+          "20 Hz - 20 kHz"
+        ],
+        [
+          "Latency",
+          "20 ms listed"
+        ],
+        [
+          "Battery",
+          "1000 mAh"
+        ],
+        [
+          "Playback time",
+          "Approx. 50 hours without lights"
+        ],
+        [
+          "Charging time",
+          "3 - 4 hours"
+        ],
+        [
+          "Transmission distance",
+          "10 meters"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback is listed at approximately 50 hours with lights off. Volume, wireless conditions and usage affect actual runtime; this is not a new battery test.",
+        "The 20ms latency figure is a supplied specification, not a zero-delay claim or an end-to-end measurement on every device."
+      ],
+      "assets": [
+        "assets/catalog/g939-wireless/creative/g939-1.png",
+        "assets/catalog/g939-wireless/creative/g939-2.png",
+        "assets/catalog/g939-wireless/creative/g939-3.png",
+        "assets/catalog/g939-wireless/creative/g939-4.png",
+        "assets/catalog/g939-wireless/creative/g939-5.png",
+        "assets/catalog/g939-wireless/creative/g939-6.png"
+      ],
+      "assetDescriptions": [
+        { "alt": "White G939 wireless gaming headset with silver mesh earcups and USB receiver", "caption": "White finish, 50mm driver and USB receiver overview. Up to 50 hours is listed with lights off." },
+        { "alt": "G939 white wireless gaming headset illustrated on a PC gaming desk", "caption": "A white option for a gaming range. Illustrated gaming scene, not a wireless performance test." },
+        { "alt": "Illustrated wearer showing G939 ear coverage and boom microphone position", "caption": "See the over-ear fit and microphone position. Check comfort and voice pickup on your sample." },
+        { "alt": "G939 supplied feature sheet showing 50mm driver, controls, battery and receiver", "caption": "Controls and supplied specifications. Internal-driver artwork is illustrative, not a teardown." },
+        { "alt": "G939 connection diagram showing USB receiver, USB-C adapter and target devices", "caption": "Receiver-based 2.4GHz connection, not Bluetooth pairing. Check USB audio support and microphone operation on each target device." },
+        { "alt": "G939 pictured accessory set with USB receiver, adapter, charging cable, audio cable and manual", "caption": "Pictured accessory set. Confirm the exact included parts and final packing list with your sample." }
+      ],
+      "sections": [
+        {
+          "id": "device-connections",
+          "label": "Device connections",
+          "heading": "Which connection does your customer need?",
+          "intro": "The diagram shows target-device examples, not a completed compatibility test. Playback and microphone input need separate checks.",
+          "items": [
+            { "label": "PC and laptop", "text": "Use the 2.4GHz USB receiver with a supported USB audio host. For USB-C ports, check the illustrated adapter and select the headset as both output and microphone input." },
+            { "label": "PlayStation and Switch", "text": "The supplied diagram shows PS5, PS4 and Nintendo Switch. Confirm the console model, receiver connection, dock or handheld setup, and in-game microphone behavior on the sample." },
+            { "label": "Phone, tablet, TV or projector", "text": "A USB socket alone does not guarantee USB audio support. Confirm the exact device, host capability, receiver or adapter and microphone use. Do not assume Bluetooth pairing." },
+            { "label": "3.5mm cable and charging", "text": "A 3.5mm audio cable is pictured; confirm wired playback and microphone operation for the selected version. The USB-A to USB-C cable is shown for charging, not as proof of USB wired audio." }
+          ]
+        },
+        {
+          "id": "accessory-set",
+          "label": "Accessory set",
+          "heading": "Check the receiver, cables and manual together",
+          "intro": "The supplied box graphic shows the headset, USB wireless receiver with a USB-C adapter, USB-A to USB-C charging cable, 3.5mm audio cable and user manual. Treat it as the pictured set until the final packing list is agreed.",
+          "items": [
+            { "label": "Receiver and adapter", "text": "Match the white receiver and USB-C adapter to the exact devices you want to support. Agree the included receiver version before packaging artwork." },
+            { "label": "Cables and manual", "text": "Confirm cable lengths, connectors, microphone support over the audio cable, and manual language. Do not substitute the wired-only G939 packing list." }
+          ]
+        }
+      ],
+      "faqs": [
+        { "question": "Does this G939 use 50mm drivers?", "answer": "Yes. The latest supplied G939 wireless graphics specify a 50mm dynamic driver. This replaces the older 40mm entry. The wired-only G939 remains a separate product page." },
+        { "question": "Does G939 connect by Bluetooth?", "answer": "The supplied connection diagram shows a 2.4GHz USB receiver and USB-C adapter, not Bluetooth pairing. Share the exact PC, console, phone or tablet so receiver compatibility and microphone input can be checked." },
+        { "question": "When can G939 reach up to 50 hours of playback?", "answer": "The supplied specification lists approximately 50 hours with lights off and a 1000mAh battery. Actual runtime depends on volume, wireless conditions and use. This is not a new battery test." },
+        { "question": "Are the G939 images an approved packing list?", "answer": "No. The graphic shows the headset, receiver with USB-C adapter, charging cable, 3.5mm audio cable and manual. Confirm the included set for your selected sample and order. Pictured parts are not automatically included." },
+        { "question": "Can I ask for a white G939 OEM sample?", "answer": "Use the G939-specific sample inquiry and tell us your target devices, market and preferred packaging. Confirm the base sample, receiver, microphone and accessory list before approving logo or packaging artwork." }
+      ]
+    },
+    {
+      "model": "G927",
+      "folder": "g927-wireless",
+      "category": "wireless",
+      "name": "Wireless Gaming Headset",
+      "page": "gaming-headsets/g927-wireless/",
+      "inquiryKey": "g927-wireless",
+      "inquiryLabel": "G927 Wireless Gaming Headset",
+      "indexable": true,
+      "overview": "Review the G927 wireless headset and its listed 50mm driver configuration. Check the receiver, microphone position and selected finish before narrowing your gaming headset shortlist.",
+      "specifications": [
+        [
+          "Driver",
+          "50 mm"
+        ],
+        [
+          "Frequency response",
+          "20 Hz - 20 kHz"
+        ],
+        [
+          "Latency",
+          "20 ms listed"
+        ],
+        [
+          "Battery",
+          "1000 mAh"
+        ],
+        [
+          "Playback time",
+          "Approx. 50 hours without lights"
+        ],
+        [
+          "Charging time",
+          "3 - 4 hours"
+        ],
+        [
+          "Transmission distance",
+          "10 meters"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g927-wireless/image-01.jpg",
+        "assets/catalog/g927-wireless/image-02.jpg",
+        "assets/catalog/g927-wireless/image-03.jpg"
+      ]
+    },
+    {
+      "model": "G921",
+      "folder": "g921-wireless",
+      "category": "wireless",
+      "name": "Wireless Gaming Headset",
+      "page": "gaming-headsets/g921-wireless/",
+      "inquiryKey": "g921-wireless",
+      "inquiryLabel": "G921 Wireless Gaming Headset",
+      "indexable": false,
+      "overview": "Review the supplied G921 wireless headset images before requesting the current specification sheet. Connection details, battery and accessory contents still need confirmation for the version you want.",
+      "specifications": [],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g921-wireless/image-01.jpg",
+        "assets/catalog/g921-wireless/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G919",
+      "folder": "g919-wireless",
+      "category": "wireless",
+      "name": "Wireless Gaming Headset",
+      "page": "gaming-headsets/g919-wireless/",
+      "inquiryKey": "g919-wireless",
+      "inquiryLabel": "G919 Wireless Gaming Headset",
+      "indexable": false,
+      "overview": "Use the G919 wireless image set to identify the version you are interested in. Ask for its current specification sheet and receiver details before approving a sample.",
+      "specifications": [],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g919-wireless/image-01.jpg",
+        "assets/catalog/g919-wireless/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G942",
+      "folder": "g942-wired",
+      "category": "wired",
+      "name": "RGB Wired Gaming Headset",
+      "page": "gaming-headsets/g942-wired/",
+      "inquiryKey": "g942-wired",
+      "inquiryLabel": "G942 RGB Wired Gaming Headset",
+      "indexable": true,
+      "overview": "Need the wired G942 rather than the wireless model? Compare the supplied headset views and listed 3.5mm plus USB interface, then confirm the actual audio route and required accessories.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.3 K ohms"
+        ],
+        [
+          "Product size",
+          "193*90*210 mm"
+        ],
+        [
+          "Packaging size",
+          "210*110*230 mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g942-wired/image-01.png",
+        "assets/catalog/g942-wired/image-02.png",
+        "assets/catalog/g942-wired/image-03.png",
+        "assets/catalog/g942-wired/image-04.jpg"
+      ]
+    },
+    {
+      "model": "G935",
+      "folder": "g935-wired",
+      "category": "wired",
+      "name": "RGB Wired Gaming Headset",
+      "page": "gaming-headsets/g935-wired/",
+      "inquiryKey": "g935-wired",
+      "inquiryLabel": "G935 RGB Wired Gaming Headset",
+      "indexable": true,
+      "overview": "This page is for the wired G935, not the wireless version. Review its cable and microphone references, then confirm the selected connection version before ordering a sample.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.3 K ohms"
+        ],
+        [
+          "Weight",
+          "Approx. 190 g"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g935-wired/image-01.jpg",
+        "assets/catalog/g935-wired/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G936",
+      "folder": "g936-wired",
+      "category": "wired",
+      "name": "RGB Wired Gaming Headset",
+      "page": "gaming-headsets/g936-wired/",
+      "inquiryKey": "g936-wired",
+      "inquiryLabel": "G936 RGB Wired Gaming Headset",
+      "indexable": true,
+      "overview": "Review the wired G936 separately from the wireless model. The existing reference lists a 3.5mm plus USB interface; confirm which connector carries audio on your selected sample.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.3 K ohms"
+        ],
+        [
+          "Weight",
+          "Approx. 191 g"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g936-wired/image-01.jpg",
+        "assets/catalog/g936-wired/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G939",
+      "folder": "g939-wired",
+      "category": "wired",
+      "name": "RGB Wired Gaming Headset",
+      "page": "gaming-headsets/g939-wired/",
+      "inquiryKey": "g939-wired",
+      "inquiryLabel": "G939 RGB Wired Gaming Headset",
+      "indexable": true,
+      "overview": "Looking for the wired G939? This version has its own image set and listed 3.5mm plus USB interface. Do not use wireless battery or receiver figures to describe this model.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.3 K ohms"
+        ],
+        [
+          "Speaker setup",
+          "50 mm high-fidelity speaker"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g939-wired/image-01.jpg",
+        "assets/catalog/g939-wired/image-02.jpg",
+        "assets/catalog/g939-wired/image-03.jpg",
+        "assets/catalog/g939-wired/image-04.jpg",
+        "assets/catalog/g939-wired/image-05.jpg",
+        "assets/catalog/g939-wired/image-06.jpg"
+      ]
+    },
+    {
+      "model": "G923",
+      "folder": "g923-wired",
+      "category": "wired",
+      "name": "RGB Wired Gaming Headset",
+      "page": "gaming-headsets/g923-wired/",
+      "inquiryKey": "g923-wired",
+      "inquiryLabel": "G923 RGB Wired Gaming Headset",
+      "indexable": true,
+      "overview": "Compare the wired G923 by its supplied images, microphone specifications and listed speaker setup. Confirm the audio connector and final cable set for your intended devices.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.4 K ohms"
+        ],
+        [
+          "Speaker setup",
+          "52 mm high-fidelity speaker"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g923-wired/image-01.jpg",
+        "assets/catalog/g923-wired/image-02.jpg",
+        "assets/catalog/g923-wired/image-03.jpg",
+        "assets/catalog/g923-wired/image-04.jpg"
+      ]
+    },
+    {
+      "model": "G941",
+      "folder": "g941-wired",
+      "category": "wired",
+      "name": "Wired Gaming Visual Candidate",
+      "page": "gaming-headsets/g941-wired/",
+      "inquiryKey": "g941-wired",
+      "inquiryLabel": "G941 Wired Gaming Visual Candidate",
+      "indexable": false,
+      "overview": "This G941 wired reference is an early-stage visual candidate. The configuration and availability are not approved for quotation; ask for the current details before treating it as a sale-ready version.",
+      "specifications": [],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g941-wired/image-01.jpg",
+        "assets/catalog/g941-wired/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G920",
+      "folder": "g920-wired",
+      "category": "wired",
+      "name": "Wired Gaming Headset",
+      "page": "gaming-headsets/g920-wired/",
+      "inquiryKey": "g920-wired",
+      "inquiryLabel": "G920 Wired Gaming Headset",
+      "indexable": false,
+      "overview": "This is the wired G920 reference, kept separate from G920 wireless. Review the visible headset and cable layout, then request the current specification sheet for the version you need.",
+      "specifications": [],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g920-wired/image-01.jpg",
+        "assets/catalog/g920-wired/image-02.jpg",
+        "assets/catalog/g920-wired/image-03.jpg",
+        "assets/catalog/g920-wired/image-04.jpg"
+      ]
+    },
+    {
+      "model": "G926",
+      "folder": "g926-wired",
+      "category": "wired",
+      "name": "Wired Gaming Headset",
+      "page": "gaming-headsets/g926-wired/",
+      "inquiryKey": "g926-wired",
+      "inquiryLabel": "G926 Wired Gaming Headset",
+      "indexable": false,
+      "overview": "Review the wired G926 without carrying over wireless battery or receiver specifications. The supplied images are a starting point; the exact cable, microphone and included set need confirmation.",
+      "specifications": [],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g926-wired/image-01.jpg",
+        "assets/catalog/g926-wired/image-02.jpg",
+        "assets/catalog/g926-wired/image-03.jpg",
+        "assets/catalog/g926-wired/image-04.jpg"
+      ]
+    },
+    {
+      "model": "G921",
+      "folder": "g921-wired",
+      "category": "wired",
+      "name": "Wired Gaming Headset",
+      "page": "gaming-headsets/g921-wired/",
+      "inquiryKey": "g921-wired",
+      "inquiryLabel": "G921 Wired Gaming Headset",
+      "indexable": true,
+      "overview": "Compare the wired G921 with its listed speaker and microphone setup. Review the supplied finish and connection references before choosing a sample for your range.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.3 K ohms"
+        ],
+        [
+          "Speaker setup",
+          "52 mm high-fidelity speaker"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g921-wired/image-01.jpg",
+        "assets/catalog/g921-wired/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G919",
+      "folder": "g919-wired",
+      "category": "wired",
+      "name": "Wired Gaming Headset",
+      "page": "gaming-headsets/g919-wired/",
+      "inquiryKey": "g919-wired",
+      "inquiryLabel": "G919 Wired Gaming Headset",
+      "indexable": true,
+      "overview": "Review G919 as a wired headset option using its supplied product views and listed speaker setup. Confirm the audio route, microphone and packing list with the selected sample.",
+      "specifications": [
+        [
+          "Interface",
+          "3.5 mm + USB"
+        ],
+        [
+          "Microphone response",
+          "50 - 16000 Hz"
+        ],
+        [
+          "Microphone sensitivity",
+          "-45 dB +/- 3 dB"
+        ],
+        [
+          "Microphone impedance",
+          "<=2.3 K ohms"
+        ],
+        [
+          "Speaker setup",
+          "50 mm high-fidelity speaker"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g919-wired/image-01.jpg",
+        "assets/catalog/g919-wired/image-02.jpg"
+      ]
+    },
+    {
+      "model": "G909",
+      "folder": "g909-wired",
+      "category": "wired",
+      "name": "Wired Gaming Headset",
+      "page": "gaming-headsets/g909-wired/",
+      "inquiryKey": "g909-wired",
+      "inquiryLabel": "G909 Wired Gaming Headset",
+      "indexable": false,
+      "overview": "The G909 wired reference currently has one product image and limited confirmed data. Use it to identify your interest, then request specifications and further views before sample approval.",
+      "specifications": [],
+      "conflicts": [],
+      "notes": [],
+      "assets": [
+        "assets/catalog/g909-wired/image-01.jpg"
+      ]
+    },
+    {
+      "model": "TWS042S",
+      "folder": "tws-tws042s",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws042s/",
+      "inquiryKey": "tws-tws042s",
+      "inquiryLabel": "TWS042S ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS042S anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "Blueturm 5636E"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "600mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 35 Hours"
+        ],
+        [
+          "Driver diameter",
+          "6mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws042s/image-01.jpg",
+        "assets/catalog/tws-tws042s/image-02.jpg"
+      ]
+    },
+    {
+      "model": "TWS057",
+      "folder": "tws-tws057",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws057/",
+      "inquiryKey": "tws-tws057",
+      "inquiryLabel": "TWS057 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS057 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws057/image-01.jpg",
+        "assets/catalog/tws-tws057/image-02.jpg",
+        "assets/catalog/tws-tws057/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS029",
+      "folder": "tws-tws029",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws029/",
+      "inquiryKey": "tws-tws029",
+      "inquiryLabel": "TWS029 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS029 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "50mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 7 Hours"
+        ],
+        [
+          "Driver diameter",
+          "12mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws029/image-01.jpg",
+        "assets/catalog/tws-tws029/image-02.jpg"
+      ]
+    },
+    {
+      "model": "TWS035",
+      "folder": "tws-tws035",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws035/",
+      "inquiryKey": "tws-tws035",
+      "inquiryLabel": "TWS035 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS035 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws035/image-01.jpg",
+        "assets/catalog/tws-tws035/image-02.jpg",
+        "assets/catalog/tws-tws035/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS031",
+      "folder": "tws-tws031",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws031/",
+      "inquiryKey": "tws-tws031",
+      "inquiryLabel": "TWS031 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS031 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws031/image-01.jpg"
+      ]
+    },
+    {
+      "model": "TWS040",
+      "folder": "tws-tws040",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws040/",
+      "inquiryKey": "tws-tws040",
+      "inquiryLabel": "TWS040 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS040 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws040/image-01.jpg"
+      ]
+    },
+    {
+      "model": "TWS044",
+      "folder": "tws-tws044",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws044/",
+      "inquiryKey": "tws-tws044",
+      "inquiryLabel": "TWS044 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS044 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws044/image-01.jpg",
+        "assets/catalog/tws-tws044/image-02.jpg",
+        "assets/catalog/tws-tws044/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS008",
+      "folder": "tws-tws008",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws008/",
+      "inquiryKey": "tws-tws008",
+      "inquiryLabel": "TWS008 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS008 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws008/image-01.jpg",
+        "assets/catalog/tws-tws008/image-02.jpg",
+        "assets/catalog/tws-tws008/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS052",
+      "folder": "tws-tws052",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws052/",
+      "inquiryKey": "tws-tws052",
+      "inquiryLabel": "TWS052 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS052 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws052/image-01.jpg",
+        "assets/catalog/tws-tws052/image-02.jpg",
+        "assets/catalog/tws-tws052/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWSZ10",
+      "folder": "tws-twsz10",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/twsz10/",
+      "inquiryKey": "tws-twsz10",
+      "inquiryLabel": "TWSZ10 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWSZ10 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7003"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-twsz10/image-01.jpg"
+      ]
+    },
+    {
+      "model": "TWS056",
+      "folder": "tws-tws056",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws056/",
+      "inquiryKey": "tws-tws056",
+      "inquiryLabel": "TWS056 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS056 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "250mAh"
+        ],
+        [
+          "Earbud battery",
+          "33mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws056/image-01.jpg",
+        "assets/catalog/tws-tws056/image-02.jpg",
+        "assets/catalog/tws-tws056/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS058",
+      "folder": "tws-tws058",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws058/",
+      "inquiryKey": "tws-tws058",
+      "inquiryLabel": "TWS058 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS058 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "AB5696"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "250mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws058/image-01.jpg",
+        "assets/catalog/tws-tws058/image-02.jpg",
+        "assets/catalog/tws-tws058/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS059",
+      "folder": "tws-tws059",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws059/",
+      "inquiryKey": "tws-tws059",
+      "inquiryLabel": "TWS059 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS059 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "AB5726E"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "380mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 25 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws059/image-01.jpg",
+        "assets/catalog/tws-tws059/image-02.jpg",
+        "assets/catalog/tws-tws059/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS007",
+      "folder": "tws-tws007",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws007/",
+      "inquiryKey": "tws-tws007",
+      "inquiryLabel": "TWS007 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS007 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "Blueturm5656C"
+        ],
+        [
+          "Bluetooth",
+          "V5.4"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "380mAh"
+        ],
+        [
+          "Earbud battery",
+          "40mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "6mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws007/image-01.jpg",
+        "assets/catalog/tws-tws007/image-02.jpg",
+        "assets/catalog/tws-tws007/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS019",
+      "folder": "tws-tws019",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws019/",
+      "inquiryKey": "tws-tws019",
+      "inquiryLabel": "TWS019 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS019 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "AB5756"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "200mAh"
+        ],
+        [
+          "Earbud battery",
+          "28mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws019/image-01.jpg"
+      ]
+    },
+    {
+      "model": "TWS005",
+      "folder": "tws-tws005",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws005/",
+      "inquiryKey": "tws-tws005",
+      "inquiryLabel": "TWS005 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS005 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL6983D2"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws005/image-01.jpg",
+        "assets/catalog/tws-tws005/image-02.jpg"
+      ]
+    },
+    {
+      "model": "TWS002",
+      "folder": "tws-tws002",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws002/",
+      "inquiryKey": "tws-tws002",
+      "inquiryLabel": "TWS002 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS002 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL6983D2"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "250mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws002/image-01.jpg",
+        "assets/catalog/tws-tws002/image-02.jpg"
+      ]
+    },
+    {
+      "model": "TWS016",
+      "folder": "tws-tws016",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws016/",
+      "inquiryKey": "tws-tws016",
+      "inquiryLabel": "TWS016 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS016 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "AB5756"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "180mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws016/image-01.jpg"
+      ]
+    },
+    {
+      "model": "OWS103",
+      "folder": "tws-ows-103",
+      "category": "tws",
+      "name": "Open-Ear Wireless Earbuds",
+      "page": "tws-earbuds/ows-103/",
+      "inquiryKey": "tws-ows-103",
+      "inquiryLabel": "OWS103 Open-Ear Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review OWS103 open-ear wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "Blueturm5656C"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "35mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 30 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-ows-103/image-01.jpg"
+      ]
+    },
+    {
+      "model": "TWS012",
+      "folder": "tws-tws012",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws012/",
+      "inquiryKey": "tws-tws012",
+      "inquiryLabel": "TWS012 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS012 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "Blueturm5756C"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "300mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws012/image-01.jpg",
+        "assets/catalog/tws-tws012/image-02.jpg",
+        "assets/catalog/tws-tws012/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS013",
+      "folder": "tws-tws013",
+      "category": "tws",
+      "name": "ANC / Basic True Wireless Earbuds",
+      "page": "tws-earbuds/tws013/",
+      "inquiryKey": "tws-tws013",
+      "inquiryLabel": "TWS013 ANC / Basic True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS013 anc / basic true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Model",
+          "TWS013 / TWS013-ANC"
+        ],
+        [
+          "Chipset",
+          "AB5756C basic version / AB5726E ANC version"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "380mAh"
+        ],
+        [
+          "Earphone battery",
+          "30mAh"
+        ],
+        [
+          "Talk time",
+          "About 25 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws013/image-01.jpg",
+        "assets/catalog/tws-tws013/image-02.jpg",
+        "assets/catalog/tws-tws013/image-03.jpg",
+        "assets/catalog/tws-tws013/image-04.jpg",
+        "assets/catalog/tws-tws013/image-05.jpg"
+      ]
+    },
+    {
+      "model": "TWS070",
+      "folder": "tws-tws070",
+      "category": "tws",
+      "name": "ANC True Wireless Earbuds",
+      "page": "tws-earbuds/tws070/",
+      "inquiryKey": "tws-tws070",
+      "inquiryLabel": "TWS070 ANC True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS070 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL7103"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "230mAh"
+        ],
+        [
+          "Earbud battery",
+          "30mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws070/image-01.jpg",
+        "assets/catalog/tws-tws070/image-02.jpg",
+        "assets/catalog/tws-tws070/image-03.jpg"
+      ]
+    },
+    {
+      "model": "TWS017",
+      "folder": "tws-tws017",
+      "category": "tws",
+      "name": "True Wireless Earbuds",
+      "page": "tws-earbuds/tws017/",
+      "inquiryKey": "tws-tws017",
+      "inquiryLabel": "TWS017 True Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review TWS017 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "AB5756"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "200mAh"
+        ],
+        [
+          "Earbud battery",
+          "25mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 20 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ],
+        [
+          "Impedance",
+          "32 ohms"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-tws017/image-01.jpg"
+      ]
+    },
+    {
+      "model": "OWS035",
+      "folder": "tws-ows-035",
+      "category": "tws",
+      "name": "Open-Ear Wireless Earbuds",
+      "page": "tws-earbuds/ows-035/",
+      "inquiryKey": "tws-ows-035",
+      "inquiryLabel": "OWS035 Open-Ear Wireless Earbuds",
+      "indexable": true,
+      "overview": "Review OWS035 open-ear wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "JL6983D4"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Charging case battery",
+          "500mAh"
+        ],
+        [
+          "Earbud battery",
+          "40mAh"
+        ],
+        [
+          "Playback / talk time",
+          "About 10 Hours"
+        ],
+        [
+          "Driver diameter",
+          "13mm"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-ows-035/image-01.jpg",
+        "assets/catalog/tws-ows-035/image-02.jpg",
+        "assets/catalog/tws-ows-035/image-03.jpg"
+      ]
+    },
+    {
+      "model": "BCH002",
+      "folder": "tws-bch-002",
+      "category": "tws",
+      "name": "Bone Conduction Headphones",
+      "page": "tws-earbuds/bch-002/",
+      "inquiryKey": "tws-bch-002",
+      "inquiryLabel": "BCH002 Bone Conduction Headphones",
+      "indexable": true,
+      "overview": "Review BCH002 bone conduction headphones with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "specifications": [
+        [
+          "Chipset",
+          "AB5656D"
+        ],
+        [
+          "Bluetooth",
+          "V6.0"
+        ],
+        [
+          "Operation distance",
+          "About 10M"
+        ],
+        [
+          "Playback / talk time",
+          "About 5Hours"
+        ],
+        [
+          "Driver diameter",
+          "16mm"
+        ],
+        [
+          "Impedance",
+          "8 ohms Driver sensitivity ： :100dB+/-3dB(at 1KHz)，1mW"
+        ]
+      ],
+      "conflicts": [],
+      "notes": [
+        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+      ],
+      "assets": [
+        "assets/catalog/tws-bch-002/image-01.jpg"
+      ]
+    }
+  ]
+}

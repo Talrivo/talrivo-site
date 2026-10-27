@@ -1,0 +1,44 @@
+.model-page .model-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.model-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.model-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f7f8f6;
+}
+
+.model-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.model-page #product-images,
+.model-page #specifications,
+.model-page #device-connections,
+.model-page #accessory-set,
+.model-page #sample-check {
+  scroll-margin-top: 8rem;
+}
+
+.model-page .model-status {
+  border-left: 3px solid #147b74;
+  padding: 0.75rem 1rem;
+}
+
+@media (max-width: 760px) {
+  .model-page .model-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -113,9 +113,9 @@ const detailLibrary = {
     oem: "Recommended for color and packaging customization after sample confirmation."
   },
   "G939-wireless": {
-    highlights: ["RGB dynamic running light", "Plug-in microphone with stainless-steel support", "Cool string appearance and lightweight structure", "Wireless gaming configuration with long playback profile"],
-    technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
-    fit: "Suitable for wireless gaming lines that need a visually active RGB model and reliable specification story.",
+    highlights: ["White finish with silver mesh earcups", "50mm driver listed in the latest supplied G939 specification", "2.4GHz USB receiver with a USB-C adapter pictured", "Over-ear cushions and flexible boom microphone"],
+    technical: [["Connection", "2.4GHz USB receiver; not Bluetooth pairing"], ["Driver", "50 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
+    fit: "For gaming ranges that need a white wireless option. Confirm receiver compatibility, microphone input and the exact accessory set on the selected sample.",
     oem: "Can support private-label visual matching and channel-specific model selection."
   },
   "G927-wireless": {

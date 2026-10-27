@@ -160,6 +160,9 @@ function validateContactTracking() {
 function validateCatalogueRoutes() {
   const context = { window: {} };
   runInNewContext(readFileSync(join(root, 'catalog.js'), 'utf8'), context);
+  const review = JSON.parse(readFileSync(join(root, 'content/model-page-reviews.json'), 'utf8'));
+  const pending = new Set(review.models.filter(model => !model.indexable).map(model => model.folder));
+  const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
   for (const product of context.window.talrivoCatalog || []) {
     if (!product.page) continue;
     const page = join(root, product.page, 'index.html');
@@ -171,8 +174,13 @@ function validateCatalogueRoutes() {
     if (!html.includes(`href="https://talrivo.com/${product.page}"`)) {
       errors.push(`catalog.js ${product.folder} does not point to its canonical page`);
     }
-    if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) {
+    const noindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
+    const approvedPending = product.pageStatus === 'specification-pending' && pending.has(product.folder);
+    if (noindex && !approvedPending) {
       errors.push(`catalog.js ${product.folder} points to a noindex page`);
+    }
+    if (approvedPending && (!noindex || sitemap.includes(`https://talrivo.com/${product.page}`))) {
+      errors.push(`catalog.js ${product.folder} pending reference must remain noindex and outside the sitemap`);
     }
   }
 }

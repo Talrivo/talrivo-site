@@ -1,0 +1,1120 @@
+{
+  "g942-wireless": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1089
+      },
+      {
+        "width": 1600,
+        "height": 1089
+      },
+      {
+        "width": 1600,
+        "height": 1089
+      },
+      {
+        "width": 1600,
+        "height": 1089
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g942-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g942-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g923-wireless": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1103
+      },
+      {
+        "width": 1600,
+        "height": 1103
+      },
+      {
+        "width": 1600,
+        "height": 1103
+      },
+      {
+        "width": 1600,
+        "height": 1103
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g923-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g923-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g920-wireless": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1103
+      },
+      {
+        "width": 1600,
+        "height": 1103
+      },
+      {
+        "width": 1600,
+        "height": 1103
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g920-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g920-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g939-wireless": {
+    "assets": [
+      {
+        "width": 1448,
+        "height": 1086,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-hero-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-hero-960.webp",
+            "width": 960
+          }
+        ]
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-2-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-2-960.webp",
+            "width": 960
+          }
+        ]
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-3-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-3-960.webp",
+            "width": 960
+          }
+        ]
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-4-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-4-960.webp",
+            "width": 960
+          }
+        ]
+      },
+      {
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-5-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-5-960.webp",
+            "width": 960
+          }
+        ]
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-6-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g939-wireless-view-6-960.webp",
+            "width": 960
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g939-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g939-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g927-wireless": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1199
+      },
+      {
+        "width": 1600,
+        "height": 1199
+      },
+      {
+        "width": 1600,
+        "height": 1199
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g927-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g927-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g921-wireless": {
+    "assets": [
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g921-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g921-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g919-wireless": {
+    "assets": [
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g919-wireless-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g919-wireless-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g942-wired": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1089
+      },
+      {
+        "width": 1600,
+        "height": 1089
+      },
+      {
+        "width": 1600,
+        "height": 1089
+      },
+      {
+        "width": 1600,
+        "height": 1090
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g942-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g942-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g935-wired": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1128
+      },
+      {
+        "width": 1600,
+        "height": 1129
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g935-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g935-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g936-wired": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1128
+      },
+      {
+        "width": 1600,
+        "height": 1129
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g936-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g936-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g939-wired": {
+    "assets": [
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g939-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g939-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g923-wired": {
+    "assets": [
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      },
+      {
+        "width": 1400,
+        "height": 965
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g923-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g923-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g941-wired": {
+    "assets": [
+      {
+        "width": 1400,
+        "height": 953
+      },
+      {
+        "width": 1400,
+        "height": 953
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g941-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g941-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g920-wired": {
+    "assets": [
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g920-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g920-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g926-wired": {
+    "assets": [
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "width": 2500,
+        "height": 2500
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g926-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g926-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g921-wired": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g921-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g921-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g919-wired": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g919-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g919-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "g909-wired": {
+    "assets": [
+      {
+        "width": 2500,
+        "height": 2500
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/g909-wired-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/g909-wired-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws042s": {
+    "assets": [
+      {
+        "width": 616,
+        "height": 557
+      },
+      {
+        "width": 1001,
+        "height": 980
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws042s-hero-308.webp",
+        "width": 308
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws042s-hero-616.webp",
+        "width": 616
+      }
+    ]
+  },
+  "tws-tws057": {
+    "assets": [
+      {
+        "width": 1087,
+        "height": 789
+      },
+      {
+        "width": 944,
+        "height": 641
+      },
+      {
+        "width": 925,
+        "height": 578
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws057-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws057-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws029": {
+    "assets": [
+      {
+        "width": 1235,
+        "height": 648
+      },
+      {
+        "width": 1581,
+        "height": 992
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws029-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws029-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws035": {
+    "assets": [
+      {
+        "width": 1583,
+        "height": 891
+      },
+      {
+        "width": 954,
+        "height": 537
+      },
+      {
+        "width": 864,
+        "height": 486
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws035-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws035-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws031": {
+    "assets": [
+      {
+        "width": 1060,
+        "height": 927
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws031-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws031-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws040": {
+    "assets": [
+      {
+        "width": 932,
+        "height": 711
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws040-hero-466.webp",
+        "width": 466
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws040-hero-932.webp",
+        "width": 932
+      }
+    ]
+  },
+  "tws-tws044": {
+    "assets": [
+      {
+        "width": 661,
+        "height": 683
+      },
+      {
+        "width": 604,
+        "height": 734
+      },
+      {
+        "width": 625,
+        "height": 645
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws044-hero-330.webp",
+        "width": 330
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws044-hero-661.webp",
+        "width": 661
+      }
+    ]
+  },
+  "tws-tws008": {
+    "assets": [
+      {
+        "width": 1800,
+        "height": 1047
+      },
+      {
+        "width": 949,
+        "height": 552
+      },
+      {
+        "width": 858,
+        "height": 499
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws008-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws008-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws052": {
+    "assets": [
+      {
+        "width": 1187,
+        "height": 895
+      },
+      {
+        "width": 975,
+        "height": 694
+      },
+      {
+        "width": 1092,
+        "height": 800
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws052-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws052-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-twsz10": {
+    "assets": [
+      {
+        "width": 1407,
+        "height": 1008
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-twsz10-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-twsz10-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws056": {
+    "assets": [
+      {
+        "width": 804,
+        "height": 804
+      },
+      {
+        "width": 663,
+        "height": 663
+      },
+      {
+        "width": 604,
+        "height": 604
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws056-hero-402.webp",
+        "width": 402
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws056-hero-804.webp",
+        "width": 804
+      }
+    ]
+  },
+  "tws-tws058": {
+    "assets": [
+      {
+        "width": 969,
+        "height": 1041
+      },
+      {
+        "width": 488,
+        "height": 571
+      },
+      {
+        "width": 492,
+        "height": 553
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws058-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws058-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws059": {
+    "assets": [
+      {
+        "width": 1193,
+        "height": 844
+      },
+      {
+        "width": 733,
+        "height": 518
+      },
+      {
+        "width": 650,
+        "height": 460
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws059-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws059-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws007": {
+    "assets": [
+      {
+        "width": 628,
+        "height": 577
+      },
+      {
+        "width": 490,
+        "height": 490
+      },
+      {
+        "width": 484,
+        "height": 411
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws007-hero-314.webp",
+        "width": 314
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws007-hero-628.webp",
+        "width": 628
+      }
+    ]
+  },
+  "tws-tws019": {
+    "assets": [
+      {
+        "width": 439,
+        "height": 490
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws019-hero-219.webp",
+        "width": 219
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws019-hero-439.webp",
+        "width": 439
+      }
+    ]
+  },
+  "tws-tws005": {
+    "assets": [
+      {
+        "width": 1033,
+        "height": 646
+      },
+      {
+        "width": 1050,
+        "height": 656
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws005-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws005-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws002": {
+    "assets": [
+      {
+        "width": 720,
+        "height": 844
+      },
+      {
+        "width": 961,
+        "height": 835
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws002-hero-360.webp",
+        "width": 360
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws002-hero-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "tws-tws016": {
+    "assets": [
+      {
+        "width": 448,
+        "height": 373
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws016-hero-224.webp",
+        "width": 224
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws016-hero-448.webp",
+        "width": 448
+      }
+    ]
+  },
+  "tws-ows-103": {
+    "assets": [
+      {
+        "width": 1000,
+        "height": 1000
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-ows-103-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-ows-103-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws012": {
+    "assets": [
+      {
+        "width": 798,
+        "height": 697
+      },
+      {
+        "width": 592,
+        "height": 550
+      },
+      {
+        "width": 680,
+        "height": 669
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws012-hero-399.webp",
+        "width": 399
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws012-hero-798.webp",
+        "width": 798
+      }
+    ]
+  },
+  "tws-tws013": {
+    "assets": [
+      {
+        "width": 1600,
+        "height": 1131
+      },
+      {
+        "width": 1600,
+        "height": 1131
+      },
+      {
+        "width": 1600,
+        "height": 1131
+      },
+      {
+        "width": 1600,
+        "height": 1131
+      },
+      {
+        "width": 1600,
+        "height": 1131
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws013-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws013-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-tws070": {
+    "assets": [
+      {
+        "width": 922,
+        "height": 922
+      },
+      {
+        "width": 700,
+        "height": 700
+      },
+      {
+        "width": 676,
+        "height": 676
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws070-hero-461.webp",
+        "width": 461
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws070-hero-922.webp",
+        "width": 922
+      }
+    ]
+  },
+  "tws-tws017": {
+    "assets": [
+      {
+        "width": 963,
+        "height": 778
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-tws017-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-tws017-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-ows-035": {
+    "assets": [
+      {
+        "width": 1112,
+        "height": 667
+      },
+      {
+        "width": 535,
+        "height": 311
+      },
+      {
+        "width": 524,
+        "height": 303
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-ows-035-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-ows-035-hero-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "tws-bch-002": {
+    "assets": [
+      {
+        "width": 1200,
+        "height": 916
+      }
+    ],
+    "variants": [
+      {
+        "path": "assets/responsive/model-pages/tws-bch-002-hero-480.webp",
+        "width": 480
+      },
+      {
+        "path": "assets/responsive/model-pages/tws-bch-002-hero-960.webp",
+        "width": 960
+      }
+    ]
+  }
+}
