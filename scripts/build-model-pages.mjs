@@ -44,7 +44,7 @@ function render(model) {
   if (tws && !model.faqs) faqs.push({ question: `Is the listed ${model.model} runtime earbud-only playback?`, answer: 'Do not assume so. Confirm whether a listed playback or talk-time figure refers to a single charge or charging-case-assisted use, and whether ANC is on or off. The catalogue figure is not a new runtime test.' });
   const schemas = [
     { '@context': 'https://schema.org', '@type': 'WebPage', name, url: canonical, description,
-      dateModified: review.date, image: `https://talrivo.com/${model.assets[0]}`,
+      dateModified: model.dateModified || review.date, image: `https://talrivo.com/${model.assets[0]}`,
       isPartOf: { '@type': 'WebSite', name: 'TALRIVO', url: 'https://talrivo.com/' } },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(item => ({
       '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) },

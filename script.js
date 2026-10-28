@@ -101,9 +101,9 @@ const detailLibrary = {
     oem: "Recommended for private-label packaging, retail kit planning, and model comparison during sample selection."
   },
   "G920-wireless": {
-    highlights: ["RGB dynamic running light", "Aluminum fork arm and full-coverage earcups", "Plug-in microphone for gaming communication", "Single-headband gaming structure"],
+    highlights: ["Black and red finish with red headband stitching", "Over-ear cushions and boom microphone", "2.4GHz USB receiver and USB-C adapter pictured", "Exact accessory set and target-device behavior to confirm on sample"],
     technical: [["Driver", "40 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
-    fit: "Suitable for value-focused wireless gaming assortments that still need RGB styling and long-use battery appeal.",
+    fit: "For gaming ranges that need a black and red wireless option. Check the selected receiver, microphone input and exact accessory set on your target devices.",
     oem: "Useful for regional channel bundles and branded packaging projects."
   },
   "G936-wireless": {

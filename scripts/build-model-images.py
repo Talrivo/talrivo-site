@@ -36,7 +36,7 @@ def main():
                         role = "hero" if index == 0 else f"view-{index + 1}"
                         target = output / f"{model['folder']}-{role}-{width}.webp"
                         image.resize((width, height), Image.Resampling.LANCZOS).save(
-                            target, "WEBP", quality=85, method=6)
+                            target, "WEBP", quality=model.get("imageQuality", 85), method=6)
                         variants.append({"path": str(target.relative_to(ROOT)), "width": width})
                     if index == 0:
                         hero_variants = variants

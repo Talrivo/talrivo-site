@@ -62,16 +62,46 @@
   "g920-wireless": {
     "assets": [
       {
-        "width": 1600,
-        "height": 1103
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g920-wireless-hero-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g920-wireless-hero-960.webp",
+            "width": 960
+          }
+        ]
       },
       {
-        "width": 1600,
-        "height": 1103
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g920-wireless-view-2-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g920-wireless-view-2-960.webp",
+            "width": 960
+          }
+        ]
       },
       {
-        "width": 1600,
-        "height": 1103
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "path": "assets/responsive/model-pages/g920-wireless-view-3-480.webp",
+            "width": 480
+          },
+          {
+            "path": "assets/responsive/model-pages/g920-wireless-view-3-960.webp",
+            "width": 960
+          }
+        ]
       }
     ],
     "variants": [

@@ -95,16 +95,16 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Gaming product direction with product demonstration footage available for review.",
+    "summary": "Black and red wireless gaming headset with a boom microphone and 2.4GHz USB receiver pictured.",
     "specs": [
-      "2.4 GHz configuration",
-      "40 mm driver option",
-      "Video candidate available"
+      "2.4GHz USB receiver",
+      "Black and red finish",
+      "Over-ear cushions and boom microphone"
     ],
     "images": [
-      "image-01.jpg",
-      "image-02.jpg",
-      "image-03.jpg"
+      "creative/g920-product-presentation.webp",
+      "creative/g920-use-scenes-illustration.webp",
+      "creative/g920-device-connections-illustration.webp"
     ],
     "folder": "g920-wireless",
     "page": "gaming-headsets/g920-wireless/",

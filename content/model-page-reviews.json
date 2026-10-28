@@ -109,7 +109,19 @@
       "inquiryKey": "g920-wireless",
       "inquiryLabel": "G920 Wireless Gaming Headset",
       "indexable": true,
-      "overview": "G920 gives buyers another receiver-based gaming headset to compare. Use this page to review its supplied images and listed sample data without mixing it with the wired G920 version.",
+      "dateModified": "2026-10-28",
+      "source": "Three revised G920 graphics supplied by the user and approved for use on 2026-10-28. Technical figures remain the existing catalogue references, not a new engineering test.",
+      "title": "Black and Red Wireless Gaming Headset | G920 | TALRIVO",
+      "heading": "Black and Red Wireless Gaming Headset",
+      "eyebrow": "G920 / 2.4GHz receiver / OEM samples",
+      "description": "Looking for a black and red wireless gaming headset? See G920 product and fit views, its 2.4GHz USB receiver and device connection notes. Ask about OEM samples.",
+      "overview": "Want a black and red option for your gaming range? G920 combines red frame accents and headband stitching with over-ear cushions, a boom microphone and a 2.4GHz USB receiver. See the headset on its own, then compare the illustrated gaming and streaming setups. Tell us which devices you want to support before choosing a sample.",
+      "responsiveGallery": true,
+      "cataloguePreviews": true,
+      "imageQuality": 78,
+      "galleryIntro": "Three revised graphics show the black and red finish, illustrated use scenes and target-device examples. Scene lighting and logo artwork are illustrative, not proof of headset lighting, a finished brand design or completed performance tests.",
+      "specificationHeading": "Listed G920 wireless specifications",
+      "specificationIntro": "The product graphics are new; the figures below remain existing catalogue references. Confirm the selected sample and current specification sheet before ordering.",
       "specifications": [
         [
           "Driver",
@@ -141,11 +153,39 @@
         ]
       ],
       "conflicts": [],
-      "notes": [],
+      "notes": [
+        "The listed playback time is approximately 50 hours with lights off. It is not a new battery test, and actual runtime depends on volume and use.",
+        "The listed 20ms latency is not a zero-delay claim or a measurement of every device connection."
+      ],
       "assets": [
-        "assets/catalog/g920-wireless/image-01.jpg",
-        "assets/catalog/g920-wireless/image-02.jpg",
-        "assets/catalog/g920-wireless/image-03.jpg"
+        "assets/catalog/g920-wireless/creative/g920-product-presentation.png",
+        "assets/catalog/g920-wireless/creative/g920-use-scenes-illustration.png",
+        "assets/catalog/g920-wireless/creative/g920-device-connections-illustration.png"
+      ],
+      "assetDescriptions": [
+        { "alt": "G920 black and red wireless gaming headset with boom microphone, USB receiver and adapter", "caption": "Black and red product view with receiver and adapter pictured. Confirm the exact included set with your selected sample." },
+        { "alt": "G920 illustrated use scenes for PC gaming, streaming, casual play and team chat", "caption": "Illustrated use scenes show the fit and product style, not customer photos or a microphone test. Visual glow is not a headset lighting specification." },
+        { "alt": "G920 target-device diagram with PC, laptop, consoles, mobile devices and USB receiver adapter", "caption": "Target-device examples, not universal compatibility. Check the receiver, USB-C adapter, USB audio support and microphone input on your exact device. Logo artwork is illustrative." }
+      ],
+      "sections": [
+        {
+          "id": "device-connections",
+          "label": "Device connections",
+          "heading": "Choose the receiver connection for your devices",
+          "intro": "The supplied diagram illustrates target devices. A USB socket alone does not establish USB audio support, and playback and microphone input need separate checks.",
+          "items": [
+            { "label": "PC and laptop", "text": "Use the 2.4GHz USB receiver with a supported USB audio host. For USB-C ports, confirm the pictured adapter and check both headphone output and microphone input." },
+            { "label": "PS5, PS4 and Switch", "text": "Confirm the exact console, receiver connection and dock or handheld setup. Check in-game microphone behavior on the sample rather than assuming every game works the same way." },
+            { "label": "Phone and tablet", "text": "Share the exact model and connector. Confirm USB host audio support and the receiver or adapter. USB-C is a connector type, not proof of Bluetooth pairing or universal compatibility." },
+            { "label": "Included receiver and adapter", "text": "The graphic pictures both parts. Agree the exact accessory list and receiver version before approving the sample or packaging; the image is not an approved packing list." }
+          ]
+        }
+      ],
+      "faqs": [
+        { "question": "Which G920 version is shown here?", "answer": "This page covers the black and red wireless G920, with a 2.4GHz USB receiver pictured. The wired-only G920 has a separate page; do not carry over its cable or accessory details." },
+        { "question": "Does the G920 diagram mean every device is compatible?", "answer": "No. It shows target-device examples. Check the exact device, USB audio host support, receiver or USB-C adapter and microphone input. Bluetooth pairing is not established by this diagram." },
+        { "question": "Are the G920 receiver and adapter standard accessories?", "answer": "The supplied graphic says a wireless receiver is included and pictures a USB-C adapter. Confirm the exact included set for your selected version and order. Pictured parts are not automatically included." },
+        { "question": "Can I ask for a black and red G920 sample?", "answer": "Use the G920-specific sample inquiry and share your target devices, market and branding needs. Review the headset, microphone, receiver and agreed accessory list before approving packaging artwork." }
       ]
     },
     {
