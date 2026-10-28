@@ -58,7 +58,7 @@ assert.doesNotMatch(modal, /40 mm|RGB dynamic running light/);
 const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
 const page = schemas.find(item => item['@type'] === 'WebPage');
-assert.equal(page.dateModified, '2026-10-27');
+assert.equal(page.dateModified, '2026-10-28');
 assert.equal(page.image, `https://talrivo.com/${model.assets[0]}`);
 assert.equal(schemas.find(item => item['@type'] === 'FAQPage').mainEntity.length, 5);
 assert.ok(readFileSync('llms.txt', 'utf8').includes('White G939 Wireless Gaming Headset'));

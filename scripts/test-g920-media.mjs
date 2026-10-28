@@ -14,7 +14,8 @@ assert.equal(product.images.length, 3);
 assert.match(html, /<title>Black and Red Wireless Gaming Headset \| G920 \| TALRIVO<\/title>/);
 assert.match(html, /href="https:\/\/talrivo\.com\/gaming-headsets\/g920-wireless\/"/);
 assert.match(html, /product=g920-wireless&amp;inquiry=sample#inquiry-form/);
-assert.match(html, /gaming-headsets\/g920-wired\//);
+assert.doesNotMatch(html, /href="\.\.\/\.\.\/gaming-headsets\/g920-wired\/"/,
+  'Do not promote the specification-pending wired version from this product page');
 assert.match(html, /not universal compatibility/);
 assert.match(html, /Pictured parts are not automatically included/);
 assert.match(html, /Visual glow is not a headset lighting specification/);

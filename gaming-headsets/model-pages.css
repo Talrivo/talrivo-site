@@ -4,6 +4,26 @@
   gap: 1.5rem;
 }
 
+.model-page .seo-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.model-page .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.model-page .seo-hero .model-version-link {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+}
+
+.model-page .model-resources {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .model-gallery figure {
   min-width: 0;
   margin: 0;

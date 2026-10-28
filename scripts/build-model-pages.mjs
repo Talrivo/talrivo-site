@@ -27,9 +27,11 @@ function render(model) {
   const canonical = `https://talrivo.com/${model.page}`;
   const contact = `../../contact/?product=${encodeURIComponent(model.inquiryKey)}`;
   const specs = model.specifications;
+  const modified = [review.pageRevisionDate || review.date, model.dateModified || review.date].sort().at(-1);
   const sibling = !tws && catalogue.find(item => item.model === model.model && item.category !== model.category
     && ['wired', 'wireless'].includes(item.category));
-  const siblingPage = sibling && (sibling.page || review.models.find(item => item.folder === sibling.folder)?.page);
+  const siblingPage = sibling && sibling.public !== false && sibling.pageStatus !== 'specification-pending'
+    && (sibling.page || review.models.find(item => item.folder === sibling.folder)?.page);
   const image = imageSizes[model.folder];
   if (!image) throw new Error(`Missing image metadata: ${model.folder}`);
   const hero = image.variants.at(-1);
@@ -44,7 +46,7 @@ function render(model) {
   if (tws && !model.faqs) faqs.push({ question: `Is the listed ${model.model} runtime earbud-only playback?`, answer: 'Do not assume so. Confirm whether a listed playback or talk-time figure refers to a single charge or charging-case-assisted use, and whether ANC is on or off. The catalogue figure is not a new runtime test.' });
   const schemas = [
     { '@context': 'https://schema.org', '@type': 'WebPage', name, url: canonical, description,
-      dateModified: model.dateModified || review.date, image: `https://talrivo.com/${model.assets[0]}`,
+      dateModified: modified, image: `https://talrivo.com/${model.assets[0]}`,
       isPartOf: { '@type': 'WebSite', name: 'TALRIVO', url: 'https://talrivo.com/' } },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(item => ({
       '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) },
@@ -85,7 +87,7 @@ function render(model) {
   <title>${esc(title)}</title>
   <link rel="stylesheet" href="../../styles.css?v=20261019nav">
   <link rel="stylesheet" href="../../gaming-headsets/buyer-product.css?v=20261019a">
-  <link rel="stylesheet" href="../../gaming-headsets/model-pages.css?v=20261027a">
+  <link rel="stylesheet" href="../../gaming-headsets/model-pages.css?v=20261028flow">
   ${schemas.map(schema => `<script type="application/ld+json">${jsonScript(schema)}</script>`).join('\n  ')}
 </head><body>
   <header class="site-header">
@@ -102,10 +104,10 @@ function render(model) {
         ${model.indexable ? '' : '<p class="model-status">Specification confirmation is still needed for this version. Review the images and ask for the current details before sample or order approval.</p>'}
         <nav aria-label="Model details"><a href="#product-images">Product images</a> / <a href="#specifications">Listed details</a>${(model.sections || []).map(section => ` / <a href="#${esc(section.id)}">${esc(section.label)}</a>`).join('')} / <a href="#sample-check">Sample questions</a></nav>
         <div class="hero-actions seo-cta-actions"><a class="button primary" href="${contact}&amp;inquiry=quick-question#inquiry-form">Ask About ${esc(model.model)}</a><a class="button secondary" href="${contact}&amp;inquiry=sample#inquiry-form">${model.indexable ? 'Discuss a Sample' : 'Discuss This Version'}</a></div>
+${siblingPage ? `        <p class="model-version-link">Need the other connection version? <a href="../../${siblingPage}">View ${esc(model.model)} ${sibling.category === 'wired' ? 'wired' : 'wireless'}</a>. Specifications and accessories differ.</p>` : ''}
       </div>
       <img src="../../${hero.path}" srcset="${image.variants.map(item => `../../${item.path} ${item.width}w`).join(', ')}" sizes="(max-width: 820px) calc(100vw - 32px), 560px" alt="${esc(name)} supplied product reference" width="${image.assets[0].width}" height="${image.assets[0].height}" fetchpriority="high" decoding="async">
     </section>
-    ${siblingPage ? `<section class="seo-section"><p class="model-status">Looking for the other connection version? <a href="../../${siblingPage}">View ${esc(model.model)} ${sibling.category === 'wired' ? 'wired' : 'wireless'}</a>. Images, specifications and accessory sets are kept separate.</p></section>` : ''}
     <section class="seo-section" id="product-images">
       <div class="section-heading"><div><p class="label">Product images</p><h2>Take a closer look at ${esc(model.model)}</h2></div><p class="intro">${esc(model.galleryIntro || 'Use the supplied views to identify this model and prepare sample questions. Images are not test reports or an approved packing list.')}</p></div>
       ${imageMarkup}
@@ -125,7 +127,7 @@ ${extraSections}    <section class="seo-section" id="sample-check">
     </section>
     <section class="seo-section seo-faq"><div class="section-heading"><div><p class="label">Product FAQ</p><h2>Questions about ${esc(model.model)}</h2></div></div><div class="seo-grid">${faqs.map(item => `<article><h3>${esc(item.question)}</h3><p>${esc(item.answer)}</p></article>`).join('\n')}</div></section>
     <section class="seo-cta"><h2>Ask about this ${esc(model.model)} version</h2><p>Send your target device, market and model question. A finished RFQ is not needed to start.</p><div class="seo-cta-actions"><a class="button primary" href="${contact}&amp;inquiry=quick-question#inquiry-form">Ask a Product Question</a><a class="email-link" href="mailto:sales@talrivo.com?subject=${encodeURIComponent(name + ' question')}">Email TALRIVO</a></div></section>
-    <section class="seo-section"><div class="link-list"><a href="../../${familyPath}">${esc(family)}</a><a href="../../gaming-headset-models/">Gaming Headset Models</a><a href="../../sample-request/">Sample Request</a><a href="../../oem-odm/">OEM and Private Label</a></div></section>
+    <section class="seo-section model-resources"><nav class="link-list" aria-label="Related product resources"><a href="../../${familyPath}">${esc(family)}</a>${tws ? '' : '<a href="../../gaming-headset-models/">Gaming Headset Models</a>'}<a class="model-sample-link" href="${contact}&amp;inquiry=sample#inquiry-form">${model.indexable ? `Request a ${esc(model.model)} Sample` : `Discuss This ${esc(model.model)} Version`}</a><a href="../../sample-request/">Sample Review Guide</a><a href="../../oem-odm/">OEM and Private Label</a></nav></section>
   </main>
   <footer class="site-footer"><div class="footer-brand"><img src="../../assets/brand/talrivo-wordmark-new-white.png" alt="TALRIVO"><p>Gaming headsets and audio products by TALRIVO.</p></div><div class="footer-links"><a href="../../">Home</a><a href="../../${familyPath}">${esc(family)}</a><a href="${contact}&amp;inquiry=quick-question#inquiry-form">Contact</a></div></footer>
 </body></html>

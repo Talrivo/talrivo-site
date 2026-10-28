@@ -1,5 +1,6 @@
 {
   "date": "2026-10-27",
+  "pageRevisionDate": "2026-10-28",
   "source": "Existing catalog.js records and script.js detailLibrary; no new engineering confirmation",
   "models": [
     {
@@ -11,7 +12,11 @@
       "inquiryKey": "g942-wireless",
       "inquiryLabel": "G942 2.4G Wireless Gaming Headset",
       "indexable": true,
-      "overview": "Compare the G942 wireless version with its wired counterpart before choosing a sample. Review the receiver, microphone and headset views together rather than relying on the model number alone.",
+      "title": "2.4GHz Wireless Gaming Headset for OEM Samples | G942",
+      "heading": "2.4GHz Wireless Gaming Headset for Your Brand",
+      "eyebrow": "G942 / wireless version / OEM samples",
+      "description": "Need a 2.4GHz wireless gaming headset for your brand? Review G942 receiver and microphone views, a listed 1000mAh battery and lights-off runtime before sampling.",
+      "overview": "Need a receiver-based wireless headset for your gaming range? G942 lists a 1000mAh battery and approximately 50 hours of playback with lights off. Review the headset, receiver and microphone views, then tell us which devices your customers use. The wired G942 is a separate version.",
       "specifications": [
         [
           "Frequency response",
@@ -484,7 +489,11 @@
       "inquiryKey": "g935-wired",
       "inquiryLabel": "G935 RGB Wired Gaming Headset",
       "indexable": true,
-      "overview": "This page is for the wired G935, not the wireless version. Review its cable and microphone references, then confirm the selected connection version before ordering a sample.",
+      "title": "Wired Gaming Headset for Your Brand | G935 | TALRIVO",
+      "heading": "Wired Gaming Headset for Your Brand",
+      "eyebrow": "G935 / wired version / OEM samples",
+      "description": "Looking for a wired gaming headset? G935 lists a 3.5mm + USB interface and weighs about 190g. See connector views and ask about a private-label sample.",
+      "overview": "Building a lighter wired gaming range? G935 is listed at approximately 190g, with a 3.5mm plus USB interface. Start with the cable and microphone views, then confirm which connector carries audio on the version you need. This is the wired G935, not the battery-powered wireless model.",
       "specifications": [
         [
           "Interface",
