@@ -300,7 +300,19 @@
       "inquiryKey": "g927-wireless",
       "inquiryLabel": "G927 Wireless Gaming Headset",
       "indexable": true,
-      "overview": "Review the G927 wireless headset and its listed 50mm driver configuration. Check the receiver, microphone position and selected finish before narrowing your gaming headset shortlist.",
+      "dateModified": "2026-10-28",
+      "source": "Six supplied G927 graphics added on 2026-10-28. The separate multi-platform graphic claims Bluetooth and Xbox 3.5mm use; those features are held pending user confirmation. Existing technical figures are not new test results.",
+      "title": "RGB Wireless Gaming Headset, 50mm | G927 | TALRIVO",
+      "heading": "RGB Wireless Gaming Headset with a Rotating Mic",
+      "eyebrow": "G927 / 2.4GHz receiver / OEM samples",
+      "description": "Looking for an RGB wireless gaming headset? See G927's 50mm driver, rotating boom mic, USB receiver and USB-C adapter. Ask about OEM samples.",
+      "overview": "Need an RGB option with a more angular gaming look? G927 combines honeycomb-style earcups, padded over-ear cushions and a rotating boom microphone. A 2.4GHz USB receiver and USB-C adapter are pictured alongside the headset. Review the design, fit and receiver views, then tell us which devices your customers use.",
+      "responsiveGallery": true,
+      "cataloguePreviews": true,
+      "imageQuality": 78,
+      "galleryIntro": "Six supplied graphics show the headset, illustrated gaming and wearing scenes, product details, a packaging concept and USB receiver connections. Lifestyle scenes are illustrations, not customer photos or microphone tests.",
+      "specificationHeading": "Listed 50mm driver and wireless specifications",
+      "specificationIntro": "These figures come from the existing G927 catalogue data. The new graphics show the design and receiver; they do not establish new performance measurements.",
       "specifications": [
         [
           "Driver",
@@ -332,11 +344,54 @@
         ]
       ],
       "conflicts": [],
-      "notes": [],
+      "notes": [
+        "Playback is listed at approximately 50 hours with lights off. Actual runtime depends on volume and use; this is not a new battery test.",
+        "The listed 20ms latency is not a zero-delay claim or an end-to-end measurement for every device."
+      ],
       "assets": [
-        "assets/catalog/g927-wireless/image-01.jpg",
-        "assets/catalog/g927-wireless/image-02.jpg",
-        "assets/catalog/g927-wireless/image-03.jpg"
+        "assets/catalog/g927-wireless/creative/g927-1.png",
+        "assets/catalog/g927-wireless/creative/g927-2.png",
+        "assets/catalog/g927-wireless/creative/g927-3.png",
+        "assets/catalog/g927-wireless/creative/g927-4.png",
+        "assets/catalog/g927-wireless/creative/g927-5.png",
+        "assets/catalog/g927-wireless/creative/g927-6.png"
+      ],
+      "assetDescriptions": [
+        { "alt": "Black G927 RGB wireless gaming headset with boom microphone and USB receiver with USB-C adapter", "caption": "Product and receiver overview. Confirm the selected receiver and included adapter before approving the sample." },
+        { "alt": "G927 RGB headset and illustrated PC gamer showing earcup design and microphone position", "caption": "Angular gaming styling with RGB accents. The wearing scene is illustrative, not a latency or microphone test." },
+        { "alt": "Illustrated G927 wearer with a separate headset reference view", "caption": "Compare the over-ear fit and microphone position. A scene image does not establish comfort or voice performance on every user." },
+        { "alt": "G927 product details showing honeycomb-style shell, RGB accent, cushions, headband and boom microphone", "caption": "A closer look at the earcup finish, cushions, headband and microphone. Review movement and fit on your sample." },
+        { "alt": "G927 packaging concept with headset, USB-A receiver and USB-C adapter pictured", "caption": "Packaging concept, not an approved packing list. Pictured parts are not automatically included; agree the final accessory set and artwork." },
+        { "alt": "G927 USB receiver and USB-C adapter diagram for desktop PC and laptop host connections", "caption": "USB-A and USB-C host connection examples. Confirm USB audio support, playback and microphone input on your exact computer." }
+      ],
+      "sections": [
+        {
+          "id": "device-connections",
+          "label": "USB receiver connections",
+          "heading": "USB-A or USB-C: which port does your customer use?",
+          "intro": "The supplied diagram shows desktop and laptop host connections using the receiver and adapter. A matching connector alone does not prove device compatibility.",
+          "items": [
+            { "label": "Desktop PC with USB-A", "text": "Connect the 2.4GHz USB receiver to a supported USB audio host. Check the selected output device and microphone input separately." },
+            { "label": "Laptop with USB-A or USB-C", "text": "Match the receiver or pictured USB-C adapter to the laptop's port, then test playback, microphone input and reconnect behavior on your sample." },
+            { "label": "Other devices or connection modes", "text": "Tell us the exact console, phone or tablet and required connection. Bluetooth and 3.5mm wired operation are not confirmed by the current catalogue data; do not assume them from an adapter image." }
+          ]
+        },
+        {
+          "id": "accessory-set",
+          "label": "Packaging and accessories",
+          "heading": "Approve the receiver and packing list together",
+          "intro": "The packaging concept shows the headset, USB-A receiver and USB-C adapter. The final accessory list is still to be agreed; no charging cable, manual or retail-box specification is established by this artwork alone.",
+          "items": [
+            { "label": "Receiver and adapter", "text": "Confirm the exact receiver version, adapter and target-device behavior before approving the sample." },
+            { "label": "Your logo and packaging", "text": "Use the box graphic as a design direction. Agree logo placement, colors, manual language, cable set and final packing list before production artwork approval." }
+          ]
+        }
+      ],
+      "faqs": [
+        { "question": "Which G927 connection is documented here?", "answer": "The existing catalogue records 2.4GHz wireless use. The supplied graphics show a USB-A receiver with a USB-C adapter for desktop and laptop hosts. Bluetooth and 3.5mm wired audio remain to be confirmed for the selected version." },
+        { "question": "Does the USB-C adapter mean every device will work?", "answer": "No. USB-C describes the connector. Confirm host USB audio support, the selected receiver or adapter, headphone playback and microphone input on the exact device." },
+        { "question": "Is the G927 package graphic the final packing list?", "answer": "No. It is a packaging concept showing the headset, receiver and adapter. Agree the exact included set and final artwork for your order. Pictured parts are not automatically included." },
+        { "question": "Can I request an RGB G927 sample for my brand?", "answer": "Use the G927-specific inquiry and share your market, target devices and packaging needs. Review the base sample, microphone, receiver and accessory list before approving branding artwork." }
       ]
     },
     {

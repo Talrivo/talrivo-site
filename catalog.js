@@ -158,21 +158,24 @@ window.talrivoCatalog = [
     "name": "Wireless Gaming Headset",
     "category": "wireless",
     "label": "Wireless",
-    "summary": "Wireless gaming visual direction with a 50 mm driver for buyer review.",
+    "summary": "RGB wireless gaming headset with honeycomb-style earcups, rotating boom microphone and a USB receiver with USB-C adapter pictured.",
     "specs": [
-      "2.4 GHz direction",
-      "50 mm driver direction",
-      "Specification sheet on request"
+      "2.4GHz USB receiver",
+      "50 mm driver listed",
+      "RGB accents and rotating boom mic"
     ],
     "images": [
-      "image-01.jpg",
-      "image-02.jpg",
-      "image-03.jpg"
+      "creative/g927-1.webp",
+      "creative/g927-2.webp",
+      "creative/g927-3.webp",
+      "creative/g927-4.webp",
+      "creative/g927-5.webp",
+      "creative/g927-6.webp"
     ],
     "folder": "g927-wireless",
     "page": "gaming-headsets/g927-wireless/",
     "video": null,
-    "public": false
+    "public": true
   },
   {
     "model": "G926",

@@ -119,7 +119,7 @@ const detailLibrary = {
     oem: "Can support private-label visual matching and channel-specific model selection."
   },
   "G927-wireless": {
-    highlights: ["RGB dynamic running light", "Rotating microphone design", "Metal mesh earcup detail with large stainless-steel bar", "Single-headband structure with gaming-forward styling"],
+    highlights: ["RGB accents with honeycomb-style earcups", "Rotating boom microphone", "Padded over-ear cushions and adjustable headband", "2.4GHz USB receiver and USB-C adapter pictured"],
     technical: [["Driver", "50 mm"], ["Frequency response", "20 Hz - 20 kHz"], ["Latency", "20 ms listed"], ["Battery", "1000 mAh"], ["Playback time", "Approx. 50 hours without lights"], ["Charging time", "3 - 4 hours"], ["Transmission distance", "10 meters"]],
     fit: "Good for buyers looking for a strong gaming visual with rotating mic and textured earcup design.",
     oem: "Recommended for branded gaming bundles, sample review, and market-specific color direction."
