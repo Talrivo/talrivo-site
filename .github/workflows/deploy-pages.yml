@@ -36,6 +36,7 @@ jobs:
           node scripts/validate-site.mjs
           node scripts/test-entry-images.mjs
           node scripts/test-buyer-entry.mjs
+          node scripts/test-model-search-copy.mjs
           node scripts/test-buyer-guide-copy.mjs
           node scripts/test-assembly-watch.mjs
           node scripts/test-g947-media.mjs

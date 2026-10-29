@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 
 const html = readFileSync('gaming-headsets/g940-low-latency/index.html', 'utf8');
-assert.ok(html.includes('<title>G940 2.4G Gaming Headset: Sample Review | TALRIVO</title>'));
+assert.ok(html.includes('<title>Dual-Driver Wireless Gaming Headset | G940 | TALRIVO</title>'));
 assert.ok(html.includes('<link rel="canonical" href="https://talrivo.com/gaming-headsets/g940-low-latency/">'));
 assert.match(html, /max-image-preview:large/);
 assert.match(html, /class="seo-page g940-page buyer-product-page"/);
@@ -32,9 +32,10 @@ assert.match(html, /product=g940&amp;inquiry=quick-question#inquiry-form/);
 const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
 const page = schemas.find(schema => schema['@type'] === 'WebPage');
-assert.equal(page.dateModified, '2026-10-26');
+assert.equal(page.dateModified, '2026-10-30');
 assert.equal(page.image[0], 'https://talrivo.com/assets/catalog/g940-wireless/image-01.jpg');
-assert.match(page.description, /confirmed 500mAh battery/);
+assert.match(page.description, /500mAh battery/);
+assert.match(html, /This configuration has a confirmed 500mAh battery/);
 const faqSection = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
 const visible = [...faqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
   .map(([, question, answer]) => ({ question, answer }));
@@ -57,7 +58,7 @@ assert.doesNotMatch(modal, /400\s?mAh/);
 const home = readFileSync('index.html', 'utf8');
 assert.match(home, /catalog\.js\?v=20261028g927/);
 assert.match(home, /script\.js\?v=20261028g927/);
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g940-low-latency/</loc>\n    <lastmod>2026-10-26</lastmod>'));
-assert.match(readFileSync('llms.txt', 'utf8'), /G940 Wireless Gaming Headset[^\n]*500mAh battery/);
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g940-low-latency/</loc>\n    <lastmod>2026-10-30</lastmod>'));
+assert.match(readFileSync('llms.txt', 'utf8'), /Dual-Driver Wireless Gaming Headset \/ G940[^\n]*500mAh battery/);
 assert.ok(readFileSync('.github/workflows/deploy-pages.yml', 'utf8').includes('node scripts/test-g940-media.mjs'));
-console.log('G940 media checks passed: six illustrations, matching FAQ, confirmed 500mAh and accessories, consistent collection/modal data, stable title and canonical.');
+console.log('G940 media checks passed: six illustrations, matching FAQ, confirmed 500mAh and accessories, consistent collection/modal data, product-led title and preserved canonical.');

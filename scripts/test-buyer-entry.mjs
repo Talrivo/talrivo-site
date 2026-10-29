@@ -43,9 +43,9 @@ for (const [file, product, inquiry, reference] of [
     && (!reference || url.searchParams.get('reference') === reference)), `${file}: preserve buyer intent in the contact route`);
 }
 const g938 = readFileSync('gaming-headsets/g938-wireless/index.html', 'utf8');
-assert.ok(g938.includes('<title>G938 Tri-Mode Gaming Headset | 2.4G/Bluetooth/Wired Sourcing</title>'),
-  'Keep the G938 title stable during the description observation period');
-const g938Description = 'G938 tri-mode wireless gaming headset: 2.4GHz, Bluetooth and wired. Review 53mm drivers, receiver photos and hands-on setup before private-label sampling.';
+assert.ok(g938.includes('<title>Tri-Mode Wireless Gaming Headset, 53mm | G938</title>'),
+  'Lead the authorized October 29 G938 copy revision with the product and driver size');
+const g938Description = 'Tri-mode wireless gaming headset with 2.4GHz, Bluetooth and wired connections. Explore G938 with 53mm drivers, a detachable mic and OEM sample options.';
 for (const attribute of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
   assert.ok(g938.includes(`<meta ${attribute} content="${g938Description}">`));
 }
@@ -55,6 +55,72 @@ assert.equal(g938Page.description, g938Description);
 for (const evidence of ['53mm drivers', 'id="receiver-accessories"', 'id="hands-on-demo"']) {
   assert.ok(g938.includes(evidence), `G938 snippet must have visible support: ${evidence}`);
 }
+const copyPages = [
+  ['gaming-headsets/g936-lightweight/index.html', 'WebPage',
+    'Wireless Gaming Headset with Fabric Ear Cushions | G936',
+    'Wireless gaming headset with fabric ear cushions'],
+  ['gaming-headsets/g938-wireless/index.html', 'WebPage',
+    'Tri-Mode Wireless Gaming Headset, 53mm | G938',
+    'Tri-mode wireless gaming headset with 53mm drivers'],
+  ['gaming-headsets/g941-tri-mode-anc/index.html', 'WebPage',
+    'G941 ANC Gaming Headset | Tri-Mode 50h Battery | TALRIVO',
+    'Tri-mode wireless gaming headset'],
+  ['wired-gaming-headsets/index.html', 'CollectionPage',
+    'Wired Gaming Headset Manufacturer | RGB Models | TALRIVO',
+    'Wired RGB gaming headsets for your brand'],
+  ['oem-odm/index.html', 'Service',
+    'Gaming Headset OEM/ODM Customization | Logo & Packaging',
+    'Custom gaming headsets with your logo and packaging'],
+];
+const sitemap = readFileSync('sitemap.xml', 'utf8');
+const llms = readFileSync('llms.txt', 'utf8');
+for (const [file, schemaType, title, heading] of copyPages) {
+  const html = readFileSync(file, 'utf8');
+  const decode = value => value.replaceAll('&amp;', '&');
+  assert.equal(decode(html.match(/<title>([^<]+)<\/title>/)[1]), title, `${file}: product-led title`);
+  for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+    assert.equal(decode(html.match(new RegExp(`<meta ${attribute} content="([^"]+)"`))[1]), title,
+      `${file}: search and social titles must agree`);
+  }
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1, `${file}: synchronized descriptions`);
+  assert.match(descriptions[0], /gaming headset/i);
+  assert.match(descriptions[0], /samples?/i);
+  assert.doesNotMatch(descriptions[0], /RFQ|feasibility review|Wired Sourcing/);
+  assert.ok(html.includes(`<h1>${heading}</h1>`), `${file}: visible product heading`);
+  const url = `https://talrivo.com/${file.replace(/index\.html$/, '')}`;
+  assert.ok(html.includes(`<link rel="canonical" href="${url}">`), `${file}: preserve canonical`);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  const main = schemas.find(schema => schema['@type'] === schemaType);
+  assert.ok(main, `${file}: preserve ${schemaType} markup`);
+  assert.equal(main.description, descriptions[0], `${file}: structured description matches search`);
+  if (schemaType !== 'Service') {
+    assert.equal(main.name, title);
+    assert.equal(main.dateModified, '2026-10-29');
+  }
+  assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-10-29</lastmod>`), `${file}: sitemap revision date`);
+  assert.ok(llms.includes(`](${url}):`), `${file}: retain the model or category listing`);
+}
+const g936 = readFileSync('gaming-headsets/g936-lightweight/index.html', 'utf8');
+for (const fact of ['40mm', '800mAh', '20ms listed 2.4G latency', 'approximately 40 hours with lighting off']) {
+  assert.ok(g936.includes(fact), `Keep G936 specification and runtime conditions: ${fact}`);
+}
+assert.match(g936, /href="#sample-checklist">Sample Checklist/);
+assert.match(g936, /href="\.\.\/\.\.\/contact\/\?product=g936&amp;inquiry=sample#inquiry-form">Ask About G936 Samples/);
+assert.match(g938, /Completed Bluetooth pairing is not clearly visible/);
+assert.match(g938, /approximately 50 hours with lighting off/);
+assert.match(g938, /href="\.\.\/\.\.\/contact\/\?product=g938&amp;inquiry=sample#inquiry-form">Ask About G938 Samples/);
+const oem = readFileSync('oem-odm/index.html', 'utf8');
+assert.match(oem, /Available options depend on the selected model/);
+assert.match(oem, /Functional or hardware changes need a separate feasibility review/);
+assert.match(oem, /href="#customization-scope">See Customization Options/);
+const wired = readFileSync('wired-gaming-headsets/index.html', 'utf8');
+assert.match(wired, /a USB-audio headset/);
+assert.match(wired, /separately purchased adapters/);
+console.log('Product search-copy checks passed: five aligned entries, preserved facts, canonical URLs and contextual sample links.');
 for (const [file, title] of [
   ['gaming-headsets/index.html', 'Gaming Headset Manufacturer | OEM &amp; Private Label | TALRIVO'],
   ['wireless-gaming-headsets/index.html', 'Private Label Wireless Gaming Headsets | TALRIVO'],

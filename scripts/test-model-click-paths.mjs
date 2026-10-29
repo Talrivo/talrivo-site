@@ -38,10 +38,11 @@ for (const model of review.models) {
   assert.doesNotMatch(html, /<section class="seo-section"><p class="model-status">Looking for the other connection version/);
   const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
-  assert.equal(schemas.find(item => item['@type'] === 'WebPage').dateModified, review.pageRevisionDate);
+  const modified = [review.pageRevisionDate || review.date, model.dateModified || review.date].sort().at(-1);
+  assert.equal(schemas.find(item => item['@type'] === 'WebPage').dateModified, modified);
   if (model.indexable) {
     const record = sitemap.match(new RegExp(`<url>\\s*<loc>https://talrivo\\.com/${model.page}</loc>[\\s\\S]*?</url>`))?.[0];
-    assert.ok(record?.includes(`<lastmod>${review.pageRevisionDate}</lastmod>`));
+    assert.ok(record?.includes(`<lastmod>${modified}</lastmod>`));
   }
 }
 assert.equal(tws, 25);

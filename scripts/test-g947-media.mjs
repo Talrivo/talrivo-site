@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 
 const html = readFileSync('gaming-headsets/g947-foldable/index.html', 'utf8');
-assert.ok(html.includes('<title>G947 Tri-Mode Gaming Headset | OEM/ODM | TALRIVO</title>'));
+assert.ok(html.includes('<title>Tri-Mode Gaming Headset, Aluminum Frame | G947</title>'));
 assert.ok(html.includes('<link rel="canonical" href="https://talrivo.com/gaming-headsets/g947-foldable/">'));
 assert.match(html, /max-image-preview:large/);
 assert.match(html, /class="seo-page g947-page buyer-product-page"/);
@@ -31,7 +31,7 @@ assert.match(html, /USB receiver, detachable boom microphone, USB-C charging cab
 assert.match(html, /product=g947&amp;inquiry=quick-question#inquiry-form/);
 const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
-assert.equal(schemas.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-10-26');
+assert.equal(schemas.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-10-30');
 assert.equal(schemas.find(schema => schema['@type'] === 'WebPage').image, 'https://talrivo.com/assets/catalog/g947-new/image-01.jpg');
 const faqHtml = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
 const visible = [...faqHtml.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
@@ -39,6 +39,6 @@ const visible = [...faqHtml.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><
 assert.equal(visible.length, 5);
 assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
   .map(question => ({question: question.name, answer: question.acceptedAnswer.text})), visible);
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g947-foldable/</loc>\n    <lastmod>2026-10-26</lastmod>'));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g947-foldable/</loc>\n    <lastmod>2026-10-30</lastmod>'));
 assert.ok(readFileSync('.github/workflows/deploy-pages.yml', 'utf8').includes('node scripts/test-g947-media.mjs'));
-console.log('G947 media checks passed: five responsive illustrations, confirmed accessory scope, stable title/canonical, matching FAQ and inquiry routes.');
+console.log('G947 media checks passed: five responsive illustrations, confirmed accessory scope, product-led title, preserved canonical, matching FAQ and inquiry routes.');
