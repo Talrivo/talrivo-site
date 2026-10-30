@@ -21,7 +21,7 @@ const cases = [
   ['gaming-headsets/g942-wired/', 'g942-wired',
     'RGB Wired Gaming Headset for Custom Branding | G942', 'RGB wired gaming headset for your brand'],
   ['gaming-headsets/g936-wired/', 'g936-wired',
-    'Wired Gaming Headset, Approx. 191g | G936 | TALRIVO', 'Wired gaming headset listed at approximately 191g'],
+    'Wired Gaming Headset, Approx. 191g | G936 | TALRIVO', 'Wired gaming headset, approximately 191g'],
   ['gaming-headsets/g939-wired/', 'g939-wired',
     '50mm Wired Gaming Headset | G939 | TALRIVO', 'Wired gaming headset with a 50mm driver'],
   ['gaming-headsets/g923-wired/', 'g923-wired',
