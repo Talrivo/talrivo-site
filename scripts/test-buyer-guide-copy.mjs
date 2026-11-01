@@ -55,3 +55,37 @@ assert.match(sample, /download>Download English Worksheet/);
 const index = readFileSync('insights/index.html', 'utf8');
 assert.ok(index.includes('href="gaming-headset-usb-audio-or-lighting/#no-sound"'));
 console.log('Buyer guide checks passed: stable titles, direct answer paths and preserved evidence boundaries.');
+
+const receiverGuide = readFileSync(`${base}choose-2-4g-wireless-gaming-headset/index.html`, 'utf8');
+const receiverTitle = '2.4GHz Gaming Headset Receiver Guide: USB-A vs USB-C';
+assert.ok(receiverGuide.includes(`<title>${receiverTitle}</title>`));
+for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+  assert.ok(receiverGuide.includes(`<meta ${attribute} content="${receiverTitle}">`));
+}
+const receiverDescriptions = [...receiverGuide.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(receiverDescriptions.length, 3);
+assert.equal(new Set(receiverDescriptions).size, 1);
+const receiverSchemas = [...receiverGuide.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const receiverArticle = receiverSchemas.find(schema => schema['@type'] === 'Article');
+assert.equal(receiverArticle.headline, receiverTitle);
+assert.equal(receiverArticle.description, receiverDescriptions[0]);
+assert.equal(receiverArticle.dateModified, '2026-10-31');
+const receiverUrl = 'https://talrivo.com/insights/choose-2-4g-wireless-gaming-headset/';
+assert.equal(receiverArticle.mainEntityOfPage, receiverUrl);
+assert.ok(receiverGuide.includes(`<link rel="canonical" href="${receiverUrl}">`));
+const receiverFaq = receiverGuide.match(/<section class="seo-section seo-faq"[^>]*>([\s\S]*?)<\/section>/)[1];
+const receiverVisibleFaq = [...receiverFaq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({ question, answer }));
+assert.equal(receiverVisibleFaq.length, 4);
+assert.deepEqual(receiverSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(question => ({ question: question.name, answer: question.acceptedAnswer.text })), receiverVisibleFaq);
+assert.ok(receiverGuide.indexOf('href="#receiver-checks"') < receiverGuide.indexOf('<img src='));
+for (const fact of ['completed Bluetooth pairing is not clearly visible', 'not a completed test report', 'Not tested',
+  'href="../../assets/downloads/wireless-gaming-headset-sample-review.txt" download',
+  'href="../../videos/g938-phone-setup-controls/"']) assert.ok(receiverGuide.includes(fact));
+const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
+assert.ok(wireless.includes('href="../insights/choose-2-4g-wireless-gaming-headset/#receiver-checks"'));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${receiverUrl}</loc>\n    <lastmod>2026-10-31</lastmod>`));
+console.log('Receiver guide checks passed: practical answer, matching FAQ, worksheet and demo paths, stable canonical.');
