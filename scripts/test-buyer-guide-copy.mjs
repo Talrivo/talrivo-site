@@ -89,3 +89,64 @@ const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
 assert.ok(wireless.includes('href="../insights/choose-2-4g-wireless-gaming-headset/#receiver-checks"'));
 assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${receiverUrl}</loc>\n    <lastmod>2026-10-31</lastmod>`));
 console.log('Receiver guide checks passed: practical answer, matching FAQ, worksheet and demo paths, stable canonical.');
+
+const buyerDemandCases = [
+  ['private-label-gaming-headset-rfq-checklist',
+    'Private Label Gaming Headset Quotes: MOQ & Sample Checklist', 'quote-comparison', 6],
+  ['gaming-headset-ear-cushion-material-sample-checklist',
+    'Fabric vs PU Gaming Headset Ear Cushions | Fit & Comfort', 'material-comparison', 5],
+];
+const demandSitemap = readFileSync('sitemap.xml', 'utf8');
+const demandLlms = readFileSync('llms.txt', 'utf8');
+const demandPages = new Map();
+const decodeAmpersand = text => text.replaceAll('&amp;', '&');
+for (const [slug, title, anchor, faqCount] of buyerDemandCases) {
+  const html = readFileSync(`${base}${slug}/index.html`, 'utf8');
+  demandPages.set(slug, html);
+  const url = `https://talrivo.com/insights/${slug}/`;
+  assert.equal(decodeAmpersand(html.match(/<title>([^<]+)<\/title>/)[1]), title);
+  for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+    assert.equal(decodeAmpersand(html.match(new RegExp(`<meta ${attribute} content="([^"]+)"`))[1]), title);
+  }
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  const article = schemas.find(schema => schema['@type'] === 'Article');
+  assert.equal(article.headline, title);
+  assert.equal(article.description, descriptions[0]);
+  assert.equal(article.dateModified, '2026-11-01');
+  assert.equal(article.mainEntityOfPage, url);
+  assert.ok(html.includes(`<link rel="canonical" href="${url}">`));
+  assert.ok(html.includes('<meta name="robots" content="index, follow">'));
+  assert.ok(html.includes(`href="#${anchor}"`));
+  assert.equal((html.match(new RegExp(`id="${anchor}"`, 'g')) || []).length, 1);
+  const visibleSection = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+  const visibleFaq = [...visibleSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+    .map(([, question, answer]) => ({ question, answer }));
+  assert.equal(visibleFaq.length, faqCount);
+  assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+    .map(question => ({ question: question.name, answer: question.acceptedAnswer.text })), visibleFaq);
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-01</lastmod>`));
+  assert.ok(demandLlms.includes(`](${url}):`));
+  assert.doesNotMatch(html, /guaranteed to increase clicks|guaranteed compatibility|free samples?|MOQ[: ]+\d|lead time[: ]+\d/i);
+}
+const quoteGuide = demandPages.get('private-label-gaming-headset-rfq-checklist');
+assert.match(quoteGuide, /there is no single MOQ for the whole range/);
+assert.match(quoteGuide, /included, optional and separately charged items/);
+assert.match(quoteGuide, /href="\.\.\/\.\.\/rfq-guide\/"/);
+assert.match(quoteGuide, /inquiry=rfq#inquiry-form/);
+const cushionGuide = demandPages.get('gaming-headset-ear-cushion-material-sample-checklist');
+for (const fact of ['memory foam describes the filling', 'does not establish the G936 foam specification',
+  'not a completed comfort or cooling test', 'Not tested',
+  'href="../../assets/downloads/wireless-gaming-headset-sample-review.txt" download']) {
+  assert.ok(cushionGuide.includes(fact), `Cushion guide needs the boundary: ${fact}`);
+}
+for (const file of ['oem-odm/index.html', 'rfq-guide/index.html']) {
+  assert.ok(readFileSync(file, 'utf8').includes('href="../insights/private-label-gaming-headset-rfq-checklist/#quote-comparison"'));
+}
+assert.ok(readFileSync('gaming-headsets/g936-lightweight/index.html', 'utf8')
+  .includes('href="../../insights/gaming-headset-ear-cushion-material-sample-checklist/#material-comparison"'));
+console.log('Buyer-demand guide checks passed: two distinct intents, matching FAQs, factual limits and three discovery links.');
