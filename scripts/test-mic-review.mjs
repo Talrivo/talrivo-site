@@ -38,3 +38,45 @@ assert.match(sampleRequest, /class="buyer-resource-link" href="\.\.\/insights\/g
 assert.match(sampleRequest, /class="buyer-resource-link" href="\.\.\/assets\/downloads\/gaming-headset-mic-recording-sheet.txt" download/);
 assert.match(readFileSync('styles.css', 'utf8'), /\.seo-page a\.buyer-resource-link\s*\{[^}]*text-decoration-line: underline;/);
 console.log('Mic review checks passed: identical visible/download script, blank worksheet boundaries, stable title and synchronized FAQ.');
+
+const noiseSlug = 'wireless-gaming-headset-microphone-noise-test-checklist';
+const noiseGuide = readFileSync(`insights/${noiseSlug}/index.html`, 'utf8');
+const noiseTitle = 'ANC vs ENC Gaming Headsets: What Does Each Reduce?';
+const noiseUrl = `https://talrivo.com/insights/${noiseSlug}/`;
+assert.ok(noiseGuide.includes(`<title>${noiseTitle}</title>`));
+for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+  assert.ok(noiseGuide.includes(`<meta ${attribute} content="${noiseTitle}">`));
+}
+const noiseDescriptions = [...noiseGuide.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(noiseDescriptions.length, 3);
+assert.equal(new Set(noiseDescriptions).size, 1);
+const noiseSchemas = [...noiseGuide.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const noiseArticle = noiseSchemas.find(schema => schema['@type'] === 'Article');
+assert.equal(noiseArticle.headline, noiseTitle);
+assert.equal(noiseArticle.description, noiseDescriptions[0]);
+assert.equal(noiseArticle.dateModified, '2026-11-01');
+assert.equal(noiseArticle.mainEntityOfPage, noiseUrl);
+assert.ok(noiseGuide.includes(`<link rel="canonical" href="${noiseUrl}">`));
+assert.match(noiseGuide, /href="#anc-enc">Compare ANC and ENC/);
+assert.equal((noiseGuide.match(/id="anc-enc"/g) || []).length, 1);
+assert.ok(noiseGuide.indexOf('href="#anc-enc"') < noiseGuide.indexOf('<img src='));
+const noiseSection = noiseGuide.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const noiseVisible = [...noiseSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({ question, answer }));
+assert.equal(noiseVisible.length, 8);
+assert.deepEqual(noiseSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(question => ({ question: question.name, answer: question.acceptedAnswer.text })), noiseVisible);
+for (const boundary of ['ANC: noise reaching your ears', 'ENC: noise in the outgoing voice',
+  'they do not verify TALRIVO features or performance', 'not a completed laboratory test or a dB measurement',
+  'Confirm the selected frame version', 'href="../../assets/downloads/gaming-headset-mic-recording-sheet.txt" download']) {
+  assert.ok(noiseGuide.includes(boundary), `Keep the noise-comparison boundary: ${boundary}`);
+}
+assert.doesNotMatch(noiseGuide, /35dB|zero latency|guaranteed compatibility|guaranteed to increase clicks/i);
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${noiseUrl}</loc>\n    <lastmod>2026-11-01</lastmod>`));
+assert.ok(readFileSync('llms.txt', 'utf8').includes(`](${noiseUrl}):`));
+assert.ok(html.includes(`href="../${noiseSlug}/#anc-enc"`));
+assert.ok(readFileSync('gaming-headsets/g941-tri-mode-anc/index.html', 'utf8')
+  .includes(`href="../../insights/${noiseSlug}/#anc-enc"`));
+console.log('ANC/ENC checks passed: distinct audio paths, aligned metadata/FAQs, sourced terminology and two discovery links.');
