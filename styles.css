@@ -5470,6 +5470,34 @@ h2 {
   scroll-margin-top: 128px;
 }
 
+.model-directory-page .seo-section[id],
+.sample-request-page .seo-section[id] {
+  scroll-margin-top: 128px;
+}
+
+.sample-request-page .seo-section .text-action {
+  border: 0;
+  display: inline;
+  font: inherit;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-transform: none;
+  width: auto;
+}
+
+.sample-request-page #headset-sample-shortlist .seo-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 620px) {
+  .sample-request-page #headset-sample-shortlist .seo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .region-buyer-page .seo-grid h3 {
   font-size: 1.125rem;
   letter-spacing: 0;
@@ -5483,7 +5511,9 @@ h2 {
 
 @media (max-width: 920px) {
   .insights-hub .seo-hero > img,
-  .region-buyer-page .seo-hero > img {
+  .region-buyer-page .seo-hero > img,
+  .model-directory-page .seo-hero > img,
+  .sample-request-page .seo-hero > img {
     order: 0;
   }
 }

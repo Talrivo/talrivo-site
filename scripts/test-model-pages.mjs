@@ -145,6 +145,63 @@ for (const [folder, page] of [
   ['tws-earclip-09s', 'tws-earbuds/earclip09s/'],
 ]) assert.equal(catalogue.find(p => p.folder === folder).page, page, 'Preserve indexed canonical URLs');
 const directory = readFileSync('gaming-headset-models/index.html', 'utf8');
+const directorySchemas = [...directory.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const directoryCollection = directorySchemas.find(schema => schema['@type'] === 'CollectionPage');
+assert.equal(directoryCollection.dateModified, '2026-11-03');
+const directoryItems = directoryCollection.mainEntity.itemListElement;
+const directoryRows = [];
+for (const [id, count] of [['wireless-models', 13], ['wired-models', 7]]) {
+  const section = directory.match(new RegExp(`<section[^>]*id="${id}"[\\s\\S]*?<\\/section>`))[0];
+  const rows = [...section.matchAll(/<tr><td><a href="([^"]+)">([^<]+)<\/a>/g)]
+    .map(([, href, name]) => ({ name, url: new URL(href, directoryCollection.url).href }));
+  assert.equal(rows.length, count);
+  assert.ok(directory.includes(`href="#${id}"`));
+  assert.ok(directory.indexOf(`href="#${id}"`) < directory.indexOf('<img src='));
+  directoryRows.push(...rows);
+}
+assert.deepEqual(directoryItems.map(({ name, url }) => ({ name, url })), directoryRows);
+assert.deepEqual(directoryItems.map(item => item.position), Array.from({ length: 20 }, (_, i) => i + 1));
+const pendingSection = directory.match(/<section[^>]*id="pending-models"[\s\S]*?<\/section>/)[0];
+const pendingLinks = [...pendingSection.matchAll(/href="\.\.\/([^\"]+)"/g)].map(([, path]) => path);
+assert.equal(pendingLinks.length, 6);
+for (const model of review.models.filter(model => !model.indexable)) {
+  assert.ok(pendingLinks.includes(model.page));
+  assert.ok(!directoryItems.some(item => item.url === `https://talrivo.com/${model.page}`));
+}
+const samplePage = readFileSync('sample-request/index.html', 'utf8');
+for (const [slug, html, title, type] of [
+  ['gaming-headset-models', directory, 'Gaming Headset Model Codes for OEM Sample Review | TALRIVO', 'CollectionPage'],
+  ['sample-request', samplePage, 'Audio Samples: Gaming Headsets, Bluetooth & TWS | TALRIVO', 'WebPage'],
+]) {
+  const decode = value => value.replaceAll('&amp;', '&');
+  assert.equal(decode(html.match(/<title>([^<]+)<\/title>/)[1]), title, 'Preserve the existing search titles');
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  const main = schemas.find(schema => schema['@type'] === type);
+  assert.equal(main.name, title);
+  assert.equal(main.description, descriptions[0]);
+  assert.equal(main.dateModified, '2026-11-03');
+  assert.ok(html.includes(`<link rel="canonical" href="https://talrivo.com/${slug}/">`));
+  assert.ok(sitemap.includes(`<loc>https://talrivo.com/${slug}/</loc>\n    <lastmod>2026-11-03</lastmod>`));
+  const faq = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+  const visible = [...faq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+    .map(([, question, answer]) => ({ question, answer }));
+  assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+    .map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), visible);
+}
+const shortlist = samplePage.match(/<section[^>]*id="headset-sample-shortlist"[\s\S]*?<\/section>/)[0];
+assert.equal((shortlist.match(/<article>/g) || []).length, 6);
+for (const code of ['g938', 'g940', 'g926', 'g936', 'g935', 'g941']) {
+  assert.ok(shortlist.includes(`href="../contact/?product=${code}&amp;inquiry=sample#inquiry-form"`));
+}
+assert.doesNotMatch(samplePage, /Turn a general request into a model-specific inquiry|Compare the model role before requesting samples/);
+assert.ok(samplePage.includes('35mm + 16mm drivers, 2.4GHz USB receiver and 500mAh battery'));
+console.log('Model directory and sample entry checks passed: 13 wireless, 7 wired, 6 separated pending references, aligned schema and six model-specific sample routes.');
 for (const p of products.filter(p => ['wired', 'wireless'].includes(p.category))) {
   assert.ok(directory.includes(`href="../${p.page}"`));
 }
