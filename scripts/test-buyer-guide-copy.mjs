@@ -150,3 +150,101 @@ for (const file of ['oem-odm/index.html', 'rfq-guide/index.html']) {
 assert.ok(readFileSync('gaming-headsets/g936-lightweight/index.html', 'utf8')
   .includes('href="../../insights/gaming-headset-ear-cushion-material-sample-checklist/#material-comparison"'));
 console.log('Buyer-demand guide checks passed: two distinct intents, matching FAQs, factual limits and three discovery links.');
+
+const hubUrl = 'https://talrivo.com/insights/';
+const hubTitle = 'Gaming Headset Sourcing Guides for Importers | TALRIVO';
+assert.ok(index.includes(`<title>${hubTitle}</title>`));
+assert.ok(index.includes(`<link rel="canonical" href="${hubUrl}">`));
+for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+  assert.ok(index.includes(`<meta ${attribute} content="${hubTitle}">`));
+}
+const hubDescriptions = [...index.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(hubDescriptions.length, 3);
+assert.equal(new Set(hubDescriptions).size, 1);
+const hubSchemas = [...index.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const hubCollection = hubSchemas.find(schema => schema['@type'] === 'CollectionPage');
+assert.equal(hubCollection.dateModified, '2026-11-02');
+assert.equal(hubCollection.description, hubDescriptions[0]);
+const topicIds = ['connection-guides', 'sound-comfort-guides', 'quote-guides', 'sample-guides', 'model-comparisons', 'earbud-guides'];
+const topicSections = [...index.matchAll(/<section class="seo-section guide-topic" id="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)];
+assert.deepEqual(topicSections.map(([, id]) => id), topicIds);
+const topicNav = index.match(/<nav class="guide-topic-nav"[^>]*>([\s\S]*?)<\/nav>/)[1];
+assert.ok(index.indexOf('class="guide-topic-nav"') < index.indexOf('id="buyer-worksheets"'));
+assert.deepEqual([...topicNav.matchAll(/href="#([^"]+)"/g)].map(([, id]) => id), topicIds);
+const topicCards = topicSections.flatMap(([, , section]) => [...section.matchAll(/<article><h3><a class="text-action" href="([^"]+)">([^<]+)<\/a><\/h3>/g)]
+  .map(([, href, name]) => ({ name, url: new URL(href, hubUrl).href })));
+assert.equal(topicCards.length, 22);
+assert.equal(new Set(topicCards.map(card => new URL(card.url).pathname)).size, 22, 'List each guide once in the topic groups');
+const hubItems = hubCollection.mainEntity.itemListElement;
+assert.equal(hubItems.length, 29);
+assert.deepEqual(hubItems.map(item => item.position), Array.from({ length: 29 }, (_, i) => i + 1));
+assert.deepEqual(hubItems.slice(0, 22).map(({ name, url }) => ({ name, url })), topicCards);
+assert.equal(new Set(hubItems.map(item => item.url)).size, 29);
+for (const target of [
+  'wireless-gaming-headset-microphone-noise-test-checklist/#anc-enc',
+  'choose-2-4g-wireless-gaming-headset/#receiver-checks',
+  'gaming-headset-ear-cushion-material-sample-checklist/#material-comparison',
+  'private-label-gaming-headset-rfq-checklist/#quote-comparison',
+]) assert.ok(index.includes(`href="${target}"`));
+assert.ok(index.includes('class="button primary" href="#connection-guides"'));
+assert.ok(index.includes('href="../contact/?product=audio-products&amp;inquiry=rfq#inquiry-form"'));
+assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-02</lastmod>`));
+assert.ok(demandLlms.includes(`[Insights](${hubUrl}):`));
+assert.doesNotMatch(index, /For GEO|guaranteed to increase clicks|zero latency/i);
+console.log('Insights hub checks passed: six topic routes, 22 distinct guide cards, aligned collection data, stable title and retained worksheet/contact routes.');
+
+const channelCases = [
+  ['audio-products-for-distributors', 'Wholesale Gaming Headsets for Distributors | TALRIVO', 'assortment-checks'],
+  ['audio-products-for-ecommerce-sellers', 'Gaming Headset Listing Images & Specs | TALRIVO', 'listing-checks'],
+];
+const channelHtml = new Map();
+for (const [slug, title, anchor] of channelCases) {
+  const html = readFileSync(`${slug}/index.html`, 'utf8');
+  channelHtml.set(slug, html);
+  const url = `https://talrivo.com/${slug}/`;
+  assert.equal(decodeAmpersand(html.match(/<title>([^<]+)<\/title>/)[1]), title);
+  for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+    assert.equal(decodeAmpersand(html.match(new RegExp(`<meta ${attribute} content="([^"]+)"`))[1]), title);
+  }
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  const page = schemas.find(schema => schema['@type'] === 'WebPage');
+  assert.equal(page.name, title);
+  assert.equal(page.url, url);
+  assert.equal(page.description, descriptions[0]);
+  assert.equal(page.dateModified, '2026-11-02');
+  const faqSection = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+  const visible = [...faqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+    .map(([, question, answer]) => ({ question, answer }));
+  assert.equal(visible.length, 4);
+  assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+    .map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), visible);
+  assert.ok(html.includes(`<link rel="canonical" href="${url}">`));
+  assert.ok(html.includes('<meta name="robots" content="index, follow">'));
+  assert.ok(html.includes(`class="button primary" href="#${anchor}"`));
+  assert.equal((html.match(new RegExp(`id="${anchor}"`, 'g')) || []).length, 1);
+  assert.ok(html.indexOf(`href="#${anchor}"`) < html.indexOf('<img src='));
+  assert.ok(html.includes('href="../contact/?product=custom-audio&amp;inquiry=rfq#inquiry-form"'));
+  assert.ok(html.includes('href="../audio-products-for-importers/"'));
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-02</lastmod>`));
+  assert.ok(demandLlms.includes(`](${url}):`));
+}
+const distributor = channelHtml.get('audio-products-for-distributors');
+assert.ok(distributor.includes('id="reorder-checks"'));
+assert.match(distributor, /does not promise stock, fixed MOQ, repeat-order pricing or a production lead time/);
+assert.ok(distributor.includes('href="../gaming-headsets/g935-wireless/"'));
+assert.ok(distributor.includes('href="../gaming-headsets/g938-wireless/"'));
+const ecommerce = channelHtml.get('audio-products-for-ecommerce-sellers');
+assert.match(ecommerce, /not marketplace approval or a platform-policy assessment/);
+assert.match(ecommerce, /Keep creative artwork separate from evidence of performance/);
+assert.ok(ecommerce.includes('href="../tws-earbuds/tws057/#tws057-case-review"'));
+assert.ok(ecommerce.includes('href="../insights/gaming-headset-packaging-accessories-checklist/#packing-checklist"'));
+assert.ok(readFileSync('audio-products-for-importers/index.html', 'utf8')
+  .includes('<title>Gaming Headsets for Importers &amp; Audio Buyers | TALRIVO</title>'));
+console.log('Channel entry checks passed: distinct distributor/listing tasks, aligned metadata/FAQs, direct answer anchors and preserved quotation/importer routes.');

@@ -9,6 +9,14 @@
   display: inline-block;
   margin-top: 1rem;
 }
+#listed-configurations {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#listed-configurations h3 a {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: none;
+}
 .tws-catalogue-layout {
   align-items: start;
   display: grid;
@@ -30,5 +38,6 @@
 .tws-catalogue-note { color: var(--muted); font-size: 0.875rem; }
 @media (max-width: 820px) {
   #models .sample-image-grid { grid-template-columns: minmax(0, 1fr); }
+  #listed-configurations { grid-template-columns: minmax(0, 1fr); }
   .tws-catalogue-layout { grid-template-columns: minmax(0, 1fr); }
 }

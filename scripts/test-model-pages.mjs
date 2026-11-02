@@ -66,11 +66,78 @@ for (const model of review.models) {
   }
   if (model.category === 'tws') {
     assert.match(html, /single charge or charging-case-assisted use/);
-    assert.match(html, /whether ANC is on or off/);
+    if (/\bANC\b/.test(model.name)) assert.match(html, /whether ANC is on or off/);
   }
   if (model.conflicts.length) assert.doesNotMatch(html, /<strong>Driver<\/strong>/);
 }
 assert.equal(pending, 6);
+
+const reviewedTws = [
+  ['TWS042S', '6mm ANC Earbuds for Custom Branding | TWS042S', 'tws042s-selection',
+    { 'Driver diameter': '6mm', 'Earbud battery': '30mAh', 'Charging case battery': '600mAh' }],
+  ['TWS057', '13mm ANC Earbuds with 300mAh Case | TWS057', 'tws057-case-review',
+    { 'Driver diameter': '13mm', 'Earbud battery': '35mAh', 'Charging case battery': '300mAh' }],
+  ['TWS029', '12mm True Wireless Earbuds for Private Label | TWS029', 'tws029-fit-review',
+    { 'Driver diameter': '12mm', 'Earbud battery': '50mAh', 'Charging case battery': '300mAh' }],
+];
+const twsHtmlByModel = new Map();
+const reviewedFaqs = new Set();
+for (const [name, title, anchor, facts] of reviewedTws) {
+  const model = review.models.find(item => item.model === name);
+  const html = readFileSync(`${model.page}index.html`, 'utf8');
+  twsHtmlByModel.set(name, html);
+  assert.equal(model.title, title);
+  assert.ok(html.includes(`<title>${esc(title)}</title>`));
+  assert.ok(html.includes(`<h1>${esc(model.heading)}</h1>`));
+  for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+    assert.ok(html.includes(`<meta ${attribute} content="${esc(title)}">`));
+  }
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1);
+  assert.equal(descriptions[0], esc(model.description));
+  assert.doesNotMatch(`${title} ${model.description}`, /\d+\s*(?:hours?|[hH]\b)|free samples?|guaranteed/i);
+  assert.equal(model.dateModified, '2026-11-02');
+  const webPage = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'WebPage');
+  assert.equal(webPage.description, model.description);
+  assert.equal(webPage.dateModified, model.dateModified);
+  assert.ok(sitemap.includes(`<loc>https://talrivo.com/${model.page}</loc>\n    <lastmod>2026-11-02</lastmod>`));
+  assert.ok(html.includes(`href="#${anchor}"`));
+  assert.equal((html.match(new RegExp(`id="${anchor}"`, 'g')) || []).length, 1);
+  const specs = Object.fromEntries(model.specifications);
+  for (const [key, value] of Object.entries(facts)) assert.equal(specs[key], value);
+  assert.equal(model.faqs.length, 4, `${name}: maintain a reviewed FAQ rather than the generic fallback`);
+  assert.ok(model.faqs.every(item => item.question !== `Which ${name} version does this page cover?`));
+  const faqContent = JSON.stringify(model.faqs).replaceAll(name, 'MODEL');
+  assert.ok(!reviewedFaqs.has(faqContent));
+  reviewedFaqs.add(faqContent);
+  assert.equal(model.assetDescriptions.length, model.assets.length);
+  for (const detail of model.assetDescriptions) assert.ok(html.includes(esc(detail.caption)));
+  assert.equal(model.relatedLinks.length, 2);
+  for (const link of model.relatedLinks) {
+    assert.ok(html.includes(`href="${esc(link.href)}">${esc(link.label)}</a>`));
+    assert.equal(new URL(link.href, `https://talrivo.com/${model.page}`).origin, 'https://talrivo.com');
+  }
+}
+assert.match(twsHtmlByModel.get('TWS042S'), /placeholder brand artwork/);
+assert.match(twsHtmlByModel.get('TWS057'), /does not establish a user-replaceable battery/);
+assert.match(twsHtmlByModel.get('TWS057'), /Do not open or service a case based on this illustration/);
+assert.match(twsHtmlByModel.get('TWS029'), /this reviewed record does not identify TWS029 as an ANC model/);
+assert.match(twsHtmlByModel.get('TWS029'), /do not establish wearing retention/);
+const twsCategory = readFileSync('tws-earbuds/index.html', 'utf8');
+assert.ok(twsCategory.includes('<title>TWS Earbuds: In-Ear and Open-Ear Models | TALRIVO</title>'));
+const listedOptions = twsCategory.match(/<div class="seo-grid" id="listed-configurations">([\s\S]*?)<\/div>/)[1];
+const optionLinks = [...listedOptions.matchAll(/<h3><a class="text-action" href="([^"]+)">([^<]+)<\/a><\/h3>/g)]
+  .map(([, path, name]) => ({ name, url: `https://talrivo.com/tws-earbuds/${path}` }));
+assert.equal(optionLinks.length, 3);
+const collection = [...twsCategory.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'CollectionPage');
+assert.equal(collection.dateModified, '2026-11-02');
+assert.deepEqual(collection.mainEntity.itemListElement.slice(2, 5).map(({ name, url }) => ({ name, url })), optionLinks);
+console.log('Reviewed TWS checks passed: three distinct product briefs and FAQs, unchanged listed facts, illustration/runtime limits and category discovery links.');
+
 for (const [folder, page] of [
   ['g936-wireless', 'gaming-headsets/g936-lightweight/'],
   ['g947-new', 'gaming-headsets/g947-foldable/'],

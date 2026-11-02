@@ -843,7 +843,69 @@
       "inquiryKey": "tws-tws042s",
       "inquiryLabel": "TWS042S ANC True Wireless Earbuds",
       "indexable": true,
-      "overview": "Review TWS042S anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "dateModified": "2026-11-02",
+      "title": "6mm ANC Earbuds for Custom Branding | TWS042S",
+      "heading": "TWS042S ANC earbuds with round faceplates",
+      "eyebrow": "6mm driver / 600mAh charging case / ANC reference",
+      "description": "Explore TWS042S ANC earbuds with round faceplates, a listed 6mm driver and 600mAh case. Review branding artwork, fit and charging on your sample.",
+      "overview": "Need a rounded earbud design rather than a long stem? The supplied TWS042S renderings show circular faceplates with placeholder brand artwork. Its listed configuration combines a 6mm driver, 30mAh earbuds and a 600mAh charging case. Start with the faceplate and case finish you want, then compare fit and ANC behavior on the selected sample. The images are design references, not a wearing or noise-cancellation test.",
+      "galleryIntro": "These supplied renderings show the round faceplates, placeholder artwork and open charging case. Use them to discuss the finish and logo area; they do not establish final colors, printing dimensions or sample performance.",
+      "specificationHeading": "TWS042S driver and charging configuration",
+      "specificationIntro": "The catalogue separates the 600mAh case from the 30mAh earbud battery. Keep those capacities separate when asking for runtime and charging details.",
+      "assetDescriptions": [
+        {
+          "alt": "TWS042S rendering with circular branded faceplates seated in an open charging case",
+          "caption": "Round-faceplate design and placeholder brand artwork. Confirm the actual artwork area and finish on the selected sample."
+        },
+        {
+          "alt": "Closer TWS042S rendering showing the faceplates, case interior and left-right earbud positions",
+          "caption": "Closer case and earbud view. The depicted color treatment is a reference, not a confirmed production color list."
+        }
+      ],
+      "sections": [
+        {
+          "id": "tws042s-selection",
+          "label": "Round-faceplate option",
+          "heading": "What to compare on a TWS042S sample",
+          "intro": "Choose this reference when the round earbud faceplate and case finish are part of your product brief. Review the design and the listed ANC configuration separately.",
+          "items": [
+            {
+              "label": "Faceplate artwork",
+              "text": "The circular outer faces show placeholder branding. Send artwork and ask for the printable area, method and finish before approving packaging images."
+            },
+            {
+              "label": "6mm driver and actual fit",
+              "text": "Compare fit and the same audio passage at a matched listening level. A listed driver diameter does not establish how the finished earbud sounds or feels."
+            },
+            {
+              "label": "600mAh case, 30mAh earbuds",
+              "text": "Ask for playback per earbud charge and the additional charges from the case as separate figures, with volume and ANC settings recorded. Capacity is not a measured runtime."
+            }
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How does TWS042S differ from the TWS057 ANC reference?",
+          "answer": "TWS042S lists a 6mm driver, 30mAh earbud battery and 600mAh case. TWS057 lists a 13mm driver, 35mAh earbud battery and 300mAh case. These are configuration differences, not a sound-quality or endurance ranking; compare the approved samples under the same conditions."
+        },
+        {
+          "question": "Can the round TWS042S faceplates carry my logo?",
+          "answer": "The supplied renderings show placeholder brand artwork on the circular faceplates. Ask about the actual printable area, printing method, finish and artwork approval for your selected version before treating the illustration as a production specification."
+        },
+        {
+          "question": "Does the listed TWS042S 35-hour figure mean one earbud charge?",
+          "answer": "The catalogue lists about 35 hours without defining the complete test conditions. Confirm single charge or charging-case-assisted use and whether ANC is on or off. Do not publish the figure as verified continuous earbud playback."
+        },
+        {
+          "question": "Which TWS042S finish and accessories should be confirmed?",
+          "answer": "Agree the faceplate and case colors, artwork, charging cable, tips if applicable, manual and packing list for the selected version. The illustrated finish is not a confirmed color or accessory offer. Pictured parts are not automatically included."
+        }
+      ],
+      "relatedLinks": [
+        { "href": "../tws057/", "label": "Compare the 13mm ANC configuration: TWS057" },
+        { "href": "../../insights/compare-tws-earbuds-private-label-sampling/", "label": "TWS sample comparison checklist" }
+      ],
       "specifications": [
         [
           "Chipset",
@@ -896,7 +958,73 @@
       "inquiryKey": "tws-tws057",
       "inquiryLabel": "TWS057 ANC True Wireless Earbuds",
       "indexable": true,
-      "overview": "Review TWS057 anc true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "dateModified": "2026-11-02",
+      "title": "13mm ANC Earbuds with 300mAh Case | TWS057",
+      "heading": "TWS057 ANC earbuds: review the case and configuration",
+      "eyebrow": "13mm driver / 35mAh earbuds / case design references",
+      "description": "TWS057 lists a 13mm driver, 35mAh earbuds and a 300mAh case. Explore the case drawings, then confirm earbud views, ANC and charging on your sample.",
+      "overview": "Looking at the charging case as well as the earbuds? TWS057 lists an ANC earbud configuration with a 13mm driver, 35mAh earbud battery and 300mAh case. The supplied drawings focus on the case exterior, display and internal compartment, not on earbud fit. Request matching earbud views and a complete sample before approving the design or feature claims. The internal drawing does not establish a user-replaceable battery.",
+      "galleryIntro": "These supplied case drawings include internal views and an exterior display reference. They are not disassembly instructions, confirmation of a user-replaceable battery or evidence of ANC performance. Pictured parts are not automatically included.",
+      "specificationHeading": "TWS057 listed ANC and charging configuration",
+      "specificationIntro": "Use the 13mm driver, 35mAh earbud and 300mAh case figures to identify the requested version. The case drawings do not verify the electrical specification or runtime.",
+      "assetDescriptions": [
+        {
+          "alt": "Light-finish TWS057 case drawing with an internal compartment, separate cover and strap",
+          "caption": "Internal case illustration, not a battery-replacement guide. Confirm construction and service requirements with the selected sample."
+        },
+        {
+          "alt": "Dark-finish TWS057 case drawing with internal compartment and strap",
+          "caption": "Alternate case appearance reference. The drawing does not establish final color availability or included accessories."
+        },
+        {
+          "alt": "TWS057 case front display rendering and rear case view",
+          "caption": "Exterior display and rear-case design reference. Confirm the actual display behavior, charging port and finish on a complete sample."
+        }
+      ],
+      "sections": [
+        {
+          "id": "tws057-case-review",
+          "label": "Case and sample checks",
+          "heading": "Separate the TWS057 case drawing from the earbud review",
+          "intro": "The case is the most detailed supplied visual reference for TWS057. It helps define design questions, but it is not enough to approve the complete ANC earbud product.",
+          "items": [
+            {
+              "label": "Complete earbud views",
+              "text": "Request the matching earbuds, wearing views and dimensions before choosing the fit or using the case illustration as the sole product listing image."
+            },
+            {
+              "label": "Display and charging",
+              "text": "The exterior drawing shows a numeric display. Confirm what it indicates, how it behaves during charging, the port and the included cable on the selected sample."
+            },
+            {
+              "label": "ANC configuration and calls",
+              "text": "The record identifies an ANC model. Review the listening function separately from outgoing call quality, and record the phone, app, volume and enabled settings. No measured cancellation depth is supplied here."
+            }
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does TWS057 have a user-replaceable case battery?",
+          "answer": "The drawings show an internal battery compartment and a separate cover, but they do not establish user-replacement support. Request the current construction and service guidance for the selected version. Do not open or service a case based on this illustration."
+        },
+        {
+          "question": "What can I confirm from the TWS057 display drawing?",
+          "answer": "It shows a numeric display design, not verified display behavior or remaining-time accuracy. Check the actual indicators, charging state and port on a complete sample, and obtain matching earbud views before approving artwork."
+        },
+        {
+          "question": "Is the 13mm TWS057 driver automatically better than TWS042S?",
+          "answer": "No sound-quality ranking is established by these records. TWS057 lists a 13mm driver while TWS042S lists 6mm; compare tuning, fit and the same audio passage on samples instead of treating the larger diameter as a proven improvement."
+        },
+        {
+          "question": "Does TWS057 deliver 30 hours from one earbud charge?",
+          "answer": "About 30 hours is a listed catalogue figure, not a new playback test. Confirm single charge or charging-case-assisted use, whether ANC is on or off, volume and call use before adopting runtime wording for your product listing."
+        }
+      ],
+      "relatedLinks": [
+        { "href": "../tws042s/", "label": "Compare the round-faceplate ANC reference: TWS042S" },
+        { "href": "../../insights/wireless-gaming-headset-microphone-noise-test-checklist/#anc-enc", "label": "ANC and microphone noise reduction are different checks" }
+      ],
       "specifications": [
         [
           "Chipset",
@@ -950,7 +1078,69 @@
       "inquiryKey": "tws-tws029",
       "inquiryLabel": "TWS029 True Wireless Earbuds",
       "indexable": true,
-      "overview": "Review TWS029 true wireless earbuds with its supplied product images and listed configuration. Check the exact version, charging setup and sample behavior before preparing your private-label package.",
+      "dateModified": "2026-11-02",
+      "title": "12mm True Wireless Earbuds for Private Label | TWS029",
+      "heading": "TWS029 true wireless earbuds with a 12mm driver",
+      "eyebrow": "12mm driver / 50mAh earbuds / 300mAh charging case",
+      "description": "Compare TWS029 true wireless earbuds with a listed 12mm driver and 50mAh earbud battery. View the loop-detail design and case finishes before sampling.",
+      "overview": "TWS029 is a different design reference from the round-faceplate ANC models. The supplied views show stemmed earbuds with a loop detail and black or light-finish charging cases. The record lists a 12mm driver, 50mAh earbud battery and 300mAh case. Review the actual wearing fit and charging behavior before choosing it for your range; this reviewed record does not identify TWS029 as an ANC model.",
+      "galleryIntro": "The supplied black and light-finish views show the stems, loop detail and open or closed case. They do not demonstrate fit, retention, water resistance or final color availability. Pictured parts are not automatically included.",
+      "specificationHeading": "TWS029 driver, earbud and case details",
+      "specificationIntro": "Keep the 50mAh earbud figure separate from the 300mAh case. Compare the listed 12mm configuration with the selected sample, not with an assumed ANC version.",
+      "assetDescriptions": [
+        {
+          "alt": "Black TWS029 case shown closed and open with stemmed loop-detail earbuds",
+          "caption": "Black-finish product reference with open and closed case views. Confirm the fit and actual finish on the sample."
+        },
+        {
+          "alt": "Light-finish TWS029 case and stemmed earbuds with loop detail",
+          "caption": "Light-finish reference showing the earbud shape and charging positions. The image is not a wear-retention or water-resistance test."
+        }
+      ],
+      "sections": [
+        {
+          "id": "tws029-fit-review",
+          "label": "Fit and charging review",
+          "heading": "Where TWS029 differs in a sample shortlist",
+          "intro": "Use the visible earbud shape and the listed battery configuration to prepare a distinct sample brief. Do not transfer ANC or fit claims from another model.",
+          "items": [
+            {
+              "label": "Stem and loop detail",
+              "text": "Compare placement, fit and comfort on an actual wearer. The visible loop is not proof of sports retention, water resistance or a particular wearing category."
+            },
+            {
+              "label": "12mm driver, 50mAh earbuds",
+              "text": "These are listed configuration details. Review the audio and playback conditions rather than inferring better sound or longer runtime from the numbers."
+            },
+            {
+              "label": "Black and light case references",
+              "text": "Choose the desired case and earbud finish for sample discussion, then confirm availability, artwork position, cable, manual and packing contents for that version."
+            }
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is TWS029 listed as an ANC earbud model?",
+          "answer": "The reviewed TWS029 record identifies true wireless earbuds without an ANC designation. Do not transfer the TWS042S or TWS057 ANC label to it. Ask for the exact feature sheet if your project requires noise cancellation."
+        },
+        {
+          "question": "Do the TWS029 loop details prove a sports fit?",
+          "answer": "No. The supplied images show a loop detail but do not establish wearing retention, comfort during movement or water resistance. Review the actual fit and request any required product evidence before making a sports or waterproof claim."
+        },
+        {
+          "question": "What does the listed TWS029 seven-hour figure cover?",
+          "answer": "About seven hours is a catalogue reference with incomplete conditions. Confirm single charge or charging-case-assisted use, listening volume and playback versus calls. It is not a verified result and is not directly comparable with another model's case-assisted total."
+        },
+        {
+          "question": "How do TWS029 and TWS057 differ in their listed configuration?",
+          "answer": "Both list a JL7103 chipset and 300mAh case. TWS029 lists a 12mm driver and 50mAh earbud battery; TWS057 lists a 13mm driver and 35mAh earbud battery with an ANC designation. The different configurations do not establish a sound-quality or runtime winner."
+        }
+      ],
+      "relatedLinks": [
+        { "href": "../tws057/", "label": "Review the separately listed ANC configuration: TWS057" },
+        { "href": "../../insights/compare-tws-earbuds-private-label-sampling/", "label": "Compare TWS fit, calls and charging before sampling" }
+      ],
       "specifications": [
         [
           "Chipset",
@@ -983,7 +1173,7 @@
       ],
       "conflicts": [],
       "notes": [
-        "Playback and talk-time figures are listed references. Confirm earbud-only runtime versus charging-case-assisted totals and the ANC setting; no new runtime test is shown."
+        "The listed seven-hour figure does not specify single charge or charging-case-assisted use, volume or call conditions. No new runtime test is shown. ANC is not identified in this reviewed TWS029 record."
       ],
       "assets": [
         "assets/catalog/tws-tws029/image-01.jpg",

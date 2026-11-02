@@ -5439,3 +5439,48 @@ h2 {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
+
+.insights-hub .guide-topic-nav {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 0.5rem 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 1rem clamp(1.15rem, 4vw, 3rem);
+}
+
+.insights-hub .guide-topic-nav a {
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.insights-hub .guide-topic,
+.insights-hub #buyer-worksheets {
+  scroll-margin-top: 128px;
+}
+
+@media (max-width: 920px) {
+  .insights-hub .seo-hero > img {
+    order: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .insights-hub .guide-topic-nav {
+    gap: 0.5rem 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .insights-hub .seo-hero > img {
+    max-height: 220px;
+  }
+}
