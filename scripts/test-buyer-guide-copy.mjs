@@ -248,3 +248,74 @@ assert.ok(ecommerce.includes('href="../insights/gaming-headset-packaging-accesso
 assert.ok(readFileSync('audio-products-for-importers/index.html', 'utf8')
   .includes('<title>Gaming Headsets for Importers &amp; Audio Buyers | TALRIVO</title>'));
 console.log('Channel entry checks passed: distinct distributor/listing tasks, aligned metadata/FAQs, direct answer anchors and preserved quotation/importer routes.');
+
+const regionCases = [
+  ['audio-products-for-europe-buyers', 'Gaming Headsets for Europe: Documents & Packaging | TALRIVO', 'europe-order-checks'],
+  ['audio-products-for-latin-america-buyers', 'Wholesale Headsets for Latin America | TALRIVO', 'country-packaging-checks'],
+  ['audio-products-for-southeast-asia-buyers', 'Gaming & Mobile Audio for Southeast Asia | TALRIVO', 'device-sample-checks'],
+];
+const regionPages = new Map();
+const regionQuestions = [];
+for (const [slug, title, anchor] of regionCases) {
+  const html = readFileSync(`${slug}/index.html`, 'utf8');
+  regionPages.set(slug, html);
+  const url = `https://talrivo.com/${slug}/`;
+  assert.equal(decodeAmpersand(html.match(/<title>([^<]+)<\/title>/)[1]), title);
+  for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+    assert.equal(decodeAmpersand(html.match(new RegExp(`<meta ${attribute} content="([^"]+)"`))[1]), title);
+  }
+  const descriptions = [...html.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set(descriptions).size, 1);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  assert.deepEqual(schemas.map(schema => schema['@type']), ['WebPage', 'FAQPage', 'BreadcrumbList']);
+  const page = schemas.find(schema => schema['@type'] === 'WebPage');
+  assert.equal(page.name, title);
+  assert.equal(page.description, descriptions[0]);
+  assert.equal(page.url, url);
+  assert.equal(page.dateModified, '2026-11-02');
+  assert.equal(schemas.find(schema => schema['@type'] === 'BreadcrumbList').itemListElement.at(-1).item, url);
+  const faqSection = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+  const visible = [...faqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+    .map(([, question, answer]) => ({ question, answer }));
+  assert.equal(visible.length, 4);
+  regionQuestions.push(...visible.map(item => item.question));
+  assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+    .map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), visible);
+  assert.ok(html.includes(`<link rel="canonical" href="${url}">`));
+  assert.ok(html.includes('<meta name="robots" content="index, follow">'));
+  assert.ok(html.includes(`class="button primary" href="#${anchor}"`));
+  assert.equal((html.match(new RegExp(`id="${anchor}"`, 'g')) || []).length, 1);
+  assert.ok(html.indexOf(`href="#${anchor}"`) < html.indexOf('<img src='));
+  const checks = html.match(new RegExp(`<section[^>]*id="${anchor}"[\\s\\S]*?<\\/section>`))[0];
+  assert.equal((checks.match(/<strong>/g) || []).length, 4);
+  assert.ok(html.includes('<main class="seo-page region-buyer-page">'));
+  assert.doesNotMatch(html, /class="text-action"/, 'Use readable resource links rather than the product-card action style');
+  assert.ok(html.includes('href="../contact/?product=custom-audio&amp;inquiry=rfq#inquiry-form"'));
+  assert.ok(html.includes('href="../audio-products-for-importers/"'));
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-02</lastmod>`));
+  assert.ok(demandLlms.includes(`](${url}):`));
+  assert.doesNotMatch(html, /Best fit for|What TALRIVO can support|guaranteed to increase clicks|free samples?|Europe certified/i);
+}
+assert.equal(new Set(regionQuestions).size, 12, 'Region FAQs must answer distinct buyer tasks, not just swap place names');
+const europe = regionPages.get('audio-products-for-europe-buyers');
+assert.match(europe, /G936 is not listed in those two documents/);
+assert.match(europe, /EU guidance is not a substitute for checking a non-EU destination/);
+assert.ok(europe.includes('href="../insights/gaming-headset-import-documents-checklist/#certificate-match"'));
+assert.ok(europe.includes('href="https://europa.eu/youreurope/business/product-rules-compliance/general-product-compliance/ce-marking/index_en.htm"'));
+const latinAmerica = regionPages.get('audio-products-for-latin-america-buyers');
+assert.match(latinAmerica, /Spanish or Portuguese artwork/);
+assert.match(latinAmerica, /Brazil, Mexico, Argentina and Uruguay are separate destinations/);
+assert.match(latinAmerica, /does not confirm a TALRIVO approval/);
+assert.doesNotMatch(latinAmerica, /auricular(?:es)? TWS Bluetooth|target product role, target product role/);
+assert.ok(latinAmerica.includes('href="../insights/private-label-gaming-headset-rfq-checklist/#quote-comparison"'));
+assert.ok(latinAmerica.includes('href="https://www.gov.br/pt-br/servicos/homologar-produtos-de-telecomunicacoes-anatel"'));
+const southeastAsia = regionPages.get('audio-products-for-southeast-asia-buyers');
+assert.match(southeastAsia, /game audio and voice chat work together/);
+assert.match(southeastAsia, /does not establish regional approval, local stock or country-wide compatibility/);
+assert.doesNotMatch(southeastAsia, /Japan|Korea/);
+assert.ok(southeastAsia.includes('href="../insights/2-4g-vs-bluetooth-gaming-headsets-importers/#device-compatibility"'));
+assert.ok(southeastAsia.includes('href="../insights/choose-2-4g-wireless-gaming-headset/#receiver-checks"'));
+console.log('Region entry checks passed: three distinct buyer tasks, 12 matching FAQs, direct answer anchors, stable URLs and country-specific evidence limits.');

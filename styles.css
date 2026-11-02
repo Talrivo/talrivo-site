@@ -5466,8 +5466,24 @@ h2 {
   scroll-margin-top: 128px;
 }
 
+.region-buyer-page .seo-section[id] {
+  scroll-margin-top: 128px;
+}
+
+.region-buyer-page .seo-grid h3 {
+  font-size: 1.125rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 821px) {
+  .region-buyer-page .buyer-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 920px) {
-  .insights-hub .seo-hero > img {
+  .insights-hub .seo-hero > img,
+  .region-buyer-page .seo-hero > img {
     order: 0;
   }
 }
