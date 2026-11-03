@@ -77,15 +77,21 @@ assert.match(home, /href="#quality">Factory &amp; Quality/);
 const homeHero = home.match(/<section class="hero brand-hero"[\s\S]*?<\/section>/)[0];
 assert.match(homeHero, /href="#quality">Workshop Photos/);
 assert.match(homeHero, /href="#home-certificates">CE\/RED &amp; RoHS Documents/);
-assert.equal((homeFactory.match(/<figure>/g) || []).length, 3);
-for (const name of ['gaming-headset-assembly-line-reference', 'gaming-headset-audio-check-reference', 'gaming-headset-packaging-line-reference']) {
+assert.equal((homeFactory.match(/<figure>/g) || []).length, 6);
+for (const name of ['gaming-headset-assembly-line-reference', 'gaming-headset-audio-check-reference', 'gaming-headset-packaging-line-reference',
+  'gaming-headset-assembly-closeup-reference', 'gaming-headset-charging-review-reference', 'gaming-headset-cable-fixture-reference']) {
   assert.ok(homeFactory.includes(`href="assets/quality-review/${name}.jpg"`), 'Retain full-size original photo access');
 }
 for (const [name] of originals) {
   assert.ok(homeFactory.includes(`href="assets/certificates/${name}.pdf"`), 'Link the unchanged certificate directly from the homepage');
 }
-assert.equal((homeFactory.match(/<img /g) || []).length, 5);
-assert.equal((homeFactory.match(/loading="lazy"/g) || []).length, 5);
+const detailPhotos = homeFactory.match(/<details class="home-workshop-details">([\s\S]*?)<\/details>/)?.[1];
+assert.ok(detailPhotos, 'Extra workshop photos must be available without a JavaScript dependency');
+assert.equal((detailPhotos.match(/<figure>/g) || []).length, 3);
+assert.match(detailPhotos, /<summary>More Workshop Details \(3 Photos\)<\/summary>/);
+assert.doesNotMatch(homeFactory, /<details[^>]*\bopen\b/, 'Keep the initial photo selection compact');
+assert.equal((homeFactory.match(/<img /g) || []).length, 8);
+assert.equal((homeFactory.match(/loading="lazy"/g) || []).length, 8);
 assert.match(homeFactory, /Nanrui Electronic Technology Co\., Ltd\./);
 assert.match(homeFactory, /July 31, 2024/);
 assert.match(homeFactory, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);

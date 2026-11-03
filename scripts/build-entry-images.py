@@ -40,6 +40,9 @@ SOURCES = {
     "factory-assembly": "assets/quality-review/gaming-headset-assembly-line-reference.jpg",
     "factory-audio-check": "assets/quality-review/gaming-headset-audio-check-reference.jpg",
     "factory-packaging": "assets/quality-review/gaming-headset-packaging-line-reference.jpg",
+    "factory-assembly-closeup": "assets/quality-review/gaming-headset-assembly-closeup-reference.jpg",
+    "factory-charging-area": "assets/quality-review/gaming-headset-charging-review-reference.jpg",
+    "factory-cable-fixture": "assets/quality-review/gaming-headset-cable-fixture-reference.jpg",
     "factory-cert-red": "assets/certificates/sit240719190301-red-preview.webp",
     "factory-cert-rohs": "assets/certificates/sit240719190302r-rohs-preview.webp",
 }

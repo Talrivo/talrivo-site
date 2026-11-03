@@ -5614,6 +5614,28 @@ h2 {
   font-size: 0.85rem;
 }
 
+.home-workshop-details {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  margin-top: 0.75rem;
+}
+
+.home-workshop-details summary {
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 1rem 0;
+}
+
+.home-workshop-details summary:focus-visible {
+  outline: 2px solid #1769aa;
+  outline-offset: 4px;
+}
+
+.home-workshop-details .home-workshop-grid {
+  padding: 0.5rem 0 1rem;
+}
+
 .home-evidence-resources {
   display: flex;
   flex-wrap: wrap;
