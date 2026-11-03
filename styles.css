@@ -5555,6 +5555,149 @@ h2 {
   display: none;
 }
 
+.hero-evidence-links {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  gap: 0.5rem 1.25rem;
+  margin: 0.9rem 0;
+}
+
+.hero-evidence-links a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.home-factory-evidence {
+  background: #f3f6f7;
+  max-width: none;
+  padding: 3rem max(1.25rem, calc((100% - 1284px) / 2));
+  scroll-margin-top: 100px;
+}
+
+.home-factory-evidence .section-heading h2 {
+  font-size: 1.75rem;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.home-workshop-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-workshop-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.home-workshop-grid img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.home-workshop-grid figcaption {
+  display: grid;
+  font-size: 0.9rem;
+  gap: 0.3rem;
+  padding: 0.8rem 0;
+}
+
+.home-workshop-grid figcaption span,
+.home-evidence-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.home-evidence-resources {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  gap: 0.75rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.home-evidence-resources a,
+.home-document-scope {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.home-document-band {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  scroll-margin-top: 100px;
+}
+
+.home-document-band h3 {
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.home-document-band p {
+  font-size: 0.92rem;
+}
+
+.home-certificate-grid {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.home-certificate-grid a {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.home-certificate-grid img {
+  display: block;
+  height: 192px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.home-certificate-grid strong {
+  font-size: 0.9rem;
+}
+
+.home-certificate-grid span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .home-factory-evidence .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-workshop-grid,
+  .home-document-band {
+    grid-template-columns: 1fr;
+  }
+
+  .home-certificate-grid img {
+    height: 160px;
+  }
+}
+
 @media (max-width: 620px) {
   .supplier-checklist-page .table-wrap {
     border: 0;

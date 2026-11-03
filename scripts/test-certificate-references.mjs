@@ -66,3 +66,37 @@ assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntit
   .map(q => ({question: q.name, answer: q.acceptedAnswer.text})), answers);
 assert.ok(readFileSync('insights/index.html', 'utf8').includes('href="gaming-headset-import-documents-checklist/#certificate-match"'));
 console.log('Certificate checks passed: unchanged originals, explicit holder/model/date scope, direct guide links, synchronized description and visible FAQ, stable title/canonical.');
+
+const home = readFileSync('index.html', 'utf8');
+const homeFactory = home.match(/<section[^>]*id="quality"[\s\S]*?<\/section>/)?.[0];
+assert.ok(homeFactory, 'Homepage needs a visible factory and document section');
+assert.equal((home.match(/id="quality"/g) || []).length, 1, 'Preserve a single existing Quality anchor');
+assert.ok(home.indexOf('id="products"') < home.indexOf('id="quality"'));
+assert.ok(home.indexOf('id="quality"') < home.indexOf('class="dock-preview"'), 'Show evidence directly after the product categories');
+assert.match(home, /href="#quality">Factory &amp; Quality/);
+const homeHero = home.match(/<section class="hero brand-hero"[\s\S]*?<\/section>/)[0];
+assert.match(homeHero, /href="#quality">Workshop Photos/);
+assert.match(homeHero, /href="#home-certificates">CE\/RED &amp; RoHS Documents/);
+assert.equal((homeFactory.match(/<figure>/g) || []).length, 3);
+for (const name of ['gaming-headset-assembly-line-reference', 'gaming-headset-audio-check-reference', 'gaming-headset-packaging-line-reference']) {
+  assert.ok(homeFactory.includes(`href="assets/quality-review/${name}.jpg"`), 'Retain full-size original photo access');
+}
+for (const [name] of originals) {
+  assert.ok(homeFactory.includes(`href="assets/certificates/${name}.pdf"`), 'Link the unchanged certificate directly from the homepage');
+}
+assert.equal((homeFactory.match(/<img /g) || []).length, 5);
+assert.equal((homeFactory.match(/loading="lazy"/g) || []).length, 5);
+assert.match(homeFactory, /Nanrui Electronic Technology Co\., Ltd\./);
+assert.match(homeFactory, /July 31, 2024/);
+assert.match(homeFactory, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
+assert.match(homeFactory, /do not name TALRIVO as the holder/);
+assert.match(homeFactory, /G936 is not listed/);
+assert.match(homeFactory, /not a model-specific test report or a production-capacity audit/);
+for (const anchor of ['process-references', 'published-certificates']) {
+  assert.ok(home.includes(`href="gaming-headset-quality-review/#${anchor}"`));
+}
+const homeGraph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+assert.equal(homeGraph.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-11-03');
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/</loc>\n    <lastmod>2026-11-03</lastmod>'));
+assert.doesNotMatch(homeFactory, /all products (?:are )?certified|ISO.?9001|BSCI|FCC certified/i);
+console.log('Homepage evidence checks passed: early photo gallery, hero/navigation/footer paths, direct original PDFs, responsive lazy previews and explicit certificate scope.');

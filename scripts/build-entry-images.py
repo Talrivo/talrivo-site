@@ -37,6 +37,11 @@ SOURCES = {
     "g926-wearing-fit-illustration": "assets/catalog/g926-wireless/creative/g926-wearing-fit-illustration.png",
     "g926-controls-material-illustration": "assets/catalog/g926-wireless/creative/g926-controls-material-illustration.png",
     "g926-device-connections-illustration": "assets/catalog/g926-wireless/creative/g926-device-connections-illustration.png",
+    "factory-assembly": "assets/quality-review/gaming-headset-assembly-line-reference.jpg",
+    "factory-audio-check": "assets/quality-review/gaming-headset-audio-check-reference.jpg",
+    "factory-packaging": "assets/quality-review/gaming-headset-packaging-line-reference.jpg",
+    "factory-cert-red": "assets/certificates/sit240719190301-red-preview.webp",
+    "factory-cert-rohs": "assets/certificates/sit240719190302r-rohs-preview.webp",
 }
 
 
@@ -51,7 +56,9 @@ def main():
         original = ROOT / source
         with Image.open(original) as opened:
             image = ImageOps.exif_transpose(opened).convert("RGB")
-            widths = (480, 960, 1440) if name == "gaming-hero" else (480, 960)
+            widths = (240, 480) if name.startswith("factory-cert-") else (
+                (480, 960, 1440) if name == "gaming-hero" else (480, 960)
+            )
             for width in widths:
                 if width > image.width:
                     raise ValueError(f"{source} is narrower than {width}px")
