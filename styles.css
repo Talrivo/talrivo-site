@@ -5462,8 +5462,14 @@ h2 {
 }
 
 .insights-hub .guide-topic,
-.insights-hub #buyer-worksheets {
+.insights-hub #buyer-worksheets,
+.insights-hub #product-videos {
   scroll-margin-top: 128px;
+}
+
+.insights-hub #product-videos h3 {
+  font-size: 1.125rem;
+  letter-spacing: 0;
 }
 
 .region-buyer-page .seo-section[id] {
@@ -5471,8 +5477,20 @@ h2 {
 }
 
 .model-directory-page .seo-section[id],
-.sample-request-page .seo-section[id] {
+.sample-request-page .seo-section[id],
+.sample-process-page .seo-section[id] {
   scroll-margin-top: 128px;
+}
+
+.sample-process-page .seo-grid h3 {
+  font-size: 1.125rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 921px) {
+  .sample-process-page .seo-faq .seo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .sample-request-page .seo-section .text-action {
@@ -5513,7 +5531,8 @@ h2 {
   .insights-hub .seo-hero > img,
   .region-buyer-page .seo-hero > img,
   .model-directory-page .seo-hero > img,
-  .sample-request-page .seo-hero > img {
+  .sample-request-page .seo-hero > img,
+  .sample-process-page .seo-hero > img {
     order: 0;
   }
 }

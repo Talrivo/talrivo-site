@@ -165,7 +165,7 @@ assert.equal(new Set(hubDescriptions).size, 1);
 const hubSchemas = [...index.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
 const hubCollection = hubSchemas.find(schema => schema['@type'] === 'CollectionPage');
-assert.equal(hubCollection.dateModified, '2026-11-02');
+assert.equal(hubCollection.dateModified, '2026-11-03');
 assert.equal(hubCollection.description, hubDescriptions[0]);
 const topicIds = ['connection-guides', 'sound-comfort-guides', 'quote-guides', 'sample-guides', 'model-comparisons', 'earbud-guides'];
 const topicSections = [...index.matchAll(/<section class="seo-section guide-topic" id="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)];
@@ -178,10 +178,10 @@ const topicCards = topicSections.flatMap(([, , section]) => [...section.matchAll
 assert.equal(topicCards.length, 22);
 assert.equal(new Set(topicCards.map(card => new URL(card.url).pathname)).size, 22, 'List each guide once in the topic groups');
 const hubItems = hubCollection.mainEntity.itemListElement;
-assert.equal(hubItems.length, 29);
-assert.deepEqual(hubItems.map(item => item.position), Array.from({ length: 29 }, (_, i) => i + 1));
+assert.equal(hubItems.length, 30);
+assert.deepEqual(hubItems.map(item => item.position), Array.from({ length: 30 }, (_, i) => i + 1));
 assert.deepEqual(hubItems.slice(0, 22).map(({ name, url }) => ({ name, url })), topicCards);
-assert.equal(new Set(hubItems.map(item => item.url)).size, 29);
+assert.equal(new Set(hubItems.map(item => item.url)).size, hubItems.length);
 for (const target of [
   'wireless-gaming-headset-microphone-noise-test-checklist/#anc-enc',
   'choose-2-4g-wireless-gaming-headset/#receiver-checks',
@@ -190,10 +190,16 @@ for (const target of [
 ]) assert.ok(index.includes(`href="${target}"`));
 assert.ok(index.includes('class="button primary" href="#connection-guides"'));
 assert.ok(index.includes('href="../contact/?product=audio-products&amp;inquiry=rfq#inquiry-form"'));
-assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-02</lastmod>`));
+assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
 assert.ok(demandLlms.includes(`[Insights](${hubUrl}):`));
 assert.doesNotMatch(index, /For GEO|guaranteed to increase clicks|zero latency/i);
-console.log('Insights hub checks passed: six topic routes, 22 distinct guide cards, aligned collection data, stable title and retained worksheet/contact routes.');
+const videoSection = index.match(/<section[^>]*id="product-videos"[\s\S]*?<\/section>/)[0];
+assert.ok(index.includes('href="#product-videos">Watch Headset Demonstrations</a>'));
+assert.equal((videoSection.match(/<article>/g) || []).length, 8);
+assert.ok(videoSection.includes('href="../videos/g938-phone-setup-controls/"'));
+assert.ok(videoSection.includes('completed pairing is not clearly visible'));
+assert.equal(hubItems[24].url, 'https://talrivo.com/videos/g938-phone-setup-controls/');
+console.log('Insights hub checks passed: six topic routes, 22 distinct guides, eight video resources, aligned collection data and a direct hands-on demo entry.');
 
 const channelCases = [
   ['audio-products-for-distributors', 'Wholesale Gaming Headsets for Distributors | TALRIVO', 'assortment-checks'],
@@ -319,3 +325,55 @@ assert.doesNotMatch(southeastAsia, /Japan|Korea/);
 assert.ok(southeastAsia.includes('href="../insights/2-4g-vs-bluetooth-gaming-headsets-importers/#device-compatibility"'));
 assert.ok(southeastAsia.includes('href="../insights/choose-2-4g-wireless-gaming-headset/#receiver-checks"'));
 console.log('Region entry checks passed: three distinct buyer tasks, 12 matching FAQs, direct answer anchors, stable URLs and country-specific evidence limits.');
+
+const processSlug = 'gaming-headset-sample-process-checklist';
+const processGuide = readFileSync(`${base}${processSlug}/index.html`, 'utf8');
+const processTitle = 'Gaming Headset Sample Process: From Inquiry to Approval';
+const processUrl = `https://talrivo.com/insights/${processSlug}/`;
+assert.ok(processGuide.includes(`<title>${processTitle}</title>`));
+for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+  assert.ok(processGuide.includes(`<meta ${attribute} content="${processTitle}">`));
+}
+const processDescriptions = [...processGuide.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(processDescriptions.length, 3);
+assert.equal(new Set(processDescriptions).size, 1);
+const processSchemas = [...processGuide.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const processArticle = processSchemas.find(schema => schema['@type'] === 'Article');
+assert.equal(processArticle.headline, processTitle);
+assert.equal(processArticle.description, processDescriptions[0]);
+assert.equal(processArticle.mainEntityOfPage, processUrl);
+assert.equal(processArticle.url, processUrl);
+assert.equal(processArticle.datePublished, '2026-08-13');
+assert.equal(processArticle.dateModified, '2026-11-03');
+assert.ok(processGuide.includes(`<link rel="canonical" href="${processUrl}">`));
+assert.ok(processGuide.includes('<meta name="robots" content="index, follow">'));
+assert.ok(processGuide.includes('<main class="seo-page sample-process-page">'));
+assert.ok(processGuide.includes('Updated November 3, 2026'));
+assert.ok(processGuide.indexOf('href="#sample-stages"') < processGuide.indexOf('<img src='));
+assert.equal((processGuide.match(/id="sample-stages"/g) || []).length, 1);
+const processStages = processGuide.match(/<section[^>]*id="sample-stages"[\s\S]*?<\/section>/)[0];
+assert.equal((processStages.match(/<tr><th scope="row">/g) || []).length, 6);
+for (const target of [
+  '../evaluate-gaming-headset-sample-before-bulk-order/#review-worksheet',
+  '../gaming-headset-packaging-accessories-checklist/#packing-checklist',
+]) assert.ok(processStages.includes(`href="${target}"`));
+const processFaqSection = processGuide.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const processVisibleFaq = [...processFaqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({ question, answer }));
+assert.equal(processVisibleFaq.length, 6);
+assert.deepEqual(processSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), processVisibleFaq);
+for (const boundary of [
+  'This page does not offer free samples or promise an order credit',
+  'There is no fixed sample or shipping lead time published here',
+  'Approval of one sample does not demonstrate that every bulk unit has been tested or matches it',
+  'The supplied photos are visible process references, not a model-specific test record',
+]) assert.ok(processGuide.includes(boundary));
+assert.ok(processGuide.includes('href="../../contact/?product=gaming-headsets&amp;inquiry=sample#inquiry-form"'));
+assert.ok(demandSitemap.includes(`<loc>${processUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
+assert.ok(demandLlms.includes(`](${processUrl}): Six suggested review steps`));
+assert.ok(readFileSync('sample-request/index.html', 'utf8')
+  .includes(`href="../insights/${processSlug}/#sample-stages"`));
+console.log('Sample process checks passed: six distinct approval steps, matching metadata and FAQs, stable URL, cost/timing limits and a direct sample-page discovery link.');

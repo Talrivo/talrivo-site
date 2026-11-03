@@ -64,3 +64,37 @@ assert.match(quality, /id="production-video"/); // Preserve existing inbound anc
 assert.ok(read('llms.txt').includes(url));
 assert.ok(read('.github/workflows/deploy-pages.yml').includes('node scripts/test-assembly-watch.mjs'));
 console.log('Assembly watch checks passed: initial-HTML video, discovery links, factual scope and inquiry reference.');
+
+const phoneUrl = 'https://talrivo.com/videos/g938-phone-setup-controls/';
+const phone = read('videos/g938-phone-setup-controls/index.html');
+const phoneTitle = 'Wireless Gaming Headset Phone Setup Video | G938 | TALRIVO';
+assert.ok(phone.includes(`<title>${phoneTitle}</title>`), 'Keep the existing watch-page search title stable');
+assert.ok(phone.includes(`<link rel="canonical" href="${phoneUrl}">`));
+const phoneDescriptions = [...phone.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(phoneDescriptions.length, 3);
+assert.equal(new Set(phoneDescriptions).size, 1);
+const phoneSchemas = [...phone.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const phonePage = phoneSchemas.find(schema => schema['@type'] === 'WebPage');
+assert.equal(phonePage.name, phoneTitle);
+assert.equal(phonePage.description, phoneDescriptions[0]);
+assert.equal(phonePage.datePublished, '2026-10-13');
+assert.equal(phonePage.dateModified, '2026-11-03');
+const phoneVideo = phoneSchemas.find(schema => schema['@type'] === 'VideoObject');
+assert.equal(phonePage.mainEntity['@id'], phoneVideo['@id']);
+assert.equal(phoneVideo.embedUrl, 'https://www.youtube-nocookie.com/embed/AKqT0fzuqW8');
+assert.equal(phoneVideo.uploadDate, '2026-10-13T00:00:00+08:00');
+assert.equal(phoneVideo.duration, 'PT1M26S');
+assert.equal((phone.match(/<iframe\b/g) || []).length, 1);
+assert.ok(phone.includes(`<iframe src="${phoneVideo.embedUrl}"`), 'Keep the actual player in the initial HTML');
+assert.ok(phone.indexOf('<iframe') < phone.indexOf('id="chapters-title"'));
+assert.match(phone, /Completed Bluetooth pairing is not clearly visible/);
+assert.match(phone, /music playback alone does not verify voice-chat performance/);
+assert.match(phone, /reference=g938-phone-setup#inquiry-form/);
+for (const time of [0, 38, 60]) {
+  assert.ok(phone.includes(`href="https://youtu.be/AKqT0fzuqW8?t=${time}"`));
+}
+assert.ok(read('sitemap.xml').includes(`<loc>${phoneUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
+assert.ok(read('insights/index.html').includes('href="../videos/g938-phone-setup-controls/"'));
+console.log('Phone demo checks passed: stable title/URL, aligned descriptions, unchanged video metadata, visible player and honest pairing/voice-chat limits.');
