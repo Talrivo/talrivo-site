@@ -5478,19 +5478,32 @@ h2 {
 
 .model-directory-page .seo-section[id],
 .sample-request-page .seo-section[id],
-.sample-process-page .seo-section[id] {
+.sample-process-page .seo-section[id],
+.supplier-checklist-page .seo-section[id] {
   scroll-margin-top: 128px;
 }
 
-.sample-process-page .seo-grid h3 {
+.sample-process-page .seo-grid h3,
+.supplier-checklist-page .seo-grid h3 {
   font-size: 1.125rem;
   letter-spacing: 0;
 }
 
 @media (min-width: 921px) {
-  .sample-process-page .seo-faq .seo-grid {
+  .sample-process-page .seo-faq .seo-grid,
+  .supplier-checklist-page .seo-faq .seo-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.supplier-checklist-page .seo-cta .button.secondary {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.supplier-checklist-page .seo-cta .button.secondary:hover {
+  background: #ffffff;
+  color: var(--ink);
 }
 
 .sample-request-page .seo-section .text-action {
@@ -5532,8 +5545,58 @@ h2 {
   .region-buyer-page .seo-hero > img,
   .model-directory-page .seo-hero > img,
   .sample-request-page .seo-hero > img,
-  .sample-process-page .seo-hero > img {
+  .sample-process-page .seo-hero > img,
+  .supplier-checklist-page .seo-hero > img {
     order: 0;
+  }
+}
+
+.supplier-check-table .supplier-cell-label {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  .supplier-checklist-page .table-wrap {
+    border: 0;
+    overflow: visible;
+  }
+
+  .supplier-check-table,
+  .supplier-check-table tbody {
+    display: block;
+    min-width: 0;
+  }
+
+  .supplier-check-table thead {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .supplier-check-table tbody tr {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    display: grid;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .supplier-check-table th,
+  .supplier-check-table td {
+    border: 0;
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+
+  .supplier-check-table .supplier-cell-label {
+    color: var(--ink);
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
   }
 }
 

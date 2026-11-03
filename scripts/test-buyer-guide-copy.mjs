@@ -377,3 +377,63 @@ assert.ok(demandLlms.includes(`](${processUrl}): Six suggested review steps`));
 assert.ok(readFileSync('sample-request/index.html', 'utf8')
   .includes(`href="../insights/${processSlug}/#sample-stages"`));
 console.log('Sample process checks passed: six distinct approval steps, matching metadata and FAQs, stable URL, cost/timing limits and a direct sample-page discovery link.');
+
+const supplierSlug = 'oem-gaming-headset-supplier-checklist';
+const supplierGuide = readFileSync(`${base}${supplierSlug}/index.html`, 'utf8');
+const supplierTitle = 'OEM Gaming Headset Supplier Checklist | TALRIVO';
+const supplierUrl = `https://talrivo.com/insights/${supplierSlug}/`;
+assert.ok(supplierGuide.includes(`<title>${supplierTitle}</title>`), 'Keep the existing supplier search title');
+assert.ok(supplierGuide.includes(`<link rel="canonical" href="${supplierUrl}">`));
+for (const attribute of ['property="og:title"', 'name="twitter:title"']) {
+  assert.ok(supplierGuide.includes(`<meta ${attribute} content="${supplierTitle}">`));
+}
+const supplierDescriptions = [...supplierGuide.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+  .map(([, text]) => text);
+assert.equal(supplierDescriptions.length, 3);
+assert.equal(new Set(supplierDescriptions).size, 1);
+const supplierSchemas = [...supplierGuide.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+assert.deepEqual(supplierSchemas.map(schema => schema['@type']), ['Article', 'FAQPage', 'BreadcrumbList']);
+const supplierArticle = supplierSchemas.find(schema => schema['@type'] === 'Article');
+assert.equal(supplierArticle.headline, 'OEM Gaming Headset Supplier Checklist');
+assert.equal(supplierArticle.description, supplierDescriptions[0]);
+assert.equal(supplierArticle.mainEntityOfPage, supplierUrl);
+assert.equal(supplierArticle.datePublished, '2026-07-31');
+assert.equal(supplierArticle.dateModified, '2026-11-03');
+assert.ok(supplierGuide.includes('Updated November 3, 2026'));
+assert.ok(supplierGuide.indexOf('href="#supplier-evidence"') < supplierGuide.indexOf('<img src='));
+assert.equal((supplierGuide.match(/id="supplier-evidence"/g) || []).length, 1);
+const supplierEvidence = supplierGuide.match(/<section[^>]*id="supplier-evidence"[\s\S]*?<\/section>/)[0];
+assert.equal((supplierEvidence.match(/<tr role="row"><th scope="row"/g) || []).length, 8);
+assert.equal((supplierEvidence.match(/class="supplier-cell-label"/g) || []).length, 16);
+for (const status of ['Not confirmed', 'Needs revision', 'Confirmed for this version']) {
+  assert.ok(supplierEvidence.includes(status));
+}
+const supplierFaqSection = supplierGuide.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const supplierVisibleFaq = [...supplierFaqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({ question, answer }));
+assert.equal(supplierVisibleFaq.length, 5);
+assert.deepEqual(supplierSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), supplierVisibleFaq);
+for (const target of [
+  '../../videos/gaming-headset-assembly/',
+  '../../videos/g938-phone-setup-controls/',
+  '../gaming-headset-import-documents-checklist/#certificate-match',
+  '../evaluate-gaming-headset-sample-before-bulk-order/#review-worksheet',
+  '../private-label-gaming-headset-rfq-checklist/#quote-comparison',
+  '../gaming-headset-sample-process-checklist/#sample-stages',
+]) assert.ok(supplierGuide.includes(`href="${target}"`));
+for (const boundary of [
+  'not a completed TALRIVO assessment',
+  'not a TALRIVO price or standard packing list',
+  'G936 is not listed in those two documents',
+  'Completed Bluetooth pairing is not clearly visible',
+  'not a G935 performance test',
+]) assert.ok(supplierGuide.includes(boundary));
+for (const type of ['quick-question', 'rfq']) {
+  assert.ok(supplierGuide.includes(`href="../../contact/?product=gaming-headsets&amp;inquiry=${type}&amp;reference=oem-supplier-checklist#inquiry-form"`));
+}
+assert.ok(demandSitemap.includes(`<loc>${supplierUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
+assert.ok(demandLlms.includes(`](${supplierUrl}): Eight supplier evidence checks`));
+assert.doesNotMatch(supplierGuide, /machine summaries|summaries grounded|lighter wireless|guaranteed to increase clicks|free samples?|MOQ[: ]+\d/i);
+console.log('Supplier checklist checks passed: eight evidence decisions, stable title and URL, five matching FAQs, reference-aware inquiry links and explicit evidence limits.');

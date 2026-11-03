@@ -63,6 +63,12 @@ if (contactForm) {
       type: "guide",
       prompt: "Add the model or headset type, target devices, market, quantity range and sample timing you already know. Leave anything undecided as a question."
     },
+    "oem-supplier-checklist": {
+      title: "OEM gaming headset supplier checklist",
+      url: "https://talrivo.com/insights/oem-gaming-headset-supplier-checklist/",
+      type: "guide",
+      prompt: "Tell us the model or product link, target country and which supplier detail is missing. A complete RFQ is not needed to ask."
+    },
     "g938-phone-setup": {
       title: "G938 phone setup and controls",
       url: "https://youtu.be/AKqT0fzuqW8"
