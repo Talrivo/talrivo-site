@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = process.cwd();
 const pages = [
@@ -68,4 +69,24 @@ assert.match(styles, /\.site-header \.seo-nav\s*\{[^}]*position:\s*static\s*;/,
 const cards = [...home.matchAll(/<a class="primary-product-card"[\s\S]*?<\/a>/g)];
 assert.equal(cards.length, 3, 'Homepage must retain all three product category routes');
 for (const [card] of cards) assert.match(card, /loading="lazy"/, 'Defer below-hero category images');
+
+const homepageFile = pathToFileURL(resolve(root, 'index.html'));
+const homeResources = [...home.matchAll(/<(?:img|script|link)\b[^>]*>/g)].flatMap(([tag]) => {
+  const source = tag.match(/\bsrc="([^"]+)"/)?.[1];
+  const stylesheet = /<link\b/.test(tag) && /rel="(?:stylesheet|icon)"/.test(tag)
+    ? tag.match(/\bhref="([^"]+)"/)?.[1] : null;
+  const variants = tag.match(/\bsrcset="([^"]+)"/)?.[1].split(',').map(item => item.trim().split(/\s+/)[0]) || [];
+  return [source, stylesheet, ...variants].filter(Boolean);
+});
+for (const source of homeResources.filter(source => !/^[a-z][a-z\d+.-]*:/i.test(source))) {
+  assert.ok(!source.startsWith('/'), `Homepage resource must also resolve from a local file: ${source}`);
+  const asset = fileURLToPath(new URL(source, homepageFile));
+  assert.ok(statSync(asset).isFile(), `Homepage local resource is missing: ${source}`);
+}
+assert.match(home, /<body class="home-page">/);
+assert.match(home, /href="dock-preview\.css\?/);
+assert.match(home, /src="assets\/dock-headset-preview\.webp"/);
+assert.match(styles, /\.home-page \.about-stats\s*\{[^}]*repeat\(4, minmax\(0, 1fr\)\)/);
+assert.match(styles, /\.home-page \.about-columns\s*\{[^}]*repeat\(3, minmax\(0, 1fr\)\)/);
 console.log(`Entry image checks passed: ${pages.length} pages, ${checked} responsive images, variant files and byte budgets.`);
+console.log(`Homepage local-preview checks passed: ${homeResources.length} resource references resolve without root-relative file paths, with scoped About grids.`);

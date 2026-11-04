@@ -345,7 +345,11 @@ for (const route of ['dock-headset', 'identify-headset']) {
 }
 for (const page of ['index.html', 'gaming-headsets/index.html']) {
   const html = readFileSync(`${root}/${page}`, 'utf8');
-  assert.ok(html.includes('/contact/?product=dock-headset&amp;inquiry=quick-question#inquiry-form'));
+  const links = [...html.matchAll(/href="([^"]+)"/g)]
+    .map(([, href]) => new URL(href.replaceAll('&amp;', '&'), `https://talrivo.com/${page}`));
+  assert.ok(links.some(url => url.origin === 'https://talrivo.com'
+    && url.pathname === '/contact/' && url.searchParams.get('product') === 'dock-headset'
+    && url.searchParams.get('inquiry') === 'quick-question' && url.hash === '#inquiry-form'));
 }
 assert.ok(contactHtml.includes('id="model-reference-help"'));
 
