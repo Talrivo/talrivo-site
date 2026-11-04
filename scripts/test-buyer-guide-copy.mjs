@@ -15,7 +15,8 @@ const html = pages.map(([slug, title]) => {
   const schemas = [...content.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
   assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
-    slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25' : '2026-10-22');
+    slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25'
+      : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-04' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
   assert.doesNotMatch(claims, /guaranteed compatibility|guaranteed to increase clicks|zero latency/i);
   return content;
@@ -48,6 +49,35 @@ assert.match(connection, /href="#device-compatibility">Check Your Device Setup/)
 assert.match(connection, /three modes do not automatically mean simultaneous audio/);
 assert.match(connection, /not a TALRIVO test result/);
 assert.match(connection, /Do not promise zero latency\./);
+const connectionSchemas = [...connection.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const connectionDescription = connection.match(/<meta name="description" content="([^"]+)"/)[1];
+assert.equal(connectionSchemas.find(schema => schema['@type'] === 'Article').description, connectionDescription);
+for (const type of ['property="og:description"', 'name="twitter:description"']) {
+  assert.ok(connection.includes(`<meta ${type} content="${connectionDescription}">`));
+}
+const connectionFaq = connection.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+assert.deepEqual(connectionSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(question => [question.name, question.acceptedAnswer.text]),
+[...connectionFaq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => [question, answer]));
+for (const fact of ['Bluetooth also uses the 2.4GHz band',
+  'https://www.bluetooth.com/learn-about-bluetooth/tech-overview/',
+  'https://support.microsoft.com/en-us/windows/hardware/bluetooth/configuring-bluetooth-le-audio-quality-settings-on-windows-11',
+  'https://blog.playstation.com/2020/11/09/ps5-the-ultimate-faq/',
+  'Completed Bluetooth pairing is not clearly visible',
+  'href="../../videos/g938-phone-setup-controls/"',
+  'href="../../assets/downloads/wireless-gaming-headset-sample-review.txt" download',
+  'not a completed test report', 'href="#sample-notes"']) {
+  assert.ok(connection.includes(fact), `Connection guide needs ${fact}`);
+}
+const connectionTable = connection.match(/<section class="seo-section" id="connection-comparison">([\s\S]*?)<\/section>/)[1];
+assert.equal((connectionTable.match(/<tr>/g) || []).length, 7);
+for (const question of ['Which has less delay?', 'What happens during voice chat?', 'What about PS5?', 'What about a phone?']) {
+  assert.ok(connectionTable.includes(question));
+}
+assert.equal((connection.match(/<section\b/g) || []).length, 8, 'Keep the guide focused, without repeated definition and supplier sections');
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/</loc>\n    <lastmod>2026-11-04</lastmod>'));
 assert.match(sample, /href="#review-worksheet">Get the Sample Checklist/);
 assert.match(sample, /does not prove that every bulk unit will match/);
 assert.match(sample, /not a completed test report/);

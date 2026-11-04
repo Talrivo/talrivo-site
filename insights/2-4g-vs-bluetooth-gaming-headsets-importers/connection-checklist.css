@@ -29,3 +29,60 @@
   font-size: 0.95rem;
   text-transform: none;
 }
+
+.connection-guide-page .seo-section {
+  padding-block: 2.5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.connection-guide-page .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.connection-guide-page h3 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.connection-guide-page .table-wrap {
+  max-width: 100%;
+}
+
+.connection-guide-page .sample-check-table {
+  min-width: 720px;
+}
+
+.connection-guide-page .sample-check-table th {
+  letter-spacing: 0;
+}
+
+.connection-guide-page th[scope="row"] {
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.connection-guide-page .connection-demo {
+  border-block: 1px solid var(--line);
+  margin-block: 1.75rem;
+  padding-block: 1.5rem;
+}
+
+.connection-guide-page .connection-demo h3 {
+  margin-top: 0;
+}
+
+.connection-guide-page .seo-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .connection-guide-page .seo-hero > img {
+    order: 0;
+  }
+
+  .connection-guide-page .seo-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
