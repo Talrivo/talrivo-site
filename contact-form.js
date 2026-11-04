@@ -69,6 +69,12 @@ if (contactForm) {
       type: "guide",
       prompt: "Tell us the model or product link, target country and which supplier detail is missing. A complete RFQ is not needed to ask."
     },
+    "oem-customization": {
+      title: "Gaming headset logo and packaging customization",
+      url: "https://talrivo.com/oem-odm/",
+      type: "guide",
+      prompt: "Tell us the model or product link, target market and one change you want to review. Finished artwork is not needed for a first question."
+    },
     "g938-phone-setup": {
       title: "G938 phone setup and controls",
       url: "https://youtu.be/AKqT0fzuqW8"

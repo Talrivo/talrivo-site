@@ -248,6 +248,7 @@ for (const [reference, product, inquiry, expectedProduct, expectedInquiry, promp
   ['rfq-template', 'gaming-headsets', 'rfq', 'Gaming Headset Collection', 'Quotation request', /Leave anything undecided as a question/],
   ['oem-supplier-checklist', 'gaming-headsets', 'quick-question', 'Gaming Headset Collection', 'Quick product question', /which supplier detail is missing/],
   ['oem-supplier-checklist', 'gaming-headsets', 'rfq', 'Gaming Headset Collection', 'Quotation request', /which supplier detail is missing/],
+  ['oem-customization', 'gaming-headsets', 'oem-odm', 'Gaming Headset Collection', 'OEM / private-label project', /Finished artwork is not needed for a first question/],
 ]) {
   for (const consent of [null, 'denied', 'granted']) {
     const contact = runContact(`https://talrivo.com/contact/?product=${product}&inquiry=${inquiry}&reference=${reference}`, null, consent);

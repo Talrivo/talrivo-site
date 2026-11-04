@@ -101,7 +101,8 @@ for (const [file, schemaType, title, heading] of copyPages) {
     assert.equal(main.name, title);
     assert.equal(main.dateModified, '2026-10-29');
   }
-  assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-10-29</lastmod>`), `${file}: sitemap revision date`);
+  const expectedRevision = file === 'oem-odm/index.html' ? '2026-11-04' : '2026-10-29';
+  assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>${expectedRevision}</lastmod>`), `${file}: sitemap revision date`);
   assert.ok(llms.includes(`](${url}):`), `${file}: retain the model or category listing`);
 }
 const g936 = readFileSync('gaming-headsets/g936-lightweight/index.html', 'utf8');
@@ -117,6 +118,39 @@ const oem = readFileSync('oem-odm/index.html', 'utf8');
 assert.match(oem, /Available options depend on the selected model/);
 assert.match(oem, /Functional or hardware changes need a separate feasibility review/);
 assert.match(oem, /href="#customization-scope">See Customization Options/);
+assert.match(oem, /class="seo-page customization-page"/);
+assert.match(oem, /href="entry.css\?v=20261104a"/);
+assert.ok(oem.indexOf('class="button primary" href="#customization-scope"') < oem.indexOf('<img src='));
+assert.equal((oem.match(/reference=oem-customization#inquiry-form/g) || []).length, 6);
+assert.equal((oem.match(/<tr role="row"><th scope="row"/g) || []).length, 6);
+assert.equal((oem.match(/data-label="Review before confirmation"/g) || []).length, 6);
+assert.equal((oem.match(/data-label="Record for approval"/g) || []).length, 6);
+assert.match(oem, /id="customization-brief" aria-labelledby="customization-brief-title"/);
+assert.match(oem, /href="\.\.\/assets\/downloads\/gaming-headset-customization-brief\.txt" download/);
+assert.match(oem, /not an approved specification or quotation/);
+assert.match(oem, /not a completed custom order/);
+assert.match(oem, /There is no single MOQ or lead time/);
+assert.match(oem, /Finished artwork is not needed for a first question/);
+const oemSchemas = [...oem.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+assert.deepEqual(oemSchemas.map(schema => schema['@type']), ['FAQPage', 'BreadcrumbList', 'Service']);
+assert.equal(oemSchemas.find(schema => schema['@type'] === 'Service').dateModified, '2026-11-04');
+const oemVisibleFaq = [...oem.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1]
+  .matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({question, answer}));
+assert.equal(oemVisibleFaq.length, 5);
+assert.deepEqual(oemSchemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
+  .map(item => ({question: item.name, answer: item.acceptedAnswer.text})), oemVisibleFaq);
+const oemBrief = readFileSync('assets/downloads/gaming-headset-customization-brief.txt', 'utf8');
+const visibleBrief = oem.match(/<pre class="customization-brief">([\s\S]*?)<\/pre>/)[1];
+for (const line of visibleBrief.split('\n')) assert.ok(oemBrief.includes(line));
+assert.equal(visibleBrief.split('\n').filter(line => line.endsWith(': Not confirmed')).length, 10);
+assert.match(oemBrief, /Not an approved specification, quotation or completed test/);
+assert.match(oemBrief, /Engineering changes require a separate feasibility review and written scope/);
+const oemCss = readFileSync('oem-odm/entry.css', 'utf8');
+assert.match(oemCss, /\.customization-scope-table[\s\S]*?min-width: 0/);
+assert.match(oemCss, /content: attr\(data-label\)/);
+console.log('Customization entry checks passed: stable title, six responsive scope rows, matching FAQ, blank English brief and six source-preserving inquiry links.');
 const wired = readFileSync('wired-gaming-headsets/index.html', 'utf8');
 assert.match(wired, /a USB-audio headset/);
 assert.match(wired, /separately purchased adapters/);
