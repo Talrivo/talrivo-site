@@ -328,3 +328,14 @@ assert.match(comparisonCss, /\.buyer-comparison-table\s*\{[^}]*min-width: 0;/);
 assert.match(comparisonCss, /\.buyer-comparison-table thead\s*\{[^}]*clip-path: inset\(50%\);/);
 assert.match(comparisonCss, /min-height: 48px;/);
 console.log('Comparison checks passed: identical listed facts, matching mobile labels, table semantics, larger model links, stable title and synchronized FAQ.');
+
+// Nested VideoObject entries are validated by Google too, not only top-level scripts.
+const g938WatchSchemas = [...readFileSync('videos/g938-phone-setup-controls/index.html', 'utf8')
+  .matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const g938Demo = g938WatchSchemas.find(schema => schema['@type'] === 'VideoObject');
+for (const field of ['@id', 'name', 'thumbnailUrl', 'uploadDate', 'description', 'embedUrl', 'duration']) {
+  assert.ok(g938Page.subjectOf[field], `G938 embedded video needs ${field}`);
+  assert.deepEqual(g938Page.subjectOf[field], g938Demo[field],
+    `G938 embedded video must match its existing watch-page ${field}`);
+}
