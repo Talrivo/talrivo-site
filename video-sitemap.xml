@@ -2,50 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://talrivo.com/gaming-headsets/g941-tri-mode-anc/</loc>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/N0jk4awPsBQ/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO G941 Tri-Mode Wireless Gaming Headset | Product Showcase</video:title>
-      <video:description>A 27-second TALRIVO G941 wireless gaming headset product showcase for importers, distributors and private-label audio buyers.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/N0jk4awPsBQ</video:player_loc>
-      <video:duration>27</video:duration>
-      <video:publication_date>2026-07-15T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://talrivo.com/assets/catalog/g941-wireless/image-01.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO G941 Gaming Headset | ENC Microphone Noise-Reduction Demo</video:title>
-      <video:description>A short TALRIVO G941 gaming headset demonstration focused on the ENC microphone noise-reduction direction for buyer product review.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/E3jRux4sTdo</video:player_loc>
-      <video:publication_date>2026-07-13T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-  </url>
-  <url>
-    <loc>https://talrivo.com/gaming-headsets/g935-wireless/</loc>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/XMgEENG5Uhc/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO G935 Wireless Gaming Headset | Factory and Product Showcase</video:title>
-      <video:description>A 37-second TALRIVO G935 factory-line and finished-product montage for importers, distributors and private-label gaming audio buyers.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/XMgEENG5Uhc</video:player_loc>
-      <video:duration>37</video:duration>
-      <video:publication_date>2026-07-22T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-  </url>
-  <url>
-    <loc>https://talrivo.com/gaming-headsets/g936-lightweight/</loc>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/PF_bgaNaToo/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO G936 Lightweight Gaming Headset | PU vs Fabric Ear Cushions</video:title>
-      <video:description>A 32-second TALRIVO G936 comparison of PU and knitted fabric ear-cushion directions for gaming-headset sample review.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/PF_bgaNaToo</video:player_loc>
-      <video:duration>32</video:duration>
-      <video:publication_date>2026-08-07T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-  </url>
-  <url>
     <loc>https://talrivo.com/videos/g936-target-device-connection/</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/_YjS5updpi8/hqdefault.jpg</video:thumbnail_loc>
@@ -58,26 +14,6 @@
     </video:video>
   </url>
   <url>
-    <loc>https://talrivo.com/gaming-headsets/g938-wireless/</loc>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/6Kt5jRpj-uw/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO G938 Tri-Mode Wireless Gaming Headset | Product Film</video:title>
-      <video:description>A 40-second TALRIVO G938 tri-mode wireless gaming headset product film for importers, distributors and private-label audio buyers.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/6Kt5jRpj-uw</video:player_loc>
-      <video:duration>40</video:duration>
-      <video:publication_date>2026-07-23T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/gJ437FNGo9E/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO G938 Wireless Gaming Headset | Gaming Audio Listening Check</video:title>
-      <video:description>A TALRIVO G938 gaming audio listening check video for reviewing footsteps, direction, distance cues and voice-chat balance during sample evaluation.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/gJ437FNGo9E</video:player_loc>
-      <video:publication_date>2026-07-31T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-  </url>
-  <url>
     <loc>https://talrivo.com/videos/g938-phone-setup-controls/</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/AKqT0fzuqW8/hqdefault.jpg</video:thumbnail_loc>
@@ -86,18 +22,6 @@
       <video:player_loc allow_embed="yes">https://www.youtube-nocookie.com/embed/AKqT0fzuqW8</video:player_loc>
       <video:duration>86</video:duration>
       <video:publication_date>2026-10-13T00:00:00+08:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-  </url>
-  <url>
-    <loc>https://talrivo.com/bluetooth-headphones/b9-bluetooth/</loc>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/PjWnIJUTSAA/hqdefault.jpg</video:thumbnail_loc>
-      <video:title>TALRIVO B9 Bluetooth Headphone Product Film</video:title>
-      <video:description>A short TALRIVO B9 Bluetooth headphone product film for importers, distributors and private-label audio buyers.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/PjWnIJUTSAA</video:player_loc>
-      <video:duration>26</video:duration>
-      <video:publication_date>2026-08-28T00:00:00+08:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>

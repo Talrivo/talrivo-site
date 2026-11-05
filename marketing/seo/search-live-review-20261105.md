@@ -19,3 +19,17 @@ The current G938 WebPage.subjectOf used an incomplete typed VideoObject referenc
 Official requirements: https://developers.google.com/search/docs/appearance/structured-data/video
 
 No commit, push, publication, indexing request, analytics acceptance or inquiry submission was performed. Do not keep rewriting recent titles based on pre-release data. Record deployment and later crawl dates separately. Inspect query/page/country/device scopes before claiming the reason for low clicks.
+
+## Follow-up: align video sitemap with actual watch pages
+
+The prior correction was committed by the user as 6461e5c. Working tree was clean at the start of this follow-up. A static mapping of every video-sitemap player to its landing-page HTML found five product-page entries whose listed videos are only external links, not matching initial-HTML players. G938 embeds the phone demonstration, not the two films listed for its product URL.
+
+Retain the three existing watch pages with actual matching players: G936 target-device reference, G938 phone setup, and the local assembly clip. Remove five product-page video-sitemap entries only; retain every product page, video link, product schema and all 98 ordinary sitemap URLs. No video is deleted. Add a regression check requiring each listed video player/content URL to match an initial-HTML media source on its actual landing page.
+
+This aligns video discovery metadata with current content; it does not guarantee video indexing or fix an established cause of ordinary Web CTR. The earlier Search Console observation of 8 pages/10 videos describes the pre-change sitemap, not a new Google result.
+
+Sources:
+- https://developers.google.com/search/docs/appearance/video
+- https://developers.google.com/search/docs/crawling-indexing/sitemaps/video-sitemaps
+
+No Search Console records were removed or resubmitted. No indexing request, commit, push or publication was performed.

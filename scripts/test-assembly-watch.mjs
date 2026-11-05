@@ -98,3 +98,19 @@ for (const time of [0, 38, 60]) {
 assert.ok(read('sitemap.xml').includes(`<loc>${phoneUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
 assert.ok(read('insights/index.html').includes('href="../videos/g938-phone-setup-controls/"'));
 console.log('Phone demo checks passed: stable title/URL, aligned descriptions, unchanged video metadata, visible player and honest pairing/voice-chat limits.');
+
+// A video sitemap must lead to a page with that actual, initially embedded player.
+const videoEntries = [...read('video-sitemap.xml').matchAll(/<url>[\s\S]*?<\/url>/g)];
+for (const [block] of videoEntries) {
+  const landingUrl = block.match(/<loc>([^<]+)<\/loc>/)[1];
+  const landingPath = new URL(landingUrl).pathname.replace(/^\//, '') + 'index.html';
+  const landingHtml = read(landingPath);
+  const sources = [...landingHtml.matchAll(/<(?:iframe|embed|source|video)\b[^>]*\bsrc="([^"]+)"/g)]
+    .map(([, src]) => new URL(src.replaceAll('&amp;', '&'), landingUrl).href);
+  for (const [videoBlock] of block.matchAll(/<video:video>[\s\S]*?<\/video:video>/g)) {
+    const mediaUrl = videoBlock.match(/<video:(?:player_loc|content_loc)(?:\s[^>]*)?>([^<]+)<\/video:(?:player_loc|content_loc)>/)[1]
+      .replaceAll('&amp;', '&');
+    assert.ok(sources.includes(mediaUrl), `${landingPath}: sitemap video needs its actual player in initial HTML`);
+  }
+}
+console.log('Video sitemap checks passed: every entry matches an initially embedded player.');
