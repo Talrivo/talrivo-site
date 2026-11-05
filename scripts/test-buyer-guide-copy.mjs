@@ -102,7 +102,7 @@ const receiverSchemas = [...receiverGuide.matchAll(/<script type="application\/l
 const receiverArticle = receiverSchemas.find(schema => schema['@type'] === 'Article');
 assert.equal(receiverArticle.headline, receiverTitle);
 assert.equal(receiverArticle.description, receiverDescriptions[0]);
-assert.equal(receiverArticle.dateModified, '2026-10-31');
+assert.equal(receiverArticle.dateModified, '2026-11-05');
 const receiverUrl = 'https://talrivo.com/insights/choose-2-4g-wireless-gaming-headset/';
 assert.equal(receiverArticle.mainEntityOfPage, receiverUrl);
 assert.ok(receiverGuide.includes(`<link rel="canonical" href="${receiverUrl}">`));
@@ -118,7 +118,7 @@ for (const fact of ['completed Bluetooth pairing is not clearly visible', 'not a
   'href="../../videos/g938-phone-setup-controls/"']) assert.ok(receiverGuide.includes(fact));
 const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
 assert.ok(wireless.includes('href="../insights/choose-2-4g-wireless-gaming-headset/#receiver-checks"'));
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${receiverUrl}</loc>\n    <lastmod>2026-10-31</lastmod>`));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${receiverUrl}</loc>\n    <lastmod>2026-11-05</lastmod>`));
 console.log('Receiver guide checks passed: practical answer, matching FAQ, worksheet and demo paths, stable canonical.');
 
 const buyerDemandCases = [

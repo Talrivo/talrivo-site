@@ -41,3 +41,9 @@ The user committed the video-sitemap alignment as e534e55; working tree was clea
 A current-file navigation check found G946 missing from the sample-request gaming shortlist, despite its priority placement in the wireless category. Add one G946 choice with the two already confirmed package configurations, retaining each selected configuration through the existing contact reference parameter. Preserve all six earlier choices, stable title/description, all other audio categories and FAQ. Update only the sample-page revision and corresponding documentation. This improves sample discovery and inquiry continuity, not a demonstrated cause of low search CTR or guaranteed traffic growth.
 
 No new GSC performance period or post-release traffic improvement was established.
+
+## Receiver-guide relevance follow-up
+
+The sample-entry update was committed by the user as 2d7bd3c. G946 assets remain pending; this batch does not edit that model. The current receiver guide title asks USB-A versus USB-C, but its hero/social image showed a generic G941 headset. Reuse the existing supplied G938 receiver/adapter/cable reference, with verified intrinsic dimensions 1117 by 1110. Lead with the selection answer: match the receiver and host port, then verify playback and microphone behavior. Keep the selected-package and compatibility limits explicit. Simplify the model-comparison heading to match the models already listed.
+
+Search title, description, H1, URL, FAQ, model specifications, player/download destinations and inquiry routes remain unchanged. Align the Article image and revision, social images, sitemap date and llms documentation. This is a relevance and presentation hypothesis; no new keyword-volume data, fresh indexing status or traffic gain is established.

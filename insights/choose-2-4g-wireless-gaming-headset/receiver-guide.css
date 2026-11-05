@@ -1,0 +1,10 @@
+.receiver-guide-page .seo-hero > img {
+  object-fit: contain;
+  background: #f7f8f6;
+}
+
+@media (max-width: 920px) {
+  .receiver-guide-page .seo-hero > img {
+    order: 0;
+  }
+}
