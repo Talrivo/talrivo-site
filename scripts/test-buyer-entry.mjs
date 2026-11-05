@@ -224,7 +224,7 @@ assert.deepEqual(wirelessSchema.mainEntity.itemListElement.map(item => item.url)
 assert.deepEqual(wirelessSchema.mainEntity.itemListElement.map(item => item.position), [1, 2, 3, 4, 5, 6, 7]);
 assert.equal(wirelessSchema.dateModified, '2026-11-05');
 for (const fact of ['charging-dock option', '50mm driver', 'detachable microphone',
-  'Confirm dock inclusion, charging and hub functions', 'not an approved packing list',
+  'the same G946 headset in both configurations', 'Confirm remaining accessories, dock power input and any hub functions', 'not an approved packing list',
   'href="../gaming-headsets/g946-rgb/#sample-configuration"',
   'href="../contact/?product=g946&amp;inquiry=quick-question#inquiry-form"']) {
   assert.ok(wirelessCards[0][2].includes(fact), `Keep the G946 discovery boundary: ${fact}`);
@@ -255,6 +255,26 @@ assert.match(product, /https:\/\/www.youtube.com\/shorts\/PGj_ESVdFgA/);
 assert.match(product, /not real customer footage/);
 assert.match(product, /not establish compatibility or included accessories/);
 assert.match(product, /reference=g946-style/);
+const configurations = product.match(/<section[^>]*id="sample-configuration"[\s\S]*?<\/section>/)[0];
+assert.equal([...product.matchAll(/id="sample-configuration"/g)].length, 1);
+assert.ok(product.indexOf('id="sample-configuration"') < product.indexOf('id="style-video"'), 'Show configuration choices before the style concept');
+assert.deepEqual([...configurations.matchAll(/data-configuration="([^"]+)"/g)].map(([, key]) => key),
+  ['headset-only', 'wireless-charging-dock']);
+assert.match(configurations, /headset itself is identical in both configurations/);
+assert.match(configurations, /charging dock is not included/);
+assert.match(configurations, /charges the headset wirelessly/);
+for (const reference of ['g946-headset-only', 'g946-wireless-charging-dock']) {
+  assert.ok(configurations.includes(`href="../../contact/?product=g946&amp;inquiry=sample&amp;reference=${reference}#inquiry-form"`));
+}
+assert.doesNotMatch(product, /\bQi\b|charging phones|universal charging|wireless fast charging/i, 'Do not infer a charging standard, third-party compatibility or speed');
+const productFaq = [...product.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(item => item['@type'] === 'FAQPage').mainEntity;
+const visibleProductFaq = [...product.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1]
+  .matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+  .map(([, question, answer]) => ({ question, answer }));
+assert.equal(visibleProductFaq.length, 4);
+assert.deepEqual(productFaq.map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), visibleProductFaq);
+assert.ok(cards.find(card => card.includes('href="g946-rgb/"')).includes('both use the same headset'));
 assert.doesNotMatch(product, /<iframe/, 'The style link must not load third-party video before a user action');
 assert.doesNotMatch(product, /"@type":"VideoObject"/, 'Do not invent video upload metadata');
 console.log('Buyer entry checks passed: model prominence, eight matching structured choices, G946 anchors and style-video boundaries.');

@@ -20,6 +20,18 @@ if (contactForm) {
   const productReference = document.querySelector("#contact-product-reference");
   const referenceNote = document.querySelector("#contact-reference-note");
   const inquiryReferences = {
+    "g946-headset-only": {
+      title: "G946 Headset Only",
+      url: "https://talrivo.com/gaming-headsets/g946-rgb/#sample-configuration",
+      type: "configuration",
+      prompt: "Charging dock not included. Confirm the receiver, remaining accessories, sample availability and terms."
+    },
+    "g946-wireless-charging-dock": {
+      title: "G946 with Wireless Charging Dock",
+      url: "https://talrivo.com/gaming-headsets/g946-rgb/#sample-configuration",
+      type: "configuration",
+      prompt: "Same G946 headset plus a wireless charging dock. Confirm the dock power input, charging time, remaining accessories, sample availability and terms."
+    },
     "g946-style": {
       title: "G946 fashion-to-gaming style concept",
       url: "https://www.youtube.com/shorts/PGj_ESVdFgA"
@@ -88,7 +100,9 @@ if (contactForm) {
   const selectedReference = Object.hasOwn(inquiryReferences, referenceKey) ? inquiryReferences[referenceKey] : null;
   if (selectedReference) {
     referenceNote.hidden = false;
-    referenceNote.textContent = selectedReference.type === "guide"
+    referenceNote.textContent = selectedReference.type === "configuration"
+      ? `Configuration: ${selectedReference.title}. ${selectedReference.prompt}`
+      : selectedReference.type === "guide"
       ? `Guide reference: ${selectedReference.title}. ${selectedReference.prompt || "Please include your headset version, target device and USB or 3.5mm connection question."}`
       : `Video reference: ${selectedReference.title}. Please include the timestamp of the headset you are interested in.`;
   }

@@ -62,9 +62,10 @@ for (const [path, key, title, heading] of cases) {
   const page = schemas.find(schema => schema['@type'] === 'WebPage');
   assert.equal(page.url, url);
   assert.equal(page.description, descriptions[0]);
-  assert.equal(page.dateModified, '2026-10-30');
+  const modified = key === 'g946' ? '2026-11-05' : '2026-10-30';
+  assert.equal(page.dateModified, modified);
   if (!html.includes('Generated from content/model-page-reviews.json')) assert.equal(page.name, title);
-  assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-10-30</lastmod>`));
+  assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>${modified}</lastmod>`));
   assert.ok(llms.includes(`](${url}):`));
   const hero = html.match(/<section class="seo-hero product-detail">([\s\S]*?)<\/section>/)[1];
   assert.ok(hero.includes(`contact/?product=${key}&amp;inquiry=sample#inquiry-form`), `${key}: keep contextual sample inquiry`);
@@ -78,14 +79,14 @@ for (const [path, key, title, heading] of cases) {
     assert.equal(record.title, title);
     assert.equal(record.heading, heading);
     assert.equal(record.description, descriptions[0]);
-    assert.equal(record.dateModified, '2026-10-30');
+    assert.equal(record.dateModified, modified);
     assert.equal(record.indexable, true);
   }
 }
 for (const [key, facts] of [
   ['g940', ['35mm + 16mm', 'confirmed 500mAh battery', 'approximately 20 hours with lighting off']],
   ['g935', ['40mm', '500mAh', 'approximately 25 hours of playback with lighting off']],
-  ['g946', ['2.4GHz wireless, Bluetooth and wired', 'whether the selected configuration includes a charging dock']],
+  ['g946', ['2.4GHz wireless, Bluetooth and wired', 'G946 Headset Only', 'G946 with Wireless Charging Dock', 'Both configurations use exactly the same headset']],
   ['g947', ['aluminum frame', '50mm', 'detachable boom microphone']],
   ['b7', ['Bluetooth 5.2', '500mAh', 'Confirm noise-cancellation performance', 'Rotation is not a claim that the headband folds']],
   ['b9', ['Bluetooth 5.3 + EDR', '300mAh', 'approximately 16-22 hours', 'not an approved packing list']],

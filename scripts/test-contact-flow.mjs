@@ -265,6 +265,25 @@ const g946StyleContact = runContact('https://talrivo.com/contact/?product=g946&i
 assert.equal(g946StyleContact.nodes.get('select[name="product"]').value, 'G946 Tri-Mode RGB Gaming Headset');
 assert.match(g946StyleContact.nodes.get('#contact-product-reference').value, /G946 fashion-to-gaming style concept.*PGj_ESVdFgA/);
 assert.equal(g946StyleContact.nodes.get('#contact-reference-note').hidden, false);
+for (const [reference, label, detail] of [
+  ['g946-headset-only', 'G946 Headset Only', 'Charging dock not included'],
+  ['g946-wireless-charging-dock', 'G946 with Wireless Charging Dock', 'Same G946 headset plus a wireless charging dock']
+]) {
+  for (const consent of [null, 'denied', 'granted']) {
+    const configuration = runContact(`https://talrivo.com/contact/?product=g946&inquiry=sample&reference=${reference}`, null, consent);
+    assert.equal(configuration.nodes.get('select[name="product"]').value, 'G946 Tri-Mode RGB Gaming Headset');
+    assert.equal(configuration.nodes.get('#contact-inquiry-type').value, 'Sample request');
+    assert.equal(configuration.nodes.get('#contact-product-reference').value,
+      `${label}: https://talrivo.com/gaming-headsets/g946-rgb/#sample-configuration`);
+    const note = configuration.nodes.get('#contact-reference-note');
+    assert.equal(note.hidden, false);
+    assert.ok(note.textContent.startsWith(`Configuration: ${label}.`));
+    assert.ok(note.textContent.includes(detail));
+    assert.doesNotMatch(note.textContent, /Video reference|Guide reference|timestamp/);
+    assert.equal(configuration.storage.value('talrivoInquirySource'), undefined, 'Configuration context must not create tracking storage');
+    assert.equal(configuration.events.length, 0, 'Choosing a bundle is not a completed inquiry');
+  }
+}
 assert.equal(assemblyContact.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
 assert.equal(assemblyContact.nodes.get('#contact-inquiry-type').value, 'Quick product question');
 assert.match(assemblyContact.nodes.get('#contact-product-reference').value, /G935 assembly and finishing process.*1KQfLCmMhE4/);

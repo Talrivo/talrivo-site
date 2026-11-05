@@ -5,7 +5,7 @@ const base = 'insights/';
 const pages = [
   ['gaming-headset-usb-audio-or-lighting', 'Gaming Headset USB: Audio or Lighting Only? | TALRIVO'],
   ['2-4g-vs-bluetooth-gaming-headsets-importers', '2.4G vs Bluetooth Gaming Headsets for Importers'],
-  ['evaluate-gaming-headset-sample-before-bulk-order', 'Gaming Headset Sample Checklist Before Bulk Order | TALRIVO'],
+  ['evaluate-gaming-headset-sample-before-bulk-order', 'Gaming Headset Sample Checklist: Free Download | TALRIVO'],
   ['choose-gaming-headset-manufacturer-china', 'How to Choose a Gaming Headset Manufacturer in China | TALRIVO'],
 ];
 const html = pages.map(([slug, title]) => {
@@ -16,7 +16,8 @@ const html = pages.map(([slug, title]) => {
     .map(([, json]) => JSON.parse(json));
   assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
     slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25'
-      : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-04' : '2026-10-22');
+      : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-04'
+      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-05' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
   assert.doesNotMatch(claims, /guaranteed compatibility|guaranteed to increase clicks|zero latency/i);
   return content;

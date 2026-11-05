@@ -24,7 +24,7 @@ This is a repository handoff, not a memory update or proof of traffic growth.
 - Local HTTP preview: http://127.0.0.1:4173/ . Verify it before use; do not kill
   an unrelated server. Avoid file:// previews for directory navigation.
 
-## This batch
+## Wireless-category promotion (earlier November 5)
 
 - Wireless category now starts with G946 as a visible product choice, rather
   than showing it only in the bottom directory. Six existing cards remain.
@@ -43,6 +43,26 @@ This is a repository handoff, not a memory update or proof of traffic growth.
   Configuration and G946 quick-question links worked; G947 remained HTTP 200
   locally. Desktop/mobile screenshots were inspected. Zero POSTs were sent.
 - These were local changes and checks, not publication or measured CTR improvement.
+
+## G946 configuration clarification (latest)
+
+- The user confirmed that both packages use exactly the same G946 headset.
+  Headset Only excludes the dock; the dock bundle includes a wireless charging
+  dock that charges the headset wirelessly. Do not infer Qi certification,
+  charging speed, phone charging, hub functions or other accessory contents.
+- One existing G946 detail page now shows both configurations immediately after
+  the product introduction. Do not create duplicate model pages for the packages.
+- Two sample links retain the common G946 product selection and carry the chosen
+  configuration into the visible contact note and submitted product-reference
+  field. Opening the form is not a lead and does not create tracking storage.
+- Both category descriptions, the visible/structured G946 FAQ, relevant sitemap
+  dates and llms documentation are aligned. Search titles, descriptions, company
+  wording, original certificates, G947 and consent settings remain unchanged.
+- 26 Node checks, four Python link tests and a 98-page/3057-link/1156-asset audit
+  passed. Browser checks covered 1440/1024/390/320 widths and both actual sample
+  links. No missing product images, content overflow, page errors or POSTs were
+  observed. Desktop and narrow-mobile screenshots were inspected.
+- These changes are local, not a commit, deployment or measured traffic lift.
 
 ## Research translated into next actions
 

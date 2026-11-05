@@ -16,3 +16,30 @@
 .buyer-product-page #documented-specifications {
   scroll-margin-top: 8rem;
 }
+
+.g946-page #sample-configuration {
+  scroll-margin-top: 8rem;
+}
+
+.g946-page .g946-configurations {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.g946-page .g946-configurations article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.g946-page .g946-configurations .button {
+  align-self: flex-start;
+  margin-top: auto;
+  max-width: 100%;
+  white-space: normal;
+}
+
+@media (max-width: 620px) {
+  .g946-page .g946-configurations {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
