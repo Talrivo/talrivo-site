@@ -185,9 +185,10 @@ for (const [slug, html, title, type] of [
   const main = schemas.find(schema => schema['@type'] === type);
   assert.equal(main.name, title);
   assert.equal(main.description, descriptions[0]);
-  assert.equal(main.dateModified, '2026-11-03');
+  const expectedRevision = slug === 'sample-request' ? '2026-11-05' : '2026-11-03';
+  assert.equal(main.dateModified, expectedRevision);
   assert.ok(html.includes(`<link rel="canonical" href="https://talrivo.com/${slug}/">`));
-  assert.ok(sitemap.includes(`<loc>https://talrivo.com/${slug}/</loc>\n    <lastmod>2026-11-03</lastmod>`));
+  assert.ok(sitemap.includes(`<loc>https://talrivo.com/${slug}/</loc>\n    <lastmod>${expectedRevision}</lastmod>`));
   const faq = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
   const visible = [...faq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
     .map(([, question, answer]) => ({ question, answer }));
@@ -195,13 +196,18 @@ for (const [slug, html, title, type] of [
     .map(item => ({ question: item.name, answer: item.acceptedAnswer.text })), visible);
 }
 const shortlist = samplePage.match(/<section[^>]*id="headset-sample-shortlist"[\s\S]*?<\/section>/)[0];
-assert.equal((shortlist.match(/<article>/g) || []).length, 6);
+assert.equal((shortlist.match(/<article>/g) || []).length, 7);
+for (const configuration of ['g946-headset-only', 'g946-wireless-charging-dock']) {
+  assert.ok(shortlist.includes(`href="../contact/?product=g946&amp;inquiry=sample&amp;reference=${configuration}#inquiry-form"`));
+}
+assert.ok(shortlist.includes('href="../gaming-headsets/g946-rgb/#sample-configuration"'));
+assert.ok(shortlist.includes('Both configurations use the same G946 headset.'));
 for (const code of ['g938', 'g940', 'g926', 'g936', 'g935', 'g941']) {
   assert.ok(shortlist.includes(`href="../contact/?product=${code}&amp;inquiry=sample#inquiry-form"`));
 }
 assert.doesNotMatch(samplePage, /Turn a general request into a model-specific inquiry|Compare the model role before requesting samples/);
 assert.ok(samplePage.includes('35mm + 16mm drivers, 2.4GHz USB receiver and 500mAh battery'));
-console.log('Model directory and sample entry checks passed: 13 wireless, 7 wired, 6 separated pending references, aligned schema and six model-specific sample routes.');
+console.log('Model directory and sample entry checks passed: 13 wireless, 7 wired, 6 separated pending references, aligned schema, seven model choices and configuration-specific G946 sample routes.');
 for (const p of products.filter(p => ['wired', 'wireless'].includes(p.category))) {
   assert.ok(directory.includes(`href="../${p.page}"`));
 }

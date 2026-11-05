@@ -33,3 +33,11 @@ Sources:
 - https://developers.google.com/search/docs/crawling-indexing/sitemaps/video-sitemaps
 
 No Search Console records were removed or resubmitted. No indexing request, commit, push or publication was performed.
+
+## Follow-up: index-coverage caution and sample-entry gap
+
+The user committed the video-sitemap alignment as e534e55; working tree was clean. The signed-in index-coverage summary displayed an October 23 update date, 52 indexed and 26 excluded known URLs. The crawled-not-indexed example list includes nine URLs, including two TXT worksheets, sitemap.xml and six HTML pages. It cannot be compared directly with the current 98-page sitemap or treated as a current count of missing products. Individual URL inspection is needed before changing any indexing directive; the microphone page already has impressions in the newer performance export. No robots, canonical or noindex setting was changed.
+
+A current-file navigation check found G946 missing from the sample-request gaming shortlist, despite its priority placement in the wireless category. Add one G946 choice with the two already confirmed package configurations, retaining each selected configuration through the existing contact reference parameter. Preserve all six earlier choices, stable title/description, all other audio categories and FAQ. Update only the sample-page revision and corresponding documentation. This improves sample discovery and inquiry continuity, not a demonstrated cause of low search CTR or guaranteed traffic growth.
+
+No new GSC performance period or post-release traffic improvement was established.
