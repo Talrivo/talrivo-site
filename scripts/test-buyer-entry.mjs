@@ -99,9 +99,10 @@ for (const [file, schemaType, title, heading] of copyPages) {
   assert.equal(main.description, descriptions[0], `${file}: structured description matches search`);
   if (schemaType !== 'Service') {
     assert.equal(main.name, title);
-    assert.equal(main.dateModified, '2026-10-29');
+    assert.equal(main.dateModified, /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29');
   }
-  const expectedRevision = file === 'oem-odm/index.html' ? '2026-11-04' : '2026-10-29';
+  const expectedRevision = file === 'oem-odm/index.html' ? '2026-11-04'
+    : /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29';
   assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>${expectedRevision}</lastmod>`), `${file}: sitemap revision date`);
   assert.ok(llms.includes(`](${url}):`), `${file}: retain the model or category listing`);
 }
