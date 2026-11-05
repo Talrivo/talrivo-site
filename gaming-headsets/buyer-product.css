@@ -50,3 +50,26 @@
     order: 0;
   }
 }
+
+.g946-page .g946-configuration-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #fff;
+}
+.g946-page .g946-visual-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.g946-page #product-visuals { scroll-margin-top: 8rem; }
+@media (max-width: 920px) {
+  .g946-page .seo-hero.product-detail > img { order: 0; }
+}
+
+.g946-page .g946-campaign-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g946-page .g946-campaign-videos video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #101719; }
+@media (max-width: 620px) {
+  .g946-page .g946-campaign-videos { grid-template-columns: minmax(0, 1fr); }
+}
