@@ -1,0 +1,77 @@
+.practical-guide .seo-section {
+  padding-block: 2.5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.practical-guide .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.practical-guide h3 {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.practical-guide .seo-grid,
+.practical-guide .sample-image-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.practical-guide .guide-steps {
+  padding-left: 1.5rem;
+}
+
+.practical-guide .guide-steps li {
+  color: var(--muted);
+  line-height: 1.65;
+  margin-block: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.practical-guide .guide-checks {
+  margin: 1.5rem 0;
+}
+
+.practical-guide .guide-checks > div {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.5rem 1.5rem;
+  grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
+  padding-block: 1rem;
+}
+
+.practical-guide .guide-checks dt {
+  font-weight: 600;
+}
+
+.practical-guide .guide-checks dd {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.practical-guide .table-wrap {
+  max-width: 100%;
+}
+
+.practical-guide .sample-check-table th {
+  letter-spacing: 0;
+}
+
+.practical-guide th[scope="row"] {
+  font-size: 0.95rem;
+  text-transform: none;
+}
+
+@media (max-width: 760px) {
+  .practical-guide .seo-hero > img {
+    order: 0;
+  }
+
+  .practical-guide .seo-grid,
+  .practical-guide .sample-image-grid,
+  .practical-guide .guide-checks > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

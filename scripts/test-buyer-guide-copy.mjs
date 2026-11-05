@@ -467,3 +467,42 @@ assert.ok(demandSitemap.includes(`<loc>${supplierUrl}</loc>\n    <lastmod>2026-1
 assert.ok(demandLlms.includes(`](${supplierUrl}): Eight supplier evidence checks`));
 assert.doesNotMatch(supplierGuide, /machine summaries|summaries grounded|lighter wireless|guaranteed to increase clicks|free samples?|MOQ[: ]+\d/i);
 console.log('Supplier checklist checks passed: eight evidence decisions, stable title and URL, five matching FAQs, reference-aware inquiry links and explicit evidence limits.');
+
+const practicalCases = [
+  ['gaming-headset-microphone-performance', 'Gaming Headset Mic Test Checklist for Importers | TALRIVO', 6, 5, 'quick-mic-test'],
+  ['gaming-headset-packaging-accessories-checklist', 'Gaming Headset Packaging: Receiver and Mic | TALRIVO', 6, 6, 'packing-checklist'],
+  ['gaming-headset-product-evidence-checklist', 'Gaming Headset Product Evidence Checklist | TALRIVO', 5, 8, 'evidence-checks'],
+];
+for (const [slug, title, questionCount, imageCount, anchor] of practicalCases) {
+  const page = readFileSync(`${base}${slug}/index.html`, 'utf8');
+  const url = `https://talrivo.com/insights/${slug}/`;
+  assert.ok(page.includes(`<title>${title}</title>`), `${slug}: preserve the search title`);
+  assert.ok(page.includes(`<link rel="canonical" href="${url}">`));
+  assert.ok(page.includes('<meta name="robots" content="index, follow">'));
+  assert.ok(page.includes('<main class="seo-page practical-guide">'));
+  assert.ok(page.includes('href="../practical-guide.css?v=20261105a"'));
+  assert.ok(page.includes('Updated November 5, 2026'));
+  const data = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  const article = data.find(item => item['@type'] === 'Article');
+  assert.equal(article.dateModified, '2026-11-05');
+  assert.equal(article.mainEntityOfPage, url);
+  const descriptions = [...page.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
+    .map(([, text]) => text);
+  assert.equal(descriptions.length, 3);
+  assert.equal(new Set([...descriptions, article.description]).size, 1);
+  const faqSection = page.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+  const visible = [...faqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
+    .map(([, question, answer]) => [question, answer]);
+  assert.equal(visible.length, questionCount);
+  assert.deepEqual(data.find(item => item['@type'] === 'FAQPage').mainEntity
+    .map(item => [item.name, item.acceptedAnswer.text]), visible);
+  const main = page.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1];
+  assert.equal((main.match(/<img\b/g) || []).length, imageCount, `${slug}: keep all supplied images`);
+  assert.equal((page.match(new RegExp(`id="${anchor}"`, 'g')) || []).length, 1);
+  assert.ok(page.includes(`href="#${anchor}"`));
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-05</lastmod>`));
+  assert.doesNotMatch(main, /aligned with real buyer intent|product page update, LinkedIn post|Content reuse|5-minute|mobile-adjacent/);
+  assert.doesNotMatch(page, /guaranteed compatibility|zero latency|guaranteed to increase clicks/i);
+}
+console.log('Practical article checks passed: three stable search entries, 17 matching FAQ answers, all supplied images, direct answer anchors and synchronized revision dates.');
