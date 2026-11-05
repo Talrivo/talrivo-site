@@ -214,6 +214,23 @@ for (const fact of ['JL7018M', '1000mAh', '50mm', '20ms', 'approximately 50 hour
 assert.match(g926Hero, /Confirm runtime, receiver setup and both audio and microphone operation on your target devices/);
 assert.ok(g926.includes('href="../../contact/?product=g926&amp;inquiry=sample#inquiry-form"'));
 const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
+const wirelessModels = wireless.match(/<section[^>]*id="models"[\s\S]*?<\/section>/)[0];
+const wirelessCards = [...wirelessModels.matchAll(/<article data-model="([^"]+)">([\s\S]*?)<\/article>/g)];
+assert.deepEqual(wirelessCards.map(([, model]) => model), ['G946', 'G936', 'G938', 'G941', 'G935', 'G940', 'G926']);
+const wirelessSchema = [...wireless.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(item => item['@type'] === 'CollectionPage');
+assert.deepEqual(wirelessSchema.mainEntity.itemListElement.map(item => item.url),
+  wirelessCards.map(([, , card]) => new URL(card.match(/<h3><a href="([^"]+)"/)[1], 'https://talrivo.com/wireless-gaming-headsets/').href));
+assert.deepEqual(wirelessSchema.mainEntity.itemListElement.map(item => item.position), [1, 2, 3, 4, 5, 6, 7]);
+assert.equal(wirelessSchema.dateModified, '2026-11-05');
+for (const fact of ['charging-dock option', '50mm driver', 'detachable microphone',
+  'Confirm dock inclusion, charging and hub functions', 'not an approved packing list',
+  'href="../gaming-headsets/g946-rgb/#sample-configuration"',
+  'href="../contact/?product=g946&amp;inquiry=quick-question#inquiry-form"']) {
+  assert.ok(wirelessCards[0][2].includes(fact), `Keep the G946 discovery boundary: ${fact}`);
+}
+assert.ok(wireless.includes('href="../gaming-headsets/g947-foldable/"'), 'Keep G947 discoverable');
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/wireless-gaming-headsets/</loc>\n    <lastmod>2026-11-05</lastmod>'));
 assert.ok(wireless.includes('<h3><a href="../gaming-headsets/g926-wireless/">RGB wireless headset with 50mm drivers</a></h3>'));
 assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/gaming-headsets/g926-wireless/</loc>\n    <lastmod>2026-10-27</lastmod>'));
 assert.ok(readFileSync('llms.txt', 'utf8').includes('[RGB Wireless Gaming Headset / G926]'));
