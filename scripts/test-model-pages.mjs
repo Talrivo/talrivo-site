@@ -185,7 +185,7 @@ for (const [slug, html, title, type] of [
   const main = schemas.find(schema => schema['@type'] === type);
   assert.equal(main.name, title);
   assert.equal(main.description, descriptions[0]);
-  const expectedRevision = slug === 'sample-request' ? '2026-11-05' : '2026-11-03';
+  const expectedRevision = slug === 'sample-request' ? '2026-11-06' : '2026-11-03';
   assert.equal(main.dateModified, expectedRevision);
   assert.ok(html.includes(`<link rel="canonical" href="https://talrivo.com/${slug}/">`));
   assert.ok(sitemap.includes(`<loc>https://talrivo.com/${slug}/</loc>\n    <lastmod>${expectedRevision}</lastmod>`));

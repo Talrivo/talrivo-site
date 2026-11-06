@@ -374,3 +374,19 @@ for (const page of ['index.html', 'gaming-headsets/index.html']) {
 assert.ok(contactHtml.includes('id="model-reference-help"'));
 
 console.log(`Contact flow checks passed: ${Object.keys(productRoutes).length} product routes, ${contactLinksChecked} published contact links, consented source retention and no sent=1 lead event.`);
+
+for (const [reference, title, inquiry, expected] of [
+  ['sample-evaluation-guide', 'Gaming headset sample evaluation checklist', 'sample', 'Sample request'],
+  ['receiver-setup-guide', 'USB-A and USB-C gaming headset receiver guide', 'quick-question', 'Quick product question'],
+  ['connection-comparison-guide', '2.4GHz versus Bluetooth gaming headset comparison', 'compare', 'Model comparison']
+]) {
+  for (const consent of [null, 'denied', 'granted']) {
+    const guide = runContact(`https://talrivo.com/contact/?product=wireless-gaming-headsets&inquiry=${inquiry}&reference=${reference}`, null, consent);
+    assert.ok(guide.nodes.get('#contact-product-reference').value.startsWith(title + ': https://talrivo.com/insights/'));
+    assert.equal(guide.nodes.get('#contact-reference-note').hidden, false);
+    assert.ok(guide.nodes.get('#contact-reference-note').textContent.startsWith('Guide reference:'));
+    assert.equal(guide.nodes.get('#contact-inquiry-type').value, expected);
+    assert.equal(guide.events.length, 0);
+    assert.equal(guide.storage.value('talrivoInquirySource'), undefined);
+  }
+}

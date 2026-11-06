@@ -16,8 +16,8 @@ const html = pages.map(([slug, title]) => {
     .map(([, json]) => JSON.parse(json));
   assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
     slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25'
-      : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-04'
-      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-05' : '2026-10-22');
+      : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-06'
+      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-06' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
   assert.doesNotMatch(claims, /guaranteed compatibility|guaranteed to increase clicks|zero latency/i);
   return content;
@@ -78,7 +78,7 @@ for (const question of ['Which has less delay?', 'What happens during voice chat
   assert.ok(connectionTable.includes(question));
 }
 assert.equal((connection.match(/<section\b/g) || []).length, 8, 'Keep the guide focused, without repeated definition and supplier sections');
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/</loc>\n    <lastmod>2026-11-04</lastmod>'));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/</loc>\n    <lastmod>2026-11-06</lastmod>'));
 assert.match(sample, /href="#review-worksheet">Get the Sample Checklist/);
 assert.match(sample, /does not prove that every bulk unit will match/);
 assert.match(sample, /not a completed test report/);
@@ -102,7 +102,7 @@ const receiverSchemas = [...receiverGuide.matchAll(/<script type="application\/l
 const receiverArticle = receiverSchemas.find(schema => schema['@type'] === 'Article');
 assert.equal(receiverArticle.headline, receiverTitle);
 assert.equal(receiverArticle.description, receiverDescriptions[0]);
-assert.equal(receiverArticle.dateModified, '2026-11-05');
+assert.equal(receiverArticle.dateModified, '2026-11-06');
 const receiverUrl = 'https://talrivo.com/insights/choose-2-4g-wireless-gaming-headset/';
 assert.equal(receiverArticle.mainEntityOfPage, receiverUrl);
 assert.ok(receiverGuide.includes(`<link rel="canonical" href="${receiverUrl}">`));
@@ -118,7 +118,7 @@ for (const fact of ['completed Bluetooth pairing is not clearly visible', 'not a
   'href="../../videos/g938-phone-setup-controls/"']) assert.ok(receiverGuide.includes(fact));
 const wireless = readFileSync('wireless-gaming-headsets/index.html', 'utf8');
 assert.ok(wireless.includes('href="../insights/choose-2-4g-wireless-gaming-headset/#receiver-checks"'));
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${receiverUrl}</loc>\n    <lastmod>2026-11-05</lastmod>`));
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes(`<loc>${receiverUrl}</loc>\n    <lastmod>2026-11-06</lastmod>`));
 console.log('Receiver guide checks passed: practical answer, matching FAQ, worksheet and demo paths, stable canonical.');
 
 const buyerDemandCases = [
@@ -481,7 +481,7 @@ for (const [slug, title, questionCount, imageCount, anchor] of practicalCases) {
   assert.ok(page.includes(`<link rel="canonical" href="${url}">`));
   assert.ok(page.includes('<meta name="robots" content="index, follow">'));
   assert.ok(page.includes('<main class="seo-page practical-guide">'));
-  assert.ok(page.includes('href="../practical-guide.css?v=20261105a"'));
+  assert.ok(page.includes('href="../practical-guide.css?v=20261106a"'));
   assert.ok(page.includes('Updated November 5, 2026'));
   const data = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
@@ -507,3 +507,12 @@ for (const [slug, title, questionCount, imageCount, anchor] of practicalCases) {
   assert.doesNotMatch(page, /guaranteed compatibility|zero latency|guaranteed to increase clicks/i);
 }
 console.log('Practical article checks passed: three stable search entries, 17 matching FAQ answers, all supplied images, direct answer anchors and synchronized revision dates.');
+
+const sampleFaqData = [...sample.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(item => item['@type'] === 'FAQPage');
+const sampleFaqVisible = sample.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+assert.deepEqual(sampleFaqData.mainEntity.map(item => [item.name, item.acceptedAnswer.text]),
+  [...sampleFaqVisible.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)].map(([, q, a]) => [q, a]));
+assert.ok(sample.includes('<main class="seo-page practical-guide">'));
+assert.ok(sample.includes('packing list before approval'));
+assert.doesNotMatch(sample, /No\. Packaging should be discussed after/);

@@ -20,6 +20,9 @@ if (contactForm) {
   const productReference = document.querySelector("#contact-product-reference");
   const referenceNote = document.querySelector("#contact-reference-note");
   const inquiryReferences = {
+    "sample-evaluation-guide": {"title": "Gaming headset sample evaluation checklist", "url": "https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/", "type": "guide", "prompt": "Tell us the sample model, target device and which check or packing-list item needs clarification."},
+    "receiver-setup-guide": {"title": "USB-A and USB-C gaming headset receiver guide", "url": "https://talrivo.com/insights/choose-2-4g-wireless-gaming-headset/", "type": "guide", "prompt": "Tell us the headset and receiver model, host device, port or adapter and whether the question concerns playback or microphone input."},
+    "connection-comparison-guide": {"title": "2.4GHz versus Bluetooth gaming headset comparison", "url": "https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/", "type": "guide", "prompt": "Tell us the target devices, required connection modes and whether game audio and voice chat need to work together."},
     "g946-headset-only": {
       title: "G946 Headset Only",
       url: "https://talrivo.com/gaming-headsets/g946-rgb/#sample-configuration",

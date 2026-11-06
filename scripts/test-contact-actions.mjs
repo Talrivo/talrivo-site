@@ -75,6 +75,12 @@ const micPage = '/insights/gaming-headset-microphone-performance/';
 const packingPage = '/insights/gaming-headset-packaging-accessories-checklist/';
 const documentsPage = '/insights/gaming-headset-import-documents-checklist/';
 const resourceCases = [
+  ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
+  ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '#review-worksheet', 'sample_worksheet'],
+  ['/insights/choose-2-4g-wireless-gaming-headset/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
+  ['/insights/choose-2-4g-wireless-gaming-headset/', '#receiver-checks', 'receiver_checklist'],
+  ['/insights/2-4g-vs-bluetooth-gaming-headsets-importers/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
+  ['/insights/2-4g-vs-bluetooth-gaming-headsets-importers/', '#connection-comparison', 'connection_comparison'],
   ['/insights/', '../assets/downloads/gaming-headset-mic-recording-sheet.txt', 'mic_recording_sheet'],
   ['/insights/', '../assets/downloads/gaming-headset-packing-review-sheet.txt', 'packing_review_sheet'],
   ['/insights/', '../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],

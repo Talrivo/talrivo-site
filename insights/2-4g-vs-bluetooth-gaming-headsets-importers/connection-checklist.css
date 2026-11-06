@@ -77,10 +77,13 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .connection-guide-page .seo-hero > img {
     order: 0;
   }
+}
+
+@media (max-width: 760px) {
 
   .connection-guide-page .seo-grid {
     grid-template-columns: minmax(0, 1fr);

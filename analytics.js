@@ -180,6 +180,9 @@
     }
 
     const guidePages = [
+      "/insights/evaluate-gaming-headset-sample-before-bulk-order/",
+      "/insights/choose-2-4g-wireless-gaming-headset/",
+      "/insights/2-4g-vs-bluetooth-gaming-headsets-importers/",
       "/insights/",
       "/insights/gaming-headset-microphone-performance/",
       "/insights/gaming-headset-packaging-accessories-checklist/",
@@ -207,7 +210,10 @@
     if (destination.pathname === window.location.pathname) {
       resource = destination.hash === "#quick-mic-test" ? "mic_script"
         : destination.hash === "#packing-checklist" ? "packing_checklist"
-        : destination.hash === "#certificate-match" ? "certificate_match" : null;
+        : destination.hash === "#certificate-match" ? "certificate_match"
+        : destination.hash === "#review-worksheet" ? "sample_worksheet"
+        : destination.hash === "#receiver-checks" ? "receiver_checklist"
+        : destination.hash === "#connection-comparison" ? "connection_comparison" : null;
     } else if (/^\/gaming-headsets\/[^/]+\/$/.test(destination.pathname)) {
       resource = "model_details";
     }
