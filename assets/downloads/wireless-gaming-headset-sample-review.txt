@@ -1,5 +1,5 @@
 TALRIVO | WIRELESS GAMING HEADSET SAMPLE REVIEW
-Version: 2026-10-19
+Version: 2026-11-06
 Source: https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/
 
 Blank buyer worksheet, not a completed test report or certification.
@@ -15,6 +15,7 @@ Reviewer:
 Destination market / sales channel:
 Target device model / OS / application:
 Connection modes required:
+Package configuration (headset only / dock bundle / other):
 Approved packing list / artwork version:
 
 Repeat the connection and microphone checks for EACH device and mode required.
@@ -69,6 +70,10 @@ Status / photo reference:
 08 | BATTERY AND CHARGING
 Record: Connection mode, volume, lighting, content, charge state, elapsed playback,
 charger and cable used. Catalogue figures are not measured results for this sample.
+If a charging dock is part of the agreed configuration, record its model, power
+input, placement, charge indication and removal behavior in a separate check.
+Confirm the charging method; a display stand is not automatically a charger.
+Do not infer phone charging, Qi certification or hub functions from appearance.
 Agreed criteria:
 Observed result:
 Status / log reference:
@@ -109,7 +114,13 @@ references through the product inquiry form. Use email or WhatsApp for attachmen
 Do not include unrelated personal information in recordings or screenshots.
 No sample is approved automatically by completing this worksheet.
 
-Product inquiry: https://talrivo.com/contact/?product=wireless-gaming-headsets&inquiry=quick-question#inquiry-form
+Product inquiry: https://talrivo.com/contact/?product=wireless-gaming-headsets&inquiry=quick-question&reference=sample-evaluation-guide#inquiry-form
 Email: sales@talrivo.com
 Connection demo: https://talrivo.com/videos/g938-phone-setup-controls/
 Model comparison: https://talrivo.com/wireless-gaming-headsets/#specifications
+
+SHARING THE BLANK WORKSHEET
+You can share this blank sheet with your buying team. When referring to the
+method in an article or discussion, link to the source guide above so readers
+can check the instructions and limits. Completed entries are your sample review,
+not TALRIVO test results or approval of other samples.

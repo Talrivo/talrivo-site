@@ -1,5 +1,5 @@
 TALRIVO - GAMING HEADSET PACKING REVIEW SHEET
-Version: 2026-10-24
+Version: 2026-11-06
 Prepared by: TALRIVO product team
 Source and instructions:
 https://talrivo.com/insights/gaming-headset-packaging-accessories-checklist/#packing-checklist
@@ -13,6 +13,7 @@ MODEL AND VERSION
 Model / sample ID:
 Color:
 Connection mode / receiver version:
+Package configuration (headset only / dock bundle / other):
 Sample date / version:
 Target device(s):
 Destination market / manual language:
@@ -24,6 +25,7 @@ Headset | Not confirmed | | |
 USB receiver | Not confirmed | | |
 USB-C adapter / receiver cover | Not confirmed | | |
 Charging cable | Not confirmed | | |
+Charging dock / power accessories | Not confirmed | | |
 Audio cable | Not confirmed | | |
 CTIA Y-splitter | Not confirmed | | |
 Microphone / windscreen | Not confirmed | | |
@@ -51,6 +53,8 @@ An empty field or ticked review item is not proof of factory approval.
 
 Questions about an item in a photo? Send the model and item name to
 sales@talrivo.com. You do not need a finished specification to ask.
+
+Product inquiry: https://talrivo.com/contact/?product=gaming-headsets&inquiry=quick-question&reference=packing-checklist#inquiry-form
 
 SHARING THE BLANK WORKSHEET
 You can share this blank sheet with your buying team. When referring to the

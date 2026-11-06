@@ -18,10 +18,18 @@ for (const [sheet, guide, anchor] of [
   assert.match(text, /Version: \d{4}-\d{2}-\d{2}/);
   assert.ok(text.includes(`https://talrivo.com/insights/${guide}/`));
   assert.match(text, /[Bb]lank buyer worksheet/);
-  if (sheet !== 'wireless-gaming-headset-sample-review') {
+  {
     assert.ok(page.includes(`href="https://talrivo.com/insights/${guide}/#${anchor}"`));
     assert.match(text, /SHARING THE BLANK WORKSHEET/);
   }
+}
+for (const [file, reference] of [
+  ['wireless-gaming-headset-sample-review', 'sample-evaluation-guide'],
+  ['gaming-headset-packing-review-sheet', 'packing-checklist'],
+  ['gaming-headset-mic-recording-sheet', 'mic-comparison-guide']
+]) {
+  const text = readFileSync(`assets/downloads/${file}.txt`, 'utf8');
+  assert.ok(text.includes(`&reference=${reference}#inquiry-form`), 'Downloaded worksheets retain their inquiry context');
 }
 assert.match(section, /No email is needed/);
 assert.ok(readFileSync('llms.txt', 'utf8').includes('#buyer-worksheets'));
