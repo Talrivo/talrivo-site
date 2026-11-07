@@ -62,7 +62,7 @@ for (const [path, key, title, heading] of cases) {
   const page = schemas.find(schema => schema['@type'] === 'WebPage');
   assert.equal(page.url, url);
   assert.equal(page.description, descriptions[0]);
-  const modified = key === 'g946' ? '2026-11-05' : '2026-10-30';
+  const modified = key === 'g946' ? '2026-11-07' : '2026-10-30';
   assert.equal(page.dateModified, modified);
   if (!html.includes('Generated from content/model-page-reviews.json')) assert.equal(page.name, title);
   assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>${modified}</lastmod>`));
