@@ -99,9 +99,9 @@ for (const [file, schemaType, title, heading] of copyPages) {
   assert.equal(main.description, descriptions[0], `${file}: structured description matches search`);
   if (schemaType !== 'Service') {
     assert.equal(main.name, title);
-    assert.equal(main.dateModified, /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29');
+    assert.equal(main.dateModified, file === 'wired-gaming-headsets/index.html' ? '2026-11-07' : /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29');
   }
-  const expectedRevision = file === 'oem-odm/index.html' ? '2026-11-04'
+  const expectedRevision = file === 'wired-gaming-headsets/index.html' ? '2026-11-07' : file === 'oem-odm/index.html' ? '2026-11-04'
     : /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29';
   assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>${expectedRevision}</lastmod>`), `${file}: sitemap revision date`);
   assert.ok(llms.includes(`](${url}):`), `${file}: retain the model or category listing`);
@@ -238,6 +238,10 @@ assert.ok(readFileSync('llms.txt', 'utf8').includes('[RGB Wireless Gaming Headse
 const modelSection = category.match(/<section[^>]*id="headset-models"[\s\S]*?<\/section>/)[0];
 const cards = [...modelSection.matchAll(/<article>[\s\S]*?<\/article>/g)].map(([card]) => card);
 assert.equal(cards.length, 8, 'Retain the original seven choices and add G946');
+assert.ok(cards[0].includes('href="g946-rgb/"'), 'Lead with the confirmed promotion priority');
+assert.ok(category.indexOf('id="headset-models"') < category.indexOf('aria-labelledby="connection-range-title"'), 'Show product cards before long selection guidance');
+assert.equal(cards.filter(card => card.includes('class="browse-details"')).length, 8, 'Every product has a direct details action');
+
 assert.equal(cards.filter(card => card.includes('href="g946-rgb/"')).length, 1);
 const schemas = [...category.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));

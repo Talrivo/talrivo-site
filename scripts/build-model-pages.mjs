@@ -88,7 +88,9 @@ function render(model) {
   <link rel="stylesheet" href="../../styles.css?v=20261019nav">
   <link rel="stylesheet" href="../../gaming-headsets/buyer-product.css?v=20261019a">
   <link rel="stylesheet" href="../../gaming-headsets/model-pages.css?v=20261028flow">
-  ${schemas.map(schema => `<script type="application/ld+json">${jsonScript(schema)}</script>`).join('\n  ')}
+  ${tws ? '' : `<link rel="stylesheet" href="../../buyer-contact.css?v=20261107a">
+  <script src="../../buyer-contact.js?v=20261107a" data-product="${esc(model.inquiryKey)}" data-label="${esc(model.inquiryKey.replaceAll('-', ' '))}" defer></script>
+`}${schemas.map(schema => `<script type="application/ld+json">${jsonScript(schema)}</script>`).join('\n  ')}
 </head><body>
   <header class="site-header">
     <a class="brand" href="../../" aria-label="TALRIVO home"><img class="brand-logo" src="../../assets/brand/talrivo-wordmark-new-dark.png" alt="TALRIVO"></a>

@@ -17,8 +17,9 @@ const collection = schemas.find(schema => schema['@type'] === 'CollectionPage');
 assert.deepEqual(collection.mainEntity.itemListElement.map(item => item.name),
   ['G942 RGB Wired Gaming Headset', 'G935 RGB Wired Gaming Headset']);
 assert.match(html, /id="connection-options"/);
-assert.ok(html.indexOf('id="connection-options"') < html.indexOf('id="wired-models"'),
-  'Explain the audio connection before presenting model choices');
+assert.ok(html.indexOf('id="wired-models"') < html.indexOf('id="connection-options"'),
+  'Show products before the full comparison table');
+assert.ok(html.indexOf('A 3.5mm headset with USB-powered lighting') < html.indexOf('id="wired-models"'), 'Keep the connection distinction before the product choices');
 assert.match(html, /role="region" aria-label="Wired headset connection comparison"/);
 assert.match(html, /not included in the described standard package or headset unit price/);
 assert.match(html, /not a device compatibility test report/);
