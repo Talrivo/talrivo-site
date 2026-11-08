@@ -6,6 +6,9 @@ export const CHECKS = [
   { id: 'www_https_home', url: 'https://www.talrivo.com/', redirectTo: 'https://talrivo.com/' },
   { id: 'www_https_product_path', url: 'https://www.talrivo.com/wireless-gaming-headsets/', redirectTo: 'https://talrivo.com/wireless-gaming-headsets/' },
   { id: 'www_http_home', url: 'http://www.talrivo.com/', redirectTo: 'https://talrivo.com/' },
+  { id: 'analytics_script', url: 'https://talrivo.com/analytics.js?v=20261015a', contentTypes: ['application/javascript', 'text/javascript'] },
+  { id: 'main_stylesheet', url: 'https://talrivo.com/styles.css', contentTypes: ['text/css'] },
+  { id: 'contact_script', url: 'https://talrivo.com/buyer-contact.js?v=20261107a', contentTypes: ['application/javascript', 'text/javascript'] },
 ];
 
 const certificateErrors = new Set([
@@ -39,8 +42,12 @@ export async function checkLiveSite({ fetchImpl = fetch, timeoutMs = 10000 } = {
         signal: controller.signal,
       });
       if (!check.redirectTo) {
-        checks.push({ id: check.id, url: check.url, status: response.status === 200 ? 'pass' : 'fail',
-          httpStatus: response.status, reason: response.status === 200 ? 'Canonical homepage reachable.' : 'Expected HTTP 200 from the canonical homepage.' });
+        const contentType = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+        const valid = response.status === 200 && (!check.contentTypes || check.contentTypes.includes(contentType));
+        checks.push({ id: check.id, url: check.url, status: valid ? 'pass' : 'fail',
+          httpStatus: response.status, ...(check.contentTypes ? { contentType } : {}),
+          reason: valid ? (check.contentTypes ? 'Static resource reachable with the expected MIME type.' : 'Canonical homepage reachable.')
+            : (check.contentTypes ? 'Expected HTTP 200 and a JavaScript/CSS MIME type; a successful HTML fallback is not a valid asset.' : 'Expected HTTP 200 from the canonical homepage.') });
         continue;
       }
       const location = response.headers.get('location');

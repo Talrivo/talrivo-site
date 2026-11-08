@@ -1,15 +1,15 @@
 import assert from 'node:assert/strict';
 import { CHECKS, checkLiveSite, main } from './check-live-site.mjs';
 
-const response = (status, location) => ({ status, headers: new Headers(location ? { location } : {}) });
+const response = (status, location, contentType) => ({ status, headers: new Headers({ ...(location ? { location } : {}), ...(contentType ? { 'content-type': contentType } : {}) }) });
 const calls = [];
 const healthy = await checkLiveSite({ fetchImpl: async (url, options) => {
   calls.push({ url, options });
   const check = CHECKS.find(check => check.url === url);
-  return check.redirectTo ? response(301, check.redirectTo) : response(200);
+  return check.redirectTo ? response(301, check.redirectTo) : response(200, undefined, check.contentTypes?.[0]);
 }});
 assert.equal(healthy.ok, true);
-assert.equal(calls.length, 4);
+assert.equal(calls.length, CHECKS.length);
 for (const { url, options } of calls) {
   assert.ok(['talrivo.com', 'www.talrivo.com'].includes(new URL(url).hostname));
   assert.equal(options.method, 'HEAD');
@@ -26,7 +26,7 @@ const tlsFailure = await checkLiveSite({ fetchImpl: async url => {
   return url.startsWith('http:') ? response(301, 'https://talrivo.com/') : response(200);
 }});
 assert.equal(tlsFailure.ok, false);
-assert.deepEqual(tlsFailure.checks.map(check => check.status), ['pass', 'fail', 'fail', 'pass']);
+assert.deepEqual(tlsFailure.checks.slice(0, 4).map(check => check.status), ['pass', 'fail', 'fail', 'pass']);
 assert.equal(tlsFailure.checks[1].code, 'ERR_TLS_CERT_ALTNAME_INVALID');
 for (const location of [undefined, 'https://talrivo.com.evil.example/', 'http://talrivo.com/', '/', 'not a valid URL']) {
   const result = await checkLiveSite({ fetchImpl: async () => response(301, location) });
@@ -55,3 +55,9 @@ for (const timeoutMs of [0, -1, 30001, NaN]) {
   await assert.rejects(checkLiveSite({ timeoutMs, fetchImpl: async () => { throw Error('Must not request'); } }), /timeout/);
 }
 console.log('Live-site offline checks passed: strict TLS errors, manual permanent redirects, preserved paths, no credentials, bounded timeouts and unverified network failures.');
+
+for (const mime of ['text/html', 'application/json', undefined]) {
+  const badAsset = await checkLiveSite({ fetchImpl: async () => response(200, undefined, mime) });
+  assert.ok(badAsset.checks.filter(check => /_script|_stylesheet/.test(check.id)).every(check => check.status === 'fail'), 'An HTML error page must not pass as analytics or CSS');
+}
+console.log('Static resource checks passed: analytics, main CSS and quick-contact JavaScript must return HTTP 200 with the correct MIME type.');

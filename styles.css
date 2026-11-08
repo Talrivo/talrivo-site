@@ -5902,3 +5902,12 @@ h2 {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* PageSpeed review: readable secondary copy on the homepage's light surfaces. */
+.home-page {
+  --muted: #596164;
+}
+
+.home-page .service-band .label {
+  color: #b9c3c5;
+}

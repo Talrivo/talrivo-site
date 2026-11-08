@@ -9,6 +9,21 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets" / "responsive"
 SOURCES = {
+    "g935-browse": "assets/catalog/g935-wireless/evidence/display/g935-gaming-desk-use-scene.jpg",
+    "g936-browse": "assets/catalog/g936-lightweight/evidence/display/g936-wearing-fit-reference.jpg",
+    "g941-browse": "assets/catalog/g941-wireless/image-01.jpg",
+    "g926-browse": "assets/catalog/g926-wireless/evidence/display/g926-use-scenes.jpg",
+    "g940-browse": "assets/catalog/g940-wireless/image-01.jpg",
+    "g947-browse": "assets/catalog/g947-new/image-01.jpg",
+
+    "brand-wordmark-dark": "assets/brand/talrivo-wordmark-new-dark.png",
+    "g946-dock-bundle": "assets/catalog/g946-rgb/supplied-20261105/dock-bundle.jpg",
+    "g946-headset-front": "assets/catalog/g946-rgb/supplied-20261105/headset-front.jpg",
+    "g946-headset-controls": "assets/catalog/g946-rgb/supplied-20261105/headset-controls.jpg",
+    "g946-dock-rear": "assets/catalog/g946-rgb/supplied-20261105/dock-rear.jpg",
+    "g946-configuration-presentation": "assets/catalog/g946-rgb/supplied-20261105/configuration-presentation.jpg",
+    "tws042s-overview": "assets/catalog/tws-tws042s/image-01.jpg",
+
     "gaming-hero": "assets/catalog/g938-wireless/display/g938-dark-hero-wireless-gaming-headset.jpg",
     "g938-overview": "assets/catalog/g938-wireless/display/g938-product-overview-accessories.jpg",
     "g936-overview": "assets/catalog/g936-lightweight/evidence/display/g936-overview-receiver.jpg",
@@ -58,17 +73,27 @@ def main():
         source = SOURCES[name]
         original = ROOT / source
         with Image.open(original) as opened:
-            image = ImageOps.exif_transpose(opened).convert("RGB")
+            image = ImageOps.exif_transpose(opened).convert("RGBA" if name.startswith("brand-") else "RGB")
             widths = (240, 480) if name.startswith("factory-cert-") else (
                 (480, 960, 1440) if name == "gaming-hero" else (480, 960)
             )
+            if name.startswith("brand-"):
+                widths = (320, 480)
+            elif name.endswith("-browse"):
+                widths = (480, 800, 960)
+            elif name.startswith("g946-"):
+                widths = (480, 800, 1200)
+            elif name == "tws042s-overview":
+                widths = (320, 480, 616)
+            elif (name.startswith("factory-") and not name.startswith("factory-cert-")) or name in ("g938-overview", "b9-desk"):
+                widths = (480, 720, 960)
             for width in widths:
                 if width > image.width:
                     raise ValueError(f"{source} is narrower than {width}px")
                 height = round(image.height * width / image.width)
                 resized = image.resize((width, height), Image.Resampling.LANCZOS)
                 target = OUTPUT / f"{name}-{width}.webp"
-                resized.save(target, "WEBP", quality=85, method=6)
+                resized.save(target, "WEBP", quality=75 if name == "g926-browse" else 85, method=6)
                 print(f"{target.relative_to(ROOT)}: {width}x{height}, "
                       f"{target.stat().st_size} bytes; source {original.stat().st_size} bytes")
 

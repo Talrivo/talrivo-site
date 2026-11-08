@@ -35,3 +35,18 @@ body .product-browse-page .seo-hero { padding:24px 48px 16px !important; }
   .gaming-headsets-page .product-browse-page #headset-models .section-heading { padding-bottom:12px; margin-bottom:12px; }
   .gaming-headsets-page .product-browse-page #headset-models .section-heading h2 { font-size:1.4rem !important; }
 }
+
+/* Separate mobile navigation targets from the brand and neighboring actions. */
+@media(max-width:899px) {
+  .gaming-headsets-page .site-header { flex-wrap:wrap; height:auto; min-height:72px; gap:8px; padding-block:12px; }
+  .gaming-headsets-page .site-header .brand { min-height:44px; }
+  .gaming-headsets-page .site-header .navigation { display:flex; flex-wrap:wrap; position:static; width:100%; gap:8px; }
+  .gaming-headsets-page .site-header .navigation > a { display:flex; align-items:center; min-height:44px; padding:8px 10px; }
+}
+.product-browse-page .headset-model-grid article > a[href*="#style-video"] { display:flex; align-items:center; min-height:44px; }
+
+/* Override the older shared three-column/one-column !important rules. */
+.product-browse-page .headset-model-grid { grid-template-columns:repeat(4,minmax(0,1fr)) !important; }
+@media(max-width:1100px) { .product-browse-page .headset-model-grid { grid-template-columns:repeat(3,minmax(0,1fr)) !important; } }
+@media(max-width:820px) { .product-browse-page .headset-model-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+@media(max-width:540px) { .product-browse-page .headset-model-grid { grid-template-columns:minmax(0,1fr) !important; } }

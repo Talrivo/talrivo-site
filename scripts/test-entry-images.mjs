@@ -7,6 +7,7 @@ const root = process.cwd();
 const pages = [
   'index.html',
   'gaming-headsets/index.html',
+  'gaming-headsets/g946-rgb/index.html',
   'gaming-headsets/g936-lightweight/index.html',
   'gaming-headsets/g938-wireless/index.html',
   'gaming-headsets/g947-foldable/index.html',
@@ -41,7 +42,8 @@ for (const page of pages) {
       const bytes = readFileSync(file);
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${src}: invalid WebP header`);
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${src}: invalid WebP header`);
-      const budget = src.includes('/factory-') ? 180000
+      const budget = src.includes('/g946-configuration-presentation-') ? 100000
+        : src.includes('/factory-') ? 180000
         : src.includes('g935-connectors-') ? 140000
         : /g947-(gaming-desk|platform-connections)-illustration-/.test(src) ? 90000
           : /g940-feature-board-/.test(src) ? 125000
