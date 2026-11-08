@@ -211,7 +211,7 @@
       resource = destination.hash === "#quick-mic-test" ? "mic_script"
         : destination.hash === "#packing-checklist" ? "packing_checklist"
         : destination.hash === "#certificate-match" ? "certificate_match"
-        : destination.hash === "#review-worksheet" ? "sample_worksheet"
+        : ["#review-worksheet", "#sample-review-tool"].includes(destination.hash) ? "sample_worksheet"
         : destination.hash === "#receiver-checks" ? "receiver_checklist"
         : destination.hash === "#connection-comparison" ? "connection_comparison" : null;
     } else if (/^\/gaming-headsets\/[^/]+\/$/.test(destination.pathname)) {

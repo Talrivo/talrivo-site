@@ -1,0 +1,69 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { buildReview, checks, statuses } from '../insights/sample-review-tool.mjs';
+
+const blank = buildReview();
+assert.equal((blank.match(/Status: Not tested/g) || []).length, 6);
+assert.doesNotMatch(blank, /Status: Meets agreed criteria/);
+assert.match(blank, /No sample is approved automatically/);
+assert.equal(checks.length, 6);
+assert.equal(statuses.length, 4);
+const text = buildReview({sample:'G946\nSample B',device:'PC <sample>',connection:'2.4GHz / USB-C',
+  results:{voice:{status:'Issue to resolve',note:'Mic failed after mode switch'},playback:{status:'Unknown'},fit:{status:'Not applicable'}},
+  followup:'Retest the receiver and microphone'});
+assert.match(text, /Model \/ sample ID: G946 Sample B/);
+assert.match(text, /PC <sample>/);
+assert.match(text, /Status: Issue to resolve\nObserved result \/ evidence reference: Mic failed after mode switch/);
+assert.match(text, /Status: Not applicable/);
+assert.equal((text.match(/Status: Not tested/g)||[]).length,4);
+assert.match(buildReview({sample:'x'.repeat(500)}), /Model \/ sample ID: x{300}\nDevice/);
+const html=readFileSync('insights/evaluate-gaming-headset-sample-before-bulk-order/index.html','utf8');
+assert.match(html, /type="module" src="\.\.\/sample-review-tool\.mjs/);
+for (const [id] of checks) {
+  assert.ok(html.includes(`name="${id}-status"`));
+  assert.ok(html.includes(`name="${id}-note"`));
+}
+const script=readFileSync('insights/sample-review-tool.mjs','utf8');
+assert.doesNotMatch(script,/\.innerHTML|fetch\(|sendBeacon|localStorage|sessionStorage|gtag\(/);
+assert.match(script,/output.textContent = buildReview/);
+assert.match(html,/<noscript>[\s\S]*?wireless-gaming-headset-sample-review.txt/);
+console.log('Sample review checks passed: blank/unknown outcomes remain untested; notes and model version retained; bounded input; text-only output; no storage, transmission or lead event.');
+
+// Exercise the user flow without opening an OS printer dialog or sending data.
+const { setupReview } = await import('../insights/sample-review-tool.mjs');
+const nodes = new Map();
+for (const id of ['#sample-review-form','#sample-review-controls','#sample-review-output','#sample-review-status','#sample-review-editor','#sample-review-panel','#sample-review-preview','#sample-review-download','#sample-review-print']) {
+  nodes.set(id, {handlers:{},hidden:true,textContent:'',addEventListener(name, handler){ this.handlers[name]=handler; }});
+}
+const classes = new Set();
+const fakeDoc={querySelector:id=>nodes.get(id),body:{classList:{add:x=>classes.add(x),remove:x=>classes.delete(x)}}};
+const windowEvents={};
+let prints=0;
+const fakeWindow={location:{hash:'#sample-review-tool'},addEventListener:(name,handler)=>{windowEvents[name]=handler;},print(){
+  prints++;
+  assert.ok(classes.has('printing-sample-review'));
+  assert.match(nodes.get('#sample-review-output').textContent,/Model \/ sample ID: QA model/);
+  windowEvents.afterprint();
+}};
+const NativeFormData=globalThis.FormData;
+try {
+  globalThis.FormData=class { get(key){return {'sample':'QA model','voice-status':'Issue to resolve','voice-note':'QA microphone issue'}[key] || '';} };
+  setupReview(fakeDoc,fakeWindow);
+  assert.equal(nodes.get('#sample-review-panel').open,true);
+  assert.equal(nodes.get('#sample-review-controls').disabled,false);
+  assert.match(html, /id="sample-review-controls" disabled/);
+  nodes.get('#sample-review-preview').handlers.click();
+  assert.equal(nodes.get('#sample-review-editor').hidden,false);
+  assert.match(nodes.get('#sample-review-output').textContent,/QA microphone issue/);
+  nodes.get('#sample-review-print').handlers.click();
+  assert.equal(prints,1);
+  assert.equal(classes.size,0);
+  fakeWindow.print=()=>{throw Error('Printer unavailable');};
+  nodes.get('#sample-review-print').handlers.click();
+  assert.equal(classes.size,0);
+  assert.match(nodes.get('#sample-review-status').textContent,/Download your review instead/);
+  let stopped=false;
+  nodes.get('#sample-review-form').handlers.submit({preventDefault(){stopped=true;}});
+  assert.equal(stopped,true);
+} finally {globalThis.FormData=NativeFormData;}
+console.log('Review UI checks passed: direct-link opening, populated preview, print-only content, state restoration, print fallback and prevented submission.');

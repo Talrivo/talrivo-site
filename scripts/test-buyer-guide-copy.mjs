@@ -17,7 +17,7 @@ const html = pages.map(([slug, title]) => {
   assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
     slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25'
       : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-06'
-      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-06' : '2026-10-22');
+      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-08' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
   assert.doesNotMatch(claims, /guaranteed compatibility|guaranteed to increase clicks|zero latency/i);
   return content;
@@ -79,7 +79,7 @@ for (const question of ['Which has less delay?', 'What happens during voice chat
 }
 assert.equal((connection.match(/<section\b/g) || []).length, 8, 'Keep the guide focused, without repeated definition and supplier sections');
 assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/</loc>\n    <lastmod>2026-11-06</lastmod>'));
-assert.match(sample, /href="#review-worksheet">Get the Sample Checklist/);
+assert.match(sample, /href="#sample-review-tool">Fill In Sample Checklist/);
 assert.match(sample, /does not prove that every bulk unit will match/);
 assert.match(sample, /not a completed test report/);
 assert.match(sample, /download>Download English Worksheet/);

@@ -77,6 +77,7 @@ const documentsPage = '/insights/gaming-headset-import-documents-checklist/';
 const resourceCases = [
   ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
   ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '#review-worksheet', 'sample_worksheet'],
+  ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '#sample-review-tool', 'sample_worksheet'],
   ['/insights/choose-2-4g-wireless-gaming-headset/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
   ['/insights/choose-2-4g-wireless-gaming-headset/', '#receiver-checks', 'receiver_checklist'],
   ['/insights/2-4g-vs-bluetooth-gaming-headsets-importers/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],

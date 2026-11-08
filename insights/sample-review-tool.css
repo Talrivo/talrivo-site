@@ -1,0 +1,26 @@
+.sample-review-tool { margin-block:1.5rem; border:1px solid #c6ced0; border-radius:8px; padding:clamp(1rem,3vw,1.5rem); background:#f6f8f8; color:#172024; scroll-margin-top:7rem; }
+.sample-review-tool summary { cursor:pointer; font-size:1.1rem; font-weight:700; min-height:44px; padding-block:10px; }
+.sample-review-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.sample-review-tool label { display:grid; gap:6px; font-size:.95rem; font-weight:600; }
+.sample-review-tool input,.sample-review-tool select,.sample-review-tool textarea { width:100%; min-width:0; min-height:44px; border:1px solid #9daaad; border-radius:4px; padding:10px; color:#172024; background:white; font:inherit; font-size:1rem; }
+.sample-review-tool :is(input,select,textarea,button,summary):focus-visible { outline:3px solid #1769aa; outline-offset:3px; }
+.sample-review-tool fieldset { margin:1.25rem 0; padding:1rem; min-width:0; border:1px solid #c6ced0; }
+.sample-review-tool legend { font-weight:700; padding-inline:6px; }
+.sample-review-tool fieldset p { color:#414e53; margin-top:0; }
+.sample-review-tool fieldset > label + label { margin-top:12px; }
+.sample-review-tool .review-actions { display:flex; flex-wrap:wrap; gap:10px; margin-block:1rem; }
+.sample-review-tool button { min-height:44px; padding:10px 16px; border:1px solid #172024; border-radius:5px; background:#fff; color:#172024; font:inherit; cursor:pointer; }
+.sample-review-tool button:first-child { background:#172024; color:white; }
+.sample-review-tool pre { white-space:pre-wrap; overflow-wrap:anywhere; font:14px/1.6 monospace; }
+.sample-review-tool [hidden] { display:none; }
+@media(max-width:620px) { .sample-review-fields { grid-template-columns:minmax(0,1fr); } .sample-review-tool .review-actions { flex-direction:column; } }
+@media print {
+  body.printing-sample-review > :not(main), body.printing-sample-review main > :not(#review-worksheet),
+  body.printing-sample-review #review-worksheet > :not(#sample-review-tool),
+  body.printing-sample-review #sample-review-tool > :not(#sample-review-editor) { display:none !important; }
+  body.printing-sample-review :is(main,#review-worksheet,#sample-review-tool) { width:auto; max-width:none; margin:0; padding:0; border:0; background:white; }
+  body.printing-sample-review #sample-review-editor { display:block !important; }
+  body.printing-sample-review #sample-review-output { color:black; font:11pt/1.4 monospace; }
+}
+
+.sample-review-tool #sample-review-controls { border:0; margin:0; padding:0; }
