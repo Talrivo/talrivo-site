@@ -10,6 +10,13 @@ export const statuses = ['Not tested', 'Meets agreed criteria', 'Issue to resolv
 const clean = (value, max = 300) => typeof value === 'string'
   ? value.replace(/[\x00-\x1f\x7f]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max) : '';
 
+const knownModels = new Set(['G926', 'G935', 'G936', 'G938', 'G940', 'G941', 'G946', 'G947']);
+export function reviewInquiry(sample) {
+  const model = clean(sample).match(/^(G926|G935|G936|G938|G940|G941|G946|G947)(?=$|[\s,/-])/i)?.[1].toUpperCase();
+  const product = model ? model.toLowerCase() : 'wireless-gaming-headsets';
+  return `/contact/?product=${product}&inquiry=quick-question&reference=sample-evaluation-guide#inquiry-form`;
+}
+
 export function buildReview(record = {}) {
   const lines = [
     'TALRIVO | BUYER SAMPLE REVIEW',
@@ -28,7 +35,8 @@ export function buildReview(record = {}) {
   }
   lines.push('Open questions / retest needed:', clean(record.followup, 600) || 'Not recorded', '',
     'No sample is approved automatically by completing this sheet.',
-    'If you need help, send the sample ID, device, mode and relevant result through the existing product inquiry form.');
+    'If you need help, send the sample ID, device, mode and relevant result through the existing product inquiry form.',
+    `Product inquiry: https://talrivo.com${reviewInquiry(record.sample)}`);
   return lines.join('\n');
 }
 
@@ -38,6 +46,13 @@ export function setupReview(doc = document, win = window) {
   const output = doc.querySelector('#sample-review-output');
   const message = doc.querySelector('#sample-review-status');
   const details = doc.querySelector('#sample-review-editor');
+  const sample = doc.querySelector('input[name="sample"]');
+  const inquiry = doc.querySelector('#sample-review-inquiry');
+  const model = (new URLSearchParams(win.location.search || '').get('model') || '').toUpperCase();
+  if (knownModels.has(model) && !sample.value) sample.value = model;
+  const updateInquiry = () => { inquiry.href = reviewInquiry(sample.value); };
+  sample.addEventListener('input', updateInquiry);
+  updateInquiry();
   const openFromLink = () => {
     if (win.location.hash === '#sample-review-tool') doc.querySelector('#sample-review-panel').open = true;
   };

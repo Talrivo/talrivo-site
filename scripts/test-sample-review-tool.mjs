@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildReview, checks, statuses } from '../insights/sample-review-tool.mjs';
+import { buildReview, checks, statuses, reviewInquiry } from '../insights/sample-review-tool.mjs';
 
 const blank = buildReview();
 assert.equal((blank.match(/Status: Not tested/g) || []).length, 6);
@@ -32,14 +32,14 @@ console.log('Sample review checks passed: blank/unknown outcomes remain untested
 // Exercise the user flow without opening an OS printer dialog or sending data.
 const { setupReview } = await import('../insights/sample-review-tool.mjs');
 const nodes = new Map();
-for (const id of ['#sample-review-form','#sample-review-controls','#sample-review-output','#sample-review-status','#sample-review-editor','#sample-review-panel','#sample-review-preview','#sample-review-download','#sample-review-print']) {
-  nodes.set(id, {handlers:{},hidden:true,textContent:'',addEventListener(name, handler){ this.handlers[name]=handler; }});
+for (const id of ['input[name="sample"]','#sample-review-inquiry','#sample-review-form','#sample-review-controls','#sample-review-output','#sample-review-status','#sample-review-editor','#sample-review-panel','#sample-review-preview','#sample-review-download','#sample-review-print']) {
+  nodes.set(id, {value:'',handlers:{},hidden:true,textContent:'',addEventListener(name, handler){ this.handlers[name]=handler; }});
 }
 const classes = new Set();
 const fakeDoc={querySelector:id=>nodes.get(id),body:{classList:{add:x=>classes.add(x),remove:x=>classes.delete(x)}}};
 const windowEvents={};
 let prints=0;
-const fakeWindow={location:{hash:'#sample-review-tool'},addEventListener:(name,handler)=>{windowEvents[name]=handler;},print(){
+const fakeWindow={location:{hash:'#sample-review-tool',search:'?model=g936'},addEventListener:(name,handler)=>{windowEvents[name]=handler;},print(){
   prints++;
   assert.ok(classes.has('printing-sample-review'));
   assert.match(nodes.get('#sample-review-output').textContent,/Model \/ sample ID: QA model/);
@@ -50,6 +50,11 @@ try {
   globalThis.FormData=class { get(key){return {'sample':'QA model','voice-status':'Issue to resolve','voice-note':'QA microphone issue'}[key] || '';} };
   setupReview(fakeDoc,fakeWindow);
   assert.equal(nodes.get('#sample-review-panel').open,true);
+  assert.equal(nodes.get('input[name="sample"]').value,'G936');
+  assert.match(nodes.get('#sample-review-inquiry').href,/product=g936&/);
+  nodes.get('input[name="sample"]').value='G938 QA sample';
+  nodes.get('input[name="sample"]').handlers.input();
+  assert.match(nodes.get('#sample-review-inquiry').href,/product=g938&/);
   assert.equal(nodes.get('#sample-review-controls').disabled,false);
   assert.match(html, /id="sample-review-controls" disabled/);
   nodes.get('#sample-review-preview').handlers.click();
@@ -67,3 +72,13 @@ try {
   assert.equal(stopped,true);
 } finally {globalThis.FormData=NativeFormData;}
 console.log('Review UI checks passed: direct-link opening, populated preview, print-only content, state restoration, print fallback and prevented submission.');
+
+for (const model of ['G936','G938','G946']) {
+ assert.match(reviewInquiry(model+' sample A'), new RegExp('product='+model.toLowerCase()+'&'));
+}
+for (const input of ['G9360','javascript:alert(1)','<script>','Unknown model','Customer email@example.com']) {
+ assert.equal(reviewInquiry(input),'/contact/?product=wireless-gaming-headsets&inquiry=quick-question&reference=sample-evaluation-guide#inquiry-form');
+}
+assert.match(buildReview({sample:'G936 private note'}),/Product inquiry: https:\/\/talrivo.com\/contact\/\?product=g936&/);
+assert.doesNotMatch(reviewInquiry('G936 private note'),/private|note/);
+console.log('Model context checks passed: known model prefill, edited model destination, unknown-code fallback and no buyer notes in inquiry URLs.');

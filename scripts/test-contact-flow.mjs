@@ -390,3 +390,14 @@ for (const [reference, title, inquiry, expected] of [
     assert.equal(guide.storage.value('talrivoInquirySource'), undefined);
   }
 }
+
+for (const [model, expected] of [['g936','G936 Lightweight Gaming Headset'],['g938','G938 Wireless Gaming Headset']]) {
+  for (const consent of [null,'denied','granted']) {
+    const review = runContact(`https://talrivo.com/contact/?product=${model}&inquiry=quick-question&reference=sample-evaluation-guide`, null, consent);
+    assert.equal(review.nodes.get('select[name="product"]').value,expected);
+    assert.equal(review.nodes.get('#contact-inquiry-type').value,'Quick product question');
+    assert.match(review.nodes.get('#contact-reference-note').textContent,/sample model, target device/);
+    assert.equal(review.events.length,0,'Opening the review inquiry is not a lead');
+  }
+}
+console.log('Sample review inquiry checks passed: G936/G938 model and guide context retained with every consent state, without a lead event.');
