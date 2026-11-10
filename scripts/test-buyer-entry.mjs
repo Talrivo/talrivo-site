@@ -260,6 +260,13 @@ assert.match(product, /https:\/\/www.youtube.com\/shorts\/PGj_ESVdFgA/);
 assert.match(product, /not real customer footage/);
 assert.match(product, /not establish compatibility or included accessories/);
 assert.match(product, /reference=g946-style/);
+assert.equal((product.match(/https:\/\/youtu\.be\/sEeuIEnkcrQ/g)||[]).length,1);
+const films = product.match(/<section[^>]*id="style-video"[\s\S]*?<\/section>/)[0];
+assert.match(films,/creative visualizations/);
+assert.match(films,/href="#sample-configuration"/);
+assert.equal((films.match(/<article>/g)||[]).length,2);
+assert.doesNotMatch(films,/<iframe|<video|youtube\.com\/embed|autoplay/);
+
 const configurations = product.match(/<section[^>]*id="sample-configuration"[\s\S]*?<\/section>/)[0];
 assert.equal([...product.matchAll(/id="sample-configuration"/g)].length, 1);
 assert.ok(product.indexOf('id="sample-configuration"') < product.indexOf('id="style-video"'), 'Show configuration choices before the style concept');
