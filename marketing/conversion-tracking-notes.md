@@ -83,3 +83,22 @@ The three guides also pass fixed `reference=mic-comparison-guide`, `reference=pa
 The packaging download is a blank worksheet, not a quote or an approved contents list. All item statuses start as Not confirmed.
 
 Implementation references: [GA4 event setup](https://developers.google.com/analytics/devguides/collection/ga4/events), [people-first content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content).
+
+
+## Procurement path and sample tool: November 10, 2026
+
+The existing consent-gated `buyer_resource_click` now also covers main-content links on the gaming, wireless and wired categories, the comparison page and nine explicitly listed model-version pages. New resource types are `model_comparison` and `sample_review_guide`. Existing `model_details`, `sample_guide`, `sample_review_sheet` and `inquiry_form` remain separate. Headers, footers, unrelated destinations and external links do not create buyer-resource events; contact-channel measurement retains its existing scope.
+
+The fill-in tool's enabled preview, download and print controls emit `sample_review_action`, with only `review_action` and `page_path`:
+
+| review_action | Meaning | Does not establish |
+| --- | --- | --- |
+| preview_request | Buyer clicked Preview Review | Completed review or purchase intent |
+| download_request | Buyer requested their text review | File saved/opened or completed download |
+| print_request | Buyer requested print preview | Successful printing |
+
+No buyer-entered sample ID, note, result, device, query string or form value enters these event payloads. No new storage is added. No event is emitted before consent, after withdrawal, with inaccessible consent storage, or from disabled review controls. These events are not `generate_lead` and should not be marked as lead key events or summed with successful inquiries. Enhanced-measurement clicks/downloads may overlap with existing resource events; do not add the two streams as unique people or unique actions.
+
+After publication, verify one real consenting session in GA4 Realtime/DebugView. If reporting needs them, configure event-scoped dimensions `review_action`, `resource_type` and `destination_path` in the property. This source change does not configure GA4 or prove event ingestion. Production delivery remains unverified; local browser QA intercepted Google script loading and logged calls only in the local DOM.
+
+Review the sequence separately: Search Console impressions/clicks -> landing-page visits -> resource or model entry -> tool action requests -> inquiry form acceptance -> manually qualified inquiry. Consent blockers and non-consenting visitors make the post-click data incomplete; these events do not explain organic CTR on their own.

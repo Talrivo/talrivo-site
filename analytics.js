@@ -160,8 +160,27 @@
       return;
     }
     if (consent !== "granted") return;
-    const target = event.target?.closest?.("a[href], [data-open-wechat]");
+    const target = event.target?.closest?.("a[href], [data-open-wechat], #sample-review-preview, #sample-review-download, #sample-review-print");
     if (!target) return;
+    const sampleReviewPath = "/insights/evaluate-gaming-headset-sample-before-bulk-order/";
+    const reviewActions = new Map([
+      ["sample-review-preview", "preview_request"],
+      ["sample-review-download", "download_request"],
+      ["sample-review-print", "print_request"]
+    ]);
+    const reviewAction = reviewActions.get(target.id);
+    if (reviewAction) {
+      if (window.location.pathname === sampleReviewPath && target.closest("#sample-review-tool")
+        && !target.disabled && !target.closest("fieldset[disabled]")) {
+        // A requested action is not a completed download, print or inquiry.
+        // Read no form values, sample IDs, notes, query strings or results.
+        window.gtag("event", "sample_review_action", {
+          review_action: reviewAction,
+          page_path: window.location.pathname
+        });
+      }
+      return;
+    }
     const href = target.getAttribute("href") || "";
     let method = null;
     if (target.hasAttribute("data-open-wechat")) method = "wechat";
@@ -189,7 +208,14 @@
       "/insights/gaming-headset-import-documents-checklist/",
       "/sample-request/"
     ];
-    if (!guidePages.includes(window.location.pathname) || !target.closest("main")) return;
+    const productPages = [
+      "/gaming-headsets/", "/wireless-gaming-headsets/", "/wired-gaming-headsets/", "/product-comparison/",
+      "/gaming-headsets/g926-wired/", "/gaming-headsets/g926-wireless/", "/gaming-headsets/g935-wireless/",
+      "/gaming-headsets/g936-lightweight/", "/gaming-headsets/g938-wireless/",
+      "/gaming-headsets/g940-low-latency/", "/gaming-headsets/g941-tri-mode-anc/",
+      "/gaming-headsets/g946-rgb/", "/gaming-headsets/g947-foldable/"
+    ];
+    if (![...guidePages, ...productPages].includes(window.location.pathname) || !target.closest("main")) return;
     let destination;
     try {
       destination = new URL(href, window.location.href);
@@ -203,6 +229,8 @@
       "/assets/downloads/wireless-gaming-headset-sample-review.txt": "sample_review_sheet",
       "/assets/certificates/sit240719190301-red.pdf": "red_document",
       "/assets/certificates/sit240719190302r-rohs.pdf": "rohs_document",
+      "/product-comparison/": "model_comparison",
+      [sampleReviewPath]: "sample_review_guide",
       "/sample-request/": "sample_guide",
       "/contact/": "inquiry_form"
     };

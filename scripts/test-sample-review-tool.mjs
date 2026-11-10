@@ -82,3 +82,16 @@ for (const input of ['G9360','javascript:alert(1)','<script>','Unknown model','C
 assert.match(buildReview({sample:'G936 private note'}),/Product inquiry: https:\/\/talrivo.com\/contact\/\?product=g936&/);
 assert.doesNotMatch(reviewInquiry('G936 private note'),/private|note/);
 console.log('Model context checks passed: known model prefill, edited model destination, unknown-code fallback and no buyer notes in inquiry URLs.');
+
+
+for (const [folder,model] of [['g935-wireless','g935'],['g941-tri-mode-anc','g941'],['g946-rgb','g946'],['g947-foldable','g947']]) {
+  const page=readFileSync(`gaming-headsets/${folder}/index.html`,'utf8');
+  assert.ok(page.includes(`evaluate-gaming-headset-sample-before-bulk-order/?model=${model}#sample-review-tool`));
+  assert.match(reviewInquiry(model.toUpperCase()),new RegExp(`product=${model}&`));
+}
+const g946=readFileSync('gaming-headsets/g946-rgb/index.html','utf8');
+for (const reference of ['g946-headset-only','g946-wireless-charging-dock']) {
+  assert.ok(g946.includes(`product=g946&amp;inquiry=sample&amp;reference=${reference}`));
+}
+assert.match(g946,/evaluate-gaming-headset-sample-before-bulk-order\/#review-worksheet/);
+console.log('Extended model-to-review checks passed; G946 configuration inquiry links and blank worksheet remain available.');

@@ -29,13 +29,20 @@ function scenario(consent, blocked = false, url = 'https://talrivo.com/contact/?
     const target = {
       getAttribute: key => key === 'href' ? href : null,
       hasAttribute: key => key === 'data-open-wechat' && wechat,
-      closest: selector => selector === 'a[href], [data-open-wechat]' ? target
+      closest: selector => selector === 'a[href], [data-open-wechat], #sample-review-preview, #sample-review-download, #sample-review-print' ? target
         : selector === region || (selector === 'main' && inMain) ? {} : null
     };
     handlers.get('click')({ target });
   };
+  const reviewAction = (id, {insideTool = true, fieldsetDisabled = false, disabled = false} = {}) => {
+    const target = {id, disabled, getAttribute: () => null, hasAttribute: () => false,
+      closest: selector => selector.includes('a[href]') ? target
+        : selector === '#sample-review-tool' && insideTool ? {}
+        : selector === 'fieldset[disabled]' && fieldsetDisabled ? {} : null};
+    handlers.get('click')({target});
+  };
   const events = () => window.dataLayer.filter(args => args[0] === 'event');
-  return { values, click, events, rendered };
+  return { values, click, reviewAction, events, rendered };
 }
 const firstVisit = scenario(null);
 const consentPanel = firstVisit.rendered.find(element => element.className === 'analytics-consent');
@@ -134,3 +141,67 @@ const blockedResource = scenario(null, true, `https://talrivo.com${micPage}`);
 blockedResource.click('#quick-mic-test', '', false, true);
 assert.equal(blockedResource.events().length, 0);
 console.log('Contact and buyer-resource action checks passed: consent, withdrawal, scoped paths, downloads, contact channels, no private payloads and no lead event.');
+
+
+// Check procurement entry points, without joining them to search impressions.
+for (const path of ['/gaming-headsets/', '/wireless-gaming-headsets/', '/wired-gaming-headsets/', '/product-comparison/',
+  '/gaming-headsets/g926-wireless/', '/gaming-headsets/g940-low-latency/', '/gaming-headsets/g935-wireless/', '/gaming-headsets/g936-lightweight/', '/gaming-headsets/g938-wireless/',
+  '/gaming-headsets/g941-tri-mode-anc/', '/gaming-headsets/g946-rgb/', '/gaming-headsets/g947-foldable/']) {
+  for (const [href,type] of [
+    ['/insights/evaluate-gaming-headset-sample-before-bulk-order/?model=g946#sample-review-tool','sample_review_guide'],
+    ['/product-comparison/','model_comparison'],
+    ['/contact/?product=g946&reference=g946-headset-only&private=buyer-note','inquiry_form']
+  ]) {
+    const run=scenario('granted',false,`https://talrivo.com${path}?private=buyer-note`);
+    run.click(href,'',false,true);
+    if (path === '/product-comparison/' && href === '/product-comparison/') {
+      assert.equal(run.events().length,0); continue;
+    }
+    assert.equal(run.events().length,1,`${path} -> ${href}`);
+    assert.equal(run.events()[0][2].resource_type,type);
+    assert.doesNotMatch(JSON.stringify(run.events()),/private|buyer-note|reference=|generate_lead/);
+    run.values.set('talrivoAnalyticsConsent','denied');
+    run.click(href,'',false,true);
+    assert.equal(run.events().length,1);
+  }
+}
+const reviewPath='/insights/evaluate-gaming-headset-sample-before-bulk-order/';
+for (const consent of [null,'denied','granted']) {
+  const run=scenario(consent,false,`https://talrivo.com${reviewPath}?model=g946&private=buyer-note`);
+  for (const id of ['sample-review-preview','sample-review-download','sample-review-print']) run.reviewAction(id);
+  assert.equal(run.events().length,consent==='granted'?3:0);
+  if (consent==='granted') {
+    assert.deepEqual(Array.from(run.events(),e=>e[2].review_action),['preview_request','download_request','print_request']);
+    for (const event of run.events()) {
+      assert.equal(event[1],'sample_review_action');
+      assert.deepEqual(Object.keys(event[2]).sort(),['page_path','review_action']);
+      assert.doesNotMatch(JSON.stringify(event),/buyer-note|private|model=|generate_lead/);
+    }
+    run.values.set('talrivoAnalyticsConsent','denied');
+    run.reviewAction('sample-review-download');
+    assert.equal(run.events().length,3);
+  }
+}
+for (const opts of [{insideTool:false},{fieldsetDisabled:true},{disabled:true}]) {
+  const run=scenario('granted',false,`https://talrivo.com${reviewPath}`);
+  run.reviewAction('sample-review-download',opts);
+  assert.equal(run.events().length,0);
+}
+const wrongToolPage=scenario('granted',false,'https://talrivo.com/contact/');
+wrongToolPage.reviewAction('sample-review-download');
+assert.equal(wrongToolPage.events().length,0);
+const blockedTool=scenario('granted',true,`https://talrivo.com${reviewPath}`);
+blockedTool.reviewAction('sample-review-download');
+assert.equal(blockedTool.events().length,0);
+console.log('Procurement measurement checks passed: scoped product entries, tool action requests, no disabled-tool events, consent withdrawal and fixed non-personal payloads.');
+
+// Every explicitly measured product route must be a real public page.
+const productRoutes=code.match(/const productPages = \[([\s\S]*?)\];/)[1];
+for (const [,path] of productRoutes.matchAll(/"([^" ]+)"/g)) {
+  assert.ok(readFileSync(`.${path}index.html`,'utf8').includes('<main'),path);
+}
+for (const consent of [null,'denied']) {
+  const run=scenario(consent,false,'https://talrivo.com/gaming-headsets/g946-rgb/');
+  run.click('/contact/?product=g946','',false,true);
+  assert.equal(run.events().length,0);
+}
