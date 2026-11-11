@@ -99,9 +99,9 @@ for (const [file, schemaType, title, heading] of copyPages) {
   assert.equal(main.description, descriptions[0], `${file}: structured description matches search`);
   if (schemaType !== 'Service') {
     assert.equal(main.name, title);
-    assert.equal(main.dateModified, file.includes('g941-tri-mode-anc') ? '2026-11-10' : file === 'wired-gaming-headsets/index.html' ? '2026-11-07' : /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29');
+    assert.equal(main.dateModified, file.includes('g936-lightweight') ? '2026-11-11' : file.includes('g941-tri-mode-anc') ? '2026-11-10' : file === 'wired-gaming-headsets/index.html' ? '2026-11-07' : /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29');
   }
-  const expectedRevision = file.includes('g941-tri-mode-anc') ? '2026-11-10' : file === 'wired-gaming-headsets/index.html' ? '2026-11-07' : file === 'oem-odm/index.html' ? '2026-11-04'
+  const expectedRevision = file.includes('g936-lightweight') ? '2026-11-11' : file.includes('g941-tri-mode-anc') ? '2026-11-10' : file === 'wired-gaming-headsets/index.html' ? '2026-11-07' : file === 'oem-odm/index.html' ? '2026-11-04'
     : /g936-lightweight|g938-wireless/.test(file) ? '2026-11-05' : '2026-10-29';
   assert.ok(sitemap.includes(`<loc>${url}</loc>\n    <lastmod>${expectedRevision}</lastmod>`), `${file}: sitemap revision date`);
   assert.ok(llms.includes(`](${url}):`), `${file}: retain the model or category listing`);
@@ -350,3 +350,25 @@ for (const field of ['@id', 'name', 'thumbnailUrl', 'uploadDate', 'description',
   assert.deepEqual(g938Page.subjectOf[field], g938Demo[field],
     `G938 embedded video must match its existing watch-page ${field}`);
 }
+
+// Keep the requirement shortlist navigable and its structured model order aligned.
+const quickShortlist = comparison.match(/<section[^>]*id="quick-shortlist"[\s\S]*?<\/section>/)?.[0];
+assert.ok(quickShortlist, 'Comparison deep link must resolve to the visible requirement shortlist');
+const visibleModelUrls = [...quickShortlist.matchAll(/<a class="buyer-resource-link" href="([^"]+)"/g)]
+  .map(([, href]) => new URL(href, 'https://talrivo.com/product-comparison/').href)
+  .filter(href => href.includes('/gaming-headsets/'));
+const modelList = [...comparison.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json)).find(item => item['@type'] === 'ItemList');
+assert.equal(visibleModelUrls.length, 6);
+assert.deepEqual(modelList.itemListElement.map(item => item.url), visibleModelUrls,
+  'Structured model choices must match visible model links and order');
+assert.deepEqual(modelList.itemListElement.map(item => item.position), [1, 2, 3, 4, 5, 6]);
+const sampleGuide = readFileSync('insights/evaluate-gaming-headset-sample-before-bulk-order/index.html', 'utf8');
+for (const href of ['../../gaming-headsets/g936-lightweight/', '../../gaming-headsets/g946-rgb/#sample-configuration', '../../product-comparison/#quick-shortlist']) {
+  assert.ok(sampleGuide.includes(`href="${href}"`), `Sample guide: missing contextual path ${href}`);
+}
+assert.ok(g936.includes('href="../../product-comparison/#quick-shortlist"'),
+  'G936 buyers need a return path to the requirement-led model shortlist');
+assert.doesNotMatch(sampleGuide, /compares G935, G938, G940 and G941/,
+  'Do not describe an absent G940 table row as a compared specification');
+console.log('Sample discovery checks passed: six aligned model choices and contextual guide/product links.');

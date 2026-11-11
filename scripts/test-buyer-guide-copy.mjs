@@ -17,7 +17,7 @@ const html = pages.map(([slug, title]) => {
   assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
     slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25'
       : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-06'
-      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-09' : '2026-10-22');
+      : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-11' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
   assert.doesNotMatch(claims, /guaranteed compatibility|guaranteed to increase clicks|zero latency/i);
   return content;

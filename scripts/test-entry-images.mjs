@@ -17,6 +17,8 @@ const pages = [
   'bluetooth-headphones/index.html',
   'tws-earbuds/index.html',
   'sample-request/index.html',
+  'product-comparison/index.html',
+  'insights/evaluate-gaming-headset-sample-before-bulk-order/index.html',
   'contact/index.html',
   'wired-gaming-headsets/index.html',
   'insights/gaming-headset-usb-audio-or-lighting/index.html',
