@@ -10,6 +10,8 @@ const pages = [
   'gaming-headsets/index.html',
   'gaming-headsets/g946-rgb/index.html',
   'gaming-headsets/g936-lightweight/index.html',
+  'gaming-headsets/g935-wireless/index.html',
+  'gaming-headsets/g941-tri-mode-anc/index.html',
   'gaming-headsets/g938-wireless/index.html',
   'gaming-headsets/g947-foldable/index.html',
   'gaming-headsets/g940-low-latency/index.html',
@@ -47,7 +49,8 @@ for (const page of pages) {
       const bytes = readFileSync(file);
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${src}: invalid WebP header`);
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${src}: invalid WebP header`);
-      const budget = src.includes('/g946-configuration-presentation-') ? 100000
+      const budget = src.includes('/detail-') ? 85000
+        : src.includes('/g946-configuration-presentation-') ? 100000
         : src.includes('/factory-') ? 180000
         : src.includes('g935-connectors-') ? 140000
         : /g947-(gaming-desk|platform-connections)-illustration-/.test(src) ? 90000
@@ -109,3 +112,26 @@ assert.deepEqual([...category.matchAll(/<style data-category-source="([^"]+)"/g)
 assert.doesNotMatch(category, /src="\/dock-preview\.js|data-show-expires/,
   'The category has no expiring notice and does not need its repeated timer');
 console.log('Category loading checks passed: one external stylesheet, synchronized source styles and no unused expiry script.');
+
+// Each lightweight gallery preview must retain an accessible original-image link.
+for (const page of [
+  'gaming-headsets/g935-wireless/index.html',
+  'gaming-headsets/g936-lightweight/index.html',
+  'gaming-headsets/g938-wireless/index.html',
+  'gaming-headsets/g941-tri-mode-anc/index.html',
+]) {
+  const html = readFileSync(resolve(root, page), 'utf8');
+  const links = [...html.matchAll(/<a class="product-image-source"([^>]*)>(<img\b[^>]*>)<\/a>/g)];
+  assert.ok(links.length >= 6, `${page}: retain all supplied gallery views`);
+  for (const [, attrs, image] of links) {
+    const source = attrs.match(/\bhref="([^"]+)"/)[1];
+    assert.ok(statSync(resolve(root, dirname(page), source)).isFile());
+    assert.match(attrs, /aria-label="View full-size image: [^"]+"/);
+    assert.match(attrs, /rel="noopener"/);
+    assert.match(image, /loading="lazy"/);
+    assert.match(image, /style="aspect-ratio: \d+ \/ \d+"/, "Reserve image space before lazy loading");
+    assert.match(image, /srcset="[^"]+"/);
+  }
+  assert.ok(html.includes('Select an image to view the full-size reference.'));
+}
+console.log('Product gallery checks passed: responsive previews, lazy loading and accessible original-image links.');

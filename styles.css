@@ -2556,6 +2556,17 @@ h2 {
   line-height: 1.45;
 }
 
+/* Preserve a full image-sized keyboard target for source-image links. */
+.product-image-source {
+  display: block;
+  border-radius: 8px;
+}
+
+.product-image-source:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+
 .sample-image-grid,
 .g926-media-summary,
 .g935-media-summary,
