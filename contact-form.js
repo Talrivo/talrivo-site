@@ -101,14 +101,6 @@ if (contactForm) {
   };
   const referenceKey = params.get("reference");
   const selectedReference = Object.hasOwn(inquiryReferences, referenceKey) ? inquiryReferences[referenceKey] : null;
-  if (selectedReference) {
-    referenceNote.hidden = false;
-    referenceNote.textContent = selectedReference.type === "configuration"
-      ? `Configuration: ${selectedReference.title}. ${selectedReference.prompt}`
-      : selectedReference.type === "guide"
-      ? `Guide reference: ${selectedReference.title}. ${selectedReference.prompt || "Please include your headset version, target device and USB or 3.5mm connection question."}`
-      : `Video reference: ${selectedReference.title}. Please include the timestamp of the headset you are interested in.`;
-  }
   const sourceStorageKey = "talrivoInquirySource";
   const productSelections = {
     "dock-headset": "Magnetic Charging Dock Headset Preview",
@@ -239,10 +231,27 @@ if (contactForm) {
     && !Object.hasOwn(Object.prototype, productKey) ? productKey : null;
   const selectedProduct = knownProduct || (unconfirmedProduct ? productSelections["custom-audio"] : null);
   const selectedInquiry = Object.hasOwn(inquirySelections, inquiryKey) ? inquirySelections[inquiryKey] : null;
-  if (unconfirmedProduct) {
-    referenceNote.hidden = false;
-    referenceNote.textContent = [referenceNote.textContent, `Product reference from your link: ${unconfirmedProduct}. The model and availability have not been confirmed; please describe what you need below.`].filter(Boolean).join(" ");
-  }
+  // Configuration is a current product choice; a guide/video remains source context.
+  const getActiveReference = () => selectedReference?.type === "configuration"
+    && productInterest.value !== productSelections.g946 ? null : selectedReference;
+  const refreshReference = () => {
+    const reference = getActiveReference();
+    const note = reference
+      ? reference.type === "configuration"
+        ? `Configuration: ${reference.title}. ${reference.prompt}`
+        : reference.type === "guide"
+          ? `Guide reference: ${reference.title}. ${reference.prompt || "Please include your headset version, target device and USB or 3.5mm connection question."}`
+          : `Video reference: ${reference.title}. Please include the timestamp of the headset you are interested in.`
+      : "";
+    referenceNote.textContent = [note, unconfirmedProduct
+      ? `Product reference from your link: ${unconfirmedProduct}. The model and availability have not been confirmed; please describe what you need below.` : ""]
+      .filter(Boolean).join(" ");
+    referenceNote.hidden = !referenceNote.textContent;
+    productReference.value = [
+      reference ? `${reference.title}: ${reference.url}` : "",
+      unconfirmedProduct ? `Unconfirmed product reference from link: ${unconfirmedProduct}` : ""
+    ].filter(Boolean).join(" | ");
+  };
   const firstVisit = {
     firstLandingPage: window.location.href,
     firstReferrer: document.referrer || "Direct / not available"
@@ -279,13 +288,8 @@ if (contactForm) {
     utmTerm.value = getUtmValue("utm_term", "utmTerm", storedSource);
     utmContent.value = getUtmValue("utm_content", "utmContent", storedSource);
     selectedFrom.value = contactLinkDetails;
-    productReference.value = [
-      selectedReference ? `${selectedReference.title}: ${selectedReference.url}` : "",
-      unconfirmedProduct ? `Unconfirmed product reference from link: ${unconfirmedProduct}` : ""
-    ].filter(Boolean).join(" | ");
+    refreshReference();
   };
-
-  populateAttribution();
 
   if (selectedProduct) {
     productInterest.value = selectedProduct;
@@ -294,11 +298,15 @@ if (contactForm) {
   if (selectedInquiry) {
     inquiryType.value = selectedInquiry;
   }
+  populateAttribution();
+  productInterest.addEventListener("change", refreshReference);
 
   if (params.get("sent") === "1") {
     status.textContent = "If you just submitted an inquiry, please check your email for confirmation. This page cannot verify delivery from the URL alone.";
   }
 
+  const recovery = document.querySelector("#inquiry-recovery");
+  const submitLabel = submitButton.textContent || "Send Product Inquiry";
   let submitting = false;
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -307,6 +315,8 @@ if (contactForm) {
     status.classList.remove("success", "error");
     status.textContent = "Sending your inquiry...";
     submitButton.disabled = true;
+    submitButton.textContent = "Sending inquiry…";
+    if (recovery) recovery.hidden = true;
 
     const fields = new FormData(contactForm);
     const valueOrFallback = (field, fallback = "Not specified") => {
@@ -364,6 +374,7 @@ if (contactForm) {
       if (!response.ok || result.success !== true) throw new Error("Submission not confirmed");
 
       contactForm.reset();
+      refreshReference();
       status.classList.add("success");
       status.textContent = "Thank you. Your inquiry has been accepted for delivery. TALRIVO will reply by business email.";
       try { trackInquirySuccess(fields, "contact_page"); } catch (trackingError) {
@@ -371,11 +382,13 @@ if (contactForm) {
       }
     } catch (error) {
       status.classList.add("error");
+      if (recovery) recovery.hidden = false;
       status.textContent = "We could not confirm submission. Your details are still here. The message may have reached us; please check your email before retrying, or contact sales@talrivo.com.";
     } finally {
       window.clearTimeout(timeout);
       submitting = false;
       submitButton.disabled = false;
+      submitButton.textContent = submitLabel;
     }
   });
 }

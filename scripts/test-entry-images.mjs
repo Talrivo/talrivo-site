@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { inlineCategoryStyles, CATEGORY_STYLE_SOURCES } from './sync-category-styles.mjs';
 
 const root = process.cwd();
 const pages = [
@@ -94,3 +95,15 @@ assert.match(styles, /\.home-page \.about-stats\s*\{[^}]*repeat\(4, minmax\(0, 1
 assert.match(styles, /\.home-page \.about-columns\s*\{[^}]*repeat\(3, minmax\(0, 1fr\)\)/);
 console.log(`Entry image checks passed: ${pages.length} pages, ${checked} responsive images, variant files and byte budgets.`);
 console.log(`Homepage local-preview checks passed: ${homeResources.length} resource references resolve without root-relative file paths, with scoped About grids.`);
+
+const category = readFileSync(resolve(root, 'gaming-headsets/index.html'), 'utf8');
+assert.equal(category, inlineCategoryStyles(category, root),
+  'Category inline styles must stay synchronized: node scripts/sync-category-styles.mjs --write');
+assert.equal([...category.matchAll(/<link rel="stylesheet"/g)].length, 1,
+  'Keep the shared cacheable stylesheet; avoid three extra category render-blocking requests');
+assert.ok(category.includes('href="../styles.css?v=20261108readability"'));
+assert.deepEqual([...category.matchAll(/<style data-category-source="([^"]+)"/g)].map(([, source]) => source), CATEGORY_STYLE_SOURCES,
+  'Preserve the external stylesheets original cascade order');
+assert.doesNotMatch(category, /src="\/dock-preview\.js|data-show-expires/,
+  'The category has no expiring notice and does not need its repeated timer');
+console.log('Category loading checks passed: one external stylesheet, synchronized source styles and no unused expiry script.');

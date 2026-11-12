@@ -36,3 +36,17 @@
   .contact-page .seo-hero h1 { font-size: 1.75rem !important; line-height: 1.18 !important; }
   .contact-page .seo-hero .hero-actions { margin-top: 1rem; }
 }
+
+.contact-page .inquiry-recovery[hidden] { display: none; }
+.contact-page .inquiry-recovery {
+  background: #f5f8f8;
+  border: 1px solid #bdc6c7;
+  border-radius: 6px;
+  padding: 1rem;
+}
+.contact-page .inquiry-recovery p { font-size: .9rem; line-height: 1.5; margin: 0 0 .85rem; }
+.contact-page .inquiry-recovery-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.contact-page .inquiry-recovery-actions .button { min-height: 44px; white-space: normal; text-align: center; }
+@media (max-width: 620px) {
+  .contact-page .inquiry-recovery-actions .button { width: 100%; }
+}

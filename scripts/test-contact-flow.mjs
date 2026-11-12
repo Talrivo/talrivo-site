@@ -50,7 +50,8 @@ function runContact(url, storedSource = null, consent = 'granted') {
     value: '',
     disabled: false,
     classList: { add() {}, remove() {} },
-    addEventListener() {},
+    handlers: {},
+    addEventListener(type, handler) { this.handlers[type] = handler; },
     querySelector: (selector) => querySelector(selector),
     reset() {}
   });
@@ -350,7 +351,7 @@ for (const file of publicHtml(root)) {
     }
     const reference = url.searchParams.get('reference');
     if (reference) {
-      const result = runContact(`https://talrivo.com/contact/?reference=${encodeURIComponent(reference)}`);
+      const result = runContact(url.href);
       assert.ok(result.nodes.get('#contact-product-reference').value,
         `${file}: the published reference ${reference} must be recognized`);
     }
@@ -401,3 +402,29 @@ for (const [model, expected] of [['g936','G936 Lightweight Gaming Headset'],['g9
   }
 }
 console.log('Sample review inquiry checks passed: G936/G938 model and guide context retained with every consent state, without a lead event.');
+
+for (const reference of ['g946-headset-only', 'g946-wireless-charging-dock']) {
+  const result = runContact(`https://talrivo.com/contact/?product=g946&inquiry=sample&reference=${reference}`);
+  const product = result.nodes.get('select[name="product"]');
+  const message = {value: 'Keep my sample request'};
+  result.nodes.set('textarea[name="message"]', message);
+  product.value = 'G938 Wireless Gaming Headset';
+  product.handlers.change();
+  assert.equal(result.nodes.get('#contact-product-reference').value, '', 'Do not attach a G946 configuration to G938');
+  assert.equal(result.nodes.get('#contact-reference-note').hidden, true);
+  assert.equal(result.nodes.get('#contact-reference-note').textContent, '');
+  product.value = 'G946 Tri-Mode RGB Gaming Headset';
+  product.handlers.change();
+  assert.match(result.nodes.get('#contact-product-reference').value, /G946.*sample-configuration/);
+  assert.equal(result.nodes.get('#contact-reference-note').hidden, false, 'Restore the originally chosen package when returning to G946');
+  assert.equal(message.value, 'Keep my sample request');
+  assert.equal(result.events.length, 0, 'Changing model/configuration is not a lead');
+  const mismatched = runContact(`https://talrivo.com/contact/?product=g938&reference=${reference}`);
+  assert.equal(mismatched.nodes.get('#contact-product-reference').value, '', 'A mismatched incoming link must also be safe');
+}
+const changedGuide = runContact('https://talrivo.com/contact/?product=g946&reference=sample-evaluation-guide');
+changedGuide.nodes.get('select[name="product"]').value = 'G938 Wireless Gaming Headset';
+changedGuide.nodes.get('select[name="product"]').handlers.change();
+assert.match(changedGuide.nodes.get('#contact-product-reference').value, /sample evaluation checklist/,
+  'A guide is still useful source context after selecting a different model');
+console.log('Configuration change checks passed: switch away, return, mismatched link, retained guide context and no lead.');
