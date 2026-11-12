@@ -19,6 +19,8 @@ const pages = [
   'tws-earbuds/index.html',
   'sample-request/index.html',
   'product-comparison/index.html',
+  'gaming-headset-models/index.html',
+  'insights/2-4g-vs-bluetooth-gaming-headsets-importers/index.html',
   'insights/evaluate-gaming-headset-sample-before-bulk-order/index.html',
   'contact/index.html',
   'wired-gaming-headsets/index.html',

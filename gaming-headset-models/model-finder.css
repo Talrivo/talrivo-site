@@ -1,0 +1,16 @@
+.model-directory-page [hidden] { display:none !important; }
+.model-directory-page .model-finder { margin:0 clamp(16px,4vw,48px) 24px; padding:20px; border:1px solid #cfd6d8; border-radius:8px; background:#f5f8f8; }
+.model-finder label { display:block; font-weight:700; margin-bottom:8px; }
+.model-finder-controls { display:flex; flex-wrap:wrap; gap:10px; }
+.model-finder input { flex:1 1 240px; min-width:0; min-height:48px; padding:10px 12px; border:1px solid #8c9a9d; border-radius:5px; font-size:16px; color:#172020; background:#fff; }
+.model-finder .button { min-height:48px; }
+.model-finder .button:disabled { opacity:.55; cursor:default; }
+.model-finder input:focus-visible { outline:3px solid #239985; outline-offset:2px; }
+.model-finder p { font-size:.95rem; line-height:1.5; margin:10px 0 0; }
+.model-finder [role="status"] { font-weight:700; }
+.model-finder-group-status { font-weight:700; margin:0 0 16px; }
+@media(max-width:620px) {
+  .model-directory-page .model-finder { padding:16px; }
+  .model-finder input { flex-basis:100%; width:100%; }
+  .model-finder .button { flex:1 1 0; padding-inline:12px; }
+}
