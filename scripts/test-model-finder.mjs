@@ -17,6 +17,19 @@ assert.ok(modelMatches('G936 wired', 'G-936 wired'));
 assert.equal(modelMatches('G936 wireless', 'G936 wired'), false);
 assert.equal(modelMatches('G936 wireless', 'G9360'), false);
 assert.equal(modelMatches('G936 wireless', 'unknown'), false);
+assert.ok(modelMatches('G946 wireless', 'Ｇ９４６'));
+assert.ok(modelMatches('G936 wireless', '936'));
+assert.equal(modelMatches('G1936 wireless', 'G936'), false);
+assert.equal(modelMatches('G936 wireless', '---'), false);
+assert.equal(modelMatches('G936 wireless', '無線'), false);
+assert.ok(modelMatches('G939 wireless', '50mm', '50 mm driver'));
+assert.ok(modelMatches('G939 wireless', '1000 mAh', '1000mAh battery'));
+assert.ok(modelMatches('G938 wireless', '2.4GHz', '2.4G receiver'));
+assert.equal(modelMatches('G940 wireless', '24GHz', '2.4G receiver'), false);
+assert.equal(modelMatches('G941 wireless', 'wired', 'Bluetooth and wired direction'), false);
+assert.equal(modelMatches('G941 wired reference', 'Bluetooth'), false);
+assert.equal(modelMatches('G946 wireless', 'phone charging', 'wireless charging dock'), false);
+assert.ok(modelMatches('G946 wireless', '   '));
 
 const node = () => ({ hidden: false, disabled: false, value: '', textContent: '', handlers: {},
   addEventListener(type, handler) { this.handlers[type] = handler; }, focus() { this.focused = true; } });
@@ -30,10 +43,15 @@ for (const [id, count] of [['wireless-models',13],['wired-models',7],['pending-m
     ? [...sectionHtml.matchAll(/<a href="([^\"]+)">([^<]+)<\/a>/g)]
     : [...sectionHtml.matchAll(/<tr><td><a href="([^\"]+)">([^<]+)<\/a>/g)];
   assert.equal(matches.length, count, 'Retain all original entries in crawlable HTML');
-  const entries = matches.map(([, href, text]) => {
+  const rows = [...sectionHtml.matchAll(/<tr><td>[\s\S]*?<\/tr>/g)].map(([row]) => row);
+  const entries = matches.map(([, href, text], index) => {
     const link = node(); link.href = href; link.textContent = text;
     if (id === 'pending-models') return link;
-    const row = node(); row.link = link; row.querySelector = () => link; return row;
+    const row = node(); row.link = link; row.querySelector = () => link;
+    const cells = [...rows[index].matchAll(/<td>([\s\S]*?)<\/td>/g)]
+      .map(([, text]) => ({ textContent: text.replace(/<[^>]*>/g, '') }));
+    row.querySelectorAll = () => cells;
+    return row;
   });
   const section = node(); section.entries = entries; section.summary = node();
   section.querySelector = () => section.summary;
@@ -48,6 +66,35 @@ assert.equal(empty.hidden, true);
 assert.equal(clear.disabled, true);
 const search = query => { input.value = query; input.handlers.input(); };
 const visible = id => sections.get('#'+id).entries.filter(entry => !entry.hidden);
+const listedLabels = () => [...visible('wireless-models'), ...visible('wired-models')]
+  .map(entry => entry.link.textContent);
+for (const [query, expected] of [
+  ['charging dock', ['G946 wireless']],
+  ['fabric cushions', ['G936 wireless']],
+  ['50mm', ['G941 wireless', 'G939 wireless', 'G927 wireless', 'G926 wireless', 'G946 wireless', 'G947 wireless']],
+  ['53 mm', ['G938 wireless']],
+  ['1000mAh', ['G941 wireless', 'G939 wireless', 'G938 wireless']],
+  ['Bluetooth', ['G941 wireless', 'G938 wireless', 'G946 wireless', 'G947 wireless']],
+  ['G941 Bluetooth', ['G941 wireless']],
+  ['Ｇ９４６', ['G946 wireless']],
+  ['wired fabric', []],
+  ['G9410', []],
+  ['phone charging', []],
+  ['無線', []],
+  ['---', []],
+]) {
+  search(query);
+  assert.deepEqual(listedLabels(), expected, `Listed-feature search: ${query}`);
+  assert.equal(visible('pending-models').length, 0, 'Do not invent specifications for pending references');
+  assert.equal(empty.hidden, expected.length > 0);
+}
+search('G941 wired');
+assert.deepEqual(listedLabels(), []);
+assert.equal(visible('pending-models').length, 1);
+search('wired');
+assert.equal(visible('wireless-models').length, 0, 'Tri-mode wired capability must not change the version label');
+assert.equal(visible('wired-models').length, 7);
+assert.equal(visible('pending-models').length, 4);
 search('G936');
 assert.equal(versionChecks.hidden, true, 'Show matching tables directly below the finder');
 assert.equal(visible('wireless-models').length, 1);
@@ -80,4 +127,4 @@ assert.equal(versionChecks.hidden, false, 'Restore version explanations when cle
 assert.equal(input.focused, true);
 assert.equal(visible('wireless-models').length + visible('wired-models').length + visible('pending-models').length, 26);
 assert.ok([...sections.values()].every(section => section.summary.hidden));
-console.log('Model finder checks passed: all 26 static links, wired/wireless separation, six pending references, flexible code matching, no match, clear, keyboard focus, shortcuts and no storage/network.');
+console.log('Model finder checks passed: all 26 static links, wired/wireless separation, six pending references, listed-feature and normalized code matching, wired/wireless boundaries, no match, clear, keyboard focus, shortcuts and no storage/network.');

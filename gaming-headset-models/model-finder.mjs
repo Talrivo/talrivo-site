@@ -1,7 +1,25 @@
-export function modelMatches(label, query) {
-  const tokens = String(query).slice(0, 40).toLowerCase().match(/[a-z]+|\d+/g) || [];
-  const normalized = label.toLowerCase().replace(/[^a-z0-9]/g, '');
-  return tokens.every(token => normalized.includes(token));
+const searchWords = text => String(text).normalize('NFKC').toLowerCase()
+  .replace(/\bg[\s-]+(\d+)\b/g, 'g$1')
+  .replace(/\b2\.4\s*g(?:hz)?\b/g, '2.4ghz')
+  .replace(/(\d)\s+(mm|mah|ms|ghz)\b/g, '$1$2')
+  .match(/[a-z0-9]+(?:\.[a-z0-9]+)*/g) || [];
+
+export function modelMatches(label, query, details = '') {
+  const search = String(query).slice(0, 40).normalize('NFKC').trim();
+  if (!search) return true;
+  const tokens = searchWords(search);
+  // Unsupported input must not silently match every product.
+  if (!tokens.length) return false;
+  const version = searchWords(label);
+  const words = [...version, ...searchWords(details)];
+  const codes = version.filter(word => /^g\d+$/.test(word)).map(word => word.slice(1));
+  return tokens.every(token => {
+    // "Wired" selects the wired product version, even when a tri-mode row
+    // mentions a wired connection among its listed capabilities.
+    if (token === 'wired' || token === 'wireless') return version.includes(token);
+    if (/^g\d+$/.test(token)) return version.some(word => word.startsWith(token));
+    return words.some(word => word.startsWith(token)) || codes.some(code => code.startsWith(token));
+  });
 }
 
 export function setupModelFinder(doc) {
@@ -23,7 +41,11 @@ export function setupModelFinder(doc) {
   for (const group of groups) {
     group.summary = group.section.querySelector('[data-model-finder-summary]');
     group.entries = [...group.section.querySelectorAll(group.selector)].map(node => ({
-      node, link: group.pending ? node : node.querySelector('td a')
+      node, link: group.pending ? node : node.querySelector('td a'),
+      // Reuse only the visible direction and review-detail cells. Pending
+      // references have no specifications to search or inherit from siblings.
+      details: group.pending ? '' : [...node.querySelectorAll('td')].slice(1, 3)
+        .map(cell => cell.textContent).join(' ')
     }));
   }
   if (groups.some(group => !group.summary || group.entries.some(entry => !entry.link))) return;
@@ -39,7 +61,7 @@ export function setupModelFinder(doc) {
     for (const group of groups) {
       let count = 0;
       for (const entry of group.entries) {
-        const matches = modelMatches(entry.link.textContent, input.value);
+        const matches = modelMatches(entry.link.textContent, input.value, entry.details);
         entry.node.hidden = !matches;
         if (matches) { count++; firstMatch ||= entry.link; }
       }
