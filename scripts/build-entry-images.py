@@ -9,6 +9,7 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets" / "responsive"
 SOURCES = {
+    "home-g946-lifestyle": "marketing/visuals/home-hero-20261114/g946-lifestyle-concept-original.png",
     # Product-detail previews; source files remain available through gallery links.
     "detail-g926-product-overview-receiver": "assets/catalog/g926-wireless/evidence/display/g926-product-overview-receiver.jpg",
     "detail-g926-rgb-logo-microphone-detail": "assets/catalog/g926-wireless/evidence/display/g926-rgb-logo-microphone-detail.jpg",
@@ -110,7 +111,9 @@ def main():
             widths = (240, 480) if name.startswith("factory-cert-") else (
                 (480, 960, 1440) if name == "gaming-hero" else (480, 960)
             )
-            if name.startswith("brand-"):
+            if name == "home-g946-lifestyle":
+                widths = (640, 960, 1672)
+            elif name.startswith("brand-"):
                 widths = (320, 480)
             elif name.endswith("-browse"):
                 widths = (480, 800, 960)

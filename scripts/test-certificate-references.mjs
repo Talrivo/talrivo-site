@@ -74,9 +74,9 @@ assert.equal((home.match(/id="quality"/g) || []).length, 1, 'Preserve a single e
 assert.ok(home.indexOf('id="products"') < home.indexOf('id="quality"'));
 assert.ok(home.indexOf('id="quality"') < home.indexOf('class="dock-preview"'), 'Show evidence directly after the product categories');
 assert.match(home, /href="#quality">Factory &amp; Quality/);
-const homeHero = home.match(/<section class="hero brand-hero"[\s\S]*?<\/section>/)[0];
-assert.match(homeHero, /href="#quality">Workshop Photos/);
-assert.match(homeHero, /href="#home-certificates">CE\/RED &amp; RoHS Documents/);
+const homeHero = home.match(/<section class="homepage-hero"[\s\S]*?<\/section>/)[0];
+assert.match(homeHero, /href="#quality">Workshop photos/);
+assert.match(homeHero, /href="#home-certificates">CE\/RED &amp; RoHS scope/);
 assert.equal((homeFactory.match(/<figure>/g) || []).length, 6);
 for (const name of ['gaming-headset-assembly-line-reference', 'gaming-headset-audio-check-reference', 'gaming-headset-packaging-line-reference',
   'gaming-headset-assembly-closeup-reference', 'gaming-headset-charging-review-reference', 'gaming-headset-cable-fixture-reference']) {
@@ -102,7 +102,7 @@ for (const anchor of ['process-references', 'published-certificates']) {
   assert.ok(home.includes(`href="gaming-headset-quality-review/#${anchor}"`));
 }
 const homeGraph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
-assert.equal(homeGraph.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-11-03');
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/</loc>\n    <lastmod>2026-11-03</lastmod>'));
+assert.equal(homeGraph.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-11-14');
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/</loc>\n    <lastmod>2026-11-14</lastmod>'));
 assert.doesNotMatch(homeFactory, /all products (?:are )?certified|ISO.?9001|BSCI|FCC certified/i);
 console.log('Homepage evidence checks passed: early photo gallery, hero/navigation/footer paths, direct original PDFs, responsive lazy previews and explicit certificate scope.');

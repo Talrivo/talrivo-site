@@ -52,6 +52,7 @@ for (const page of pages) {
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${src}: invalid WebP header`);
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${src}: invalid WebP header`);
       const budget = src.includes('/detail-') ? 85000
+        : src.includes('/home-g946-lifestyle-') ? 90000
         : src.includes('/g946-configuration-presentation-') ? 100000
         : src.includes('/factory-') ? 180000
         : src.includes('g935-connectors-') ? 140000
@@ -70,6 +71,16 @@ for (const page of pages) {
 }
 
 const home = readFileSync(resolve(root, 'index.html'), 'utf8');
+const heroSection = home.match(/<section class="homepage-hero"[\s\S]*?<\/section>/)?.[0];
+assert.ok(heroSection, 'Retain the reviewed homepage lifestyle hero');
+assert.match(heroSection, /fetchpriority="high"/);
+assert.doesNotMatch(heroSection, /loading="lazy"|<video|<iframe/);
+assert.match(heroSection, /Illustrative scene/);
+assert.match(heroSection, /href="gaming-headsets\/"/);
+assert.match(heroSection, /href="contact\/\?product=gaming-headsets&amp;inquiry=rfq#inquiry-form"/);
+assert.match(heroSection, /href="gaming-headsets\/g946-rgb\/#sample-configuration"/);
+assert.match(heroSection, /href="#quality"/);
+assert.ok(statSync('marketing/visuals/home-hero-20261114/g946-lifestyle-concept-original.png').isFile(), 'Keep the generated master out of the public bundle');
 const usbGuide = readFileSync(resolve(root, 'insights/gaming-headset-usb-audio-or-lighting/index.html'), 'utf8');
 assert.match(usbGuide, /<a href="g935-usb-35mm-scene\.png"[^>]*>[\s\S]*?g935-connectors-960\.webp/,
   'Keep the original connector illustration accessible from the responsive preview');
