@@ -206,7 +206,7 @@ for (const id of ['receiver-accessories', 'documented-specifications']) {
   assert.ok(g926.includes(`href="#${id}"`));
 }
 const g926Hero = g926.match(/<section class="seo-hero product-detail">([\s\S]*?)<\/section>/)[1];
-assert.match(g926Hero, /g926-product-overview-receiver\.jpg/);
+assert.match(g926Hero, /detail-g926-product-overview-receiver-960\.webp/);
 assert.doesNotMatch(g926Hero, /g926-use-scenes\.jpg/);
 assert.match(g926Hero, /width="1254" height="850" fetchpriority="high"/);
 for (const fact of ['JL7018M', '1000mAh', '50mm', '20ms', 'approximately 50 hours with lighting off']) {

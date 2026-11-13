@@ -115,6 +115,7 @@ console.log('Category loading checks passed: one external stylesheet, synchroniz
 
 // Each lightweight gallery preview must retain an accessible original-image link.
 for (const page of [
+  'gaming-headsets/g926-wireless/index.html',
   'gaming-headsets/g935-wireless/index.html',
   'gaming-headsets/g936-lightweight/index.html',
   'gaming-headsets/g938-wireless/index.html',

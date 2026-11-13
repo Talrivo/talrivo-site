@@ -10,6 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets" / "responsive"
 SOURCES = {
     # Product-detail previews; source files remain available through gallery links.
+    "detail-g926-product-overview-receiver": "assets/catalog/g926-wireless/evidence/display/g926-product-overview-receiver.jpg",
+    "detail-g926-rgb-logo-microphone-detail": "assets/catalog/g926-wireless/evidence/display/g926-rgb-logo-microphone-detail.jpg",
+    "detail-g926-comfort-receiver-detail-collage": "assets/catalog/g926-wireless/evidence/display/g926-comfort-receiver-detail-collage.jpg",
+    "detail-g926-accessory-receiver-cable-set": "assets/catalog/g926-wireless/evidence/display/g926-accessory-receiver-cable-set.jpg",
+    "detail-g926-wearing-fit-reference": "assets/catalog/g926-wireless/evidence/display/g926-wearing-fit-reference.jpg",
+    "detail-g926-packaging-accessory-set": "assets/catalog/g926-wireless/evidence/display/g926-packaging-accessory-set.jpg",
     "detail-g935-packaging-accessory-set": "assets/catalog/g935-wireless/evidence/display/g935-packaging-accessory-set.jpg",
     "detail-g935-detachable-microphone-detail": "assets/catalog/g935-wireless/evidence/display/g935-detachable-microphone-detail.jpg",
     "detail-g935-accessory-manual-flatlay": "assets/catalog/g935-wireless/evidence/display/g935-accessory-manual-flatlay.jpg",
