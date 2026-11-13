@@ -65,6 +65,22 @@ console.log('RFQ resources passed: two ungated versioned downloads, canonical in
 for (const page of ['rfq-guide/index.html', 'insights/private-label-gaming-headset-rfq-checklist/index.html']) {
   const html = readFileSync(page, 'utf8');
   assert.match(html, /<main class="seo-page rfq-buyer-page">/);
-  assert.match(html, /analytics\.js\?v=20261113buyerpaths/);
+  assert.match(html, /analytics\.js\?v=20261113source/);
 }
 assert.match(readFileSync('styles.css', 'utf8'), /\.rfq-buyer-page \.seo-hero > img\s*\{\s*order: 0;/);
+
+const g946Worksheet = readFileSync('assets/downloads/g946-configuration-packing-review.txt','utf8');
+const g946Page = readFileSync('gaming-headsets/g946-rgb/index.html','utf8');
+assert.match(g946Page, /href="\.\.\/\.\.\/assets\/downloads\/g946-configuration-packing-review\.txt" download/);
+for (const phrase of ['NOT AN APPROVED PACKING LIST OR TEST REPORT','the same G946 headset','without a charging dock','Not confirmed','Playback result','Microphone result','Observed indicator']) assert.ok(g946Worksheet.includes(phrase));
+for (const ref of ['g946-headset-only','g946-wireless-charging-dock']) assert.ok(g946Worksheet.includes(`product=g946&inquiry=sample&reference=${ref}#inquiry-form`));
+assert.ok(g946Page.indexOf('id="packing-worksheet"') < g946Page.indexOf('id="product-visuals"'));
+console.log('G946 configuration worksheet checks passed: separate package records, explicit unknowns, no fabricated tests and configuration-specific next steps.');
+
+// A buying team can find the model-specific sheet from either relevant guide.
+const packingGuide = readFileSync('insights/gaming-headset-packaging-accessories-checklist/index.html', 'utf8');
+for (const page of [section, packingGuide]) {
+  assert.match(page, /href="(?:\.\.\/)+assets\/downloads\/g946-configuration-packing-review\.txt" download/);
+  assert.match(page, /href="(?:\.\.\/)+gaming-headsets\/g946-rgb\/#sample-configuration"/);
+}
+assert.match(packingGuide, /Other accessories remain unconfirmed/);

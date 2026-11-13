@@ -24,12 +24,45 @@
     savedConsent = null;
   }
 
+  // A source hint is evidence of a link/referrer, not proof of AI influence.
+  const getSourceTouch = (params) => {
+    const aiHosts = {
+      "chatgpt.com": "chatgpt", "chat.openai.com": "chatgpt",
+      "perplexity.ai": "perplexity", "www.perplexity.ai": "perplexity",
+      "gemini.google.com": "gemini", "copilot.microsoft.com": "copilot"
+    };
+    const aiTags = {
+      chatgpt: "chatgpt", "chatgpt.com": "chatgpt",
+      perplexity: "perplexity", "perplexity.ai": "perplexity",
+      gemini: "gemini", "gemini.google.com": "gemini",
+      copilot: "copilot", "copilot.microsoft.com": "copilot"
+    };
+    let externalHost = "";
+    try {
+      const previous = new URL(document.referrer);
+      if (["http:", "https:"].includes(previous.protocol)
+        && previous.hostname.replace(/^www\./, "") !== window.location.hostname.replace(/^www\./, "")) {
+        externalHost = previous.hostname;
+      }
+    } catch { /* Missing/invalid referrer cannot establish an external source. */ }
+    const tagged = params.has("utm_source");
+    if (!tagged && !externalHost) return null;
+    const tag = (params.get("utm_source") || "").trim().toLowerCase();
+    const channel = tagged ? (Object.hasOwn(aiTags, tag) ? aiTags[tag] : tag ? "other" : "unknown")
+      : Object.hasOwn(aiHosts, externalHost) ? aiHosts[externalHost] : "other";
+    return {
+      channel, evidence: tagged ? "tagged_link" : "external_referrer",
+      landingPath: window.location.pathname, recordedAt: new Date().toISOString()
+    };
+  };
+
   const captureInquirySource = () => {
     const params = new URLSearchParams(window.location.search);
     let storedSource = {};
 
     try {
-      storedSource = JSON.parse(window.localStorage.getItem(inquirySourceStorageKey)) || {};
+      const parsed = JSON.parse(window.localStorage.getItem(inquirySourceStorageKey));
+      storedSource = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
     } catch (error) {
       storedSource = {};
     }
@@ -42,7 +75,11 @@
       latestReferrer: document.referrer || "Direct / not available"
     };
 
-    if (sourceParameterNames.some((name) => params.has(name))) {
+    const touch = getSourceTouch(params);
+    if (touch) source.latestSourceTouch = touch;
+    // An untagged external arrival replaces a prior campaign; internal page
+    // views preserve the last observed touch instead of overwriting it.
+    if (touch || sourceParameterNames.some((name) => params.has(name))) {
       for (const name of sourceParameterNames) {
         const key = name.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
         source[key] = params.get(name) || "";
@@ -227,6 +264,7 @@
     }
     if (destination.origin !== window.location.origin) return;
     const resources = {
+      "/assets/downloads/g946-configuration-packing-review.txt": "g946_packing_sheet",
       "/assets/downloads/gaming-headset-rfq-template.txt": "rfq_template_file",
       "/assets/downloads/gaming-headset-quote-scope-review.txt": "quote_scope_file",
       "/rfq-guide/": "rfq_template_guide",

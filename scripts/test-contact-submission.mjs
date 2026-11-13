@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const code = fs.readFileSync('contact-form.js', 'utf8');
-const create = (mode, search = '') => {
+const create = (mode, search = '', storedSource = null, consent = null) => {
   const nodes = new Map();
   const calls = [];
   const events = [];
@@ -26,12 +26,17 @@ const create = (mode, search = '') => {
   class Fields extends Map {
     constructor() { super([
       ['message', 'Video 00:25 - sample question'], ['product', node('select[name="product"]').value || 'Gaming Headset Collection'],
-      ['product_reference', node('#contact-product-reference').value]
+      ['product_reference', node('#contact-product-reference').value],
+      ['observed_source', node('#contact-observed-source').value],
+      ['source_evidence', node('#contact-source-evidence').value],
+      ['source_recorded_at', node('#contact-source-recorded-at').value],
+      ['source_landing_path', node('#contact-source-landing-path').value],
+      ['discovery_source', node('select[name="discovery_source"]').value]
     ]); }
   }
   const window = {
     location: { search, href: 'https://example.invalid/contact/' + search },
-    localStorage: { getItem: () => null, setItem() {} },
+    localStorage: { getItem: key => key === 'talrivoAnalyticsConsent' ? consent : key === 'talrivoInquirySource' && storedSource ? JSON.stringify(storedSource) : null, setItem() {} },
     setTimeout: (fn) => setTimeout(fn, 10), clearTimeout,
     gtag: () => { if (mode === 'tracking') throw new Error('Tracking failed'); },
     dispatchEvent: event => events.push(event)
@@ -116,3 +121,59 @@ await shortlisted.submit();
 assert.ok(shortlisted.calls[0].get('product_reference').includes('Requested wireless models: G946, G938'));
 assert.ok(shortlisted.calls[0].get('product_reference').includes('G946 package to confirm'));
 console.log('Shortlisted model reference is retained in the isolated outgoing form fields.');
+
+const sourceHint = {latestSourceTouch: {
+  channel:'perplexity', evidence:'external_referrer', landingPath:'/gaming-headsets/', recordedAt:new Date().toISOString()
+}};
+const attributed = create('success', '?product=g946&inquiry=sample', sourceHint, 'granted');
+attributed.node('select[name="discovery_source"]').value = 'ChatGPT';
+assert.equal(attributed.calls.length, 0, 'Source selection never sends an inquiry by itself');
+await attributed.submit();
+const outgoing = attributed.calls[0];
+assert.equal(outgoing.get('observed_source'), 'perplexity');
+assert.equal(outgoing.get('discovery_source'), 'ChatGPT');
+assert.match(outgoing.get('message'), /Last observed source hint \(30-day window\): perplexity/);
+assert.match(outgoing.get('message'), /How the buyer found TALRIVO \(self-reported\): ChatGPT/);
+assert.match(outgoing.get('message'), /Video 00:25 - sample question/);
+const noConsentSource = create('success', '', sourceHint, 'denied');
+noConsentSource.node('select[name="discovery_source"]').value = 'ChatGPT';
+await noConsentSource.submit();
+assert.equal(noConsentSource.calls[0].get('observed_source'), 'unknown');
+assert.equal(noConsentSource.calls[0].get('discovery_source'), 'ChatGPT', 'A deliberate inquiry answer is distinct from analytics storage');
+console.log('Inquiry source submission checks passed: observed hints and voluntary answers remain distinct in the isolated outgoing fields and message.');
+
+// Execute the actual homepage attribution functions and submit handler in an
+// isolated DOM/network fixture; the endpoint is never contacted.
+const homeCode = fs.readFileSync('script.js', 'utf8');
+const sourceFunctions = homeCode.slice(homeCode.indexOf('function getStoredSourceContext()'), homeCode.indexOf('function setProductInterest('));
+const homeSubmitCode = homeCode.slice(homeCode.indexOf('let inquirySubmitting = false;'), homeCode.indexOf('if (contactDock) {', homeCode.indexOf('let inquirySubmitting = false;')));
+async function checkHomeSource(consent, touch, blocked = false) {
+  const sourceFields = Object.fromEntries(['pageUrl','pageTitle','referrer','firstLandingPage','firstReferrer','utmSource','utmMedium','utmCampaign','utmTerm','utmContent','selectedFrom','observedSource','sourceEvidence','sourceRecordedAt','sourceLandingPath'].map(key => [key,{value:''}]));
+  let handler;
+  const calls = [];
+  const button = {disabled:false};
+  const form = {dataset:{web3formsKey:'isolated-fixture-key'}, addEventListener:(type, fn)=>{handler=fn;}, querySelector:()=>button, reset() {}};
+  const window = {location:new URL('https://talrivo.com/'),localStorage:{getItem:key=>{if(blocked)throw Error('blocked');return key==='talrivoAnalyticsConsent'?consent:key==='talrivoInquirySource'?JSON.stringify({latestSourceTouch:touch}):null;}},setTimeout,clearTimeout};
+  class HomeFields extends Map { constructor(){super([
+    ['name','Test buyer'], ['email','test@example.invalid'],['product','G946'],['message','Keep my sample question'],['discovery_source','ChatGPT'],
+    ...['observedSource','sourceEvidence','sourceRecordedAt','sourceLandingPath'].map(key=>[key.replace(/[A-Z]/g,c=>'_'+c.toLowerCase()),sourceFields[key].value])
+  ]);} }
+  const context = {form,sourceFields,sourceStorageKey:'talrivoInquirySource',window,document:{title:'TALRIVO',referrer:''},URLSearchParams,
+    formStatus:{textContent:'',classList:{add(){},remove(){}}},mailbox:'sales@talrivo.com',FormData:HomeFields,AbortController,
+    trackInquirySuccess(){},fetch:async(url,options)=>{calls.push(options.body);return{ok:true,json:async()=>({success:true})};}};
+  vm.runInNewContext(sourceFunctions+'\npopulateSourceFields();\n'+homeSubmitCode,context);
+  assert.equal(calls.length,0);
+  await handler({preventDefault(){}});
+  assert.equal(calls.length,1);
+  const expected = consent==='granted'&&!blocked?'perplexity':'unknown';
+  assert.equal(calls[0].get('observed_source'),expected);
+  assert.equal(calls[0].get('discovery_source'),'ChatGPT');
+  assert.match(calls[0].get('message'), /Keep my sample question/);
+  assert.ok(calls[0].get('message').includes(`Last observed source hint (30-day window): ${expected}`));
+}
+for(const consent of [null,'denied','granted']) await checkHomeSource(consent,sourceHint.latestSourceTouch);
+await checkHomeSource('granted',sourceHint.latestSourceTouch,true);
+const homeHtml=fs.readFileSync('index.html','utf8');
+assert.ok(homeHtml.includes('name="discovery_source"'));
+assert.ok(homeHtml.indexOf('name="discovery_source"')>homeHtml.indexOf('<details class="rfq-optional-details">'));
+console.log('Homepage RFQ source checks passed: actual source functions and isolated submit handler, consent denied/granted/blocked, separate voluntary answer and preserved buyer message.');

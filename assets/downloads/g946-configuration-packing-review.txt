@@ -1,0 +1,69 @@
+TALRIVO G946 - Configuration and Packing Review Worksheet
+Version: 2026-11-13
+Source: https://talrivo.com/gaming-headsets/g946-rgb/#sample-configuration
+
+BLANK BUYER WORKSHEET - NOT AN APPROVED PACKING LIST OR TEST REPORT
+Record findings from the exact physical samples. Leave unknown items as
+Not confirmed. This worksheet does not establish stock, price, MOQ,
+lead time, certification, charging time or compatibility.
+
+1. IDENTIFY THE SAMPLES
+Buyer / reviewer:
+Review date:
+Target market and devices:
+Headset Only sample ID / color / revision: Not confirmed
+Dock Bundle sample ID / color / revision: Not confirmed
+Photo or video reference for each sample: Not confirmed
+
+2. KEEP THE TWO CONFIGURATIONS SEPARATE
+Confirmed configuration definitions:
+- G946 Headset Only: the G946 headset, without a charging dock.
+- G946 with Wireless Charging Dock: the same G946 headset plus a wireless
+  charging dock that charges the headset wirelessly.
+Other contents still need to match the reviewed sample and written list.
+
+Item                         Headset Only             Dock Bundle
+Headset identity / quantity   Not confirmed            Not confirmed
+Receiver type / quantity      Not confirmed            Not confirmed
+Adapters / quantity           Not confirmed            Not confirmed
+Cables / quantity / purpose   Not confirmed            Not confirmed
+Microphone parts             Not confirmed            Not confirmed
+Manual / language            Not confirmed            Not confirmed
+Box / labels / contents      Not confirmed            Not confirmed
+Dock included                No                       Yes
+Dock photo / sample ID       Not applicable           Not confirmed
+Agreed packing-list version  Not confirmed            Not confirmed
+
+3. RECORD THE DOCK ON THE SELECTED BUNDLE SAMPLE
+Power input rating and source of confirmation: Not confirmed
+Power supply / cable used for the check: Not confirmed
+How the headset was placed on the dock: Not confirmed
+Observed indicator before / during / after placement: Not confirmed
+Evidence of charging and the method used to verify it: Not confirmed
+Charging duration and conditions, if actually measured: Not confirmed
+Unresolved questions / reviewer notes:
+Do not infer Qi, phone charging, hub functions or charging speed from images.
+
+4. CHECK CONNECTIONS SEPARATELY FROM THE PACKING LIST
+For each exact target device, record:
+Device / OS / headset connection mode / receiver or adapter:
+Playback result: Not confirmed
+Microphone result: Not confirmed
+Controls / pairing observations: Not confirmed
+Photo, recording or test reference: Not confirmed
+A pictured device or an accessory in a graphic is not a completed test.
+
+5. AGREE THE NEXT STEP
+Configuration requested: Not confirmed
+Items accepted / missing / requiring confirmation:
+Branding, packaging or document questions:
+Reviewer / date / sample revision:
+Do not treat a completed worksheet as a quotation or order acceptance.
+
+CONTINUE WITH THE CORRECT G946 CONFIGURATION
+Headset Only sample question:
+https://talrivo.com/contact/?product=g946&inquiry=sample&reference=g946-headset-only#inquiry-form
+Dock Bundle sample question:
+https://talrivo.com/contact/?product=g946&inquiry=sample&reference=g946-wireless-charging-dock#inquiry-form
+General sample review tool:
+https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/?model=g946#sample-review-tool

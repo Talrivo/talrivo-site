@@ -232,3 +232,17 @@ for (const path of ['/rfq-guide/', '/insights/private-label-gaming-headset-rfq-c
   assert.equal(denied.events().length, 0);
 }
 console.log('RFQ and model-directory resource signals passed: fixed paths, consent/withdrawal, blocked storage and no buyer-input payloads.');
+
+for (const page of ['/gaming-headsets/g946-rgb/', '/insights/', '/insights/gaming-headset-packaging-accessories-checklist/']) {
+for (const consent of [null, 'denied', 'granted']) {
+  const run = scenario(consent, false, `https://talrivo.com${page}`);
+  run.click('/assets/downloads/g946-configuration-packing-review.txt', '', false, true);
+  assert.equal(run.events().length, consent === 'granted' ? 1 : 0);
+  if (consent === 'granted') {
+    assert.equal(run.events()[0][1], 'buyer_resource_click');
+    assert.equal(run.events()[0][2].resource_type, 'g946_packing_sheet');
+    assert.deepEqual(Object.keys(run.events()[0][2]).sort(), ['destination_path','page_path','resource_type']);
+  }
+}
+}
+console.log('G946 worksheet signal remains a consented resource click, never a lead or a completed review.');

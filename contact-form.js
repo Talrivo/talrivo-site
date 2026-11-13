@@ -8,6 +8,10 @@ if (contactForm) {
   const referrer = document.querySelector("#contact-referrer");
   const firstLandingPage = document.querySelector("#contact-first-landing-page");
   const firstReferrer = document.querySelector("#contact-first-referrer");
+  const observedSource = document.querySelector("#contact-observed-source");
+  const sourceEvidence = document.querySelector("#contact-source-evidence");
+  const sourceRecordedAt = document.querySelector("#contact-source-recorded-at");
+  const sourceLandingPath = document.querySelector("#contact-source-landing-path");
   const utmSource = document.querySelector("#contact-utm-source");
   const utmMedium = document.querySelector("#contact-utm-medium");
   const utmCampaign = document.querySelector("#contact-utm-campaign");
@@ -297,6 +301,18 @@ if (contactForm) {
 
   const populateAttribution = () => {
     const storedSource = getStoredSource();
+    const touch = storedSource.latestSourceTouch;
+    const recorded = touch && typeof touch === "object" ? Date.parse(touch.recordedAt) : NaN;
+    const age = Date.now() - recorded;
+    const sourceKnown = touch && typeof touch === "object" && !Array.isArray(touch)
+      && ["chatgpt", "perplexity", "gemini", "copilot", "other", "unknown"].includes(touch.channel)
+      && ["tagged_link", "external_referrer"].includes(touch.evidence)
+      && Number.isFinite(age) && age >= 0 && age <= 30 * 24 * 60 * 60 * 1000
+      && typeof touch.landingPath === "string" && /^\/(?!\/)[^?#\s]{0,200}$/.test(touch.landingPath);
+    if (observedSource) observedSource.value = sourceKnown ? touch.channel : "unknown";
+    if (sourceEvidence) sourceEvidence.value = sourceKnown ? touch.evidence : "unavailable";
+    if (sourceRecordedAt) sourceRecordedAt.value = sourceKnown ? touch.recordedAt : "";
+    if (sourceLandingPath) sourceLandingPath.value = sourceKnown ? touch.landingPath : "";
     pageUrl.value = window.location.href;
     pageTitle.value = document.title;
     referrer.value = document.referrer || "Direct / not available";
@@ -370,6 +386,11 @@ if (contactForm) {
       `Referrer: ${valueOrFallback("referrer")}`,
       `Initial landing page: ${valueOrFallback("first_landing_page")}`,
       `Initial referrer: ${valueOrFallback("first_referrer")}`,
+      `Last observed source hint (30-day window): ${valueOrFallback("observed_source", "unknown")}`,
+      `Source evidence (not verified influence): ${valueOrFallback("source_evidence", "unavailable")}`,
+      `Source hint recorded at: ${valueOrFallback("source_recorded_at", "Not available")}`,
+      `Source hint landing path: ${valueOrFallback("source_landing_path", "Not available")}`,
+      `How the buyer found TALRIVO (self-reported): ${valueOrFallback("discovery_source", "Not provided")}`,
       `UTM source: ${valueOrFallback("utm_source", "Not set")}`,
       `UTM medium: ${valueOrFallback("utm_medium", "Not set")}`,
       `UTM campaign: ${valueOrFallback("utm_campaign", "Not set")}`,

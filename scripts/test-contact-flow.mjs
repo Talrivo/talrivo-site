@@ -21,12 +21,12 @@ function storageWith(initial = {}) {
   };
 }
 
-function runAnalytics(url, consent = 'granted', existingSource = null) {
+function runAnalytics(url, consent = 'granted', existingSource = null, referrer = '') {
   const initial = { talrivoAnalyticsConsent: consent };
   if (existingSource) initial.talrivoInquirySource = JSON.stringify(existingSource);
   const storage = storageWith(initial);
   const document = {
-    referrer: '',
+    referrer,
     readyState: 'complete',
     head: { appendChild() {} },
     body: { appendChild() {} },
@@ -36,7 +36,7 @@ function runAnalytics(url, consent = 'granted', existingSource = null) {
   };
   const window = { location: new URL(url), localStorage: storage };
 
-  vm.runInNewContext(analyticsCode, { window, document, URLSearchParams, Date });
+  vm.runInNewContext(analyticsCode, { window, document, URL, URLSearchParams, Date });
   const source = storage.value('talrivoInquirySource');
   return source ? JSON.parse(source) : null;
 }
@@ -479,3 +479,70 @@ for (const query of [
   assert.doesNotMatch(contact.nodes.get('#contact-product-reference').value, /Requested wireless models/);
 }
 console.log('Sample shortlist passed: native six-choice form, valid model context, package boundary, no injection/duplicates, stale-selection clearing and no lead or storage.');
+
+// Last observed acquisition hints survive internal navigation, without inventing
+// an AI source for direct traffic or borrowing a stale marketing campaign.
+const linkedinTouch = runAnalytics('https://talrivo.com/?utm_source=linkedin&utm_medium=social&utm_campaign=old');
+const aiEntry = runAnalytics('https://talrivo.com/gaming-headsets/g946-rgb/?message=private-buyer-note',
+  'granted', linkedinTouch, 'https://chatgpt.com/c/private-conversation?query=private-query');
+assert.equal(aiEntry.latestSourceTouch.channel, 'chatgpt');
+assert.equal(aiEntry.latestSourceTouch.evidence, 'external_referrer');
+assert.equal(aiEntry.utmSource, '', 'A new untagged referral must clear the older campaign');
+assert.doesNotMatch(JSON.stringify(aiEntry.latestSourceTouch), /private|query=|message=|https:/,
+  'New source hints contain only fixed categories, the public landing path and timestamp');
+const afterInternal = runAnalytics('https://talrivo.com/rfq-guide/', 'granted', aiEntry,
+  'https://talrivo.com/gaming-headsets/g946-rgb/');
+assert.deepEqual(afterInternal.latestSourceTouch, aiEntry.latestSourceTouch);
+const hintedContact = runContact('https://talrivo.com/contact/?product=g946&inquiry=sample', afterInternal);
+assert.equal(hintedContact.nodes.get('#contact-observed-source').value, 'chatgpt');
+assert.equal(hintedContact.nodes.get('#contact-source-evidence').value, 'external_referrer');
+assert.equal(hintedContact.nodes.get('#contact-source-landing-path').value, '/gaming-headsets/g946-rgb/');
+assert.equal(hintedContact.nodes.get('#contact-utm-source').value, '');
+assert.equal(hintedContact.events.length, 0, 'Capturing a source is not a lead or a new analytics event');
+for (const [referer, expected] of [
+  ['https://www.perplexity.ai/search/private-note', 'perplexity'],
+  ['https://gemini.google.com/app/private-note', 'gemini'],
+  ['https://copilot.microsoft.com/chats/private-note', 'copilot'],
+  ['https://chat.openai.com/c/private-note', 'chatgpt'],
+  ['https://chatgpt.com.evil.example/private-note', 'other'],
+  ['https://www.youtube.com/watch?v=private-note', 'other'],
+]) {
+  const result = runAnalytics('https://talrivo.com/gaming-headsets/', 'granted', aiEntry, referer);
+  assert.equal(result.latestSourceTouch.channel, expected);
+  assert.doesNotMatch(JSON.stringify(result.latestSourceTouch), /private-note|watch|chats/);
+}
+const taggedAI = runAnalytics('https://talrivo.com/gaming-headsets/?utm_source=ChatGPT.com',
+  'granted', null, 'https://www.youtube.com/');
+assert.equal(taggedAI.latestSourceTouch.channel, 'chatgpt');
+assert.equal(taggedAI.latestSourceTouch.evidence, 'tagged_link', 'A campaign tag is a hint, not a verified referral');
+const fakeTag = runAnalytics('https://talrivo.com/?utm_source=chatgpt.com.evil.example');
+assert.equal(fakeTag.latestSourceTouch.channel, 'other');
+const canonicalAlias = runAnalytics('https://talrivo.com/contact/', 'granted', aiEntry, 'https://www.talrivo.com/rfq-guide/');
+assert.deepEqual(canonicalAlias.latestSourceTouch, aiEntry.latestSourceTouch);
+const direct = runAnalytics('https://talrivo.com/');
+assert.equal(direct.latestSourceTouch, undefined, 'Do not invent AI attribution for direct visits');
+for (const consent of [null, 'denied']) {
+  const unconsented = runContact('https://talrivo.com/contact/', aiEntry, consent);
+  assert.equal(unconsented.nodes.get('#contact-observed-source').value, 'unknown');
+  assert.equal(unconsented.nodes.get('#contact-source-evidence').value, 'unavailable');
+  assert.equal(unconsented.nodes.get('#contact-source-landing-path').value, '');
+}
+for (const touch of [
+  [], { ...aiEntry.latestSourceTouch, channel: '<private-note>' },
+  { ...aiEntry.latestSourceTouch, evidence: 'guessed' },
+  { ...aiEntry.latestSourceTouch, recordedAt: new Date(Date.now() - 31 * 86400000).toISOString() },
+  { ...aiEntry.latestSourceTouch, recordedAt: new Date(Date.now() + 86400000).toISOString() },
+  { ...aiEntry.latestSourceTouch, landingPath: '/contact/?message=private-note' },
+  { ...aiEntry.latestSourceTouch, landingPath: '//evil.example/' },
+]) {
+  const invalid = runContact('https://talrivo.com/contact/', {latestSourceTouch:touch});
+  assert.equal(invalid.nodes.get('#contact-observed-source').value, 'unknown');
+  assert.equal(invalid.nodes.get('#contact-source-landing-path').value, '');
+}
+assert.equal(runAnalytics('https://talrivo.com/', 'denied', aiEntry), null);
+const discovery = contactHtml.match(/<select name="discovery_source"[^>]*>[\s\S]*?<\/select>/)?.[0];
+assert.ok(discovery && !discovery.includes('required'));
+assert.match(discovery, /<option value="">/);
+assert.match(discovery, /<option>ChatGPT<\/option>/);
+assert.ok(contactHtml.indexOf(discovery) > contactHtml.indexOf('<details class="rfq-optional-details">'));
+console.log('Acquisition-hint checks passed: consent, last observed source, internal navigation, new referral override, AI host boundaries, tagged-link distinction, 30-day expiry, no private new fields and optional self-report.');

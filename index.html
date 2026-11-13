@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="analytics.js?v=20261015a" defer></script>
+  <script src="analytics.js?v=20261113source" defer></script>
   <meta name="theme-color" content="#0f1719">
   <meta name="description" content="Gaming headsets, Bluetooth headphones and TWS earbuds for OEM/ODM sourcing, sample review, custom branding and packaging for importers and distributors.">
   <meta name="robots" content="index, follow">
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="dock-preview.css?v=20261010">
   <script src="dock-preview.js?v=20261010" defer></script>
   <script src="catalog.js?v=20261028g927" defer></script>
-  <script src="script.js?v=20261028g927" defer></script>
+  <script src="script.js?v=20261113source" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -690,13 +690,17 @@
         <input type="hidden" name="referrer" id="page-referrer">
         <input type="hidden" name="first_landing_page" id="first-landing-page">
         <input type="hidden" name="first_referrer" id="first-referrer">
+        <input type="hidden" name="observed_source" id="observed-source">
+        <input type="hidden" name="source_evidence" id="source-evidence">
+        <input type="hidden" name="source_recorded_at" id="source-recorded-at">
+        <input type="hidden" name="source_landing_path" id="source-landing-path">
         <input type="hidden" name="utm_source" id="utm-source">
         <input type="hidden" name="utm_medium" id="utm-medium">
         <input type="hidden" name="utm_campaign" id="utm-campaign">
         <input type="hidden" name="utm_term" id="utm-term">
         <input type="hidden" name="utm_content" id="utm-content">
         <input type="hidden" name="selected_from" id="selected-from">
-        <input type="hidden" name="form_version" value="home-rfq-flow-20260825">
+        <input type="hidden" name="form_version" value="home-rfq-flow-20261113source">
         <p class="form-helper">Required fields: name, business email, product interest, project requirements and consent.</p>
         <div class="two-columns">
           <label>Full name <input name="name" autocomplete="name" required></label>
@@ -817,6 +821,23 @@
               <option>Logo + packaging + manual</option>
               <option>Need customization discussion</option>
             </select>
+            </label>
+            <label>How did you find TALRIVO? <span class="optional-note">Optional</span>
+              <select name="discovery_source" aria-describedby="discovery-source-help">
+                <option value="">Select if you would like to share</option>
+                <option>ChatGPT</option>
+                <option>Perplexity</option>
+                <option>Google Gemini</option>
+                <option>Microsoft Copilot</option>
+                <option>Google or Bing search</option>
+                <option>YouTube</option>
+                <option>LinkedIn</option>
+                <option>Facebook</option>
+                <option>Reddit or another community</option>
+                <option>Colleague, partner or trade show</option>
+                <option>Other</option>
+              </select>
+              <span class="form-helper" id="discovery-source-help">Your answer helps us understand which information was useful. You can leave this blank.</span>
             </label>
           </div>
         </details>

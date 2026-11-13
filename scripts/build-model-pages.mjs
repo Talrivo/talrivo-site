@@ -70,7 +70,7 @@ function render(model) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/brand/talrivo-mark.svg" type="image/svg+xml">
-  <script src="/analytics.js?v=20260911a" defer></script>
+  <script src="/analytics.js?v=20261113source" defer></script>
   <meta name="description" content="${esc(description)}">
   <meta name="robots" content="${model.indexable ? 'index' : 'noindex'}, follow, max-image-preview:large">
   <link rel="canonical" href="${canonical}">

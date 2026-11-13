@@ -27,6 +27,8 @@ const pages = [
   'contact/index.html',
   'wired-gaming-headsets/index.html',
   'insights/gaming-headset-usb-audio-or-lighting/index.html',
+  'insights/index.html',
+  'insights/gaming-headset-packaging-accessories-checklist/index.html',
 ];
 let checked = 0;
 

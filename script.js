@@ -9,6 +9,10 @@ const sourceFields = {
   referrer: document.querySelector("#page-referrer"),
   firstLandingPage: document.querySelector("#first-landing-page"),
   firstReferrer: document.querySelector("#first-referrer"),
+  observedSource: document.querySelector("#observed-source"),
+  sourceEvidence: document.querySelector("#source-evidence"),
+  sourceRecordedAt: document.querySelector("#source-recorded-at"),
+  sourceLandingPath: document.querySelector("#source-landing-path"),
   utmSource: document.querySelector("#utm-source"),
   utmMedium: document.querySelector("#utm-medium"),
   utmCampaign: document.querySelector("#utm-campaign"),
@@ -295,7 +299,19 @@ function setSelectedFrom(value) {
 function populateSourceFields() {
   if (!form) return;
   const storedSource = getStoredSourceContext();
+  const touch = storedSource.latestSourceTouch;
+  const recorded = touch && typeof touch === "object" ? Date.parse(touch.recordedAt) : NaN;
+  const age = Date.now() - recorded;
+  const sourceKnown = touch && typeof touch === "object" && !Array.isArray(touch)
+    && ["chatgpt", "perplexity", "gemini", "copilot", "other", "unknown"].includes(touch.channel)
+    && ["tagged_link", "external_referrer"].includes(touch.evidence)
+    && Number.isFinite(age) && age >= 0 && age <= 30 * 24 * 60 * 60 * 1000
+    && typeof touch.landingPath === "string" && /^\/(?!\/)[^?#\s]{0,200}$/.test(touch.landingPath);
   const values = {
+    observedSource: sourceKnown ? touch.channel : "unknown",
+    sourceEvidence: sourceKnown ? touch.evidence : "unavailable",
+    sourceRecordedAt: sourceKnown ? touch.recordedAt : "",
+    sourceLandingPath: sourceKnown ? touch.landingPath : "",
     pageUrl: window.location.href,
     pageTitle: document.title,
     referrer: document.referrer || "Direct / not available",
@@ -660,6 +676,11 @@ form.addEventListener("submit", async (event) => {
     `First landing page: ${fields.get("first_landing_page") || "Not available"}`,
     `Referrer: ${fields.get("referrer") || "Direct / not available"}`,
     `First referrer: ${fields.get("first_referrer") || "Direct / not available"}`,
+    `Last observed source hint (30-day window): ${fields.get("observed_source") || "unknown"}`,
+    `Source evidence (not verified influence): ${fields.get("source_evidence") || "unavailable"}`,
+    `Source hint recorded at: ${fields.get("source_recorded_at") || "Not available"}`,
+    `Source hint landing path: ${fields.get("source_landing_path") || "Not available"}`,
+    `How the buyer found TALRIVO (self-reported): ${fields.get("discovery_source") || "Not provided"}`,
     `UTM source: ${fields.get("utm_source") || "Not set"}`,
     `UTM medium: ${fields.get("utm_medium") || "Not set"}`,
     `UTM campaign: ${fields.get("utm_campaign") || "Not set"}`,

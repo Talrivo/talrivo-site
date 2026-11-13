@@ -483,11 +483,13 @@ for (const [slug, title, questionCount, imageCount, anchor] of practicalCases) {
   assert.ok(page.includes('<meta name="robots" content="index, follow">'));
   assert.ok(page.includes('<main class="seo-page practical-guide">'));
   assert.ok(page.includes('href="../practical-guide.css?v=20261106a"'));
-  assert.ok(page.includes('Updated November 5, 2026'));
+  const packingUpdated = slug === 'gaming-headset-packaging-accessories-checklist';
+  const revision = packingUpdated ? '2026-11-13' : '2026-11-05';
+  assert.ok(page.includes(`Updated November ${packingUpdated ? 13 : 5}, 2026`));
   const data = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
   const article = data.find(item => item['@type'] === 'Article');
-  assert.equal(article.dateModified, '2026-11-05');
+  assert.equal(article.dateModified, revision);
   assert.equal(article.mainEntityOfPage, url);
   const descriptions = [...page.matchAll(/<meta (?:name="description"|property="og:description"|name="twitter:description") content="([^"]+)"/g)]
     .map(([, text]) => text);
@@ -503,7 +505,7 @@ for (const [slug, title, questionCount, imageCount, anchor] of practicalCases) {
   assert.equal((main.match(/<img\b/g) || []).length, imageCount, `${slug}: keep all supplied images`);
   assert.equal((page.match(new RegExp(`id="${anchor}"`, 'g')) || []).length, 1);
   assert.ok(page.includes(`href="#${anchor}"`));
-  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-05</lastmod>`));
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>${revision}</lastmod>`));
   assert.doesNotMatch(main, /aligned with real buyer intent|product page update, LinkedIn post|Content reuse|5-minute|mobile-adjacent/);
   assert.doesNotMatch(page, /guaranteed compatibility|zero latency|guaranteed to increase clicks/i);
 }

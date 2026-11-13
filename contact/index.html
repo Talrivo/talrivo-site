@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/brand/talrivo-mark.svg" type="image/svg+xml">
-  <script src="/analytics.js?v=20261015a" defer></script>
+  <script src="/analytics.js?v=20261113source" defer></script>
   <meta name="description" content="Request gaming headset, Bluetooth headphone or TWS earbud samples. Discuss private-label branding, packaging and model-specific documents with TALRIVO.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://talrivo.com/contact/">
@@ -24,7 +24,7 @@
   <title>Contact TALRIVO | Audio Samples &amp; Private-Label RFQs</title>
   <link rel="stylesheet" href="../styles.css?v=20261019nav">
   <link rel="stylesheet" href="./contact.css?v=20261111recovery">
-  <script src="../contact-form.js?v=20261113shortlist" defer></script>
+  <script src="../contact-form.js?v=20261113source" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -203,6 +203,10 @@
         <input type="hidden" name="referrer" id="contact-referrer">
         <input type="hidden" name="first_landing_page" id="contact-first-landing-page">
         <input type="hidden" name="first_referrer" id="contact-first-referrer">
+        <input type="hidden" name="observed_source" id="contact-observed-source">
+        <input type="hidden" name="source_evidence" id="contact-source-evidence">
+        <input type="hidden" name="source_recorded_at" id="contact-source-recorded-at">
+        <input type="hidden" name="source_landing_path" id="contact-source-landing-path">
         <input type="hidden" name="utm_source" id="contact-utm-source">
         <input type="hidden" name="utm_medium" id="contact-utm-medium">
         <input type="hidden" name="utm_campaign" id="contact-utm-campaign">
@@ -210,7 +214,7 @@
         <input type="hidden" name="utm_content" id="contact-utm-content">
         <input type="hidden" name="selected_from" id="contact-selected-from">
         <input type="hidden" name="product_reference" id="contact-product-reference">
-        <input type="hidden" name="form_version" value="contact-rfq-flow-20261111">
+        <input type="hidden" name="form_version" value="contact-rfq-flow-20261113source">
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
         <p class="form-helper">Required fields: name, business email, product interest, inquiry type, project requirements and consent. For a lighter first step, use WhatsApp or write one short model question in the message field.</p>
         <div class="two-columns">
@@ -371,6 +375,23 @@
               <option>Regular distributor order planning</option>
               <option>Private-label program discussion</option>
             </select>
+            </label>
+            <label>How did you find TALRIVO? <span class="optional-note">Optional</span>
+              <select name="discovery_source" aria-describedby="discovery-source-help">
+                <option value="">Select if you would like to share</option>
+                <option>ChatGPT</option>
+                <option>Perplexity</option>
+                <option>Google Gemini</option>
+                <option>Microsoft Copilot</option>
+                <option>Google or Bing search</option>
+                <option>YouTube</option>
+                <option>LinkedIn</option>
+                <option>Facebook</option>
+                <option>Reddit or another community</option>
+                <option>Colleague, partner or trade show</option>
+                <option>Other</option>
+              </select>
+              <span class="form-helper" id="discovery-source-help">Your answer helps us understand which information was useful. You can leave this blank.</span>
             </label>
             <label>Project timing <span class="optional-note">Optional</span>
             <select name="timeline">
