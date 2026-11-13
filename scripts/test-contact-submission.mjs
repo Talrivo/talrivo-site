@@ -110,3 +110,9 @@ assert.match(recovery, /mailto:sales@talrivo.com/);
 assert.match(recovery, /https:\/\/wa\.me\/8613824276001/);
 assert.doesNotMatch(recovery, /body=|name=|email=/, 'Recovery links must not embed buyer fields');
 console.log('Recovery checks passed: pending label, failure-only alternatives and accurate changed-model submission.');
+
+const shortlisted = create('success', '?product=gaming-headsets&inquiry=compare&reference=model-shortlist&models=g946&models=g938');
+await shortlisted.submit();
+assert.ok(shortlisted.calls[0].get('product_reference').includes('Requested wireless models: G946, G938'));
+assert.ok(shortlisted.calls[0].get('product_reference').includes('G946 package to confirm'));
+console.log('Shortlisted model reference is retained in the isolated outgoing form fields.');

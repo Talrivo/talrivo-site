@@ -206,10 +206,13 @@
       "/insights/gaming-headset-microphone-performance/",
       "/insights/gaming-headset-packaging-accessories-checklist/",
       "/insights/gaming-headset-import-documents-checklist/",
-      "/sample-request/"
+      "/sample-request/",
+      "/rfq-guide/",
+      "/insights/private-label-gaming-headset-rfq-checklist/"
     ];
     const productPages = [
       "/gaming-headsets/", "/wireless-gaming-headsets/", "/wired-gaming-headsets/", "/product-comparison/",
+      "/gaming-headset-models/",
       "/gaming-headsets/g926-wired/", "/gaming-headsets/g926-wireless/", "/gaming-headsets/g935-wireless/",
       "/gaming-headsets/g936-lightweight/", "/gaming-headsets/g938-wireless/",
       "/gaming-headsets/g940-low-latency/", "/gaming-headsets/g941-tri-mode-anc/",
@@ -224,6 +227,11 @@
     }
     if (destination.origin !== window.location.origin) return;
     const resources = {
+      "/assets/downloads/gaming-headset-rfq-template.txt": "rfq_template_file",
+      "/assets/downloads/gaming-headset-quote-scope-review.txt": "quote_scope_file",
+      "/rfq-guide/": "rfq_template_guide",
+      "/insights/private-label-gaming-headset-rfq-checklist/": "quote_scope_guide",
+      "/gaming-headset-models/": "model_directory",
       "/assets/downloads/gaming-headset-mic-recording-sheet.txt": "mic_recording_sheet",
       "/assets/downloads/gaming-headset-packing-review-sheet.txt": "packing_review_sheet",
       "/assets/downloads/wireless-gaming-headset-sample-review.txt": "sample_review_sheet",
@@ -236,7 +244,9 @@
     };
     let resource = Object.hasOwn(resources, destination.pathname) ? resources[destination.pathname] : null;
     if (destination.pathname === window.location.pathname) {
-      resource = destination.hash === "#quick-mic-test" ? "mic_script"
+      resource = window.location.pathname === "/rfq-guide/" && destination.hash === "#rfq-download" ? "rfq_template_section"
+        : window.location.pathname === "/insights/private-label-gaming-headset-rfq-checklist/" && destination.hash === "#quote-comparison" ? "quote_scope_section"
+        : destination.hash === "#quick-mic-test" ? "mic_script"
         : destination.hash === "#packing-checklist" ? "packing_checklist"
         : destination.hash === "#certificate-match" ? "certificate_match"
         : ["#review-worksheet", "#sample-review-tool"].includes(destination.hash) ? "sample_worksheet"

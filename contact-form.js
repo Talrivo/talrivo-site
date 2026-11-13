@@ -20,6 +20,12 @@ if (contactForm) {
   const productReference = document.querySelector("#contact-product-reference");
   const referenceNote = document.querySelector("#contact-reference-note");
   const inquiryReferences = {
+    "model-shortlist": {
+      title: "Wireless gaming headset sample shortlist",
+      url: "https://talrivo.com/product-comparison/#quick-shortlist",
+      type: "guide",
+      prompt: "Tell us your target devices, destination market and which differences you want to compare on samples."
+    },
     "sample-evaluation-guide": {"title": "Gaming headset sample evaluation checklist", "url": "https://talrivo.com/insights/evaluate-gaming-headset-sample-before-bulk-order/", "type": "guide", "prompt": "Tell us the sample model, target device and which check or packing-list item needs clarification."},
     "receiver-setup-guide": {"title": "USB-A and USB-C gaming headset receiver guide", "url": "https://talrivo.com/insights/choose-2-4g-wireless-gaming-headset/", "type": "guide", "prompt": "Tell us the headset and receiver model, host device, port or adapter and whether the question concerns playback or microphone input."},
     "connection-comparison-guide": {"title": "2.4GHz versus Bluetooth gaming headset comparison", "url": "https://talrivo.com/insights/2-4g-vs-bluetooth-gaming-headsets-importers/", "type": "guide", "prompt": "Tell us the target devices, required connection modes and whether game audio and voice chat need to work together."},
@@ -226,6 +232,13 @@ if (contactForm) {
   const productKey = params.get("product");
   const inquiryKey = params.get("inquiry");
   const knownProduct = Object.hasOwn(productSelections, productKey) ? productSelections[productKey] : null;
+  // Read only approved public model codes; ignore arbitrary query values and duplicates.
+  const shortlistChoices = ["g946", "g926", "g938", "g941", "g935", "g936"];
+  const shortlistModels = referenceKey === "model-shortlist" && productKey === "gaming-headsets" && inquiryKey === "compare"
+    ? [...new Set(params.getAll("models").filter(key => shortlistChoices.includes(key)))] : [];
+  const getActiveShortlist = () => productInterest.value === productSelections["gaming-headsets"]
+    && inquiryType.value === inquirySelections.compare ? shortlistModels : [];
+
   // Older links may use display names instead of current product keys.
   const unconfirmedProduct = !knownProduct && productKey && /^[A-Za-z0-9][A-Za-z0-9 _()./-]{0,119}$/.test(productKey)
     && !Object.hasOwn(Object.prototype, productKey) ? productKey : null;
@@ -236,6 +249,12 @@ if (contactForm) {
     && productInterest.value !== productSelections.g946 ? null : selectedReference;
   const refreshReference = () => {
     const reference = getActiveReference();
+    const models = getActiveShortlist();
+    const modelCodes = models.map(key => key.toUpperCase()).join(", ");
+    const packageNote = models.includes("g946")
+      ? " G946 package to confirm: Headset Only or the same headset with a wireless charging dock." : "";
+    const shortlistNote = models.length
+      ? `Requested wireless models: ${modelCodes}.${packageNote} Confirm the exact sample versions and included accessories.` : "";
     const note = reference
       ? reference.type === "configuration"
         ? `Configuration: ${reference.title}. ${reference.prompt}`
@@ -243,12 +262,13 @@ if (contactForm) {
           ? `Guide reference: ${reference.title}. ${reference.prompt || "Please include your headset version, target device and USB or 3.5mm connection question."}`
           : `Video reference: ${reference.title}. Please include the timestamp of the headset you are interested in.`
       : "";
-    referenceNote.textContent = [note, unconfirmedProduct
+    referenceNote.textContent = [note, shortlistNote, unconfirmedProduct
       ? `Product reference from your link: ${unconfirmedProduct}. The model and availability have not been confirmed; please describe what you need below.` : ""]
       .filter(Boolean).join(" ");
     referenceNote.hidden = !referenceNote.textContent;
     productReference.value = [
       reference ? `${reference.title}: ${reference.url}` : "",
+      models.length ? `Requested wireless models: ${modelCodes}.${packageNote}` : "",
       unconfirmedProduct ? `Unconfirmed product reference from link: ${unconfirmedProduct}` : ""
     ].filter(Boolean).join(" | ");
   };
@@ -300,6 +320,7 @@ if (contactForm) {
   }
   populateAttribution();
   productInterest.addEventListener("change", refreshReference);
+  inquiryType.addEventListener("change", refreshReference);
 
   if (params.get("sent") === "1") {
     status.textContent = "If you just submitted an inquiry, please check your email for confirmation. This page cannot verify delivery from the URL alone.";

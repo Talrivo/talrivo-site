@@ -86,3 +86,48 @@
     line-height: 1.5;
   }
 }
+
+
+.comparison-shortlist fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+.comparison-shortlist legend {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: .75rem;
+  padding: 0;
+}
+.comparison-shortlist .shortlist-choice {
+  align-items: center;
+  display: flex;
+  gap: .65rem;
+  min-height: 44px;
+  margin-top: .75rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.comparison-shortlist input[type="checkbox"] {
+  accent-color: var(--ink);
+  flex: 0 0 auto;
+  height: 1.15rem;
+  width: 1.15rem;
+}
+.comparison-shortlist input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.comparison-shortlist .shortlist-actions {
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+}
+.comparison-shortlist .shortlist-actions .button {
+  max-width: 100%;
+  white-space: normal;
+}
+.comparison-shortlist .shortlist-note {
+  color: var(--muted);
+  font-size: .95rem;
+}

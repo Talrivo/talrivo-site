@@ -307,7 +307,7 @@ const comparisonFiles = [
 ];
 for (const [file, expectedRows] of comparisonFiles) {
   const html = readFileSync(file, 'utf8');
-  assert.ok(html.includes('href="../comparison.css?v=20261024"'));
+  assert.ok(html.includes(`href="../comparison.css?v=${file === 'product-comparison/index.html' ? '20261113shortlist' : '20261024'}"`));
   const tables = [...html.matchAll(/<table class="sample-check-table buyer-comparison-table" role="table"[\s\S]*?<\/table>/g)];
   assert.equal(tables.length, 1, `${file}: use one static source of comparison facts`);
   const table = tables[0][0];

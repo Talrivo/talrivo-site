@@ -82,6 +82,20 @@ const micPage = '/insights/gaming-headset-microphone-performance/';
 const packingPage = '/insights/gaming-headset-packaging-accessories-checklist/';
 const documentsPage = '/insights/gaming-headset-import-documents-checklist/';
 const resourceCases = [
+  ['/rfq-guide/', '../assets/downloads/gaming-headset-rfq-template.txt?note=private-message#private-hash', 'rfq_template_file'],
+  ['/rfq-guide/', '#rfq-download', 'rfq_template_section'],
+  ['/rfq-guide/', '../insights/private-label-gaming-headset-rfq-checklist/#quote-comparison', 'quote_scope_guide'],
+  ['/rfq-guide/', '../gaming-headset-models/', 'model_directory'],
+  ['/rfq-guide/', '../contact/?product=gaming-headsets&inquiry=rfq&reference=rfq-template&message=private-message#inquiry-form', 'inquiry_form'],
+  ['/insights/private-label-gaming-headset-rfq-checklist/', '../../assets/downloads/gaming-headset-quote-scope-review.txt', 'quote_scope_file'],
+  ['/insights/private-label-gaming-headset-rfq-checklist/', '#quote-comparison', 'quote_scope_section'],
+  ['/insights/private-label-gaming-headset-rfq-checklist/', '../../rfq-guide/#rfq-download', 'rfq_template_guide'],
+  ['/insights/', '../assets/downloads/gaming-headset-rfq-template.txt', 'rfq_template_file'],
+  ['/insights/', '../assets/downloads/gaming-headset-quote-scope-review.txt', 'quote_scope_file'],
+  ['/insights/', '../rfq-guide/#rfq-download', 'rfq_template_guide'],
+  ['/insights/', 'private-label-gaming-headset-rfq-checklist/#quote-comparison', 'quote_scope_guide'],
+  ['/gaming-headset-models/', '../gaming-headsets/g936-lightweight/', 'model_details'],
+  ['/gaming-headset-models/', '../contact/?product=g936&inquiry=sample#inquiry-form', 'inquiry_form'],
   ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '../../assets/downloads/wireless-gaming-headset-sample-review.txt', 'sample_review_sheet'],
   ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '#review-worksheet', 'sample_worksheet'],
   ['/insights/evaluate-gaming-headset-sample-before-bulk-order/', '#sample-review-tool', 'sample_worksheet'],
@@ -115,7 +129,7 @@ for (const [path, href, type] of resourceCases) {
   assert.equal(event[2].page_path, path);
   assert.equal(event[2].destination_path, new URL(href, `https://talrivo.com${path}`).pathname);
   assert.deepEqual(Object.keys(event[2]).sort(), ['destination_path', 'page_path', 'resource_type']);
-  assert.doesNotMatch(JSON.stringify(event), /private-|message=|utm_|generate_lead/);
+  assert.doesNotMatch(JSON.stringify(event), /private-(?:text|message|model|buyer|hash|note)|message=|utm_|generate_lead/);
   run.values.set('talrivoAnalyticsConsent', 'denied');
   run.click(href, '', false, true);
   assert.equal(run.events().length, 1, 'withdrawal stops resource events');
@@ -205,3 +219,16 @@ for (const consent of [null,'denied']) {
   run.click('/contact/?product=g946','',false,true);
   assert.equal(run.events().length,0);
 }
+
+// These fixed resource signals must never read finder input or emit lead events.
+for (const path of ['/rfq-guide/', '/insights/private-label-gaming-headset-rfq-checklist/', '/gaming-headset-models/']) {
+  const run = scenario('granted', false, `https://talrivo.com${path}?message=private-message&model=private-model`);
+  run.click('/assets/downloads/gaming-headset-rfq-template.txt?buyer=private-buyer#private-hash', '', false, true);
+  assert.equal(run.events().length, 1);
+  assert.deepEqual(Object.keys(run.events()[0][2]).sort(), ['destination_path', 'page_path', 'resource_type']);
+  assert.doesNotMatch(JSON.stringify(run.events()), /private-(?:text|message|model|buyer|hash|note)|message=|buyer=|generate_lead|file_download/);
+  const denied = scenario('granted', true, `https://talrivo.com${path}`);
+  denied.click('/assets/downloads/gaming-headset-rfq-template.txt', '', false, true);
+  assert.equal(denied.events().length, 0);
+}
+console.log('RFQ and model-directory resource signals passed: fixed paths, consent/withdrawal, blocked storage and no buyer-input payloads.');

@@ -5557,7 +5557,8 @@ h2 {
   .model-directory-page .seo-hero > img,
   .sample-request-page .seo-hero > img,
   .sample-process-page .seo-hero > img,
-  .supplier-checklist-page .seo-hero > img {
+  .supplier-checklist-page .seo-hero > img,
+  .rfq-buyer-page .seo-hero > img {
     order: 0;
   }
 }

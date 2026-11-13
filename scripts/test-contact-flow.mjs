@@ -428,3 +428,54 @@ changedGuide.nodes.get('select[name="product"]').handlers.change();
 assert.match(changedGuide.nodes.get('#contact-product-reference').value, /sample evaluation checklist/,
   'A guide is still useful source context after selecting a different model');
 console.log('Configuration change checks passed: switch away, return, mismatched link, retained guide context and no lead.');
+
+
+// A native multi-model GET form carries only the reviewed wireless shortlist.
+const shortlistPage = readFileSync('product-comparison/index.html', 'utf8');
+const shortlistForm = shortlistPage.match(/<form id="sample-shortlist"[\s\S]*?<\/form>/)?.[0];
+assert.ok(shortlistForm);
+assert.match(shortlistForm, /action="\.\.\/contact\/#inquiry-form" method="get"/);
+const shortlistValues = [...shortlistForm.matchAll(/type="checkbox" name="models" value="([^"]+)"/g)].map(m => m[1]);
+assert.deepEqual(shortlistValues, ['g946','g926','g938','g941','g935','g936']);
+assert.equal(new Set(shortlistValues).size, 6);
+assert.match(shortlistForm, /name="reference" value="model-shortlist"/);
+assert.match(shortlistForm, /type="reset"/);
+const shortlistUrl = 'https://talrivo.com/contact/?product=gaming-headsets&inquiry=compare&reference=model-shortlist';
+for (const consent of [null, 'denied', 'granted']) {
+  const contact = runContact(shortlistUrl + '&models=g946&models=g938&models=g936&models=g938&models=__proto__&models=%3Cimg%20src=x%3E', null, consent);
+  const ref = contact.nodes.get('#contact-product-reference');
+  const note = contact.nodes.get('#contact-reference-note');
+  assert.match(note.textContent, /Requested wireless models: G946, G938, G936/);
+  assert.match(ref.value, /Requested wireless models: G946, G938, G936/);
+  assert.match(ref.value, /G946 package to confirm: Headset Only or the same headset with a wireless charging dock/);
+  assert.doesNotMatch(note.textContent + ref.value, /__proto__|<img|G938, G938/);
+  const message = contact.nodes.get('textarea[name="message"]');
+  if (message) message.value = 'Keep this buyer question';
+  const product = contact.nodes.get('select[name="product"]');
+  const inquiry = contact.nodes.get('#contact-inquiry-type');
+  product.value = 'G938 Wireless Gaming Headset'; product.handlers.change();
+  assert.doesNotMatch(ref.value + note.textContent, /Requested wireless models|G946 package to confirm/);
+  product.value = 'Gaming Headset Collection'; product.handlers.change();
+  assert.match(ref.value, /Requested wireless models/);
+  inquiry.value = 'Product document question'; inquiry.handlers.change();
+  assert.doesNotMatch(ref.value + note.textContent, /Requested wireless models|G946 package to confirm/);
+  inquiry.value = 'Model comparison'; inquiry.handlers.change();
+  assert.match(ref.value, /G946, G938, G936/);
+  if (message) assert.equal(message.value, 'Keep this buyer question');
+  assert.equal(contact.events.length, 0, 'A selected shortlist and form opening are not leads');
+  assert.equal(contact.storage.value('talrivoInquirySource'), undefined, 'The shortlist needs no tracking storage');
+}
+for (const suffix of ['', '&models=g936-wired&models=G938&models=unknown', '&models=constructor&models=toString']) {
+  const contact = runContact(shortlistUrl + suffix, null, 'denied');
+  assert.doesNotMatch(contact.nodes.get('#contact-product-reference').value, /Requested wireless models/);
+  assert.equal(contact.nodes.get('select[name="product"]').value, 'Gaming Headset Collection');
+}
+for (const query of [
+  '?product=g938&inquiry=compare&reference=model-shortlist&models=g946',
+  '?product=gaming-headsets&inquiry=rfq&reference=model-shortlist&models=g946',
+  '?product=gaming-headsets&inquiry=compare&reference=rfq-template&models=g946',
+]) {
+  const contact = runContact('https://talrivo.com/contact/' + query);
+  assert.doesNotMatch(contact.nodes.get('#contact-product-reference').value, /Requested wireless models/);
+}
+console.log('Sample shortlist passed: native six-choice form, valid model context, package boundary, no injection/duplicates, stale-selection clearing and no lead or storage.');

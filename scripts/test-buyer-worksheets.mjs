@@ -61,3 +61,10 @@ for (const attr of ['property="og:description"', 'name="twitter:description"']) 
   assert.ok(rfq.includes(`<meta ${attr} content="${rfqDescription}">`));
 }
 console.log('RFQ resources passed: two ungated versioned downloads, canonical instructions, inquiry context and no numeric commercial promises.');
+
+for (const page of ['rfq-guide/index.html', 'insights/private-label-gaming-headset-rfq-checklist/index.html']) {
+  const html = readFileSync(page, 'utf8');
+  assert.match(html, /<main class="seo-page rfq-buyer-page">/);
+  assert.match(html, /analytics\.js\?v=20261113buyerpaths/);
+}
+assert.match(readFileSync('styles.css', 'utf8'), /\.rfq-buyer-page \.seo-hero > img\s*\{\s*order: 0;/);
