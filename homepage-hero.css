@@ -25,7 +25,7 @@
 .home-page a:focus-visible,.home-page button:focus-visible { outline:3px solid #24a9c1; outline-offset:5px; }
 .home-page .buyer-strip { background:#f2f6f7; padding-block:25px; }
 .home-page .buyer-strip strong { color:#16394a; }
-.home-page .primary-product-lines { padding-top:52px; padding-bottom:52px; }
+.home-page .primary-product-lines { padding-top:40px; padding-bottom:48px; }
 @media(max-width:1100px) { .homepage-hero-copy { padding-left:40px; } .homepage-hero-detail { max-width:380px; } .homepage-hero-model {right:32px;} }
 @media(max-width:760px) {
  .homepage-hero { display:flex; flex-direction:column; min-height:0; background:#152a4b; padding-top:260px; }
@@ -46,3 +46,94 @@
  .home-page .buyer-strip {padding:25px 24px;}
 }
 @media(prefers-reduced-motion:reduce) {html{scroll-behavior:auto;}}
+
+/* Keep the homepage navigation readable beside the existing contact rail. */
+.home-page .site-header {
+  column-gap: 24px;
+}
+.home-page .site-header .brand {
+  flex: 0 0 auto;
+}
+.home-page .site-header .brand-logo {
+  width: 180px;
+}
+.home-page .site-header .navigation {
+  gap: clamp(12px, 1.4vw, 20px);
+}
+.home-page .site-header .navigation > a {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.home-page .site-header .nav-action {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 44px;
+}
+
+/* Connect the scene-led introduction with the three product collections. */
+.home-page .primary-product-card {
+  background: #fff;
+  border-color: #d5e2e8;
+  border-radius: 12px;
+}
+.home-page .primary-product-card img {
+  background: #fff;
+  padding: 18px;
+}
+.home-page .primary-product-copy {
+  background: #f2f7fa;
+  padding: 20px;
+}
+.home-page .primary-product-copy .label {
+  color: #315769;
+}
+.home-page .primary-product-copy strong {
+  color: #17384a;
+}
+.home-page .primary-product-copy > span:last-child {
+  align-items: center;
+  column-gap: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.home-page .product-route-arrow {
+  color: #1b647d;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+.home-page .primary-product-card:hover,
+.home-page .primary-product-card:focus-visible {
+  border-color: #37849b;
+}
+
+@media (max-width: 1000px) {
+  .home-page .menu-toggle {
+    display: flex;
+  }
+  .home-page .site-header .navigation {
+    align-items: stretch;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    left: 0;
+    padding: 10px 20px 20px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+  }
+  .home-page .site-header .navigation.open {
+    display: flex;
+  }
+  .home-page .site-header .navigation > a:not(.nav-action) {
+    padding: 14px 0;
+  }
+}
+@media (max-width: 620px) {
+  .home-page .site-header .brand-logo {
+    width: 150px;
+  }
+}
