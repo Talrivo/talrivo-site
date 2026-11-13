@@ -1,0 +1,56 @@
+TALRIVO - GAMING HEADSET QUOTE SCOPE REVIEW
+Version: 2026-11-13
+Blank buyer worksheet. Not a supplier quotation, price list or approval.
+
+HOW TO USE
+Compare what two written offers include before comparing their prices.
+Use Included, Optional, Separate charge or Not confirmed where appropriate.
+Only write Not applicable when confirmed for the selected configuration.
+Keep conflicting or missing items open until the supplier replies in writing.
+
+Target product / specification revision: Not confirmed
+Destination market / required devices: Not confirmed
+Offer A supplier / quote reference / date: Not confirmed
+Offer B supplier / quote reference / date: Not confirmed
+Same proposed bulk quantity and sample scope? Not confirmed
+
+COMPARISON POINT | OFFER A | OFFER B
+Exact model and wired / wireless version | Not confirmed | Not confirmed
+Required connection modes and receiver | Not confirmed | Not confirmed
+Microphone, materials and listed specification | Not confirmed | Not confirmed
+Adapters, audio / charging cables and other accessories | Not confirmed | Not confirmed
+Headset-only / charging-dock package, where relevant | Not confirmed | Not confirmed
+Retail box, manual language and packing list | Not confirmed | Not confirmed
+Logo placement, artwork and color scope | Not confirmed | Not confirmed
+MOQ by model, color and packaging | Not confirmed | Not confirmed
+Sample version, sample charges and review steps | Not confirmed | Not confirmed
+Setup, tooling or engineering work charged separately | Not confirmed | Not confirmed
+Model-specific documents offered for review | Not confirmed | Not confirmed
+Proposed production timing and approval dependencies | Not confirmed | Not confirmed
+Shipping basis, destination and excluded charges | Not confirmed | Not confirmed
+Payment terms and quote validity | Not confirmed | Not confirmed
+Proposed substitutions / unresolved specification items | Not confirmed | Not confirmed
+
+FOLLOW-UP
+Missing or conflicting item: Not confirmed
+Question for the supplier: Not confirmed
+Written reply / source reference / date: Not confirmed
+Next action and responsible person: Not confirmed
+
+Keep amounts, currency and commercial calculations in the original written
+quotes. This sheet compares scope; it does not calculate landed cost, confirm
+compliance, select a supplier or approve a bulk order. A similar housing or
+model number does not prove that two offers cover the same product version.
+
+TALRIVO RFQ route:
+https://talrivo.com/contact/?product=gaming-headsets&inquiry=rfq&reference=rfq-template#inquiry-form
+Email: sales@talrivo.com
+
+SOURCE AND SHARING THE BLANK WORKSHEET
+Instructions:
+https://talrivo.com/insights/private-label-gaming-headset-rfq-checklist/#quote-comparison
+Prepare an RFQ: https://talrivo.com/rfq-guide/#rfq-download
+Share the blank worksheet with your buying team. Keep completed supplier
+comparisons and quotations private. Link to the source instructions when
+sharing the blank resource publicly. No published prices, fixed MOQ or
+promised delivery dates are provided.

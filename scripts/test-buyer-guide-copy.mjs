@@ -148,7 +148,8 @@ for (const [slug, title, anchor, faqCount] of buyerDemandCases) {
   const article = schemas.find(schema => schema['@type'] === 'Article');
   assert.equal(article.headline, title);
   assert.equal(article.description, descriptions[0]);
-  assert.equal(article.dateModified, '2026-11-01');
+  const revision = slug === 'private-label-gaming-headset-rfq-checklist' ? '2026-11-13' : '2026-11-01';
+  assert.equal(article.dateModified, revision);
   assert.equal(article.mainEntityOfPage, url);
   assert.ok(html.includes(`<link rel="canonical" href="${url}">`));
   assert.ok(html.includes('<meta name="robots" content="index, follow">'));
@@ -160,7 +161,7 @@ for (const [slug, title, anchor, faqCount] of buyerDemandCases) {
   assert.equal(visibleFaq.length, faqCount);
   assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity
     .map(question => ({ question: question.name, answer: question.acceptedAnswer.text })), visibleFaq);
-  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-01</lastmod>`));
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>${revision}</lastmod>`));
   assert.ok(demandLlms.includes(`](${url}):`));
   assert.doesNotMatch(html, /guaranteed to increase clicks|guaranteed compatibility|free samples?|MOQ[: ]+\d|lead time[: ]+\d/i);
 }
@@ -196,7 +197,7 @@ assert.equal(new Set(hubDescriptions).size, 1);
 const hubSchemas = [...index.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
 const hubCollection = hubSchemas.find(schema => schema['@type'] === 'CollectionPage');
-assert.equal(hubCollection.dateModified, '2026-11-03');
+assert.equal(hubCollection.dateModified, '2026-11-13');
 assert.equal(hubCollection.description, hubDescriptions[0]);
 const topicIds = ['connection-guides', 'sound-comfort-guides', 'quote-guides', 'sample-guides', 'model-comparisons', 'earbud-guides'];
 const topicSections = [...index.matchAll(/<section class="seo-section guide-topic" id="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)];
@@ -221,7 +222,7 @@ for (const target of [
 ]) assert.ok(index.includes(`href="${target}"`));
 assert.ok(index.includes('class="button primary" href="#connection-guides"'));
 assert.ok(index.includes('href="../contact/?product=audio-products&amp;inquiry=rfq#inquiry-form"'));
-assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
+assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-13</lastmod>`));
 assert.ok(demandLlms.includes(`[Insights](${hubUrl}):`));
 assert.doesNotMatch(index, /For GEO|guaranteed to increase clicks|zero latency/i);
 const videoSection = index.match(/<section[^>]*id="product-videos"[\s\S]*?<\/section>/)[0];

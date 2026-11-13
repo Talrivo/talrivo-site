@@ -1,0 +1,63 @@
+TALRIVO - GAMING HEADSET RFQ TEMPLATE
+Version: 2026-11-13
+Blank buyer worksheet. Not a quotation or an approved specification.
+
+HOW TO USE
+Fill in what you know. Leave undecided items as Not confirmed.
+Keep the same model, connection version and packing list in all quote requests.
+This file does not need to be completed before asking an initial question.
+
+SUBJECT
+Gaming headset RFQ - [model or product direction] - [destination market]
+
+BUYER AND PROJECT
+Company / buyer type: Not confirmed
+Destination country / sales channel: Not confirmed
+Product link / exact model and version: Not confirmed
+Target devices / required connection modes: Not confirmed
+Estimated bulk quantity range: Not confirmed
+Sample quantity / required review timing: Not confirmed
+Logo placement / color direction: Not confirmed
+Retail box / manual language: Not confirmed
+Required receiver / adapters / cables / microphone: Not confirmed
+Other included or optional items: Not confirmed
+Documents / labels to review for the destination market: Not confirmed
+
+MESSAGE TO THE SUPPLIER
+Hello,
+We are reviewing [model or product direction] for [market and sales channel].
+Our target devices and required connection modes are [details].
+We estimate [quantity range] and would like to review [sample quantity]
+by [requested timing]. Our branding and packing requirements are [details].
+
+Please confirm:
+1. The exact model/version and its specification file for the proposed sample.
+2. Which receiver, adapters, cables, microphone and packaging are included,
+   optional or quoted separately.
+3. MOQ by model, color and packaging configuration; sample charges and any
+   setup, tooling or engineering work quoted separately.
+4. The sample review and artwork approval steps, proposed timing, shipping
+   scope, payment terms and quotation validity for this configuration.
+5. Available model-specific documents and any unresolved requirement above.
+
+Please identify unknown items and any proposed substitutions in your reply.
+Thank you,
+[Name / company / preferred reply contact]
+
+BEFORE SENDING
+A proposed date is a request, not a confirmed delivery promise.
+Confirm the final version, included set and commercial terms in writing.
+For G946, distinguish Headset Only from the same headset with a wireless
+charging dock. Do not assume either package's remaining accessory contents.
+
+TALRIVO RFQ route:
+https://talrivo.com/contact/?product=gaming-headsets&inquiry=rfq&reference=rfq-template#inquiry-form
+Email: sales@talrivo.com
+
+SOURCE AND SHARING THE BLANK WORKSHEET
+Instructions: https://talrivo.com/rfq-guide/#rfq-download
+Compare quote scope:
+https://talrivo.com/insights/private-label-gaming-headset-rfq-checklist/#quote-comparison
+Share this blank worksheet with your buying team. Keep completed buyer details
+and supplier quotations private. Link to the instructions when sharing the
+blank resource publicly. No price, universal MOQ or lead time is offered here.
