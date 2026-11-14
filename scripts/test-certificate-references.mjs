@@ -13,7 +13,9 @@ assert.match(section, /Nanrui Electronic Technology Co\., Ltd\./);
 assert.match(section, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
 assert.match(section, /July 31, 2024/);
 assert.match(section, /do not name TALRIVO as the certificate holder/);
-assert.match(section, /G936 and other unlisted models are not covered/);
+assert.match(section, /Only the codes listed above appear in these displayed documents/);
+assert.match(section, /G946, G941, G935 and G936 are not listed/);
+assert.match(section, /does not establish the document status of those unlisted products/);
 assert.match(section, /not a new issuer verification/);
 for (const [name, expected] of originals) {
   const pdf = readFileSync(`assets/certificates/${name}.pdf`);
@@ -96,13 +98,14 @@ assert.match(homeFactory, /Nanrui Electronic Technology Co\., Ltd\./);
 assert.match(homeFactory, /July 31, 2024/);
 assert.match(homeFactory, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
 assert.match(homeFactory, /do not name TALRIVO as the holder/);
-assert.match(homeFactory, /G936 is not listed/);
+assert.match(homeFactory, /G946, G941, G935 and G936 are not listed/);
+assert.match(homeFactory, /A listed code alone does not confirm coverage for every version/);
 assert.match(homeFactory, /not a model-specific test report or a production-capacity audit/);
 for (const anchor of ['process-references', 'published-certificates']) {
   assert.ok(home.includes(`href="gaming-headset-quality-review/#${anchor}"`));
 }
 const homeGraph = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
-assert.equal(homeGraph.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-11-14');
-assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/</loc>\n    <lastmod>2026-11-14</lastmod>'));
+assert.equal(homeGraph.find(schema => schema['@type'] === 'WebPage').dateModified, '2026-11-15');
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/</loc>\n    <lastmod>2026-11-15</lastmod>'));
 assert.doesNotMatch(homeFactory, /all products (?:are )?certified|ISO.?9001|BSCI|FCC certified/i);
 console.log('Homepage evidence checks passed: early photo gallery, hero/navigation/footer paths, direct original PDFs, responsive lazy previews and explicit certificate scope.');
