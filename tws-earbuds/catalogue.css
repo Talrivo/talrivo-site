@@ -1,43 +1,59 @@
-#models .sample-image-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Only the TWS category uses these layout rules. */
+.tws-buyer-page .tws-intro {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem !important;
 }
-#models .sample-image-grid article img {
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-}
-#models .sample-image-grid article > .text-action {
-  display: inline-block;
-  margin-top: 1rem;
-}
-#listed-configurations {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-#listed-configurations h3 a {
-  font-size: 1rem;
-  line-height: 1.4;
-  text-transform: none;
-}
-.tws-catalogue-layout {
-  align-items: start;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
-}
-.tws-catalogue-preview { display: block; }
-.tws-catalogue-preview img {
-  aspect-ratio: 1600 / 1301;
-  display: block;
-  height: auto;
-  object-fit: contain;
-  width: 100%;
-}
+.tws-buyer-page .tws-intro h1 { margin-bottom: 1rem; }
+.tws-buyer-page .tws-intro p { max-width: 650px; }
+.tws-style-links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.25rem; }
+.tws-style-links a { display: inline-flex; align-items: center; gap: 1rem; border: 1px solid var(--line); border-radius: 999px; padding: .7rem 1rem; font-size: .9rem; font-weight: 600; }
+.tws-style-links a:hover { background: #eff4f6; }
+.tws-intro-links { display: grid; gap: 1rem; padding-bottom: .5rem; font-size: .85rem; }
+.tws-buyer-page #models { padding-top: .5rem; }
+.tws-models-heading { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#models .sample-image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: stretch; }
+#models .sample-image-grid article { padding: 0; overflow: hidden; background: #f3f6f7; display: flex; flex-direction: column; scroll-margin-top: 110px; }
+.tws-model-image { display: flex; align-items: center; justify-content: center; background: #f0f1ef; }
+#models .sample-image-grid article img { aspect-ratio: 1.8; object-fit: contain; border-radius: 0; margin: 0; max-height: 310px; }
+#models .sample-image-grid .tws-in-ear-image img { background: #f0f1ef; }
+.tws-model-copy { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+#models .tws-model-copy .label { margin-bottom: .45rem; color: #4f636d; }
+#models .tws-model-copy h3 { font-size: 1.65rem; line-height: 1.2; margin: 0 0 .65rem; font-weight: 600; }
+.tws-model-copy h3 a { color: var(--ink); text-decoration: none; }
+#models .tws-model-copy > p:not(.label) { color: var(--ink-soft); line-height: 1.6; }
+.tws-model-points { font-size: .875rem; line-height: 1.65; padding-left: 1.1rem; margin: 1rem 0 1.35rem; color: var(--ink-soft); }
+.tws-model-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.25rem; margin-top: auto; }
+.tws-model-actions .button { gap: .75rem; font-size: .875rem; padding: .8rem 1.1rem; }
+.tws-model-actions .text-action { font-size: .875rem; text-transform: none; letter-spacing: 0; }
+.tws-buyer-page .tws-image-note { font-size: .8rem; color: var(--muted); margin: 1rem 0 1.5rem; }
+.tws-more-models { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1rem 0; }
+.tws-more-models summary { cursor: pointer; font-weight: 600; line-height: 1.6; }
+.tws-more-models[open] summary { margin-bottom: 1rem; }
+.tws-directory-link { margin-bottom: 0; }
+#listed-configurations { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+#listed-configurations h3 a { font-size: 1rem; line-height: 1.4; text-transform: none; }
+.tws-catalogue-layout { align-items: center; display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr); }
+.tws-catalogue-preview { display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.tws-catalogue-preview img { aspect-ratio: 1600 / 1301; display: block; height: auto; object-fit: contain; width: 100%; }
 .tws-catalogue-copy { min-width: 0; }
 .tws-catalogue-copy h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem; }
-.tws-catalogue-downloads { display: grid; gap: 0.75rem; margin: 1.25rem 0; }
-.tws-catalogue-downloads .button { gap: 0.5rem; min-width: 0; white-space: normal; }
-.tws-catalogue-note { color: var(--muted); font-size: 0.875rem; }
+.tws-catalogue-downloads { display: grid; gap: .75rem; margin: 1.25rem 0; }
+.tws-catalogue-downloads .button { gap: .5rem; min-width: 0; white-space: normal; }
+.tws-catalogue-note { color: var(--muted); font-size: .875rem; }
+.tws-sample-steps .buyer-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tws-buyer-page a:focus-visible, .tws-buyer-page summary:focus-visible { outline: 3px solid #387a99; outline-offset: 4px; }
+@media (max-width: 1000px) {
+  .tws-buyer-page .tws-intro { grid-template-columns: minmax(0, 1fr); }
+  .tws-intro-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+}
 @media (max-width: 820px) {
-  #models .sample-image-grid { grid-template-columns: minmax(0, 1fr); }
-  #listed-configurations { grid-template-columns: minmax(0, 1fr); }
-  .tws-catalogue-layout { grid-template-columns: minmax(0, 1fr); }
+  #models .sample-image-grid, #listed-configurations, .tws-catalogue-layout, .tws-sample-steps .buyer-summary { grid-template-columns: minmax(0, 1fr); }
+  #models .sample-image-grid article img { max-height: 340px; }
+  .tws-model-copy { padding: 1.25rem; }
+  .tws-model-actions { gap: 1rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tws-style-links a { transition: background-color .15s ease; }
 }

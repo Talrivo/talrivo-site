@@ -134,7 +134,7 @@ const optionLinks = [...listedOptions.matchAll(/<h3><a class="text-action" href=
 assert.equal(optionLinks.length, 3);
 const collection = [...twsCategory.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json)).find(schema => schema['@type'] === 'CollectionPage');
-assert.equal(collection.dateModified, '2026-11-02');
+assert.equal(collection.dateModified, '2026-11-14');
 assert.deepEqual(collection.mainEntity.itemListElement.slice(2, 5).map(({ name, url }) => ({ name, url })), optionLinks);
 console.log('Reviewed TWS checks passed: three distinct product briefs and FAQs, unchanged listed facts, illustration/runtime limits and category discovery links.');
 

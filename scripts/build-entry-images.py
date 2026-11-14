@@ -63,6 +63,8 @@ SOURCES = {
     "g936-overview": "assets/catalog/g936-lightweight/evidence/display/g936-overview-receiver.jpg",
     "b9-desk": "assets/catalog/b9-bluetooth/reference/b9-black-lifestyle-desk.jpg",
     "b7-overview": "assets/catalog/b7-bluetooth/image-01.jpg",
+    "tws044f-desk": "assets/catalog/tws-tws044f/evidence/display/tws044f-office-lifestyle-open-case.jpg",
+    "earclip09s-case": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-open-case.jpg",
     "tws044f-overview": "assets/catalog/tws-tws044f/evidence/display/tws044f-case-earbuds-overview.jpg",
     "g942-wired": "assets/catalog/g942-wired/image-01.png",
     "g935-wired": "assets/catalog/g935-wired/image-01.jpg",
