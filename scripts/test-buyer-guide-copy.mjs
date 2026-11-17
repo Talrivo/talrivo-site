@@ -148,7 +148,7 @@ for (const [slug, title, anchor, faqCount] of buyerDemandCases) {
   const article = schemas.find(schema => schema['@type'] === 'Article');
   assert.equal(article.headline, title);
   assert.equal(article.description, descriptions[0]);
-  const revision = slug === 'private-label-gaming-headset-rfq-checklist' ? '2026-11-13' : '2026-11-01';
+  const revision = slug === 'private-label-gaming-headset-rfq-checklist' ? '2026-11-18' : '2026-11-01';
   assert.equal(article.dateModified, revision);
   assert.equal(article.mainEntityOfPage, url);
   assert.ok(html.includes(`<link rel="canonical" href="${url}">`));
