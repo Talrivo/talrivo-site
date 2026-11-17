@@ -246,3 +246,58 @@ for (const consent of [null, 'denied', 'granted']) {
 }
 }
 console.log('G946 worksheet signal remains a consented resource click, never a lead or a completed review.');
+
+// Cover published TWS/Bluetooth routes without sending input, query strings or lead events.
+const audioFolders = ['tws-earbuds', 'bluetooth-headphones'];
+const { readdirSync, existsSync } = await import('node:fs');
+const audioModelRoutes = audioFolders.flatMap(folder => readdirSync(folder, {withFileTypes:true})
+  .filter(entry => entry.isDirectory() && existsSync(`${folder}/${entry.name}/index.html`))
+  .map(entry => `/${folder}/${entry.name}/`));
+assert.equal(audioModelRoutes.length, 30);
+for (const route of audioModelRoutes) {
+  const category = `/${route.split('/')[1]}/`;
+  const run = scenario('granted', false, `https://talrivo.com${category}?private=buyer-note`);
+  run.click(`${route}?message=private-text#private-hash`, '', false, true);
+  assert.equal(run.events().length, 1, `Record category-to-model click: ${route}`);
+  assert.equal(run.events()[0][1], 'buyer_resource_click');
+  assert.equal(run.events()[0][2].resource_type, 'model_details');
+  assert.equal(run.events()[0][2].destination_path, route);
+  assert.equal(run.events()[0][2].page_path, category);
+  assert.deepEqual(Object.keys(run.events()[0][2]).sort(), ['destination_path','page_path','resource_type']);
+  assert.doesNotMatch(JSON.stringify(run.events()), /private|buyer-note|message=|generate_lead/);
+  const detail = scenario('granted', false, `https://talrivo.com${route}?private=buyer-note`);
+  detail.click('/contact/?product=ignored&inquiry=sample&message=private-text#inquiry-form','',false,true);
+  assert.equal(detail.events().length, 1);
+  assert.equal(detail.events()[0][2].resource_type, 'inquiry_form');
+  assert.equal(detail.events()[0][2].destination_path, '/contact/');
+  assert.doesNotMatch(JSON.stringify(detail.events()), /private|buyer-note|product=|inquiry=|generate_lead/);
+  detail.values.set('talrivoAnalyticsConsent','denied');
+  detail.click('/sample-request/','',false,true);
+  assert.equal(detail.events().length, 1, 'Withdrawal stops tracking on new audio pages');
+  for (const consent of [null,'denied']) {
+    const denied = scenario(consent,false,`https://talrivo.com${category}`);
+    denied.click(route,'',false,true);
+    assert.equal(denied.events().length,0);
+  }
+  const unavailable = scenario('granted',true,`https://talrivo.com${route}`);
+  unavailable.click('/contact/','',false,true);
+  assert.equal(unavailable.events().length,0);
+  const html = readFileSync(`${route.slice(1)}index.html`,'utf8');
+  assert.match(html, /analytics\.js\?v=20261116audio/);
+}
+for (const guide of ['in-ear-vs-open-ear-tws-earbuds-private-label','compare-tws-earbuds-private-label-sampling','open-ear-tws-earbuds-private-label-buyers']) {
+  const run=scenario('granted',false,`https://talrivo.com/insights/${guide}/`);
+  run.click('/tws-earbuds/earclip09s/','',false,true);
+  assert.equal(run.events().length,1);
+  assert.equal(run.events()[0][2].resource_type,'model_details');
+}
+const audioExclusions=scenario('granted',false,'https://talrivo.com/tws-earbuds/');
+for (const href of ['/tws-earbuds/private-buyer/','/bluetooth-headphones/private-buyer/','https://example.org/tws-earbuds/tws044f/','https://talrivo.com.example.org/tws-earbuds/tws044f/','#unrelated','/contact/extra/']) {
+  audioExclusions.click(href,'',false,true);
+}
+audioExclusions.click('/contact/?product=tws044f','.site-header');
+assert.equal(audioExclusions.events().length,0,'Ignore unknown routes, external destinations and navigation');
+const unknownAudioSource=scenario('granted',false,'https://talrivo.com/tws-earbuds/private-buyer/');
+unknownAudioSource.click('/contact/','',false,true);
+assert.equal(unknownAudioSource.events().length,0,'Do not collect an unknown source pathname');
+console.log('Audio click checks passed: all 30 model routes, 2 categories, 3 guides, correct cache tags, consent/withdrawal/storage limits and no private or lead payloads.');

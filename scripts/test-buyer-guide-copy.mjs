@@ -15,7 +15,7 @@ const html = pages.map(([slug, title]) => {
   const schemas = [...content.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
   assert.equal(schemas.find(schema => schema['@type'] === 'Article').dateModified,
-    slug === 'choose-gaming-headset-manufacturer-china' ? '2026-10-25'
+    slug === 'choose-gaming-headset-manufacturer-china' ? '2026-11-15'
       : slug === '2-4g-vs-bluetooth-gaming-headsets-importers' ? '2026-11-06'
       : slug === 'evaluate-gaming-headset-sample-before-bulk-order' ? '2026-11-11' : '2026-10-22');
   const claims = content.replaceAll('Do not promise zero latency.', '');
@@ -38,7 +38,7 @@ for (const target of [
 ]) {
   assert.ok(questions.includes(`href="${target}"`), `Manufacturer question needs a reviewable source: ${target}`);
 }
-assert.match(questions, /G936 is not listed in those two documents/);
+assert.match(questions, /discuss testing and documentation for the selected product and destination market/);
 assert.match(questions, /not a G935 performance test/);
 assert.match(questions, /inquiry=quick-question/);
 assert.ok(usb.indexOf('href="#no-sound"') < usb.indexOf('<figure'), 'Offer troubleshooting before the large product image');
@@ -313,7 +313,8 @@ for (const [slug, title, anchor] of regionCases) {
   assert.equal(page.name, title);
   assert.equal(page.description, descriptions[0]);
   assert.equal(page.url, url);
-  assert.equal(page.dateModified, '2026-11-02');
+  const regionRevision = slug === 'audio-products-for-europe-buyers' ? '2026-11-15' : '2026-11-02';
+  assert.equal(page.dateModified, regionRevision);
   assert.equal(schemas.find(schema => schema['@type'] === 'BreadcrumbList').itemListElement.at(-1).item, url);
   const faqSection = html.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
   const visible = [...faqSection.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
@@ -333,13 +334,13 @@ for (const [slug, title, anchor] of regionCases) {
   assert.doesNotMatch(html, /class="text-action"/, 'Use readable resource links rather than the product-card action style');
   assert.ok(html.includes('href="../contact/?product=custom-audio&amp;inquiry=rfq#inquiry-form"'));
   assert.ok(html.includes('href="../audio-products-for-importers/"'));
-  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>2026-11-02</lastmod>`));
+  assert.ok(demandSitemap.includes(`<loc>${url}</loc>\n    <lastmod>${regionRevision}</lastmod>`));
   assert.ok(demandLlms.includes(`](${url}):`));
   assert.doesNotMatch(html, /Best fit for|What TALRIVO can support|guaranteed to increase clicks|free samples?|Europe certified/i);
 }
 assert.equal(new Set(regionQuestions).size, 12, 'Region FAQs must answer distinct buyer tasks, not just swap place names');
 const europe = regionPages.get('audio-products-for-europe-buyers');
-assert.match(europe, /G936 is not listed in those two documents/);
+assert.match(europe, /review testing and documentation needs for your project/);
 assert.match(europe, /EU guidance is not a substitute for checking a non-EU destination/);
 assert.ok(europe.includes('href="../insights/gaming-headset-import-documents-checklist/#certificate-match"'));
 assert.ok(europe.includes('href="https://europa.eu/youreurope/business/product-rules-compliance/general-product-compliance/ce-marking/index_en.htm"'));
@@ -431,8 +432,8 @@ assert.equal(supplierArticle.headline, 'OEM Gaming Headset Supplier Checklist');
 assert.equal(supplierArticle.description, supplierDescriptions[0]);
 assert.equal(supplierArticle.mainEntityOfPage, supplierUrl);
 assert.equal(supplierArticle.datePublished, '2026-07-31');
-assert.equal(supplierArticle.dateModified, '2026-11-03');
-assert.ok(supplierGuide.includes('Updated November 3, 2026'));
+assert.equal(supplierArticle.dateModified, '2026-11-15');
+assert.ok(supplierGuide.includes('Updated November 15, 2026'));
 assert.ok(supplierGuide.indexOf('href="#supplier-evidence"') < supplierGuide.indexOf('<img src='));
 assert.equal((supplierGuide.match(/id="supplier-evidence"/g) || []).length, 1);
 const supplierEvidence = supplierGuide.match(/<section[^>]*id="supplier-evidence"[\s\S]*?<\/section>/)[0];
@@ -458,14 +459,14 @@ for (const target of [
 for (const boundary of [
   'not a completed TALRIVO assessment',
   'not a TALRIVO price or standard packing list',
-  'G936 is not listed in those two documents',
+  'testing and documentation needed for your selected product and destination market',
   'Completed Bluetooth pairing is not clearly visible',
   'not a G935 performance test',
 ]) assert.ok(supplierGuide.includes(boundary));
 for (const type of ['quick-question', 'rfq']) {
   assert.ok(supplierGuide.includes(`href="../../contact/?product=gaming-headsets&amp;inquiry=${type}&amp;reference=oem-supplier-checklist#inquiry-form"`));
 }
-assert.ok(demandSitemap.includes(`<loc>${supplierUrl}</loc>\n    <lastmod>2026-11-03</lastmod>`));
+assert.ok(demandSitemap.includes(`<loc>${supplierUrl}</loc>\n    <lastmod>2026-11-15</lastmod>`));
 assert.ok(demandLlms.includes(`](${supplierUrl}): Eight supplier evidence checks`));
 assert.doesNotMatch(supplierGuide, /machine summaries|summaries grounded|lighter wireless|guaranteed to increase clicks|free samples?|MOQ[: ]+\d/i);
 console.log('Supplier checklist checks passed: eight evidence decisions, stable title and URL, five matching FAQs, reference-aware inquiry links and explicit evidence limits.');

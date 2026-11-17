@@ -1,68 +1,19 @@
-# TALRIVO Content Publishing Guide
+# TALRIVO public content guide
 
-## Current setup
+This repository contains the public website source and the scripts needed to build it.
+Changes are reviewed in Git and deployed through the GitHub Actions Pages workflow.
 
-The current TALRIVO website is a static GitHub Pages site. It does not have a browser-based admin panel, article editor, video uploader or CMS dashboard.
+## Editing public content
 
-Content can currently be published by editing website files in the repository and pushing changes to GitHub.
+- Keep model identity, product details and document references accurate.
+- Use approved images and preserve original media needed by build scripts.
+- Keep visible FAQ answers and structured data consistent.
+- Run the validation commands in `.github/workflows/deploy-pages.yml` before publishing.
+- Build with `node scripts/build-pages.mjs` and check `public/` with `python3 scripts/audit-public-links.py --root public`.
 
-Use `marketing/geo-growth-action-plan.md` as the top-level growth checklist before deciding what to publish next.
+## Private working material
 
-## Recommended content workflow
-
-Use one topic across the website and social channels:
-
-1. Website article or insight page: stable URL, full explanation, product links and structured headings.
-2. LinkedIn post: short professional summary that links to the website article or product page.
-3. Future official social post: visual product summary from the future official TALRIVO social profile that links to the same website URL.
-
-For the full GEO workflow and reusable post templates, use `marketing/geo-content-system.md`.
-
-For channel planning, use `marketing/social-publishing-calendar.md`.
-
-For tracking links and inquiry source review, use `marketing/conversion-tracking-notes.md`.
-
-For Search Console and GA4 setup, use `marketing/search-console-ga4-setup.md`.
-
-## Article content package
-
-For each article, prepare:
-
-- article title;
-- target product category;
-- 3 to 5 key points;
-- related product page links;
-- 1 hero image;
-- optional product video;
-- short LinkedIn version;
-- short future official social version.
-
-## Video content package
-
-For each video, prepare:
-
-- model name;
-- video file or hosted URL;
-- short title;
-- 1 paragraph summary;
-- product page link;
-- 3 key points shown in the video;
-- caption for LinkedIn and future official social content.
-
-## CMS options
-
-If TALRIVO needs a real upload window, add a CMS or move to a managed platform.
-
-Practical options:
-
-- Keep GitHub Pages and add Decap CMS with GitHub login. The first admin files are now prepared in `/admin/`; see `marketing/cms-setup-notes.md`.
-- Move content publishing to WordPress and keep product pages as structured posts.
-- Use Shopify or Webflow if product catalogue editing and visual page editing become the priority.
-
-For the current static site, the safest next step is to keep publishing through repository edits until the content structure is stable.
-
-## Regional publishing
-
-Use `marketing/multilingual-regional-plan.md` before creating translated pages.
-
-Start with buyer-intent pages such as category, sample request, RFQ guide and proven model pages. Do not publish many machine-translated pages without review.
+Store customer records, outreach drafts, analytics exports, internal diagnostics,
+credentials and unpublished business plans outside this public repository.
+The visitor-facing build exclusions do not make repository files private.
+The optional editor configuration retains this public guide as its help document.

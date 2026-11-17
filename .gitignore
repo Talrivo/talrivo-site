@@ -16,3 +16,8 @@ public/
 *.p12
 *.pfx
 private-operations/
+
+# Keep internal marketing notes outside the public source repository.
+/marketing/**/*.md
+/marketing/**/*.txt
+!/marketing/content-publishing-guide.md

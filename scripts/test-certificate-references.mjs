@@ -10,13 +10,7 @@ const html = readFileSync('gaming-headset-quality-review/index.html', 'utf8');
 const section = html.match(/<section[^>]*id="published-certificates"[\s\S]*?<\/section>/)?.[0];
 assert.ok(section, 'Original documents require a visible scope and named holder');
 assert.match(section, /Nanrui Electronic Technology Co\., Ltd\./);
-assert.match(section, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
 assert.match(section, /July 31, 2024/);
-assert.match(section, /do not name TALRIVO as the certificate holder/);
-assert.match(section, /Only the codes listed above appear in these displayed documents/);
-assert.match(section, /G946, G941, G935 and G936 are not listed/);
-assert.match(section, /does not establish the document status of those unlisted products/);
-assert.match(section, /not a new issuer verification/);
 for (const [name, expected] of originals) {
   const pdf = readFileSync(`assets/certificates/${name}.pdf`);
   assert.equal(pdf.toString('ascii', 0, 5), '%PDF-');
@@ -36,14 +30,10 @@ const guide = readFileSync('insights/gaming-headset-import-documents-checklist/i
 assert.ok(guide.includes('<title>Gaming Headset Import Documents Checklist | TALRIVO</title>'));
 assert.ok(guide.includes('<link rel="canonical" href="https://talrivo.com/insights/gaming-headset-import-documents-checklist/">'));
 assert.match(guide, /id="certificate-match" aria-labelledby="certificate-match-title"/);
-assert.match(guide, /href="#certificate-match">Check the Certificate Model List/);
+assert.match(guide, /href="#certificate-match">View Certificate References/);
 const matchSection = guide.match(/<section[^>]*id="certificate-match"[\s\S]*?<\/section>/)?.[0];
 assert.match(matchSection, /Nanrui Electronic Technology Co\., Ltd\./);
 assert.match(matchSection, /July 31, 2024/);
-assert.match(matchSection, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
-assert.match(matchSection, /G936 is not listed in these two PDFs/);
-assert.match(matchSection, /do not name TALRIVO as the certificate holder/);
-assert.match(matchSection, /not a new issuer verification or a complete set/);
 assert.match(matchSection, /class="seo-grid video-grid"/);
 assert.doesNotMatch(matchSection, /class="table-wrap"/, 'Keep the two original PDF links directly visible on narrow screens');
 for (const [name] of originals) {
@@ -58,8 +48,8 @@ assert.equal(article.description, description);
 for (const attribute of ['property="og:description"', 'name="twitter:description"']) {
   assert.ok(guide.includes(`<meta ${attribute} content="${description}">`));
 }
-assert.equal(article.dateModified, '2026-10-24');
-assert.match(guide, /Updated October 24, 2026/);
+assert.equal(article.dateModified, '2026-11-15');
+assert.match(guide, /Updated November 15, 2026/);
 const visibleFaq = guide.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
 const answers = [...visibleFaq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)]
   .map(([, question, answer]) => ({question, answer}));
@@ -96,10 +86,6 @@ assert.equal((homeFactory.match(/<img /g) || []).length, 8);
 assert.equal((homeFactory.match(/loading="lazy"/g) || []).length, 8);
 assert.match(homeFactory, /Nanrui Electronic Technology Co\., Ltd\./);
 assert.match(homeFactory, /July 31, 2024/);
-assert.match(homeFactory, /PHX-WPRO, G938, G939, G926, G927, G922 and G923/);
-assert.match(homeFactory, /do not name TALRIVO as the holder/);
-assert.match(homeFactory, /G946, G941, G935 and G936 are not listed/);
-assert.match(homeFactory, /A listed code alone does not confirm coverage for every version/);
 assert.match(homeFactory, /not a model-specific test report or a production-capacity audit/);
 for (const anchor of ['process-references', 'published-certificates']) {
   assert.ok(home.includes(`href="gaming-headset-quality-review/#${anchor}"`));
@@ -109,3 +95,10 @@ assert.equal(homeGraph.find(schema => schema['@type'] === 'WebPage').dateModifie
 assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/</loc>\n    <lastmod>2026-11-15</lastmod>'));
 assert.doesNotMatch(homeFactory, /all products (?:are )?certified|ISO.?9001|BSCI|FCC certified/i);
 console.log('Homepage evidence checks passed: early photo gallery, hero/navigation/footer paths, direct original PDFs, responsive lazy previews and explicit certificate scope.');
+
+const homeCertificates = home.match(/<div class="home-document-band"[\s\S]*?<div class="home-certificate-grid">/)[0];
+for (const reference of [section, matchSection, homeCertificates]) {
+  assert.doesNotMatch(reference, /PHX-WPRO|Listed models:|G936 is not listed|G946, G941, G935/,
+    'Keep model lists in the original documents rather than the reference display');
+  assert.match(reference, /selected product and destination market/);
+}

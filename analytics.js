@@ -245,15 +245,53 @@
       "/insights/gaming-headset-import-documents-checklist/",
       "/sample-request/",
       "/rfq-guide/",
-      "/insights/private-label-gaming-headset-rfq-checklist/"
+      "/insights/private-label-gaming-headset-rfq-checklist/",
+      "/insights/in-ear-vs-open-ear-tws-earbuds-private-label/",
+      "/insights/compare-tws-earbuds-private-label-sampling/",
+      "/insights/open-ear-tws-earbuds-private-label-buyers/"
     ];
+    // Explicit published routes keep unknown URLs and buyer text outside resource tracking.
+    const audioModelPages = [
+      "/bluetooth-headphones/b10-bluetooth/",
+      "/bluetooth-headphones/b7-bluetooth/",
+      "/bluetooth-headphones/b9-bluetooth/",
+      "/tws-earbuds/bch-002/",
+      "/tws-earbuds/earclip09s/",
+      "/tws-earbuds/ows-035/",
+      "/tws-earbuds/ows-103/",
+      "/tws-earbuds/tws002/",
+      "/tws-earbuds/tws005/",
+      "/tws-earbuds/tws007/",
+      "/tws-earbuds/tws008/",
+      "/tws-earbuds/tws012/",
+      "/tws-earbuds/tws013/",
+      "/tws-earbuds/tws016/",
+      "/tws-earbuds/tws017/",
+      "/tws-earbuds/tws019/",
+      "/tws-earbuds/tws029/",
+      "/tws-earbuds/tws031/",
+      "/tws-earbuds/tws035/",
+      "/tws-earbuds/tws040/",
+      "/tws-earbuds/tws042s/",
+      "/tws-earbuds/tws044/",
+      "/tws-earbuds/tws044f/",
+      "/tws-earbuds/tws052/",
+      "/tws-earbuds/tws056/",
+      "/tws-earbuds/tws057/",
+      "/tws-earbuds/tws058/",
+      "/tws-earbuds/tws059/",
+      "/tws-earbuds/tws070/",
+      "/tws-earbuds/twsz10/"
+];
     const productPages = [
       "/gaming-headsets/", "/wireless-gaming-headsets/", "/wired-gaming-headsets/", "/product-comparison/",
       "/gaming-headset-models/",
       "/gaming-headsets/g926-wired/", "/gaming-headsets/g926-wireless/", "/gaming-headsets/g935-wireless/",
       "/gaming-headsets/g936-lightweight/", "/gaming-headsets/g938-wireless/",
       "/gaming-headsets/g940-low-latency/", "/gaming-headsets/g941-tri-mode-anc/",
-      "/gaming-headsets/g946-rgb/", "/gaming-headsets/g947-foldable/"
+      "/gaming-headsets/g946-rgb/", "/gaming-headsets/g947-foldable/",
+      "/tws-earbuds/", "/bluetooth-headphones/",
+      ...audioModelPages
     ];
     if (![...guidePages, ...productPages].includes(window.location.pathname) || !target.closest("main")) return;
     let destination;
@@ -290,7 +328,7 @@
         : ["#review-worksheet", "#sample-review-tool"].includes(destination.hash) ? "sample_worksheet"
         : destination.hash === "#receiver-checks" ? "receiver_checklist"
         : destination.hash === "#connection-comparison" ? "connection_comparison" : null;
-    } else if (/^\/gaming-headsets\/[^/]+\/$/.test(destination.pathname)) {
+    } else if (/^\/gaming-headsets\/[^/]+\/$/.test(destination.pathname) || audioModelPages.includes(destination.pathname)) {
       resource = "model_details";
     }
     if (!resource) return;
