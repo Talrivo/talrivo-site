@@ -9,6 +9,21 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets" / "responsive"
 SOURCES = {
+    "factory-headset-parts-storage": "assets/quality-review/headset-parts-storage-reference.jpg",
+    "factory-packaging-material-preparation": "assets/quality-review/packaging-material-preparation-reference.jpg",
+    "detail-tws044f-open-case-strap-detail": "assets/catalog/tws-tws044f/evidence/display/tws044f-open-case-strap-detail.jpg",
+    "detail-tws044f-closed-case-earbuds": "assets/catalog/tws-tws044f/evidence/display/tws044f-closed-case-earbuds.jpg",
+    "detail-tws044f-packing-list-flatlay": "assets/catalog/tws-tws044f/evidence/display/tws044f-packing-list-flatlay.jpg",
+    "detail-tws044f-wearing-fit-indoor": "assets/catalog/tws-tws044f/evidence/display/tws044f-wearing-fit-indoor.jpg",
+    "detail-tws044f-wearing-fit-outdoor": "assets/catalog/tws-tws044f/evidence/display/tws044f-wearing-fit-outdoor.jpg",
+    "detail-earclip09s-closed-case": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-closed-case.jpg",
+    "detail-earclip09s-black-earbuds": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-black-earbuds.jpg",
+    "detail-earclip09s-black-closeup": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-black-closeup.jpg",
+    "detail-earclip09s-driver-detail": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-driver-detail.jpg",
+    "detail-earclip09s-packing-list": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-packing-list.jpg",
+    "detail-earclip09s-color-options": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-color-options.jpg",
+    "detail-earclip09s-lifestyle-panel": "assets/catalog/tws-earclip-09s/evidence/display/earclip09s-lifestyle-panel.jpg",
+
     "home-g946-lifestyle": "marketing/visuals/home-hero-20261114/g946-lifestyle-concept-original.png",
     # Product-detail previews; source files remain available through gallery links.
     "detail-g926-product-overview-receiver": "assets/catalog/g926-wireless/evidence/display/g926-product-overview-receiver.jpg",

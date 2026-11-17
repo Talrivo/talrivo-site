@@ -6,6 +6,9 @@ import { inlineCategoryStyles, CATEGORY_STYLE_SOURCES } from './sync-category-st
 
 const root = process.cwd();
 const pages = [
+  'gaming-headset-quality-review/index.html',
+  'tws-earbuds/tws044f/index.html',
+  'tws-earbuds/earclip09s/index.html',
   'index.html',
   'gaming-headsets/index.html',
   'gaming-headsets/g946-rgb/index.html',
