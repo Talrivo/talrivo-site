@@ -372,3 +372,21 @@ assert.ok(g936.includes('href="../../product-comparison/#quick-shortlist"'),
 assert.doesNotMatch(sampleGuide, /compares G935, G938, G940 and G941/,
   'Do not describe an absent G940 table row as a compared specification');
 console.log('Sample discovery checks passed: six aligned model choices and contextual guide/product links.');
+
+const sampleRequest = readFileSync('sample-request/index.html', 'utf8');
+const sampleRouteNav = sampleRequest.match(/<nav class="link-list" aria-label="Sample product routes">([\s\S]*?)<\/nav>/)[1];
+for (const target of ['headset-sample-shortlist', 'bluetooth-samples', 'tws-samples']) {
+  assert.ok(sampleRouteNav.includes(`href="#${target}"`));
+  assert.equal([...sampleRequest.matchAll(new RegExp(`id="${target}"`, 'g'))].length, 1);
+}
+const twsSampleSection = sampleRequest.match(/<section[^>]*id="tws-samples"[\s\S]*?<\/section>/)[0];
+for (const model of ['tws044f', 'earclip09s']) {
+  assert.ok(twsSampleSection.includes(`href="../tws-earbuds/${model}/"`));
+  assert.ok(twsSampleSection.includes(`href="../contact/?product=${model}&amp;inquiry=sample#inquiry-form"`));
+}
+const categorySchemas = [...category.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(([, json]) => JSON.parse(json));
+const categoryFaq = category.match(/<section class="seo-section seo-faq">([\s\S]*?)<\/section>/)[1];
+const visibleCategoryFaq = [...categoryFaq.matchAll(/<article><h3>([^<]+)<\/h3><p>([^<]+)<\/p><\/article>/g)].map(([, question, answer]) => ({question,answer}));
+assert.deepEqual(categorySchemas.find(s => s['@type'] === 'FAQPage').mainEntity.map(q => ({question:q.name,answer:q.acceptedAnswer.text})), visibleCategoryFaq);
+assert.equal(categorySchemas.find(s => s['@type'] === 'CollectionPage').dateModified, '2026-11-17');
+console.log('Buyer route checks passed: sample category anchors, exact TWS sample selections and synchronized gaming FAQ.');
