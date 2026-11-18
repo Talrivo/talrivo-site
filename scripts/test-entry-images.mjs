@@ -6,6 +6,10 @@ import { inlineCategoryStyles, CATEGORY_STYLE_SOURCES } from './sync-category-st
 
 const root = process.cwd();
 const pages = [
+  'insights/in-ear-vs-open-ear-tws-earbuds-private-label/index.html',
+  'insights/compare-tws-earbuds-private-label-sampling/index.html',
+  'insights/open-ear-tws-earbuds-private-label-buyers/index.html',
+  'insights/gaming-headset-ear-cushion-material-sample-checklist/index.html',
   'gaming-headset-quality-review/index.html',
   'tws-earbuds/tws044f/index.html',
   'tws-earbuds/earclip09s/index.html',
