@@ -6,6 +6,7 @@ import { inlineCategoryStyles, CATEGORY_STYLE_SOURCES } from './sync-category-st
 
 const root = process.cwd();
 const pages = [
+  '404.html',
   'insights/in-ear-vs-open-ear-tws-earbuds-private-label/index.html',
   'insights/compare-tws-earbuds-private-label-sampling/index.html',
   'insights/open-ear-tws-earbuds-private-label-buyers/index.html',
@@ -54,7 +55,7 @@ for (const page of pages) {
     for (const [src, descriptor] of candidates) {
       assert.match(descriptor, /^\d+w$/, `${page}: use width descriptors`);
       assert.ok(src.endsWith(`-${descriptor.slice(0, -1)}.webp`), `${page}: variant/width mismatch`);
-      const file = resolve(root, dirname(page), src);
+      const file = src.startsWith('/') ? resolve(root, src.slice(1)) : resolve(root, dirname(page), src);
       const bytes = readFileSync(file);
       assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${src}: invalid WebP header`);
       assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${src}: invalid WebP header`);

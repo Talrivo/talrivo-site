@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
 import { CHECKS, checkLiveSite, main } from './check-live-site.mjs';
 
@@ -61,3 +63,25 @@ for (const mime of ['text/html', 'application/json', undefined]) {
   assert.ok(badAsset.checks.filter(check => /_script|_stylesheet/.test(check.id)).every(check => check.status === 'fail'), 'An HTML error page must not pass as analytics or CSS');
 }
 console.log('Static resource checks passed: analytics, main CSS and quick-contact JavaScript must return HTTP 200 with the correct MIME type.');
+
+// GitHub Pages serves 404.html at the missing URL; relative resources break there.
+const missingPage = readFileSync('404.html', 'utf8');
+assert.match(missingPage, /<meta name="robots" content="noindex, follow">/);
+assert.doesNotMatch(missingPage, /http-equiv="refresh"|location\.(?:replace|assign)|rel="canonical"/i);
+const recoveryTargets = [...missingPage.matchAll(/\b(?:href|src)="([^"]+)"/g)].map(([, value]) => value);
+const imageTargets = [...missingPage.matchAll(/\bsrcset="([^"]+)"/g)]
+  .flatMap(([, value]) => value.split(',').map(item => item.trim().split(/\s+/)[0]));
+for (const missingUrl of ['https://talrivo.com/old-page/',
+  'https://talrivo.com/gaming-headsets/old-model/details/?campaign=old']) {
+  for (const value of [...recoveryTargets, ...imageTargets]) {
+    if (value.startsWith('mailto:')) continue;
+    assert.ok(value.startsWith('/') && !value.startsWith('//'), '404 recovery paths must be site-root relative');
+    const destination = new URL(value.replaceAll('&amp;', '&'), missingUrl);
+    assert.equal(destination.origin, 'https://talrivo.com');
+    assert.ok(existsSync(resolve(process.cwd(), '.' + destination.pathname)), `Missing recovery destination: ${value}`);
+  }
+}
+for (const route of ['/gaming-headset-models/', '/gaming-headsets/', '/tws-earbuds/', '/site-map/']) {
+  assert.ok(missingPage.includes(`href="${route}"`));
+}
+console.log('404 recovery checks passed: nested missing URLs keep site-root assets, model/category routes, noindex and no forced redirect.');

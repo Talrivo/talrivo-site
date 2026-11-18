@@ -197,7 +197,7 @@ assert.equal(new Set(hubDescriptions).size, 1);
 const hubSchemas = [...index.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
 const hubCollection = hubSchemas.find(schema => schema['@type'] === 'CollectionPage');
-assert.equal(hubCollection.dateModified, '2026-11-13');
+assert.equal(hubCollection.dateModified, '2026-11-18');
 assert.equal(hubCollection.description, hubDescriptions[0]);
 const topicIds = ['connection-guides', 'sound-comfort-guides', 'quote-guides', 'sample-guides', 'model-comparisons', 'earbud-guides'];
 const topicSections = [...index.matchAll(/<section class="seo-section guide-topic" id="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)];
@@ -210,8 +210,8 @@ const topicCards = topicSections.flatMap(([, , section]) => [...section.matchAll
 assert.equal(topicCards.length, 22);
 assert.equal(new Set(topicCards.map(card => new URL(card.url).pathname)).size, 22, 'List each guide once in the topic groups');
 const hubItems = hubCollection.mainEntity.itemListElement;
-assert.equal(hubItems.length, 30);
-assert.deepEqual(hubItems.map(item => item.position), Array.from({ length: 30 }, (_, i) => i + 1));
+assert.equal(hubItems.length, 31);
+assert.deepEqual(hubItems.map(item => item.position), Array.from({ length: 31 }, (_, i) => i + 1));
 assert.deepEqual(hubItems.slice(0, 22).map(({ name, url }) => ({ name, url })), topicCards);
 assert.equal(new Set(hubItems.map(item => item.url)).size, hubItems.length);
 for (const target of [
@@ -222,16 +222,16 @@ for (const target of [
 ]) assert.ok(index.includes(`href="${target}"`));
 assert.ok(index.includes('class="button primary" href="#connection-guides"'));
 assert.ok(index.includes('href="../contact/?product=audio-products&amp;inquiry=rfq#inquiry-form"'));
-assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-13</lastmod>`));
+assert.ok(demandSitemap.includes(`<loc>${hubUrl}</loc>\n    <lastmod>2026-11-18</lastmod>`));
 assert.ok(demandLlms.includes(`[Insights](${hubUrl}):`));
 assert.doesNotMatch(index, /For GEO|guaranteed to increase clicks|zero latency/i);
 const videoSection = index.match(/<section[^>]*id="product-videos"[\s\S]*?<\/section>/)[0];
-assert.ok(index.includes('href="#product-videos">Watch Headset Demonstrations</a>'));
-assert.equal((videoSection.match(/<article>/g) || []).length, 8);
+assert.ok(index.includes('href="#product-videos">Watch Headset Videos</a>'));
+assert.equal((videoSection.match(/<article>/g) || []).length, 9);
 assert.ok(videoSection.includes('href="../videos/g938-phone-setup-controls/"'));
 assert.ok(videoSection.includes('completed pairing is not clearly visible'));
-assert.equal(hubItems[24].url, 'https://talrivo.com/videos/g938-phone-setup-controls/');
-console.log('Insights hub checks passed: six topic routes, 22 distinct guides, eight video resources, aligned collection data and a direct hands-on demo entry.');
+assert.equal(hubItems[25].url, 'https://talrivo.com/videos/g938-phone-setup-controls/');
+console.log('Insights hub checks passed: six topic routes, 22 distinct guides, nine video resources, aligned collection data and a direct hands-on demo entry.');
 
 const channelCases = [
   ['audio-products-for-distributors', 'Wholesale Gaming Headsets for Distributors | TALRIVO', 'assortment-checks'],
@@ -520,3 +520,15 @@ assert.deepEqual(sampleFaqData.mainEntity.map(item => [item.name, item.acceptedA
 assert.ok(sample.includes('<main class="seo-page practical-guide">'));
 assert.ok(sample.includes('packing list before approval'));
 assert.doesNotMatch(sample, /No\. Packaging should be discussed after/);
+
+// A product film should lead to model evidence and configuration review, not imply a test.
+assert.equal(hubItems[22].url, 'https://talrivo.com/gaming-headsets/g946-rgb/#style-video');
+assert.equal(hubItems[22].name, 'G946 brand film and charging-dock configurations');
+const g946VideoCard = [...videoSection.matchAll(/<article>[\s\S]*?<\/article>/g)][0][0];
+for (const target of ['../gaming-headsets/g946-rgb/#style-video',
+  '../gaming-headsets/g946-rgb/#sample-configuration', 'https://youtu.be/sEeuIEnkcrQ']) {
+  assert.ok(g946VideoCard.includes(`href="${target}"`));
+}
+assert.match(g946VideoCard, /Both use the same headset/);
+assert.match(g946VideoCard, /not a charging, connection or performance test/);
+assert.doesNotMatch(g946VideoCard, /<iframe|<video|autoplay|VideoObject/);
