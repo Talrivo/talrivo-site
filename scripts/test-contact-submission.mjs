@@ -147,16 +147,16 @@ console.log('Inquiry source submission checks passed: observed hints and volunta
 const homeCode = fs.readFileSync('script.js', 'utf8');
 const sourceFunctions = homeCode.slice(homeCode.indexOf('function getStoredSourceContext()'), homeCode.indexOf('function setProductInterest('));
 const homeSubmitCode = homeCode.slice(homeCode.indexOf('let inquirySubmitting = false;'), homeCode.indexOf('if (contactDock) {', homeCode.indexOf('let inquirySubmitting = false;')));
-async function checkHomeSource(consent, touch, blocked = false) {
+async function checkHomeSource(consent, touch, blocked = false, {storedCampaign = {}, url = 'https://talrivo.com/', expectedChannel = 'perplexity'} = {}) {
   const sourceFields = Object.fromEntries(['pageUrl','pageTitle','referrer','firstLandingPage','firstReferrer','utmSource','utmMedium','utmCampaign','utmTerm','utmContent','selectedFrom','observedSource','sourceEvidence','sourceRecordedAt','sourceLandingPath'].map(key => [key,{value:''}]));
   let handler;
   const calls = [];
   const button = {disabled:false};
   const form = {dataset:{web3formsKey:'isolated-fixture-key'}, addEventListener:(type, fn)=>{handler=fn;}, querySelector:()=>button, reset() {}};
-  const window = {location:new URL('https://talrivo.com/'),localStorage:{getItem:key=>{if(blocked)throw Error('blocked');return key==='talrivoAnalyticsConsent'?consent:key==='talrivoInquirySource'?JSON.stringify({latestSourceTouch:touch}):null;}},setTimeout,clearTimeout};
+  const window = {location:new URL(url),localStorage:{getItem:key=>{if(blocked)throw Error('blocked');return key==='talrivoAnalyticsConsent'?consent:key==='talrivoInquirySource'?JSON.stringify({...storedCampaign,latestSourceTouch:touch}):null;}},setTimeout,clearTimeout};
   class HomeFields extends Map { constructor(){super([
     ['name','Test buyer'], ['email','test@example.invalid'],['product','G946'],['message','Keep my sample question'],['discovery_source','ChatGPT'],
-    ...['observedSource','sourceEvidence','sourceRecordedAt','sourceLandingPath'].map(key=>[key.replace(/[A-Z]/g,c=>'_'+c.toLowerCase()),sourceFields[key].value])
+    ...['observedSource','sourceEvidence','sourceRecordedAt','sourceLandingPath','utmSource','utmMedium','utmCampaign','utmTerm','utmContent'].map(key=>[key.replace(/[A-Z]/g,c=>'_'+c.toLowerCase()),sourceFields[key].value])
   ]);} }
   const context = {form,sourceFields,sourceStorageKey:'talrivoInquirySource',window,document:{title:'TALRIVO',referrer:''},URLSearchParams,
     formStatus:{textContent:'',classList:{add(){},remove(){}}},mailbox:'sales@talrivo.com',FormData:HomeFields,AbortController,
@@ -165,11 +165,12 @@ async function checkHomeSource(consent, touch, blocked = false) {
   assert.equal(calls.length,0);
   await handler({preventDefault(){}});
   assert.equal(calls.length,1);
-  const expected = consent==='granted'&&!blocked?'perplexity':'unknown';
+  const expected = consent==='granted'&&!blocked?expectedChannel:'unknown';
   assert.equal(calls[0].get('observed_source'),expected);
   assert.equal(calls[0].get('discovery_source'),'ChatGPT');
   assert.match(calls[0].get('message'), /Keep my sample question/);
   assert.ok(calls[0].get('message').includes(`Last observed source hint (30-day window): ${expected}`));
+  return {sourceFields, body:calls[0]};
 }
 for(const consent of [null,'denied','granted']) await checkHomeSource(consent,sourceHint.latestSourceTouch);
 await checkHomeSource('granted',sourceHint.latestSourceTouch,true);
@@ -177,3 +178,24 @@ const homeHtml=fs.readFileSync('index.html','utf8');
 assert.ok(homeHtml.includes('name="discovery_source"'));
 assert.ok(homeHtml.indexOf('name="discovery_source"')>homeHtml.indexOf('<details class="rfq-optional-details">'));
 console.log('Homepage RFQ source checks passed: actual source functions and isolated submit handler, consent denied/granted/blocked, separate voluntary answer and preserved buyer message.');
+
+for (const channel of ['linkedin','facebook','youtube','reddit']) {
+  const touch = {...sourceHint.latestSourceTouch, channel};
+  const {body} = await checkHomeSource('granted', touch, false,
+    {storedCampaign:{utmSource:channel,utmMedium:'organic_social',utmCampaign:'mic_noise_202611'},expectedChannel:channel});
+  assert.equal(body.get('utm_source'),channel);
+  assert.equal(body.get('utm_campaign'),'mic_noise_202611');
+}
+for (const touch of [undefined,
+  {...sourceHint.latestSourceTouch, recordedAt:new Date(Date.now()-31*86400000).toISOString()},
+  {...sourceHint.latestSourceTouch, recordedAt:'invalid'}]) {
+  const storedCampaign={utmSource:'linkedin',utmMedium:'social',utmCampaign:'stale'};
+  const {body} = await checkHomeSource('granted',touch,false,{storedCampaign,expectedChannel:'unknown'});
+  assert.equal(body.get('utm_source'),'');
+  assert.equal(body.get('utm_campaign'),'');
+  const current = await checkHomeSource('granted',touch,false,
+    {storedCampaign,url:'https://talrivo.com/?utm_source=facebook',expectedChannel:'unknown'});
+  assert.equal(current.body.get('utm_source'),'facebook');
+  assert.equal(current.body.get('utm_campaign'),'');
+}
+console.log('Homepage social handoff passed: four social categories, valid campaign retention, expired/missing evidence rejection and current-URL priority; network mocked.');

@@ -505,7 +505,7 @@ for (const [referer, expected] of [
   ['https://copilot.microsoft.com/chats/private-note', 'copilot'],
   ['https://chat.openai.com/c/private-note', 'chatgpt'],
   ['https://chatgpt.com.evil.example/private-note', 'other'],
-  ['https://www.youtube.com/watch?v=private-note', 'other'],
+  ['https://www.youtube.com/watch?v=private-note', 'youtube'],
 ]) {
   const result = runAnalytics('https://talrivo.com/gaming-headsets/', 'granted', aiEntry, referer);
   assert.equal(result.latestSourceTouch.channel, expected);
@@ -546,3 +546,52 @@ assert.match(discovery, /<option value="">/);
 assert.match(discovery, /<option>ChatGPT<\/option>/);
 assert.ok(contactHtml.indexOf(discovery) > contactHtml.indexOf('<details class="rfq-optional-details">'));
 console.log('Acquisition-hint checks passed: consent, last observed source, internal navigation, new referral override, AI host boundaries, tagged-link distinction, 30-day expiry, no private new fields and optional self-report.');
+
+
+// Distinguish supported social sources without persisting referrer contents in a touch.
+for (const [host, expected] of [
+  ['www.linkedin.com', 'linkedin'], ['lnkd.in', 'linkedin'],
+  ['www.facebook.com', 'facebook'], ['l.facebook.com', 'facebook'], ['lm.facebook.com', 'facebook'],
+  ['www.youtube.com', 'youtube'], ['youtu.be', 'youtube'],
+  ['www.reddit.com', 'reddit'], ['old.reddit.com', 'reddit'], ['out.reddit.com', 'reddit'],
+  ['linkedin.com.evil.example', 'other'], ['reddit.com.evil.example', 'other'],
+]) {
+  const social = runAnalytics('https://talrivo.com/insights/gaming-headset-microphone-performance/',
+    'granted', null, `https://${host}/private-thread?message=private-message`);
+  assert.equal(social.latestSourceTouch.channel, expected);
+  assert.equal(social.latestSourceTouch.evidence, 'external_referrer');
+  assert.doesNotMatch(JSON.stringify(social.latestSourceTouch), /private-|message=|https:/);
+  const internal = runAnalytics('https://talrivo.com/contact/?product=g946', 'granted', social,
+    'https://talrivo.com/insights/gaming-headset-microphone-performance/');
+  assert.deepEqual(internal.latestSourceTouch, social.latestSourceTouch);
+  const inquiry = runContact('https://talrivo.com/contact/?product=g946', internal);
+  assert.equal(inquiry.nodes.get('#contact-observed-source').value, expected);
+  assert.equal(inquiry.events.length, 0);
+  for (const consent of [null, 'denied']) {
+    assert.equal(runAnalytics('https://talrivo.com/', consent, null, `https://${host}/`), null);
+    assert.equal(runContact('https://talrivo.com/contact/', internal, consent)
+      .nodes.get('#contact-observed-source').value, 'unknown');
+  }
+}
+for (const channel of ['linkedin','facebook','youtube','reddit']) {
+  const tagged = runAnalytics(`https://talrivo.com/?utm_source=${channel}&utm_medium=organic_social&utm_campaign=mic_noise_202611`);
+  assert.equal(tagged.latestSourceTouch.channel, channel);
+  assert.equal(tagged.latestSourceTouch.evidence, 'tagged_link');
+  assert.equal(runContact('https://talrivo.com/contact/', tagged).nodes.get('#contact-utm-source').value, channel);
+}
+for (const touch of [
+  undefined,
+  {...linkedinTouch.latestSourceTouch, recordedAt: new Date(Date.now()-31*86400000).toISOString()},
+  {...linkedinTouch.latestSourceTouch, recordedAt: new Date(Date.now()+86400000).toISOString()},
+  {...linkedinTouch.latestSourceTouch, recordedAt: 'invalid'},
+]) {
+  const stale = {...linkedinTouch, latestSourceTouch:touch};
+  const inquiry = runContact('https://talrivo.com/contact/', stale);
+  for (const field of ['source','medium','campaign','term','content']) {
+    assert.equal(inquiry.nodes.get(`#contact-utm-${field}`).value, '', 'Unproven/stale campaign must not enter an inquiry');
+  }
+  const current = runContact('https://talrivo.com/contact/?utm_source=facebook&utm_medium=organic_social', stale);
+  assert.equal(current.nodes.get('#contact-utm-source').value, 'facebook');
+  assert.equal(current.nodes.get('#contact-utm-campaign').value, '');
+}
+console.log('Social handoff passed: exact host categories, tagged-link distinction, internal retention, consent, spoofed domains, expired/invalid legacy campaigns and current-link precedence.');

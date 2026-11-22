@@ -303,10 +303,11 @@ function populateSourceFields() {
   const recorded = touch && typeof touch === "object" ? Date.parse(touch.recordedAt) : NaN;
   const age = Date.now() - recorded;
   const sourceKnown = touch && typeof touch === "object" && !Array.isArray(touch)
-    && ["chatgpt", "perplexity", "gemini", "copilot", "other", "unknown"].includes(touch.channel)
+    && ["chatgpt", "perplexity", "gemini", "copilot", "linkedin", "facebook", "youtube", "reddit", "other", "unknown"].includes(touch.channel)
     && ["tagged_link", "external_referrer"].includes(touch.evidence)
     && Number.isFinite(age) && age >= 0 && age <= 30 * 24 * 60 * 60 * 1000
     && typeof touch.landingPath === "string" && /^\/(?!\/)[^?#\s]{0,200}$/.test(touch.landingPath);
+  const campaignSource = sourceKnown ? storedSource : {};
   const values = {
     observedSource: sourceKnown ? touch.channel : "unknown",
     sourceEvidence: sourceKnown ? touch.evidence : "unavailable",
@@ -317,11 +318,11 @@ function populateSourceFields() {
     referrer: document.referrer || "Direct / not available",
     firstLandingPage: storedSource.firstLandingPage || window.location.href,
     firstReferrer: storedSource.firstReferrer || "Direct / not available",
-    utmSource: getUtmValue("utm_source", storedSource),
-    utmMedium: getUtmValue("utm_medium", storedSource),
-    utmCampaign: getUtmValue("utm_campaign", storedSource),
-    utmTerm: getUtmValue("utm_term", storedSource),
-    utmContent: getUtmValue("utm_content", storedSource)
+    utmSource: getUtmValue("utm_source", campaignSource),
+    utmMedium: getUtmValue("utm_medium", campaignSource),
+    utmCampaign: getUtmValue("utm_campaign", campaignSource),
+    utmTerm: getUtmValue("utm_term", campaignSource),
+    utmContent: getUtmValue("utm_content", campaignSource)
   };
   Object.entries(values).forEach(([key, value]) => {
     if (sourceFields[key]) sourceFields[key].value = value;

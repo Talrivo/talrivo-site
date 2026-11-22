@@ -305,10 +305,13 @@ if (contactForm) {
     const recorded = touch && typeof touch === "object" ? Date.parse(touch.recordedAt) : NaN;
     const age = Date.now() - recorded;
     const sourceKnown = touch && typeof touch === "object" && !Array.isArray(touch)
-      && ["chatgpt", "perplexity", "gemini", "copilot", "other", "unknown"].includes(touch.channel)
+      && ["chatgpt", "perplexity", "gemini", "copilot", "linkedin", "facebook", "youtube", "reddit", "other", "unknown"].includes(touch.channel)
       && ["tagged_link", "external_referrer"].includes(touch.evidence)
       && Number.isFinite(age) && age >= 0 && age <= 30 * 24 * 60 * 60 * 1000
       && typeof touch.landingPath === "string" && /^\/(?!\/)[^?#\s]{0,200}$/.test(touch.landingPath);
+    // Stored campaign fields expire with their supporting source touch. Current
+    // URL tags still take precedence, including when storage is unavailable.
+    const campaignSource = sourceKnown ? storedSource : {};
     if (observedSource) observedSource.value = sourceKnown ? touch.channel : "unknown";
     if (sourceEvidence) sourceEvidence.value = sourceKnown ? touch.evidence : "unavailable";
     if (sourceRecordedAt) sourceRecordedAt.value = sourceKnown ? touch.recordedAt : "";
@@ -318,11 +321,11 @@ if (contactForm) {
     referrer.value = document.referrer || "Direct / not available";
     firstLandingPage.value = storedSource.firstLandingPage || window.location.href;
     firstReferrer.value = storedSource.firstReferrer || "Direct / not available";
-    utmSource.value = getUtmValue("utm_source", "utmSource", storedSource);
-    utmMedium.value = getUtmValue("utm_medium", "utmMedium", storedSource);
-    utmCampaign.value = getUtmValue("utm_campaign", "utmCampaign", storedSource);
-    utmTerm.value = getUtmValue("utm_term", "utmTerm", storedSource);
-    utmContent.value = getUtmValue("utm_content", "utmContent", storedSource);
+    utmSource.value = getUtmValue("utm_source", "utmSource", campaignSource);
+    utmMedium.value = getUtmValue("utm_medium", "utmMedium", campaignSource);
+    utmCampaign.value = getUtmValue("utm_campaign", "utmCampaign", campaignSource);
+    utmTerm.value = getUtmValue("utm_term", "utmTerm", campaignSource);
+    utmContent.value = getUtmValue("utm_content", "utmContent", campaignSource);
     selectedFrom.value = contactLinkDetails;
     refreshReference();
   };

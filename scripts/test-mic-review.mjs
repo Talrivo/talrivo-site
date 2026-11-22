@@ -80,3 +80,19 @@ assert.ok(html.includes(`href="../${noiseSlug}/#anc-enc"`));
 assert.ok(readFileSync('gaming-headsets/g941-tri-mode-anc/index.html', 'utf8')
   .includes(`href="../../insights/${noiseSlug}/#anc-enc"`));
 console.log('ANC/ENC checks passed: distinct audio paths, aligned metadata/FAQs, sourced terminology and two discovery links.');
+
+
+const direction = html.match(/<section[^>]*id="noise-direction"[\s\S]*?<\/section>/)?.[0];
+assert.ok(direction, 'Give social arrivals a visible noise-direction choice');
+assert.ok(html.indexOf('id="noise-direction"') < html.indexOf('id="quick-mic-test"'));
+assert.match(html, /href="#noise-direction">Choose the right noise check/);
+assert.match(direction, /You hear the fan/);
+assert.match(direction, /Teammates hear the fan/);
+assert.match(direction, /ANC, where available on the selected model/);
+assert.match(direction, /href="#quick-mic-test"/);
+assert.match(direction, /href="\.\.\/wireless-gaming-headset-microphone-noise-test-checklist\/#anc-enc"/);
+assert.match(direction, /not measured results or confirmation that a TALRIVO model includes ANC/);
+assert.match(direction, /software must stay running/);
+assert.equal(schemas.find(s => s['@type'] === 'Article').dateModified, '2026-11-21');
+assert.ok(readFileSync('sitemap.xml', 'utf8').includes('<loc>https://talrivo.com/insights/gaming-headset-microphone-performance/</loc>\n    <lastmod>2026-11-21</lastmod>'));
+console.log('Social landing checks passed: two distinct noise paths, no assumed model features, preserved mic script and synchronized revision date.');

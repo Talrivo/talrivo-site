@@ -134,7 +134,7 @@ function validateContactTracking() {
   if (!contact.includes('"quick-question": "Quick product question"')) {
     errors.push('contact-form.js does not map the quick-question inquiry type');
   }
-  if (!contact.includes('getUtmValue("utm_source", "utmSource", storedSource)') || !contact.includes('storedSource[key]')) {
+  if (!contact.includes('getUtmValue("utm_source", "utmSource", campaignSource)') || !contact.includes('storedSource[key]') || !contact.includes('const campaignSource = sourceKnown ? storedSource : {};')) {
     errors.push('contact-form.js does not restore stored UTM attribution');
   }
   if (contact.includes('window.localStorage.setItem(sourceStorageKey')) {

@@ -485,8 +485,9 @@ for (const [slug, title, questionCount, imageCount, anchor] of practicalCases) {
   assert.ok(page.includes('<main class="seo-page practical-guide">'));
   assert.ok(page.includes('href="../practical-guide.css?v=20261106a"'));
   const packingUpdated = slug === 'gaming-headset-packaging-accessories-checklist';
-  const revision = packingUpdated ? '2026-11-13' : '2026-11-05';
-  assert.ok(page.includes(`Updated November ${packingUpdated ? 13 : 5}, 2026`));
+  const micUpdated = slug === 'gaming-headset-microphone-performance';
+  const revision = micUpdated ? '2026-11-21' : packingUpdated ? '2026-11-13' : '2026-11-05';
+  assert.ok(page.includes(`Updated November ${micUpdated ? 21 : packingUpdated ? 13 : 5}, 2026`));
   const data = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(([, json]) => JSON.parse(json));
   const article = data.find(item => item['@type'] === 'Article');

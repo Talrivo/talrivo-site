@@ -6,6 +6,7 @@ import { inlineCategoryStyles, CATEGORY_STYLE_SOURCES } from './sync-category-st
 
 const root = process.cwd();
 const pages = [
+  'insights/gaming-headset-microphone-performance/index.html',
   '404.html',
   'insights/in-ear-vs-open-ear-tws-earbuds-private-label/index.html',
   'insights/compare-tws-earbuds-private-label-sampling/index.html',

@@ -26,16 +26,25 @@
 
   // A source hint is evidence of a link/referrer, not proof of AI influence.
   const getSourceTouch = (params) => {
-    const aiHosts = {
+    const sourceHosts = {
       "chatgpt.com": "chatgpt", "chat.openai.com": "chatgpt",
       "perplexity.ai": "perplexity", "www.perplexity.ai": "perplexity",
-      "gemini.google.com": "gemini", "copilot.microsoft.com": "copilot"
+      "gemini.google.com": "gemini", "copilot.microsoft.com": "copilot",
+      "linkedin.com": "linkedin", "www.linkedin.com": "linkedin", "lnkd.in": "linkedin",
+      "facebook.com": "facebook", "www.facebook.com": "facebook", "m.facebook.com": "facebook",
+      "l.facebook.com": "facebook", "lm.facebook.com": "facebook", "fb.me": "facebook",
+      "youtube.com": "youtube", "www.youtube.com": "youtube", "m.youtube.com": "youtube", "youtu.be": "youtube",
+      "reddit.com": "reddit", "www.reddit.com": "reddit", "old.reddit.com": "reddit", "new.reddit.com": "reddit", "out.reddit.com": "reddit"
     };
-    const aiTags = {
+    const sourceTags = {
       chatgpt: "chatgpt", "chatgpt.com": "chatgpt",
       perplexity: "perplexity", "perplexity.ai": "perplexity",
       gemini: "gemini", "gemini.google.com": "gemini",
-      copilot: "copilot", "copilot.microsoft.com": "copilot"
+      copilot: "copilot", "copilot.microsoft.com": "copilot",
+      linkedin: "linkedin", "linkedin.com": "linkedin", "lnkd.in": "linkedin",
+      facebook: "facebook", "facebook.com": "facebook", "fb.me": "facebook",
+      youtube: "youtube", "youtube.com": "youtube", "youtu.be": "youtube",
+      reddit: "reddit", "reddit.com": "reddit"
     };
     let externalHost = "";
     try {
@@ -48,8 +57,8 @@
     const tagged = params.has("utm_source");
     if (!tagged && !externalHost) return null;
     const tag = (params.get("utm_source") || "").trim().toLowerCase();
-    const channel = tagged ? (Object.hasOwn(aiTags, tag) ? aiTags[tag] : tag ? "other" : "unknown")
-      : Object.hasOwn(aiHosts, externalHost) ? aiHosts[externalHost] : "other";
+    const channel = tagged ? (Object.hasOwn(sourceTags, tag) ? sourceTags[tag] : tag ? "other" : "unknown")
+      : Object.hasOwn(sourceHosts, externalHost) ? sourceHosts[externalHost] : "other";
     return {
       channel, evidence: tagged ? "tagged_link" : "external_referrer",
       landingPath: window.location.pathname, recordedAt: new Date().toISOString()
